@@ -14,7 +14,11 @@ class Response {
   Response(this.headers, this.body);
 }
 
-class Http {
+abstract class Http {
+  Future<Response> get(Uri uri);
+}
+
+class CocaHttp implements Http {
   static late Function(int, Pointer<Utf8>) _fetch;
   static var _initialized = false;
 
@@ -33,10 +37,10 @@ class Http {
       throw 'failed to init API.';
     }
     _fetch = dylib.lookupFunction<Void Function(Int64 port, Pointer<Utf8> url),
-        void Function(int port, Pointer<Utf8> url)>('test');
+        void Function(int port, Pointer<Utf8> url)>('load_url');
   }
 
-  Http() {
+  CocaHttp() {
     initialize();
   }
 
@@ -62,9 +66,11 @@ class Http {
 }
 
 main() async {
-  final http = Http();
+  final Http http = CocaHttp();
 
   Response r = await http.get(Uri.parse("https://www.apple.com/"));
   print(String.fromCharCodes(r.body).substring(0, 200));
-  print(r.headers);
+  r.headers.forEach((key, value) {
+    print('$key: $value');
+  });
 }

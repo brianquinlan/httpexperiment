@@ -5,7 +5,7 @@
 /** cc -dynamiclib /Users/bquinlan/./dart/dart-sdk1/sdk/runtime/include/dart_api_dl.c -I/Users/bquinlan/./flutter/bin/cache/dart-sdk/include/  cocoahttp.m -framework AppKit -lobjc -o cocoahttp.dynlib **/
 
 
-void test(Dart_Port dart_port, char *uri) {
+void load_url(Dart_Port dart_port, char *uri) {
   NSURL *url = [NSURL URLWithString:[[NSString alloc] initWithUTF8String:uri]];
 
   NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]
