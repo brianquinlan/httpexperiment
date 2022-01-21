@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:ffi' as ffi;
-import 'dart:io' show sleep, Platform, Directory;
+import 'dart:io' show Directory;
 import 'package:path/path.dart' as path;
 import 'dart:ffi';
 import 'dart:isolate';
@@ -14,8 +14,14 @@ class Response {
   Response(this.headers, this.body);
 }
 
+// Some hypothetical abstract base class for a minimal Http client
+// implementation.
 abstract class Http {
+  // This should probably accept "headers" - I need do some some research
+  // into what all likely implementations support.
   Future<Response> get(Uri uri);
+
+  // Should have `post`, etc.
 }
 
 class CocaHttp implements Http {
