@@ -2,9 +2,14 @@ import 'package:cocoahttp/cocoahttp.dart';
 
 main() async {
   final Http http = CocaHttp();
+  final uri = Uri.parse("https://www.apple.com/");
 
-  Response r = await http.get(Uri.parse("https://www.apple.com/"));
-  print(String.fromCharCodes(r.body).substring(0, 200));
+  final stopwatch = Stopwatch()..start();
+  final Future<Response> rf = http.get(uri);
+  print('http.get() returned a future in ${stopwatch.elapsed}');
+
+  final r = await rf;
+  print('Content is ${r.body.length} bytes');
   r.headers.forEach((key, value) {
     print('$key: $value');
   });
