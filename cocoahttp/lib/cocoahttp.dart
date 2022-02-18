@@ -1,11 +1,104 @@
 import 'dart:async';
-import 'dart:ffi' as ffi;
-import 'dart:io' show Directory;
-import 'package:path/path.dart' as path;
 import 'dart:ffi';
+import 'dart:io';
 import 'dart:isolate';
-import "package:ffi/ffi.dart";
 import "dart:typed_data";
+import "package:ffi/ffi.dart";
+import 'package:native_library/native_library.dart';
+
+import 'cocoahttp_bindings_generated.dart';
+
+/// A very short-lived native function.
+///
+/// For very short-lived functions, it is fine to call them on the main isolate.
+/// They will block the Dart execution while running the native function, so
+/// only do this for native functions which are guaranteed to be short-lived.
+void _fetch(SendPort port, String uri) =>
+    _bindings.sum(port.nativePort, uri.toNativeUtf8().cast<Int8>());
+
+const String _libName = 'cocoahttp';
+const String _packageName = '_libName';
+
+/// The dynamic library in which the symbols for [CocoahttpBindings] can be found.
+final DynamicLibrary _dylib = () {
+  DynamicLibrary? _jit() {
+    if (Platform.isMacOS) {
+      final Uri dylibPath = sharedLibrariesLocationBuilt(_packageName)
+          .resolve('lib$_libName.dylib');
+      final File file = File.fromUri(dylibPath);
+      if (!file.existsSync()) {
+        throw "Dynamic library '${dylibPath.toFilePath()}' does not exist.";
+      }
+      return DynamicLibrary.open(dylibPath.path);
+    } else if (Platform.isLinux) {
+      final Uri dylibPath =
+          sharedLibrariesLocationBuilt(_packageName).resolve('lib$_libName.so');
+      final File file = File.fromUri(dylibPath);
+      if (!file.existsSync()) {
+        throw "Dynamic library '${dylibPath.toFilePath()}' does not exist.";
+      }
+      return DynamicLibrary.open(dylibPath.path);
+    } else if (Platform.isWindows) {
+      final Uri dylibPath =
+          sharedLibrariesLocationBuilt(_packageName).resolve('$_libName.dll');
+      final File file = File.fromUri(dylibPath);
+      if (!file.existsSync()) {
+        throw "Dynamic library '${dylibPath.toFilePath()}' does not exist.";
+      }
+      return DynamicLibrary.open(dylibPath.toFilePath());
+    }
+    return null;
+  }
+
+  switch (Embedders.current) {
+    case Embedder.flutter:
+      switch (FlutterRuntimeModes.current) {
+        case FlutterRuntimeMode.app:
+          if (Platform.isMacOS || Platform.isIOS) {
+            return DynamicLibrary.open('$_libName.framework/$_libName');
+          }
+          if (Platform.isAndroid || Platform.isLinux) {
+            return DynamicLibrary.open('lib$_libName.so');
+          }
+          if (Platform.isWindows) {
+            return DynamicLibrary.open('$_libName.dll');
+          }
+          break;
+        case FlutterRuntimeMode.test:
+          final DynamicLibrary? result = _jit();
+          if (result != null) {
+            return result;
+          }
+          break;
+      }
+      break;
+    case Embedder.standalone:
+      switch (StandaloneRuntimeModes.current) {
+        case StandaloneRuntimeMode.jit:
+          final DynamicLibrary? result = _jit();
+          if (result != null) {
+            return result;
+          }
+          break;
+        case StandaloneRuntimeMode.executable:
+          // When running from executable, we expect the person assembling the
+          // final executable to locate the dynamic library next to the
+          // executable.
+          if (Platform.isMacOS) {
+            return DynamicLibrary.open('lib$_libName.dylib');
+          } else if (Platform.isLinux) {
+            return DynamicLibrary.open('lib$_libName.so');
+          } else if (Platform.isWindows) {
+            return DynamicLibrary.open('$_libName.dll');
+          }
+          break;
+      }
+  }
+  throw UnsupportedError('Unimplemented!');
+}();
+
+/// The bindings to the native functions in [_dylib].
+final CocoahttpBindings _bindings = CocoahttpBindings(_dylib);
 
 class Response {
   Map<String, String> headers;
@@ -25,7 +118,6 @@ abstract class Http {
 }
 
 class CocaHttp implements Http {
-  static late Function(int, Pointer<Utf8>) _fetch;
   static var _initialized = false;
 
   static initialize() {
@@ -33,22 +125,23 @@ class CocaHttp implements Http {
       return;
     }
     _initialized = true;
-
-    var libraryPath = path.join(Directory.current.path, 'cocoahttp.dynlib');
-    final dylib = ffi.DynamicLibrary.open(libraryPath);
-    final initializeApi = dylib.lookupFunction<IntPtr Function(Pointer<Void>),
-        int Function(Pointer<Void>)>('Dart_InitializeApiDL');
-    final initializeResult = initializeApi(NativeApi.initializeApiDLData);
+    /*
+    final initializeResult =
+        _bindings.InitDartApiDL(NativeApi.initializeApiDLData);
     if (initializeResult != 0) {
       throw 'failed to init API.';
     }
-    _fetch = dylib.lookupFunction<Void Function(Int64 port, Pointer<Utf8> url),
-        void Function(int port, Pointer<Utf8> url)>('load_url');
+*/
+    final int Function(Pointer<Void>) initializeApi = _dylib.lookupFunction<
+        IntPtr Function(Pointer<Void>),
+        int Function(Pointer<Void>)>("Dart_InitializeApiDL");
+    final int initializeResult = initializeApi(NativeApi.initializeApiDLData);
+    if (initializeResult != 0) {
+      throw 'failed to init API.';
+    }
   }
 
-  CocaHttp() {
-    initialize();
-  }
+  CocaHttp() {}
 
   Future<Response> get(Uri uri) {
     final c = Completer<Response>();
@@ -65,8 +158,9 @@ class CocaHttp implements Http {
         httpResponsePort.close();
       });
 
-    final cUri = uri.toString().toNativeUtf8();
-    _fetch(httpResponsePort.sendPort.nativePort, cUri);
+//    httpResponsePort.sendPort.send("This is a test");
+    initialize();
+    _fetch(httpResponsePort.sendPort, uri.toString());
     return c.future;
   }
 }

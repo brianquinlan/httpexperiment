@@ -1,0 +1,23 @@
+# Run with `dart run ffigen --config ffigen.yaml`.
+name: CocoahttpBindings
+description: |
+  Bindings for `src/cocoahttp.h`.
+
+  Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
+output: 'lib/cocoahttp_bindings_generated.dart'
+headers:
+  entry-points:
+    - 'src/cocoahttp.h'
+  include-directives:
+    - 'src/cocoahttp.h'
+preamble: |
+  // ignore_for_file: always_specify_types
+  // ignore_for_file: camel_case_types
+  // ignore_for_file: non_constant_identifier_names
+comments:
+  style: any
+  length: full
+llvm-path:
+  - '/opt/homebrew/Cellar/llvm/13.0.1/lib/libclang.dylib'
+compiler-opts:
+  - '-I/Users/bquinlan/flutter/bin/cache/dart-sdk/include/'
