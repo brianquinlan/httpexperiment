@@ -31,6 +31,8 @@ dependencies:
     sdk: flutter
   cocoahttp:
     path: ../cocoahttp
+  simplehttpclient:
+    path: ../simplehttpclient
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -16,6 +16,11 @@ abstract class SimpleHttpResponse {
 abstract class SimpleHttpClient {
   static SimpleHttpClient? _global;
 
+  factory SimpleHttpClient() {
+    // This is sketchy!
+    return current as SimpleHttpClient;
+  }
+
   static SimpleHttpClient? get current {
     return Zone.current[_simpleHttpClientToken] ?? _global;
   }
@@ -25,6 +30,8 @@ abstract class SimpleHttpClient {
   }
 
   // Make List for headers?
+
+  Future<SimpleHttpResponse> get(Uri url, {Map<String, String>? headers});
 
   Future<SimpleHttpResponse> post(Uri url,
       {Map<String, String>? headers, Object? body, Encoding? encoding});

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:cocoahttp/cocoahttp.dart';
+import 'package:cocoahttp/cocoahttp.dart';
 import 'dart:async';
+import 'package:simplehttpclient/simplehttpclient.dart';
 
 void main() {
+  SimpleHttpClient.global = CocoaHttp();
   runApp(const MyApp());
 }
 
@@ -56,8 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       content = "Loading...";
     });
-    CocaHttp().get(Uri.parse("https://www.example.com/")).then((x) {
-//    Platformhttp.getUrl(Uri.parse("https://www.example.com/")).then((x) {
+    SimpleHttpClient().get(Uri.parse("https://www.example.com/")).then((x) {
       setState(() {
         if (x == null) {
           content = "null";

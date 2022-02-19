@@ -5,6 +5,8 @@ import 'dart:isolate';
 import "dart:typed_data";
 import "package:ffi/ffi.dart";
 import 'package:native_library/native_library.dart';
+import 'package:simplehttpclient/simplehttpclient.dart';
+import 'dart:convert';
 
 import 'cocoahttp_bindings_generated.dart';
 
@@ -107,17 +109,21 @@ class Response {
   Response(this.headers, this.body);
 }
 
-// Some hypothetical abstract base class for a minimal Http client
-// implementation.
-abstract class Http {
-  // This should probably accept "headers" - I need do some some research
-  // into what all likely implementations support.
-  Future<Response> get(Uri uri);
+class CocoaHttpResponse implements SimpleHttpResponse {
+  Map<String, String> _headers;
+  Uint8List _bodyBytes;
 
-  // Should have `post`, etc.
+  int get contentLength => this._bodyBytes.length;
+  String get body => "cat";
+  Uint8List get bodyBytes => _bodyBytes;
+  int get statusCode => 200;
+  String get reasonPhrase => 'OK';
+  Map<String, String> get headers => _headers;
+
+  CocoaHttpResponse(this._headers, this._bodyBytes);
 }
 
-class CocaHttp implements Http {
+class CocoaHttp implements SimpleHttpClient {
   static var _initialized = false;
 
   static initialize() {
@@ -125,13 +131,6 @@ class CocaHttp implements Http {
       return;
     }
     _initialized = true;
-    /*
-    final initializeResult =
-        _bindings.InitDartApiDL(NativeApi.initializeApiDLData);
-    if (initializeResult != 0) {
-      throw 'failed to init API.';
-    }
-*/
     final int Function(Pointer<Void>) initializeApi = _dylib.lookupFunction<
         IntPtr Function(Pointer<Void>),
         int Function(Pointer<Void>)>("Dart_InitializeApiDL");
@@ -143,8 +142,8 @@ class CocaHttp implements Http {
 
   CocaHttp() {}
 
-  Future<Response> get(Uri uri) {
-    final c = Completer<Response>();
+  Future<CocoaHttpResponse> get(Uri url, {Map<String, String>? headers}) {
+    final c = Completer<CocoaHttpResponse>();
 
     late ReceivePort httpResponsePort;
     httpResponsePort = ReceivePort()
@@ -154,13 +153,18 @@ class CocaHttp implements Http {
           // -1?!
           headers[message[1][i]] = message[1][i + 1];
         }
-        c.complete(Response(headers, message[0]));
+        c.complete(CocoaHttpResponse(headers, message[0]));
         httpResponsePort.close();
       });
 
 //    httpResponsePort.sendPort.send("This is a test");
     initialize();
-    _fetch(httpResponsePort.sendPort, uri.toString());
+    _fetch(httpResponsePort.sendPort, url.toString());
     return c.future;
+  }
+
+  Future<SimpleHttpResponse> post(Uri url,
+      {Map<String, String>? headers, Object? body, Encoding? encoding}) {
+    return Future.value(CocoaHttpResponse({}, Uint8List(5)));
   }
 }
