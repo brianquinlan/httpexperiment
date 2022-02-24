@@ -102,22 +102,26 @@ final DynamicLibrary _dylib = () {
 /// The bindings to the native functions in [_dylib].
 final CocoahttpBindings _bindings = CocoahttpBindings(_dylib);
 
-class Response {
-  Map<String, String> headers;
-  Uint8List body;
-
-  Response(this.headers, this.body);
-}
-
 class CocoaHttpResponse implements SimpleHttpResponse {
-  Map<String, String> _headers;
-  Uint8List _bodyBytes;
+  final Map<String, String> _headers;
+  final Uint8List _bodyBytes;
 
+  @override
   int get contentLength => this._bodyBytes.length;
-  String get body => "cat";
+
+  @override
+  String get body => String.fromCharCodes(_bodyBytes);
+
+  @override
   Uint8List get bodyBytes => _bodyBytes;
+
+  @override
   int get statusCode => 200;
+
+  @override
   String get reasonPhrase => 'OK';
+
+  @override
   Map<String, String> get headers => _headers;
 
   CocoaHttpResponse(this._headers, this._bodyBytes);
@@ -125,6 +129,10 @@ class CocoaHttpResponse implements SimpleHttpResponse {
 
 class CocoaHttp implements SimpleHttpClient {
   static var _initialized = false;
+
+  static void registerWith() {
+    SimpleHttpClient.global = CocoaHttp();
+  }
 
   static initialize() {
     if (_initialized) {
@@ -140,7 +148,7 @@ class CocoaHttp implements SimpleHttpClient {
     }
   }
 
-  CocaHttp() {}
+  CocoaHttp();
 
   Future<CocoaHttpResponse> get(Uri url, {Map<String, String>? headers}) {
     final c = Completer<CocoaHttpResponse>();

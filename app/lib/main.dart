@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:cocoahttp/cocoahttp.dart';
-import 'package:cocoahttp/cocoahttp.dart';
+import 'package:platformhttp/platformhttp.dart';
+//import 'package:cocoahttp/cocoahttp.dart';
+//import 'package:volleyhttp/volleyhttp.dart';
 import 'dart:async';
 import 'package:simplehttpclient/simplehttpclient.dart';
 
 void main() {
-  SimpleHttpClient.global = CocoaHttp();
+  SimpleHttpClient.global = getSimpleHttpClient();
   runApp(const MyApp());
 }
 
@@ -59,13 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       content = "Loading...";
     });
-    SimpleHttpClient().get(Uri.parse("https://www.example.com/")).then((x) {
+    SimpleHttpClient().get(Uri.parse("https://www.example.com/")).then((resp) {
       setState(() {
-        if (x == null) {
-          content = "null";
-        } else {
-          content = x.headers.toString();
-        }
+        content = resp.headers.toString();
+        content += resp.body;
       });
     }).onError((error, stackTrace) {
       setState(() {
@@ -113,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               content,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

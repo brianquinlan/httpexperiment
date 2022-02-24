@@ -44,8 +44,10 @@ flutter:
     platforms:
       ios:
         ffiPlugin: true
+        dartPluginClass: CocoaHttp
       macos:
         ffiPlugin: true
+        dartPluginClass: CocoaHttp
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

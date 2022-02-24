@@ -29,8 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cocoahttp:
-    path: ../cocoahttp
+  platformhttp:
+    path: ../platformhttp
   simplehttpclient:
     path: ../simplehttpclient
 

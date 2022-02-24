@@ -20,4 +20,4 @@ comments:
 llvm-path:
   - '/opt/homebrew/Cellar/llvm/13.0.1/lib/libclang.dylib'
 compiler-opts:
-  - '-I/Users/bquinlan/flutter/bin/cache/dart-sdk/include/'
+  - '-I/Users/bquinlan/dart/flutter/bin/cache/dart-sdk/include/'

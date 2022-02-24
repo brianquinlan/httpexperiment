@@ -8,9 +8,9 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
-//    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-    //     return '42';
-    //   });
+    channel.setMockMethodCallHandler((MethodCall methodCall) async {
+      return '42';
+    });
   });
 
   tearDown(() {
@@ -18,7 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(
-        await Platformhttp.getUrl(Uri.parse("https://www.google.com/")), '42');
+    expect(await Platformhttp.platformVersion, '42');
   });
 }
