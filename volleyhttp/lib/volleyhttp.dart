@@ -30,12 +30,14 @@ class VolleyHttpResponse implements SimpleHttpResponse {
   VolleyHttpResponse(this._headers, this._bodyBytes);
 }
 
-class Volleyhttp implements SimpleHttpClient {
+class Volleyhttp extends SimpleHttpClient {
   static const MethodChannel _channel = MethodChannel('volleyhttp');
 
   static void registerWith() {
     SimpleHttpClient.global = Volleyhttp();
   }
+
+  Volleyhttp();
 
   Future<String?> getUrl(Uri uri) async {
     final url = uri.toString();

@@ -127,12 +127,14 @@ class CocoaHttpResponse implements SimpleHttpResponse {
   CocoaHttpResponse(this._headers, this._bodyBytes);
 }
 
-class CocoaHttp implements SimpleHttpClient {
+class CocoaHttp extends SimpleHttpClient {
   static var _initialized = false;
 
   static void registerWith() {
     SimpleHttpClient.global = CocoaHttp();
   }
+
+  CocoaHttp();
 
   static initialize() {
     if (_initialized) {
@@ -147,8 +149,6 @@ class CocoaHttp implements SimpleHttpClient {
       throw 'failed to init API.';
     }
   }
-
-  CocoaHttp();
 
   Future<CocoaHttpResponse> get(Uri url, {Map<String, String>? headers}) {
     final c = Completer<CocoaHttpResponse>();

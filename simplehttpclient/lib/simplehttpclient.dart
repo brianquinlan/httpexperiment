@@ -17,12 +17,9 @@ abstract class SimpleHttpResponse {
 abstract class SimpleHttpClient {
   static SimpleHttpClient? _global;
 
-  factory SimpleHttpClient() {
-    // This is sketchy!
-    return current as SimpleHttpClient;
-  }
+  SimpleHttpClient() {}
 
-  static SimpleHttpClient? get current {
+  static SimpleHttpClient get current {
     return Zone.current[_simpleHttpClientToken] ?? _global;
   }
 
