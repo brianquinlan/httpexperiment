@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:async';
+import 'dart:io';
 import 'dart:typed_data';
 
 final _simpleHttpClientToken = Object();
@@ -35,6 +36,10 @@ abstract class SimpleHttpClient {
 
   Future<SimpleHttpResponse> post(Uri url,
       {Map<String, String>? headers, Object? body, Encoding? encoding});
+
+  HttpClient asHttpClient() {
+    throw UnimplementedError();
+  }
 }
 
 // 
