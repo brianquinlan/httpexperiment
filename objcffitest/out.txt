@@ -1,0 +1,325 @@
+Running in Directory: '/Users/bquinlan/dart/ffitest'
+[WARNING]: Prefer adding Key '[name]' to your config.
+[WARNING]: Prefer adding Key '[description]' to your config.
+Input Headers: [/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLSession.h]
+[WARNING]: Unsupported pack value "-2" for Struct "__CFString".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFString".
+[WARNING]: Skipped Function 'CFRangeMake', inline functions are not supported.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNull".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNull".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFAllocator".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFAllocator".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Skipped Function 'NSMakeCollectable', inline functions are not supported.
+[WARNING]: Skipped Function 'NSMakeCollectable', inline functions are not supported.
+[WARNING]: Skipped Function 'CFBridgingRetain', inline functions are not supported.
+[WARNING]: Skipped Function 'CFBridgingRelease', inline functions are not supported.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFArray".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFArray".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecCertificate".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecCertificate".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecIdentity".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecIdentity".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKey".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKey".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecPolicy".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecPolicy".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecAccessControl".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecAccessControl".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychain".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychain".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychainItem".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychainItem".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychainSearch".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecKeychainSearch".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecTrustedApplication".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecTrustedApplication".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecAccess".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecAccess".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecACL".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecACL".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecPassword".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecPassword".
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBag".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBag".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBinaryHeap".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBinaryHeap".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBitVector".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBitVector".
+[WARNING]: Skipped Function 'CFByteOrderGetCurrent', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt16', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt32', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt64', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt16BigToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt32BigToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt64BigToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt16HostToBig', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt32HostToBig', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt64HostToBig', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt16LittleToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt32LittleToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt64LittleToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt16HostToLittle', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt32HostToLittle', inline functions are not supported.
+[WARNING]: Skipped Function 'CFSwapInt64HostToLittle', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloat32HostToSwapped', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloat32SwappedToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloat64HostToSwapped', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloat64SwappedToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloatHostToSwapped', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertFloatSwappedToHost', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertDoubleHostToSwapped', inline functions are not supported.
+[WARNING]: Skipped Function 'CFConvertDoubleSwappedToHost', inline functions are not supported.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDictionary".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDictionary".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNotificationCenter".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNotificationCenter".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFLocale".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFLocale".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDate".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDate".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFTimeZone".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFTimeZone".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFData".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFData".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFCharacterSet".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFCharacterSet".
+[WARNING]: Skipped Function 'CFStringInitInlineBuffer', inline functions are not supported.
+[WARNING]: Skipped Function 'CFStringGetCharacterFromInlineBuffer', inline functions are not supported.
+[WARNING]: Skipped Function 'CFStringIsSurrogateHighCharacter', inline functions are not supported.
+[WARNING]: Skipped Function 'CFStringIsSurrogateLowCharacter', inline functions are not supported.
+[WARNING]: Skipped Function 'CFStringGetLongCharacterForSurrogatePair', inline functions are not supported.
+[WARNING]: Skipped Function 'CFStringGetSurrogatePairForLongCharacter', inline functions are not supported.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFCalendar".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFCalendar".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDateFormatter".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFDateFormatter".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFError".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFError".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBoolean".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBoolean".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNumber".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNumber".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNumberFormatter".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFNumberFormatter".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFURL".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFURL".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoop".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoop".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopSource".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopSource".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopObserver".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopObserver".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopTimer".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFRunLoopTimer".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFSocket".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFSocket".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFReadStream".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFReadStream".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFWriteStream".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFWriteStream".
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFSet".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFSet".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFTree".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFTree".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFUUID".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFUUID".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBundle".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFBundle".
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFMessagePort".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFMessagePort".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFPlugInInstance".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFPlugInInstance".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFMachPort".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFMachPort".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFAttributedString".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFAttributedString".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFURLEnumerator".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFURLEnumerator".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFFileSecurity".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFFileSecurity".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFStringTokenizer".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFStringTokenizer".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFFileDescriptor".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFFileDescriptor".
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__CFUserNotification".
+[WARNING]: Unsupported pack value "-2" for Struct "__CFUserNotification".
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Skipped Function 'CFUserNotificationCheckBoxChecked', inline functions are not supported.
+[WARNING]: Skipped Function 'CFUserNotificationSecureTextField', inline functions are not supported.
+[WARNING]: Skipped Function 'CFUserNotificationPopUpSelection', inline functions are not supported.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Unsupported pack value "-2" for Struct "__SecTrust".
+[WARNING]: Unsupported pack value "-2" for Struct "__SecTrust".
+[SEVERE] : Invalid enum constant.
+[SEVERE] : Invalid enum constant.
+[WARNING]: Generated declaration '__builtin_va_list' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFString' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFRangeMake' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFNull' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFAllocator' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_NSZone' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFArray' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecCertificate' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecIdentity' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecKey' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecPolicy' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecAccessControl' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecKeychain' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecKeychainItem' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecKeychainSearch' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecTrustedApplication' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecAccess' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecACL' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecPassword' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFBag' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFBinaryHeap' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFBitVector' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFByteOrder' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFDictionary' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFNotificationCenter' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFLocale' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFDate' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFTimeZone' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFData' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFCharacterSet' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFStringMakeConstantString' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFCalendar' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFDateFormatter' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFError' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFBoolean' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFNumber' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFNumberFormatter' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFURL' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFRunLoop' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFRunLoopSource' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFRunLoopObserver' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFRunLoopTimer' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_mach_port_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_mach_port_name_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_natural_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFSocket' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFReadStream' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFWriteStream' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFSet' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFTree' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFUUID' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFBundle' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFMessagePort' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFPlugInInstance' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFMachPort' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFAttributedString' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFURLEnumerator' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFFileSecurity' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_acl' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_uid_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__uint32_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_gid_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__darwin_mode_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__uint16_t' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFStringTokenizer' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFFileDescriptor' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFUserNotification' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFXMLNode' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CFXMLParser' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__SecTrust' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_GeneralNameType' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_OtherName' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_GeneralName' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_GeneralNames' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_AuthorityKeyID' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_ExtendedKeyUsage' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_BasicConstraints' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_PolicyQualifierInfo' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_PolicyInformation' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_CertPolicies' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_CrlDistributionPointNameType' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_DistributionPointName' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_CRLDistributionPoint' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_CRLDistPointsSyntax' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_AccessDescription' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_AuthorityInfoAccess' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_SemanticsInformation' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_QC_Statement' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_QC_Statements' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_IssuingDistributionPoint' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_GeneralSubtree' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_GeneralSubtrees' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_NameConstraints' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_PolicyMapping' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_PolicyMappings' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_PolicyConstraints' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_DataType' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CE_DataAndType' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFAVAILABILITY__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__CF_ENUM_FIXED_IS_AVAILABLE' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBASE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFARRAY__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_COREFOUNDATION__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBAG__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBINARYHEAP__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBITVECTOR__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBYTEORDER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFCALENDAR__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFLOCALE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFDICTIONARY__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFNOTIFICATIONCENTER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFDATE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFTIMEZONE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFDATA__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSTRING__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFCHARACTERSET__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__kCFStringInlineBufferLength' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFDATEFORMATTER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFERROR__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFNUMBER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFNUMBERFORMATTER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFPREFERENCES__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFPROPERTYLIST__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSTREAM__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFURL__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFRUNLOOP__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSOCKET__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSET__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSTRINGENCODINGEXT__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFTREE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFURLACCESS__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFUUID__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFUTILITIES__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFBUNDLE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFMESSAGEPORT__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFPLUGIN__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFMACHPORT__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFATTRIBUTEDSTRING__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFURLENUMERATOR__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFFILESECURITY__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFSTRINGTOKENIZER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFFILEDESCRIPTOR__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFUSERNOTIFICATION__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFXMLNODE__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '__COREFOUNDATION_CFXMLPARSER__' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_CSSMTYPE_H_' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_CSSMCONFIG_H_' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_CSSMAPPLE_H_' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_CSSMERR_H_' start's with '_' and therefore will be private.
+[WARNING]: Generated declaration '_X509DEFS_H_' start's with '_' and therefore will be private.
