@@ -4,6 +4,7 @@ environment:
   sdk: '>=2.16.0 <3.0.0'
 
 ffigen:
+  language: 'objc'
   output: 'nsurlsession_bindings.dart'
   headers:
     entry-points:
