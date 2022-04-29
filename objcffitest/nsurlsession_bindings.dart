@@ -34005,6 +34005,28112 @@ class NativeLibrary {
   late final ffi.Pointer<ObjCSel> _sel_currentQueue1 =
       _registerName1("currentQueue");
   late final ffi.Pointer<ObjCSel> _sel_mainQueue1 = _registerName1("mainQueue");
+  ffi.Pointer<ObjCObject> NSStringFromSelector5(
+    ffi.Pointer<ObjCSel> aSelector,
+  ) {
+    return _NSStringFromSelector5(
+      aSelector,
+    );
+  }
+
+  late final _NSStringFromSelector5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCSel>)>>('NSStringFromSelector');
+  late final _NSStringFromSelector5 = _NSStringFromSelector5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCSel>)>();
+
+  ffi.Pointer<ObjCSel> NSSelectorFromString5(
+    ffi.Pointer<ObjCObject> aSelectorName,
+  ) {
+    return _NSSelectorFromString5(
+      aSelectorName,
+    );
+  }
+
+  late final _NSSelectorFromString5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCSel> Function(
+              ffi.Pointer<ObjCObject>)>>('NSSelectorFromString');
+  late final _NSSelectorFromString5 = _NSSelectorFromString5Ptr.asFunction<
+      ffi.Pointer<ObjCSel> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromClass5(
+    ffi.Pointer<ObjCObject> aClass,
+  ) {
+    return _NSStringFromClass5(
+      aClass,
+    );
+  }
+
+  late final _NSStringFromClass5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromClass');
+  late final _NSStringFromClass5 = _NSStringFromClass5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSClassFromString5(
+    ffi.Pointer<ObjCObject> aClassName,
+  ) {
+    return _NSClassFromString5(
+      aClassName,
+    );
+  }
+
+  late final _NSClassFromString5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSClassFromString');
+  late final _NSClassFromString5 = _NSClassFromString5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromProtocol5(
+    ffi.Pointer<ObjCObject> proto,
+  ) {
+    return _NSStringFromProtocol5(
+      proto,
+    );
+  }
+
+  late final _NSStringFromProtocol5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromProtocol');
+  late final _NSStringFromProtocol5 = _NSStringFromProtocol5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSProtocolFromString5(
+    ffi.Pointer<ObjCObject> namestr,
+  ) {
+    return _NSProtocolFromString5(
+      namestr,
+    );
+  }
+
+  late final _NSProtocolFromString5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSProtocolFromString');
+  late final _NSProtocolFromString5 = _NSProtocolFromString5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<pkg_ffi.Char> NSGetSizeAndAlignment5(
+    ffi.Pointer<pkg_ffi.Char> typePtr,
+    ffi.Pointer<NSUInteger> sizep,
+    ffi.Pointer<NSUInteger> alignp,
+  ) {
+    return _NSGetSizeAndAlignment5(
+      typePtr,
+      sizep,
+      alignp,
+    );
+  }
+
+  late final _NSGetSizeAndAlignment5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<NSUInteger>,
+              ffi.Pointer<NSUInteger>)>>('NSGetSizeAndAlignment');
+  late final _NSGetSizeAndAlignment5 = _NSGetSizeAndAlignment5Ptr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<NSUInteger>, ffi.Pointer<NSUInteger>)>();
+
+  void NSLog5(
+    ffi.Pointer<ObjCObject> format,
+  ) {
+    return _NSLog5(
+      format,
+    );
+  }
+
+  late final _NSLog5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSLog');
+  late final _NSLog5 =
+      _NSLog5Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  void NSLogv5(
+    ffi.Pointer<ObjCObject> format,
+    va_list args,
+  ) {
+    return _NSLogv5(
+      format,
+      args,
+    );
+  }
+
+  late final _NSLogv5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, va_list)>>('NSLogv');
+  late final _NSLogv5 =
+      _NSLogv5Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>, va_list)>();
+
+  CFRange __CFRangeMake5(
+    int loc,
+    int len,
+  ) {
+    return ___CFRangeMake5(
+      loc,
+      len,
+    );
+  }
+
+  late final ___CFRangeMake5Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFIndex, CFIndex)>>(
+          '__CFRangeMake');
+  late final ___CFRangeMake5 =
+      ___CFRangeMake5Ptr.asFunction<CFRange Function(int, int)>();
+
+  int CFNullGetTypeID5() {
+    return _CFNullGetTypeID5();
+  }
+
+  late final _CFNullGetTypeID5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNullGetTypeID');
+  late final _CFNullGetTypeID5 =
+      _CFNullGetTypeID5Ptr.asFunction<int Function()>();
+
+  int CFAllocatorGetTypeID5() {
+    return _CFAllocatorGetTypeID5();
+  }
+
+  late final _CFAllocatorGetTypeID5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFAllocatorGetTypeID');
+  late final _CFAllocatorGetTypeID5 =
+      _CFAllocatorGetTypeID5Ptr.asFunction<int Function()>();
+
+  void CFAllocatorSetDefault5(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFAllocatorSetDefault5(
+      allocator,
+    );
+  }
+
+  late final _CFAllocatorSetDefault5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFAllocatorRef)>>(
+          'CFAllocatorSetDefault');
+  late final _CFAllocatorSetDefault5 =
+      _CFAllocatorSetDefault5Ptr.asFunction<void Function(CFAllocatorRef)>();
+
+  CFAllocatorRef CFAllocatorGetDefault5() {
+    return _CFAllocatorGetDefault5();
+  }
+
+  late final _CFAllocatorGetDefault5Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function()>>(
+          'CFAllocatorGetDefault');
+  late final _CFAllocatorGetDefault5 =
+      _CFAllocatorGetDefault5Ptr.asFunction<CFAllocatorRef Function()>();
+
+  CFAllocatorRef CFAllocatorCreate5(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorCreate5(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorCreate5Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAllocatorRef Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorCreate');
+  late final _CFAllocatorCreate5 = _CFAllocatorCreate5Ptr.asFunction<
+      CFAllocatorRef Function(
+          CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorAllocate5(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorAllocate5(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorAllocate5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFIndex, CFOptionFlags)>>('CFAllocatorAllocate');
+  late final _CFAllocatorAllocate5 = _CFAllocatorAllocate5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, int, int)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorReallocate5(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+    int newsize,
+    int hint,
+  ) {
+    return _CFAllocatorReallocate5(
+      allocator,
+      ptr,
+      newsize,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorReallocate5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(CFAllocatorRef, ffi.Pointer<ffi.Void>,
+              CFIndex, CFOptionFlags)>>('CFAllocatorReallocate');
+  late final _CFAllocatorReallocate5 = _CFAllocatorReallocate5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          CFAllocatorRef, ffi.Pointer<ffi.Void>, int, int)>();
+
+  void CFAllocatorDeallocate5(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _CFAllocatorDeallocate5(
+      allocator,
+      ptr,
+    );
+  }
+
+  late final _CFAllocatorDeallocate5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef, ffi.Pointer<ffi.Void>)>>('CFAllocatorDeallocate');
+  late final _CFAllocatorDeallocate5 = _CFAllocatorDeallocate5Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFAllocatorGetPreferredSizeForSize5(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorGetPreferredSizeForSize5(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorGetPreferredSizeForSize5Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFAllocatorRef, CFIndex,
+              CFOptionFlags)>>('CFAllocatorGetPreferredSizeForSize');
+  late final _CFAllocatorGetPreferredSizeForSize5 =
+      _CFAllocatorGetPreferredSizeForSize5Ptr.asFunction<
+          int Function(CFAllocatorRef, int, int)>();
+
+  void CFAllocatorGetContext5(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorGetContext5(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorGetContext5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorGetContext');
+  late final _CFAllocatorGetContext5 = _CFAllocatorGetContext5Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  int CFGetTypeID5(
+    CFTypeRef cf,
+  ) {
+    return _CFGetTypeID5(
+      cf,
+    );
+  }
+
+  late final _CFGetTypeID5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function(CFTypeRef)>>('CFGetTypeID');
+  late final _CFGetTypeID5 =
+      _CFGetTypeID5Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyTypeIDDescription5(
+    int type_id,
+  ) {
+    return _CFCopyTypeIDDescription5(
+      type_id,
+    );
+  }
+
+  late final _CFCopyTypeIDDescription5Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeID)>>(
+          'CFCopyTypeIDDescription');
+  late final _CFCopyTypeIDDescription5 =
+      _CFCopyTypeIDDescription5Ptr.asFunction<CFStringRef Function(int)>();
+
+  CFTypeRef CFRetain5(
+    CFTypeRef cf,
+  ) {
+    return _CFRetain5(
+      cf,
+    );
+  }
+
+  late final _CFRetain5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>('CFRetain');
+  late final _CFRetain5 =
+      _CFRetain5Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  void CFRelease5(
+    CFTypeRef cf,
+  ) {
+    return _CFRelease5(
+      cf,
+    );
+  }
+
+  late final _CFRelease5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFRelease');
+  late final _CFRelease5 =
+      _CFRelease5Ptr.asFunction<void Function(CFTypeRef)>();
+
+  CFTypeRef CFAutorelease5(
+    CFTypeRef arg,
+  ) {
+    return _CFAutorelease5(
+      arg,
+    );
+  }
+
+  late final _CFAutorelease5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFAutorelease');
+  late final _CFAutorelease5 =
+      _CFAutorelease5Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  int CFGetRetainCount5(
+    CFTypeRef cf,
+  ) {
+    return _CFGetRetainCount5(
+      cf,
+    );
+  }
+
+  late final _CFGetRetainCount5Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTypeRef)>>(
+          'CFGetRetainCount');
+  late final _CFGetRetainCount5 =
+      _CFGetRetainCount5Ptr.asFunction<int Function(CFTypeRef)>();
+
+  int CFEqual5(
+    CFTypeRef cf1,
+    CFTypeRef cf2,
+  ) {
+    return _CFEqual5(
+      cf1,
+      cf2,
+    );
+  }
+
+  late final _CFEqual5Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFTypeRef, CFTypeRef)>>(
+          'CFEqual');
+  late final _CFEqual5 =
+      _CFEqual5Ptr.asFunction<int Function(CFTypeRef, CFTypeRef)>();
+
+  int CFHash5(
+    CFTypeRef cf,
+  ) {
+    return _CFHash5(
+      cf,
+    );
+  }
+
+  late final _CFHash5Ptr =
+      _lookup<ffi.NativeFunction<CFHashCode Function(CFTypeRef)>>('CFHash');
+  late final _CFHash5 = _CFHash5Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyDescription5(
+    CFTypeRef cf,
+  ) {
+    return _CFCopyDescription5(
+      cf,
+    );
+  }
+
+  late final _CFCopyDescription5Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeRef)>>(
+          'CFCopyDescription');
+  late final _CFCopyDescription5 =
+      _CFCopyDescription5Ptr.asFunction<CFStringRef Function(CFTypeRef)>();
+
+  CFAllocatorRef CFGetAllocator5(
+    CFTypeRef cf,
+  ) {
+    return _CFGetAllocator5(
+      cf,
+    );
+  }
+
+  late final _CFGetAllocator5Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function(CFTypeRef)>>(
+          'CFGetAllocator');
+  late final _CFGetAllocator5 =
+      _CFGetAllocator5Ptr.asFunction<CFAllocatorRef Function(CFTypeRef)>();
+
+  CFTypeRef CFMakeCollectable5(
+    CFTypeRef cf,
+  ) {
+    return _CFMakeCollectable5(
+      cf,
+    );
+  }
+
+  late final _CFMakeCollectable5Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFMakeCollectable');
+  late final _CFMakeCollectable5 =
+      _CFMakeCollectable5Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  ffi.Pointer<NSZone> NSDefaultMallocZone5() {
+    return _NSDefaultMallocZone5();
+  }
+
+  late final _NSDefaultMallocZone5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<NSZone> Function()>>(
+          'NSDefaultMallocZone');
+  late final _NSDefaultMallocZone5 =
+      _NSDefaultMallocZone5Ptr.asFunction<ffi.Pointer<NSZone> Function()>();
+
+  ffi.Pointer<NSZone> NSCreateZone5(
+    int startSize,
+    int granularity,
+    bool canFree,
+  ) {
+    return _NSCreateZone5(
+      startSize,
+      granularity,
+      canFree ? 1 : 0,
+    );
+  }
+
+  late final _NSCreateZone5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              NSUInteger, NSUInteger, ffi.Uint8)>>('NSCreateZone');
+  late final _NSCreateZone5 = _NSCreateZone5Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(int, int, int)>();
+
+  void NSRecycleZone5(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSRecycleZone5(
+      zone,
+    );
+  }
+
+  late final _NSRecycleZone5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<NSZone>)>>(
+          'NSRecycleZone');
+  late final _NSRecycleZone5 =
+      _NSRecycleZone5Ptr.asFunction<void Function(ffi.Pointer<NSZone>)>();
+
+  void NSSetZoneName5(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ObjCObject> name,
+  ) {
+    return _NSSetZoneName5(
+      zone,
+      name,
+    );
+  }
+
+  late final _NSSetZoneName5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>>('NSSetZoneName');
+  late final _NSSetZoneName5 = _NSSetZoneName5Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSZoneName5(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSZoneName5(
+      zone,
+    );
+  }
+
+  late final _NSZoneName5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>>('NSZoneName');
+  late final _NSZoneName5 = _NSZoneName5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>();
+
+  ffi.Pointer<NSZone> NSZoneFromPointer5(
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFromPointer5(
+      ptr,
+    );
+  }
+
+  late final _NSZoneFromPointer5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              ffi.Pointer<ffi.Void>)>>('NSZoneFromPointer');
+  late final _NSZoneFromPointer5 = _NSZoneFromPointer5Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSZoneMalloc5(
+    ffi.Pointer<NSZone> zone,
+    int size,
+  ) {
+    return _NSZoneMalloc5(
+      zone,
+      size,
+    );
+  }
+
+  late final _NSZoneMalloc5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger)>>('NSZoneMalloc');
+  late final _NSZoneMalloc5 = _NSZoneMalloc5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneCalloc5(
+    ffi.Pointer<NSZone> zone,
+    int numElems,
+    int byteSize,
+  ) {
+    return _NSZoneCalloc5(
+      zone,
+      numElems,
+      byteSize,
+    );
+  }
+
+  late final _NSZoneCalloc5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger, NSUInteger)>>('NSZoneCalloc');
+  late final _NSZoneCalloc5 = _NSZoneCalloc5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneRealloc5(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+  ) {
+    return _NSZoneRealloc5(
+      zone,
+      ptr,
+      size,
+    );
+  }
+
+  late final _NSZoneRealloc5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>,
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSZoneRealloc');
+  late final _NSZoneRealloc5 = _NSZoneRealloc5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>, int)>();
+
+  void NSZoneFree5(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFree5(
+      zone,
+      ptr,
+    );
+  }
+
+  late final _NSZoneFree5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>>('NSZoneFree');
+  late final _NSZoneFree5 = _NSZoneFree5Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateCollectable5(
+    int size,
+    int options,
+  ) {
+    return _NSAllocateCollectable5(
+      size,
+      options,
+    );
+  }
+
+  late final _NSAllocateCollectable5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              NSUInteger, NSUInteger)>>('NSAllocateCollectable');
+  late final _NSAllocateCollectable5 = _NSAllocateCollectable5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
+
+  ffi.Pointer<ffi.Void> NSReallocateCollectable5(
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+    int options,
+  ) {
+    return _NSReallocateCollectable5(
+      ptr,
+      size,
+      options,
+    );
+  }
+
+  late final _NSReallocateCollectable5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, NSUInteger,
+              NSUInteger)>>('NSReallocateCollectable');
+  late final _NSReallocateCollectable5 =
+      _NSReallocateCollectable5Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+
+  int NSPageSize5() {
+    return _NSPageSize5();
+  }
+
+  late final _NSPageSize5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSPageSize');
+  late final _NSPageSize5 = _NSPageSize5Ptr.asFunction<int Function()>();
+
+  int NSLogPageSize5() {
+    return _NSLogPageSize5();
+  }
+
+  late final _NSLogPageSize5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSLogPageSize');
+  late final _NSLogPageSize5 = _NSLogPageSize5Ptr.asFunction<int Function()>();
+
+  int NSRoundUpToMultipleOfPageSize5(
+    int bytes,
+  ) {
+    return _NSRoundUpToMultipleOfPageSize5(
+      bytes,
+    );
+  }
+
+  late final _NSRoundUpToMultipleOfPageSize5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundUpToMultipleOfPageSize');
+  late final _NSRoundUpToMultipleOfPageSize5 =
+      _NSRoundUpToMultipleOfPageSize5Ptr.asFunction<int Function(int)>();
+
+  int NSRoundDownToMultipleOfPageSize5(
+    int bytes,
+  ) {
+    return _NSRoundDownToMultipleOfPageSize5(
+      bytes,
+    );
+  }
+
+  late final _NSRoundDownToMultipleOfPageSize5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundDownToMultipleOfPageSize');
+  late final _NSRoundDownToMultipleOfPageSize5 =
+      _NSRoundDownToMultipleOfPageSize5Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateMemoryPages5(
+    int bytes,
+  ) {
+    return _NSAllocateMemoryPages5(
+      bytes,
+    );
+  }
+
+  late final _NSAllocateMemoryPages5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(NSUInteger)>>(
+          'NSAllocateMemoryPages');
+  late final _NSAllocateMemoryPages5 = _NSAllocateMemoryPages5Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int)>();
+
+  void NSDeallocateMemoryPages5(
+    ffi.Pointer<ffi.Void> ptr,
+    int bytes,
+  ) {
+    return _NSDeallocateMemoryPages5(
+      ptr,
+      bytes,
+    );
+  }
+
+  late final _NSDeallocateMemoryPages5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSDeallocateMemoryPages');
+  late final _NSDeallocateMemoryPages5 = _NSDeallocateMemoryPages5Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+
+  void NSCopyMemoryPages5(
+    ffi.Pointer<ffi.Void> source,
+    ffi.Pointer<ffi.Void> dest,
+    int bytes,
+  ) {
+    return _NSCopyMemoryPages5(
+      source,
+      dest,
+      bytes,
+    );
+  }
+
+  late final _NSCopyMemoryPages5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              NSUInteger)>>('NSCopyMemoryPages');
+  late final _NSCopyMemoryPages5 = _NSCopyMemoryPages5Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+
+  int NSRealMemoryAvailable5() {
+    return _NSRealMemoryAvailable5();
+  }
+
+  late final _NSRealMemoryAvailable5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>(
+          'NSRealMemoryAvailable');
+  late final _NSRealMemoryAvailable5 =
+      _NSRealMemoryAvailable5Ptr.asFunction<int Function()>();
+
+  ffi.Pointer<ObjCObject> NSAllocateObject5(
+    ffi.Pointer<ObjCObject> aClass,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSAllocateObject5(
+      aClass,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSAllocateObject5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSAllocateObject');
+  late final _NSAllocateObject5 = _NSAllocateObject5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  void NSDeallocateObject5(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDeallocateObject5(
+      object,
+    );
+  }
+
+  late final _NSDeallocateObject5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDeallocateObject');
+  late final _NSDeallocateObject5 = _NSDeallocateObject5Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSCopyObject5(
+    ffi.Pointer<ObjCObject> object,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSCopyObject5(
+      object,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSCopyObject5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSCopyObject');
+  late final _NSCopyObject5 = _NSCopyObject5Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  bool NSShouldRetainWithZone5(
+    ffi.Pointer<ObjCObject> anObject,
+    ffi.Pointer<NSZone> requestedZone,
+  ) {
+    return _NSShouldRetainWithZone5(
+          anObject,
+          requestedZone,
+        ) !=
+        0;
+  }
+
+  late final _NSShouldRetainWithZone5Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<NSZone>)>>('NSShouldRetainWithZone');
+  late final _NSShouldRetainWithZone5 = _NSShouldRetainWithZone5Ptr.asFunction<
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<NSZone>)>();
+
+  void NSIncrementExtraRefCount5(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSIncrementExtraRefCount5(
+      object,
+    );
+  }
+
+  late final _NSIncrementExtraRefCount5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSIncrementExtraRefCount');
+  late final _NSIncrementExtraRefCount5 = _NSIncrementExtraRefCount5Ptr
+      .asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  bool NSDecrementExtraRefCountWasZero5(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDecrementExtraRefCountWasZero5(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _NSDecrementExtraRefCountWasZero5Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDecrementExtraRefCountWasZero');
+  late final _NSDecrementExtraRefCountWasZero5 =
+      _NSDecrementExtraRefCountWasZero5Ptr.asFunction<
+          int Function(ffi.Pointer<ObjCObject>)>();
+
+  int NSExtraRefCount5(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSExtraRefCount5(
+      object,
+    );
+  }
+
+  late final _NSExtraRefCount5Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(ffi.Pointer<ObjCObject>)>>(
+          'NSExtraRefCount');
+  late final _NSExtraRefCount5 =
+      _NSExtraRefCount5Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<NSErrorDomain> _NSCocoaErrorDomain =
+      _lookup<NSErrorDomain>('NSCocoaErrorDomain');
+
+  NSErrorDomain get NSCocoaErrorDomain => _NSCocoaErrorDomain.value;
+
+  set NSCocoaErrorDomain(NSErrorDomain value) =>
+      _NSCocoaErrorDomain.value = value;
+
+  late final ffi.Pointer<NSErrorDomain> _NSPOSIXErrorDomain =
+      _lookup<NSErrorDomain>('NSPOSIXErrorDomain');
+
+  NSErrorDomain get NSPOSIXErrorDomain => _NSPOSIXErrorDomain.value;
+
+  set NSPOSIXErrorDomain(NSErrorDomain value) =>
+      _NSPOSIXErrorDomain.value = value;
+
+  late final ffi.Pointer<NSErrorDomain> _NSOSStatusErrorDomain =
+      _lookup<NSErrorDomain>('NSOSStatusErrorDomain');
+
+  NSErrorDomain get NSOSStatusErrorDomain => _NSOSStatusErrorDomain.value;
+
+  set NSOSStatusErrorDomain(NSErrorDomain value) =>
+      _NSOSStatusErrorDomain.value = value;
+
+  late final ffi.Pointer<NSErrorDomain> _NSMachErrorDomain =
+      _lookup<NSErrorDomain>('NSMachErrorDomain');
+
+  NSErrorDomain get NSMachErrorDomain => _NSMachErrorDomain.value;
+
+  set NSMachErrorDomain(NSErrorDomain value) =>
+      _NSMachErrorDomain.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSUnderlyingErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSUnderlyingErrorKey');
+
+  NSErrorUserInfoKey get NSUnderlyingErrorKey => _NSUnderlyingErrorKey.value;
+
+  set NSUnderlyingErrorKey(NSErrorUserInfoKey value) =>
+      _NSUnderlyingErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSMultipleUnderlyingErrorsKey =
+      _lookup<NSErrorUserInfoKey>('NSMultipleUnderlyingErrorsKey');
+
+  NSErrorUserInfoKey get NSMultipleUnderlyingErrorsKey =>
+      _NSMultipleUnderlyingErrorsKey.value;
+
+  set NSMultipleUnderlyingErrorsKey(NSErrorUserInfoKey value) =>
+      _NSMultipleUnderlyingErrorsKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSLocalizedDescriptionKey =
+      _lookup<NSErrorUserInfoKey>('NSLocalizedDescriptionKey');
+
+  NSErrorUserInfoKey get NSLocalizedDescriptionKey =>
+      _NSLocalizedDescriptionKey.value;
+
+  set NSLocalizedDescriptionKey(NSErrorUserInfoKey value) =>
+      _NSLocalizedDescriptionKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSLocalizedFailureReasonErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSLocalizedFailureReasonErrorKey');
+
+  NSErrorUserInfoKey get NSLocalizedFailureReasonErrorKey =>
+      _NSLocalizedFailureReasonErrorKey.value;
+
+  set NSLocalizedFailureReasonErrorKey(NSErrorUserInfoKey value) =>
+      _NSLocalizedFailureReasonErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey>
+      _NSLocalizedRecoverySuggestionErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSLocalizedRecoverySuggestionErrorKey');
+
+  NSErrorUserInfoKey get NSLocalizedRecoverySuggestionErrorKey =>
+      _NSLocalizedRecoverySuggestionErrorKey.value;
+
+  set NSLocalizedRecoverySuggestionErrorKey(NSErrorUserInfoKey value) =>
+      _NSLocalizedRecoverySuggestionErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey>
+      _NSLocalizedRecoveryOptionsErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSLocalizedRecoveryOptionsErrorKey');
+
+  NSErrorUserInfoKey get NSLocalizedRecoveryOptionsErrorKey =>
+      _NSLocalizedRecoveryOptionsErrorKey.value;
+
+  set NSLocalizedRecoveryOptionsErrorKey(NSErrorUserInfoKey value) =>
+      _NSLocalizedRecoveryOptionsErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSRecoveryAttempterErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSRecoveryAttempterErrorKey');
+
+  NSErrorUserInfoKey get NSRecoveryAttempterErrorKey =>
+      _NSRecoveryAttempterErrorKey.value;
+
+  set NSRecoveryAttempterErrorKey(NSErrorUserInfoKey value) =>
+      _NSRecoveryAttempterErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSHelpAnchorErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSHelpAnchorErrorKey');
+
+  NSErrorUserInfoKey get NSHelpAnchorErrorKey => _NSHelpAnchorErrorKey.value;
+
+  set NSHelpAnchorErrorKey(NSErrorUserInfoKey value) =>
+      _NSHelpAnchorErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSDebugDescriptionErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSDebugDescriptionErrorKey');
+
+  NSErrorUserInfoKey get NSDebugDescriptionErrorKey =>
+      _NSDebugDescriptionErrorKey.value;
+
+  set NSDebugDescriptionErrorKey(NSErrorUserInfoKey value) =>
+      _NSDebugDescriptionErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSLocalizedFailureErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSLocalizedFailureErrorKey');
+
+  NSErrorUserInfoKey get NSLocalizedFailureErrorKey =>
+      _NSLocalizedFailureErrorKey.value;
+
+  set NSLocalizedFailureErrorKey(NSErrorUserInfoKey value) =>
+      _NSLocalizedFailureErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSStringEncodingErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSStringEncodingErrorKey');
+
+  NSErrorUserInfoKey get NSStringEncodingErrorKey =>
+      _NSStringEncodingErrorKey.value;
+
+  set NSStringEncodingErrorKey(NSErrorUserInfoKey value) =>
+      _NSStringEncodingErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSURLErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSURLErrorKey');
+
+  NSErrorUserInfoKey get NSURLErrorKey => _NSURLErrorKey.value;
+
+  set NSURLErrorKey(NSErrorUserInfoKey value) => _NSURLErrorKey.value = value;
+
+  late final ffi.Pointer<NSErrorUserInfoKey> _NSFilePathErrorKey =
+      _lookup<NSErrorUserInfoKey>('NSFilePathErrorKey');
+
+  NSErrorUserInfoKey get NSFilePathErrorKey => _NSFilePathErrorKey.value;
+
+  set NSFilePathErrorKey(NSErrorUserInfoKey value) =>
+      _NSFilePathErrorKey.value = value;
+
+  late final ffi.Pointer<ObjCObject> _class_NSError1 = _getClass1("NSError");
+  late final ffi.Pointer<ObjCSel> _sel_initWithDomain_code_userInfo_1 =
+      _registerName1("initWithDomain:code:userInfo:");
+  instancetype _objc_msgSend_172(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    NSErrorDomain domain,
+    int code,
+    ffi.Pointer<ObjCObject> dict,
+  ) {
+    return __objc_msgSend_172(
+      obj,
+      sel,
+      domain,
+      code,
+      dict,
+    );
+  }
+
+  late final __objc_msgSend_172Ptr = _lookup<
+      ffi.NativeFunction<
+          instancetype Function(
+              ffi.Pointer<ObjCObject>,
+              ffi.Pointer<ObjCSel>,
+              NSErrorDomain,
+              NSInteger,
+              ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+  late final __objc_msgSend_172 = __objc_msgSend_172Ptr.asFunction<
+      instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+          NSErrorDomain, int, ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<ObjCSel> _sel_errorWithDomain_code_userInfo_1 =
+      _registerName1("errorWithDomain:code:userInfo:");
+  late final ffi.Pointer<ObjCSel> _sel_domain1 = _registerName1("domain");
+  late final ffi.Pointer<ObjCSel> _sel_code1 = _registerName1("code");
+  late final ffi.Pointer<ObjCSel> _sel_localizedFailureReason1 =
+      _registerName1("localizedFailureReason");
+  late final ffi.Pointer<ObjCSel> _sel_localizedRecoverySuggestion1 =
+      _registerName1("localizedRecoverySuggestion");
+  late final ffi.Pointer<ObjCSel> _sel_localizedRecoveryOptions1 =
+      _registerName1("localizedRecoveryOptions");
+  late final ffi.Pointer<ObjCSel> _sel_recoveryAttempter1 =
+      _registerName1("recoveryAttempter");
+  late final ffi.Pointer<ObjCSel> _sel_helpAnchor1 =
+      _registerName1("helpAnchor");
+  late final ffi.Pointer<ObjCSel> _sel_underlyingErrors1 =
+      _registerName1("underlyingErrors");
+  late final ffi.Pointer<ObjCSel>
+      _sel_setUserInfoValueProviderForDomain_provider_1 =
+      _registerName1("setUserInfoValueProviderForDomain:provider:");
+  late final ffi.Pointer<ObjCSel> _sel_userInfoValueProviderForDomain_1 =
+      _registerName1("userInfoValueProviderForDomain:");
+  ffi.Pointer<ObjCObject> NSStringFromSelector6(
+    ffi.Pointer<ObjCSel> aSelector,
+  ) {
+    return _NSStringFromSelector6(
+      aSelector,
+    );
+  }
+
+  late final _NSStringFromSelector6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCSel>)>>('NSStringFromSelector');
+  late final _NSStringFromSelector6 = _NSStringFromSelector6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCSel>)>();
+
+  ffi.Pointer<ObjCSel> NSSelectorFromString6(
+    ffi.Pointer<ObjCObject> aSelectorName,
+  ) {
+    return _NSSelectorFromString6(
+      aSelectorName,
+    );
+  }
+
+  late final _NSSelectorFromString6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCSel> Function(
+              ffi.Pointer<ObjCObject>)>>('NSSelectorFromString');
+  late final _NSSelectorFromString6 = _NSSelectorFromString6Ptr.asFunction<
+      ffi.Pointer<ObjCSel> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromClass6(
+    ffi.Pointer<ObjCObject> aClass,
+  ) {
+    return _NSStringFromClass6(
+      aClass,
+    );
+  }
+
+  late final _NSStringFromClass6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromClass');
+  late final _NSStringFromClass6 = _NSStringFromClass6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSClassFromString6(
+    ffi.Pointer<ObjCObject> aClassName,
+  ) {
+    return _NSClassFromString6(
+      aClassName,
+    );
+  }
+
+  late final _NSClassFromString6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSClassFromString');
+  late final _NSClassFromString6 = _NSClassFromString6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromProtocol6(
+    ffi.Pointer<ObjCObject> proto,
+  ) {
+    return _NSStringFromProtocol6(
+      proto,
+    );
+  }
+
+  late final _NSStringFromProtocol6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromProtocol');
+  late final _NSStringFromProtocol6 = _NSStringFromProtocol6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSProtocolFromString6(
+    ffi.Pointer<ObjCObject> namestr,
+  ) {
+    return _NSProtocolFromString6(
+      namestr,
+    );
+  }
+
+  late final _NSProtocolFromString6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSProtocolFromString');
+  late final _NSProtocolFromString6 = _NSProtocolFromString6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<pkg_ffi.Char> NSGetSizeAndAlignment6(
+    ffi.Pointer<pkg_ffi.Char> typePtr,
+    ffi.Pointer<NSUInteger> sizep,
+    ffi.Pointer<NSUInteger> alignp,
+  ) {
+    return _NSGetSizeAndAlignment6(
+      typePtr,
+      sizep,
+      alignp,
+    );
+  }
+
+  late final _NSGetSizeAndAlignment6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<NSUInteger>,
+              ffi.Pointer<NSUInteger>)>>('NSGetSizeAndAlignment');
+  late final _NSGetSizeAndAlignment6 = _NSGetSizeAndAlignment6Ptr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<NSUInteger>, ffi.Pointer<NSUInteger>)>();
+
+  void NSLog6(
+    ffi.Pointer<ObjCObject> format,
+  ) {
+    return _NSLog6(
+      format,
+    );
+  }
+
+  late final _NSLog6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSLog');
+  late final _NSLog6 =
+      _NSLog6Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  void NSLogv6(
+    ffi.Pointer<ObjCObject> format,
+    va_list args,
+  ) {
+    return _NSLogv6(
+      format,
+      args,
+    );
+  }
+
+  late final _NSLogv6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, va_list)>>('NSLogv');
+  late final _NSLogv6 =
+      _NSLogv6Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>, va_list)>();
+
+  CFRange __CFRangeMake6(
+    int loc,
+    int len,
+  ) {
+    return ___CFRangeMake6(
+      loc,
+      len,
+    );
+  }
+
+  late final ___CFRangeMake6Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFIndex, CFIndex)>>(
+          '__CFRangeMake');
+  late final ___CFRangeMake6 =
+      ___CFRangeMake6Ptr.asFunction<CFRange Function(int, int)>();
+
+  int CFNullGetTypeID6() {
+    return _CFNullGetTypeID6();
+  }
+
+  late final _CFNullGetTypeID6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNullGetTypeID');
+  late final _CFNullGetTypeID6 =
+      _CFNullGetTypeID6Ptr.asFunction<int Function()>();
+
+  int CFAllocatorGetTypeID6() {
+    return _CFAllocatorGetTypeID6();
+  }
+
+  late final _CFAllocatorGetTypeID6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFAllocatorGetTypeID');
+  late final _CFAllocatorGetTypeID6 =
+      _CFAllocatorGetTypeID6Ptr.asFunction<int Function()>();
+
+  void CFAllocatorSetDefault6(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFAllocatorSetDefault6(
+      allocator,
+    );
+  }
+
+  late final _CFAllocatorSetDefault6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFAllocatorRef)>>(
+          'CFAllocatorSetDefault');
+  late final _CFAllocatorSetDefault6 =
+      _CFAllocatorSetDefault6Ptr.asFunction<void Function(CFAllocatorRef)>();
+
+  CFAllocatorRef CFAllocatorGetDefault6() {
+    return _CFAllocatorGetDefault6();
+  }
+
+  late final _CFAllocatorGetDefault6Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function()>>(
+          'CFAllocatorGetDefault');
+  late final _CFAllocatorGetDefault6 =
+      _CFAllocatorGetDefault6Ptr.asFunction<CFAllocatorRef Function()>();
+
+  CFAllocatorRef CFAllocatorCreate6(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorCreate6(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorCreate6Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAllocatorRef Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorCreate');
+  late final _CFAllocatorCreate6 = _CFAllocatorCreate6Ptr.asFunction<
+      CFAllocatorRef Function(
+          CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorAllocate6(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorAllocate6(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorAllocate6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFIndex, CFOptionFlags)>>('CFAllocatorAllocate');
+  late final _CFAllocatorAllocate6 = _CFAllocatorAllocate6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, int, int)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorReallocate6(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+    int newsize,
+    int hint,
+  ) {
+    return _CFAllocatorReallocate6(
+      allocator,
+      ptr,
+      newsize,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorReallocate6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(CFAllocatorRef, ffi.Pointer<ffi.Void>,
+              CFIndex, CFOptionFlags)>>('CFAllocatorReallocate');
+  late final _CFAllocatorReallocate6 = _CFAllocatorReallocate6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          CFAllocatorRef, ffi.Pointer<ffi.Void>, int, int)>();
+
+  void CFAllocatorDeallocate6(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _CFAllocatorDeallocate6(
+      allocator,
+      ptr,
+    );
+  }
+
+  late final _CFAllocatorDeallocate6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef, ffi.Pointer<ffi.Void>)>>('CFAllocatorDeallocate');
+  late final _CFAllocatorDeallocate6 = _CFAllocatorDeallocate6Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFAllocatorGetPreferredSizeForSize6(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorGetPreferredSizeForSize6(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorGetPreferredSizeForSize6Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFAllocatorRef, CFIndex,
+              CFOptionFlags)>>('CFAllocatorGetPreferredSizeForSize');
+  late final _CFAllocatorGetPreferredSizeForSize6 =
+      _CFAllocatorGetPreferredSizeForSize6Ptr.asFunction<
+          int Function(CFAllocatorRef, int, int)>();
+
+  void CFAllocatorGetContext6(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorGetContext6(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorGetContext6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorGetContext');
+  late final _CFAllocatorGetContext6 = _CFAllocatorGetContext6Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  int CFGetTypeID6(
+    CFTypeRef cf,
+  ) {
+    return _CFGetTypeID6(
+      cf,
+    );
+  }
+
+  late final _CFGetTypeID6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function(CFTypeRef)>>('CFGetTypeID');
+  late final _CFGetTypeID6 =
+      _CFGetTypeID6Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyTypeIDDescription6(
+    int type_id,
+  ) {
+    return _CFCopyTypeIDDescription6(
+      type_id,
+    );
+  }
+
+  late final _CFCopyTypeIDDescription6Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeID)>>(
+          'CFCopyTypeIDDescription');
+  late final _CFCopyTypeIDDescription6 =
+      _CFCopyTypeIDDescription6Ptr.asFunction<CFStringRef Function(int)>();
+
+  CFTypeRef CFRetain6(
+    CFTypeRef cf,
+  ) {
+    return _CFRetain6(
+      cf,
+    );
+  }
+
+  late final _CFRetain6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>('CFRetain');
+  late final _CFRetain6 =
+      _CFRetain6Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  void CFRelease6(
+    CFTypeRef cf,
+  ) {
+    return _CFRelease6(
+      cf,
+    );
+  }
+
+  late final _CFRelease6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFRelease');
+  late final _CFRelease6 =
+      _CFRelease6Ptr.asFunction<void Function(CFTypeRef)>();
+
+  CFTypeRef CFAutorelease6(
+    CFTypeRef arg,
+  ) {
+    return _CFAutorelease6(
+      arg,
+    );
+  }
+
+  late final _CFAutorelease6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFAutorelease');
+  late final _CFAutorelease6 =
+      _CFAutorelease6Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  int CFGetRetainCount6(
+    CFTypeRef cf,
+  ) {
+    return _CFGetRetainCount6(
+      cf,
+    );
+  }
+
+  late final _CFGetRetainCount6Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTypeRef)>>(
+          'CFGetRetainCount');
+  late final _CFGetRetainCount6 =
+      _CFGetRetainCount6Ptr.asFunction<int Function(CFTypeRef)>();
+
+  int CFEqual6(
+    CFTypeRef cf1,
+    CFTypeRef cf2,
+  ) {
+    return _CFEqual6(
+      cf1,
+      cf2,
+    );
+  }
+
+  late final _CFEqual6Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFTypeRef, CFTypeRef)>>(
+          'CFEqual');
+  late final _CFEqual6 =
+      _CFEqual6Ptr.asFunction<int Function(CFTypeRef, CFTypeRef)>();
+
+  int CFHash6(
+    CFTypeRef cf,
+  ) {
+    return _CFHash6(
+      cf,
+    );
+  }
+
+  late final _CFHash6Ptr =
+      _lookup<ffi.NativeFunction<CFHashCode Function(CFTypeRef)>>('CFHash');
+  late final _CFHash6 = _CFHash6Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyDescription6(
+    CFTypeRef cf,
+  ) {
+    return _CFCopyDescription6(
+      cf,
+    );
+  }
+
+  late final _CFCopyDescription6Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeRef)>>(
+          'CFCopyDescription');
+  late final _CFCopyDescription6 =
+      _CFCopyDescription6Ptr.asFunction<CFStringRef Function(CFTypeRef)>();
+
+  CFAllocatorRef CFGetAllocator6(
+    CFTypeRef cf,
+  ) {
+    return _CFGetAllocator6(
+      cf,
+    );
+  }
+
+  late final _CFGetAllocator6Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function(CFTypeRef)>>(
+          'CFGetAllocator');
+  late final _CFGetAllocator6 =
+      _CFGetAllocator6Ptr.asFunction<CFAllocatorRef Function(CFTypeRef)>();
+
+  CFTypeRef CFMakeCollectable6(
+    CFTypeRef cf,
+  ) {
+    return _CFMakeCollectable6(
+      cf,
+    );
+  }
+
+  late final _CFMakeCollectable6Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFMakeCollectable');
+  late final _CFMakeCollectable6 =
+      _CFMakeCollectable6Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  ffi.Pointer<NSZone> NSDefaultMallocZone6() {
+    return _NSDefaultMallocZone6();
+  }
+
+  late final _NSDefaultMallocZone6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<NSZone> Function()>>(
+          'NSDefaultMallocZone');
+  late final _NSDefaultMallocZone6 =
+      _NSDefaultMallocZone6Ptr.asFunction<ffi.Pointer<NSZone> Function()>();
+
+  ffi.Pointer<NSZone> NSCreateZone6(
+    int startSize,
+    int granularity,
+    bool canFree,
+  ) {
+    return _NSCreateZone6(
+      startSize,
+      granularity,
+      canFree ? 1 : 0,
+    );
+  }
+
+  late final _NSCreateZone6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              NSUInteger, NSUInteger, ffi.Uint8)>>('NSCreateZone');
+  late final _NSCreateZone6 = _NSCreateZone6Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(int, int, int)>();
+
+  void NSRecycleZone6(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSRecycleZone6(
+      zone,
+    );
+  }
+
+  late final _NSRecycleZone6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<NSZone>)>>(
+          'NSRecycleZone');
+  late final _NSRecycleZone6 =
+      _NSRecycleZone6Ptr.asFunction<void Function(ffi.Pointer<NSZone>)>();
+
+  void NSSetZoneName6(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ObjCObject> name,
+  ) {
+    return _NSSetZoneName6(
+      zone,
+      name,
+    );
+  }
+
+  late final _NSSetZoneName6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>>('NSSetZoneName');
+  late final _NSSetZoneName6 = _NSSetZoneName6Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSZoneName6(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSZoneName6(
+      zone,
+    );
+  }
+
+  late final _NSZoneName6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>>('NSZoneName');
+  late final _NSZoneName6 = _NSZoneName6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>();
+
+  ffi.Pointer<NSZone> NSZoneFromPointer6(
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFromPointer6(
+      ptr,
+    );
+  }
+
+  late final _NSZoneFromPointer6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              ffi.Pointer<ffi.Void>)>>('NSZoneFromPointer');
+  late final _NSZoneFromPointer6 = _NSZoneFromPointer6Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSZoneMalloc6(
+    ffi.Pointer<NSZone> zone,
+    int size,
+  ) {
+    return _NSZoneMalloc6(
+      zone,
+      size,
+    );
+  }
+
+  late final _NSZoneMalloc6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger)>>('NSZoneMalloc');
+  late final _NSZoneMalloc6 = _NSZoneMalloc6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneCalloc6(
+    ffi.Pointer<NSZone> zone,
+    int numElems,
+    int byteSize,
+  ) {
+    return _NSZoneCalloc6(
+      zone,
+      numElems,
+      byteSize,
+    );
+  }
+
+  late final _NSZoneCalloc6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger, NSUInteger)>>('NSZoneCalloc');
+  late final _NSZoneCalloc6 = _NSZoneCalloc6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneRealloc6(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+  ) {
+    return _NSZoneRealloc6(
+      zone,
+      ptr,
+      size,
+    );
+  }
+
+  late final _NSZoneRealloc6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>,
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSZoneRealloc');
+  late final _NSZoneRealloc6 = _NSZoneRealloc6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>, int)>();
+
+  void NSZoneFree6(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFree6(
+      zone,
+      ptr,
+    );
+  }
+
+  late final _NSZoneFree6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>>('NSZoneFree');
+  late final _NSZoneFree6 = _NSZoneFree6Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateCollectable6(
+    int size,
+    int options,
+  ) {
+    return _NSAllocateCollectable6(
+      size,
+      options,
+    );
+  }
+
+  late final _NSAllocateCollectable6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              NSUInteger, NSUInteger)>>('NSAllocateCollectable');
+  late final _NSAllocateCollectable6 = _NSAllocateCollectable6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
+
+  ffi.Pointer<ffi.Void> NSReallocateCollectable6(
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+    int options,
+  ) {
+    return _NSReallocateCollectable6(
+      ptr,
+      size,
+      options,
+    );
+  }
+
+  late final _NSReallocateCollectable6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, NSUInteger,
+              NSUInteger)>>('NSReallocateCollectable');
+  late final _NSReallocateCollectable6 =
+      _NSReallocateCollectable6Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+
+  int NSPageSize6() {
+    return _NSPageSize6();
+  }
+
+  late final _NSPageSize6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSPageSize');
+  late final _NSPageSize6 = _NSPageSize6Ptr.asFunction<int Function()>();
+
+  int NSLogPageSize6() {
+    return _NSLogPageSize6();
+  }
+
+  late final _NSLogPageSize6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSLogPageSize');
+  late final _NSLogPageSize6 = _NSLogPageSize6Ptr.asFunction<int Function()>();
+
+  int NSRoundUpToMultipleOfPageSize6(
+    int bytes,
+  ) {
+    return _NSRoundUpToMultipleOfPageSize6(
+      bytes,
+    );
+  }
+
+  late final _NSRoundUpToMultipleOfPageSize6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundUpToMultipleOfPageSize');
+  late final _NSRoundUpToMultipleOfPageSize6 =
+      _NSRoundUpToMultipleOfPageSize6Ptr.asFunction<int Function(int)>();
+
+  int NSRoundDownToMultipleOfPageSize6(
+    int bytes,
+  ) {
+    return _NSRoundDownToMultipleOfPageSize6(
+      bytes,
+    );
+  }
+
+  late final _NSRoundDownToMultipleOfPageSize6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundDownToMultipleOfPageSize');
+  late final _NSRoundDownToMultipleOfPageSize6 =
+      _NSRoundDownToMultipleOfPageSize6Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateMemoryPages6(
+    int bytes,
+  ) {
+    return _NSAllocateMemoryPages6(
+      bytes,
+    );
+  }
+
+  late final _NSAllocateMemoryPages6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(NSUInteger)>>(
+          'NSAllocateMemoryPages');
+  late final _NSAllocateMemoryPages6 = _NSAllocateMemoryPages6Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int)>();
+
+  void NSDeallocateMemoryPages6(
+    ffi.Pointer<ffi.Void> ptr,
+    int bytes,
+  ) {
+    return _NSDeallocateMemoryPages6(
+      ptr,
+      bytes,
+    );
+  }
+
+  late final _NSDeallocateMemoryPages6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSDeallocateMemoryPages');
+  late final _NSDeallocateMemoryPages6 = _NSDeallocateMemoryPages6Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+
+  void NSCopyMemoryPages6(
+    ffi.Pointer<ffi.Void> source,
+    ffi.Pointer<ffi.Void> dest,
+    int bytes,
+  ) {
+    return _NSCopyMemoryPages6(
+      source,
+      dest,
+      bytes,
+    );
+  }
+
+  late final _NSCopyMemoryPages6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              NSUInteger)>>('NSCopyMemoryPages');
+  late final _NSCopyMemoryPages6 = _NSCopyMemoryPages6Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+
+  int NSRealMemoryAvailable6() {
+    return _NSRealMemoryAvailable6();
+  }
+
+  late final _NSRealMemoryAvailable6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>(
+          'NSRealMemoryAvailable');
+  late final _NSRealMemoryAvailable6 =
+      _NSRealMemoryAvailable6Ptr.asFunction<int Function()>();
+
+  ffi.Pointer<ObjCObject> NSAllocateObject6(
+    ffi.Pointer<ObjCObject> aClass,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSAllocateObject6(
+      aClass,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSAllocateObject6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSAllocateObject');
+  late final _NSAllocateObject6 = _NSAllocateObject6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  void NSDeallocateObject6(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDeallocateObject6(
+      object,
+    );
+  }
+
+  late final _NSDeallocateObject6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDeallocateObject');
+  late final _NSDeallocateObject6 = _NSDeallocateObject6Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSCopyObject6(
+    ffi.Pointer<ObjCObject> object,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSCopyObject6(
+      object,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSCopyObject6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSCopyObject');
+  late final _NSCopyObject6 = _NSCopyObject6Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  bool NSShouldRetainWithZone6(
+    ffi.Pointer<ObjCObject> anObject,
+    ffi.Pointer<NSZone> requestedZone,
+  ) {
+    return _NSShouldRetainWithZone6(
+          anObject,
+          requestedZone,
+        ) !=
+        0;
+  }
+
+  late final _NSShouldRetainWithZone6Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<NSZone>)>>('NSShouldRetainWithZone');
+  late final _NSShouldRetainWithZone6 = _NSShouldRetainWithZone6Ptr.asFunction<
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<NSZone>)>();
+
+  void NSIncrementExtraRefCount6(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSIncrementExtraRefCount6(
+      object,
+    );
+  }
+
+  late final _NSIncrementExtraRefCount6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSIncrementExtraRefCount');
+  late final _NSIncrementExtraRefCount6 = _NSIncrementExtraRefCount6Ptr
+      .asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  bool NSDecrementExtraRefCountWasZero6(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDecrementExtraRefCountWasZero6(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _NSDecrementExtraRefCountWasZero6Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDecrementExtraRefCountWasZero');
+  late final _NSDecrementExtraRefCountWasZero6 =
+      _NSDecrementExtraRefCountWasZero6Ptr.asFunction<
+          int Function(ffi.Pointer<ObjCObject>)>();
+
+  int NSExtraRefCount6(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSExtraRefCount6(
+      object,
+    );
+  }
+
+  late final _NSExtraRefCount6Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(ffi.Pointer<ObjCObject>)>>(
+          'NSExtraRefCount');
+  late final _NSExtraRefCount6 =
+      _NSExtraRefCount6Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
+
+  NSRange NSUnionRange2(
+    NSRange range1,
+    NSRange range2,
+  ) {
+    return _NSUnionRange2(
+      range1,
+      range2,
+    );
+  }
+
+  late final _NSUnionRange2Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(NSRange, NSRange)>>(
+          'NSUnionRange');
+  late final _NSUnionRange2 =
+      _NSUnionRange2Ptr.asFunction<NSRange Function(NSRange, NSRange)>();
+
+  NSRange NSIntersectionRange2(
+    NSRange range1,
+    NSRange range2,
+  ) {
+    return _NSIntersectionRange2(
+      range1,
+      range2,
+    );
+  }
+
+  late final _NSIntersectionRange2Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(NSRange, NSRange)>>(
+          'NSIntersectionRange');
+  late final _NSIntersectionRange2 =
+      _NSIntersectionRange2Ptr.asFunction<NSRange Function(NSRange, NSRange)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromRange2(
+    NSRange range,
+  ) {
+    return _NSStringFromRange2(
+      range,
+    );
+  }
+
+  late final _NSStringFromRange2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ObjCObject> Function(NSRange)>>(
+          'NSStringFromRange');
+  late final _NSStringFromRange2 = _NSStringFromRange2Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(NSRange)>();
+
+  NSRange NSRangeFromString2(
+    ffi.Pointer<ObjCObject> aString,
+  ) {
+    return _NSRangeFromString2(
+      aString,
+    );
+  }
+
+  late final _NSRangeFromString2Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(ffi.Pointer<ObjCObject>)>>(
+          'NSRangeFromString');
+  late final _NSRangeFromString2 = _NSRangeFromString2Ptr.asFunction<
+      NSRange Function(ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<ObjCObject> _class_NSMutableData1 =
+      _getClass1("NSMutableData");
+  late final ffi.Pointer<ObjCSel> _sel_mutableBytes1 =
+      _registerName1("mutableBytes");
+  ffi.Pointer<ffi.Void> _objc_msgSend_173(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+  ) {
+    return __objc_msgSend_173(
+      obj,
+      sel,
+    );
+  }
+
+  late final __objc_msgSend_173Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>>('objc_msgSend');
+  late final __objc_msgSend_173 = __objc_msgSend_173Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
+
+  late final ffi.Pointer<ObjCSel> _sel_length1 = _registerName1("length");
+  late final ffi.Pointer<ObjCSel> _sel_setLength_1 =
+      _registerName1("setLength:");
+  late final ffi.Pointer<ObjCObject> _class_NSPurgeableData1 =
+      _getClass1("NSPurgeableData");
+  ffi.Pointer<ObjCObject> NSStringFromSelector7(
+    ffi.Pointer<ObjCSel> aSelector,
+  ) {
+    return _NSStringFromSelector7(
+      aSelector,
+    );
+  }
+
+  late final _NSStringFromSelector7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCSel>)>>('NSStringFromSelector');
+  late final _NSStringFromSelector7 = _NSStringFromSelector7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCSel>)>();
+
+  ffi.Pointer<ObjCSel> NSSelectorFromString7(
+    ffi.Pointer<ObjCObject> aSelectorName,
+  ) {
+    return _NSSelectorFromString7(
+      aSelectorName,
+    );
+  }
+
+  late final _NSSelectorFromString7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCSel> Function(
+              ffi.Pointer<ObjCObject>)>>('NSSelectorFromString');
+  late final _NSSelectorFromString7 = _NSSelectorFromString7Ptr.asFunction<
+      ffi.Pointer<ObjCSel> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromClass7(
+    ffi.Pointer<ObjCObject> aClass,
+  ) {
+    return _NSStringFromClass7(
+      aClass,
+    );
+  }
+
+  late final _NSStringFromClass7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromClass');
+  late final _NSStringFromClass7 = _NSStringFromClass7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSClassFromString7(
+    ffi.Pointer<ObjCObject> aClassName,
+  ) {
+    return _NSClassFromString7(
+      aClassName,
+    );
+  }
+
+  late final _NSClassFromString7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSClassFromString');
+  late final _NSClassFromString7 = _NSClassFromString7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromProtocol7(
+    ffi.Pointer<ObjCObject> proto,
+  ) {
+    return _NSStringFromProtocol7(
+      proto,
+    );
+  }
+
+  late final _NSStringFromProtocol7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromProtocol');
+  late final _NSStringFromProtocol7 = _NSStringFromProtocol7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSProtocolFromString7(
+    ffi.Pointer<ObjCObject> namestr,
+  ) {
+    return _NSProtocolFromString7(
+      namestr,
+    );
+  }
+
+  late final _NSProtocolFromString7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSProtocolFromString');
+  late final _NSProtocolFromString7 = _NSProtocolFromString7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<pkg_ffi.Char> NSGetSizeAndAlignment7(
+    ffi.Pointer<pkg_ffi.Char> typePtr,
+    ffi.Pointer<NSUInteger> sizep,
+    ffi.Pointer<NSUInteger> alignp,
+  ) {
+    return _NSGetSizeAndAlignment7(
+      typePtr,
+      sizep,
+      alignp,
+    );
+  }
+
+  late final _NSGetSizeAndAlignment7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<NSUInteger>,
+              ffi.Pointer<NSUInteger>)>>('NSGetSizeAndAlignment');
+  late final _NSGetSizeAndAlignment7 = _NSGetSizeAndAlignment7Ptr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<NSUInteger>, ffi.Pointer<NSUInteger>)>();
+
+  void NSLog7(
+    ffi.Pointer<ObjCObject> format,
+  ) {
+    return _NSLog7(
+      format,
+    );
+  }
+
+  late final _NSLog7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSLog');
+  late final _NSLog7 =
+      _NSLog7Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  void NSLogv7(
+    ffi.Pointer<ObjCObject> format,
+    va_list args,
+  ) {
+    return _NSLogv7(
+      format,
+      args,
+    );
+  }
+
+  late final _NSLogv7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, va_list)>>('NSLogv');
+  late final _NSLogv7 =
+      _NSLogv7Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>, va_list)>();
+
+  CFRange __CFRangeMake7(
+    int loc,
+    int len,
+  ) {
+    return ___CFRangeMake7(
+      loc,
+      len,
+    );
+  }
+
+  late final ___CFRangeMake7Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFIndex, CFIndex)>>(
+          '__CFRangeMake');
+  late final ___CFRangeMake7 =
+      ___CFRangeMake7Ptr.asFunction<CFRange Function(int, int)>();
+
+  int CFNullGetTypeID7() {
+    return _CFNullGetTypeID7();
+  }
+
+  late final _CFNullGetTypeID7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNullGetTypeID');
+  late final _CFNullGetTypeID7 =
+      _CFNullGetTypeID7Ptr.asFunction<int Function()>();
+
+  int CFAllocatorGetTypeID7() {
+    return _CFAllocatorGetTypeID7();
+  }
+
+  late final _CFAllocatorGetTypeID7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFAllocatorGetTypeID');
+  late final _CFAllocatorGetTypeID7 =
+      _CFAllocatorGetTypeID7Ptr.asFunction<int Function()>();
+
+  void CFAllocatorSetDefault7(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFAllocatorSetDefault7(
+      allocator,
+    );
+  }
+
+  late final _CFAllocatorSetDefault7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFAllocatorRef)>>(
+          'CFAllocatorSetDefault');
+  late final _CFAllocatorSetDefault7 =
+      _CFAllocatorSetDefault7Ptr.asFunction<void Function(CFAllocatorRef)>();
+
+  CFAllocatorRef CFAllocatorGetDefault7() {
+    return _CFAllocatorGetDefault7();
+  }
+
+  late final _CFAllocatorGetDefault7Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function()>>(
+          'CFAllocatorGetDefault');
+  late final _CFAllocatorGetDefault7 =
+      _CFAllocatorGetDefault7Ptr.asFunction<CFAllocatorRef Function()>();
+
+  CFAllocatorRef CFAllocatorCreate7(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorCreate7(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorCreate7Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAllocatorRef Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorCreate');
+  late final _CFAllocatorCreate7 = _CFAllocatorCreate7Ptr.asFunction<
+      CFAllocatorRef Function(
+          CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorAllocate7(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorAllocate7(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorAllocate7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFIndex, CFOptionFlags)>>('CFAllocatorAllocate');
+  late final _CFAllocatorAllocate7 = _CFAllocatorAllocate7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, int, int)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorReallocate7(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+    int newsize,
+    int hint,
+  ) {
+    return _CFAllocatorReallocate7(
+      allocator,
+      ptr,
+      newsize,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorReallocate7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(CFAllocatorRef, ffi.Pointer<ffi.Void>,
+              CFIndex, CFOptionFlags)>>('CFAllocatorReallocate');
+  late final _CFAllocatorReallocate7 = _CFAllocatorReallocate7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          CFAllocatorRef, ffi.Pointer<ffi.Void>, int, int)>();
+
+  void CFAllocatorDeallocate7(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _CFAllocatorDeallocate7(
+      allocator,
+      ptr,
+    );
+  }
+
+  late final _CFAllocatorDeallocate7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef, ffi.Pointer<ffi.Void>)>>('CFAllocatorDeallocate');
+  late final _CFAllocatorDeallocate7 = _CFAllocatorDeallocate7Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFAllocatorGetPreferredSizeForSize7(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorGetPreferredSizeForSize7(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorGetPreferredSizeForSize7Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFAllocatorRef, CFIndex,
+              CFOptionFlags)>>('CFAllocatorGetPreferredSizeForSize');
+  late final _CFAllocatorGetPreferredSizeForSize7 =
+      _CFAllocatorGetPreferredSizeForSize7Ptr.asFunction<
+          int Function(CFAllocatorRef, int, int)>();
+
+  void CFAllocatorGetContext7(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorGetContext7(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorGetContext7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorGetContext');
+  late final _CFAllocatorGetContext7 = _CFAllocatorGetContext7Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  int CFGetTypeID7(
+    CFTypeRef cf,
+  ) {
+    return _CFGetTypeID7(
+      cf,
+    );
+  }
+
+  late final _CFGetTypeID7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function(CFTypeRef)>>('CFGetTypeID');
+  late final _CFGetTypeID7 =
+      _CFGetTypeID7Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyTypeIDDescription7(
+    int type_id,
+  ) {
+    return _CFCopyTypeIDDescription7(
+      type_id,
+    );
+  }
+
+  late final _CFCopyTypeIDDescription7Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeID)>>(
+          'CFCopyTypeIDDescription');
+  late final _CFCopyTypeIDDescription7 =
+      _CFCopyTypeIDDescription7Ptr.asFunction<CFStringRef Function(int)>();
+
+  CFTypeRef CFRetain7(
+    CFTypeRef cf,
+  ) {
+    return _CFRetain7(
+      cf,
+    );
+  }
+
+  late final _CFRetain7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>('CFRetain');
+  late final _CFRetain7 =
+      _CFRetain7Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  void CFRelease7(
+    CFTypeRef cf,
+  ) {
+    return _CFRelease7(
+      cf,
+    );
+  }
+
+  late final _CFRelease7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFRelease');
+  late final _CFRelease7 =
+      _CFRelease7Ptr.asFunction<void Function(CFTypeRef)>();
+
+  CFTypeRef CFAutorelease7(
+    CFTypeRef arg,
+  ) {
+    return _CFAutorelease7(
+      arg,
+    );
+  }
+
+  late final _CFAutorelease7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFAutorelease');
+  late final _CFAutorelease7 =
+      _CFAutorelease7Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  int CFGetRetainCount7(
+    CFTypeRef cf,
+  ) {
+    return _CFGetRetainCount7(
+      cf,
+    );
+  }
+
+  late final _CFGetRetainCount7Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTypeRef)>>(
+          'CFGetRetainCount');
+  late final _CFGetRetainCount7 =
+      _CFGetRetainCount7Ptr.asFunction<int Function(CFTypeRef)>();
+
+  int CFEqual7(
+    CFTypeRef cf1,
+    CFTypeRef cf2,
+  ) {
+    return _CFEqual7(
+      cf1,
+      cf2,
+    );
+  }
+
+  late final _CFEqual7Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFTypeRef, CFTypeRef)>>(
+          'CFEqual');
+  late final _CFEqual7 =
+      _CFEqual7Ptr.asFunction<int Function(CFTypeRef, CFTypeRef)>();
+
+  int CFHash7(
+    CFTypeRef cf,
+  ) {
+    return _CFHash7(
+      cf,
+    );
+  }
+
+  late final _CFHash7Ptr =
+      _lookup<ffi.NativeFunction<CFHashCode Function(CFTypeRef)>>('CFHash');
+  late final _CFHash7 = _CFHash7Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyDescription7(
+    CFTypeRef cf,
+  ) {
+    return _CFCopyDescription7(
+      cf,
+    );
+  }
+
+  late final _CFCopyDescription7Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeRef)>>(
+          'CFCopyDescription');
+  late final _CFCopyDescription7 =
+      _CFCopyDescription7Ptr.asFunction<CFStringRef Function(CFTypeRef)>();
+
+  CFAllocatorRef CFGetAllocator7(
+    CFTypeRef cf,
+  ) {
+    return _CFGetAllocator7(
+      cf,
+    );
+  }
+
+  late final _CFGetAllocator7Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function(CFTypeRef)>>(
+          'CFGetAllocator');
+  late final _CFGetAllocator7 =
+      _CFGetAllocator7Ptr.asFunction<CFAllocatorRef Function(CFTypeRef)>();
+
+  CFTypeRef CFMakeCollectable7(
+    CFTypeRef cf,
+  ) {
+    return _CFMakeCollectable7(
+      cf,
+    );
+  }
+
+  late final _CFMakeCollectable7Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFMakeCollectable');
+  late final _CFMakeCollectable7 =
+      _CFMakeCollectable7Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  ffi.Pointer<NSZone> NSDefaultMallocZone7() {
+    return _NSDefaultMallocZone7();
+  }
+
+  late final _NSDefaultMallocZone7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<NSZone> Function()>>(
+          'NSDefaultMallocZone');
+  late final _NSDefaultMallocZone7 =
+      _NSDefaultMallocZone7Ptr.asFunction<ffi.Pointer<NSZone> Function()>();
+
+  ffi.Pointer<NSZone> NSCreateZone7(
+    int startSize,
+    int granularity,
+    bool canFree,
+  ) {
+    return _NSCreateZone7(
+      startSize,
+      granularity,
+      canFree ? 1 : 0,
+    );
+  }
+
+  late final _NSCreateZone7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              NSUInteger, NSUInteger, ffi.Uint8)>>('NSCreateZone');
+  late final _NSCreateZone7 = _NSCreateZone7Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(int, int, int)>();
+
+  void NSRecycleZone7(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSRecycleZone7(
+      zone,
+    );
+  }
+
+  late final _NSRecycleZone7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<NSZone>)>>(
+          'NSRecycleZone');
+  late final _NSRecycleZone7 =
+      _NSRecycleZone7Ptr.asFunction<void Function(ffi.Pointer<NSZone>)>();
+
+  void NSSetZoneName7(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ObjCObject> name,
+  ) {
+    return _NSSetZoneName7(
+      zone,
+      name,
+    );
+  }
+
+  late final _NSSetZoneName7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>>('NSSetZoneName');
+  late final _NSSetZoneName7 = _NSSetZoneName7Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSZoneName7(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSZoneName7(
+      zone,
+    );
+  }
+
+  late final _NSZoneName7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>>('NSZoneName');
+  late final _NSZoneName7 = _NSZoneName7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>();
+
+  ffi.Pointer<NSZone> NSZoneFromPointer7(
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFromPointer7(
+      ptr,
+    );
+  }
+
+  late final _NSZoneFromPointer7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              ffi.Pointer<ffi.Void>)>>('NSZoneFromPointer');
+  late final _NSZoneFromPointer7 = _NSZoneFromPointer7Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSZoneMalloc7(
+    ffi.Pointer<NSZone> zone,
+    int size,
+  ) {
+    return _NSZoneMalloc7(
+      zone,
+      size,
+    );
+  }
+
+  late final _NSZoneMalloc7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger)>>('NSZoneMalloc');
+  late final _NSZoneMalloc7 = _NSZoneMalloc7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneCalloc7(
+    ffi.Pointer<NSZone> zone,
+    int numElems,
+    int byteSize,
+  ) {
+    return _NSZoneCalloc7(
+      zone,
+      numElems,
+      byteSize,
+    );
+  }
+
+  late final _NSZoneCalloc7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger, NSUInteger)>>('NSZoneCalloc');
+  late final _NSZoneCalloc7 = _NSZoneCalloc7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneRealloc7(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+  ) {
+    return _NSZoneRealloc7(
+      zone,
+      ptr,
+      size,
+    );
+  }
+
+  late final _NSZoneRealloc7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>,
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSZoneRealloc');
+  late final _NSZoneRealloc7 = _NSZoneRealloc7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>, int)>();
+
+  void NSZoneFree7(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFree7(
+      zone,
+      ptr,
+    );
+  }
+
+  late final _NSZoneFree7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>>('NSZoneFree');
+  late final _NSZoneFree7 = _NSZoneFree7Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateCollectable7(
+    int size,
+    int options,
+  ) {
+    return _NSAllocateCollectable7(
+      size,
+      options,
+    );
+  }
+
+  late final _NSAllocateCollectable7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              NSUInteger, NSUInteger)>>('NSAllocateCollectable');
+  late final _NSAllocateCollectable7 = _NSAllocateCollectable7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
+
+  ffi.Pointer<ffi.Void> NSReallocateCollectable7(
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+    int options,
+  ) {
+    return _NSReallocateCollectable7(
+      ptr,
+      size,
+      options,
+    );
+  }
+
+  late final _NSReallocateCollectable7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, NSUInteger,
+              NSUInteger)>>('NSReallocateCollectable');
+  late final _NSReallocateCollectable7 =
+      _NSReallocateCollectable7Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+
+  int NSPageSize7() {
+    return _NSPageSize7();
+  }
+
+  late final _NSPageSize7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSPageSize');
+  late final _NSPageSize7 = _NSPageSize7Ptr.asFunction<int Function()>();
+
+  int NSLogPageSize7() {
+    return _NSLogPageSize7();
+  }
+
+  late final _NSLogPageSize7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSLogPageSize');
+  late final _NSLogPageSize7 = _NSLogPageSize7Ptr.asFunction<int Function()>();
+
+  int NSRoundUpToMultipleOfPageSize7(
+    int bytes,
+  ) {
+    return _NSRoundUpToMultipleOfPageSize7(
+      bytes,
+    );
+  }
+
+  late final _NSRoundUpToMultipleOfPageSize7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundUpToMultipleOfPageSize');
+  late final _NSRoundUpToMultipleOfPageSize7 =
+      _NSRoundUpToMultipleOfPageSize7Ptr.asFunction<int Function(int)>();
+
+  int NSRoundDownToMultipleOfPageSize7(
+    int bytes,
+  ) {
+    return _NSRoundDownToMultipleOfPageSize7(
+      bytes,
+    );
+  }
+
+  late final _NSRoundDownToMultipleOfPageSize7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundDownToMultipleOfPageSize');
+  late final _NSRoundDownToMultipleOfPageSize7 =
+      _NSRoundDownToMultipleOfPageSize7Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateMemoryPages7(
+    int bytes,
+  ) {
+    return _NSAllocateMemoryPages7(
+      bytes,
+    );
+  }
+
+  late final _NSAllocateMemoryPages7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(NSUInteger)>>(
+          'NSAllocateMemoryPages');
+  late final _NSAllocateMemoryPages7 = _NSAllocateMemoryPages7Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int)>();
+
+  void NSDeallocateMemoryPages7(
+    ffi.Pointer<ffi.Void> ptr,
+    int bytes,
+  ) {
+    return _NSDeallocateMemoryPages7(
+      ptr,
+      bytes,
+    );
+  }
+
+  late final _NSDeallocateMemoryPages7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSDeallocateMemoryPages');
+  late final _NSDeallocateMemoryPages7 = _NSDeallocateMemoryPages7Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+
+  void NSCopyMemoryPages7(
+    ffi.Pointer<ffi.Void> source,
+    ffi.Pointer<ffi.Void> dest,
+    int bytes,
+  ) {
+    return _NSCopyMemoryPages7(
+      source,
+      dest,
+      bytes,
+    );
+  }
+
+  late final _NSCopyMemoryPages7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              NSUInteger)>>('NSCopyMemoryPages');
+  late final _NSCopyMemoryPages7 = _NSCopyMemoryPages7Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+
+  int NSRealMemoryAvailable7() {
+    return _NSRealMemoryAvailable7();
+  }
+
+  late final _NSRealMemoryAvailable7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>(
+          'NSRealMemoryAvailable');
+  late final _NSRealMemoryAvailable7 =
+      _NSRealMemoryAvailable7Ptr.asFunction<int Function()>();
+
+  ffi.Pointer<ObjCObject> NSAllocateObject7(
+    ffi.Pointer<ObjCObject> aClass,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSAllocateObject7(
+      aClass,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSAllocateObject7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSAllocateObject');
+  late final _NSAllocateObject7 = _NSAllocateObject7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  void NSDeallocateObject7(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDeallocateObject7(
+      object,
+    );
+  }
+
+  late final _NSDeallocateObject7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDeallocateObject');
+  late final _NSDeallocateObject7 = _NSDeallocateObject7Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSCopyObject7(
+    ffi.Pointer<ObjCObject> object,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSCopyObject7(
+      object,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSCopyObject7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSCopyObject');
+  late final _NSCopyObject7 = _NSCopyObject7Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  bool NSShouldRetainWithZone7(
+    ffi.Pointer<ObjCObject> anObject,
+    ffi.Pointer<NSZone> requestedZone,
+  ) {
+    return _NSShouldRetainWithZone7(
+          anObject,
+          requestedZone,
+        ) !=
+        0;
+  }
+
+  late final _NSShouldRetainWithZone7Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<NSZone>)>>('NSShouldRetainWithZone');
+  late final _NSShouldRetainWithZone7 = _NSShouldRetainWithZone7Ptr.asFunction<
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<NSZone>)>();
+
+  void NSIncrementExtraRefCount7(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSIncrementExtraRefCount7(
+      object,
+    );
+  }
+
+  late final _NSIncrementExtraRefCount7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSIncrementExtraRefCount');
+  late final _NSIncrementExtraRefCount7 = _NSIncrementExtraRefCount7Ptr
+      .asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  bool NSDecrementExtraRefCountWasZero7(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDecrementExtraRefCountWasZero7(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _NSDecrementExtraRefCountWasZero7Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDecrementExtraRefCountWasZero');
+  late final _NSDecrementExtraRefCountWasZero7 =
+      _NSDecrementExtraRefCountWasZero7Ptr.asFunction<
+          int Function(ffi.Pointer<ObjCObject>)>();
+
+  int NSExtraRefCount7(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSExtraRefCount7(
+      object,
+    );
+  }
+
+  late final _NSExtraRefCount7Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(ffi.Pointer<ObjCObject>)>>(
+          'NSExtraRefCount');
+  late final _NSExtraRefCount7 =
+      _NSExtraRefCount7Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
+
+  /// Is this an error handle?
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsError(
+    Object handle,
+  ) {
+    return _Dart_IsError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsError');
+  late final _Dart_IsError =
+      _Dart_IsErrorPtr.asFunction<int Function(Object)>();
+
+  /// Is this an api error handle?
+  ///
+  /// Api error handles are produced when an api function is misused.
+  /// This happens when a Dart embedding api function is called with
+  /// invalid arguments or in an invalid context.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsApiError(
+    Object handle,
+  ) {
+    return _Dart_IsApiError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsApiErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsApiError');
+  late final _Dart_IsApiError =
+      _Dart_IsApiErrorPtr.asFunction<int Function(Object)>();
+
+  /// Is this an unhandled exception error handle?
+  ///
+  /// Unhandled exception error handles are produced when, during the
+  /// execution of Dart code, an exception is thrown but not caught.
+  /// This can occur in any function which triggers the execution of Dart
+  /// code.
+  ///
+  /// See Dart_ErrorGetException and Dart_ErrorGetStackTrace.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsUnhandledExceptionError(
+    Object handle,
+  ) {
+    return _Dart_IsUnhandledExceptionError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsUnhandledExceptionErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsUnhandledExceptionError');
+  late final _Dart_IsUnhandledExceptionError =
+      _Dart_IsUnhandledExceptionErrorPtr.asFunction<int Function(Object)>();
+
+  /// Is this a compilation error handle?
+  ///
+  /// Compilation error handles are produced when, during the execution
+  /// of Dart code, a compile-time error occurs.  This can occur in any
+  /// function which triggers the execution of Dart code.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsCompilationError(
+    Object handle,
+  ) {
+    return _Dart_IsCompilationError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsCompilationErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsCompilationError');
+  late final _Dart_IsCompilationError =
+      _Dart_IsCompilationErrorPtr.asFunction<int Function(Object)>();
+
+  /// Is this a fatal error handle?
+  ///
+  /// Fatal error handles are produced when the system wants to shut down
+  /// the current isolate.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsFatalError(
+    Object handle,
+  ) {
+    return _Dart_IsFatalError(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFatalErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFatalError');
+  late final _Dart_IsFatalError =
+      _Dart_IsFatalErrorPtr.asFunction<int Function(Object)>();
+
+  /// Gets the error message from an error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A C string containing an error message if the handle is
+  /// error. An empty C string ("") if the handle is valid. This C
+  /// String is scope allocated and is only valid until the next call
+  /// to Dart_ExitScope.
+  ffi.Pointer<pkg_ffi.Char> Dart_GetError(
+    Object handle,
+  ) {
+    return _Dart_GetError(
+      handle,
+    );
+  }
+
+  late final _Dart_GetErrorPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function(ffi.Handle)>>(
+      'Dart_GetError');
+  late final _Dart_GetError = _Dart_GetErrorPtr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(Object)>();
+
+  /// Is this an error handle for an unhandled exception?
+  bool Dart_ErrorHasException(
+    Object handle,
+  ) {
+    return _Dart_ErrorHasException(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_ErrorHasExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_ErrorHasException');
+  late final _Dart_ErrorHasException =
+      _Dart_ErrorHasExceptionPtr.asFunction<int Function(Object)>();
+
+  /// Gets the exception Object from an unhandled exception error handle.
+  Object Dart_ErrorGetException(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetException(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ErrorGetException');
+  late final _Dart_ErrorGetException =
+      _Dart_ErrorGetExceptionPtr.asFunction<Object Function(Object)>();
+
+  /// Gets the stack trace Object from an unhandled exception error handle.
+  Object Dart_ErrorGetStackTrace(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetStackTrace(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetStackTracePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ErrorGetStackTrace');
+  late final _Dart_ErrorGetStackTrace =
+      _Dart_ErrorGetStackTracePtr.asFunction<Object Function(Object)>();
+
+  /// Produces an api error handle with the provided error message.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param error the error message.
+  Object Dart_NewApiError(
+    ffi.Pointer<pkg_ffi.Char> error,
+  ) {
+    return _Dart_NewApiError(
+      error,
+    );
+  }
+
+  late final _Dart_NewApiErrorPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      'Dart_NewApiError');
+  late final _Dart_NewApiError = _Dart_NewApiErrorPtr.asFunction<
+      Object Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  Object Dart_NewCompilationError(
+    ffi.Pointer<pkg_ffi.Char> error,
+  ) {
+    return _Dart_NewCompilationError(
+      error,
+    );
+  }
+
+  late final _Dart_NewCompilationErrorPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      'Dart_NewCompilationError');
+  late final _Dart_NewCompilationError = _Dart_NewCompilationErrorPtr
+      .asFunction<Object Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  /// Produces a new unhandled exception error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param exception An instance of a Dart object to be thrown or
+  /// an ApiError or CompilationError handle.
+  /// When an ApiError or CompilationError handle is passed in
+  /// a string object of the error message is created and it becomes
+  /// the Dart object to be thrown.
+  Object Dart_NewUnhandledExceptionError(
+    Object exception,
+  ) {
+    return _Dart_NewUnhandledExceptionError(
+      exception,
+    );
+  }
+
+  late final _Dart_NewUnhandledExceptionErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewUnhandledExceptionError');
+  late final _Dart_NewUnhandledExceptionError =
+      _Dart_NewUnhandledExceptionErrorPtr.asFunction<Object Function(Object)>();
+
+  /// Propagates an error.
+  ///
+  /// If the provided handle is an unhandled exception error, this
+  /// function will cause the unhandled exception to be rethrown.  This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If the error is not an unhandled exception error, we will unwind
+  /// the stack to the next C frame.  Intervening Dart frames will be
+  /// discarded; specifically, 'finally' blocks will not execute.  This
+  /// is the standard way that compilation errors (and the like) are
+  /// handled by the Dart runtime.
+  ///
+  /// In either case, when an error is propagated any current scopes
+  /// created by Dart_EnterScope will be exited.
+  ///
+  /// See the additional discussion under "Propagating Errors" at the
+  /// beginning of this file.
+  ///
+  /// \param An error handle (See Dart_IsError)
+  ///
+  /// \return On success, this function does not return.  On failure, the
+  /// process is terminated.
+  void Dart_PropagateError(
+    Object handle,
+  ) {
+    return _Dart_PropagateError(
+      handle,
+    );
+  }
+
+  late final _Dart_PropagateErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_PropagateError');
+  late final _Dart_PropagateError =
+      _Dart_PropagateErrorPtr.asFunction<void Function(Object)>();
+
+  /// Converts an object to a string.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return The converted string if no error occurs during
+  /// the conversion. If an error does occur, an error handle is
+  /// returned.
+  Object Dart_ToString(
+    Object object,
+  ) {
+    return _Dart_ToString(
+      object,
+    );
+  }
+
+  late final _Dart_ToStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ToString');
+  late final _Dart_ToString =
+      _Dart_ToStringPtr.asFunction<Object Function(Object)>();
+
+  /// Checks to see if two handles refer to identically equal objects.
+  ///
+  /// If both handles refer to instances, this is equivalent to using the top-level
+  /// function identical() from dart:core. Otherwise, returns whether the two
+  /// argument handles refer to the same object.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  ///
+  /// \return True if the objects are identically equal.  False otherwise.
+  bool Dart_IdentityEquals(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_IdentityEquals(
+          obj1,
+          obj2,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IdentityEqualsPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_IdentityEquals');
+  late final _Dart_IdentityEquals =
+      _Dart_IdentityEqualsPtr.asFunction<int Function(Object, Object)>();
+
+  /// Allocates a handle in the current scope from a persistent handle.
+  Object Dart_HandleFromPersistent(
+    Object object,
+  ) {
+    return _Dart_HandleFromPersistent(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromPersistentPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_HandleFromPersistent');
+  late final _Dart_HandleFromPersistent =
+      _Dart_HandleFromPersistentPtr.asFunction<Object Function(Object)>();
+
+  /// Allocates a handle in the current scope from a weak persistent handle.
+  ///
+  /// This will be a handle to Dart_Null if the object has been garbage collected.
+  Object Dart_HandleFromWeakPersistent(
+    Dart_WeakPersistentHandle object,
+  ) {
+    return _Dart_HandleFromWeakPersistent(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromWeakPersistentPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_WeakPersistentHandle)>>(
+      'Dart_HandleFromWeakPersistent');
+  late final _Dart_HandleFromWeakPersistent = _Dart_HandleFromWeakPersistentPtr
+      .asFunction<Object Function(Dart_WeakPersistentHandle)>();
+
+  /// Allocates a persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate unless it is
+  /// explicitly deallocated by calling Dart_DeletePersistentHandle.
+  ///
+  /// Requires there to be a current isolate.
+  Object Dart_NewPersistentHandle(
+    Object object,
+  ) {
+    return _Dart_NewPersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_NewPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewPersistentHandle');
+  late final _Dart_NewPersistentHandle =
+      _Dart_NewPersistentHandlePtr.asFunction<Object Function(Object)>();
+
+  /// Assign value of local handle to a persistent handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param obj1 A persistent handle whose value needs to be set.
+  /// \param obj2 An object whose value needs to be set to the persistent handle.
+  ///
+  /// \return Success if the persistent handle was set
+  /// Otherwise, returns an error.
+  void Dart_SetPersistentHandle(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_SetPersistentHandle(
+      obj1,
+      obj2,
+    );
+  }
+
+  late final _Dart_SetPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_SetPersistentHandle');
+  late final _Dart_SetPersistentHandle =
+      _Dart_SetPersistentHandlePtr.asFunction<void Function(Object, Object)>();
+
+  /// Deallocates a persistent handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeletePersistentHandle(
+    Object object,
+  ) {
+    return _Dart_DeletePersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_DeletePersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_DeletePersistentHandle');
+  late final _Dart_DeletePersistentHandle =
+      _Dart_DeletePersistentHandlePtr.asFunction<void Function(Object)>();
+
+  /// Allocates a weak persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate. The handle can also be
+  /// explicitly deallocated by calling Dart_DeleteWeakPersistentHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the peer as
+  /// argument. The callback can be executed on any thread, will have a current
+  /// isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle. This
+  /// gives the embedder the ability to cleanup data associated with the object.
+  /// The handle will point to the Dart_Null object after the finalizer has been
+  /// run. It is illegal to call into the VM with any other Dart_* functions from
+  /// the callback. If the handle is deleted before the object becomes
+  /// unreachable, the callback is never invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The weak persistent handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  Dart_WeakPersistentHandle Dart_NewWeakPersistentHandle(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewWeakPersistentHandle(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewWeakPersistentHandlePtr = _lookup<
+      ffi.NativeFunction<
+          Dart_WeakPersistentHandle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewWeakPersistentHandle');
+  late final _Dart_NewWeakPersistentHandle =
+      _Dart_NewWeakPersistentHandlePtr.asFunction<
+          Dart_WeakPersistentHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Deletes the given weak persistent [object] handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeleteWeakPersistentHandle(
+    Dart_WeakPersistentHandle object,
+  ) {
+    return _Dart_DeleteWeakPersistentHandle(
+      object,
+    );
+  }
+
+  late final _Dart_DeleteWeakPersistentHandlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_WeakPersistentHandle)>>(
+          'Dart_DeleteWeakPersistentHandle');
+  late final _Dart_DeleteWeakPersistentHandle =
+      _Dart_DeleteWeakPersistentHandlePtr.asFunction<
+          void Function(Dart_WeakPersistentHandle)>();
+
+  /// Updates the external memory size for the given weak persistent handle.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateExternalSize(
+    Dart_WeakPersistentHandle object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateExternalSize(
+      object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateExternalSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_WeakPersistentHandle,
+              ffi.IntPtr)>>('Dart_UpdateExternalSize');
+  late final _Dart_UpdateExternalSize = _Dart_UpdateExternalSizePtr.asFunction<
+      void Function(Dart_WeakPersistentHandle, int)>();
+
+  /// Allocates a finalizable handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate group unless the object
+  /// pointed to by the handle is garbage collected, in this case the VM
+  /// automatically deletes the handle after invoking the callback associated
+  /// with the handle. The handle can also be explicitly deallocated by
+  /// calling Dart_DeleteFinalizableHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the
+  /// the peer as argument. The callback can be executed on any thread, will have
+  /// an isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle.
+  /// This gives the embedder the ability to cleanup data associated with the
+  /// object and clear out any cached references to the handle. All references to
+  /// this handle after the callback will be invalid. It is illegal to call into
+  /// the VM with any other Dart_* functions from the callback. If the handle is
+  /// deleted before the object becomes unreachable, the callback is never
+  /// invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The finalizable handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  Dart_FinalizableHandle Dart_NewFinalizableHandle(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewFinalizableHandle(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewFinalizableHandlePtr = _lookup<
+      ffi.NativeFunction<
+          Dart_FinalizableHandle Function(ffi.Handle, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr, Dart_HandleFinalizer)>>('Dart_NewFinalizableHandle');
+  late final _Dart_NewFinalizableHandle =
+      _Dart_NewFinalizableHandlePtr.asFunction<
+          Dart_FinalizableHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Deletes the given finalizable [object] handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_DeleteFinalizableHandle(
+    Dart_FinalizableHandle object,
+    Object strong_ref_to_object,
+  ) {
+    return _Dart_DeleteFinalizableHandle(
+      object,
+      strong_ref_to_object,
+    );
+  }
+
+  late final _Dart_DeleteFinalizableHandlePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle,
+              ffi.Handle)>>('Dart_DeleteFinalizableHandle');
+  late final _Dart_DeleteFinalizableHandle = _Dart_DeleteFinalizableHandlePtr
+      .asFunction<void Function(Dart_FinalizableHandle, Object)>();
+
+  /// Updates the external memory size for the given finalizable handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateFinalizableExternalSize(
+    Dart_FinalizableHandle object,
+    Object strong_ref_to_object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateFinalizableExternalSize(
+      object,
+      strong_ref_to_object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateFinalizableExternalSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle, ffi.Handle,
+              ffi.IntPtr)>>('Dart_UpdateFinalizableExternalSize');
+  late final _Dart_UpdateFinalizableExternalSize =
+      _Dart_UpdateFinalizableExternalSizePtr.asFunction<
+          void Function(Dart_FinalizableHandle, Object, int)>();
+
+  /// Gets the version string for the Dart VM.
+  ///
+  /// The version of the Dart VM can be accessed without initializing the VM.
+  ///
+  /// \return The version string for the embedded Dart VM.
+  ffi.Pointer<pkg_ffi.Char> Dart_VersionString() {
+    return _Dart_VersionString();
+  }
+
+  late final _Dart_VersionStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function()>>(
+          'Dart_VersionString');
+  late final _Dart_VersionString =
+      _Dart_VersionStringPtr.asFunction<ffi.Pointer<pkg_ffi.Char> Function()>();
+
+  /// Initialize Dart_IsolateFlags with correct version and default values.
+  void Dart_IsolateFlagsInitialize(
+    ffi.Pointer<Dart_IsolateFlags> flags,
+  ) {
+    return _Dart_IsolateFlagsInitialize(
+      flags,
+    );
+  }
+
+  late final _Dart_IsolateFlagsInitializePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<Dart_IsolateFlags>)>>('Dart_IsolateFlagsInitialize');
+  late final _Dart_IsolateFlagsInitialize = _Dart_IsolateFlagsInitializePtr
+      .asFunction<void Function(ffi.Pointer<Dart_IsolateFlags>)>();
+
+  /// Initializes the VM.
+  ///
+  /// \param params A struct containing initialization information. The version
+  /// field of the struct must be DART_INITIALIZE_PARAMS_CURRENT_VERSION.
+  ///
+  /// \return NULL if initialization is successful. Returns an error message
+  /// otherwise. The caller is responsible for freeing the error message.
+  ffi.Pointer<pkg_ffi.Char> Dart_Initialize(
+    ffi.Pointer<Dart_InitializeParams> params,
+  ) {
+    return _Dart_Initialize(
+      params,
+    );
+  }
+
+  late final _Dart_InitializePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              ffi.Pointer<Dart_InitializeParams>)>>('Dart_Initialize');
+  late final _Dart_Initialize = _Dart_InitializePtr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(ffi.Pointer<Dart_InitializeParams>)>();
+
+  /// Cleanup state in the VM before process termination.
+  ///
+  /// \return NULL if cleanup is successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This function must not be called on a thread that was created by the VM
+  /// itself.
+  ffi.Pointer<pkg_ffi.Char> Dart_Cleanup() {
+    return _Dart_Cleanup();
+  }
+
+  late final _Dart_CleanupPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function()>>(
+          'Dart_Cleanup');
+  late final _Dart_Cleanup =
+      _Dart_CleanupPtr.asFunction<ffi.Pointer<pkg_ffi.Char> Function()>();
+
+  /// Sets command line flags. Should be called before Dart_Initialize.
+  ///
+  /// \param argc The length of the arguments array.
+  /// \param argv An array of arguments.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This call does not store references to the passed in c-strings.
+  ffi.Pointer<pkg_ffi.Char> Dart_SetVMFlags(
+    int argc,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> argv,
+  ) {
+    return _Dart_SetVMFlags(
+      argc,
+      argv,
+    );
+  }
+
+  late final _Dart_SetVMFlagsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(pkg_ffi.Int,
+              ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>('Dart_SetVMFlags');
+  late final _Dart_SetVMFlags = _Dart_SetVMFlagsPtr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(
+          int, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Returns true if the named VM flag is of boolean type, specified, and set to
+  /// true.
+  ///
+  /// \param flag_name The name of the flag without leading punctuation
+  /// (example: "enable_asserts").
+  bool Dart_IsVMFlagSet(
+    ffi.Pointer<pkg_ffi.Char> flag_name,
+  ) {
+    return _Dart_IsVMFlagSet(
+          flag_name,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVMFlagSetPtr = _lookup<
+          ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      'Dart_IsVMFlagSet');
+  late final _Dart_IsVMFlagSet = _Dart_IsVMFlagSetPtr.asFunction<
+      int Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  /// Creates a new isolate. The new isolate becomes the current isolate.
+  ///
+  /// A snapshot can be used to restore the VM quickly to a saved state
+  /// and is useful for fast startup. If snapshot data is provided, the
+  /// isolate will be started using that snapshot data. Requires a core snapshot or
+  /// an app snapshot created by Dart_CreateSnapshot or
+  /// Dart_CreatePrecompiledSnapshot* from a VM with the same version.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param isolate_snapshot_data
+  /// \param isolate_snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  Dart_Isolate Dart_CreateIsolateGroup(
+    ffi.Pointer<pkg_ffi.Char> script_uri,
+    ffi.Pointer<pkg_ffi.Char> name,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateGroup(
+      script_uri,
+      name,
+      isolate_snapshot_data,
+      isolate_snapshot_instructions,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroupPtr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  ffi.Pointer<pkg_ffi.Char>,
+                  ffi.Pointer<pkg_ffi.Char>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.Pointer<Dart_IsolateFlags>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>(
+      'Dart_CreateIsolateGroup');
+  late final _Dart_CreateIsolateGroup = _Dart_CreateIsolateGroupPtr.asFunction<
+      Dart_Isolate Function(
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<Dart_IsolateFlags>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Creates a new isolate inside the isolate group of [group_member].
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param group_member An isolate from the same group into which the newly created
+  /// isolate should be born into. Other threads may not have entered / enter this
+  /// member isolate.
+  /// \param name A short name for the isolate for debugging purposes.
+  /// \param shutdown_callback A callback to be called when the isolate is being
+  /// shutdown (may be NULL).
+  /// \param cleanup_callback A callback to be called when the isolate is being
+  /// cleaned up (may be NULL).
+  /// \param isolate_data The embedder-specific data associated with this isolate.
+  /// \param error Set to NULL if creation is successful, set to an error
+  /// message otherwise. The caller is responsible for calling free() on the
+  /// error message.
+  ///
+  /// \return The newly created isolate on success, or NULL if isolate creation
+  /// failed.
+  ///
+  /// If successful, the newly created isolate will become the current isolate.
+  Dart_Isolate Dart_CreateIsolateInGroup(
+    Dart_Isolate group_member,
+    ffi.Pointer<pkg_ffi.Char> name,
+    Dart_IsolateShutdownCallback shutdown_callback,
+    Dart_IsolateCleanupCallback cleanup_callback,
+    ffi.Pointer<ffi.Void> child_isolate_data,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateInGroup(
+      group_member,
+      name,
+      shutdown_callback,
+      cleanup_callback,
+      child_isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateInGroupPtr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  Dart_Isolate,
+                  ffi.Pointer<pkg_ffi.Char>,
+                  Dart_IsolateShutdownCallback,
+                  Dart_IsolateCleanupCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>(
+      'Dart_CreateIsolateInGroup');
+  late final _Dart_CreateIsolateInGroup =
+      _Dart_CreateIsolateInGroupPtr.asFunction<
+          Dart_Isolate Function(
+              Dart_Isolate,
+              ffi.Pointer<pkg_ffi.Char>,
+              Dart_IsolateShutdownCallback,
+              Dart_IsolateCleanupCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Creates a new isolate from a Dart Kernel file. The new isolate
+  /// becomes the current isolate.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param kernel_buffer
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  Dart_Isolate Dart_CreateIsolateGroupFromKernel(
+    ffi.Pointer<pkg_ffi.Char> script_uri,
+    ffi.Pointer<pkg_ffi.Char> name,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateGroupFromKernel(
+      script_uri,
+      name,
+      kernel_buffer,
+      kernel_buffer_size,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroupFromKernelPtr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  ffi.Pointer<pkg_ffi.Char>,
+                  ffi.Pointer<pkg_ffi.Char>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.IntPtr,
+                  ffi.Pointer<Dart_IsolateFlags>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>(
+      'Dart_CreateIsolateGroupFromKernel');
+  late final _Dart_CreateIsolateGroupFromKernel =
+      _Dart_CreateIsolateGroupFromKernelPtr.asFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              int,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Shuts down the current isolate. After this call, the current isolate is NULL.
+  /// Any current scopes created by Dart_EnterScope will be exited. Invokes the
+  /// shutdown callback and any callbacks of remaining weak persistent handles.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ShutdownIsolate() {
+    return _Dart_ShutdownIsolate();
+  }
+
+  late final _Dart_ShutdownIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ShutdownIsolate');
+  late final _Dart_ShutdownIsolate =
+      _Dart_ShutdownIsolatePtr.asFunction<void Function()>();
+
+  /// Returns the current isolate. Will return NULL if there is no
+  /// current isolate.
+  Dart_Isolate Dart_CurrentIsolate() {
+    return _Dart_CurrentIsolate();
+  }
+
+  late final _Dart_CurrentIsolatePtr =
+      _lookup<ffi.NativeFunction<Dart_Isolate Function()>>(
+          'Dart_CurrentIsolate');
+  late final _Dart_CurrentIsolate =
+      _Dart_CurrentIsolatePtr.asFunction<Dart_Isolate Function()>();
+
+  /// Returns the callback data associated with the current isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateData() {
+    return _Dart_CurrentIsolateData();
+  }
+
+  late final _Dart_CurrentIsolateDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+          'Dart_CurrentIsolateData');
+  late final _Dart_CurrentIsolateData = _Dart_CurrentIsolateDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function()>();
+
+  /// Returns the callback data associated with the given isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_IsolateData(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateData(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
+          'Dart_IsolateData');
+  late final _Dart_IsolateData = _Dart_IsolateDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
+
+  /// Returns the current isolate group. Will return NULL if there is no
+  /// current isolate group.
+  Dart_IsolateGroup Dart_CurrentIsolateGroup() {
+    return _Dart_CurrentIsolateGroup();
+  }
+
+  late final _Dart_CurrentIsolateGroupPtr =
+      _lookup<ffi.NativeFunction<Dart_IsolateGroup Function()>>(
+          'Dart_CurrentIsolateGroup');
+  late final _Dart_CurrentIsolateGroup =
+      _Dart_CurrentIsolateGroupPtr.asFunction<Dart_IsolateGroup Function()>();
+
+  /// Returns the callback data associated with the current isolate group. This
+  /// data was passed to the isolate group when it was created.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateGroupData() {
+    return _Dart_CurrentIsolateGroupData();
+  }
+
+  late final _Dart_CurrentIsolateGroupDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+          'Dart_CurrentIsolateGroupData');
+  late final _Dart_CurrentIsolateGroupData = _Dart_CurrentIsolateGroupDataPtr
+      .asFunction<ffi.Pointer<ffi.Void> Function()>();
+
+  /// Returns the callback data associated with the specified isolate group. This
+  /// data was passed to the isolate when it was created.
+  /// The embedder is responsible for ensuring the consistency of this data
+  /// with respect to the lifecycle of an isolate group.
+  ffi.Pointer<ffi.Void> Dart_IsolateGroupData(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateGroupData(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateGroupDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
+          'Dart_IsolateGroupData');
+  late final _Dart_IsolateGroupData = _Dart_IsolateGroupDataPtr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
+
+  /// Returns the debugging name for the current isolate.
+  ///
+  /// This name is unique to each isolate and should only be used to make
+  /// debugging messages more comprehensible.
+  Object Dart_DebugName() {
+    return _Dart_DebugName();
+  }
+
+  late final _Dart_DebugNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_DebugName');
+  late final _Dart_DebugName =
+      _Dart_DebugNamePtr.asFunction<Object Function()>();
+
+  /// Returns the ID for an isolate which is used to query the service protocol.
+  ///
+  /// It is the responsibility of the caller to free the returned ID.
+  ffi.Pointer<pkg_ffi.Char> Dart_IsolateServiceId(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateServiceId(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateServiceIdPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function(Dart_Isolate)>>(
+      'Dart_IsolateServiceId');
+  late final _Dart_IsolateServiceId = _Dart_IsolateServiceIdPtr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(Dart_Isolate)>();
+
+  /// Enters an isolate. After calling this function,
+  /// the current isolate will be set to the provided isolate.
+  ///
+  /// Requires there to be no current isolate. Multiple threads may not be in
+  /// the same isolate at once.
+  void Dart_EnterIsolate(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_EnterIsolate(
+      isolate,
+    );
+  }
+
+  late final _Dart_EnterIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_EnterIsolate');
+  late final _Dart_EnterIsolate =
+      _Dart_EnterIsolatePtr.asFunction<void Function(Dart_Isolate)>();
+
+  /// Kills the given isolate.
+  ///
+  /// This function has the same effect as dart:isolate's
+  /// Isolate.kill(priority:immediate).
+  /// It can interrupt ordinary Dart code but not native code. If the isolate is
+  /// in the middle of a long running native function, the isolate will not be
+  /// killed until control returns to Dart.
+  ///
+  /// Does not require a current isolate. It is safe to kill the current isolate if
+  /// there is one.
+  void Dart_KillIsolate(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_KillIsolate(
+      isolate,
+    );
+  }
+
+  late final _Dart_KillIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_KillIsolate');
+  late final _Dart_KillIsolate =
+      _Dart_KillIsolatePtr.asFunction<void Function(Dart_Isolate)>();
+
+  /// Notifies the VM that the embedder expects |size| bytes of memory have become
+  /// unreachable. The VM may use this hint to adjust the garbage collector's
+  /// growth policy.
+  ///
+  /// Multiple calls are interpreted as increasing, not replacing, the estimate of
+  /// unreachable memory.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_HintFreed(
+    int size,
+  ) {
+    return _Dart_HintFreed(
+      size,
+    );
+  }
+
+  late final _Dart_HintFreedPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.IntPtr)>>(
+          'Dart_HintFreed');
+  late final _Dart_HintFreed =
+      _Dart_HintFreedPtr.asFunction<void Function(int)>();
+
+  /// Notifies the VM that the embedder expects to be idle until |deadline|. The VM
+  /// may use this time to perform garbage collection or other tasks to avoid
+  /// delays during execution of Dart code in the future.
+  ///
+  /// |deadline| is measured in microseconds against the system's monotonic time.
+  /// This clock can be accessed via Dart_TimelineGetMicros().
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_NotifyIdle(
+    int deadline,
+  ) {
+    return _Dart_NotifyIdle(
+      deadline,
+    );
+  }
+
+  late final _Dart_NotifyIdlePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
+          'Dart_NotifyIdle');
+  late final _Dart_NotifyIdle =
+      _Dart_NotifyIdlePtr.asFunction<void Function(int)>();
+
+  /// Notifies the VM that the system is running low on memory.
+  ///
+  /// Does not require a current isolate. Only valid after calling Dart_Initialize.
+  void Dart_NotifyLowMemory() {
+    return _Dart_NotifyLowMemory();
+  }
+
+  late final _Dart_NotifyLowMemoryPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_NotifyLowMemory');
+  late final _Dart_NotifyLowMemory =
+      _Dart_NotifyLowMemoryPtr.asFunction<void Function()>();
+
+  /// Starts the CPU sampling profiler.
+  void Dart_StartProfiling() {
+    return _Dart_StartProfiling();
+  }
+
+  late final _Dart_StartProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StartProfiling');
+  late final _Dart_StartProfiling =
+      _Dart_StartProfilingPtr.asFunction<void Function()>();
+
+  /// Stops the CPU sampling profiler.
+  ///
+  /// Note that some profile samples might still be taken after this fucntion
+  /// returns due to the asynchronous nature of the implementation on some
+  /// platforms.
+  void Dart_StopProfiling() {
+    return _Dart_StopProfiling();
+  }
+
+  late final _Dart_StopProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StopProfiling');
+  late final _Dart_StopProfiling =
+      _Dart_StopProfilingPtr.asFunction<void Function()>();
+
+  /// Notifies the VM that the current thread should not be profiled until a
+  /// matching call to Dart_ThreadEnableProfiling is made.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  /// This function should be used when an embedder knows a thread is about
+  /// to make a blocking call and wants to avoid unnecessary interrupts by
+  /// the profiler.
+  void Dart_ThreadDisableProfiling() {
+    return _Dart_ThreadDisableProfiling();
+  }
+
+  late final _Dart_ThreadDisableProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
+          'Dart_ThreadDisableProfiling');
+  late final _Dart_ThreadDisableProfiling =
+      _Dart_ThreadDisableProfilingPtr.asFunction<void Function()>();
+
+  /// Notifies the VM that the current thread should be profiled.
+  ///
+  /// NOTE: It is only legal to call this function *after* calling
+  /// Dart_ThreadDisableProfiling.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  void Dart_ThreadEnableProfiling() {
+    return _Dart_ThreadEnableProfiling();
+  }
+
+  late final _Dart_ThreadEnableProfilingPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
+          'Dart_ThreadEnableProfiling');
+  late final _Dart_ThreadEnableProfiling =
+      _Dart_ThreadEnableProfilingPtr.asFunction<void Function()>();
+
+  /// Register symbol information for the Dart VM's profiler and crash dumps.
+  ///
+  /// This consumes the output of //topaz/runtime/dart/profiler_symbols, which
+  /// should be treated as opaque.
+  void Dart_AddSymbols(
+    ffi.Pointer<pkg_ffi.Char> dso_name,
+    ffi.Pointer<ffi.Void> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_AddSymbols(
+      dso_name,
+      buffer,
+      buffer_size,
+    );
+  }
+
+  late final _Dart_AddSymbolsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<pkg_ffi.Char>, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_AddSymbols');
+  late final _Dart_AddSymbols = _Dart_AddSymbolsPtr.asFunction<
+      void Function(ffi.Pointer<pkg_ffi.Char>, ffi.Pointer<ffi.Void>, int)>();
+
+  /// Exits an isolate. After this call, Dart_CurrentIsolate will
+  /// return NULL.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitIsolate() {
+    return _Dart_ExitIsolate();
+  }
+
+  late final _Dart_ExitIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitIsolate');
+  late final _Dart_ExitIsolate =
+      _Dart_ExitIsolatePtr.asFunction<void Function()>();
+
+  /// Creates a full snapshot of the current isolate heap.
+  ///
+  /// A full snapshot is a compact representation of the dart vm isolate heap
+  /// and dart isolate heap states. These snapshots are used to initialize
+  /// the vm isolate on startup and fast initialization of an isolate.
+  /// A Snapshot of the heap is created before any dart code has executed.
+  ///
+  /// Requires there to be a current isolate. Not available in the precompiled
+  /// runtime (check Dart_IsPrecompiledRuntime).
+  ///
+  /// \param buffer Returns a pointer to a buffer containing the
+  /// snapshot. This buffer is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param size Returns the size of the buffer.
+  /// \param is_core Create a snapshot containing core libraries.
+  /// Such snapshot should be agnostic to null safety mode.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateSnapshot(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    bool is_core,
+  ) {
+    return _Dart_CreateSnapshot(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      is_core ? 1 : 0,
+    );
+  }
+
+  late final _Dart_CreateSnapshotPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Uint8)>>('Dart_CreateSnapshot');
+  late final _Dart_CreateSnapshot = _Dart_CreateSnapshotPtr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          int)>();
+
+  /// Returns whether the buffer contains a kernel file.
+  ///
+  /// \param buffer Pointer to a buffer that might contain a kernel binary.
+  /// \param buffer_size Size of the buffer.
+  ///
+  /// \return Whether the buffer contains a kernel binary (full or partial).
+  bool Dart_IsKernel(
+    ffi.Pointer<ffi.Uint8> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_IsKernel(
+          buffer,
+          buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_IsKernel');
+  late final _Dart_IsKernel =
+      _Dart_IsKernelPtr.asFunction<int Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Make isolate runnable.
+  ///
+  /// When isolates are spawned, this function is used to indicate that
+  /// the creation and initialization (including script loading) of the
+  /// isolate is complete and the isolate can start.
+  /// This function expects there to be no current isolate.
+  ///
+  /// \param isolate The isolate to be made runnable.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise. The caller
+  /// is responsible for freeing the error message.
+  ffi.Pointer<pkg_ffi.Char> Dart_IsolateMakeRunnable(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateMakeRunnable(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateMakeRunnablePtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function(Dart_Isolate)>>(
+      'Dart_IsolateMakeRunnable');
+  late final _Dart_IsolateMakeRunnable = _Dart_IsolateMakeRunnablePtr
+      .asFunction<ffi.Pointer<pkg_ffi.Char> Function(Dart_Isolate)>();
+
+  /// Allows embedders to provide an alternative wakeup mechanism for the
+  /// delivery of inter-isolate messages. This setting only applies to
+  /// the current isolate.
+  ///
+  /// Most embedders will only call this function once, before isolate
+  /// execution begins. If this function is called after isolate
+  /// execution begins, the embedder is responsible for threading issues.
+  void Dart_SetMessageNotifyCallback(
+    Dart_MessageNotifyCallback message_notify_callback,
+  ) {
+    return _Dart_SetMessageNotifyCallback(
+      message_notify_callback,
+    );
+  }
+
+  late final _Dart_SetMessageNotifyCallbackPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(Dart_MessageNotifyCallback)>>(
+      'Dart_SetMessageNotifyCallback');
+  late final _Dart_SetMessageNotifyCallback = _Dart_SetMessageNotifyCallbackPtr
+      .asFunction<void Function(Dart_MessageNotifyCallback)>();
+
+  /// Query the current message notify callback for the isolate.
+  ///
+  /// \return The current message notify callback for the isolate.
+  Dart_MessageNotifyCallback Dart_GetMessageNotifyCallback() {
+    return _Dart_GetMessageNotifyCallback();
+  }
+
+  late final _Dart_GetMessageNotifyCallbackPtr =
+      _lookup<ffi.NativeFunction<Dart_MessageNotifyCallback Function()>>(
+          'Dart_GetMessageNotifyCallback');
+  late final _Dart_GetMessageNotifyCallback = _Dart_GetMessageNotifyCallbackPtr
+      .asFunction<Dart_MessageNotifyCallback Function()>();
+
+  /// If the VM flag `--pause-isolates-on-start` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on start was requested.
+  bool Dart_ShouldPauseOnStart() {
+    return _Dart_ShouldPauseOnStart() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_ShouldPauseOnStart');
+  late final _Dart_ShouldPauseOnStart =
+      _Dart_ShouldPauseOnStartPtr.asFunction<int Function()>();
+
+  /// Override the VM flag `--pause-isolates-on-start` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on start?
+  ///
+  /// NOTE: This must be called before Dart_IsolateMakeRunnable.
+  void Dart_SetShouldPauseOnStart(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnStart(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetShouldPauseOnStart');
+  late final _Dart_SetShouldPauseOnStart =
+      _Dart_SetShouldPauseOnStartPtr.asFunction<void Function(int)>();
+
+  /// Is the current isolate paused on start?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on start.
+  bool Dart_IsPausedOnStart() {
+    return _Dart_IsPausedOnStart() != 0;
+  }
+
+  late final _Dart_IsPausedOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_IsPausedOnStart');
+  late final _Dart_IsPausedOnStart =
+      _Dart_IsPausedOnStartPtr.asFunction<int Function()>();
+
+  /// Called when the embedder has paused the current isolate on start and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on start?
+  void Dart_SetPausedOnStart(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnStart(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnStartPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetPausedOnStart');
+  late final _Dart_SetPausedOnStart =
+      _Dart_SetPausedOnStartPtr.asFunction<void Function(int)>();
+
+  /// If the VM flag `--pause-isolates-on-exit` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on exit was requested.
+  bool Dart_ShouldPauseOnExit() {
+    return _Dart_ShouldPauseOnExit() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_ShouldPauseOnExit');
+  late final _Dart_ShouldPauseOnExit =
+      _Dart_ShouldPauseOnExitPtr.asFunction<int Function()>();
+
+  /// Override the VM flag `--pause-isolates-on-exit` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on exit?
+  void Dart_SetShouldPauseOnExit(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnExit(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetShouldPauseOnExit');
+  late final _Dart_SetShouldPauseOnExit =
+      _Dart_SetShouldPauseOnExitPtr.asFunction<void Function(int)>();
+
+  /// Is the current isolate paused on exit?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on exit.
+  bool Dart_IsPausedOnExit() {
+    return _Dart_IsPausedOnExit() != 0;
+  }
+
+  late final _Dart_IsPausedOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_IsPausedOnExit');
+  late final _Dart_IsPausedOnExit =
+      _Dart_IsPausedOnExitPtr.asFunction<int Function()>();
+
+  /// Called when the embedder has paused the current isolate on exit and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on exit?
+  void Dart_SetPausedOnExit(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnExit(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnExitPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetPausedOnExit');
+  late final _Dart_SetPausedOnExit =
+      _Dart_SetPausedOnExitPtr.asFunction<void Function(int)>();
+
+  /// Called when the embedder has caught a top level unhandled exception error
+  /// in the current isolate.
+  ///
+  /// NOTE: It is illegal to call this twice on the same isolate without first
+  /// clearing the sticky error to null.
+  ///
+  /// \param error The unhandled exception error.
+  void Dart_SetStickyError(
+    Object error,
+  ) {
+    return _Dart_SetStickyError(
+      error,
+    );
+  }
+
+  late final _Dart_SetStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_SetStickyError');
+  late final _Dart_SetStickyError =
+      _Dart_SetStickyErrorPtr.asFunction<void Function(Object)>();
+
+  /// Does the current isolate have a sticky error?
+  bool Dart_HasStickyError() {
+    return _Dart_HasStickyError() != 0;
+  }
+
+  late final _Dart_HasStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_HasStickyError');
+  late final _Dart_HasStickyError =
+      _Dart_HasStickyErrorPtr.asFunction<int Function()>();
+
+  /// Gets the sticky error for the current isolate.
+  ///
+  /// \return A handle to the sticky error object or null.
+  Object Dart_GetStickyError() {
+    return _Dart_GetStickyError();
+  }
+
+  late final _Dart_GetStickyErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_GetStickyError');
+  late final _Dart_GetStickyError =
+      _Dart_GetStickyErrorPtr.asFunction<Object Function()>();
+
+  /// Handles the next pending message for the current isolate.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_HandleMessage() {
+    return _Dart_HandleMessage();
+  }
+
+  late final _Dart_HandleMessagePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_HandleMessage');
+  late final _Dart_HandleMessage =
+      _Dart_HandleMessagePtr.asFunction<Object Function()>();
+
+  /// Drains the microtask queue, then blocks the calling thread until the current
+  /// isolate recieves a message, then handles all messages.
+  ///
+  /// \param timeout_millis When non-zero, the call returns after the indicated
+  /// number of milliseconds even if no message was received.
+  /// \return A valid handle if no error occurs, otherwise an error handle.
+  Object Dart_WaitForEvent(
+    int timeout_millis,
+  ) {
+    return _Dart_WaitForEvent(
+      timeout_millis,
+    );
+  }
+
+  late final _Dart_WaitForEventPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_WaitForEvent');
+  late final _Dart_WaitForEvent =
+      _Dart_WaitForEventPtr.asFunction<Object Function(int)>();
+
+  /// Handles any pending messages for the vm service for the current
+  /// isolate.
+  ///
+  /// This function may be used by an embedder at a breakpoint to avoid
+  /// pausing the vm service.
+  ///
+  /// This function can indirectly cause the message notify callback to
+  /// be called.
+  ///
+  /// \return true if the vm service requests the program resume
+  /// execution, false otherwise
+  bool Dart_HandleServiceMessages() {
+    return _Dart_HandleServiceMessages() != 0;
+  }
+
+  late final _Dart_HandleServiceMessagesPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_HandleServiceMessages');
+  late final _Dart_HandleServiceMessages =
+      _Dart_HandleServiceMessagesPtr.asFunction<int Function()>();
+
+  /// Does the current isolate have pending service messages?
+  ///
+  /// \return true if the isolate has pending service messages, false otherwise.
+  bool Dart_HasServiceMessages() {
+    return _Dart_HasServiceMessages() != 0;
+  }
+
+  late final _Dart_HasServiceMessagesPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_HasServiceMessages');
+  late final _Dart_HasServiceMessages =
+      _Dart_HasServiceMessagesPtr.asFunction<int Function()>();
+
+  /// Processes any incoming messages for the current isolate.
+  ///
+  /// This function may only be used when the embedder has not provided
+  /// an alternate message delivery mechanism with
+  /// Dart_SetMessageCallbacks. It is provided for convenience.
+  ///
+  /// This function waits for incoming messages for the current
+  /// isolate. As new messages arrive, they are handled using
+  /// Dart_HandleMessage. The routine exits when all ports to the
+  /// current isolate are closed.
+  ///
+  /// \return A valid handle if the run loop exited successfully.  If an
+  /// exception or other error occurs while processing messages, an
+  /// error handle is returned.
+  Object Dart_RunLoop() {
+    return _Dart_RunLoop();
+  }
+
+  late final _Dart_RunLoopPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RunLoop');
+  late final _Dart_RunLoop = _Dart_RunLoopPtr.asFunction<Object Function()>();
+
+  /// Lets the VM run message processing for the isolate.
+  ///
+  /// This function expects there to a current isolate and the current isolate
+  /// must not have an active api scope. The VM will take care of making the
+  /// isolate runnable (if not already), handles its message loop and will take
+  /// care of shutting the isolate down once it's done.
+  ///
+  /// \param errors_are_fatal Whether uncaught errors should be fatal.
+  /// \param on_error_port A port to notify on uncaught errors (or ILLEGAL_PORT).
+  /// \param on_exit_port A port to notify on exit (or ILLEGAL_PORT).
+  /// \param error A non-NULL pointer which will hold an error message if the call
+  /// fails. The error has to be free()ed by the caller.
+  ///
+  /// \return If successfull the VM takes owernship of the isolate and takes care
+  /// of its message loop. If not successful the caller retains owernship of the
+  /// isolate.
+  bool Dart_RunLoopAsync(
+    bool errors_are_fatal,
+    int on_error_port,
+    int on_exit_port,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> error,
+  ) {
+    return _Dart_RunLoopAsync(
+          errors_are_fatal ? 1 : 0,
+          on_error_port,
+          on_exit_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_RunLoopAsyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Uint8, Dart_Port, Dart_Port,
+              ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>('Dart_RunLoopAsync');
+  late final _Dart_RunLoopAsync = _Dart_RunLoopAsyncPtr.asFunction<
+      int Function(int, int, int, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Gets the main port id for the current isolate.
+  int Dart_GetMainPortId() {
+    return _Dart_GetMainPortId();
+  }
+
+  late final _Dart_GetMainPortIdPtr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_GetMainPortId');
+  late final _Dart_GetMainPortId =
+      _Dart_GetMainPortIdPtr.asFunction<int Function()>();
+
+  /// Does the current isolate have live ReceivePorts?
+  ///
+  /// A ReceivePort is live when it has not been closed.
+  bool Dart_HasLivePorts() {
+    return _Dart_HasLivePorts() != 0;
+  }
+
+  late final _Dart_HasLivePortsPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_HasLivePorts');
+  late final _Dart_HasLivePorts =
+      _Dart_HasLivePortsPtr.asFunction<int Function()>();
+
+  /// Posts a message for some isolate. The message is a serialized
+  /// object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param port The destination port.
+  /// \param object An object from the current isolate.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_Post(
+    int port_id,
+    Object object,
+  ) {
+    return _Dart_Post(
+          port_id,
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_PostPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port, ffi.Handle)>>(
+          'Dart_Post');
+  late final _Dart_Post = _Dart_PostPtr.asFunction<int Function(int, Object)>();
+
+  /// Returns a new SendPort with the provided port id.
+  ///
+  /// \param port_id The destination port.
+  ///
+  /// \return A new SendPort if no errors occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewSendPort(
+    int port_id,
+  ) {
+    return _Dart_NewSendPort(
+      port_id,
+    );
+  }
+
+  late final _Dart_NewSendPortPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_Port)>>(
+          'Dart_NewSendPort');
+  late final _Dart_NewSendPort =
+      _Dart_NewSendPortPtr.asFunction<Object Function(int)>();
+
+  /// Gets the SendPort id for the provided SendPort.
+  /// \param port A SendPort object whose id is desired.
+  /// \param port_id Returns the id of the SendPort.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_SendPortGetId(
+    Object port,
+    ffi.Pointer<Dart_Port> port_id,
+  ) {
+    return _Dart_SendPortGetId(
+      port,
+      port_id,
+    );
+  }
+
+  late final _Dart_SendPortGetIdPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<Dart_Port>)>>('Dart_SendPortGetId');
+  late final _Dart_SendPortGetId = _Dart_SendPortGetIdPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_Port>)>();
+
+  /// Enters a new scope.
+  ///
+  /// All new local handles will be created in this scope. Additionally,
+  /// some functions may return "scope allocated" memory which is only
+  /// valid within this scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_EnterScope() {
+    return _Dart_EnterScope();
+  }
+
+  late final _Dart_EnterScopePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_EnterScope');
+  late final _Dart_EnterScope =
+      _Dart_EnterScopePtr.asFunction<void Function()>();
+
+  /// Exits a scope.
+  ///
+  /// The previous scope (if any) becomes the current scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitScope() {
+    return _Dart_ExitScope();
+  }
+
+  late final _Dart_ExitScopePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitScope');
+  late final _Dart_ExitScope = _Dart_ExitScopePtr.asFunction<void Function()>();
+
+  /// The Dart VM uses "zone allocation" for temporary structures. Zones
+  /// support very fast allocation of small chunks of memory. The chunks
+  /// cannot be deallocated individually, but instead zones support
+  /// deallocating all chunks in one fast operation.
+  ///
+  /// This function makes it possible for the embedder to allocate
+  /// temporary data in the VMs zone allocator.
+  ///
+  /// Zone allocation is possible:
+  /// 1. when inside a scope where local handles can be allocated
+  /// 2. when processing a message from a native port in a native port
+  /// handler
+  ///
+  /// All the memory allocated this way will be reclaimed either on the
+  /// next call to Dart_ExitScope or when the native port handler exits.
+  ///
+  /// \param size Size of the memory to allocate.
+  ///
+  /// \return A pointer to the allocated memory. NULL if allocation
+  /// failed. Failure might due to is no current VM zone.
+  ffi.Pointer<ffi.Uint8> Dart_ScopeAllocate(
+    int size,
+  ) {
+    return _Dart_ScopeAllocate(
+      size,
+    );
+  }
+
+  late final _Dart_ScopeAllocatePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(ffi.IntPtr)>>(
+          'Dart_ScopeAllocate');
+  late final _Dart_ScopeAllocate =
+      _Dart_ScopeAllocatePtr.asFunction<ffi.Pointer<ffi.Uint8> Function(int)>();
+
+  /// Returns the null object.
+  ///
+  /// \return A handle to the null object.
+  Object Dart_Null() {
+    return _Dart_Null();
+  }
+
+  late final _Dart_NullPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Null');
+  late final _Dart_Null = _Dart_NullPtr.asFunction<Object Function()>();
+
+  /// Is this object null?
+  bool Dart_IsNull(
+    Object object,
+  ) {
+    return _Dart_IsNull(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNullPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsNull');
+  late final _Dart_IsNull = _Dart_IsNullPtr.asFunction<int Function(Object)>();
+
+  /// Returns the empty string object.
+  ///
+  /// \return A handle to the empty string object.
+  Object Dart_EmptyString() {
+    return _Dart_EmptyString();
+  }
+
+  late final _Dart_EmptyStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_EmptyString');
+  late final _Dart_EmptyString =
+      _Dart_EmptyStringPtr.asFunction<Object Function()>();
+
+  /// Returns types that are not classes, and which therefore cannot be looked up
+  /// as library members by Dart_GetType.
+  ///
+  /// \return A handle to the dynamic, void or Never type.
+  Object Dart_TypeDynamic() {
+    return _Dart_TypeDynamic();
+  }
+
+  late final _Dart_TypeDynamicPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeDynamic');
+  late final _Dart_TypeDynamic =
+      _Dart_TypeDynamicPtr.asFunction<Object Function()>();
+
+  Object Dart_TypeVoid() {
+    return _Dart_TypeVoid();
+  }
+
+  late final _Dart_TypeVoidPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeVoid');
+  late final _Dart_TypeVoid = _Dart_TypeVoidPtr.asFunction<Object Function()>();
+
+  Object Dart_TypeNever() {
+    return _Dart_TypeNever();
+  }
+
+  late final _Dart_TypeNeverPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeNever');
+  late final _Dart_TypeNever =
+      _Dart_TypeNeverPtr.asFunction<Object Function()>();
+
+  /// Checks if the two objects are equal.
+  ///
+  /// The result of the comparison is returned through the 'equal'
+  /// parameter. The return value itself is used to indicate success or
+  /// failure, not equality.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  /// \param equal Returns the result of the equality comparison.
+  ///
+  /// \return A valid handle if no error occurs during the comparison.
+  Object Dart_ObjectEquals(
+    Object obj1,
+    Object obj2,
+    ffi.Pointer<ffi.Uint8> equal,
+  ) {
+    return _Dart_ObjectEquals(
+      obj1,
+      obj2,
+      equal,
+    );
+  }
+
+  late final _Dart_ObjectEqualsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_ObjectEquals');
+  late final _Dart_ObjectEquals = _Dart_ObjectEqualsPtr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Is this object an instance of some type?
+  ///
+  /// The result of the test is returned through the 'instanceof' parameter.
+  /// The return value itself is used to indicate success or failure.
+  ///
+  /// \param object An object.
+  /// \param type A type.
+  /// \param instanceof Return true if 'object' is an instance of type 'type'.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ObjectIsType(
+    Object object,
+    Object type,
+    ffi.Pointer<ffi.Uint8> instanceof,
+  ) {
+    return _Dart_ObjectIsType(
+      object,
+      type,
+      instanceof,
+    );
+  }
+
+  late final _Dart_ObjectIsTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_ObjectIsType');
+  late final _Dart_ObjectIsType = _Dart_ObjectIsTypePtr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Query object type.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is of the specified type.
+  bool Dart_IsInstance(
+    Object object,
+  ) {
+    return _Dart_IsInstance(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsInstancePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsInstance');
+  late final _Dart_IsInstance =
+      _Dart_IsInstancePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsNumber(
+    Object object,
+  ) {
+    return _Dart_IsNumber(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNumberPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsNumber');
+  late final _Dart_IsNumber =
+      _Dart_IsNumberPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsInteger(
+    Object object,
+  ) {
+    return _Dart_IsInteger(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsIntegerPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsInteger');
+  late final _Dart_IsInteger =
+      _Dart_IsIntegerPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsDouble(
+    Object object,
+  ) {
+    return _Dart_IsDouble(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsDoublePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsDouble');
+  late final _Dart_IsDouble =
+      _Dart_IsDoublePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsBoolean(
+    Object object,
+  ) {
+    return _Dart_IsBoolean(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsBooleanPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsBoolean');
+  late final _Dart_IsBoolean =
+      _Dart_IsBooleanPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsString(
+    Object object,
+  ) {
+    return _Dart_IsString(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsString');
+  late final _Dart_IsString =
+      _Dart_IsStringPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsStringLatin1(
+    Object object,
+  ) {
+    return _Dart_IsStringLatin1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsStringLatin1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsStringLatin1');
+  late final _Dart_IsStringLatin1 =
+      _Dart_IsStringLatin1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsExternalString(
+    Object object,
+  ) {
+    return _Dart_IsExternalString(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsExternalStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsExternalString');
+  late final _Dart_IsExternalString =
+      _Dart_IsExternalStringPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsList(
+    Object object,
+  ) {
+    return _Dart_IsList(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsListPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsList');
+  late final _Dart_IsList = _Dart_IsListPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsMap(
+    Object object,
+  ) {
+    return _Dart_IsMap(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsMapPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>('Dart_IsMap');
+  late final _Dart_IsMap = _Dart_IsMapPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsLibrary(
+    Object object,
+  ) {
+    return _Dart_IsLibrary(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsLibrary');
+  late final _Dart_IsLibrary =
+      _Dart_IsLibraryPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsType(
+    Object handle,
+  ) {
+    return _Dart_IsType(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsType');
+  late final _Dart_IsType = _Dart_IsTypePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsFunction(
+    Object handle,
+  ) {
+    return _Dart_IsFunction(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFunctionPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFunction');
+  late final _Dart_IsFunction =
+      _Dart_IsFunctionPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsVariable(
+    Object handle,
+  ) {
+    return _Dart_IsVariable(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVariablePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsVariable');
+  late final _Dart_IsVariable =
+      _Dart_IsVariablePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsTypeVariable(
+    Object handle,
+  ) {
+    return _Dart_IsTypeVariable(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypeVariablePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTypeVariable');
+  late final _Dart_IsTypeVariable =
+      _Dart_IsTypeVariablePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsClosure(
+    Object object,
+  ) {
+    return _Dart_IsClosure(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsClosurePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsClosure');
+  late final _Dart_IsClosure =
+      _Dart_IsClosurePtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsTypedData(
+    Object object,
+  ) {
+    return _Dart_IsTypedData(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTypedData');
+  late final _Dart_IsTypedData =
+      _Dart_IsTypedDataPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsByteBuffer(
+    Object object,
+  ) {
+    return _Dart_IsByteBuffer(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsByteBuffer');
+  late final _Dart_IsByteBuffer =
+      _Dart_IsByteBufferPtr.asFunction<int Function(Object)>();
+
+  bool Dart_IsFuture(
+    Object object,
+  ) {
+    return _Dart_IsFuture(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFuturePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFuture');
+  late final _Dart_IsFuture =
+      _Dart_IsFuturePtr.asFunction<int Function(Object)>();
+
+  /// Gets the type of a Dart language object.
+  ///
+  /// \param instance Some Dart object.
+  ///
+  /// \return If no error occurs, the type is returned. Otherwise an
+  /// error handle is returned.
+  Object Dart_InstanceGetType(
+    Object instance,
+  ) {
+    return _Dart_InstanceGetType(
+      instance,
+    );
+  }
+
+  late final _Dart_InstanceGetTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_InstanceGetType');
+  late final _Dart_InstanceGetType =
+      _Dart_InstanceGetTypePtr.asFunction<Object Function(Object)>();
+
+  /// Returns the name for the provided class type.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_ClassName(
+    Object cls_type,
+  ) {
+    return _Dart_ClassName(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassName');
+  late final _Dart_ClassName =
+      _Dart_ClassNamePtr.asFunction<Object Function(Object)>();
+
+  /// Returns the name for the provided function or method.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_FunctionName(
+    Object function,
+  ) {
+    return _Dart_FunctionName(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionName');
+  late final _Dart_FunctionName =
+      _Dart_FunctionNamePtr.asFunction<Object Function(Object)>();
+
+  /// Returns a handle to the owner of a function.
+  ///
+  /// The owner of an instance method or a static method is its defining
+  /// class. The owner of a top-level function is its defining
+  /// library. The owner of the function of a non-implicit closure is the
+  /// function of the method or closure that defines the non-implicit
+  /// closure.
+  ///
+  /// \return A valid handle to the owner of the function, or an error
+  /// handle if the argument is not a valid handle to a function.
+  Object Dart_FunctionOwner(
+    Object function,
+  ) {
+    return _Dart_FunctionOwner(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionOwnerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionOwner');
+  late final _Dart_FunctionOwner =
+      _Dart_FunctionOwnerPtr.asFunction<Object Function(Object)>();
+
+  /// Determines whether a function handle referes to a static function
+  /// of method.
+  ///
+  /// For the purposes of the embedding API, a top-level function is
+  /// implicitly declared static.
+  ///
+  /// \param function A handle to a function or method declaration.
+  /// \param is_static Returns whether the function or method is declared static.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_FunctionIsStatic(
+    Object function,
+    ffi.Pointer<ffi.Uint8> is_static,
+  ) {
+    return _Dart_FunctionIsStatic(
+      function,
+      is_static,
+    );
+  }
+
+  late final _Dart_FunctionIsStaticPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_FunctionIsStatic');
+  late final _Dart_FunctionIsStatic = _Dart_FunctionIsStaticPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Is this object a closure resulting from a tear-off (closurized method)?
+  ///
+  /// Returns true for closures produced when an ordinary method is accessed
+  /// through a getter call. Returns false otherwise, in particular for closures
+  /// produced from local function declarations.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is a tear-off.
+  bool Dart_IsTearOff(
+    Object object,
+  ) {
+    return _Dart_IsTearOff(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTearOffPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTearOff');
+  late final _Dart_IsTearOff =
+      _Dart_IsTearOffPtr.asFunction<int Function(Object)>();
+
+  /// Retrieves the function of a closure.
+  ///
+  /// \return A handle to the function of the closure, or an error handle if the
+  /// argument is not a closure.
+  Object Dart_ClosureFunction(
+    Object closure,
+  ) {
+    return _Dart_ClosureFunction(
+      closure,
+    );
+  }
+
+  late final _Dart_ClosureFunctionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClosureFunction');
+  late final _Dart_ClosureFunction =
+      _Dart_ClosureFunctionPtr.asFunction<Object Function(Object)>();
+
+  /// Returns a handle to the library which contains class.
+  ///
+  /// \return A valid handle to the library with owns class, null if the class
+  /// has no library or an error handle if the argument is not a valid handle
+  /// to a class type.
+  Object Dart_ClassLibrary(
+    Object cls_type,
+  ) {
+    return _Dart_ClassLibrary(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassLibrary');
+  late final _Dart_ClassLibrary =
+      _Dart_ClassLibraryPtr.asFunction<Object Function(Object)>();
+
+  /// Does this Integer fit into a 64-bit signed integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit signed integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoInt64(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoInt64(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoInt64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_IntegerFitsIntoInt64');
+  late final _Dart_IntegerFitsIntoInt64 = _Dart_IntegerFitsIntoInt64Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Does this Integer fit into a 64-bit unsigned integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit unsigned integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoUint64(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoUint64(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoUint64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_IntegerFitsIntoUint64');
+  late final _Dart_IntegerFitsIntoUint64 = _Dart_IntegerFitsIntoUint64Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewInteger(
+    int value,
+  ) {
+    return _Dart_NewInteger(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_NewInteger');
+  late final _Dart_NewInteger =
+      _Dart_NewIntegerPtr.asFunction<Object Function(int)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The unsigned value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromUint64(
+    int value,
+  ) {
+    return _Dart_NewIntegerFromUint64(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromUint64Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint64)>>(
+          'Dart_NewIntegerFromUint64');
+  late final _Dart_NewIntegerFromUint64 =
+      _Dart_NewIntegerFromUint64Ptr.asFunction<Object Function(int)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer represented as a C string
+  /// containing a hexadecimal number.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromHexCString(
+    ffi.Pointer<pkg_ffi.Char> value,
+  ) {
+    return _Dart_NewIntegerFromHexCString(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromHexCStringPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      'Dart_NewIntegerFromHexCString');
+  late final _Dart_NewIntegerFromHexCString = _Dart_NewIntegerFromHexCStringPtr
+      .asFunction<Object Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit signed integer, otherwise an error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToInt64(
+    Object integer,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_IntegerToInt64(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToInt64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Int64>)>>('Dart_IntegerToInt64');
+  late final _Dart_IntegerToInt64 = _Dart_IntegerToInt64Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Int64>)>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit unsigned integer, otherwise an
+  /// error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToUint64(
+    Object integer,
+    ffi.Pointer<ffi.Uint64> value,
+  ) {
+    return _Dart_IntegerToUint64(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToUint64Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint64>)>>('Dart_IntegerToUint64');
+  late final _Dart_IntegerToUint64 = _Dart_IntegerToUint64Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint64>)>();
+
+  /// Gets the value of an integer as a hexadecimal C string.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer as a hexadecimal C
+  /// string. This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToHexCString(
+    Object integer,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> value,
+  ) {
+    return _Dart_IntegerToHexCString(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToHexCStringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  ffi.Handle, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>(
+      'Dart_IntegerToHexCString');
+  late final _Dart_IntegerToHexCString =
+      _Dart_IntegerToHexCStringPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Returns a Double with the provided value.
+  ///
+  /// \param value A double.
+  ///
+  /// \return The Double object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewDouble(
+    double value,
+  ) {
+    return _Dart_NewDouble(
+      value,
+    );
+  }
+
+  late final _Dart_NewDoublePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Double)>>(
+          'Dart_NewDouble');
+  late final _Dart_NewDouble =
+      _Dart_NewDoublePtr.asFunction<Object Function(double)>();
+
+  /// Gets the value of a Double
+  ///
+  /// \param double_obj A Double
+  /// \param value Returns the value of the Double.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_DoubleValue(
+    Object double_obj,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_DoubleValue(
+      double_obj,
+      value,
+    );
+  }
+
+  late final _Dart_DoubleValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Double>)>>('Dart_DoubleValue');
+  late final _Dart_DoubleValue = _Dart_DoubleValuePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Double>)>();
+
+  /// Returns a closure of static function 'function_name' in the class 'class_name'
+  /// in the exported namespace of specified 'library'.
+  ///
+  /// \param library Library object
+  /// \param cls_type Type object representing a Class
+  /// \param function_name Name of the static function in the class
+  ///
+  /// \return A valid Dart instance if no error occurs during the operation.
+  Object Dart_GetStaticMethodClosure(
+    Object library1,
+    Object cls_type,
+    Object function_name,
+  ) {
+    return _Dart_GetStaticMethodClosure(
+      library1,
+      cls_type,
+      function_name,
+    );
+  }
+
+  late final _Dart_GetStaticMethodClosurePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Handle)>>('Dart_GetStaticMethodClosure');
+  late final _Dart_GetStaticMethodClosure = _Dart_GetStaticMethodClosurePtr
+      .asFunction<Object Function(Object, Object, Object)>();
+
+  /// Returns the True object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the True object.
+  Object Dart_True() {
+    return _Dart_True();
+  }
+
+  late final _Dart_TruePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_True');
+  late final _Dart_True = _Dart_TruePtr.asFunction<Object Function()>();
+
+  /// Returns the False object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the False object.
+  Object Dart_False() {
+    return _Dart_False();
+  }
+
+  late final _Dart_FalsePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_False');
+  late final _Dart_False = _Dart_FalsePtr.asFunction<Object Function()>();
+
+  /// Returns a Boolean with the provided value.
+  ///
+  /// \param value true or false.
+  ///
+  /// \return The Boolean object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewBoolean(
+    bool value,
+  ) {
+    return _Dart_NewBoolean(
+      value ? 1 : 0,
+    );
+  }
+
+  late final _Dart_NewBooleanPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint8)>>(
+          'Dart_NewBoolean');
+  late final _Dart_NewBoolean =
+      _Dart_NewBooleanPtr.asFunction<Object Function(int)>();
+
+  /// Gets the value of a Boolean
+  ///
+  /// \param boolean_obj A Boolean
+  /// \param value Returns the value of the Boolean.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_BooleanValue(
+    Object boolean_obj,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_BooleanValue(
+      boolean_obj,
+      value,
+    );
+  }
+
+  late final _Dart_BooleanValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_BooleanValue');
+  late final _Dart_BooleanValue = _Dart_BooleanValuePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Gets the length of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the length of the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringLength(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringLength(
+      str,
+      length,
+    );
+  }
+
+  late final _Dart_StringLengthPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringLength');
+  late final _Dart_StringLength = _Dart_StringLengthPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Returns a String built from the provided C string
+  /// (There is an implicit assumption that the C string passed in contains
+  /// UTF-8 encoded characters and '\0' is considered as a termination
+  /// character).
+  ///
+  /// \param value A C String
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromCString(
+    ffi.Pointer<pkg_ffi.Char> str,
+  ) {
+    return _Dart_NewStringFromCString(
+      str,
+    );
+  }
+
+  late final _Dart_NewStringFromCStringPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      'Dart_NewStringFromCString');
+  late final _Dart_NewStringFromCString = _Dart_NewStringFromCStringPtr
+      .asFunction<Object Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  /// Returns a String built from an array of UTF-8 encoded characters.
+  ///
+  /// \param utf8_array An array of UTF-8 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF8(
+    ffi.Pointer<ffi.Uint8> utf8_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF8(
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_NewStringFromUTF8');
+  late final _Dart_NewStringFromUTF8 = _Dart_NewStringFromUTF8Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Returns a String built from an array of UTF-16 encoded characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF16(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF16(
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF16Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>, ffi.IntPtr)>>('Dart_NewStringFromUTF16');
+  late final _Dart_NewStringFromUTF16 = _Dart_NewStringFromUTF16Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Uint16>, int)>();
+
+  /// Returns a String built from an array of UTF-32 encoded characters.
+  ///
+  /// \param utf32_array An array of UTF-32 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF32(
+    ffi.Pointer<ffi.Int32> utf32_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF32(
+      utf32_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF32Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Int32>, ffi.IntPtr)>>('Dart_NewStringFromUTF32');
+  late final _Dart_NewStringFromUTF32 = _Dart_NewStringFromUTF32Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Int32>, int)>();
+
+  /// Returns a String which references an external array of
+  /// Latin-1 (ISO-8859-1) encoded characters.
+  ///
+  /// \param latin1_array Array of Latin-1 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalLatin1String(
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalLatin1String(
+      latin1_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalLatin1StringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalLatin1String');
+  late final _Dart_NewExternalLatin1String =
+      _Dart_NewExternalLatin1StringPtr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint8>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
+
+  /// Returns a String which references an external array of UTF-16 encoded
+  /// characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalUTF16String(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalUTF16String(
+      utf16_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalUTF16StringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalUTF16String');
+  late final _Dart_NewExternalUTF16String =
+      _Dart_NewExternalUTF16StringPtr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint16>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
+
+  /// Gets the C string representation of a String.
+  /// (It is a sequence of UTF-8 encoded values with a '\0' termination.)
+  ///
+  /// \param str A string.
+  /// \param cstr Returns the String represented as a C string.
+  /// This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToCString(
+    Object str,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> cstr,
+  ) {
+    return _Dart_StringToCString(
+      str,
+      cstr,
+    );
+  }
+
+  late final _Dart_StringToCStringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>('Dart_StringToCString');
+  late final _Dart_StringToCString = _Dart_StringToCStringPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Gets a UTF-8 encoded representation of a String.
+  ///
+  /// Any unpaired surrogate code points in the string will be converted as
+  /// replacement characters (U+FFFD, 0xEF 0xBF 0xBD in UTF-8). If you need
+  /// to preserve unpaired surrogates, use the Dart_StringToUTF16 function.
+  ///
+  /// \param str A string.
+  /// \param utf8_array Returns the String represented as UTF-8 code
+  /// units.  This UTF-8 array is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param length Used to return the length of the array which was
+  /// actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF8(
+    Object str,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF8(
+      str,
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF8');
+  late final _Dart_StringToUTF8 = _Dart_StringToUTF8Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the data corresponding to the string object. This function returns
+  /// the data only for Latin-1 (ISO-8859-1) string objects. For all other
+  /// string objects it returns an error.
+  ///
+  /// \param str A string.
+  /// \param latin1_array An array allocated by the caller, used to return
+  /// the string data.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToLatin1(
+    Object str,
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToLatin1(
+      str,
+      latin1_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToLatin1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToLatin1');
+  late final _Dart_StringToLatin1 = _Dart_StringToLatin1Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the UTF-16 encoded representation of a string.
+  ///
+  /// \param str A string.
+  /// \param utf16_array An array allocated by the caller, used to return
+  /// the array of UTF-16 encoded characters.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF16(
+    Object str,
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF16(
+      str,
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF16Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint16>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF16');
+  late final _Dart_StringToUTF16 = _Dart_StringToUTF16Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint16>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the storage size in bytes of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the storage size in bytes of the String.
+  /// This is the size in bytes needed to store the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringStorageSize(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> size,
+  ) {
+    return _Dart_StringStorageSize(
+      str,
+      size,
+    );
+  }
+
+  late final _Dart_StringStorageSizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringStorageSize');
+  late final _Dart_StringStorageSize = _Dart_StringStorageSizePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Retrieves some properties associated with a String.
+  /// Properties retrieved are:
+  /// - character size of the string (one or two byte)
+  /// - length of the string
+  /// - peer pointer of string if it is an external string.
+  /// \param str A String.
+  /// \param char_size Returns the character size of the String.
+  /// \param str_len Returns the length of the String.
+  /// \param peer Returns the peer pointer associated with the String or 0 if
+  /// there is no peer pointer for it.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_StringGetProperties(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> char_size,
+    ffi.Pointer<ffi.IntPtr> str_len,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_StringGetProperties(
+      str,
+      char_size,
+      str_len,
+      peer,
+    );
+  }
+
+  late final _Dart_StringGetPropertiesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_StringGetProperties');
+  late final _Dart_StringGetProperties =
+      _Dart_StringGetPropertiesPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Returns a List<dynamic> of the desired length.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewList(
+    int length,
+  ) {
+    return _Dart_NewList(
+      length,
+    );
+  }
+
+  late final _Dart_NewListPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
+          'Dart_NewList');
+  late final _Dart_NewList =
+      _Dart_NewListPtr.asFunction<Object Function(int)>();
+
+  /// Returns a List of the desired length with the desired legacy element type.
+  ///
+  /// \param element_type_id The type of elements of the list.
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns an error
+  /// handle.
+  Object Dart_NewListOf(
+    int element_type_id,
+    int length,
+  ) {
+    return _Dart_NewListOf(
+      element_type_id,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewListOf');
+  late final _Dart_NewListOf =
+      _Dart_NewListOfPtr.asFunction<Object Function(int, int)>();
+
+  /// Returns a List of the desired length with the desired element type.
+  ///
+  /// \param element_type Handle to a nullable type object. E.g., from
+  /// Dart_GetType or Dart_GetNullableType.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfType(
+    Object element_type,
+    int length,
+  ) {
+    return _Dart_NewListOfType(
+      element_type,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_NewListOfType');
+  late final _Dart_NewListOfType =
+      _Dart_NewListOfTypePtr.asFunction<Object Function(Object, int)>();
+
+  /// Returns a List of the desired length with the desired element type, filled
+  /// with the provided object.
+  ///
+  /// \param element_type Handle to a type object. E.g., from Dart_GetType.
+  ///
+  /// \param fill_object Handle to an object of type 'element_type' that will be
+  /// used to populate the list. This parameter can only be Dart_Null() if the
+  /// length of the list is 0 or 'element_type' is a nullable type.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfTypeFilled(
+    Object element_type,
+    Object fill_object,
+    int length,
+  ) {
+    return _Dart_NewListOfTypeFilled(
+      element_type,
+      fill_object,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfTypeFilledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.IntPtr)>>('Dart_NewListOfTypeFilled');
+  late final _Dart_NewListOfTypeFilled = _Dart_NewListOfTypeFilledPtr
+      .asFunction<Object Function(Object, Object, int)>();
+
+  /// Gets the length of a List.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param length Returns the length of the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListLength(
+    Object list,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_ListLength(
+      list,
+      length,
+    );
+  }
+
+  late final _Dart_ListLengthPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_ListLength');
+  late final _Dart_ListLength = _Dart_ListLengthPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param index A valid index into the List.
+  ///
+  /// \return The Object in the List at the specified index if no error
+  /// occurs. Otherwise returns an error handle.
+  Object Dart_ListGetAt(
+    Object list,
+    int index,
+  ) {
+    return _Dart_ListGetAt(
+      list,
+      index,
+    );
+  }
+
+  late final _Dart_ListGetAtPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_ListGetAt');
+  late final _Dart_ListGetAt =
+      _Dart_ListGetAtPtr.asFunction<Object Function(Object, int)>();
+
+  /// Gets a range of Objects from a List.
+  ///
+  /// If any of the requested index values are out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param offset The offset of the first item to get.
+  /// \param length The number of items to get.
+  /// \param result A pointer to fill with the objects.
+  ///
+  /// \return Success if no error occurs during the operation.
+  Object Dart_ListGetRange(
+    Object list,
+    int offset,
+    int length,
+    ffi.Pointer<ffi.Handle> result,
+  ) {
+    return _Dart_ListGetRange(
+      list,
+      offset,
+      length,
+      result,
+    );
+  }
+
+  late final _Dart_ListGetRangePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_ListGetRange');
+  late final _Dart_ListGetRange = _Dart_ListGetRangePtr.asFunction<
+      Object Function(Object, int, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Sets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param array A List.
+  /// \param index A valid index into the List.
+  /// \param value The Object to put in the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListSetAt(
+    Object list,
+    int index,
+    Object value,
+  ) {
+    return _Dart_ListSetAt(
+      list,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_ListSetAtPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.IntPtr, ffi.Handle)>>('Dart_ListSetAt');
+  late final _Dart_ListSetAt =
+      _Dart_ListSetAtPtr.asFunction<Object Function(Object, int, Object)>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListGetAsBytes(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListGetAsBytes(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListGetAsBytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListGetAsBytes');
+  late final _Dart_ListGetAsBytes = _Dart_ListGetAsBytesPtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListSetAsBytes(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListSetAsBytes(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListSetAsBytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListSetAsBytes');
+  late final _Dart_ListSetAsBytes = _Dart_ListSetAsBytesPtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Gets the Object at some key of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  /// \param key An Object.
+  ///
+  /// \return The value in the map at the specified key, null if the map does not
+  /// contain the key, or an error handle.
+  Object Dart_MapGetAt(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapGetAt(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapGetAtPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_MapGetAt');
+  late final _Dart_MapGetAt =
+      _Dart_MapGetAtPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Returns whether the Map contains a given key.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return A handle on a boolean indicating whether map contains the key.
+  /// Otherwise returns an error handle.
+  Object Dart_MapContainsKey(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapContainsKey(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapContainsKeyPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_MapContainsKey');
+  late final _Dart_MapContainsKey =
+      _Dart_MapContainsKeyPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Gets the list of keys of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return The list of key Objects if no error occurs. Otherwise returns an
+  /// error handle.
+  Object Dart_MapKeys(
+    Object map,
+  ) {
+    return _Dart_MapKeys(
+      map,
+    );
+  }
+
+  late final _Dart_MapKeysPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_MapKeys');
+  late final _Dart_MapKeys =
+      _Dart_MapKeysPtr.asFunction<Object Function(Object)>();
+
+  /// Return type if this object is a TypedData object.
+  ///
+  /// \return kInvalid if the object is not a TypedData object or the appropriate
+  /// Dart_TypedData_Type.
+  int Dart_GetTypeOfTypedData(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfTypedData(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
+          'Dart_GetTypeOfTypedData');
+  late final _Dart_GetTypeOfTypedData =
+      _Dart_GetTypeOfTypedDataPtr.asFunction<int Function(Object)>();
+
+  /// Return type if this object is an external TypedData object.
+  ///
+  /// \return kInvalid if the object is not an external TypedData object or
+  /// the appropriate Dart_TypedData_Type.
+  int Dart_GetTypeOfExternalTypedData(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfExternalTypedData(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfExternalTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
+          'Dart_GetTypeOfExternalTypedData');
+  late final _Dart_GetTypeOfExternalTypedData =
+      _Dart_GetTypeOfExternalTypedDataPtr.asFunction<int Function(Object)>();
+
+  /// Returns a TypedData object of the desired length and type.
+  ///
+  /// \param type The type of the TypedData object.
+  /// \param length The length of the TypedData object (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewTypedData(
+    int type,
+    int length,
+  ) {
+    return _Dart_NewTypedData(
+      type,
+      length,
+    );
+  }
+
+  late final _Dart_NewTypedDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewTypedData');
+  late final _Dart_NewTypedData =
+      _Dart_NewTypedDataPtr.asFunction<Object Function(int, int)>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedData(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+  ) {
+    return _Dart_NewExternalTypedData(
+      type,
+      data,
+      length,
+    );
+  }
+
+  late final _Dart_NewExternalTypedDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Int32, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_NewExternalTypedData');
+  late final _Dart_NewExternalTypedData = _Dart_NewExternalTypedDataPtr
+      .asFunction<Object Function(int, ffi.Pointer<ffi.Void>, int)>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedDataWithFinalizer(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalTypedDataWithFinalizer(
+      type,
+      data,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalTypedDataWithFinalizerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Int32,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalTypedDataWithFinalizer');
+  late final _Dart_NewExternalTypedDataWithFinalizer =
+      _Dart_NewExternalTypedDataWithFinalizerPtr.asFunction<
+          Object Function(int, ffi.Pointer<ffi.Void>, int,
+              ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Returns a ByteBuffer object for the typed data.
+  ///
+  /// \param type_data The TypedData object.
+  ///
+  /// \return The ByteBuffer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewByteBuffer(
+    Object typed_data,
+  ) {
+    return _Dart_NewByteBuffer(
+      typed_data,
+    );
+  }
+
+  late final _Dart_NewByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewByteBuffer');
+  late final _Dart_NewByteBuffer =
+      _Dart_NewByteBufferPtr.asFunction<Object Function(Object)>();
+
+  /// Acquires access to the internal data address of a TypedData object.
+  ///
+  /// \param object The typed data object whose internal data address is to
+  /// be accessed.
+  /// \param type The type of the object is returned here.
+  /// \param data The internal data address is returned here.
+  /// \param len Size of the typed array is returned here.
+  ///
+  /// Notes:
+  /// When the internal address of the object is acquired any calls to a
+  /// Dart API function that could potentially allocate an object or run
+  /// any Dart code will return an error.
+  ///
+  /// Any Dart API functions for accessing the data should not be called
+  /// before the corresponding release. In particular, the object should
+  /// not be acquired again before its release. This leads to undefined
+  /// behavior.
+  ///
+  /// \return Success if the internal data address is acquired successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataAcquireData(
+    Object object,
+    ffi.Pointer<ffi.Int32> type,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> data,
+    ffi.Pointer<ffi.IntPtr> len,
+  ) {
+    return _Dart_TypedDataAcquireData(
+      object,
+      type,
+      data,
+      len,
+    );
+  }
+
+  late final _Dart_TypedDataAcquireDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_TypedDataAcquireData');
+  late final _Dart_TypedDataAcquireData =
+      _Dart_TypedDataAcquireDataPtr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Releases access to the internal data address that was acquired earlier using
+  /// Dart_TypedDataAcquireData.
+  ///
+  /// \param object The typed data object whose internal data address is to be
+  /// released.
+  ///
+  /// \return Success if the internal data address is released successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataReleaseData(
+    Object object,
+  ) {
+    return _Dart_TypedDataReleaseData(
+      object,
+    );
+  }
+
+  late final _Dart_TypedDataReleaseDataPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypedDataReleaseData');
+  late final _Dart_TypedDataReleaseData =
+      _Dart_TypedDataReleaseDataPtr.asFunction<Object Function(Object)>();
+
+  /// Returns the TypedData object associated with the ByteBuffer object.
+  ///
+  /// \param byte_buffer The ByteBuffer object.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_GetDataFromByteBuffer(
+    Object byte_buffer,
+  ) {
+    return _Dart_GetDataFromByteBuffer(
+      byte_buffer,
+    );
+  }
+
+  late final _Dart_GetDataFromByteBufferPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_GetDataFromByteBuffer');
+  late final _Dart_GetDataFromByteBuffer =
+      _Dart_GetDataFromByteBufferPtr.asFunction<Object Function(Object)>();
+
+  /// Invokes a constructor, creating a new object.
+  ///
+  /// This function allows hidden constructors (constructors with leading
+  /// underscores) to be called.
+  ///
+  /// \param type Type of object to be constructed.
+  /// \param constructor_name The name of the constructor to invoke.  Use
+  /// Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// This name should not include the name of the class.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the constructor.
+  ///
+  /// \return If the constructor is called and completes successfully,
+  /// then the new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_New(
+    Object type,
+    Object constructor_name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_New(
+      type,
+      constructor_name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_NewPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, pkg_ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_New');
+  late final _Dart_New = _Dart_NewPtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Allocate a new object without invoking a constructor.
+  ///
+  /// \param type The type of an object to be allocated.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_Allocate(
+    Object type,
+  ) {
+    return _Dart_Allocate(
+      type,
+    );
+  }
+
+  late final _Dart_AllocatePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_Allocate');
+  late final _Dart_Allocate =
+      _Dart_AllocatePtr.asFunction<Object Function(Object)>();
+
+  /// Allocate a new object without invoking a constructor, and sets specified
+  /// native fields.
+  ///
+  /// \param type The type of an object to be allocated.
+  /// \param num_native_fields The number of native fields to set.
+  /// \param native_fields An array containing the value of native fields.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_AllocateWithNativeFields(
+    Object type,
+    int num_native_fields,
+    ffi.Pointer<ffi.IntPtr> native_fields,
+  ) {
+    return _Dart_AllocateWithNativeFields(
+      type,
+      num_native_fields,
+      native_fields,
+    );
+  }
+
+  late final _Dart_AllocateWithNativeFieldsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_AllocateWithNativeFields');
+  late final _Dart_AllocateWithNativeFields = _Dart_AllocateWithNativeFieldsPtr
+      .asFunction<Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Invokes a method or function.
+  ///
+  /// The 'target' parameter may be an object, type, or library.  If
+  /// 'target' is an object, then this function will invoke an instance
+  /// method.  If 'target' is a type, then this function will invoke a
+  /// static method.  If 'target' is a library, then this function will
+  /// invoke a top-level function from that library.
+  /// NOTE: This API call cannot be used to invoke methods of a type object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object, type, or library.
+  /// \param name The name of the function or method to invoke.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the function or method is called and completes
+  /// successfully, then the return value is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_Invoke(
+    Object target,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_Invoke(
+      target,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, pkg_ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_Invoke');
+  late final _Dart_Invoke = _Dart_InvokePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Invokes a Closure with the given arguments.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return If no error occurs during execution, then the result of
+  /// invoking the closure is returned. If an error occurs during
+  /// execution, then an error handle is returned.
+  Object Dart_InvokeClosure(
+    Object closure,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeClosure(
+      closure,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeClosurePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, pkg_ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeClosure');
+  late final _Dart_InvokeClosure = _Dart_InvokeClosurePtr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Invokes a Generative Constructor on an object that was previously
+  /// allocated using Dart_Allocate/Dart_AllocateWithNativeFields.
+  ///
+  /// The 'target' parameter must be an object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object.
+  /// \param name The name of the constructor to invoke.
+  /// Use Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the constructor is called and completes
+  /// successfully, then the object is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_InvokeConstructor(
+    Object object,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeConstructor(
+      object,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeConstructorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, pkg_ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeConstructor');
+  late final _Dart_InvokeConstructor = _Dart_InvokeConstructorPtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Gets the value of a field.
+  ///
+  /// The 'container' parameter may be an object, type, or library.  If
+  /// 'container' is an object, then this function will access an
+  /// instance field.  If 'container' is a type, then this function will
+  /// access a static field.  If 'container' is a library, then this
+  /// function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  ///
+  /// \return If no error occurs, then the value of the field is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetField(
+    Object container,
+    Object name,
+  ) {
+    return _Dart_GetField(
+      container,
+      name,
+    );
+  }
+
+  late final _Dart_GetFieldPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetField');
+  late final _Dart_GetField =
+      _Dart_GetFieldPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Sets the value of a field.
+  ///
+  /// The 'container' parameter may actually be an object, type, or
+  /// library.  If 'container' is an object, then this function will
+  /// access an instance field.  If 'container' is a type, then this
+  /// function will access a static field.  If 'container' is a library,
+  /// then this function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  /// \param value The new field value.
+  ///
+  /// \return A valid handle if no error occurs.
+  Object Dart_SetField(
+    Object container,
+    Object name,
+    Object value,
+  ) {
+    return _Dart_SetField(
+      container,
+      name,
+      value,
+    );
+  }
+
+  late final _Dart_SetFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.Handle)>>('Dart_SetField');
+  late final _Dart_SetField =
+      _Dart_SetFieldPtr.asFunction<Object Function(Object, Object, Object)>();
+
+  /// Throws an exception.
+  ///
+  /// This function causes a Dart language exception to be thrown. This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If an error handle is passed into this function, the error is
+  /// propagated immediately.  See Dart_PropagateError for a discussion
+  /// of error propagation.
+  ///
+  /// If successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ThrowException(
+    Object exception,
+  ) {
+    return _Dart_ThrowException(
+      exception,
+    );
+  }
+
+  late final _Dart_ThrowExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ThrowException');
+  late final _Dart_ThrowException =
+      _Dart_ThrowExceptionPtr.asFunction<Object Function(Object)>();
+
+  /// Rethrows an exception.
+  ///
+  /// Rethrows an exception, unwinding all dart frames on the stack. If
+  /// successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ReThrowException(
+    Object exception,
+    Object stacktrace,
+  ) {
+    return _Dart_ReThrowException(
+      exception,
+      stacktrace,
+    );
+  }
+
+  late final _Dart_ReThrowExceptionPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_ReThrowException');
+  late final _Dart_ReThrowException =
+      _Dart_ReThrowExceptionPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Gets the number of native instance fields in an object.
+  Object Dart_GetNativeInstanceFieldCount(
+    Object obj,
+    ffi.Pointer<pkg_ffi.Int> count,
+  ) {
+    return _Dart_GetNativeInstanceFieldCount(
+      obj,
+      count,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceFieldCountPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<pkg_ffi.Int>)>>('Dart_GetNativeInstanceFieldCount');
+  late final _Dart_GetNativeInstanceFieldCount =
+      _Dart_GetNativeInstanceFieldCountPtr.asFunction<
+          Object Function(Object, ffi.Pointer<pkg_ffi.Int>)>();
+
+  /// Gets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_GetNativeInstanceField(
+    Object obj,
+    int index,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeInstanceField(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, pkg_ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeInstanceField');
+  late final _Dart_GetNativeInstanceField = _Dart_GetNativeInstanceFieldPtr
+      .asFunction<Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Sets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetNativeInstanceField(
+    Object obj,
+    int index,
+    int value,
+  ) {
+    return _Dart_SetNativeInstanceField(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_SetNativeInstanceFieldPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, pkg_ffi.Int,
+              ffi.IntPtr)>>('Dart_SetNativeInstanceField');
+  late final _Dart_SetNativeInstanceField = _Dart_SetNativeInstanceFieldPtr
+      .asFunction<Object Function(Object, int, int)>();
+
+  /// Extracts current isolate group data from the native arguments structure.
+  ffi.Pointer<ffi.Void> Dart_GetNativeIsolateGroupData(
+    Dart_NativeArguments args,
+  ) {
+    return _Dart_GetNativeIsolateGroupData(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeIsolateGroupDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              Dart_NativeArguments)>>('Dart_GetNativeIsolateGroupData');
+  late final _Dart_GetNativeIsolateGroupData =
+      _Dart_GetNativeIsolateGroupDataPtr.asFunction<
+          ffi.Pointer<ffi.Void> Function(Dart_NativeArguments)>();
+
+  /// Gets the native arguments based on the types passed in and populates
+  /// the passed arguments buffer with appropriate native values.
+  ///
+  /// \param args the Native arguments block passed into the native call.
+  /// \param num_arguments length of argument descriptor array and argument
+  /// values array passed in.
+  /// \param arg_descriptors an array that describes the arguments that
+  /// need to be retrieved. For each argument to be retrieved the descriptor
+  /// contains the argument number (0, 1 etc.) and the argument type
+  /// described using Dart_NativeArgument_Type, e.g:
+  /// DART_NATIVE_ARG_DESCRIPTOR(Dart_NativeArgument_kBool, 1) indicates
+  /// that the first argument is to be retrieved and it should be a boolean.
+  /// \param arg_values array into which the native arguments need to be
+  /// extracted into, the array is allocated by the caller (it could be
+  /// stack allocated to avoid the malloc/free performance overhead).
+  ///
+  /// \return Success if all the arguments could be extracted correctly,
+  /// returns an error handle if there were any errors while extracting the
+  /// arguments (mismatched number of arguments, incorrect types, etc.).
+  Object Dart_GetNativeArguments(
+    Dart_NativeArguments args,
+    int num_arguments,
+    ffi.Pointer<Dart_NativeArgument_Descriptor> arg_descriptors,
+    ffi.Pointer<Dart_NativeArgument_Value> arg_values,
+  ) {
+    return _Dart_GetNativeArguments(
+      args,
+      num_arguments,
+      arg_descriptors,
+      arg_values,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_NativeArguments,
+                  pkg_ffi.Int,
+                  ffi.Pointer<Dart_NativeArgument_Descriptor>,
+                  ffi.Pointer<Dart_NativeArgument_Value>)>>(
+      'Dart_GetNativeArguments');
+  late final _Dart_GetNativeArguments = _Dart_GetNativeArgumentsPtr.asFunction<
+      Object Function(
+          Dart_NativeArguments,
+          int,
+          ffi.Pointer<Dart_NativeArgument_Descriptor>,
+          ffi.Pointer<Dart_NativeArgument_Value>)>();
+
+  /// Gets the native argument at some index.
+  Object Dart_GetNativeArgument(
+    Dart_NativeArguments args,
+    int index,
+  ) {
+    return _Dart_GetNativeArgument(
+      args,
+      index,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_NativeArguments, pkg_ffi.Int)>>('Dart_GetNativeArgument');
+  late final _Dart_GetNativeArgument = _Dart_GetNativeArgumentPtr.asFunction<
+      Object Function(Dart_NativeArguments, int)>();
+
+  /// Gets the number of native arguments.
+  int Dart_GetNativeArgumentCount(
+    Dart_NativeArguments args,
+  ) {
+    return _Dart_GetNativeArgumentCount(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentCountPtr =
+      _lookup<ffi.NativeFunction<pkg_ffi.Int Function(Dart_NativeArguments)>>(
+          'Dart_GetNativeArgumentCount');
+  late final _Dart_GetNativeArgumentCount = _Dart_GetNativeArgumentCountPtr
+      .asFunction<int Function(Dart_NativeArguments)>();
+
+  /// Gets all the native fields of the native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param num_fields size of the intptr_t array 'field_values' passed in.
+  /// \param field_values intptr_t array in which native field values are returned.
+  /// \return Success if the native fields where copied in successfully. Otherwise
+  /// returns an error handle. On success the native field values are copied
+  /// into the 'field_values' array, if the argument at 'arg_index' is a
+  /// null object then 0 is copied as the native field values into the
+  /// 'field_values' array.
+  Object Dart_GetNativeFieldsOfArgument(
+    Dart_NativeArguments args,
+    int arg_index,
+    int num_fields,
+    ffi.Pointer<ffi.IntPtr> field_values,
+  ) {
+    return _Dart_GetNativeFieldsOfArgument(
+      args,
+      arg_index,
+      num_fields,
+      field_values,
+    );
+  }
+
+  late final _Dart_GetNativeFieldsOfArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, pkg_ffi.Int, pkg_ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeFieldsOfArgument');
+  late final _Dart_GetNativeFieldsOfArgument =
+      _Dart_GetNativeFieldsOfArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the native field of the receiver.
+  Object Dart_GetNativeReceiver(
+    Dart_NativeArguments args,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeReceiver(
+      args,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeReceiverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeReceiver');
+  late final _Dart_GetNativeReceiver = _Dart_GetNativeReceiverPtr.asFunction<
+      Object Function(Dart_NativeArguments, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets a string native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param peer Returns the peer pointer if the string argument has one.
+  /// \return Success if the string argument has a peer, if it does not
+  /// have a peer then the String object is returned. Otherwise returns
+  /// an error handle (argument is not a String object).
+  Object Dart_GetNativeStringArgument(
+    Dart_NativeArguments args,
+    int arg_index,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetNativeStringArgument(
+      args,
+      arg_index,
+      peer,
+    );
+  }
+
+  late final _Dart_GetNativeStringArgumentPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(Dart_NativeArguments, pkg_ffi.Int,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'Dart_GetNativeStringArgument');
+  late final _Dart_GetNativeStringArgument =
+      _Dart_GetNativeStringArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Gets an integer native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the integer value if the argument is an Integer.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeIntegerArgument(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_GetNativeIntegerArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeIntegerArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, pkg_ffi.Int,
+              ffi.Pointer<ffi.Int64>)>>('Dart_GetNativeIntegerArgument');
+  late final _Dart_GetNativeIntegerArgument =
+      _Dart_GetNativeIntegerArgumentPtr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Int64>)>();
+
+  /// Gets a boolean native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the boolean value if the argument is a Boolean.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeBooleanArgument(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_GetNativeBooleanArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeBooleanArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, pkg_ffi.Int,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_GetNativeBooleanArgument');
+  late final _Dart_GetNativeBooleanArgument =
+      _Dart_GetNativeBooleanArgumentPtr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Gets a double native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the double value if the argument is a double.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeDoubleArgument(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_GetNativeDoubleArgument(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeDoubleArgumentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, pkg_ffi.Int,
+              ffi.Pointer<ffi.Double>)>>('Dart_GetNativeDoubleArgument');
+  late final _Dart_GetNativeDoubleArgument =
+      _Dart_GetNativeDoubleArgumentPtr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Double>)>();
+
+  /// Sets the return value for a native function.
+  ///
+  /// If retval is an Error handle, then error will be propagated once
+  /// the native functions exits. See Dart_PropagateError for a
+  /// discussion of how different types of errors are propagated.
+  void Dart_SetReturnValue(
+    Dart_NativeArguments args,
+    Object retval,
+  ) {
+    return _Dart_SetReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Handle)>>('Dart_SetReturnValue');
+  late final _Dart_SetReturnValue = _Dart_SetReturnValuePtr.asFunction<
+      void Function(Dart_NativeArguments, Object)>();
+
+  void Dart_SetWeakHandleReturnValue(
+    Dart_NativeArguments args,
+    Dart_WeakPersistentHandle rval,
+  ) {
+    return _Dart_SetWeakHandleReturnValue(
+      args,
+      rval,
+    );
+  }
+
+  late final _Dart_SetWeakHandleReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_NativeArguments,
+              Dart_WeakPersistentHandle)>>('Dart_SetWeakHandleReturnValue');
+  late final _Dart_SetWeakHandleReturnValue =
+      _Dart_SetWeakHandleReturnValuePtr.asFunction<
+          void Function(Dart_NativeArguments, Dart_WeakPersistentHandle)>();
+
+  void Dart_SetBooleanReturnValue(
+    Dart_NativeArguments args,
+    bool retval,
+  ) {
+    return _Dart_SetBooleanReturnValue(
+      args,
+      retval ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetBooleanReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Uint8)>>('Dart_SetBooleanReturnValue');
+  late final _Dart_SetBooleanReturnValue = _Dart_SetBooleanReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, int)>();
+
+  void Dart_SetIntegerReturnValue(
+    Dart_NativeArguments args,
+    int retval,
+  ) {
+    return _Dart_SetIntegerReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetIntegerReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Int64)>>('Dart_SetIntegerReturnValue');
+  late final _Dart_SetIntegerReturnValue = _Dart_SetIntegerReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, int)>();
+
+  void Dart_SetDoubleReturnValue(
+    Dart_NativeArguments args,
+    double retval,
+  ) {
+    return _Dart_SetDoubleReturnValue(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetDoubleReturnValuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Double)>>('Dart_SetDoubleReturnValue');
+  late final _Dart_SetDoubleReturnValue = _Dart_SetDoubleReturnValuePtr
+      .asFunction<void Function(Dart_NativeArguments, double)>();
+
+  /// Sets the environment callback for the current isolate. This
+  /// callback is used to lookup environment values by name in the
+  /// current environment. This enables the embedder to supply values for
+  /// the const constructors bool.fromEnvironment, int.fromEnvironment
+  /// and String.fromEnvironment.
+  Object Dart_SetEnvironmentCallback(
+    Dart_EnvironmentCallback callback,
+  ) {
+    return _Dart_SetEnvironmentCallback(
+      callback,
+    );
+  }
+
+  late final _Dart_SetEnvironmentCallbackPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_EnvironmentCallback)>>(
+      'Dart_SetEnvironmentCallback');
+  late final _Dart_SetEnvironmentCallback = _Dart_SetEnvironmentCallbackPtr
+      .asFunction<Object Function(Dart_EnvironmentCallback)>();
+
+  /// Sets the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver A native entry resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetNativeResolver(
+    Object library1,
+    Dart_NativeEntryResolver resolver,
+    Dart_NativeEntrySymbol symbol,
+  ) {
+    return _Dart_SetNativeResolver(
+      library1,
+      resolver,
+      symbol,
+    );
+  }
+
+  late final _Dart_SetNativeResolverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, Dart_NativeEntryResolver,
+              Dart_NativeEntrySymbol)>>('Dart_SetNativeResolver');
+  late final _Dart_SetNativeResolver = _Dart_SetNativeResolverPtr.asFunction<
+      Object Function(
+          Object, Dart_NativeEntryResolver, Dart_NativeEntrySymbol)>();
+
+  /// Returns the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntryResolver
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeResolver(
+    Object library1,
+    ffi.Pointer<Dart_NativeEntryResolver> resolver,
+  ) {
+    return _Dart_GetNativeResolver(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeResolverPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  ffi.Handle, ffi.Pointer<Dart_NativeEntryResolver>)>>(
+      'Dart_GetNativeResolver');
+  late final _Dart_GetNativeResolver = _Dart_GetNativeResolverPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntryResolver>)>();
+
+  /// Returns the callback used to resolve native function symbols for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntrySymbol.
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeSymbol(
+    Object library1,
+    ffi.Pointer<Dart_NativeEntrySymbol> resolver,
+  ) {
+    return _Dart_GetNativeSymbol(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeSymbolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<Dart_NativeEntrySymbol>)>>('Dart_GetNativeSymbol');
+  late final _Dart_GetNativeSymbol = _Dart_GetNativeSymbolPtr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntrySymbol>)>();
+
+  /// Sets the callback used to resolve FFI native functions for a library.
+  /// The resolved functions are expected to be a C function pointer of the
+  /// correct signature (as specified in the `@FfiNative<NFT>()` function
+  /// annotation in Dart code).
+  ///
+  /// NOTE: This is an experimental feature and might change in the future.
+  ///
+  /// \param library A library.
+  /// \param resolver A native function resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetFfiNativeResolver(
+    Object library1,
+    Dart_FfiNativeResolver resolver,
+  ) {
+    return _Dart_SetFfiNativeResolver(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_SetFfiNativeResolverPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              Dart_FfiNativeResolver)>>('Dart_SetFfiNativeResolver');
+  late final _Dart_SetFfiNativeResolver = _Dart_SetFfiNativeResolverPtr
+      .asFunction<Object Function(Object, Dart_FfiNativeResolver)>();
+
+  /// Sets library tag handler for the current isolate. This handler is
+  /// used to handle the various tags encountered while loading libraries
+  /// or scripts in the isolate.
+  ///
+  /// \param handler Handler code to be used for handling the various tags
+  /// encountered while loading libraries or scripts in the isolate.
+  ///
+  /// \return If no error occurs, the handler is set for the isolate.
+  /// Otherwise an error handle is returned.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetLibraryTagHandler(
+    Dart_LibraryTagHandler handler,
+  ) {
+    return _Dart_SetLibraryTagHandler(
+      handler,
+    );
+  }
+
+  late final _Dart_SetLibraryTagHandlerPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_LibraryTagHandler)>>(
+          'Dart_SetLibraryTagHandler');
+  late final _Dart_SetLibraryTagHandler = _Dart_SetLibraryTagHandlerPtr
+      .asFunction<Object Function(Dart_LibraryTagHandler)>();
+
+  /// Sets the deferred load handler for the current isolate. This handler is
+  /// used to handle loading deferred imports in an AppJIT or AppAOT program.
+  Object Dart_SetDeferredLoadHandler(
+    Dart_DeferredLoadHandler handler,
+  ) {
+    return _Dart_SetDeferredLoadHandler(
+      handler,
+    );
+  }
+
+  late final _Dart_SetDeferredLoadHandlerPtr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_DeferredLoadHandler)>>(
+      'Dart_SetDeferredLoadHandler');
+  late final _Dart_SetDeferredLoadHandler = _Dart_SetDeferredLoadHandlerPtr
+      .asFunction<Object Function(Dart_DeferredLoadHandler)>();
+
+  /// Notifies the VM that a deferred load completed successfully. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadComplete(
+    int loading_unit_id,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+  ) {
+    return _Dart_DeferredLoadComplete(
+      loading_unit_id,
+      snapshot_data,
+      snapshot_instructions,
+    );
+  }
+
+  late final _Dart_DeferredLoadCompletePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_DeferredLoadComplete');
+  late final _Dart_DeferredLoadComplete =
+      _Dart_DeferredLoadCompletePtr.asFunction<
+          Object Function(
+              int, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Notifies the VM that a deferred load failed. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete with an error.
+  ///
+  /// If `transient` is true, future invocations of `prefix.loadLibrary()` will
+  /// trigger new load requests. If false, futures invocation will complete with
+  /// the same error.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadCompleteError(
+    int loading_unit_id,
+    ffi.Pointer<pkg_ffi.Char> error_message,
+    bool transient,
+  ) {
+    return _Dart_DeferredLoadCompleteError(
+      loading_unit_id,
+      error_message,
+      transient ? 1 : 0,
+    );
+  }
+
+  late final _Dart_DeferredLoadCompleteErrorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<pkg_ffi.Char>,
+              ffi.Uint8)>>('Dart_DeferredLoadCompleteError');
+  late final _Dart_DeferredLoadCompleteError =
+      _Dart_DeferredLoadCompleteErrorPtr.asFunction<
+          Object Function(int, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  /// Canonicalizes a url with respect to some library.
+  ///
+  /// The url is resolved with respect to the library's url and some url
+  /// normalizations are performed.
+  ///
+  /// This canonicalization function should be sufficient for most
+  /// embedders to implement the Dart_kCanonicalizeUrl tag.
+  ///
+  /// \param base_url The base url relative to which the url is
+  /// being resolved.
+  /// \param url The url being resolved and canonicalized.  This
+  /// parameter is a string handle.
+  ///
+  /// \return If no error occurs, a String object is returned.  Otherwise
+  /// an error handle is returned.
+  Object Dart_DefaultCanonicalizeUrl(
+    Object base_url,
+    Object url,
+  ) {
+    return _Dart_DefaultCanonicalizeUrl(
+      base_url,
+      url,
+    );
+  }
+
+  late final _Dart_DefaultCanonicalizeUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_DefaultCanonicalizeUrl');
+  late final _Dart_DefaultCanonicalizeUrl = _Dart_DefaultCanonicalizeUrlPtr
+      .asFunction<Object Function(Object, Object)>();
+
+  /// Loads the root library for the current isolate.
+  ///
+  /// Requires there to be no current root library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate group shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the root library, or an error.
+  Object Dart_LoadScriptFromKernel(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_size,
+  ) {
+    return _Dart_LoadScriptFromKernel(
+      kernel_buffer,
+      kernel_size,
+    );
+  }
+
+  late final _Dart_LoadScriptFromKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadScriptFromKernel');
+  late final _Dart_LoadScriptFromKernel = _Dart_LoadScriptFromKernelPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Gets the library for the root script for the current isolate.
+  ///
+  /// If the root script has not yet been set for the current isolate,
+  /// this function returns Dart_Null().  This function never returns an
+  /// error handle.
+  ///
+  /// \return Returns the root Library for the current isolate or Dart_Null().
+  Object Dart_RootLibrary() {
+    return _Dart_RootLibrary();
+  }
+
+  late final _Dart_RootLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RootLibrary');
+  late final _Dart_RootLibrary =
+      _Dart_RootLibraryPtr.asFunction<Object Function()>();
+
+  /// Sets the root library for the current isolate.
+  ///
+  /// \return Returns an error handle if `library` is not a library handle.
+  Object Dart_SetRootLibrary(
+    Object library1,
+  ) {
+    return _Dart_SetRootLibrary(
+      library1,
+    );
+  }
+
+  late final _Dart_SetRootLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_SetRootLibrary');
+  late final _Dart_SetRootLibrary =
+      _Dart_SetRootLibraryPtr.asFunction<Object Function(Object)>();
+
+  /// Lookup or instantiate a legacy type by name and type arguments from a
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetType(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetType(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetType');
+  late final _Dart_GetType = _Dart_GetTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Lookup or instantiate a nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNullableType(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNullableType(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNullableType');
+  late final _Dart_GetNullableType = _Dart_GetNullableTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Lookup or instantiate a non-nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNonNullableType(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNonNullableType(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNonNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNonNullableType');
+  late final _Dart_GetNonNullableType = _Dart_GetNonNullableTypePtr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Creates a nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a nullable type.
+  ///
+  /// \return If no error occurs, a nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNullableType(
+    Object type,
+  ) {
+    return _Dart_TypeToNullableType(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNullableTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypeToNullableType');
+  late final _Dart_TypeToNullableType =
+      _Dart_TypeToNullableTypePtr.asFunction<Object Function(Object)>();
+
+  /// Creates a non-nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a non-nullable type.
+  ///
+  /// \return If no error occurs, a non-nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNonNullableType(
+    Object type,
+  ) {
+    return _Dart_TypeToNonNullableType(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNonNullableTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypeToNonNullableType');
+  late final _Dart_TypeToNonNullableType =
+      _Dart_TypeToNonNullableTypePtr.asFunction<Object Function(Object)>();
+
+  /// A type's nullability.
+  ///
+  /// \param type A Dart type.
+  /// \param result An out parameter containing the result of the check. True if
+  /// the type is of the specified nullability, false otherwise.
+  ///
+  /// \return Returns an error handle if type is not of type Type.
+  Object Dart_IsNullableType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNullableType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsNullableType');
+  late final _Dart_IsNullableType = _Dart_IsNullableTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  Object Dart_IsNonNullableType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNonNullableType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNonNullableTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsNonNullableType');
+  late final _Dart_IsNonNullableType = _Dart_IsNonNullableTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  Object Dart_IsLegacyType(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsLegacyType(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsLegacyTypePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsLegacyType');
+  late final _Dart_IsLegacyType = _Dart_IsLegacyTypePtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Lookup a class or interface by name from a Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The name of the class or interface.
+  ///
+  /// \return If no error occurs, the class or interface is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetClass(
+    Object library1,
+    Object class_name,
+  ) {
+    return _Dart_GetClass(
+      library1,
+      class_name,
+    );
+  }
+
+  late final _Dart_GetClassPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetClass');
+  late final _Dart_GetClass =
+      _Dart_GetClassPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Returns an import path to a Library, such as "file:///test.dart" or
+  /// "dart:core".
+  Object Dart_LibraryUrl(
+    Object library1,
+  ) {
+    return _Dart_LibraryUrl(
+      library1,
+    );
+  }
+
+  late final _Dart_LibraryUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LibraryUrl');
+  late final _Dart_LibraryUrl =
+      _Dart_LibraryUrlPtr.asFunction<Object Function(Object)>();
+
+  /// Returns a URL from which a Library was loaded.
+  Object Dart_LibraryResolvedUrl(
+    Object library1,
+  ) {
+    return _Dart_LibraryResolvedUrl(
+      library1,
+    );
+  }
+
+  late final _Dart_LibraryResolvedUrlPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LibraryResolvedUrl');
+  late final _Dart_LibraryResolvedUrl =
+      _Dart_LibraryResolvedUrlPtr.asFunction<Object Function(Object)>();
+
+  /// \return An array of libraries.
+  Object Dart_GetLoadedLibraries() {
+    return _Dart_GetLoadedLibraries();
+  }
+
+  late final _Dart_GetLoadedLibrariesPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>(
+          'Dart_GetLoadedLibraries');
+  late final _Dart_GetLoadedLibraries =
+      _Dart_GetLoadedLibrariesPtr.asFunction<Object Function()>();
+
+  Object Dart_LookupLibrary(
+    Object url,
+  ) {
+    return _Dart_LookupLibrary(
+      url,
+    );
+  }
+
+  late final _Dart_LookupLibraryPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LookupLibrary');
+  late final _Dart_LookupLibrary =
+      _Dart_LookupLibraryPtr.asFunction<Object Function(Object)>();
+
+  /// Report an loading error for the library.
+  ///
+  /// \param library The library that failed to load.
+  /// \param error The Dart error instance containing the load error.
+  ///
+  /// \return If the VM handles the error, the return value is
+  /// a null handle. If it doesn't handle the error, the error
+  /// object is returned.
+  Object Dart_LibraryHandleError(
+    Object library1,
+    Object error,
+  ) {
+    return _Dart_LibraryHandleError(
+      library1,
+      error,
+    );
+  }
+
+  late final _Dart_LibraryHandleErrorPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_LibraryHandleError');
+  late final _Dart_LibraryHandleError =
+      _Dart_LibraryHandleErrorPtr.asFunction<Object Function(Object, Object)>();
+
+  /// Called by the embedder to load a partial program. Does not set the root
+  /// library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the main library of the compilation unit, or an error.
+  Object Dart_LoadLibraryFromKernel(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_LoadLibraryFromKernel(
+      kernel_buffer,
+      kernel_buffer_size,
+    );
+  }
+
+  late final _Dart_LoadLibraryFromKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadLibraryFromKernel');
+  late final _Dart_LoadLibraryFromKernel = _Dart_LoadLibraryFromKernelPtr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Indicates that all outstanding load requests have been satisfied.
+  /// This finalizes all the new classes loaded and optionally completes
+  /// deferred library futures.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param complete_futures Specify true if all deferred library
+  /// futures should be completed, false otherwise.
+  ///
+  /// \return Success if all classes have been finalized and deferred library
+  /// futures are completed. Otherwise, returns an error.
+  Object Dart_FinalizeLoading(
+    bool complete_futures,
+  ) {
+    return _Dart_FinalizeLoading(
+      complete_futures ? 1 : 0,
+    );
+  }
+
+  late final _Dart_FinalizeLoadingPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint8)>>(
+          'Dart_FinalizeLoading');
+  late final _Dart_FinalizeLoading =
+      _Dart_FinalizeLoadingPtr.asFunction<Object Function(int)>();
+
+  /// Returns the value of peer field of 'object' in 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer An out parameter that returns the value of the peer
+  /// field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_GetPeer(
+    Object object,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetPeer(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_GetPeerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_GetPeer');
+  late final _Dart_GetPeer = _Dart_GetPeerPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Sets the value of the peer field of 'object' to the value of
+  /// 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer A value to store in the peer field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_SetPeer(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+  ) {
+    return _Dart_SetPeer(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_SetPeerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Void>)>>('Dart_SetPeer');
+  late final _Dart_SetPeer = _Dart_SetPeerPtr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Void>)>();
+
+  bool Dart_IsKernelIsolate(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsKernelIsolate(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernelIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Isolate)>>(
+          'Dart_IsKernelIsolate');
+  late final _Dart_IsKernelIsolate =
+      _Dart_IsKernelIsolatePtr.asFunction<int Function(Dart_Isolate)>();
+
+  bool Dart_KernelIsolateIsRunning() {
+    return _Dart_KernelIsolateIsRunning() != 0;
+  }
+
+  late final _Dart_KernelIsolateIsRunningPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_KernelIsolateIsRunning');
+  late final _Dart_KernelIsolateIsRunning =
+      _Dart_KernelIsolateIsRunningPtr.asFunction<int Function()>();
+
+  int Dart_KernelPort() {
+    return _Dart_KernelPort();
+  }
+
+  late final _Dart_KernelPortPtr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_KernelPort');
+  late final _Dart_KernelPort =
+      _Dart_KernelPortPtr.asFunction<int Function()>();
+
+  /// Compiles the given `script_uri` to a kernel file.
+  ///
+  /// \param platform_kernel A buffer containing the kernel of the platform (e.g.
+  /// `vm_platform_strong.dill`). The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  ///
+  /// \param snapshot_compile Set to `true` when the compilation is for a snapshot.
+  /// This is used by the frontend to determine if compilation related information
+  /// should be printed to console (e.g., null safety mode).
+  ///
+  /// \param verbosity Specifies the logging behavior of the kernel compilation
+  /// service.
+  ///
+  /// \return Returns the result of the compilation.
+  ///
+  /// On a successful compilation the returned [Dart_KernelCompilationResult] has
+  /// a status of [Dart_KernelCompilationStatus_Ok] and the `kernel`/`kernel_size`
+  /// fields are set. The caller takes ownership of the malloc()ed buffer.
+  ///
+  /// On a failed compilation the `error` might be set describing the reason for
+  /// the failed compilation. The caller takes ownership of the malloc()ed
+  /// error.
+  ///
+  /// Requires there to be a current isolate.
+  Dart_KernelCompilationResult Dart_CompileToKernel(
+    ffi.Pointer<pkg_ffi.Char> script_uri,
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+    bool incremental_compile,
+    bool snapshot_compile,
+    ffi.Pointer<pkg_ffi.Char> package_config,
+    int verbosity,
+  ) {
+    return _Dart_CompileToKernel(
+      script_uri,
+      platform_kernel,
+      platform_kernel_size,
+      incremental_compile ? 1 : 0,
+      snapshot_compile ? 1 : 0,
+      package_config,
+      verbosity,
+    );
+  }
+
+  late final _Dart_CompileToKernelPtr = _lookup<
+      ffi.NativeFunction<
+          Dart_KernelCompilationResult Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Uint8,
+              ffi.Uint8,
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Int32)>>('Dart_CompileToKernel');
+  late final _Dart_CompileToKernel = _Dart_CompileToKernelPtr.asFunction<
+      Dart_KernelCompilationResult Function(
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          int,
+          int,
+          int,
+          ffi.Pointer<pkg_ffi.Char>,
+          int)>();
+
+  Dart_KernelCompilationResult Dart_KernelListDependencies() {
+    return _Dart_KernelListDependencies();
+  }
+
+  late final _Dart_KernelListDependenciesPtr =
+      _lookup<ffi.NativeFunction<Dart_KernelCompilationResult Function()>>(
+          'Dart_KernelListDependencies');
+  late final _Dart_KernelListDependencies = _Dart_KernelListDependenciesPtr
+      .asFunction<Dart_KernelCompilationResult Function()>();
+
+  /// Sets the kernel buffer which will be used to load Dart SDK sources
+  /// dynamically at runtime.
+  ///
+  /// \param platform_kernel A buffer containing kernel which has sources for the
+  /// Dart SDK populated. Note: The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  void Dart_SetDartLibrarySourcesKernel(
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+  ) {
+    return _Dart_SetDartLibrarySourcesKernel(
+      platform_kernel,
+      platform_kernel_size,
+    );
+  }
+
+  late final _Dart_SetDartLibrarySourcesKernelPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_SetDartLibrarySourcesKernel');
+  late final _Dart_SetDartLibrarySourcesKernel =
+      _Dart_SetDartLibrarySourcesKernelPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Detect the null safety opt-in status.
+  ///
+  /// When running from source, it is based on the opt-in status of `script_uri`.
+  /// When running from a kernel buffer, it is based on the mode used when
+  /// generating `kernel_buffer`.
+  /// When running from an appJIT or AOT snapshot, it is based on the mode used
+  /// when generating `snapshot_data`.
+  ///
+  /// \param script_uri Uri of the script that contains the source code
+  ///
+  /// \param package_config Uri of the package configuration file (either in format
+  /// of .packages or .dart_tool/package_config.json) for the null safety
+  /// detection to resolve package imports against. If this parameter is not
+  /// passed the package resolution of the parent isolate should be used.
+  ///
+  /// \param original_working_directory current working directory when the VM
+  /// process was launched, this is used to correctly resolve the path specified
+  /// for package_config.
+  ///
+  /// \param snapshot_data
+  ///
+  /// \param snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  ///
+  /// \param kernel_buffer
+  ///
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  ///
+  /// \return Returns true if the null safety is opted in by the input being
+  /// run `script_uri`, `snapshot_data` or `kernel_buffer`.
+  bool Dart_DetectNullSafety(
+    ffi.Pointer<pkg_ffi.Char> script_uri,
+    ffi.Pointer<pkg_ffi.Char> package_config,
+    ffi.Pointer<pkg_ffi.Char> original_working_directory,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_DetectNullSafety(
+          script_uri,
+          package_config,
+          original_working_directory,
+          snapshot_data,
+          snapshot_instructions,
+          kernel_buffer,
+          kernel_buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_DetectNullSafetyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_DetectNullSafety');
+  late final _Dart_DetectNullSafety = _Dart_DetectNullSafetyPtr.asFunction<
+      int Function(
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          int)>();
+
+  /// Returns true if isolate is the service isolate.
+  ///
+  /// \param isolate An isolate
+  ///
+  /// \return Returns true if 'isolate' is the service isolate.
+  bool Dart_IsServiceIsolate(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsServiceIsolate(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsServiceIsolatePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Isolate)>>(
+          'Dart_IsServiceIsolate');
+  late final _Dart_IsServiceIsolate =
+      _Dart_IsServiceIsolatePtr.asFunction<int Function(Dart_Isolate)>();
+
+  /// Writes the CPU profile to the timeline as a series of 'instant' events.
+  ///
+  /// Note that this is an expensive operation.
+  ///
+  /// \param main_port The main port of the Isolate whose profile samples to write.
+  /// \param error An optional error, must be free()ed by caller.
+  ///
+  /// \return Returns true if the profile is successfully written and false
+  /// otherwise.
+  bool Dart_WriteProfileToTimeline(
+    int main_port,
+    ffi.Pointer<ffi.Pointer<pkg_ffi.Char>> error,
+  ) {
+    return _Dart_WriteProfileToTimeline(
+          main_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_WriteProfileToTimelinePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  Dart_Port, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>(
+      'Dart_WriteProfileToTimeline');
+  late final _Dart_WriteProfileToTimeline = _Dart_WriteProfileToTimelinePtr
+      .asFunction<int Function(int, ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>();
+
+  /// Compiles all functions reachable from entry points and marks
+  /// the isolate to disallow future compilation.
+  ///
+  /// Entry points should be specified using `@pragma("vm:entry-point")`
+  /// annotation.
+  ///
+  /// \return An error handle if a compilation error or runtime error running const
+  /// constructors was encountered.
+  Object Dart_Precompile() {
+    return _Dart_Precompile();
+  }
+
+  late final _Dart_PrecompilePtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Precompile');
+  late final _Dart_Precompile =
+      _Dart_PrecompilePtr.asFunction<Object Function()>();
+
+  Object Dart_LoadingUnitLibraryUris(
+    int loading_unit_id,
+  ) {
+    return _Dart_LoadingUnitLibraryUris(
+      loading_unit_id,
+    );
+  }
+
+  late final _Dart_LoadingUnitLibraryUrisPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
+          'Dart_LoadingUnitLibraryUris');
+  late final _Dart_LoadingUnitLibraryUris =
+      _Dart_LoadingUnitLibraryUrisPtr.asFunction<Object Function(int)>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an assembly file defining the symbols listed in the definitions
+  /// above.
+  ///
+  /// The assembly should be compiled as a static or shared library and linked or
+  /// loaded by the embedder. Running this snapshot requires a VM compiled with
+  /// DART_PRECOMPILED_SNAPSHOT. The kDartVmSnapshotData and
+  /// kDartVmSnapshotInstructions should be passed to Dart_Initialize. The
+  /// kDartIsolateSnapshotData and kDartIsolateSnapshotInstructions should be
+  /// passed to Dart_CreateIsolateGroup.
+  ///
+  /// The callback will be invoked one or more times to provide the assembly code.
+  ///
+  /// If stripped is true, then the assembly code will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsAssembly(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssembly(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssemblyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsAssembly');
+  late final _Dart_CreateAppAOTSnapshotAsAssembly =
+      _Dart_CreateAppAOTSnapshotAsAssemblyPtr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              int, ffi.Pointer<ffi.Void>)>();
+
+  Object Dart_CreateAppAOTSnapshotAsAssemblies(
+    Dart_CreateLoadingUnitCallback next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssemblies(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssembliesPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_CreateLoadingUnitCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Uint8,
+                  Dart_StreamingWriteCallback,
+                  Dart_StreamingCloseCallback)>>(
+      'Dart_CreateAppAOTSnapshotAsAssemblies');
+  late final _Dart_CreateAppAOTSnapshotAsAssemblies =
+      _Dart_CreateAppAOTSnapshotAsAssembliesPtr.asFunction<
+          Object Function(Dart_CreateLoadingUnitCallback, ffi.Pointer<ffi.Void>,
+              int, Dart_StreamingWriteCallback, Dart_StreamingCloseCallback)>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an ELF shared library defining the symbols
+  /// - _kDartVmSnapshotData
+  /// - _kDartVmSnapshotInstructions
+  /// - _kDartIsolateSnapshotData
+  /// - _kDartIsolateSnapshotInstructions
+  ///
+  /// The shared library should be dynamically loaded by the embedder.
+  /// Running this snapshot requires a VM compiled with DART_PRECOMPILED_SNAPSHOT.
+  /// The kDartVmSnapshotData and kDartVmSnapshotInstructions should be passed to
+  /// Dart_Initialize. The kDartIsolateSnapshotData and
+  /// kDartIsolateSnapshotInstructions should be passed to Dart_CreateIsolate.
+  ///
+  /// The callback will be invoked one or more times to provide the binary output.
+  ///
+  /// If stripped is true, then the binary output will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsElf(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElf(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElfPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsElf');
+  late final _Dart_CreateAppAOTSnapshotAsElf =
+      _Dart_CreateAppAOTSnapshotAsElfPtr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              int, ffi.Pointer<ffi.Void>)>();
+
+  Object Dart_CreateAppAOTSnapshotAsElfs(
+    Dart_CreateLoadingUnitCallback next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElfs(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElfsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_CreateLoadingUnitCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              Dart_StreamingWriteCallback,
+              Dart_StreamingCloseCallback)>>('Dart_CreateAppAOTSnapshotAsElfs');
+  late final _Dart_CreateAppAOTSnapshotAsElfs =
+      _Dart_CreateAppAOTSnapshotAsElfsPtr.asFunction<
+          Object Function(Dart_CreateLoadingUnitCallback, ffi.Pointer<ffi.Void>,
+              int, Dart_StreamingWriteCallback, Dart_StreamingCloseCallback)>();
+
+  /// Like Dart_CreateAppAOTSnapshotAsAssembly, but only includes
+  /// kDartVmSnapshotData and kDartVmSnapshotInstructions. It also does
+  /// not strip DWARF information from the generated assembly or allow for
+  /// separate debug information.
+  Object Dart_CreateVMAOTSnapshotAsAssembly(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+  ) {
+    return _Dart_CreateVMAOTSnapshotAsAssembly(
+      callback,
+      callback_data,
+    );
+  }
+
+  late final _Dart_CreateVMAOTSnapshotAsAssemblyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateVMAOTSnapshotAsAssembly');
+  late final _Dart_CreateVMAOTSnapshotAsAssembly =
+      _Dart_CreateVMAOTSnapshotAsAssemblyPtr.asFunction<
+          Object Function(
+              Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>)>();
+
+  /// Sorts the class-ids in depth first traversal order of the inheritance
+  /// tree. This is a costly operation, but it can make method dispatch
+  /// more efficient and is done before writing snapshots.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_SortClasses() {
+    return _Dart_SortClasses();
+  }
+
+  late final _Dart_SortClassesPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_SortClasses');
+  late final _Dart_SortClasses =
+      _Dart_SortClassesPtr.asFunction<Object Function()>();
+
+  /// Creates a snapshot that caches compiled code and type feedback for faster
+  /// startup and quicker warmup in a subsequent process.
+  ///
+  /// Outputs a snapshot in two pieces. The pieces should be passed to
+  /// Dart_CreateIsolateGroup in a VM using the same VM snapshot pieces used in the
+  /// current VM. The instructions piece must be loaded with read and execute
+  /// permissions; the data piece may be loaded as read-only.
+  ///
+  /// - Requires the VM to have not been started with --precompilation.
+  /// - Not supported when targeting IA32.
+  /// - The VM writing the snapshot and the VM reading the snapshot must be the
+  /// same version, must be built in the same DEBUG/RELEASE/PRODUCT mode, must
+  /// be targeting the same architecture, and must both be in checked mode or
+  /// both in unchecked mode.
+  ///
+  /// The buffers are scope allocated and are only valid until the next call to
+  /// Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppJITSnapshotAsBlobs(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateAppJITSnapshotAsBlobs(
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateAppJITSnapshotAsBlobsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateAppJITSnapshotAsBlobs');
+  late final _Dart_CreateAppJITSnapshotAsBlobs =
+      _Dart_CreateAppJITSnapshotAsBlobsPtr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Like Dart_CreateAppJITSnapshotAsBlobs, but also creates a new VM snapshot.
+  Object Dart_CreateCoreJITSnapshotAsBlobs(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateCoreJITSnapshotAsBlobs(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      vm_snapshot_instructions_buffer,
+      vm_snapshot_instructions_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateCoreJITSnapshotAsBlobsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateCoreJITSnapshotAsBlobs');
+  late final _Dart_CreateCoreJITSnapshotAsBlobs =
+      _Dart_CreateCoreJITSnapshotAsBlobsPtr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Get obfuscation map for precompiled code.
+  ///
+  /// Obfuscation map is encoded as a JSON array of pairs (original name,
+  /// obfuscated name).
+  ///
+  /// \return Returns an error handler if the VM was built in a mode that does not
+  /// support obfuscation.
+  Object Dart_GetObfuscationMap(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
+    ffi.Pointer<ffi.IntPtr> buffer_length,
+  ) {
+    return _Dart_GetObfuscationMap(
+      buffer,
+      buffer_length,
+    );
+  }
+
+  late final _Dart_GetObfuscationMapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetObfuscationMap');
+  late final _Dart_GetObfuscationMap = _Dart_GetObfuscationMapPtr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Returns whether the VM only supports running from precompiled snapshots and
+  /// not from any other kind of snapshot or from source (that is, the VM was
+  /// compiled with DART_PRECOMPILED_RUNTIME).
+  bool Dart_IsPrecompiledRuntime() {
+    return _Dart_IsPrecompiledRuntime() != 0;
+  }
+
+  late final _Dart_IsPrecompiledRuntimePtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_IsPrecompiledRuntime');
+  late final _Dart_IsPrecompiledRuntime =
+      _Dart_IsPrecompiledRuntimePtr.asFunction<int Function()>();
+
+  /// Print a native stack trace. Used for crash handling.
+  ///
+  /// If context is NULL, prints the current stack trace. Otherwise, context
+  /// should be a CONTEXT* (Windows) or ucontext_t* (POSIX) from a signal handler
+  /// running on the current thread.
+  void Dart_DumpNativeStackTrace(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _Dart_DumpNativeStackTrace(
+      context,
+    );
+  }
+
+  late final _Dart_DumpNativeStackTracePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+          'Dart_DumpNativeStackTrace');
+  late final _Dart_DumpNativeStackTrace = _Dart_DumpNativeStackTracePtr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
+
+  /// Indicate that the process is about to abort, and the Dart VM should not
+  /// attempt to cleanup resources.
+  void Dart_PrepareToAbort() {
+    return _Dart_PrepareToAbort();
+  }
+
+  late final _Dart_PrepareToAbortPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_PrepareToAbort');
+  late final _Dart_PrepareToAbort =
+      _Dart_PrepareToAbortPtr.asFunction<void Function()>();
+
+  /// Posts a message on some port. The message will contain the Dart_CObject
+  /// object graph rooted in 'message'.
+  ///
+  /// While the message is being sent the state of the graph of Dart_CObject
+  /// structures rooted in 'message' should not be accessed, as the message
+  /// generation will make temporary modifications to the data. When the message
+  /// has been sent the graph will be fully restored.
+  ///
+  /// If true is returned, the message was enqueued, and finalizers for external
+  /// typed data will eventually run, even if the receiving isolate shuts down
+  /// before processing the message. If false is returned, the message was not
+  /// enqueued and ownership of external typed data in the message remains with the
+  /// caller.
+  ///
+  /// This function may be called on any thread when the VM is running (that is,
+  /// after Dart_Initialize has returned and before Dart_Cleanup has been called).
+  ///
+  /// \param port_id The destination port.
+  /// \param message The message to send.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_PostCObject(
+    int port_id,
+    ffi.Pointer<Dart_CObject> message,
+  ) {
+    return _Dart_PostCObject(
+          port_id,
+          message,
+        ) !=
+        0;
+  }
+
+  late final _Dart_PostCObjectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              Dart_Port, ffi.Pointer<Dart_CObject>)>>('Dart_PostCObject');
+  late final _Dart_PostCObject = _Dart_PostCObjectPtr.asFunction<
+      int Function(int, ffi.Pointer<Dart_CObject>)>();
+
+  /// Posts a message on some port. The message will contain the integer 'message'.
+  ///
+  /// \param port_id The destination port.
+  /// \param message The message to send.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_PostInteger(
+    int port_id,
+    int message,
+  ) {
+    return _Dart_PostInteger(
+          port_id,
+          message,
+        ) !=
+        0;
+  }
+
+  late final _Dart_PostIntegerPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port, ffi.Int64)>>(
+          'Dart_PostInteger');
+  late final _Dart_PostInteger =
+      _Dart_PostIntegerPtr.asFunction<int Function(int, int)>();
+
+  /// Creates a new native port.  When messages are received on this
+  /// native port, then they will be dispatched to the provided native
+  /// message handler.
+  ///
+  /// \param name The name of this port in debugging messages.
+  /// \param handler The C handler to run when messages arrive on the port.
+  /// \param handle_concurrently Is it okay to process requests on this
+  /// native port concurrently?
+  ///
+  /// \return If successful, returns the port id for the native port.  In
+  /// case of error, returns ILLEGAL_PORT.
+  int Dart_NewNativePort(
+    ffi.Pointer<pkg_ffi.Char> name,
+    Dart_NativeMessageHandler handler,
+    bool handle_concurrently,
+  ) {
+    return _Dart_NewNativePort(
+      name,
+      handler,
+      handle_concurrently ? 1 : 0,
+    );
+  }
+
+  late final _Dart_NewNativePortPtr = _lookup<
+      ffi.NativeFunction<
+          Dart_Port Function(ffi.Pointer<pkg_ffi.Char>,
+              Dart_NativeMessageHandler, ffi.Uint8)>>('Dart_NewNativePort');
+  late final _Dart_NewNativePort = _Dart_NewNativePortPtr.asFunction<
+      int Function(
+          ffi.Pointer<pkg_ffi.Char>, Dart_NativeMessageHandler, int)>();
+
+  /// Closes the native port with the given id.
+  ///
+  /// The port must have been allocated by a call to Dart_NewNativePort.
+  ///
+  /// \param native_port_id The id of the native port to close.
+  ///
+  /// \return Returns true if the port was closed successfully.
+  bool Dart_CloseNativePort(
+    int native_port_id,
+  ) {
+    return _Dart_CloseNativePort(
+          native_port_id,
+        ) !=
+        0;
+  }
+
+  late final _Dart_CloseNativePortPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port)>>(
+          'Dart_CloseNativePort');
+  late final _Dart_CloseNativePort =
+      _Dart_CloseNativePortPtr.asFunction<int Function(int)>();
+
+  /// Forces all loaded classes and functions to be compiled eagerly in
+  /// the current isolate..
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_CompileAll() {
+    return _Dart_CompileAll();
+  }
+
+  late final _Dart_CompileAllPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_CompileAll');
+  late final _Dart_CompileAll =
+      _Dart_CompileAllPtr.asFunction<Object Function()>();
+
+  /// Finalizes all classes.
+  Object Dart_FinalizeAllClasses() {
+    return _Dart_FinalizeAllClasses();
+  }
+
+  late final _Dart_FinalizeAllClassesPtr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>(
+          'Dart_FinalizeAllClasses');
+  late final _Dart_FinalizeAllClasses =
+      _Dart_FinalizeAllClassesPtr.asFunction<Object Function()>();
+
+  ffi.Pointer<ffi.Void> Dart_ExecuteInternalCommand(
+    ffi.Pointer<pkg_ffi.Char> command,
+    ffi.Pointer<ffi.Void> arg,
+  ) {
+    return _Dart_ExecuteInternalCommand(
+      command,
+      arg,
+    );
+  }
+
+  late final _Dart_ExecuteInternalCommandPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<ffi.Void>)>>('Dart_ExecuteInternalCommand');
+  late final _Dart_ExecuteInternalCommand =
+      _Dart_ExecuteInternalCommandPtr.asFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<pkg_ffi.Char>, ffi.Pointer<ffi.Void>)>();
+
+  /// \mainpage Dynamically Linked Dart API
+  ///
+  /// This exposes a subset of symbols from dart_api.h and dart_native_api.h
+  /// available in every Dart embedder through dynamic linking.
+  ///
+  /// All symbols are postfixed with _DL to indicate that they are dynamically
+  /// linked and to prevent conflicts with the original symbol.
+  ///
+  /// Link `dart_api_dl.c` file into your library and invoke
+  /// `Dart_InitializeApiDL` with `NativeApi.initializeApiDLData`.
+  int Dart_InitializeApiDL(
+    ffi.Pointer<ffi.Void> data,
+  ) {
+    return _Dart_InitializeApiDL(
+      data,
+    );
+  }
+
+  late final _Dart_InitializeApiDLPtr =
+      _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.Pointer<ffi.Void>)>>(
+          'Dart_InitializeApiDL');
+  late final _Dart_InitializeApiDL = _Dart_InitializeApiDLPtr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>)>();
+
+  late final ffi.Pointer<Dart_PostCObject_Type> _Dart_PostCObject_DL =
+      _lookup<Dart_PostCObject_Type>('Dart_PostCObject_DL');
+
+  Dart_PostCObject_Type get Dart_PostCObject_DL => _Dart_PostCObject_DL.value;
+
+  set Dart_PostCObject_DL(Dart_PostCObject_Type value) =>
+      _Dart_PostCObject_DL.value = value;
+
+  late final ffi.Pointer<Dart_PostInteger_Type> _Dart_PostInteger_DL =
+      _lookup<Dart_PostInteger_Type>('Dart_PostInteger_DL');
+
+  Dart_PostInteger_Type get Dart_PostInteger_DL => _Dart_PostInteger_DL.value;
+
+  set Dart_PostInteger_DL(Dart_PostInteger_Type value) =>
+      _Dart_PostInteger_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewNativePort_Type> _Dart_NewNativePort_DL =
+      _lookup<Dart_NewNativePort_Type>('Dart_NewNativePort_DL');
+
+  Dart_NewNativePort_Type get Dart_NewNativePort_DL =>
+      _Dart_NewNativePort_DL.value;
+
+  set Dart_NewNativePort_DL(Dart_NewNativePort_Type value) =>
+      _Dart_NewNativePort_DL.value = value;
+
+  late final ffi.Pointer<Dart_CloseNativePort_Type> _Dart_CloseNativePort_DL =
+      _lookup<Dart_CloseNativePort_Type>('Dart_CloseNativePort_DL');
+
+  Dart_CloseNativePort_Type get Dart_CloseNativePort_DL =>
+      _Dart_CloseNativePort_DL.value;
+
+  set Dart_CloseNativePort_DL(Dart_CloseNativePort_Type value) =>
+      _Dart_CloseNativePort_DL.value = value;
+
+  late final ffi.Pointer<Dart_IsError_Type> _Dart_IsError_DL =
+      _lookup<Dart_IsError_Type>('Dart_IsError_DL');
+
+  Dart_IsError_Type get Dart_IsError_DL => _Dart_IsError_DL.value;
+
+  set Dart_IsError_DL(Dart_IsError_Type value) =>
+      _Dart_IsError_DL.value = value;
+
+  late final ffi.Pointer<Dart_IsApiError_Type> _Dart_IsApiError_DL =
+      _lookup<Dart_IsApiError_Type>('Dart_IsApiError_DL');
+
+  Dart_IsApiError_Type get Dart_IsApiError_DL => _Dart_IsApiError_DL.value;
+
+  set Dart_IsApiError_DL(Dart_IsApiError_Type value) =>
+      _Dart_IsApiError_DL.value = value;
+
+  late final ffi.Pointer<Dart_IsUnhandledExceptionError_Type>
+      _Dart_IsUnhandledExceptionError_DL =
+      _lookup<Dart_IsUnhandledExceptionError_Type>(
+          'Dart_IsUnhandledExceptionError_DL');
+
+  Dart_IsUnhandledExceptionError_Type get Dart_IsUnhandledExceptionError_DL =>
+      _Dart_IsUnhandledExceptionError_DL.value;
+
+  set Dart_IsUnhandledExceptionError_DL(
+          Dart_IsUnhandledExceptionError_Type value) =>
+      _Dart_IsUnhandledExceptionError_DL.value = value;
+
+  late final ffi.Pointer<Dart_IsCompilationError_Type>
+      _Dart_IsCompilationError_DL =
+      _lookup<Dart_IsCompilationError_Type>('Dart_IsCompilationError_DL');
+
+  Dart_IsCompilationError_Type get Dart_IsCompilationError_DL =>
+      _Dart_IsCompilationError_DL.value;
+
+  set Dart_IsCompilationError_DL(Dart_IsCompilationError_Type value) =>
+      _Dart_IsCompilationError_DL.value = value;
+
+  late final ffi.Pointer<Dart_IsFatalError_Type> _Dart_IsFatalError_DL =
+      _lookup<Dart_IsFatalError_Type>('Dart_IsFatalError_DL');
+
+  Dart_IsFatalError_Type get Dart_IsFatalError_DL =>
+      _Dart_IsFatalError_DL.value;
+
+  set Dart_IsFatalError_DL(Dart_IsFatalError_Type value) =>
+      _Dart_IsFatalError_DL.value = value;
+
+  late final ffi.Pointer<Dart_GetError_Type> _Dart_GetError_DL =
+      _lookup<Dart_GetError_Type>('Dart_GetError_DL');
+
+  Dart_GetError_Type get Dart_GetError_DL => _Dart_GetError_DL.value;
+
+  set Dart_GetError_DL(Dart_GetError_Type value) =>
+      _Dart_GetError_DL.value = value;
+
+  late final ffi.Pointer<Dart_ErrorHasException_Type>
+      _Dart_ErrorHasException_DL =
+      _lookup<Dart_ErrorHasException_Type>('Dart_ErrorHasException_DL');
+
+  Dart_ErrorHasException_Type get Dart_ErrorHasException_DL =>
+      _Dart_ErrorHasException_DL.value;
+
+  set Dart_ErrorHasException_DL(Dart_ErrorHasException_Type value) =>
+      _Dart_ErrorHasException_DL.value = value;
+
+  late final ffi.Pointer<Dart_ErrorGetException_Type>
+      _Dart_ErrorGetException_DL =
+      _lookup<Dart_ErrorGetException_Type>('Dart_ErrorGetException_DL');
+
+  Dart_ErrorGetException_Type get Dart_ErrorGetException_DL =>
+      _Dart_ErrorGetException_DL.value;
+
+  set Dart_ErrorGetException_DL(Dart_ErrorGetException_Type value) =>
+      _Dart_ErrorGetException_DL.value = value;
+
+  late final ffi.Pointer<Dart_ErrorGetStackTrace_Type>
+      _Dart_ErrorGetStackTrace_DL =
+      _lookup<Dart_ErrorGetStackTrace_Type>('Dart_ErrorGetStackTrace_DL');
+
+  Dart_ErrorGetStackTrace_Type get Dart_ErrorGetStackTrace_DL =>
+      _Dart_ErrorGetStackTrace_DL.value;
+
+  set Dart_ErrorGetStackTrace_DL(Dart_ErrorGetStackTrace_Type value) =>
+      _Dart_ErrorGetStackTrace_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewApiError_Type> _Dart_NewApiError_DL =
+      _lookup<Dart_NewApiError_Type>('Dart_NewApiError_DL');
+
+  Dart_NewApiError_Type get Dart_NewApiError_DL => _Dart_NewApiError_DL.value;
+
+  set Dart_NewApiError_DL(Dart_NewApiError_Type value) =>
+      _Dart_NewApiError_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewCompilationError_Type>
+      _Dart_NewCompilationError_DL =
+      _lookup<Dart_NewCompilationError_Type>('Dart_NewCompilationError_DL');
+
+  Dart_NewCompilationError_Type get Dart_NewCompilationError_DL =>
+      _Dart_NewCompilationError_DL.value;
+
+  set Dart_NewCompilationError_DL(Dart_NewCompilationError_Type value) =>
+      _Dart_NewCompilationError_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewUnhandledExceptionError_Type>
+      _Dart_NewUnhandledExceptionError_DL =
+      _lookup<Dart_NewUnhandledExceptionError_Type>(
+          'Dart_NewUnhandledExceptionError_DL');
+
+  Dart_NewUnhandledExceptionError_Type get Dart_NewUnhandledExceptionError_DL =>
+      _Dart_NewUnhandledExceptionError_DL.value;
+
+  set Dart_NewUnhandledExceptionError_DL(
+          Dart_NewUnhandledExceptionError_Type value) =>
+      _Dart_NewUnhandledExceptionError_DL.value = value;
+
+  late final ffi.Pointer<Dart_PropagateError_Type> _Dart_PropagateError_DL =
+      _lookup<Dart_PropagateError_Type>('Dart_PropagateError_DL');
+
+  Dart_PropagateError_Type get Dart_PropagateError_DL =>
+      _Dart_PropagateError_DL.value;
+
+  set Dart_PropagateError_DL(Dart_PropagateError_Type value) =>
+      _Dart_PropagateError_DL.value = value;
+
+  late final ffi.Pointer<Dart_HandleFromPersistent_Type>
+      _Dart_HandleFromPersistent_DL =
+      _lookup<Dart_HandleFromPersistent_Type>('Dart_HandleFromPersistent_DL');
+
+  Dart_HandleFromPersistent_Type get Dart_HandleFromPersistent_DL =>
+      _Dart_HandleFromPersistent_DL.value;
+
+  set Dart_HandleFromPersistent_DL(Dart_HandleFromPersistent_Type value) =>
+      _Dart_HandleFromPersistent_DL.value = value;
+
+  late final ffi.Pointer<Dart_HandleFromWeakPersistent_Type>
+      _Dart_HandleFromWeakPersistent_DL =
+      _lookup<Dart_HandleFromWeakPersistent_Type>(
+          'Dart_HandleFromWeakPersistent_DL');
+
+  Dart_HandleFromWeakPersistent_Type get Dart_HandleFromWeakPersistent_DL =>
+      _Dart_HandleFromWeakPersistent_DL.value;
+
+  set Dart_HandleFromWeakPersistent_DL(
+          Dart_HandleFromWeakPersistent_Type value) =>
+      _Dart_HandleFromWeakPersistent_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewPersistentHandle_Type>
+      _Dart_NewPersistentHandle_DL =
+      _lookup<Dart_NewPersistentHandle_Type>('Dart_NewPersistentHandle_DL');
+
+  Dart_NewPersistentHandle_Type get Dart_NewPersistentHandle_DL =>
+      _Dart_NewPersistentHandle_DL.value;
+
+  set Dart_NewPersistentHandle_DL(Dart_NewPersistentHandle_Type value) =>
+      _Dart_NewPersistentHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_SetPersistentHandle_Type>
+      _Dart_SetPersistentHandle_DL =
+      _lookup<Dart_SetPersistentHandle_Type>('Dart_SetPersistentHandle_DL');
+
+  Dart_SetPersistentHandle_Type get Dart_SetPersistentHandle_DL =>
+      _Dart_SetPersistentHandle_DL.value;
+
+  set Dart_SetPersistentHandle_DL(Dart_SetPersistentHandle_Type value) =>
+      _Dart_SetPersistentHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_DeletePersistentHandle_Type>
+      _Dart_DeletePersistentHandle_DL =
+      _lookup<Dart_DeletePersistentHandle_Type>(
+          'Dart_DeletePersistentHandle_DL');
+
+  Dart_DeletePersistentHandle_Type get Dart_DeletePersistentHandle_DL =>
+      _Dart_DeletePersistentHandle_DL.value;
+
+  set Dart_DeletePersistentHandle_DL(Dart_DeletePersistentHandle_Type value) =>
+      _Dart_DeletePersistentHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewWeakPersistentHandle_Type>
+      _Dart_NewWeakPersistentHandle_DL =
+      _lookup<Dart_NewWeakPersistentHandle_Type>(
+          'Dart_NewWeakPersistentHandle_DL');
+
+  Dart_NewWeakPersistentHandle_Type get Dart_NewWeakPersistentHandle_DL =>
+      _Dart_NewWeakPersistentHandle_DL.value;
+
+  set Dart_NewWeakPersistentHandle_DL(
+          Dart_NewWeakPersistentHandle_Type value) =>
+      _Dart_NewWeakPersistentHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_DeleteWeakPersistentHandle_Type>
+      _Dart_DeleteWeakPersistentHandle_DL =
+      _lookup<Dart_DeleteWeakPersistentHandle_Type>(
+          'Dart_DeleteWeakPersistentHandle_DL');
+
+  Dart_DeleteWeakPersistentHandle_Type get Dart_DeleteWeakPersistentHandle_DL =>
+      _Dart_DeleteWeakPersistentHandle_DL.value;
+
+  set Dart_DeleteWeakPersistentHandle_DL(
+          Dart_DeleteWeakPersistentHandle_Type value) =>
+      _Dart_DeleteWeakPersistentHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_UpdateExternalSize_Type>
+      _Dart_UpdateExternalSize_DL =
+      _lookup<Dart_UpdateExternalSize_Type>('Dart_UpdateExternalSize_DL');
+
+  Dart_UpdateExternalSize_Type get Dart_UpdateExternalSize_DL =>
+      _Dart_UpdateExternalSize_DL.value;
+
+  set Dart_UpdateExternalSize_DL(Dart_UpdateExternalSize_Type value) =>
+      _Dart_UpdateExternalSize_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewFinalizableHandle_Type>
+      _Dart_NewFinalizableHandle_DL =
+      _lookup<Dart_NewFinalizableHandle_Type>('Dart_NewFinalizableHandle_DL');
+
+  Dart_NewFinalizableHandle_Type get Dart_NewFinalizableHandle_DL =>
+      _Dart_NewFinalizableHandle_DL.value;
+
+  set Dart_NewFinalizableHandle_DL(Dart_NewFinalizableHandle_Type value) =>
+      _Dart_NewFinalizableHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_DeleteFinalizableHandle_Type>
+      _Dart_DeleteFinalizableHandle_DL =
+      _lookup<Dart_DeleteFinalizableHandle_Type>(
+          'Dart_DeleteFinalizableHandle_DL');
+
+  Dart_DeleteFinalizableHandle_Type get Dart_DeleteFinalizableHandle_DL =>
+      _Dart_DeleteFinalizableHandle_DL.value;
+
+  set Dart_DeleteFinalizableHandle_DL(
+          Dart_DeleteFinalizableHandle_Type value) =>
+      _Dart_DeleteFinalizableHandle_DL.value = value;
+
+  late final ffi.Pointer<Dart_UpdateFinalizableExternalSize_Type>
+      _Dart_UpdateFinalizableExternalSize_DL =
+      _lookup<Dart_UpdateFinalizableExternalSize_Type>(
+          'Dart_UpdateFinalizableExternalSize_DL');
+
+  Dart_UpdateFinalizableExternalSize_Type
+      get Dart_UpdateFinalizableExternalSize_DL =>
+          _Dart_UpdateFinalizableExternalSize_DL.value;
+
+  set Dart_UpdateFinalizableExternalSize_DL(
+          Dart_UpdateFinalizableExternalSize_Type value) =>
+      _Dart_UpdateFinalizableExternalSize_DL.value = value;
+
+  late final ffi.Pointer<Dart_Post_Type> _Dart_Post_DL =
+      _lookup<Dart_Post_Type>('Dart_Post_DL');
+
+  Dart_Post_Type get Dart_Post_DL => _Dart_Post_DL.value;
+
+  set Dart_Post_DL(Dart_Post_Type value) => _Dart_Post_DL.value = value;
+
+  late final ffi.Pointer<Dart_NewSendPort_Type> _Dart_NewSendPort_DL =
+      _lookup<Dart_NewSendPort_Type>('Dart_NewSendPort_DL');
+
+  Dart_NewSendPort_Type get Dart_NewSendPort_DL => _Dart_NewSendPort_DL.value;
+
+  set Dart_NewSendPort_DL(Dart_NewSendPort_Type value) =>
+      _Dart_NewSendPort_DL.value = value;
+
+  late final ffi.Pointer<Dart_SendPortGetId_Type> _Dart_SendPortGetId_DL =
+      _lookup<Dart_SendPortGetId_Type>('Dart_SendPortGetId_DL');
+
+  Dart_SendPortGetId_Type get Dart_SendPortGetId_DL =>
+      _Dart_SendPortGetId_DL.value;
+
+  set Dart_SendPortGetId_DL(Dart_SendPortGetId_Type value) =>
+      _Dart_SendPortGetId_DL.value = value;
+
+  late final ffi.Pointer<Dart_EnterScope_Type> _Dart_EnterScope_DL =
+      _lookup<Dart_EnterScope_Type>('Dart_EnterScope_DL');
+
+  Dart_EnterScope_Type get Dart_EnterScope_DL => _Dart_EnterScope_DL.value;
+
+  set Dart_EnterScope_DL(Dart_EnterScope_Type value) =>
+      _Dart_EnterScope_DL.value = value;
+
+  late final ffi.Pointer<Dart_ExitScope_Type> _Dart_ExitScope_DL =
+      _lookup<Dart_ExitScope_Type>('Dart_ExitScope_DL');
+
+  Dart_ExitScope_Type get Dart_ExitScope_DL => _Dart_ExitScope_DL.value;
+
+  set Dart_ExitScope_DL(Dart_ExitScope_Type value) =>
+      _Dart_ExitScope_DL.value = value;
+
+  ffi.Pointer<ObjCObject> NSStringFromSelector8(
+    ffi.Pointer<ObjCSel> aSelector,
+  ) {
+    return _NSStringFromSelector8(
+      aSelector,
+    );
+  }
+
+  late final _NSStringFromSelector8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCSel>)>>('NSStringFromSelector');
+  late final _NSStringFromSelector8 = _NSStringFromSelector8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCSel>)>();
+
+  ffi.Pointer<ObjCSel> NSSelectorFromString8(
+    ffi.Pointer<ObjCObject> aSelectorName,
+  ) {
+    return _NSSelectorFromString8(
+      aSelectorName,
+    );
+  }
+
+  late final _NSSelectorFromString8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCSel> Function(
+              ffi.Pointer<ObjCObject>)>>('NSSelectorFromString');
+  late final _NSSelectorFromString8 = _NSSelectorFromString8Ptr.asFunction<
+      ffi.Pointer<ObjCSel> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromClass8(
+    ffi.Pointer<ObjCObject> aClass,
+  ) {
+    return _NSStringFromClass8(
+      aClass,
+    );
+  }
+
+  late final _NSStringFromClass8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromClass');
+  late final _NSStringFromClass8 = _NSStringFromClass8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSClassFromString8(
+    ffi.Pointer<ObjCObject> aClassName,
+  ) {
+    return _NSClassFromString8(
+      aClassName,
+    );
+  }
+
+  late final _NSClassFromString8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSClassFromString');
+  late final _NSClassFromString8 = _NSClassFromString8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromProtocol8(
+    ffi.Pointer<ObjCObject> proto,
+  ) {
+    return _NSStringFromProtocol8(
+      proto,
+    );
+  }
+
+  late final _NSStringFromProtocol8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromProtocol');
+  late final _NSStringFromProtocol8 = _NSStringFromProtocol8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSProtocolFromString8(
+    ffi.Pointer<ObjCObject> namestr,
+  ) {
+    return _NSProtocolFromString8(
+      namestr,
+    );
+  }
+
+  late final _NSProtocolFromString8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSProtocolFromString');
+  late final _NSProtocolFromString8 = _NSProtocolFromString8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<pkg_ffi.Char> NSGetSizeAndAlignment8(
+    ffi.Pointer<pkg_ffi.Char> typePtr,
+    ffi.Pointer<NSUInteger> sizep,
+    ffi.Pointer<NSUInteger> alignp,
+  ) {
+    return _NSGetSizeAndAlignment8(
+      typePtr,
+      sizep,
+      alignp,
+    );
+  }
+
+  late final _NSGetSizeAndAlignment8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<NSUInteger>,
+              ffi.Pointer<NSUInteger>)>>('NSGetSizeAndAlignment');
+  late final _NSGetSizeAndAlignment8 = _NSGetSizeAndAlignment8Ptr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<NSUInteger>, ffi.Pointer<NSUInteger>)>();
+
+  void NSLog8(
+    ffi.Pointer<ObjCObject> format,
+  ) {
+    return _NSLog8(
+      format,
+    );
+  }
+
+  late final _NSLog8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSLog');
+  late final _NSLog8 =
+      _NSLog8Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  void NSLogv8(
+    ffi.Pointer<ObjCObject> format,
+    va_list args,
+  ) {
+    return _NSLogv8(
+      format,
+      args,
+    );
+  }
+
+  late final _NSLogv8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, va_list)>>('NSLogv');
+  late final _NSLogv8 =
+      _NSLogv8Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>, va_list)>();
+
+  CFRange __CFRangeMake8(
+    int loc,
+    int len,
+  ) {
+    return ___CFRangeMake8(
+      loc,
+      len,
+    );
+  }
+
+  late final ___CFRangeMake8Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFIndex, CFIndex)>>(
+          '__CFRangeMake');
+  late final ___CFRangeMake8 =
+      ___CFRangeMake8Ptr.asFunction<CFRange Function(int, int)>();
+
+  int CFNullGetTypeID8() {
+    return _CFNullGetTypeID8();
+  }
+
+  late final _CFNullGetTypeID8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNullGetTypeID');
+  late final _CFNullGetTypeID8 =
+      _CFNullGetTypeID8Ptr.asFunction<int Function()>();
+
+  int CFAllocatorGetTypeID8() {
+    return _CFAllocatorGetTypeID8();
+  }
+
+  late final _CFAllocatorGetTypeID8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFAllocatorGetTypeID');
+  late final _CFAllocatorGetTypeID8 =
+      _CFAllocatorGetTypeID8Ptr.asFunction<int Function()>();
+
+  void CFAllocatorSetDefault8(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFAllocatorSetDefault8(
+      allocator,
+    );
+  }
+
+  late final _CFAllocatorSetDefault8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFAllocatorRef)>>(
+          'CFAllocatorSetDefault');
+  late final _CFAllocatorSetDefault8 =
+      _CFAllocatorSetDefault8Ptr.asFunction<void Function(CFAllocatorRef)>();
+
+  CFAllocatorRef CFAllocatorGetDefault8() {
+    return _CFAllocatorGetDefault8();
+  }
+
+  late final _CFAllocatorGetDefault8Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function()>>(
+          'CFAllocatorGetDefault');
+  late final _CFAllocatorGetDefault8 =
+      _CFAllocatorGetDefault8Ptr.asFunction<CFAllocatorRef Function()>();
+
+  CFAllocatorRef CFAllocatorCreate8(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorCreate8(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorCreate8Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAllocatorRef Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorCreate');
+  late final _CFAllocatorCreate8 = _CFAllocatorCreate8Ptr.asFunction<
+      CFAllocatorRef Function(
+          CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorAllocate8(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorAllocate8(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorAllocate8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFIndex, CFOptionFlags)>>('CFAllocatorAllocate');
+  late final _CFAllocatorAllocate8 = _CFAllocatorAllocate8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, int, int)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorReallocate8(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+    int newsize,
+    int hint,
+  ) {
+    return _CFAllocatorReallocate8(
+      allocator,
+      ptr,
+      newsize,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorReallocate8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(CFAllocatorRef, ffi.Pointer<ffi.Void>,
+              CFIndex, CFOptionFlags)>>('CFAllocatorReallocate');
+  late final _CFAllocatorReallocate8 = _CFAllocatorReallocate8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          CFAllocatorRef, ffi.Pointer<ffi.Void>, int, int)>();
+
+  void CFAllocatorDeallocate8(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _CFAllocatorDeallocate8(
+      allocator,
+      ptr,
+    );
+  }
+
+  late final _CFAllocatorDeallocate8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef, ffi.Pointer<ffi.Void>)>>('CFAllocatorDeallocate');
+  late final _CFAllocatorDeallocate8 = _CFAllocatorDeallocate8Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFAllocatorGetPreferredSizeForSize8(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorGetPreferredSizeForSize8(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorGetPreferredSizeForSize8Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFAllocatorRef, CFIndex,
+              CFOptionFlags)>>('CFAllocatorGetPreferredSizeForSize');
+  late final _CFAllocatorGetPreferredSizeForSize8 =
+      _CFAllocatorGetPreferredSizeForSize8Ptr.asFunction<
+          int Function(CFAllocatorRef, int, int)>();
+
+  void CFAllocatorGetContext8(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorGetContext8(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorGetContext8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorGetContext');
+  late final _CFAllocatorGetContext8 = _CFAllocatorGetContext8Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  int CFGetTypeID8(
+    CFTypeRef cf,
+  ) {
+    return _CFGetTypeID8(
+      cf,
+    );
+  }
+
+  late final _CFGetTypeID8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function(CFTypeRef)>>('CFGetTypeID');
+  late final _CFGetTypeID8 =
+      _CFGetTypeID8Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyTypeIDDescription8(
+    int type_id,
+  ) {
+    return _CFCopyTypeIDDescription8(
+      type_id,
+    );
+  }
+
+  late final _CFCopyTypeIDDescription8Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeID)>>(
+          'CFCopyTypeIDDescription');
+  late final _CFCopyTypeIDDescription8 =
+      _CFCopyTypeIDDescription8Ptr.asFunction<CFStringRef Function(int)>();
+
+  CFTypeRef CFRetain8(
+    CFTypeRef cf,
+  ) {
+    return _CFRetain8(
+      cf,
+    );
+  }
+
+  late final _CFRetain8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>('CFRetain');
+  late final _CFRetain8 =
+      _CFRetain8Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  void CFRelease8(
+    CFTypeRef cf,
+  ) {
+    return _CFRelease8(
+      cf,
+    );
+  }
+
+  late final _CFRelease8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFRelease');
+  late final _CFRelease8 =
+      _CFRelease8Ptr.asFunction<void Function(CFTypeRef)>();
+
+  CFTypeRef CFAutorelease8(
+    CFTypeRef arg,
+  ) {
+    return _CFAutorelease8(
+      arg,
+    );
+  }
+
+  late final _CFAutorelease8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFAutorelease');
+  late final _CFAutorelease8 =
+      _CFAutorelease8Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  int CFGetRetainCount8(
+    CFTypeRef cf,
+  ) {
+    return _CFGetRetainCount8(
+      cf,
+    );
+  }
+
+  late final _CFGetRetainCount8Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTypeRef)>>(
+          'CFGetRetainCount');
+  late final _CFGetRetainCount8 =
+      _CFGetRetainCount8Ptr.asFunction<int Function(CFTypeRef)>();
+
+  int CFEqual8(
+    CFTypeRef cf1,
+    CFTypeRef cf2,
+  ) {
+    return _CFEqual8(
+      cf1,
+      cf2,
+    );
+  }
+
+  late final _CFEqual8Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFTypeRef, CFTypeRef)>>(
+          'CFEqual');
+  late final _CFEqual8 =
+      _CFEqual8Ptr.asFunction<int Function(CFTypeRef, CFTypeRef)>();
+
+  int CFHash8(
+    CFTypeRef cf,
+  ) {
+    return _CFHash8(
+      cf,
+    );
+  }
+
+  late final _CFHash8Ptr =
+      _lookup<ffi.NativeFunction<CFHashCode Function(CFTypeRef)>>('CFHash');
+  late final _CFHash8 = _CFHash8Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyDescription8(
+    CFTypeRef cf,
+  ) {
+    return _CFCopyDescription8(
+      cf,
+    );
+  }
+
+  late final _CFCopyDescription8Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeRef)>>(
+          'CFCopyDescription');
+  late final _CFCopyDescription8 =
+      _CFCopyDescription8Ptr.asFunction<CFStringRef Function(CFTypeRef)>();
+
+  CFAllocatorRef CFGetAllocator8(
+    CFTypeRef cf,
+  ) {
+    return _CFGetAllocator8(
+      cf,
+    );
+  }
+
+  late final _CFGetAllocator8Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function(CFTypeRef)>>(
+          'CFGetAllocator');
+  late final _CFGetAllocator8 =
+      _CFGetAllocator8Ptr.asFunction<CFAllocatorRef Function(CFTypeRef)>();
+
+  CFTypeRef CFMakeCollectable8(
+    CFTypeRef cf,
+  ) {
+    return _CFMakeCollectable8(
+      cf,
+    );
+  }
+
+  late final _CFMakeCollectable8Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFMakeCollectable');
+  late final _CFMakeCollectable8 =
+      _CFMakeCollectable8Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  ffi.Pointer<NSZone> NSDefaultMallocZone8() {
+    return _NSDefaultMallocZone8();
+  }
+
+  late final _NSDefaultMallocZone8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<NSZone> Function()>>(
+          'NSDefaultMallocZone');
+  late final _NSDefaultMallocZone8 =
+      _NSDefaultMallocZone8Ptr.asFunction<ffi.Pointer<NSZone> Function()>();
+
+  ffi.Pointer<NSZone> NSCreateZone8(
+    int startSize,
+    int granularity,
+    bool canFree,
+  ) {
+    return _NSCreateZone8(
+      startSize,
+      granularity,
+      canFree ? 1 : 0,
+    );
+  }
+
+  late final _NSCreateZone8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              NSUInteger, NSUInteger, ffi.Uint8)>>('NSCreateZone');
+  late final _NSCreateZone8 = _NSCreateZone8Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(int, int, int)>();
+
+  void NSRecycleZone8(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSRecycleZone8(
+      zone,
+    );
+  }
+
+  late final _NSRecycleZone8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<NSZone>)>>(
+          'NSRecycleZone');
+  late final _NSRecycleZone8 =
+      _NSRecycleZone8Ptr.asFunction<void Function(ffi.Pointer<NSZone>)>();
+
+  void NSSetZoneName8(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ObjCObject> name,
+  ) {
+    return _NSSetZoneName8(
+      zone,
+      name,
+    );
+  }
+
+  late final _NSSetZoneName8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>>('NSSetZoneName');
+  late final _NSSetZoneName8 = _NSSetZoneName8Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSZoneName8(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSZoneName8(
+      zone,
+    );
+  }
+
+  late final _NSZoneName8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>>('NSZoneName');
+  late final _NSZoneName8 = _NSZoneName8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>();
+
+  ffi.Pointer<NSZone> NSZoneFromPointer8(
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFromPointer8(
+      ptr,
+    );
+  }
+
+  late final _NSZoneFromPointer8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              ffi.Pointer<ffi.Void>)>>('NSZoneFromPointer');
+  late final _NSZoneFromPointer8 = _NSZoneFromPointer8Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSZoneMalloc8(
+    ffi.Pointer<NSZone> zone,
+    int size,
+  ) {
+    return _NSZoneMalloc8(
+      zone,
+      size,
+    );
+  }
+
+  late final _NSZoneMalloc8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger)>>('NSZoneMalloc');
+  late final _NSZoneMalloc8 = _NSZoneMalloc8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneCalloc8(
+    ffi.Pointer<NSZone> zone,
+    int numElems,
+    int byteSize,
+  ) {
+    return _NSZoneCalloc8(
+      zone,
+      numElems,
+      byteSize,
+    );
+  }
+
+  late final _NSZoneCalloc8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger, NSUInteger)>>('NSZoneCalloc');
+  late final _NSZoneCalloc8 = _NSZoneCalloc8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneRealloc8(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+  ) {
+    return _NSZoneRealloc8(
+      zone,
+      ptr,
+      size,
+    );
+  }
+
+  late final _NSZoneRealloc8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>,
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSZoneRealloc');
+  late final _NSZoneRealloc8 = _NSZoneRealloc8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>, int)>();
+
+  void NSZoneFree8(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFree8(
+      zone,
+      ptr,
+    );
+  }
+
+  late final _NSZoneFree8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>>('NSZoneFree');
+  late final _NSZoneFree8 = _NSZoneFree8Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateCollectable8(
+    int size,
+    int options,
+  ) {
+    return _NSAllocateCollectable8(
+      size,
+      options,
+    );
+  }
+
+  late final _NSAllocateCollectable8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              NSUInteger, NSUInteger)>>('NSAllocateCollectable');
+  late final _NSAllocateCollectable8 = _NSAllocateCollectable8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
+
+  ffi.Pointer<ffi.Void> NSReallocateCollectable8(
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+    int options,
+  ) {
+    return _NSReallocateCollectable8(
+      ptr,
+      size,
+      options,
+    );
+  }
+
+  late final _NSReallocateCollectable8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, NSUInteger,
+              NSUInteger)>>('NSReallocateCollectable');
+  late final _NSReallocateCollectable8 =
+      _NSReallocateCollectable8Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+
+  int NSPageSize8() {
+    return _NSPageSize8();
+  }
+
+  late final _NSPageSize8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSPageSize');
+  late final _NSPageSize8 = _NSPageSize8Ptr.asFunction<int Function()>();
+
+  int NSLogPageSize8() {
+    return _NSLogPageSize8();
+  }
+
+  late final _NSLogPageSize8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSLogPageSize');
+  late final _NSLogPageSize8 = _NSLogPageSize8Ptr.asFunction<int Function()>();
+
+  int NSRoundUpToMultipleOfPageSize8(
+    int bytes,
+  ) {
+    return _NSRoundUpToMultipleOfPageSize8(
+      bytes,
+    );
+  }
+
+  late final _NSRoundUpToMultipleOfPageSize8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundUpToMultipleOfPageSize');
+  late final _NSRoundUpToMultipleOfPageSize8 =
+      _NSRoundUpToMultipleOfPageSize8Ptr.asFunction<int Function(int)>();
+
+  int NSRoundDownToMultipleOfPageSize8(
+    int bytes,
+  ) {
+    return _NSRoundDownToMultipleOfPageSize8(
+      bytes,
+    );
+  }
+
+  late final _NSRoundDownToMultipleOfPageSize8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundDownToMultipleOfPageSize');
+  late final _NSRoundDownToMultipleOfPageSize8 =
+      _NSRoundDownToMultipleOfPageSize8Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateMemoryPages8(
+    int bytes,
+  ) {
+    return _NSAllocateMemoryPages8(
+      bytes,
+    );
+  }
+
+  late final _NSAllocateMemoryPages8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(NSUInteger)>>(
+          'NSAllocateMemoryPages');
+  late final _NSAllocateMemoryPages8 = _NSAllocateMemoryPages8Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int)>();
+
+  void NSDeallocateMemoryPages8(
+    ffi.Pointer<ffi.Void> ptr,
+    int bytes,
+  ) {
+    return _NSDeallocateMemoryPages8(
+      ptr,
+      bytes,
+    );
+  }
+
+  late final _NSDeallocateMemoryPages8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSDeallocateMemoryPages');
+  late final _NSDeallocateMemoryPages8 = _NSDeallocateMemoryPages8Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+
+  void NSCopyMemoryPages8(
+    ffi.Pointer<ffi.Void> source,
+    ffi.Pointer<ffi.Void> dest,
+    int bytes,
+  ) {
+    return _NSCopyMemoryPages8(
+      source,
+      dest,
+      bytes,
+    );
+  }
+
+  late final _NSCopyMemoryPages8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              NSUInteger)>>('NSCopyMemoryPages');
+  late final _NSCopyMemoryPages8 = _NSCopyMemoryPages8Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+
+  int NSRealMemoryAvailable8() {
+    return _NSRealMemoryAvailable8();
+  }
+
+  late final _NSRealMemoryAvailable8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>(
+          'NSRealMemoryAvailable');
+  late final _NSRealMemoryAvailable8 =
+      _NSRealMemoryAvailable8Ptr.asFunction<int Function()>();
+
+  ffi.Pointer<ObjCObject> NSAllocateObject8(
+    ffi.Pointer<ObjCObject> aClass,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSAllocateObject8(
+      aClass,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSAllocateObject8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSAllocateObject');
+  late final _NSAllocateObject8 = _NSAllocateObject8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  void NSDeallocateObject8(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDeallocateObject8(
+      object,
+    );
+  }
+
+  late final _NSDeallocateObject8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDeallocateObject');
+  late final _NSDeallocateObject8 = _NSDeallocateObject8Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSCopyObject8(
+    ffi.Pointer<ObjCObject> object,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSCopyObject8(
+      object,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSCopyObject8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSCopyObject');
+  late final _NSCopyObject8 = _NSCopyObject8Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  bool NSShouldRetainWithZone8(
+    ffi.Pointer<ObjCObject> anObject,
+    ffi.Pointer<NSZone> requestedZone,
+  ) {
+    return _NSShouldRetainWithZone8(
+          anObject,
+          requestedZone,
+        ) !=
+        0;
+  }
+
+  late final _NSShouldRetainWithZone8Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<NSZone>)>>('NSShouldRetainWithZone');
+  late final _NSShouldRetainWithZone8 = _NSShouldRetainWithZone8Ptr.asFunction<
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<NSZone>)>();
+
+  void NSIncrementExtraRefCount8(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSIncrementExtraRefCount8(
+      object,
+    );
+  }
+
+  late final _NSIncrementExtraRefCount8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSIncrementExtraRefCount');
+  late final _NSIncrementExtraRefCount8 = _NSIncrementExtraRefCount8Ptr
+      .asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  bool NSDecrementExtraRefCountWasZero8(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDecrementExtraRefCountWasZero8(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _NSDecrementExtraRefCountWasZero8Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDecrementExtraRefCountWasZero');
+  late final _NSDecrementExtraRefCountWasZero8 =
+      _NSDecrementExtraRefCountWasZero8Ptr.asFunction<
+          int Function(ffi.Pointer<ObjCObject>)>();
+
+  int NSExtraRefCount8(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSExtraRefCount8(
+      object,
+    );
+  }
+
+  late final _NSExtraRefCount8Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(ffi.Pointer<ObjCObject>)>>(
+          'NSExtraRefCount');
+  late final _NSExtraRefCount8 =
+      _NSExtraRefCount8Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
+
+  int CFArrayGetTypeID1() {
+    return _CFArrayGetTypeID1();
+  }
+
+  late final _CFArrayGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFArrayGetTypeID');
+  late final _CFArrayGetTypeID1 =
+      _CFArrayGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFArrayRef CFArrayCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+    int numValues,
+    ffi.Pointer<CFArrayCallBacks> callBacks,
+  ) {
+    return _CFArrayCreate1(
+      allocator,
+      values,
+      numValues,
+      callBacks,
+    );
+  }
+
+  late final _CFArrayCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex,
+              ffi.Pointer<CFArrayCallBacks>)>>('CFArrayCreate');
+  late final _CFArrayCreate1 = _CFArrayCreate1Ptr.asFunction<
+      CFArrayRef Function(CFAllocatorRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+          int, ffi.Pointer<CFArrayCallBacks>)>();
+
+  CFArrayRef CFArrayCreateCopy1(
+    CFAllocatorRef allocator,
+    CFArrayRef theArray,
+  ) {
+    return _CFArrayCreateCopy1(
+      allocator,
+      theArray,
+    );
+  }
+
+  late final _CFArrayCreateCopy1Ptr = _lookup<
+          ffi.NativeFunction<CFArrayRef Function(CFAllocatorRef, CFArrayRef)>>(
+      'CFArrayCreateCopy');
+  late final _CFArrayCreateCopy1 = _CFArrayCreateCopy1Ptr.asFunction<
+      CFArrayRef Function(CFAllocatorRef, CFArrayRef)>();
+
+  CFMutableArrayRef CFArrayCreateMutable1(
+    CFAllocatorRef allocator,
+    int capacity,
+    ffi.Pointer<CFArrayCallBacks> callBacks,
+  ) {
+    return _CFArrayCreateMutable1(
+      allocator,
+      capacity,
+      callBacks,
+    );
+  }
+
+  late final _CFArrayCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableArrayRef Function(CFAllocatorRef, CFIndex,
+              ffi.Pointer<CFArrayCallBacks>)>>('CFArrayCreateMutable');
+  late final _CFArrayCreateMutable1 = _CFArrayCreateMutable1Ptr.asFunction<
+      CFMutableArrayRef Function(
+          CFAllocatorRef, int, ffi.Pointer<CFArrayCallBacks>)>();
+
+  CFMutableArrayRef CFArrayCreateMutableCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFArrayRef theArray,
+  ) {
+    return _CFArrayCreateMutableCopy1(
+      allocator,
+      capacity,
+      theArray,
+    );
+  }
+
+  late final _CFArrayCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableArrayRef Function(CFAllocatorRef, CFIndex,
+              CFArrayRef)>>('CFArrayCreateMutableCopy');
+  late final _CFArrayCreateMutableCopy1 =
+      _CFArrayCreateMutableCopy1Ptr.asFunction<
+          CFMutableArrayRef Function(CFAllocatorRef, int, CFArrayRef)>();
+
+  int CFArrayGetCount1(
+    CFArrayRef theArray,
+  ) {
+    return _CFArrayGetCount1(
+      theArray,
+    );
+  }
+
+  late final _CFArrayGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFArrayRef)>>(
+          'CFArrayGetCount');
+  late final _CFArrayGetCount1 =
+      _CFArrayGetCount1Ptr.asFunction<int Function(CFArrayRef)>();
+
+  int CFArrayGetCountOfValue1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayGetCountOfValue1(
+      theArray,
+      range,
+      value,
+    );
+  }
+
+  late final _CFArrayGetCountOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFArrayRef, CFRange,
+              ffi.Pointer<ffi.Void>)>>('CFArrayGetCountOfValue');
+  late final _CFArrayGetCountOfValue1 = _CFArrayGetCountOfValue1Ptr.asFunction<
+      int Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Void>)>();
+
+  int CFArrayContainsValue1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayContainsValue1(
+      theArray,
+      range,
+      value,
+    );
+  }
+
+  late final _CFArrayContainsValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFArrayRef, CFRange,
+              ffi.Pointer<ffi.Void>)>>('CFArrayContainsValue');
+  late final _CFArrayContainsValue1 = _CFArrayContainsValue1Ptr.asFunction<
+      int Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> CFArrayGetValueAtIndex1(
+    CFArrayRef theArray,
+    int idx,
+  ) {
+    return _CFArrayGetValueAtIndex1(
+      theArray,
+      idx,
+    );
+  }
+
+  late final _CFArrayGetValueAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFArrayRef, CFIndex)>>('CFArrayGetValueAtIndex');
+  late final _CFArrayGetValueAtIndex1 = _CFArrayGetValueAtIndex1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFArrayRef, int)>();
+
+  void CFArrayGetValues1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+  ) {
+    return _CFArrayGetValues1(
+      theArray,
+      range,
+      values,
+    );
+  }
+
+  late final _CFArrayGetValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFArrayRef, CFRange,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFArrayGetValues');
+  late final _CFArrayGetValues1 = _CFArrayGetValues1Ptr.asFunction<
+      void Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFArrayApplyFunction1(
+    CFArrayRef theArray,
+    CFRange range,
+    CFArrayApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFArrayApplyFunction1(
+      theArray,
+      range,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFArrayApplyFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFArrayRef, CFRange, CFArrayApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFArrayApplyFunction');
+  late final _CFArrayApplyFunction1 = _CFArrayApplyFunction1Ptr.asFunction<
+      void Function(CFArrayRef, CFRange, CFArrayApplierFunction,
+          ffi.Pointer<ffi.Void>)>();
+
+  int CFArrayGetFirstIndexOfValue1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayGetFirstIndexOfValue1(
+      theArray,
+      range,
+      value,
+    );
+  }
+
+  late final _CFArrayGetFirstIndexOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFArrayRef, CFRange,
+              ffi.Pointer<ffi.Void>)>>('CFArrayGetFirstIndexOfValue');
+  late final _CFArrayGetFirstIndexOfValue1 = _CFArrayGetFirstIndexOfValue1Ptr
+      .asFunction<int Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Void>)>();
+
+  int CFArrayGetLastIndexOfValue1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayGetLastIndexOfValue1(
+      theArray,
+      range,
+      value,
+    );
+  }
+
+  late final _CFArrayGetLastIndexOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFArrayRef, CFRange,
+              ffi.Pointer<ffi.Void>)>>('CFArrayGetLastIndexOfValue');
+  late final _CFArrayGetLastIndexOfValue1 = _CFArrayGetLastIndexOfValue1Ptr
+      .asFunction<int Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Void>)>();
+
+  int CFArrayBSearchValues1(
+    CFArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Void> value,
+    CFComparatorFunction comparator,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFArrayBSearchValues1(
+      theArray,
+      range,
+      value,
+      comparator,
+      context,
+    );
+  }
+
+  late final _CFArrayBSearchValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(
+              CFArrayRef,
+              CFRange,
+              ffi.Pointer<ffi.Void>,
+              CFComparatorFunction,
+              ffi.Pointer<ffi.Void>)>>('CFArrayBSearchValues');
+  late final _CFArrayBSearchValues1 = _CFArrayBSearchValues1Ptr.asFunction<
+      int Function(CFArrayRef, CFRange, ffi.Pointer<ffi.Void>,
+          CFComparatorFunction, ffi.Pointer<ffi.Void>)>();
+
+  void CFArrayAppendValue1(
+    CFMutableArrayRef theArray,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayAppendValue1(
+      theArray,
+      value,
+    );
+  }
+
+  late final _CFArrayAppendValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableArrayRef, ffi.Pointer<ffi.Void>)>>('CFArrayAppendValue');
+  late final _CFArrayAppendValue1 = _CFArrayAppendValue1Ptr.asFunction<
+      void Function(CFMutableArrayRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFArrayInsertValueAtIndex1(
+    CFMutableArrayRef theArray,
+    int idx,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArrayInsertValueAtIndex1(
+      theArray,
+      idx,
+      value,
+    );
+  }
+
+  late final _CFArrayInsertValueAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableArrayRef, CFIndex,
+              ffi.Pointer<ffi.Void>)>>('CFArrayInsertValueAtIndex');
+  late final _CFArrayInsertValueAtIndex1 =
+      _CFArrayInsertValueAtIndex1Ptr.asFunction<
+          void Function(CFMutableArrayRef, int, ffi.Pointer<ffi.Void>)>();
+
+  void CFArraySetValueAtIndex1(
+    CFMutableArrayRef theArray,
+    int idx,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFArraySetValueAtIndex1(
+      theArray,
+      idx,
+      value,
+    );
+  }
+
+  late final _CFArraySetValueAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableArrayRef, CFIndex,
+              ffi.Pointer<ffi.Void>)>>('CFArraySetValueAtIndex');
+  late final _CFArraySetValueAtIndex1 = _CFArraySetValueAtIndex1Ptr.asFunction<
+      void Function(CFMutableArrayRef, int, ffi.Pointer<ffi.Void>)>();
+
+  void CFArrayRemoveValueAtIndex1(
+    CFMutableArrayRef theArray,
+    int idx,
+  ) {
+    return _CFArrayRemoveValueAtIndex1(
+      theArray,
+      idx,
+    );
+  }
+
+  late final _CFArrayRemoveValueAtIndex1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableArrayRef, CFIndex)>>(
+      'CFArrayRemoveValueAtIndex');
+  late final _CFArrayRemoveValueAtIndex1 = _CFArrayRemoveValueAtIndex1Ptr
+      .asFunction<void Function(CFMutableArrayRef, int)>();
+
+  void CFArrayRemoveAllValues1(
+    CFMutableArrayRef theArray,
+  ) {
+    return _CFArrayRemoveAllValues1(
+      theArray,
+    );
+  }
+
+  late final _CFArrayRemoveAllValues1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableArrayRef)>>(
+          'CFArrayRemoveAllValues');
+  late final _CFArrayRemoveAllValues1 = _CFArrayRemoveAllValues1Ptr.asFunction<
+      void Function(CFMutableArrayRef)>();
+
+  void CFArrayReplaceValues1(
+    CFMutableArrayRef theArray,
+    CFRange range,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> newValues,
+    int newCount,
+  ) {
+    return _CFArrayReplaceValues1(
+      theArray,
+      range,
+      newValues,
+      newCount,
+    );
+  }
+
+  late final _CFArrayReplaceValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableArrayRef,
+              CFRange,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex)>>('CFArrayReplaceValues');
+  late final _CFArrayReplaceValues1 = _CFArrayReplaceValues1Ptr.asFunction<
+      void Function(CFMutableArrayRef, CFRange,
+          ffi.Pointer<ffi.Pointer<ffi.Void>>, int)>();
+
+  void CFArrayExchangeValuesAtIndices1(
+    CFMutableArrayRef theArray,
+    int idx1,
+    int idx2,
+  ) {
+    return _CFArrayExchangeValuesAtIndices1(
+      theArray,
+      idx1,
+      idx2,
+    );
+  }
+
+  late final _CFArrayExchangeValuesAtIndices1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableArrayRef, CFIndex,
+              CFIndex)>>('CFArrayExchangeValuesAtIndices');
+  late final _CFArrayExchangeValuesAtIndices1 =
+      _CFArrayExchangeValuesAtIndices1Ptr.asFunction<
+          void Function(CFMutableArrayRef, int, int)>();
+
+  void CFArraySortValues1(
+    CFMutableArrayRef theArray,
+    CFRange range,
+    CFComparatorFunction comparator,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFArraySortValues1(
+      theArray,
+      range,
+      comparator,
+      context,
+    );
+  }
+
+  late final _CFArraySortValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableArrayRef, CFRange, CFComparatorFunction,
+              ffi.Pointer<ffi.Void>)>>('CFArraySortValues');
+  late final _CFArraySortValues1 = _CFArraySortValues1Ptr.asFunction<
+      void Function(CFMutableArrayRef, CFRange, CFComparatorFunction,
+          ffi.Pointer<ffi.Void>)>();
+
+  void CFArrayAppendArray1(
+    CFMutableArrayRef theArray,
+    CFArrayRef otherArray,
+    CFRange otherRange,
+  ) {
+    return _CFArrayAppendArray1(
+      theArray,
+      otherArray,
+      otherRange,
+    );
+  }
+
+  late final _CFArrayAppendArray1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableArrayRef, CFArrayRef, CFRange)>>('CFArrayAppendArray');
+  late final _CFArrayAppendArray1 = _CFArrayAppendArray1Ptr.asFunction<
+      void Function(CFMutableArrayRef, CFArrayRef, CFRange)>();
+
+  ffi.Pointer<ffi.Void> sec_retain1(
+    ffi.Pointer<ffi.Void> obj,
+  ) {
+    return _sec_retain1(
+      obj,
+    );
+  }
+
+  late final _sec_retain1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>('sec_retain');
+  late final _sec_retain1 = _sec_retain1Ptr
+      .asFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>();
+
+  void sec_release1(
+    ffi.Pointer<ffi.Void> obj,
+  ) {
+    return _sec_release1(
+      obj,
+    );
+  }
+
+  late final _sec_release1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+          'sec_release');
+  late final _sec_release1 =
+      _sec_release1Ptr.asFunction<void Function(ffi.Pointer<ffi.Void>)>();
+
+  CFStringRef SecCopyErrorMessageString1(
+    int status,
+    ffi.Pointer<ffi.Void> reserved,
+  ) {
+    return _SecCopyErrorMessageString1(
+      status,
+      reserved,
+    );
+  }
+
+  late final _SecCopyErrorMessageString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              OSStatus, ffi.Pointer<ffi.Void>)>>('SecCopyErrorMessageString');
+  late final _SecCopyErrorMessageString1 = _SecCopyErrorMessageString1Ptr
+      .asFunction<CFStringRef Function(int, ffi.Pointer<ffi.Void>)>();
+
+  int CFBagGetTypeID1() {
+    return _CFBagGetTypeID1();
+  }
+
+  late final _CFBagGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFBagGetTypeID');
+  late final _CFBagGetTypeID1 =
+      _CFBagGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFBagRef CFBagCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+    int numValues,
+    ffi.Pointer<CFBagCallBacks> callBacks,
+  ) {
+    return _CFBagCreate1(
+      allocator,
+      values,
+      numValues,
+      callBacks,
+    );
+  }
+
+  late final _CFBagCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFBagRef Function(CFAllocatorRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex, ffi.Pointer<CFBagCallBacks>)>>('CFBagCreate');
+  late final _CFBagCreate1 = _CFBagCreate1Ptr.asFunction<
+      CFBagRef Function(CFAllocatorRef, ffi.Pointer<ffi.Pointer<ffi.Void>>, int,
+          ffi.Pointer<CFBagCallBacks>)>();
+
+  CFBagRef CFBagCreateCopy1(
+    CFAllocatorRef allocator,
+    CFBagRef theBag,
+  ) {
+    return _CFBagCreateCopy1(
+      allocator,
+      theBag,
+    );
+  }
+
+  late final _CFBagCreateCopy1Ptr =
+      _lookup<ffi.NativeFunction<CFBagRef Function(CFAllocatorRef, CFBagRef)>>(
+          'CFBagCreateCopy');
+  late final _CFBagCreateCopy1 = _CFBagCreateCopy1Ptr.asFunction<
+      CFBagRef Function(CFAllocatorRef, CFBagRef)>();
+
+  CFMutableBagRef CFBagCreateMutable1(
+    CFAllocatorRef allocator,
+    int capacity,
+    ffi.Pointer<CFBagCallBacks> callBacks,
+  ) {
+    return _CFBagCreateMutable1(
+      allocator,
+      capacity,
+      callBacks,
+    );
+  }
+
+  late final _CFBagCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableBagRef Function(CFAllocatorRef, CFIndex,
+              ffi.Pointer<CFBagCallBacks>)>>('CFBagCreateMutable');
+  late final _CFBagCreateMutable1 = _CFBagCreateMutable1Ptr.asFunction<
+      CFMutableBagRef Function(
+          CFAllocatorRef, int, ffi.Pointer<CFBagCallBacks>)>();
+
+  CFMutableBagRef CFBagCreateMutableCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFBagRef theBag,
+  ) {
+    return _CFBagCreateMutableCopy1(
+      allocator,
+      capacity,
+      theBag,
+    );
+  }
+
+  late final _CFBagCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableBagRef Function(
+              CFAllocatorRef, CFIndex, CFBagRef)>>('CFBagCreateMutableCopy');
+  late final _CFBagCreateMutableCopy1 = _CFBagCreateMutableCopy1Ptr.asFunction<
+      CFMutableBagRef Function(CFAllocatorRef, int, CFBagRef)>();
+
+  int CFBagGetCount1(
+    CFBagRef theBag,
+  ) {
+    return _CFBagGetCount1(
+      theBag,
+    );
+  }
+
+  late final _CFBagGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFBagRef)>>('CFBagGetCount');
+  late final _CFBagGetCount1 =
+      _CFBagGetCount1Ptr.asFunction<int Function(CFBagRef)>();
+
+  int CFBagGetCountOfValue1(
+    CFBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagGetCountOfValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagGetCountOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(
+              CFBagRef, ffi.Pointer<ffi.Void>)>>('CFBagGetCountOfValue');
+  late final _CFBagGetCountOfValue1 = _CFBagGetCountOfValue1Ptr.asFunction<
+      int Function(CFBagRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFBagContainsValue1(
+    CFBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagContainsValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagContainsValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFBagRef, ffi.Pointer<ffi.Void>)>>('CFBagContainsValue');
+  late final _CFBagContainsValue1 = _CFBagContainsValue1Ptr.asFunction<
+      int Function(CFBagRef, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> CFBagGetValue1(
+    CFBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagGetValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagGetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFBagRef, ffi.Pointer<ffi.Void>)>>('CFBagGetValue');
+  late final _CFBagGetValue1 = _CFBagGetValue1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFBagRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFBagGetValueIfPresent1(
+    CFBagRef theBag,
+    ffi.Pointer<ffi.Void> candidate,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> value,
+  ) {
+    return _CFBagGetValueIfPresent1(
+      theBag,
+      candidate,
+      value,
+    );
+  }
+
+  late final _CFBagGetValueIfPresent1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFBagRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFBagGetValueIfPresent');
+  late final _CFBagGetValueIfPresent1 = _CFBagGetValueIfPresent1Ptr.asFunction<
+      int Function(CFBagRef, ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFBagGetValues1(
+    CFBagRef theBag,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+  ) {
+    return _CFBagGetValues1(
+      theBag,
+      values,
+    );
+  }
+
+  late final _CFBagGetValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFBagRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFBagGetValues');
+  late final _CFBagGetValues1 = _CFBagGetValues1Ptr.asFunction<
+      void Function(CFBagRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFBagApplyFunction1(
+    CFBagRef theBag,
+    CFBagApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFBagApplyFunction1(
+      theBag,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFBagApplyFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFBagRef, CFBagApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFBagApplyFunction');
+  late final _CFBagApplyFunction1 = _CFBagApplyFunction1Ptr.asFunction<
+      void Function(CFBagRef, CFBagApplierFunction, ffi.Pointer<ffi.Void>)>();
+
+  void CFBagAddValue1(
+    CFMutableBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagAddValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagAddValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBagRef, ffi.Pointer<ffi.Void>)>>('CFBagAddValue');
+  late final _CFBagAddValue1 = _CFBagAddValue1Ptr.asFunction<
+      void Function(CFMutableBagRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFBagReplaceValue1(
+    CFMutableBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagReplaceValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagReplaceValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBagRef, ffi.Pointer<ffi.Void>)>>('CFBagReplaceValue');
+  late final _CFBagReplaceValue1 = _CFBagReplaceValue1Ptr.asFunction<
+      void Function(CFMutableBagRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFBagSetValue1(
+    CFMutableBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagSetValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagSetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBagRef, ffi.Pointer<ffi.Void>)>>('CFBagSetValue');
+  late final _CFBagSetValue1 = _CFBagSetValue1Ptr.asFunction<
+      void Function(CFMutableBagRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFBagRemoveValue1(
+    CFMutableBagRef theBag,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBagRemoveValue1(
+      theBag,
+      value,
+    );
+  }
+
+  late final _CFBagRemoveValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBagRef, ffi.Pointer<ffi.Void>)>>('CFBagRemoveValue');
+  late final _CFBagRemoveValue1 = _CFBagRemoveValue1Ptr.asFunction<
+      void Function(CFMutableBagRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFBagRemoveAllValues1(
+    CFMutableBagRef theBag,
+  ) {
+    return _CFBagRemoveAllValues1(
+      theBag,
+    );
+  }
+
+  late final _CFBagRemoveAllValues1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableBagRef)>>(
+          'CFBagRemoveAllValues');
+  late final _CFBagRemoveAllValues1 =
+      _CFBagRemoveAllValues1Ptr.asFunction<void Function(CFMutableBagRef)>();
+
+  int CFBinaryHeapGetTypeID1() {
+    return _CFBinaryHeapGetTypeID1();
+  }
+
+  late final _CFBinaryHeapGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFBinaryHeapGetTypeID');
+  late final _CFBinaryHeapGetTypeID1 =
+      _CFBinaryHeapGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFBinaryHeapRef CFBinaryHeapCreate1(
+    CFAllocatorRef allocator,
+    int capacity,
+    ffi.Pointer<CFBinaryHeapCallBacks> callBacks,
+    ffi.Pointer<CFBinaryHeapCompareContext> compareContext,
+  ) {
+    return _CFBinaryHeapCreate1(
+      allocator,
+      capacity,
+      callBacks,
+      compareContext,
+    );
+  }
+
+  late final _CFBinaryHeapCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFBinaryHeapRef Function(
+              CFAllocatorRef,
+              CFIndex,
+              ffi.Pointer<CFBinaryHeapCallBacks>,
+              ffi.Pointer<CFBinaryHeapCompareContext>)>>('CFBinaryHeapCreate');
+  late final _CFBinaryHeapCreate1 = _CFBinaryHeapCreate1Ptr.asFunction<
+      CFBinaryHeapRef Function(
+          CFAllocatorRef,
+          int,
+          ffi.Pointer<CFBinaryHeapCallBacks>,
+          ffi.Pointer<CFBinaryHeapCompareContext>)>();
+
+  CFBinaryHeapRef CFBinaryHeapCreateCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFBinaryHeapRef heap,
+  ) {
+    return _CFBinaryHeapCreateCopy1(
+      allocator,
+      capacity,
+      heap,
+    );
+  }
+
+  late final _CFBinaryHeapCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFBinaryHeapRef Function(CFAllocatorRef, CFIndex,
+              CFBinaryHeapRef)>>('CFBinaryHeapCreateCopy');
+  late final _CFBinaryHeapCreateCopy1 = _CFBinaryHeapCreateCopy1Ptr.asFunction<
+      CFBinaryHeapRef Function(CFAllocatorRef, int, CFBinaryHeapRef)>();
+
+  int CFBinaryHeapGetCount1(
+    CFBinaryHeapRef heap,
+  ) {
+    return _CFBinaryHeapGetCount1(
+      heap,
+    );
+  }
+
+  late final _CFBinaryHeapGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFBinaryHeapRef)>>(
+          'CFBinaryHeapGetCount');
+  late final _CFBinaryHeapGetCount1 =
+      _CFBinaryHeapGetCount1Ptr.asFunction<int Function(CFBinaryHeapRef)>();
+
+  int CFBinaryHeapGetCountOfValue1(
+    CFBinaryHeapRef heap,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBinaryHeapGetCountOfValue1(
+      heap,
+      value,
+    );
+  }
+
+  late final _CFBinaryHeapGetCountOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFBinaryHeapRef,
+              ffi.Pointer<ffi.Void>)>>('CFBinaryHeapGetCountOfValue');
+  late final _CFBinaryHeapGetCountOfValue1 = _CFBinaryHeapGetCountOfValue1Ptr
+      .asFunction<int Function(CFBinaryHeapRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFBinaryHeapContainsValue1(
+    CFBinaryHeapRef heap,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBinaryHeapContainsValue1(
+      heap,
+      value,
+    );
+  }
+
+  late final _CFBinaryHeapContainsValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFBinaryHeapRef,
+              ffi.Pointer<ffi.Void>)>>('CFBinaryHeapContainsValue');
+  late final _CFBinaryHeapContainsValue1 = _CFBinaryHeapContainsValue1Ptr
+      .asFunction<int Function(CFBinaryHeapRef, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> CFBinaryHeapGetMinimum1(
+    CFBinaryHeapRef heap,
+  ) {
+    return _CFBinaryHeapGetMinimum1(
+      heap,
+    );
+  }
+
+  late final _CFBinaryHeapGetMinimum1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(CFBinaryHeapRef)>>(
+      'CFBinaryHeapGetMinimum');
+  late final _CFBinaryHeapGetMinimum1 = _CFBinaryHeapGetMinimum1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFBinaryHeapRef)>();
+
+  int CFBinaryHeapGetMinimumIfPresent1(
+    CFBinaryHeapRef heap,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> value,
+  ) {
+    return _CFBinaryHeapGetMinimumIfPresent1(
+      heap,
+      value,
+    );
+  }
+
+  late final _CFBinaryHeapGetMinimumIfPresent1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(
+                  CFBinaryHeapRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFBinaryHeapGetMinimumIfPresent');
+  late final _CFBinaryHeapGetMinimumIfPresent1 =
+      _CFBinaryHeapGetMinimumIfPresent1Ptr.asFunction<
+          int Function(CFBinaryHeapRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFBinaryHeapGetValues1(
+    CFBinaryHeapRef heap,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+  ) {
+    return _CFBinaryHeapGetValues1(
+      heap,
+      values,
+    );
+  }
+
+  late final _CFBinaryHeapGetValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFBinaryHeapRef,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFBinaryHeapGetValues');
+  late final _CFBinaryHeapGetValues1 = _CFBinaryHeapGetValues1Ptr.asFunction<
+      void Function(CFBinaryHeapRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFBinaryHeapApplyFunction1(
+    CFBinaryHeapRef heap,
+    CFBinaryHeapApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFBinaryHeapApplyFunction1(
+      heap,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFBinaryHeapApplyFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFBinaryHeapRef, CFBinaryHeapApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFBinaryHeapApplyFunction');
+  late final _CFBinaryHeapApplyFunction1 =
+      _CFBinaryHeapApplyFunction1Ptr.asFunction<
+          void Function(CFBinaryHeapRef, CFBinaryHeapApplierFunction,
+              ffi.Pointer<ffi.Void>)>();
+
+  void CFBinaryHeapAddValue1(
+    CFBinaryHeapRef heap,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFBinaryHeapAddValue1(
+      heap,
+      value,
+    );
+  }
+
+  late final _CFBinaryHeapAddValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFBinaryHeapRef, ffi.Pointer<ffi.Void>)>>('CFBinaryHeapAddValue');
+  late final _CFBinaryHeapAddValue1 = _CFBinaryHeapAddValue1Ptr.asFunction<
+      void Function(CFBinaryHeapRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFBinaryHeapRemoveMinimumValue1(
+    CFBinaryHeapRef heap,
+  ) {
+    return _CFBinaryHeapRemoveMinimumValue1(
+      heap,
+    );
+  }
+
+  late final _CFBinaryHeapRemoveMinimumValue1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFBinaryHeapRef)>>(
+          'CFBinaryHeapRemoveMinimumValue');
+  late final _CFBinaryHeapRemoveMinimumValue1 =
+      _CFBinaryHeapRemoveMinimumValue1Ptr.asFunction<
+          void Function(CFBinaryHeapRef)>();
+
+  void CFBinaryHeapRemoveAllValues1(
+    CFBinaryHeapRef heap,
+  ) {
+    return _CFBinaryHeapRemoveAllValues1(
+      heap,
+    );
+  }
+
+  late final _CFBinaryHeapRemoveAllValues1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFBinaryHeapRef)>>(
+          'CFBinaryHeapRemoveAllValues');
+  late final _CFBinaryHeapRemoveAllValues1 = _CFBinaryHeapRemoveAllValues1Ptr
+      .asFunction<void Function(CFBinaryHeapRef)>();
+
+  int CFBitVectorGetTypeID1() {
+    return _CFBitVectorGetTypeID1();
+  }
+
+  late final _CFBitVectorGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFBitVectorGetTypeID');
+  late final _CFBitVectorGetTypeID1 =
+      _CFBitVectorGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFBitVectorRef CFBitVectorCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> bytes,
+    int numBits,
+  ) {
+    return _CFBitVectorCreate1(
+      allocator,
+      bytes,
+      numBits,
+    );
+  }
+
+  late final _CFBitVectorCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFBitVectorRef Function(CFAllocatorRef, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFBitVectorCreate');
+  late final _CFBitVectorCreate1 = _CFBitVectorCreate1Ptr.asFunction<
+      CFBitVectorRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, int)>();
+
+  CFBitVectorRef CFBitVectorCreateCopy1(
+    CFAllocatorRef allocator,
+    CFBitVectorRef bv,
+  ) {
+    return _CFBitVectorCreateCopy1(
+      allocator,
+      bv,
+    );
+  }
+
+  late final _CFBitVectorCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFBitVectorRef Function(
+              CFAllocatorRef, CFBitVectorRef)>>('CFBitVectorCreateCopy');
+  late final _CFBitVectorCreateCopy1 = _CFBitVectorCreateCopy1Ptr.asFunction<
+      CFBitVectorRef Function(CFAllocatorRef, CFBitVectorRef)>();
+
+  CFMutableBitVectorRef CFBitVectorCreateMutable1(
+    CFAllocatorRef allocator,
+    int capacity,
+  ) {
+    return _CFBitVectorCreateMutable1(
+      allocator,
+      capacity,
+    );
+  }
+
+  late final _CFBitVectorCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableBitVectorRef Function(
+              CFAllocatorRef, CFIndex)>>('CFBitVectorCreateMutable');
+  late final _CFBitVectorCreateMutable1 = _CFBitVectorCreateMutable1Ptr
+      .asFunction<CFMutableBitVectorRef Function(CFAllocatorRef, int)>();
+
+  CFMutableBitVectorRef CFBitVectorCreateMutableCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFBitVectorRef bv,
+  ) {
+    return _CFBitVectorCreateMutableCopy1(
+      allocator,
+      capacity,
+      bv,
+    );
+  }
+
+  late final _CFBitVectorCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableBitVectorRef Function(CFAllocatorRef, CFIndex,
+              CFBitVectorRef)>>('CFBitVectorCreateMutableCopy');
+  late final _CFBitVectorCreateMutableCopy1 =
+      _CFBitVectorCreateMutableCopy1Ptr.asFunction<
+          CFMutableBitVectorRef Function(
+              CFAllocatorRef, int, CFBitVectorRef)>();
+
+  int CFBitVectorGetCount1(
+    CFBitVectorRef bv,
+  ) {
+    return _CFBitVectorGetCount1(
+      bv,
+    );
+  }
+
+  late final _CFBitVectorGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFBitVectorRef)>>(
+          'CFBitVectorGetCount');
+  late final _CFBitVectorGetCount1 =
+      _CFBitVectorGetCount1Ptr.asFunction<int Function(CFBitVectorRef)>();
+
+  int CFBitVectorGetCountOfBit1(
+    CFBitVectorRef bv,
+    CFRange range,
+    int value,
+  ) {
+    return _CFBitVectorGetCountOfBit1(
+      bv,
+      range,
+      value,
+    );
+  }
+
+  late final _CFBitVectorGetCountOfBit1Ptr = _lookup<
+          ffi.NativeFunction<CFIndex Function(CFBitVectorRef, CFRange, CFBit)>>(
+      'CFBitVectorGetCountOfBit');
+  late final _CFBitVectorGetCountOfBit1 = _CFBitVectorGetCountOfBit1Ptr
+      .asFunction<int Function(CFBitVectorRef, CFRange, int)>();
+
+  int CFBitVectorContainsBit1(
+    CFBitVectorRef bv,
+    CFRange range,
+    int value,
+  ) {
+    return _CFBitVectorContainsBit1(
+      bv,
+      range,
+      value,
+    );
+  }
+
+  late final _CFBitVectorContainsBit1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFBitVectorRef, CFRange, CFBit)>>(
+      'CFBitVectorContainsBit');
+  late final _CFBitVectorContainsBit1 = _CFBitVectorContainsBit1Ptr.asFunction<
+      int Function(CFBitVectorRef, CFRange, int)>();
+
+  int CFBitVectorGetBitAtIndex1(
+    CFBitVectorRef bv,
+    int idx,
+  ) {
+    return _CFBitVectorGetBitAtIndex1(
+      bv,
+      idx,
+    );
+  }
+
+  late final _CFBitVectorGetBitAtIndex1Ptr =
+      _lookup<ffi.NativeFunction<CFBit Function(CFBitVectorRef, CFIndex)>>(
+          'CFBitVectorGetBitAtIndex');
+  late final _CFBitVectorGetBitAtIndex1 = _CFBitVectorGetBitAtIndex1Ptr
+      .asFunction<int Function(CFBitVectorRef, int)>();
+
+  void CFBitVectorGetBits1(
+    CFBitVectorRef bv,
+    CFRange range,
+    ffi.Pointer<UInt8> bytes,
+  ) {
+    return _CFBitVectorGetBits1(
+      bv,
+      range,
+      bytes,
+    );
+  }
+
+  late final _CFBitVectorGetBits1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFBitVectorRef, CFRange,
+              ffi.Pointer<UInt8>)>>('CFBitVectorGetBits');
+  late final _CFBitVectorGetBits1 = _CFBitVectorGetBits1Ptr.asFunction<
+      void Function(CFBitVectorRef, CFRange, ffi.Pointer<UInt8>)>();
+
+  int CFBitVectorGetFirstIndexOfBit1(
+    CFBitVectorRef bv,
+    CFRange range,
+    int value,
+  ) {
+    return _CFBitVectorGetFirstIndexOfBit1(
+      bv,
+      range,
+      value,
+    );
+  }
+
+  late final _CFBitVectorGetFirstIndexOfBit1Ptr = _lookup<
+          ffi.NativeFunction<CFIndex Function(CFBitVectorRef, CFRange, CFBit)>>(
+      'CFBitVectorGetFirstIndexOfBit');
+  late final _CFBitVectorGetFirstIndexOfBit1 =
+      _CFBitVectorGetFirstIndexOfBit1Ptr.asFunction<
+          int Function(CFBitVectorRef, CFRange, int)>();
+
+  int CFBitVectorGetLastIndexOfBit1(
+    CFBitVectorRef bv,
+    CFRange range,
+    int value,
+  ) {
+    return _CFBitVectorGetLastIndexOfBit1(
+      bv,
+      range,
+      value,
+    );
+  }
+
+  late final _CFBitVectorGetLastIndexOfBit1Ptr = _lookup<
+          ffi.NativeFunction<CFIndex Function(CFBitVectorRef, CFRange, CFBit)>>(
+      'CFBitVectorGetLastIndexOfBit');
+  late final _CFBitVectorGetLastIndexOfBit1 = _CFBitVectorGetLastIndexOfBit1Ptr
+      .asFunction<int Function(CFBitVectorRef, CFRange, int)>();
+
+  void CFBitVectorSetCount1(
+    CFMutableBitVectorRef bv,
+    int count,
+  ) {
+    return _CFBitVectorSetCount1(
+      bv,
+      count,
+    );
+  }
+
+  late final _CFBitVectorSetCount1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBitVectorRef, CFIndex)>>('CFBitVectorSetCount');
+  late final _CFBitVectorSetCount1 = _CFBitVectorSetCount1Ptr.asFunction<
+      void Function(CFMutableBitVectorRef, int)>();
+
+  void CFBitVectorFlipBitAtIndex1(
+    CFMutableBitVectorRef bv,
+    int idx,
+  ) {
+    return _CFBitVectorFlipBitAtIndex1(
+      bv,
+      idx,
+    );
+  }
+
+  late final _CFBitVectorFlipBitAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBitVectorRef, CFIndex)>>('CFBitVectorFlipBitAtIndex');
+  late final _CFBitVectorFlipBitAtIndex1 = _CFBitVectorFlipBitAtIndex1Ptr
+      .asFunction<void Function(CFMutableBitVectorRef, int)>();
+
+  void CFBitVectorFlipBits1(
+    CFMutableBitVectorRef bv,
+    CFRange range,
+  ) {
+    return _CFBitVectorFlipBits1(
+      bv,
+      range,
+    );
+  }
+
+  late final _CFBitVectorFlipBits1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBitVectorRef, CFRange)>>('CFBitVectorFlipBits');
+  late final _CFBitVectorFlipBits1 = _CFBitVectorFlipBits1Ptr.asFunction<
+      void Function(CFMutableBitVectorRef, CFRange)>();
+
+  void CFBitVectorSetBitAtIndex1(
+    CFMutableBitVectorRef bv,
+    int idx,
+    int value,
+  ) {
+    return _CFBitVectorSetBitAtIndex1(
+      bv,
+      idx,
+      value,
+    );
+  }
+
+  late final _CFBitVectorSetBitAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableBitVectorRef, CFIndex,
+              CFBit)>>('CFBitVectorSetBitAtIndex');
+  late final _CFBitVectorSetBitAtIndex1 = _CFBitVectorSetBitAtIndex1Ptr
+      .asFunction<void Function(CFMutableBitVectorRef, int, int)>();
+
+  void CFBitVectorSetBits1(
+    CFMutableBitVectorRef bv,
+    CFRange range,
+    int value,
+  ) {
+    return _CFBitVectorSetBits1(
+      bv,
+      range,
+      value,
+    );
+  }
+
+  late final _CFBitVectorSetBits1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableBitVectorRef, CFRange, CFBit)>>('CFBitVectorSetBits');
+  late final _CFBitVectorSetBits1 = _CFBitVectorSetBits1Ptr.asFunction<
+      void Function(CFMutableBitVectorRef, CFRange, int)>();
+
+  void CFBitVectorSetAllBits1(
+    CFMutableBitVectorRef bv,
+    int value,
+  ) {
+    return _CFBitVectorSetAllBits1(
+      bv,
+      value,
+    );
+  }
+
+  late final _CFBitVectorSetAllBits1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableBitVectorRef, CFBit)>>(
+      'CFBitVectorSetAllBits');
+  late final _CFBitVectorSetAllBits1 = _CFBitVectorSetAllBits1Ptr.asFunction<
+      void Function(CFMutableBitVectorRef, int)>();
+
+  int CFDictionaryGetTypeID1() {
+    return _CFDictionaryGetTypeID1();
+  }
+
+  late final _CFDictionaryGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFDictionaryGetTypeID');
+  late final _CFDictionaryGetTypeID1 =
+      _CFDictionaryGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFDictionaryRef CFDictionaryCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> keys,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+    int numValues,
+    ffi.Pointer<CFDictionaryKeyCallBacks> keyCallBacks,
+    ffi.Pointer<CFDictionaryValueCallBacks> valueCallBacks,
+  ) {
+    return _CFDictionaryCreate1(
+      allocator,
+      keys,
+      values,
+      numValues,
+      keyCallBacks,
+      valueCallBacks,
+    );
+  }
+
+  late final _CFDictionaryCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex,
+              ffi.Pointer<CFDictionaryKeyCallBacks>,
+              ffi.Pointer<CFDictionaryValueCallBacks>)>>('CFDictionaryCreate');
+  late final _CFDictionaryCreate1 = _CFDictionaryCreate1Ptr.asFunction<
+      CFDictionaryRef Function(
+          CFAllocatorRef,
+          ffi.Pointer<ffi.Pointer<ffi.Void>>,
+          ffi.Pointer<ffi.Pointer<ffi.Void>>,
+          int,
+          ffi.Pointer<CFDictionaryKeyCallBacks>,
+          ffi.Pointer<CFDictionaryValueCallBacks>)>();
+
+  CFDictionaryRef CFDictionaryCreateCopy1(
+    CFAllocatorRef allocator,
+    CFDictionaryRef theDict,
+  ) {
+    return _CFDictionaryCreateCopy1(
+      allocator,
+      theDict,
+    );
+  }
+
+  late final _CFDictionaryCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(
+              CFAllocatorRef, CFDictionaryRef)>>('CFDictionaryCreateCopy');
+  late final _CFDictionaryCreateCopy1 = _CFDictionaryCreateCopy1Ptr.asFunction<
+      CFDictionaryRef Function(CFAllocatorRef, CFDictionaryRef)>();
+
+  CFMutableDictionaryRef CFDictionaryCreateMutable1(
+    CFAllocatorRef allocator,
+    int capacity,
+    ffi.Pointer<CFDictionaryKeyCallBacks> keyCallBacks,
+    ffi.Pointer<CFDictionaryValueCallBacks> valueCallBacks,
+  ) {
+    return _CFDictionaryCreateMutable1(
+      allocator,
+      capacity,
+      keyCallBacks,
+      valueCallBacks,
+    );
+  }
+
+  late final _CFDictionaryCreateMutable1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFMutableDictionaryRef Function(
+                  CFAllocatorRef,
+                  CFIndex,
+                  ffi.Pointer<CFDictionaryKeyCallBacks>,
+                  ffi.Pointer<CFDictionaryValueCallBacks>)>>(
+      'CFDictionaryCreateMutable');
+  late final _CFDictionaryCreateMutable1 =
+      _CFDictionaryCreateMutable1Ptr.asFunction<
+          CFMutableDictionaryRef Function(
+              CFAllocatorRef,
+              int,
+              ffi.Pointer<CFDictionaryKeyCallBacks>,
+              ffi.Pointer<CFDictionaryValueCallBacks>)>();
+
+  CFMutableDictionaryRef CFDictionaryCreateMutableCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFDictionaryRef theDict,
+  ) {
+    return _CFDictionaryCreateMutableCopy1(
+      allocator,
+      capacity,
+      theDict,
+    );
+  }
+
+  late final _CFDictionaryCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableDictionaryRef Function(CFAllocatorRef, CFIndex,
+              CFDictionaryRef)>>('CFDictionaryCreateMutableCopy');
+  late final _CFDictionaryCreateMutableCopy1 =
+      _CFDictionaryCreateMutableCopy1Ptr.asFunction<
+          CFMutableDictionaryRef Function(
+              CFAllocatorRef, int, CFDictionaryRef)>();
+
+  int CFDictionaryGetCount1(
+    CFDictionaryRef theDict,
+  ) {
+    return _CFDictionaryGetCount1(
+      theDict,
+    );
+  }
+
+  late final _CFDictionaryGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFDictionaryRef)>>(
+          'CFDictionaryGetCount');
+  late final _CFDictionaryGetCount1 =
+      _CFDictionaryGetCount1Ptr.asFunction<int Function(CFDictionaryRef)>();
+
+  int CFDictionaryGetCountOfKey1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+  ) {
+    return _CFDictionaryGetCountOfKey1(
+      theDict,
+      key,
+    );
+  }
+
+  late final _CFDictionaryGetCountOfKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFDictionaryRef,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryGetCountOfKey');
+  late final _CFDictionaryGetCountOfKey1 = _CFDictionaryGetCountOfKey1Ptr
+      .asFunction<int Function(CFDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFDictionaryGetCountOfValue1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFDictionaryGetCountOfValue1(
+      theDict,
+      value,
+    );
+  }
+
+  late final _CFDictionaryGetCountOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFDictionaryRef,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryGetCountOfValue');
+  late final _CFDictionaryGetCountOfValue1 = _CFDictionaryGetCountOfValue1Ptr
+      .asFunction<int Function(CFDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFDictionaryContainsKey1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+  ) {
+    return _CFDictionaryContainsKey1(
+      theDict,
+      key,
+    );
+  }
+
+  late final _CFDictionaryContainsKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFDictionaryRef,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryContainsKey');
+  late final _CFDictionaryContainsKey1 = _CFDictionaryContainsKey1Ptr
+      .asFunction<int Function(CFDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFDictionaryContainsValue1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFDictionaryContainsValue1(
+      theDict,
+      value,
+    );
+  }
+
+  late final _CFDictionaryContainsValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFDictionaryRef,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryContainsValue');
+  late final _CFDictionaryContainsValue1 = _CFDictionaryContainsValue1Ptr
+      .asFunction<int Function(CFDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> CFDictionaryGetValue1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+  ) {
+    return _CFDictionaryGetValue1(
+      theDict,
+      key,
+    );
+  }
+
+  late final _CFDictionaryGetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFDictionaryRef, ffi.Pointer<ffi.Void>)>>('CFDictionaryGetValue');
+  late final _CFDictionaryGetValue1 = _CFDictionaryGetValue1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFDictionaryGetValueIfPresent1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> value,
+  ) {
+    return _CFDictionaryGetValueIfPresent1(
+      theDict,
+      key,
+      value,
+    );
+  }
+
+  late final _CFDictionaryGetValueIfPresent1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(CFDictionaryRef, ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFDictionaryGetValueIfPresent');
+  late final _CFDictionaryGetValueIfPresent1 =
+      _CFDictionaryGetValueIfPresent1Ptr.asFunction<
+          int Function(CFDictionaryRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFDictionaryGetKeysAndValues1(
+    CFDictionaryRef theDict,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> keys,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+  ) {
+    return _CFDictionaryGetKeysAndValues1(
+      theDict,
+      keys,
+      values,
+    );
+  }
+
+  late final _CFDictionaryGetKeysAndValues1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFDictionaryRef,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFDictionaryGetKeysAndValues');
+  late final _CFDictionaryGetKeysAndValues1 =
+      _CFDictionaryGetKeysAndValues1Ptr.asFunction<
+          void Function(CFDictionaryRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFDictionaryApplyFunction1(
+    CFDictionaryRef theDict,
+    CFDictionaryApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFDictionaryApplyFunction1(
+      theDict,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFDictionaryApplyFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFDictionaryRef, CFDictionaryApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryApplyFunction');
+  late final _CFDictionaryApplyFunction1 =
+      _CFDictionaryApplyFunction1Ptr.asFunction<
+          void Function(CFDictionaryRef, CFDictionaryApplierFunction,
+              ffi.Pointer<ffi.Void>)>();
+
+  void CFDictionaryAddValue1(
+    CFMutableDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFDictionaryAddValue1(
+      theDict,
+      key,
+      value,
+    );
+  }
+
+  late final _CFDictionaryAddValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryAddValue');
+  late final _CFDictionaryAddValue1 = _CFDictionaryAddValue1Ptr.asFunction<
+      void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Void>)>();
+
+  void CFDictionarySetValue1(
+    CFMutableDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFDictionarySetValue1(
+      theDict,
+      key,
+      value,
+    );
+  }
+
+  late final _CFDictionarySetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>>('CFDictionarySetValue');
+  late final _CFDictionarySetValue1 = _CFDictionarySetValue1Ptr.asFunction<
+      void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Void>)>();
+
+  void CFDictionaryReplaceValue1(
+    CFMutableDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFDictionaryReplaceValue1(
+      theDict,
+      key,
+      value,
+    );
+  }
+
+  late final _CFDictionaryReplaceValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryReplaceValue');
+  late final _CFDictionaryReplaceValue1 =
+      _CFDictionaryReplaceValue1Ptr.asFunction<
+          void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>)>();
+
+  void CFDictionaryRemoveValue1(
+    CFMutableDictionaryRef theDict,
+    ffi.Pointer<ffi.Void> key,
+  ) {
+    return _CFDictionaryRemoveValue1(
+      theDict,
+      key,
+    );
+  }
+
+  late final _CFDictionaryRemoveValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDictionaryRef,
+              ffi.Pointer<ffi.Void>)>>('CFDictionaryRemoveValue');
+  late final _CFDictionaryRemoveValue1 =
+      _CFDictionaryRemoveValue1Ptr.asFunction<
+          void Function(CFMutableDictionaryRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFDictionaryRemoveAllValues1(
+    CFMutableDictionaryRef theDict,
+  ) {
+    return _CFDictionaryRemoveAllValues1(
+      theDict,
+    );
+  }
+
+  late final _CFDictionaryRemoveAllValues1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableDictionaryRef)>>(
+          'CFDictionaryRemoveAllValues');
+  late final _CFDictionaryRemoveAllValues1 = _CFDictionaryRemoveAllValues1Ptr
+      .asFunction<void Function(CFMutableDictionaryRef)>();
+
+  int CFNotificationCenterGetTypeID1() {
+    return _CFNotificationCenterGetTypeID1();
+  }
+
+  late final _CFNotificationCenterGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFNotificationCenterGetTypeID');
+  late final _CFNotificationCenterGetTypeID1 =
+      _CFNotificationCenterGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFNotificationCenterRef CFNotificationCenterGetLocalCenter1() {
+    return _CFNotificationCenterGetLocalCenter1();
+  }
+
+  late final _CFNotificationCenterGetLocalCenter1Ptr =
+      _lookup<ffi.NativeFunction<CFNotificationCenterRef Function()>>(
+          'CFNotificationCenterGetLocalCenter');
+  late final _CFNotificationCenterGetLocalCenter1 =
+      _CFNotificationCenterGetLocalCenter1Ptr.asFunction<
+          CFNotificationCenterRef Function()>();
+
+  CFNotificationCenterRef CFNotificationCenterGetDistributedCenter1() {
+    return _CFNotificationCenterGetDistributedCenter1();
+  }
+
+  late final _CFNotificationCenterGetDistributedCenter1Ptr =
+      _lookup<ffi.NativeFunction<CFNotificationCenterRef Function()>>(
+          'CFNotificationCenterGetDistributedCenter');
+  late final _CFNotificationCenterGetDistributedCenter1 =
+      _CFNotificationCenterGetDistributedCenter1Ptr.asFunction<
+          CFNotificationCenterRef Function()>();
+
+  CFNotificationCenterRef CFNotificationCenterGetDarwinNotifyCenter1() {
+    return _CFNotificationCenterGetDarwinNotifyCenter1();
+  }
+
+  late final _CFNotificationCenterGetDarwinNotifyCenter1Ptr =
+      _lookup<ffi.NativeFunction<CFNotificationCenterRef Function()>>(
+          'CFNotificationCenterGetDarwinNotifyCenter');
+  late final _CFNotificationCenterGetDarwinNotifyCenter1 =
+      _CFNotificationCenterGetDarwinNotifyCenter1Ptr.asFunction<
+          CFNotificationCenterRef Function()>();
+
+  void CFNotificationCenterAddObserver1(
+    CFNotificationCenterRef center,
+    ffi.Pointer<ffi.Void> observer,
+    CFNotificationCallback callBack,
+    CFStringRef name,
+    ffi.Pointer<ffi.Void> object,
+    int suspensionBehavior,
+  ) {
+    return _CFNotificationCenterAddObserver1(
+      center,
+      observer,
+      callBack,
+      name,
+      object,
+      suspensionBehavior,
+    );
+  }
+
+  late final _CFNotificationCenterAddObserver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFNotificationCenterRef,
+              ffi.Pointer<ffi.Void>,
+              CFNotificationCallback,
+              CFStringRef,
+              ffi.Pointer<ffi.Void>,
+              ffi.Int32)>>('CFNotificationCenterAddObserver');
+  late final _CFNotificationCenterAddObserver1 =
+      _CFNotificationCenterAddObserver1Ptr.asFunction<
+          void Function(
+              CFNotificationCenterRef,
+              ffi.Pointer<ffi.Void>,
+              CFNotificationCallback,
+              CFStringRef,
+              ffi.Pointer<ffi.Void>,
+              int)>();
+
+  void CFNotificationCenterRemoveObserver1(
+    CFNotificationCenterRef center,
+    ffi.Pointer<ffi.Void> observer,
+    CFNotificationName name,
+    ffi.Pointer<ffi.Void> object,
+  ) {
+    return _CFNotificationCenterRemoveObserver1(
+      center,
+      observer,
+      name,
+      object,
+    );
+  }
+
+  late final _CFNotificationCenterRemoveObserver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFNotificationCenterRef,
+              ffi.Pointer<ffi.Void>,
+              CFNotificationName,
+              ffi.Pointer<ffi.Void>)>>('CFNotificationCenterRemoveObserver');
+  late final _CFNotificationCenterRemoveObserver1 =
+      _CFNotificationCenterRemoveObserver1Ptr.asFunction<
+          void Function(CFNotificationCenterRef, ffi.Pointer<ffi.Void>,
+              CFNotificationName, ffi.Pointer<ffi.Void>)>();
+
+  void CFNotificationCenterRemoveEveryObserver1(
+    CFNotificationCenterRef center,
+    ffi.Pointer<ffi.Void> observer,
+  ) {
+    return _CFNotificationCenterRemoveEveryObserver1(
+      center,
+      observer,
+    );
+  }
+
+  late final _CFNotificationCenterRemoveEveryObserver1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFNotificationCenterRef, ffi.Pointer<ffi.Void>)>>(
+      'CFNotificationCenterRemoveEveryObserver');
+  late final _CFNotificationCenterRemoveEveryObserver1 =
+      _CFNotificationCenterRemoveEveryObserver1Ptr.asFunction<
+          void Function(CFNotificationCenterRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFNotificationCenterPostNotification1(
+    CFNotificationCenterRef center,
+    CFNotificationName name,
+    ffi.Pointer<ffi.Void> object,
+    CFDictionaryRef userInfo,
+    int deliverImmediately,
+  ) {
+    return _CFNotificationCenterPostNotification1(
+      center,
+      name,
+      object,
+      userInfo,
+      deliverImmediately,
+    );
+  }
+
+  late final _CFNotificationCenterPostNotification1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFNotificationCenterRef,
+              CFNotificationName,
+              ffi.Pointer<ffi.Void>,
+              CFDictionaryRef,
+              Boolean)>>('CFNotificationCenterPostNotification');
+  late final _CFNotificationCenterPostNotification1 =
+      _CFNotificationCenterPostNotification1Ptr.asFunction<
+          void Function(CFNotificationCenterRef, CFNotificationName,
+              ffi.Pointer<ffi.Void>, CFDictionaryRef, int)>();
+
+  void CFNotificationCenterPostNotificationWithOptions1(
+    CFNotificationCenterRef center,
+    CFNotificationName name,
+    ffi.Pointer<ffi.Void> object,
+    CFDictionaryRef userInfo,
+    int options,
+  ) {
+    return _CFNotificationCenterPostNotificationWithOptions1(
+      center,
+      name,
+      object,
+      userInfo,
+      options,
+    );
+  }
+
+  late final _CFNotificationCenterPostNotificationWithOptions1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(CFNotificationCenterRef, CFNotificationName,
+                  ffi.Pointer<ffi.Void>, CFDictionaryRef, CFOptionFlags)>>(
+      'CFNotificationCenterPostNotificationWithOptions');
+  late final _CFNotificationCenterPostNotificationWithOptions1 =
+      _CFNotificationCenterPostNotificationWithOptions1Ptr.asFunction<
+          void Function(CFNotificationCenterRef, CFNotificationName,
+              ffi.Pointer<ffi.Void>, CFDictionaryRef, int)>();
+
+  int CFLocaleGetTypeID1() {
+    return _CFLocaleGetTypeID1();
+  }
+
+  late final _CFLocaleGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFLocaleGetTypeID');
+  late final _CFLocaleGetTypeID1 =
+      _CFLocaleGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFLocaleRef CFLocaleGetSystem1() {
+    return _CFLocaleGetSystem1();
+  }
+
+  late final _CFLocaleGetSystem1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleRef Function()>>('CFLocaleGetSystem');
+  late final _CFLocaleGetSystem1 =
+      _CFLocaleGetSystem1Ptr.asFunction<CFLocaleRef Function()>();
+
+  CFLocaleRef CFLocaleCopyCurrent1() {
+    return _CFLocaleCopyCurrent1();
+  }
+
+  late final _CFLocaleCopyCurrent1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleRef Function()>>(
+          'CFLocaleCopyCurrent');
+  late final _CFLocaleCopyCurrent1 =
+      _CFLocaleCopyCurrent1Ptr.asFunction<CFLocaleRef Function()>();
+
+  CFArrayRef CFLocaleCopyAvailableLocaleIdentifiers1() {
+    return _CFLocaleCopyAvailableLocaleIdentifiers1();
+  }
+
+  late final _CFLocaleCopyAvailableLocaleIdentifiers1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyAvailableLocaleIdentifiers');
+  late final _CFLocaleCopyAvailableLocaleIdentifiers1 =
+      _CFLocaleCopyAvailableLocaleIdentifiers1Ptr.asFunction<
+          CFArrayRef Function()>();
+
+  CFArrayRef CFLocaleCopyISOLanguageCodes1() {
+    return _CFLocaleCopyISOLanguageCodes1();
+  }
+
+  late final _CFLocaleCopyISOLanguageCodes1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyISOLanguageCodes');
+  late final _CFLocaleCopyISOLanguageCodes1 =
+      _CFLocaleCopyISOLanguageCodes1Ptr.asFunction<CFArrayRef Function()>();
+
+  CFArrayRef CFLocaleCopyISOCountryCodes1() {
+    return _CFLocaleCopyISOCountryCodes1();
+  }
+
+  late final _CFLocaleCopyISOCountryCodes1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyISOCountryCodes');
+  late final _CFLocaleCopyISOCountryCodes1 =
+      _CFLocaleCopyISOCountryCodes1Ptr.asFunction<CFArrayRef Function()>();
+
+  CFArrayRef CFLocaleCopyISOCurrencyCodes1() {
+    return _CFLocaleCopyISOCurrencyCodes1();
+  }
+
+  late final _CFLocaleCopyISOCurrencyCodes1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyISOCurrencyCodes');
+  late final _CFLocaleCopyISOCurrencyCodes1 =
+      _CFLocaleCopyISOCurrencyCodes1Ptr.asFunction<CFArrayRef Function()>();
+
+  CFArrayRef CFLocaleCopyCommonISOCurrencyCodes1() {
+    return _CFLocaleCopyCommonISOCurrencyCodes1();
+  }
+
+  late final _CFLocaleCopyCommonISOCurrencyCodes1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyCommonISOCurrencyCodes');
+  late final _CFLocaleCopyCommonISOCurrencyCodes1 =
+      _CFLocaleCopyCommonISOCurrencyCodes1Ptr.asFunction<
+          CFArrayRef Function()>();
+
+  CFArrayRef CFLocaleCopyPreferredLanguages1() {
+    return _CFLocaleCopyPreferredLanguages1();
+  }
+
+  late final _CFLocaleCopyPreferredLanguages1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFLocaleCopyPreferredLanguages');
+  late final _CFLocaleCopyPreferredLanguages1 =
+      _CFLocaleCopyPreferredLanguages1Ptr.asFunction<CFArrayRef Function()>();
+
+  CFLocaleIdentifier CFLocaleCreateCanonicalLanguageIdentifierFromString1(
+    CFAllocatorRef allocator,
+    CFStringRef localeIdentifier,
+  ) {
+    return _CFLocaleCreateCanonicalLanguageIdentifierFromString1(
+      allocator,
+      localeIdentifier,
+    );
+  }
+
+  late final _CFLocaleCreateCanonicalLanguageIdentifierFromString1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFLocaleIdentifier Function(CFAllocatorRef, CFStringRef)>>(
+      'CFLocaleCreateCanonicalLanguageIdentifierFromString');
+  late final _CFLocaleCreateCanonicalLanguageIdentifierFromString1 =
+      _CFLocaleCreateCanonicalLanguageIdentifierFromString1Ptr.asFunction<
+          CFLocaleIdentifier Function(CFAllocatorRef, CFStringRef)>();
+
+  CFLocaleIdentifier CFLocaleCreateCanonicalLocaleIdentifierFromString1(
+    CFAllocatorRef allocator,
+    CFStringRef localeIdentifier,
+  ) {
+    return _CFLocaleCreateCanonicalLocaleIdentifierFromString1(
+      allocator,
+      localeIdentifier,
+    );
+  }
+
+  late final _CFLocaleCreateCanonicalLocaleIdentifierFromString1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFLocaleIdentifier Function(CFAllocatorRef, CFStringRef)>>(
+      'CFLocaleCreateCanonicalLocaleIdentifierFromString');
+  late final _CFLocaleCreateCanonicalLocaleIdentifierFromString1 =
+      _CFLocaleCreateCanonicalLocaleIdentifierFromString1Ptr.asFunction<
+          CFLocaleIdentifier Function(CFAllocatorRef, CFStringRef)>();
+
+  CFLocaleIdentifier
+      CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes1(
+    CFAllocatorRef allocator,
+    int lcode,
+    int rcode,
+  ) {
+    return _CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes1(
+      allocator,
+      lcode,
+      rcode,
+    );
+  }
+
+  late final _CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFLocaleIdentifier Function(
+                      CFAllocatorRef, LangCode, RegionCode)>>(
+          'CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes');
+  late final _CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes1 =
+      _CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes1Ptr
+          .asFunction<CFLocaleIdentifier Function(CFAllocatorRef, int, int)>();
+
+  CFLocaleIdentifier CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode1(
+    CFAllocatorRef allocator,
+    int lcid,
+  ) {
+    return _CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode1(
+      allocator,
+      lcid,
+    );
+  }
+
+  late final _CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFLocaleIdentifier Function(CFAllocatorRef, ffi.Uint32)>>(
+      'CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode');
+  late final _CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode1 =
+      _CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode1Ptr.asFunction<
+          CFLocaleIdentifier Function(CFAllocatorRef, int)>();
+
+  int CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier1(
+    CFLocaleIdentifier localeIdentifier,
+  ) {
+    return _CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier1(
+      localeIdentifier,
+    );
+  }
+
+  late final _CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(CFLocaleIdentifier)>>(
+          'CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier');
+  late final _CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier1 =
+      _CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier1Ptr.asFunction<
+          int Function(CFLocaleIdentifier)>();
+
+  int CFLocaleGetLanguageCharacterDirection1(
+    CFStringRef isoLangCode,
+  ) {
+    return _CFLocaleGetLanguageCharacterDirection1(
+      isoLangCode,
+    );
+  }
+
+  late final _CFLocaleGetLanguageCharacterDirection1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFStringRef)>>(
+          'CFLocaleGetLanguageCharacterDirection');
+  late final _CFLocaleGetLanguageCharacterDirection1 =
+      _CFLocaleGetLanguageCharacterDirection1Ptr.asFunction<
+          int Function(CFStringRef)>();
+
+  int CFLocaleGetLanguageLineDirection1(
+    CFStringRef isoLangCode,
+  ) {
+    return _CFLocaleGetLanguageLineDirection1(
+      isoLangCode,
+    );
+  }
+
+  late final _CFLocaleGetLanguageLineDirection1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFStringRef)>>(
+          'CFLocaleGetLanguageLineDirection');
+  late final _CFLocaleGetLanguageLineDirection1 =
+      _CFLocaleGetLanguageLineDirection1Ptr.asFunction<
+          int Function(CFStringRef)>();
+
+  CFDictionaryRef CFLocaleCreateComponentsFromLocaleIdentifier1(
+    CFAllocatorRef allocator,
+    CFLocaleIdentifier localeID,
+  ) {
+    return _CFLocaleCreateComponentsFromLocaleIdentifier1(
+      allocator,
+      localeID,
+    );
+  }
+
+  late final _CFLocaleCreateComponentsFromLocaleIdentifier1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFDictionaryRef Function(CFAllocatorRef, CFLocaleIdentifier)>>(
+      'CFLocaleCreateComponentsFromLocaleIdentifier');
+  late final _CFLocaleCreateComponentsFromLocaleIdentifier1 =
+      _CFLocaleCreateComponentsFromLocaleIdentifier1Ptr.asFunction<
+          CFDictionaryRef Function(CFAllocatorRef, CFLocaleIdentifier)>();
+
+  CFLocaleIdentifier CFLocaleCreateLocaleIdentifierFromComponents1(
+    CFAllocatorRef allocator,
+    CFDictionaryRef dictionary,
+  ) {
+    return _CFLocaleCreateLocaleIdentifierFromComponents1(
+      allocator,
+      dictionary,
+    );
+  }
+
+  late final _CFLocaleCreateLocaleIdentifierFromComponents1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFLocaleIdentifier Function(CFAllocatorRef, CFDictionaryRef)>>(
+      'CFLocaleCreateLocaleIdentifierFromComponents');
+  late final _CFLocaleCreateLocaleIdentifierFromComponents1 =
+      _CFLocaleCreateLocaleIdentifierFromComponents1Ptr.asFunction<
+          CFLocaleIdentifier Function(CFAllocatorRef, CFDictionaryRef)>();
+
+  CFLocaleRef CFLocaleCreate1(
+    CFAllocatorRef allocator,
+    CFLocaleIdentifier localeIdentifier,
+  ) {
+    return _CFLocaleCreate1(
+      allocator,
+      localeIdentifier,
+    );
+  }
+
+  late final _CFLocaleCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFLocaleRef Function(
+              CFAllocatorRef, CFLocaleIdentifier)>>('CFLocaleCreate');
+  late final _CFLocaleCreate1 = _CFLocaleCreate1Ptr.asFunction<
+      CFLocaleRef Function(CFAllocatorRef, CFLocaleIdentifier)>();
+
+  CFLocaleRef CFLocaleCreateCopy1(
+    CFAllocatorRef allocator,
+    CFLocaleRef locale,
+  ) {
+    return _CFLocaleCreateCopy1(
+      allocator,
+      locale,
+    );
+  }
+
+  late final _CFLocaleCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFLocaleRef Function(
+              CFAllocatorRef, CFLocaleRef)>>('CFLocaleCreateCopy');
+  late final _CFLocaleCreateCopy1 = _CFLocaleCreateCopy1Ptr.asFunction<
+      CFLocaleRef Function(CFAllocatorRef, CFLocaleRef)>();
+
+  CFLocaleIdentifier CFLocaleGetIdentifier1(
+    CFLocaleRef locale,
+  ) {
+    return _CFLocaleGetIdentifier1(
+      locale,
+    );
+  }
+
+  late final _CFLocaleGetIdentifier1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleIdentifier Function(CFLocaleRef)>>(
+          'CFLocaleGetIdentifier');
+  late final _CFLocaleGetIdentifier1 = _CFLocaleGetIdentifier1Ptr.asFunction<
+      CFLocaleIdentifier Function(CFLocaleRef)>();
+
+  CFTypeRef CFLocaleGetValue1(
+    CFLocaleRef locale,
+    CFLocaleKey key,
+  ) {
+    return _CFLocaleGetValue1(
+      locale,
+      key,
+    );
+  }
+
+  late final _CFLocaleGetValue1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFLocaleRef, CFLocaleKey)>>(
+          'CFLocaleGetValue');
+  late final _CFLocaleGetValue1 = _CFLocaleGetValue1Ptr.asFunction<
+      CFTypeRef Function(CFLocaleRef, CFLocaleKey)>();
+
+  CFStringRef CFLocaleCopyDisplayNameForPropertyValue1(
+    CFLocaleRef displayLocale,
+    CFLocaleKey key,
+    CFStringRef value,
+  ) {
+    return _CFLocaleCopyDisplayNameForPropertyValue1(
+      displayLocale,
+      key,
+      value,
+    );
+  }
+
+  late final _CFLocaleCopyDisplayNameForPropertyValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFLocaleRef, CFLocaleKey,
+              CFStringRef)>>('CFLocaleCopyDisplayNameForPropertyValue');
+  late final _CFLocaleCopyDisplayNameForPropertyValue1 =
+      _CFLocaleCopyDisplayNameForPropertyValue1Ptr.asFunction<
+          CFStringRef Function(CFLocaleRef, CFLocaleKey, CFStringRef)>();
+
+  double CFAbsoluteTimeGetCurrent1() {
+    return _CFAbsoluteTimeGetCurrent1();
+  }
+
+  late final _CFAbsoluteTimeGetCurrent1Ptr =
+      _lookup<ffi.NativeFunction<CFAbsoluteTime Function()>>(
+          'CFAbsoluteTimeGetCurrent');
+  late final _CFAbsoluteTimeGetCurrent1 =
+      _CFAbsoluteTimeGetCurrent1Ptr.asFunction<double Function()>();
+
+  int CFDateGetTypeID1() {
+    return _CFDateGetTypeID1();
+  }
+
+  late final _CFDateGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFDateGetTypeID');
+  late final _CFDateGetTypeID1 =
+      _CFDateGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFDateRef CFDateCreate1(
+    CFAllocatorRef allocator,
+    double at,
+  ) {
+    return _CFDateCreate1(
+      allocator,
+      at,
+    );
+  }
+
+  late final _CFDateCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDateRef Function(CFAllocatorRef, CFAbsoluteTime)>>('CFDateCreate');
+  late final _CFDateCreate1 = _CFDateCreate1Ptr.asFunction<
+      CFDateRef Function(CFAllocatorRef, double)>();
+
+  double CFDateGetAbsoluteTime1(
+    CFDateRef theDate,
+  ) {
+    return _CFDateGetAbsoluteTime1(
+      theDate,
+    );
+  }
+
+  late final _CFDateGetAbsoluteTime1Ptr =
+      _lookup<ffi.NativeFunction<CFAbsoluteTime Function(CFDateRef)>>(
+          'CFDateGetAbsoluteTime');
+  late final _CFDateGetAbsoluteTime1 =
+      _CFDateGetAbsoluteTime1Ptr.asFunction<double Function(CFDateRef)>();
+
+  double CFDateGetTimeIntervalSinceDate1(
+    CFDateRef theDate,
+    CFDateRef otherDate,
+  ) {
+    return _CFDateGetTimeIntervalSinceDate1(
+      theDate,
+      otherDate,
+    );
+  }
+
+  late final _CFDateGetTimeIntervalSinceDate1Ptr = _lookup<
+          ffi.NativeFunction<CFTimeInterval Function(CFDateRef, CFDateRef)>>(
+      'CFDateGetTimeIntervalSinceDate');
+  late final _CFDateGetTimeIntervalSinceDate1 =
+      _CFDateGetTimeIntervalSinceDate1Ptr.asFunction<
+          double Function(CFDateRef, CFDateRef)>();
+
+  int CFDateCompare1(
+    CFDateRef theDate,
+    CFDateRef otherDate,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFDateCompare1(
+      theDate,
+      otherDate,
+      context,
+    );
+  }
+
+  late final _CFDateCompare1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              CFDateRef, CFDateRef, ffi.Pointer<ffi.Void>)>>('CFDateCompare');
+  late final _CFDateCompare1 = _CFDateCompare1Ptr.asFunction<
+      int Function(CFDateRef, CFDateRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFGregorianDateIsValid1(
+    CFGregorianDate gdate,
+    int unitFlags,
+  ) {
+    return _CFGregorianDateIsValid1(
+      gdate,
+      unitFlags,
+    );
+  }
+
+  late final _CFGregorianDateIsValid1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFGregorianDate, CFOptionFlags)>>(
+      'CFGregorianDateIsValid');
+  late final _CFGregorianDateIsValid1 = _CFGregorianDateIsValid1Ptr.asFunction<
+      int Function(CFGregorianDate, int)>();
+
+  double CFGregorianDateGetAbsoluteTime1(
+    CFGregorianDate gdate,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFGregorianDateGetAbsoluteTime1(
+      gdate,
+      tz,
+    );
+  }
+
+  late final _CFGregorianDateGetAbsoluteTime1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAbsoluteTime Function(CFGregorianDate,
+              CFTimeZoneRef)>>('CFGregorianDateGetAbsoluteTime');
+  late final _CFGregorianDateGetAbsoluteTime1 =
+      _CFGregorianDateGetAbsoluteTime1Ptr.asFunction<
+          double Function(CFGregorianDate, CFTimeZoneRef)>();
+
+  CFGregorianDate CFAbsoluteTimeGetGregorianDate1(
+    double at,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFAbsoluteTimeGetGregorianDate1(
+      at,
+      tz,
+    );
+  }
+
+  late final _CFAbsoluteTimeGetGregorianDate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFGregorianDate Function(CFAbsoluteTime,
+              CFTimeZoneRef)>>('CFAbsoluteTimeGetGregorianDate');
+  late final _CFAbsoluteTimeGetGregorianDate1 =
+      _CFAbsoluteTimeGetGregorianDate1Ptr.asFunction<
+          CFGregorianDate Function(double, CFTimeZoneRef)>();
+
+  double CFAbsoluteTimeAddGregorianUnits1(
+    double at,
+    CFTimeZoneRef tz,
+    CFGregorianUnits units,
+  ) {
+    return _CFAbsoluteTimeAddGregorianUnits1(
+      at,
+      tz,
+      units,
+    );
+  }
+
+  late final _CFAbsoluteTimeAddGregorianUnits1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAbsoluteTime Function(CFAbsoluteTime, CFTimeZoneRef,
+              CFGregorianUnits)>>('CFAbsoluteTimeAddGregorianUnits');
+  late final _CFAbsoluteTimeAddGregorianUnits1 =
+      _CFAbsoluteTimeAddGregorianUnits1Ptr.asFunction<
+          double Function(double, CFTimeZoneRef, CFGregorianUnits)>();
+
+  CFGregorianUnits CFAbsoluteTimeGetDifferenceAsGregorianUnits1(
+    double at1,
+    double at2,
+    CFTimeZoneRef tz,
+    int unitFlags,
+  ) {
+    return _CFAbsoluteTimeGetDifferenceAsGregorianUnits1(
+      at1,
+      at2,
+      tz,
+      unitFlags,
+    );
+  }
+
+  late final _CFAbsoluteTimeGetDifferenceAsGregorianUnits1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFGregorianUnits Function(
+              CFAbsoluteTime,
+              CFAbsoluteTime,
+              CFTimeZoneRef,
+              CFOptionFlags)>>('CFAbsoluteTimeGetDifferenceAsGregorianUnits');
+  late final _CFAbsoluteTimeGetDifferenceAsGregorianUnits1 =
+      _CFAbsoluteTimeGetDifferenceAsGregorianUnits1Ptr.asFunction<
+          CFGregorianUnits Function(double, double, CFTimeZoneRef, int)>();
+
+  int CFAbsoluteTimeGetDayOfWeek1(
+    double at,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFAbsoluteTimeGetDayOfWeek1(
+      at,
+      tz,
+    );
+  }
+
+  late final _CFAbsoluteTimeGetDayOfWeek1Ptr = _lookup<
+          ffi.NativeFunction<SInt32 Function(CFAbsoluteTime, CFTimeZoneRef)>>(
+      'CFAbsoluteTimeGetDayOfWeek');
+  late final _CFAbsoluteTimeGetDayOfWeek1 = _CFAbsoluteTimeGetDayOfWeek1Ptr
+      .asFunction<int Function(double, CFTimeZoneRef)>();
+
+  int CFAbsoluteTimeGetDayOfYear1(
+    double at,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFAbsoluteTimeGetDayOfYear1(
+      at,
+      tz,
+    );
+  }
+
+  late final _CFAbsoluteTimeGetDayOfYear1Ptr = _lookup<
+          ffi.NativeFunction<SInt32 Function(CFAbsoluteTime, CFTimeZoneRef)>>(
+      'CFAbsoluteTimeGetDayOfYear');
+  late final _CFAbsoluteTimeGetDayOfYear1 = _CFAbsoluteTimeGetDayOfYear1Ptr
+      .asFunction<int Function(double, CFTimeZoneRef)>();
+
+  int CFAbsoluteTimeGetWeekOfYear1(
+    double at,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFAbsoluteTimeGetWeekOfYear1(
+      at,
+      tz,
+    );
+  }
+
+  late final _CFAbsoluteTimeGetWeekOfYear1Ptr = _lookup<
+          ffi.NativeFunction<SInt32 Function(CFAbsoluteTime, CFTimeZoneRef)>>(
+      'CFAbsoluteTimeGetWeekOfYear');
+  late final _CFAbsoluteTimeGetWeekOfYear1 = _CFAbsoluteTimeGetWeekOfYear1Ptr
+      .asFunction<int Function(double, CFTimeZoneRef)>();
+
+  int CFDataGetTypeID2() {
+    return _CFDataGetTypeID2();
+  }
+
+  late final _CFDataGetTypeID2Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFDataGetTypeID');
+  late final _CFDataGetTypeID2 =
+      _CFDataGetTypeID2Ptr.asFunction<int Function()>();
+
+  CFDataRef CFDataCreate2(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> bytes,
+    int length,
+  ) {
+    return _CFDataCreate2(
+      allocator,
+      bytes,
+      length,
+    );
+  }
+
+  late final _CFDataCreate2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex)>>('CFDataCreate');
+  late final _CFDataCreate2 = _CFDataCreate2Ptr.asFunction<
+      CFDataRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, int)>();
+
+  CFDataRef CFDataCreateWithBytesNoCopy2(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> bytes,
+    int length,
+    CFAllocatorRef bytesDeallocator,
+  ) {
+    return _CFDataCreateWithBytesNoCopy2(
+      allocator,
+      bytes,
+      length,
+      bytesDeallocator,
+    );
+  }
+
+  late final _CFDataCreateWithBytesNoCopy2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+              CFAllocatorRef)>>('CFDataCreateWithBytesNoCopy');
+  late final _CFDataCreateWithBytesNoCopy2 =
+      _CFDataCreateWithBytesNoCopy2Ptr.asFunction<
+          CFDataRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, int, CFAllocatorRef)>();
+
+  CFDataRef CFDataCreateCopy2(
+    CFAllocatorRef allocator,
+    CFDataRef theData,
+  ) {
+    return _CFDataCreateCopy2(
+      allocator,
+      theData,
+    );
+  }
+
+  late final _CFDataCreateCopy2Ptr = _lookup<
+          ffi.NativeFunction<CFDataRef Function(CFAllocatorRef, CFDataRef)>>(
+      'CFDataCreateCopy');
+  late final _CFDataCreateCopy2 = _CFDataCreateCopy2Ptr.asFunction<
+      CFDataRef Function(CFAllocatorRef, CFDataRef)>();
+
+  CFMutableDataRef CFDataCreateMutable2(
+    CFAllocatorRef allocator,
+    int capacity,
+  ) {
+    return _CFDataCreateMutable2(
+      allocator,
+      capacity,
+    );
+  }
+
+  late final _CFDataCreateMutable2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableDataRef Function(
+              CFAllocatorRef, CFIndex)>>('CFDataCreateMutable');
+  late final _CFDataCreateMutable2 = _CFDataCreateMutable2Ptr.asFunction<
+      CFMutableDataRef Function(CFAllocatorRef, int)>();
+
+  CFMutableDataRef CFDataCreateMutableCopy2(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFDataRef theData,
+  ) {
+    return _CFDataCreateMutableCopy2(
+      allocator,
+      capacity,
+      theData,
+    );
+  }
+
+  late final _CFDataCreateMutableCopy2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableDataRef Function(
+              CFAllocatorRef, CFIndex, CFDataRef)>>('CFDataCreateMutableCopy');
+  late final _CFDataCreateMutableCopy2 = _CFDataCreateMutableCopy2Ptr
+      .asFunction<CFMutableDataRef Function(CFAllocatorRef, int, CFDataRef)>();
+
+  int CFDataGetLength2(
+    CFDataRef theData,
+  ) {
+    return _CFDataGetLength2(
+      theData,
+    );
+  }
+
+  late final _CFDataGetLength2Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFDataRef)>>(
+          'CFDataGetLength');
+  late final _CFDataGetLength2 =
+      _CFDataGetLength2Ptr.asFunction<int Function(CFDataRef)>();
+
+  ffi.Pointer<UInt8> CFDataGetBytePtr2(
+    CFDataRef theData,
+  ) {
+    return _CFDataGetBytePtr2(
+      theData,
+    );
+  }
+
+  late final _CFDataGetBytePtr2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<UInt8> Function(CFDataRef)>>(
+          'CFDataGetBytePtr');
+  late final _CFDataGetBytePtr2 = _CFDataGetBytePtr2Ptr.asFunction<
+      ffi.Pointer<UInt8> Function(CFDataRef)>();
+
+  ffi.Pointer<UInt8> CFDataGetMutableBytePtr2(
+    CFMutableDataRef theData,
+  ) {
+    return _CFDataGetMutableBytePtr2(
+      theData,
+    );
+  }
+
+  late final _CFDataGetMutableBytePtr2Ptr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<UInt8> Function(CFMutableDataRef)>>(
+      'CFDataGetMutableBytePtr');
+  late final _CFDataGetMutableBytePtr2 = _CFDataGetMutableBytePtr2Ptr
+      .asFunction<ffi.Pointer<UInt8> Function(CFMutableDataRef)>();
+
+  void CFDataGetBytes2(
+    CFDataRef theData,
+    CFRange range,
+    ffi.Pointer<UInt8> buffer,
+  ) {
+    return _CFDataGetBytes2(
+      theData,
+      range,
+      buffer,
+    );
+  }
+
+  late final _CFDataGetBytes2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFDataRef, CFRange, ffi.Pointer<UInt8>)>>('CFDataGetBytes');
+  late final _CFDataGetBytes2 = _CFDataGetBytes2Ptr.asFunction<
+      void Function(CFDataRef, CFRange, ffi.Pointer<UInt8>)>();
+
+  void CFDataSetLength2(
+    CFMutableDataRef theData,
+    int length,
+  ) {
+    return _CFDataSetLength2(
+      theData,
+      length,
+    );
+  }
+
+  late final _CFDataSetLength2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableDataRef, CFIndex)>>(
+          'CFDataSetLength');
+  late final _CFDataSetLength2 =
+      _CFDataSetLength2Ptr.asFunction<void Function(CFMutableDataRef, int)>();
+
+  void CFDataIncreaseLength2(
+    CFMutableDataRef theData,
+    int extraLength,
+  ) {
+    return _CFDataIncreaseLength2(
+      theData,
+      extraLength,
+    );
+  }
+
+  late final _CFDataIncreaseLength2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableDataRef, CFIndex)>>(
+          'CFDataIncreaseLength');
+  late final _CFDataIncreaseLength2 = _CFDataIncreaseLength2Ptr.asFunction<
+      void Function(CFMutableDataRef, int)>();
+
+  void CFDataAppendBytes2(
+    CFMutableDataRef theData,
+    ffi.Pointer<UInt8> bytes,
+    int length,
+  ) {
+    return _CFDataAppendBytes2(
+      theData,
+      bytes,
+      length,
+    );
+  }
+
+  late final _CFDataAppendBytes2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDataRef, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFDataAppendBytes');
+  late final _CFDataAppendBytes2 = _CFDataAppendBytes2Ptr.asFunction<
+      void Function(CFMutableDataRef, ffi.Pointer<UInt8>, int)>();
+
+  void CFDataReplaceBytes2(
+    CFMutableDataRef theData,
+    CFRange range,
+    ffi.Pointer<UInt8> newBytes,
+    int newLength,
+  ) {
+    return _CFDataReplaceBytes2(
+      theData,
+      range,
+      newBytes,
+      newLength,
+    );
+  }
+
+  late final _CFDataReplaceBytes2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableDataRef, CFRange, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFDataReplaceBytes');
+  late final _CFDataReplaceBytes2 = _CFDataReplaceBytes2Ptr.asFunction<
+      void Function(CFMutableDataRef, CFRange, ffi.Pointer<UInt8>, int)>();
+
+  void CFDataDeleteBytes2(
+    CFMutableDataRef theData,
+    CFRange range,
+  ) {
+    return _CFDataDeleteBytes2(
+      theData,
+      range,
+    );
+  }
+
+  late final _CFDataDeleteBytes2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableDataRef, CFRange)>>(
+          'CFDataDeleteBytes');
+  late final _CFDataDeleteBytes2 = _CFDataDeleteBytes2Ptr.asFunction<
+      void Function(CFMutableDataRef, CFRange)>();
+
+  CFRange CFDataFind2(
+    CFDataRef theData,
+    CFDataRef dataToFind,
+    CFRange searchRange,
+    int compareOptions,
+  ) {
+    return _CFDataFind2(
+      theData,
+      dataToFind,
+      searchRange,
+      compareOptions,
+    );
+  }
+
+  late final _CFDataFind2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRange Function(
+              CFDataRef, CFDataRef, CFRange, ffi.Int32)>>('CFDataFind');
+  late final _CFDataFind2 = _CFDataFind2Ptr.asFunction<
+      CFRange Function(CFDataRef, CFDataRef, CFRange, int)>();
+
+  int CFCharacterSetGetTypeID2() {
+    return _CFCharacterSetGetTypeID2();
+  }
+
+  late final _CFCharacterSetGetTypeID2Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFCharacterSetGetTypeID');
+  late final _CFCharacterSetGetTypeID2 =
+      _CFCharacterSetGetTypeID2Ptr.asFunction<int Function()>();
+
+  CFCharacterSetRef CFCharacterSetGetPredefined2(
+    int theSetIdentifier,
+  ) {
+    return _CFCharacterSetGetPredefined2(
+      theSetIdentifier,
+    );
+  }
+
+  late final _CFCharacterSetGetPredefined2Ptr =
+      _lookup<ffi.NativeFunction<CFCharacterSetRef Function(ffi.Int32)>>(
+          'CFCharacterSetGetPredefined');
+  late final _CFCharacterSetGetPredefined2 = _CFCharacterSetGetPredefined2Ptr
+      .asFunction<CFCharacterSetRef Function(int)>();
+
+  CFCharacterSetRef CFCharacterSetCreateWithCharactersInRange2(
+    CFAllocatorRef alloc,
+    CFRange theRange,
+  ) {
+    return _CFCharacterSetCreateWithCharactersInRange2(
+      alloc,
+      theRange,
+    );
+  }
+
+  late final _CFCharacterSetCreateWithCharactersInRange2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCharacterSetRef Function(CFAllocatorRef,
+              CFRange)>>('CFCharacterSetCreateWithCharactersInRange');
+  late final _CFCharacterSetCreateWithCharactersInRange2 =
+      _CFCharacterSetCreateWithCharactersInRange2Ptr.asFunction<
+          CFCharacterSetRef Function(CFAllocatorRef, CFRange)>();
+
+  CFCharacterSetRef CFCharacterSetCreateWithCharactersInString2(
+    CFAllocatorRef alloc,
+    CFStringRef theString,
+  ) {
+    return _CFCharacterSetCreateWithCharactersInString2(
+      alloc,
+      theString,
+    );
+  }
+
+  late final _CFCharacterSetCreateWithCharactersInString2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCharacterSetRef Function(CFAllocatorRef,
+              CFStringRef)>>('CFCharacterSetCreateWithCharactersInString');
+  late final _CFCharacterSetCreateWithCharactersInString2 =
+      _CFCharacterSetCreateWithCharactersInString2Ptr.asFunction<
+          CFCharacterSetRef Function(CFAllocatorRef, CFStringRef)>();
+
+  CFCharacterSetRef CFCharacterSetCreateWithBitmapRepresentation2(
+    CFAllocatorRef alloc,
+    CFDataRef theData,
+  ) {
+    return _CFCharacterSetCreateWithBitmapRepresentation2(
+      alloc,
+      theData,
+    );
+  }
+
+  late final _CFCharacterSetCreateWithBitmapRepresentation2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCharacterSetRef Function(CFAllocatorRef,
+              CFDataRef)>>('CFCharacterSetCreateWithBitmapRepresentation');
+  late final _CFCharacterSetCreateWithBitmapRepresentation2 =
+      _CFCharacterSetCreateWithBitmapRepresentation2Ptr.asFunction<
+          CFCharacterSetRef Function(CFAllocatorRef, CFDataRef)>();
+
+  CFCharacterSetRef CFCharacterSetCreateInvertedSet2(
+    CFAllocatorRef alloc,
+    CFCharacterSetRef theSet,
+  ) {
+    return _CFCharacterSetCreateInvertedSet2(
+      alloc,
+      theSet,
+    );
+  }
+
+  late final _CFCharacterSetCreateInvertedSet2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCharacterSetRef Function(CFAllocatorRef,
+              CFCharacterSetRef)>>('CFCharacterSetCreateInvertedSet');
+  late final _CFCharacterSetCreateInvertedSet2 =
+      _CFCharacterSetCreateInvertedSet2Ptr.asFunction<
+          CFCharacterSetRef Function(CFAllocatorRef, CFCharacterSetRef)>();
+
+  int CFCharacterSetIsSupersetOfSet2(
+    CFCharacterSetRef theSet,
+    CFCharacterSetRef theOtherset,
+  ) {
+    return _CFCharacterSetIsSupersetOfSet2(
+      theSet,
+      theOtherset,
+    );
+  }
+
+  late final _CFCharacterSetIsSupersetOfSet2Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFCharacterSetRef,
+              CFCharacterSetRef)>>('CFCharacterSetIsSupersetOfSet');
+  late final _CFCharacterSetIsSupersetOfSet2 =
+      _CFCharacterSetIsSupersetOfSet2Ptr.asFunction<
+          int Function(CFCharacterSetRef, CFCharacterSetRef)>();
+
+  int CFCharacterSetHasMemberInPlane2(
+    CFCharacterSetRef theSet,
+    int thePlane,
+  ) {
+    return _CFCharacterSetHasMemberInPlane2(
+      theSet,
+      thePlane,
+    );
+  }
+
+  late final _CFCharacterSetHasMemberInPlane2Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFCharacterSetRef, CFIndex)>>(
+          'CFCharacterSetHasMemberInPlane');
+  late final _CFCharacterSetHasMemberInPlane2 =
+      _CFCharacterSetHasMemberInPlane2Ptr.asFunction<
+          int Function(CFCharacterSetRef, int)>();
+
+  CFMutableCharacterSetRef CFCharacterSetCreateMutable2(
+    CFAllocatorRef alloc,
+  ) {
+    return _CFCharacterSetCreateMutable2(
+      alloc,
+    );
+  }
+
+  late final _CFCharacterSetCreateMutable2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableCharacterSetRef Function(
+              CFAllocatorRef)>>('CFCharacterSetCreateMutable');
+  late final _CFCharacterSetCreateMutable2 = _CFCharacterSetCreateMutable2Ptr
+      .asFunction<CFMutableCharacterSetRef Function(CFAllocatorRef)>();
+
+  CFCharacterSetRef CFCharacterSetCreateCopy2(
+    CFAllocatorRef alloc,
+    CFCharacterSetRef theSet,
+  ) {
+    return _CFCharacterSetCreateCopy2(
+      alloc,
+      theSet,
+    );
+  }
+
+  late final _CFCharacterSetCreateCopy2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCharacterSetRef Function(
+              CFAllocatorRef, CFCharacterSetRef)>>('CFCharacterSetCreateCopy');
+  late final _CFCharacterSetCreateCopy2 =
+      _CFCharacterSetCreateCopy2Ptr.asFunction<
+          CFCharacterSetRef Function(CFAllocatorRef, CFCharacterSetRef)>();
+
+  CFMutableCharacterSetRef CFCharacterSetCreateMutableCopy2(
+    CFAllocatorRef alloc,
+    CFCharacterSetRef theSet,
+  ) {
+    return _CFCharacterSetCreateMutableCopy2(
+      alloc,
+      theSet,
+    );
+  }
+
+  late final _CFCharacterSetCreateMutableCopy2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableCharacterSetRef Function(CFAllocatorRef,
+              CFCharacterSetRef)>>('CFCharacterSetCreateMutableCopy');
+  late final _CFCharacterSetCreateMutableCopy2 =
+      _CFCharacterSetCreateMutableCopy2Ptr.asFunction<
+          CFMutableCharacterSetRef Function(
+              CFAllocatorRef, CFCharacterSetRef)>();
+
+  int CFCharacterSetIsCharacterMember2(
+    CFCharacterSetRef theSet,
+    int theChar,
+  ) {
+    return _CFCharacterSetIsCharacterMember2(
+      theSet,
+      theChar,
+    );
+  }
+
+  late final _CFCharacterSetIsCharacterMember2Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFCharacterSetRef, UniChar)>>(
+          'CFCharacterSetIsCharacterMember');
+  late final _CFCharacterSetIsCharacterMember2 =
+      _CFCharacterSetIsCharacterMember2Ptr.asFunction<
+          int Function(CFCharacterSetRef, int)>();
+
+  int CFCharacterSetIsLongCharacterMember2(
+    CFCharacterSetRef theSet,
+    int theChar,
+  ) {
+    return _CFCharacterSetIsLongCharacterMember2(
+      theSet,
+      theChar,
+    );
+  }
+
+  late final _CFCharacterSetIsLongCharacterMember2Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFCharacterSetRef, UTF32Char)>>(
+      'CFCharacterSetIsLongCharacterMember');
+  late final _CFCharacterSetIsLongCharacterMember2 =
+      _CFCharacterSetIsLongCharacterMember2Ptr.asFunction<
+          int Function(CFCharacterSetRef, int)>();
+
+  CFDataRef CFCharacterSetCreateBitmapRepresentation2(
+    CFAllocatorRef alloc,
+    CFCharacterSetRef theSet,
+  ) {
+    return _CFCharacterSetCreateBitmapRepresentation2(
+      alloc,
+      theSet,
+    );
+  }
+
+  late final _CFCharacterSetCreateBitmapRepresentation2Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef,
+              CFCharacterSetRef)>>('CFCharacterSetCreateBitmapRepresentation');
+  late final _CFCharacterSetCreateBitmapRepresentation2 =
+      _CFCharacterSetCreateBitmapRepresentation2Ptr.asFunction<
+          CFDataRef Function(CFAllocatorRef, CFCharacterSetRef)>();
+
+  void CFCharacterSetAddCharactersInRange2(
+    CFMutableCharacterSetRef theSet,
+    CFRange theRange,
+  ) {
+    return _CFCharacterSetAddCharactersInRange2(
+      theSet,
+      theRange,
+    );
+  }
+
+  late final _CFCharacterSetAddCharactersInRange2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFRange)>>('CFCharacterSetAddCharactersInRange');
+  late final _CFCharacterSetAddCharactersInRange2 =
+      _CFCharacterSetAddCharactersInRange2Ptr.asFunction<
+          void Function(CFMutableCharacterSetRef, CFRange)>();
+
+  void CFCharacterSetRemoveCharactersInRange2(
+    CFMutableCharacterSetRef theSet,
+    CFRange theRange,
+  ) {
+    return _CFCharacterSetRemoveCharactersInRange2(
+      theSet,
+      theRange,
+    );
+  }
+
+  late final _CFCharacterSetRemoveCharactersInRange2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFRange)>>('CFCharacterSetRemoveCharactersInRange');
+  late final _CFCharacterSetRemoveCharactersInRange2 =
+      _CFCharacterSetRemoveCharactersInRange2Ptr.asFunction<
+          void Function(CFMutableCharacterSetRef, CFRange)>();
+
+  void CFCharacterSetAddCharactersInString2(
+    CFMutableCharacterSetRef theSet,
+    CFStringRef theString,
+  ) {
+    return _CFCharacterSetAddCharactersInString2(
+      theSet,
+      theString,
+    );
+  }
+
+  late final _CFCharacterSetAddCharactersInString2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFStringRef)>>('CFCharacterSetAddCharactersInString');
+  late final _CFCharacterSetAddCharactersInString2 =
+      _CFCharacterSetAddCharactersInString2Ptr.asFunction<
+          void Function(CFMutableCharacterSetRef, CFStringRef)>();
+
+  void CFCharacterSetRemoveCharactersInString2(
+    CFMutableCharacterSetRef theSet,
+    CFStringRef theString,
+  ) {
+    return _CFCharacterSetRemoveCharactersInString2(
+      theSet,
+      theString,
+    );
+  }
+
+  late final _CFCharacterSetRemoveCharactersInString2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFStringRef)>>('CFCharacterSetRemoveCharactersInString');
+  late final _CFCharacterSetRemoveCharactersInString2 =
+      _CFCharacterSetRemoveCharactersInString2Ptr.asFunction<
+          void Function(CFMutableCharacterSetRef, CFStringRef)>();
+
+  void CFCharacterSetUnion2(
+    CFMutableCharacterSetRef theSet,
+    CFCharacterSetRef theOtherSet,
+  ) {
+    return _CFCharacterSetUnion2(
+      theSet,
+      theOtherSet,
+    );
+  }
+
+  late final _CFCharacterSetUnion2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFCharacterSetRef)>>('CFCharacterSetUnion');
+  late final _CFCharacterSetUnion2 = _CFCharacterSetUnion2Ptr.asFunction<
+      void Function(CFMutableCharacterSetRef, CFCharacterSetRef)>();
+
+  void CFCharacterSetIntersect2(
+    CFMutableCharacterSetRef theSet,
+    CFCharacterSetRef theOtherSet,
+  ) {
+    return _CFCharacterSetIntersect2(
+      theSet,
+      theOtherSet,
+    );
+  }
+
+  late final _CFCharacterSetIntersect2Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableCharacterSetRef,
+              CFCharacterSetRef)>>('CFCharacterSetIntersect');
+  late final _CFCharacterSetIntersect2 = _CFCharacterSetIntersect2Ptr
+      .asFunction<void Function(CFMutableCharacterSetRef, CFCharacterSetRef)>();
+
+  void CFCharacterSetInvert2(
+    CFMutableCharacterSetRef theSet,
+  ) {
+    return _CFCharacterSetInvert2(
+      theSet,
+    );
+  }
+
+  late final _CFCharacterSetInvert2Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableCharacterSetRef)>>(
+          'CFCharacterSetInvert');
+  late final _CFCharacterSetInvert2 = _CFCharacterSetInvert2Ptr.asFunction<
+      void Function(CFMutableCharacterSetRef)>();
+
+  int CFStringGetTypeID1() {
+    return _CFStringGetTypeID1();
+  }
+
+  late final _CFStringGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFStringGetTypeID');
+  late final _CFStringGetTypeID1 =
+      _CFStringGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFStringRef CFStringCreateWithPascalString1(
+    CFAllocatorRef alloc,
+    ConstStr255Param pStr,
+    int encoding,
+  ) {
+    return _CFStringCreateWithPascalString1(
+      alloc,
+      pStr,
+      encoding,
+    );
+  }
+
+  late final _CFStringCreateWithPascalString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, ConstStr255Param,
+              CFStringEncoding)>>('CFStringCreateWithPascalString');
+  late final _CFStringCreateWithPascalString1 =
+      _CFStringCreateWithPascalString1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, ConstStr255Param, int)>();
+
+  CFStringRef CFStringCreateWithCString1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<pkg_ffi.Char> cStr,
+    int encoding,
+  ) {
+    return _CFStringCreateWithCString1(
+      alloc,
+      cStr,
+      encoding,
+    );
+  }
+
+  late final _CFStringCreateWithCString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<pkg_ffi.Char>,
+              CFStringEncoding)>>('CFStringCreateWithCString');
+  late final _CFStringCreateWithCString1 =
+      _CFStringCreateWithCString1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  CFStringRef CFStringCreateWithBytes1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UInt8> bytes,
+    int numBytes,
+    int encoding,
+    int isExternalRepresentation,
+  ) {
+    return _CFStringCreateWithBytes1(
+      alloc,
+      bytes,
+      numBytes,
+      encoding,
+      isExternalRepresentation,
+    );
+  }
+
+  late final _CFStringCreateWithBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+              CFStringEncoding, Boolean)>>('CFStringCreateWithBytes');
+  late final _CFStringCreateWithBytes1 =
+      _CFStringCreateWithBytes1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, int, int, int)>();
+
+  CFStringRef CFStringCreateWithCharacters1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UniChar> chars,
+    int numChars,
+  ) {
+    return _CFStringCreateWithCharacters1(
+      alloc,
+      chars,
+      numChars,
+    );
+  }
+
+  late final _CFStringCreateWithCharacters1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<UniChar>,
+              CFIndex)>>('CFStringCreateWithCharacters');
+  late final _CFStringCreateWithCharacters1 =
+      _CFStringCreateWithCharacters1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<UniChar>, int)>();
+
+  CFStringRef CFStringCreateWithPascalStringNoCopy1(
+    CFAllocatorRef alloc,
+    ConstStr255Param pStr,
+    int encoding,
+    CFAllocatorRef contentsDeallocator,
+  ) {
+    return _CFStringCreateWithPascalStringNoCopy1(
+      alloc,
+      pStr,
+      encoding,
+      contentsDeallocator,
+    );
+  }
+
+  late final _CFStringCreateWithPascalStringNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFAllocatorRef,
+              ConstStr255Param,
+              CFStringEncoding,
+              CFAllocatorRef)>>('CFStringCreateWithPascalStringNoCopy');
+  late final _CFStringCreateWithPascalStringNoCopy1 =
+      _CFStringCreateWithPascalStringNoCopy1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, ConstStr255Param, int, CFAllocatorRef)>();
+
+  CFStringRef CFStringCreateWithCStringNoCopy1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<pkg_ffi.Char> cStr,
+    int encoding,
+    CFAllocatorRef contentsDeallocator,
+  ) {
+    return _CFStringCreateWithCStringNoCopy1(
+      alloc,
+      cStr,
+      encoding,
+      contentsDeallocator,
+    );
+  }
+
+  late final _CFStringCreateWithCStringNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<pkg_ffi.Char>,
+              CFStringEncoding,
+              CFAllocatorRef)>>('CFStringCreateWithCStringNoCopy');
+  late final _CFStringCreateWithCStringNoCopy1 =
+      _CFStringCreateWithCStringNoCopy1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<pkg_ffi.Char>, int,
+              CFAllocatorRef)>();
+
+  CFStringRef CFStringCreateWithBytesNoCopy1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UInt8> bytes,
+    int numBytes,
+    int encoding,
+    int isExternalRepresentation,
+    CFAllocatorRef contentsDeallocator,
+  ) {
+    return _CFStringCreateWithBytesNoCopy1(
+      alloc,
+      bytes,
+      numBytes,
+      encoding,
+      isExternalRepresentation,
+      contentsDeallocator,
+    );
+  }
+
+  late final _CFStringCreateWithBytesNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<UInt8>,
+              CFIndex,
+              CFStringEncoding,
+              Boolean,
+              CFAllocatorRef)>>('CFStringCreateWithBytesNoCopy');
+  late final _CFStringCreateWithBytesNoCopy1 =
+      _CFStringCreateWithBytesNoCopy1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, int, int,
+              int, CFAllocatorRef)>();
+
+  CFStringRef CFStringCreateWithCharactersNoCopy1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UniChar> chars,
+    int numChars,
+    CFAllocatorRef contentsDeallocator,
+  ) {
+    return _CFStringCreateWithCharactersNoCopy1(
+      alloc,
+      chars,
+      numChars,
+      contentsDeallocator,
+    );
+  }
+
+  late final _CFStringCreateWithCharactersNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<UniChar>, CFIndex,
+              CFAllocatorRef)>>('CFStringCreateWithCharactersNoCopy');
+  late final _CFStringCreateWithCharactersNoCopy1 =
+      _CFStringCreateWithCharactersNoCopy1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, ffi.Pointer<UniChar>, int, CFAllocatorRef)>();
+
+  CFStringRef CFStringCreateWithSubstring1(
+    CFAllocatorRef alloc,
+    CFStringRef str,
+    CFRange range,
+  ) {
+    return _CFStringCreateWithSubstring1(
+      alloc,
+      str,
+      range,
+    );
+  }
+
+  late final _CFStringCreateWithSubstring1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef,
+              CFRange)>>('CFStringCreateWithSubstring');
+  late final _CFStringCreateWithSubstring1 = _CFStringCreateWithSubstring1Ptr
+      .asFunction<CFStringRef Function(CFAllocatorRef, CFStringRef, CFRange)>();
+
+  CFStringRef CFStringCreateCopy1(
+    CFAllocatorRef alloc,
+    CFStringRef theString,
+  ) {
+    return _CFStringCreateCopy1(
+      alloc,
+      theString,
+    );
+  }
+
+  late final _CFStringCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFStringRef)>>('CFStringCreateCopy');
+  late final _CFStringCreateCopy1 = _CFStringCreateCopy1Ptr.asFunction<
+      CFStringRef Function(CFAllocatorRef, CFStringRef)>();
+
+  CFStringRef CFStringCreateWithFormat1(
+    CFAllocatorRef alloc,
+    CFDictionaryRef formatOptions,
+    CFStringRef format,
+  ) {
+    return _CFStringCreateWithFormat1(
+      alloc,
+      formatOptions,
+      format,
+    );
+  }
+
+  late final _CFStringCreateWithFormat1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFDictionaryRef,
+              CFStringRef)>>('CFStringCreateWithFormat');
+  late final _CFStringCreateWithFormat1 =
+      _CFStringCreateWithFormat1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFDictionaryRef, CFStringRef)>();
+
+  CFStringRef CFStringCreateWithFormatAndArguments1(
+    CFAllocatorRef alloc,
+    CFDictionaryRef formatOptions,
+    CFStringRef format,
+    va_list arguments,
+  ) {
+    return _CFStringCreateWithFormatAndArguments1(
+      alloc,
+      formatOptions,
+      format,
+      arguments,
+    );
+  }
+
+  late final _CFStringCreateWithFormatAndArguments1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFDictionaryRef, CFStringRef,
+              va_list)>>('CFStringCreateWithFormatAndArguments');
+  late final _CFStringCreateWithFormatAndArguments1 =
+      _CFStringCreateWithFormatAndArguments1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFDictionaryRef, CFStringRef, va_list)>();
+
+  CFMutableStringRef CFStringCreateMutable1(
+    CFAllocatorRef alloc,
+    int maxLength,
+  ) {
+    return _CFStringCreateMutable1(
+      alloc,
+      maxLength,
+    );
+  }
+
+  late final _CFStringCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableStringRef Function(
+              CFAllocatorRef, CFIndex)>>('CFStringCreateMutable');
+  late final _CFStringCreateMutable1 = _CFStringCreateMutable1Ptr.asFunction<
+      CFMutableStringRef Function(CFAllocatorRef, int)>();
+
+  CFMutableStringRef CFStringCreateMutableCopy1(
+    CFAllocatorRef alloc,
+    int maxLength,
+    CFStringRef theString,
+  ) {
+    return _CFStringCreateMutableCopy1(
+      alloc,
+      maxLength,
+      theString,
+    );
+  }
+
+  late final _CFStringCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableStringRef Function(CFAllocatorRef, CFIndex,
+              CFStringRef)>>('CFStringCreateMutableCopy');
+  late final _CFStringCreateMutableCopy1 =
+      _CFStringCreateMutableCopy1Ptr.asFunction<
+          CFMutableStringRef Function(CFAllocatorRef, int, CFStringRef)>();
+
+  CFMutableStringRef CFStringCreateMutableWithExternalCharactersNoCopy1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UniChar> chars,
+    int numChars,
+    int capacity,
+    CFAllocatorRef externalCharactersAllocator,
+  ) {
+    return _CFStringCreateMutableWithExternalCharactersNoCopy1(
+      alloc,
+      chars,
+      numChars,
+      capacity,
+      externalCharactersAllocator,
+    );
+  }
+
+  late final _CFStringCreateMutableWithExternalCharactersNoCopy1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFMutableStringRef Function(CFAllocatorRef, ffi.Pointer<UniChar>,
+                  CFIndex, CFIndex, CFAllocatorRef)>>(
+      'CFStringCreateMutableWithExternalCharactersNoCopy');
+  late final _CFStringCreateMutableWithExternalCharactersNoCopy1 =
+      _CFStringCreateMutableWithExternalCharactersNoCopy1Ptr.asFunction<
+          CFMutableStringRef Function(CFAllocatorRef, ffi.Pointer<UniChar>, int,
+              int, CFAllocatorRef)>();
+
+  int CFStringGetLength1(
+    CFStringRef theString,
+  ) {
+    return _CFStringGetLength1(
+      theString,
+    );
+  }
+
+  late final _CFStringGetLength1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFStringRef)>>(
+          'CFStringGetLength');
+  late final _CFStringGetLength1 =
+      _CFStringGetLength1Ptr.asFunction<int Function(CFStringRef)>();
+
+  int CFStringGetCharacterAtIndex1(
+    CFStringRef theString,
+    int idx,
+  ) {
+    return _CFStringGetCharacterAtIndex1(
+      theString,
+      idx,
+    );
+  }
+
+  late final _CFStringGetCharacterAtIndex1Ptr =
+      _lookup<ffi.NativeFunction<UniChar Function(CFStringRef, CFIndex)>>(
+          'CFStringGetCharacterAtIndex');
+  late final _CFStringGetCharacterAtIndex1 = _CFStringGetCharacterAtIndex1Ptr
+      .asFunction<int Function(CFStringRef, int)>();
+
+  void CFStringGetCharacters1(
+    CFStringRef theString,
+    CFRange range,
+    ffi.Pointer<UniChar> buffer,
+  ) {
+    return _CFStringGetCharacters1(
+      theString,
+      range,
+      buffer,
+    );
+  }
+
+  late final _CFStringGetCharacters1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFStringRef, CFRange,
+              ffi.Pointer<UniChar>)>>('CFStringGetCharacters');
+  late final _CFStringGetCharacters1 = _CFStringGetCharacters1Ptr.asFunction<
+      void Function(CFStringRef, CFRange, ffi.Pointer<UniChar>)>();
+
+  int CFStringGetPascalString1(
+    CFStringRef theString,
+    StringPtr buffer,
+    int bufferSize,
+    int encoding,
+  ) {
+    return _CFStringGetPascalString1(
+      theString,
+      buffer,
+      bufferSize,
+      encoding,
+    );
+  }
+
+  late final _CFStringGetPascalString1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, StringPtr, CFIndex,
+              CFStringEncoding)>>('CFStringGetPascalString');
+  late final _CFStringGetPascalString1 = _CFStringGetPascalString1Ptr
+      .asFunction<int Function(CFStringRef, StringPtr, int, int)>();
+
+  int CFStringGetCString1(
+    CFStringRef theString,
+    ffi.Pointer<pkg_ffi.Char> buffer,
+    int bufferSize,
+    int encoding,
+  ) {
+    return _CFStringGetCString1(
+      theString,
+      buffer,
+      bufferSize,
+      encoding,
+    );
+  }
+
+  late final _CFStringGetCString1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, ffi.Pointer<pkg_ffi.Char>, CFIndex,
+              CFStringEncoding)>>('CFStringGetCString');
+  late final _CFStringGetCString1 = _CFStringGetCString1Ptr.asFunction<
+      int Function(CFStringRef, ffi.Pointer<pkg_ffi.Char>, int, int)>();
+
+  ConstStringPtr CFStringGetPascalStringPtr1(
+    CFStringRef theString,
+    int encoding,
+  ) {
+    return _CFStringGetPascalStringPtr11(
+      theString,
+      encoding,
+    );
+  }
+
+  late final _CFStringGetPascalStringPtr1Ptr = _lookup<
+      ffi.NativeFunction<
+          ConstStringPtr Function(
+              CFStringRef, CFStringEncoding)>>('CFStringGetPascalStringPtr');
+  late final _CFStringGetPascalStringPtr11 = _CFStringGetPascalStringPtr1Ptr
+      .asFunction<ConstStringPtr Function(CFStringRef, int)>();
+
+  ffi.Pointer<pkg_ffi.Char> CFStringGetCStringPtr1(
+    CFStringRef theString,
+    int encoding,
+  ) {
+    return _CFStringGetCStringPtr11(
+      theString,
+      encoding,
+    );
+  }
+
+  late final _CFStringGetCStringPtr1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(
+              CFStringRef, CFStringEncoding)>>('CFStringGetCStringPtr');
+  late final _CFStringGetCStringPtr11 = _CFStringGetCStringPtr1Ptr.asFunction<
+      ffi.Pointer<pkg_ffi.Char> Function(CFStringRef, int)>();
+
+  ffi.Pointer<UniChar> CFStringGetCharactersPtr1(
+    CFStringRef theString,
+  ) {
+    return _CFStringGetCharactersPtr11(
+      theString,
+    );
+  }
+
+  late final _CFStringGetCharactersPtr1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<UniChar> Function(CFStringRef)>>(
+          'CFStringGetCharactersPtr');
+  late final _CFStringGetCharactersPtr11 = _CFStringGetCharactersPtr1Ptr
+      .asFunction<ffi.Pointer<UniChar> Function(CFStringRef)>();
+
+  int CFStringGetBytes1(
+    CFStringRef theString,
+    CFRange range,
+    int encoding,
+    int lossByte,
+    int isExternalRepresentation,
+    ffi.Pointer<UInt8> buffer,
+    int maxBufLen,
+    ffi.Pointer<CFIndex> usedBufLen,
+  ) {
+    return _CFStringGetBytes1(
+      theString,
+      range,
+      encoding,
+      lossByte,
+      isExternalRepresentation,
+      buffer,
+      maxBufLen,
+      usedBufLen,
+    );
+  }
+
+  late final _CFStringGetBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(
+              CFStringRef,
+              CFRange,
+              CFStringEncoding,
+              UInt8,
+              Boolean,
+              ffi.Pointer<UInt8>,
+              CFIndex,
+              ffi.Pointer<CFIndex>)>>('CFStringGetBytes');
+  late final _CFStringGetBytes1 = _CFStringGetBytes1Ptr.asFunction<
+      int Function(CFStringRef, CFRange, int, int, int, ffi.Pointer<UInt8>, int,
+          ffi.Pointer<CFIndex>)>();
+
+  CFStringRef CFStringCreateFromExternalRepresentation1(
+    CFAllocatorRef alloc,
+    CFDataRef data,
+    int encoding,
+  ) {
+    return _CFStringCreateFromExternalRepresentation1(
+      alloc,
+      data,
+      encoding,
+    );
+  }
+
+  late final _CFStringCreateFromExternalRepresentation1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFDataRef,
+              CFStringEncoding)>>('CFStringCreateFromExternalRepresentation');
+  late final _CFStringCreateFromExternalRepresentation1 =
+      _CFStringCreateFromExternalRepresentation1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFDataRef, int)>();
+
+  CFDataRef CFStringCreateExternalRepresentation1(
+    CFAllocatorRef alloc,
+    CFStringRef theString,
+    int encoding,
+    int lossByte,
+  ) {
+    return _CFStringCreateExternalRepresentation1(
+      alloc,
+      theString,
+      encoding,
+      lossByte,
+    );
+  }
+
+  late final _CFStringCreateExternalRepresentation1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef, CFStringRef, CFStringEncoding,
+              UInt8)>>('CFStringCreateExternalRepresentation');
+  late final _CFStringCreateExternalRepresentation1 =
+      _CFStringCreateExternalRepresentation1Ptr.asFunction<
+          CFDataRef Function(CFAllocatorRef, CFStringRef, int, int)>();
+
+  int CFStringGetSmallestEncoding1(
+    CFStringRef theString,
+  ) {
+    return _CFStringGetSmallestEncoding1(
+      theString,
+    );
+  }
+
+  late final _CFStringGetSmallestEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function(CFStringRef)>>(
+          'CFStringGetSmallestEncoding');
+  late final _CFStringGetSmallestEncoding1 =
+      _CFStringGetSmallestEncoding1Ptr.asFunction<int Function(CFStringRef)>();
+
+  int CFStringGetFastestEncoding1(
+    CFStringRef theString,
+  ) {
+    return _CFStringGetFastestEncoding1(
+      theString,
+    );
+  }
+
+  late final _CFStringGetFastestEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function(CFStringRef)>>(
+          'CFStringGetFastestEncoding');
+  late final _CFStringGetFastestEncoding1 =
+      _CFStringGetFastestEncoding1Ptr.asFunction<int Function(CFStringRef)>();
+
+  int CFStringGetSystemEncoding1() {
+    return _CFStringGetSystemEncoding1();
+  }
+
+  late final _CFStringGetSystemEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function()>>(
+          'CFStringGetSystemEncoding');
+  late final _CFStringGetSystemEncoding1 =
+      _CFStringGetSystemEncoding1Ptr.asFunction<int Function()>();
+
+  int CFStringGetMaximumSizeForEncoding1(
+    int length,
+    int encoding,
+  ) {
+    return _CFStringGetMaximumSizeForEncoding1(
+      length,
+      encoding,
+    );
+  }
+
+  late final _CFStringGetMaximumSizeForEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFIndex, CFStringEncoding)>>(
+          'CFStringGetMaximumSizeForEncoding');
+  late final _CFStringGetMaximumSizeForEncoding1 =
+      _CFStringGetMaximumSizeForEncoding1Ptr.asFunction<
+          int Function(int, int)>();
+
+  int CFStringGetFileSystemRepresentation1(
+    CFStringRef string,
+    ffi.Pointer<pkg_ffi.Char> buffer,
+    int maxBufLen,
+  ) {
+    return _CFStringGetFileSystemRepresentation1(
+      string,
+      buffer,
+      maxBufLen,
+    );
+  }
+
+  late final _CFStringGetFileSystemRepresentation1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, ffi.Pointer<pkg_ffi.Char>,
+              CFIndex)>>('CFStringGetFileSystemRepresentation');
+  late final _CFStringGetFileSystemRepresentation1 =
+      _CFStringGetFileSystemRepresentation1Ptr.asFunction<
+          int Function(CFStringRef, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  int CFStringGetMaximumSizeOfFileSystemRepresentation1(
+    CFStringRef string,
+  ) {
+    return _CFStringGetMaximumSizeOfFileSystemRepresentation1(
+      string,
+    );
+  }
+
+  late final _CFStringGetMaximumSizeOfFileSystemRepresentation1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFStringRef)>>(
+          'CFStringGetMaximumSizeOfFileSystemRepresentation');
+  late final _CFStringGetMaximumSizeOfFileSystemRepresentation1 =
+      _CFStringGetMaximumSizeOfFileSystemRepresentation1Ptr.asFunction<
+          int Function(CFStringRef)>();
+
+  CFStringRef CFStringCreateWithFileSystemRepresentation1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<pkg_ffi.Char> buffer,
+  ) {
+    return _CFStringCreateWithFileSystemRepresentation1(
+      alloc,
+      buffer,
+    );
+  }
+
+  late final _CFStringCreateWithFileSystemRepresentation1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFStringRef Function(CFAllocatorRef, ffi.Pointer<pkg_ffi.Char>)>>(
+      'CFStringCreateWithFileSystemRepresentation');
+  late final _CFStringCreateWithFileSystemRepresentation1 =
+      _CFStringCreateWithFileSystemRepresentation1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, ffi.Pointer<pkg_ffi.Char>)>();
+
+  int CFStringCompareWithOptionsAndLocale1(
+    CFStringRef theString1,
+    CFStringRef theString2,
+    CFRange rangeToCompare,
+    int compareOptions,
+    CFLocaleRef locale,
+  ) {
+    return _CFStringCompareWithOptionsAndLocale1(
+      theString1,
+      theString2,
+      rangeToCompare,
+      compareOptions,
+      locale,
+    );
+  }
+
+  late final _CFStringCompareWithOptionsAndLocale1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFStringRef, CFStringRef, CFRange, ffi.Int32,
+              CFLocaleRef)>>('CFStringCompareWithOptionsAndLocale');
+  late final _CFStringCompareWithOptionsAndLocale1 =
+      _CFStringCompareWithOptionsAndLocale1Ptr.asFunction<
+          int Function(CFStringRef, CFStringRef, CFRange, int, CFLocaleRef)>();
+
+  int CFStringCompareWithOptions1(
+    CFStringRef theString1,
+    CFStringRef theString2,
+    CFRange rangeToCompare,
+    int compareOptions,
+  ) {
+    return _CFStringCompareWithOptions1(
+      theString1,
+      theString2,
+      rangeToCompare,
+      compareOptions,
+    );
+  }
+
+  late final _CFStringCompareWithOptions1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFStringRef, CFStringRef, CFRange,
+              ffi.Int32)>>('CFStringCompareWithOptions');
+  late final _CFStringCompareWithOptions1 = _CFStringCompareWithOptions1Ptr
+      .asFunction<int Function(CFStringRef, CFStringRef, CFRange, int)>();
+
+  int CFStringCompare1(
+    CFStringRef theString1,
+    CFStringRef theString2,
+    int compareOptions,
+  ) {
+    return _CFStringCompare1(
+      theString1,
+      theString2,
+      compareOptions,
+    );
+  }
+
+  late final _CFStringCompare1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              CFStringRef, CFStringRef, ffi.Int32)>>('CFStringCompare');
+  late final _CFStringCompare1 = _CFStringCompare1Ptr.asFunction<
+      int Function(CFStringRef, CFStringRef, int)>();
+
+  int CFStringFindWithOptionsAndLocale1(
+    CFStringRef theString,
+    CFStringRef stringToFind,
+    CFRange rangeToSearch,
+    int searchOptions,
+    CFLocaleRef locale,
+    ffi.Pointer<CFRange> result,
+  ) {
+    return _CFStringFindWithOptionsAndLocale1(
+      theString,
+      stringToFind,
+      rangeToSearch,
+      searchOptions,
+      locale,
+      result,
+    );
+  }
+
+  late final _CFStringFindWithOptionsAndLocale1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFStringRef,
+              CFStringRef,
+              CFRange,
+              ffi.Int32,
+              CFLocaleRef,
+              ffi.Pointer<CFRange>)>>('CFStringFindWithOptionsAndLocale');
+  late final _CFStringFindWithOptionsAndLocale1 =
+      _CFStringFindWithOptionsAndLocale1Ptr.asFunction<
+          int Function(CFStringRef, CFStringRef, CFRange, int, CFLocaleRef,
+              ffi.Pointer<CFRange>)>();
+
+  int CFStringFindWithOptions1(
+    CFStringRef theString,
+    CFStringRef stringToFind,
+    CFRange rangeToSearch,
+    int searchOptions,
+    ffi.Pointer<CFRange> result,
+  ) {
+    return _CFStringFindWithOptions1(
+      theString,
+      stringToFind,
+      rangeToSearch,
+      searchOptions,
+      result,
+    );
+  }
+
+  late final _CFStringFindWithOptions1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, CFStringRef, CFRange, ffi.Int32,
+              ffi.Pointer<CFRange>)>>('CFStringFindWithOptions');
+  late final _CFStringFindWithOptions1 =
+      _CFStringFindWithOptions1Ptr.asFunction<
+          int Function(
+              CFStringRef, CFStringRef, CFRange, int, ffi.Pointer<CFRange>)>();
+
+  CFArrayRef CFStringCreateArrayWithFindResults1(
+    CFAllocatorRef alloc,
+    CFStringRef theString,
+    CFStringRef stringToFind,
+    CFRange rangeToSearch,
+    int compareOptions,
+  ) {
+    return _CFStringCreateArrayWithFindResults1(
+      alloc,
+      theString,
+      stringToFind,
+      rangeToSearch,
+      compareOptions,
+    );
+  }
+
+  late final _CFStringCreateArrayWithFindResults1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFAllocatorRef, CFStringRef, CFStringRef, CFRange,
+              ffi.Int32)>>('CFStringCreateArrayWithFindResults');
+  late final _CFStringCreateArrayWithFindResults1 =
+      _CFStringCreateArrayWithFindResults1Ptr.asFunction<
+          CFArrayRef Function(
+              CFAllocatorRef, CFStringRef, CFStringRef, CFRange, int)>();
+
+  CFRange CFStringFind1(
+    CFStringRef theString,
+    CFStringRef stringToFind,
+    int compareOptions,
+  ) {
+    return _CFStringFind1(
+      theString,
+      stringToFind,
+      compareOptions,
+    );
+  }
+
+  late final _CFStringFind1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRange Function(
+              CFStringRef, CFStringRef, ffi.Int32)>>('CFStringFind');
+  late final _CFStringFind1 = _CFStringFind1Ptr.asFunction<
+      CFRange Function(CFStringRef, CFStringRef, int)>();
+
+  int CFStringHasPrefix1(
+    CFStringRef theString,
+    CFStringRef prefix,
+  ) {
+    return _CFStringHasPrefix1(
+      theString,
+      prefix,
+    );
+  }
+
+  late final _CFStringHasPrefix1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFStringRef, CFStringRef)>>(
+          'CFStringHasPrefix');
+  late final _CFStringHasPrefix1 = _CFStringHasPrefix1Ptr.asFunction<
+      int Function(CFStringRef, CFStringRef)>();
+
+  int CFStringHasSuffix1(
+    CFStringRef theString,
+    CFStringRef suffix,
+  ) {
+    return _CFStringHasSuffix1(
+      theString,
+      suffix,
+    );
+  }
+
+  late final _CFStringHasSuffix1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFStringRef, CFStringRef)>>(
+          'CFStringHasSuffix');
+  late final _CFStringHasSuffix1 = _CFStringHasSuffix1Ptr.asFunction<
+      int Function(CFStringRef, CFStringRef)>();
+
+  CFRange CFStringGetRangeOfComposedCharactersAtIndex1(
+    CFStringRef theString,
+    int theIndex,
+  ) {
+    return _CFStringGetRangeOfComposedCharactersAtIndex1(
+      theString,
+      theIndex,
+    );
+  }
+
+  late final _CFStringGetRangeOfComposedCharactersAtIndex1Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFStringRef, CFIndex)>>(
+          'CFStringGetRangeOfComposedCharactersAtIndex');
+  late final _CFStringGetRangeOfComposedCharactersAtIndex1 =
+      _CFStringGetRangeOfComposedCharactersAtIndex1Ptr.asFunction<
+          CFRange Function(CFStringRef, int)>();
+
+  int CFStringFindCharacterFromSet1(
+    CFStringRef theString,
+    CFCharacterSetRef theSet,
+    CFRange rangeToSearch,
+    int searchOptions,
+    ffi.Pointer<CFRange> result,
+  ) {
+    return _CFStringFindCharacterFromSet1(
+      theString,
+      theSet,
+      rangeToSearch,
+      searchOptions,
+      result,
+    );
+  }
+
+  late final _CFStringFindCharacterFromSet1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, CFCharacterSetRef, CFRange, ffi.Int32,
+              ffi.Pointer<CFRange>)>>('CFStringFindCharacterFromSet');
+  late final _CFStringFindCharacterFromSet1 =
+      _CFStringFindCharacterFromSet1Ptr.asFunction<
+          int Function(CFStringRef, CFCharacterSetRef, CFRange, int,
+              ffi.Pointer<CFRange>)>();
+
+  void CFStringGetLineBounds1(
+    CFStringRef theString,
+    CFRange range,
+    ffi.Pointer<CFIndex> lineBeginIndex,
+    ffi.Pointer<CFIndex> lineEndIndex,
+    ffi.Pointer<CFIndex> contentsEndIndex,
+  ) {
+    return _CFStringGetLineBounds1(
+      theString,
+      range,
+      lineBeginIndex,
+      lineEndIndex,
+      contentsEndIndex,
+    );
+  }
+
+  late final _CFStringGetLineBounds1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFStringRef,
+              CFRange,
+              ffi.Pointer<CFIndex>,
+              ffi.Pointer<CFIndex>,
+              ffi.Pointer<CFIndex>)>>('CFStringGetLineBounds');
+  late final _CFStringGetLineBounds1 = _CFStringGetLineBounds1Ptr.asFunction<
+      void Function(CFStringRef, CFRange, ffi.Pointer<CFIndex>,
+          ffi.Pointer<CFIndex>, ffi.Pointer<CFIndex>)>();
+
+  void CFStringGetParagraphBounds1(
+    CFStringRef string,
+    CFRange range,
+    ffi.Pointer<CFIndex> parBeginIndex,
+    ffi.Pointer<CFIndex> parEndIndex,
+    ffi.Pointer<CFIndex> contentsEndIndex,
+  ) {
+    return _CFStringGetParagraphBounds1(
+      string,
+      range,
+      parBeginIndex,
+      parEndIndex,
+      contentsEndIndex,
+    );
+  }
+
+  late final _CFStringGetParagraphBounds1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFStringRef,
+              CFRange,
+              ffi.Pointer<CFIndex>,
+              ffi.Pointer<CFIndex>,
+              ffi.Pointer<CFIndex>)>>('CFStringGetParagraphBounds');
+  late final _CFStringGetParagraphBounds1 =
+      _CFStringGetParagraphBounds1Ptr.asFunction<
+          void Function(CFStringRef, CFRange, ffi.Pointer<CFIndex>,
+              ffi.Pointer<CFIndex>, ffi.Pointer<CFIndex>)>();
+
+  int CFStringGetHyphenationLocationBeforeIndex1(
+    CFStringRef string,
+    int location,
+    CFRange limitRange,
+    int options,
+    CFLocaleRef locale,
+    ffi.Pointer<UTF32Char> character,
+  ) {
+    return _CFStringGetHyphenationLocationBeforeIndex1(
+      string,
+      location,
+      limitRange,
+      options,
+      locale,
+      character,
+    );
+  }
+
+  late final _CFStringGetHyphenationLocationBeforeIndex1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFIndex Function(CFStringRef, CFIndex, CFRange, CFOptionFlags,
+                  CFLocaleRef, ffi.Pointer<UTF32Char>)>>(
+      'CFStringGetHyphenationLocationBeforeIndex');
+  late final _CFStringGetHyphenationLocationBeforeIndex1 =
+      _CFStringGetHyphenationLocationBeforeIndex1Ptr.asFunction<
+          int Function(CFStringRef, int, CFRange, int, CFLocaleRef,
+              ffi.Pointer<UTF32Char>)>();
+
+  int CFStringIsHyphenationAvailableForLocale1(
+    CFLocaleRef locale,
+  ) {
+    return _CFStringIsHyphenationAvailableForLocale1(
+      locale,
+    );
+  }
+
+  late final _CFStringIsHyphenationAvailableForLocale1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFLocaleRef)>>(
+          'CFStringIsHyphenationAvailableForLocale');
+  late final _CFStringIsHyphenationAvailableForLocale1 =
+      _CFStringIsHyphenationAvailableForLocale1Ptr.asFunction<
+          int Function(CFLocaleRef)>();
+
+  CFStringRef CFStringCreateByCombiningStrings1(
+    CFAllocatorRef alloc,
+    CFArrayRef theArray,
+    CFStringRef separatorString,
+  ) {
+    return _CFStringCreateByCombiningStrings1(
+      alloc,
+      theArray,
+      separatorString,
+    );
+  }
+
+  late final _CFStringCreateByCombiningStrings1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFArrayRef,
+              CFStringRef)>>('CFStringCreateByCombiningStrings');
+  late final _CFStringCreateByCombiningStrings1 =
+      _CFStringCreateByCombiningStrings1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFArrayRef, CFStringRef)>();
+
+  CFArrayRef CFStringCreateArrayBySeparatingStrings1(
+    CFAllocatorRef alloc,
+    CFStringRef theString,
+    CFStringRef separatorString,
+  ) {
+    return _CFStringCreateArrayBySeparatingStrings1(
+      alloc,
+      theString,
+      separatorString,
+    );
+  }
+
+  late final _CFStringCreateArrayBySeparatingStrings1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFAllocatorRef, CFStringRef,
+              CFStringRef)>>('CFStringCreateArrayBySeparatingStrings');
+  late final _CFStringCreateArrayBySeparatingStrings1 =
+      _CFStringCreateArrayBySeparatingStrings1Ptr.asFunction<
+          CFArrayRef Function(CFAllocatorRef, CFStringRef, CFStringRef)>();
+
+  int CFStringGetIntValue1(
+    CFStringRef str,
+  ) {
+    return _CFStringGetIntValue1(
+      str,
+    );
+  }
+
+  late final _CFStringGetIntValue1Ptr =
+      _lookup<ffi.NativeFunction<SInt32 Function(CFStringRef)>>(
+          'CFStringGetIntValue');
+  late final _CFStringGetIntValue1 =
+      _CFStringGetIntValue1Ptr.asFunction<int Function(CFStringRef)>();
+
+  double CFStringGetDoubleValue1(
+    CFStringRef str,
+  ) {
+    return _CFStringGetDoubleValue1(
+      str,
+    );
+  }
+
+  late final _CFStringGetDoubleValue1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(CFStringRef)>>(
+          'CFStringGetDoubleValue');
+  late final _CFStringGetDoubleValue1 =
+      _CFStringGetDoubleValue1Ptr.asFunction<double Function(CFStringRef)>();
+
+  void CFStringAppend1(
+    CFMutableStringRef theString,
+    CFStringRef appendedString,
+  ) {
+    return _CFStringAppend1(
+      theString,
+      appendedString,
+    );
+  }
+
+  late final _CFStringAppend1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFStringRef)>>('CFStringAppend');
+  late final _CFStringAppend1 = _CFStringAppend1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFStringRef)>();
+
+  void CFStringAppendCharacters1(
+    CFMutableStringRef theString,
+    ffi.Pointer<UniChar> chars,
+    int numChars,
+  ) {
+    return _CFStringAppendCharacters1(
+      theString,
+      chars,
+      numChars,
+    );
+  }
+
+  late final _CFStringAppendCharacters1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, ffi.Pointer<UniChar>,
+              CFIndex)>>('CFStringAppendCharacters');
+  late final _CFStringAppendCharacters1 =
+      _CFStringAppendCharacters1Ptr.asFunction<
+          void Function(CFMutableStringRef, ffi.Pointer<UniChar>, int)>();
+
+  void CFStringAppendPascalString1(
+    CFMutableStringRef theString,
+    ConstStr255Param pStr,
+    int encoding,
+  ) {
+    return _CFStringAppendPascalString1(
+      theString,
+      pStr,
+      encoding,
+    );
+  }
+
+  late final _CFStringAppendPascalString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, ConstStr255Param,
+              CFStringEncoding)>>('CFStringAppendPascalString');
+  late final _CFStringAppendPascalString1 = _CFStringAppendPascalString1Ptr
+      .asFunction<void Function(CFMutableStringRef, ConstStr255Param, int)>();
+
+  void CFStringAppendCString1(
+    CFMutableStringRef theString,
+    ffi.Pointer<pkg_ffi.Char> cStr,
+    int encoding,
+  ) {
+    return _CFStringAppendCString1(
+      theString,
+      cStr,
+      encoding,
+    );
+  }
+
+  late final _CFStringAppendCString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, ffi.Pointer<pkg_ffi.Char>,
+              CFStringEncoding)>>('CFStringAppendCString');
+  late final _CFStringAppendCString1 = _CFStringAppendCString1Ptr.asFunction<
+      void Function(CFMutableStringRef, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  void CFStringAppendFormat1(
+    CFMutableStringRef theString,
+    CFDictionaryRef formatOptions,
+    CFStringRef format,
+  ) {
+    return _CFStringAppendFormat1(
+      theString,
+      formatOptions,
+      format,
+    );
+  }
+
+  late final _CFStringAppendFormat1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, CFDictionaryRef,
+              CFStringRef)>>('CFStringAppendFormat');
+  late final _CFStringAppendFormat1 = _CFStringAppendFormat1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFDictionaryRef, CFStringRef)>();
+
+  void CFStringAppendFormatAndArguments1(
+    CFMutableStringRef theString,
+    CFDictionaryRef formatOptions,
+    CFStringRef format,
+    va_list arguments,
+  ) {
+    return _CFStringAppendFormatAndArguments1(
+      theString,
+      formatOptions,
+      format,
+      arguments,
+    );
+  }
+
+  late final _CFStringAppendFormatAndArguments1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, CFDictionaryRef, CFStringRef,
+              va_list)>>('CFStringAppendFormatAndArguments');
+  late final _CFStringAppendFormatAndArguments1 =
+      _CFStringAppendFormatAndArguments1Ptr.asFunction<
+          void Function(
+              CFMutableStringRef, CFDictionaryRef, CFStringRef, va_list)>();
+
+  void CFStringInsert1(
+    CFMutableStringRef str,
+    int idx,
+    CFStringRef insertedStr,
+  ) {
+    return _CFStringInsert1(
+      str,
+      idx,
+      insertedStr,
+    );
+  }
+
+  late final _CFStringInsert1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFIndex, CFStringRef)>>('CFStringInsert');
+  late final _CFStringInsert1 = _CFStringInsert1Ptr.asFunction<
+      void Function(CFMutableStringRef, int, CFStringRef)>();
+
+  void CFStringDelete1(
+    CFMutableStringRef theString,
+    CFRange range,
+  ) {
+    return _CFStringDelete1(
+      theString,
+      range,
+    );
+  }
+
+  late final _CFStringDelete1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableStringRef, CFRange)>>(
+      'CFStringDelete');
+  late final _CFStringDelete1 = _CFStringDelete1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFRange)>();
+
+  void CFStringReplace1(
+    CFMutableStringRef theString,
+    CFRange range,
+    CFStringRef replacement,
+  ) {
+    return _CFStringReplace1(
+      theString,
+      range,
+      replacement,
+    );
+  }
+
+  late final _CFStringReplace1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFRange, CFStringRef)>>('CFStringReplace');
+  late final _CFStringReplace1 = _CFStringReplace1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFRange, CFStringRef)>();
+
+  void CFStringReplaceAll1(
+    CFMutableStringRef theString,
+    CFStringRef replacement,
+  ) {
+    return _CFStringReplaceAll1(
+      theString,
+      replacement,
+    );
+  }
+
+  late final _CFStringReplaceAll1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFStringRef)>>('CFStringReplaceAll');
+  late final _CFStringReplaceAll1 = _CFStringReplaceAll1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFStringRef)>();
+
+  int CFStringFindAndReplace1(
+    CFMutableStringRef theString,
+    CFStringRef stringToFind,
+    CFStringRef replacementString,
+    CFRange rangeToSearch,
+    int compareOptions,
+  ) {
+    return _CFStringFindAndReplace1(
+      theString,
+      stringToFind,
+      replacementString,
+      rangeToSearch,
+      compareOptions,
+    );
+  }
+
+  late final _CFStringFindAndReplace1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFMutableStringRef, CFStringRef, CFStringRef,
+              CFRange, ffi.Int32)>>('CFStringFindAndReplace');
+  late final _CFStringFindAndReplace1 = _CFStringFindAndReplace1Ptr.asFunction<
+      int Function(
+          CFMutableStringRef, CFStringRef, CFStringRef, CFRange, int)>();
+
+  void CFStringSetExternalCharactersNoCopy1(
+    CFMutableStringRef theString,
+    ffi.Pointer<UniChar> chars,
+    int length,
+    int capacity,
+  ) {
+    return _CFStringSetExternalCharactersNoCopy1(
+      theString,
+      chars,
+      length,
+      capacity,
+    );
+  }
+
+  late final _CFStringSetExternalCharactersNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, ffi.Pointer<UniChar>, CFIndex,
+              CFIndex)>>('CFStringSetExternalCharactersNoCopy');
+  late final _CFStringSetExternalCharactersNoCopy1 =
+      _CFStringSetExternalCharactersNoCopy1Ptr.asFunction<
+          void Function(CFMutableStringRef, ffi.Pointer<UniChar>, int, int)>();
+
+  void CFStringPad1(
+    CFMutableStringRef theString,
+    CFStringRef padString,
+    int length,
+    int indexIntoPad,
+  ) {
+    return _CFStringPad1(
+      theString,
+      padString,
+      length,
+      indexIntoPad,
+    );
+  }
+
+  late final _CFStringPad1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, CFStringRef, CFIndex,
+              CFIndex)>>('CFStringPad');
+  late final _CFStringPad1 = _CFStringPad1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFStringRef, int, int)>();
+
+  void CFStringTrim1(
+    CFMutableStringRef theString,
+    CFStringRef trimString,
+  ) {
+    return _CFStringTrim1(
+      theString,
+      trimString,
+    );
+  }
+
+  late final _CFStringTrim1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableStringRef, CFStringRef)>>('CFStringTrim');
+  late final _CFStringTrim1 = _CFStringTrim1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFStringRef)>();
+
+  void CFStringTrimWhitespace1(
+    CFMutableStringRef theString,
+  ) {
+    return _CFStringTrimWhitespace1(
+      theString,
+    );
+  }
+
+  late final _CFStringTrimWhitespace1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableStringRef)>>(
+          'CFStringTrimWhitespace');
+  late final _CFStringTrimWhitespace1 = _CFStringTrimWhitespace1Ptr.asFunction<
+      void Function(CFMutableStringRef)>();
+
+  void CFStringLowercase1(
+    CFMutableStringRef theString,
+    CFLocaleRef locale,
+  ) {
+    return _CFStringLowercase1(
+      theString,
+      locale,
+    );
+  }
+
+  late final _CFStringLowercase1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFLocaleRef)>>('CFStringLowercase');
+  late final _CFStringLowercase1 = _CFStringLowercase1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFLocaleRef)>();
+
+  void CFStringUppercase1(
+    CFMutableStringRef theString,
+    CFLocaleRef locale,
+  ) {
+    return _CFStringUppercase1(
+      theString,
+      locale,
+    );
+  }
+
+  late final _CFStringUppercase1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFLocaleRef)>>('CFStringUppercase');
+  late final _CFStringUppercase1 = _CFStringUppercase1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFLocaleRef)>();
+
+  void CFStringCapitalize1(
+    CFMutableStringRef theString,
+    CFLocaleRef locale,
+  ) {
+    return _CFStringCapitalize1(
+      theString,
+      locale,
+    );
+  }
+
+  late final _CFStringCapitalize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, CFLocaleRef)>>('CFStringCapitalize');
+  late final _CFStringCapitalize1 = _CFStringCapitalize1Ptr.asFunction<
+      void Function(CFMutableStringRef, CFLocaleRef)>();
+
+  void CFStringNormalize1(
+    CFMutableStringRef theString,
+    int theForm,
+  ) {
+    return _CFStringNormalize1(
+      theString,
+      theForm,
+    );
+  }
+
+  late final _CFStringNormalize1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableStringRef, ffi.Int32)>>(
+      'CFStringNormalize');
+  late final _CFStringNormalize1 = _CFStringNormalize1Ptr.asFunction<
+      void Function(CFMutableStringRef, int)>();
+
+  void CFStringFold1(
+    CFMutableStringRef theString,
+    int theFlags,
+    CFLocaleRef theLocale,
+  ) {
+    return _CFStringFold1(
+      theString,
+      theFlags,
+      theLocale,
+    );
+  }
+
+  late final _CFStringFold1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableStringRef, ffi.Int32, CFLocaleRef)>>('CFStringFold');
+  late final _CFStringFold1 = _CFStringFold1Ptr.asFunction<
+      void Function(CFMutableStringRef, int, CFLocaleRef)>();
+
+  int CFStringTransform1(
+    CFMutableStringRef string,
+    ffi.Pointer<CFRange> range,
+    CFStringRef transform,
+    int reverse,
+  ) {
+    return _CFStringTransform1(
+      string,
+      range,
+      transform,
+      reverse,
+    );
+  }
+
+  late final _CFStringTransform1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFMutableStringRef, ffi.Pointer<CFRange>,
+              CFStringRef, Boolean)>>('CFStringTransform');
+  late final _CFStringTransform1 = _CFStringTransform1Ptr.asFunction<
+      int Function(
+          CFMutableStringRef, ffi.Pointer<CFRange>, CFStringRef, int)>();
+
+  int CFStringIsEncodingAvailable1(
+    int encoding,
+  ) {
+    return _CFStringIsEncodingAvailable1(
+      encoding,
+    );
+  }
+
+  late final _CFStringIsEncodingAvailable1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFStringEncoding)>>(
+          'CFStringIsEncodingAvailable');
+  late final _CFStringIsEncodingAvailable1 =
+      _CFStringIsEncodingAvailable1Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<CFStringEncoding> CFStringGetListOfAvailableEncodings1() {
+    return _CFStringGetListOfAvailableEncodings1();
+  }
+
+  late final _CFStringGetListOfAvailableEncodings1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<CFStringEncoding> Function()>>(
+          'CFStringGetListOfAvailableEncodings');
+  late final _CFStringGetListOfAvailableEncodings1 =
+      _CFStringGetListOfAvailableEncodings1Ptr.asFunction<
+          ffi.Pointer<CFStringEncoding> Function()>();
+
+  CFStringRef CFStringGetNameOfEncoding1(
+    int encoding,
+  ) {
+    return _CFStringGetNameOfEncoding1(
+      encoding,
+    );
+  }
+
+  late final _CFStringGetNameOfEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFStringEncoding)>>(
+          'CFStringGetNameOfEncoding');
+  late final _CFStringGetNameOfEncoding1 =
+      _CFStringGetNameOfEncoding1Ptr.asFunction<CFStringRef Function(int)>();
+
+  int CFStringConvertEncodingToNSStringEncoding1(
+    int encoding,
+  ) {
+    return _CFStringConvertEncodingToNSStringEncoding1(
+      encoding,
+    );
+  }
+
+  late final _CFStringConvertEncodingToNSStringEncoding1Ptr = _lookup<
+          ffi.NativeFunction<pkg_ffi.UnsignedLong Function(CFStringEncoding)>>(
+      'CFStringConvertEncodingToNSStringEncoding');
+  late final _CFStringConvertEncodingToNSStringEncoding1 =
+      _CFStringConvertEncodingToNSStringEncoding1Ptr.asFunction<
+          int Function(int)>();
+
+  int CFStringConvertNSStringEncodingToEncoding1(
+    int encoding,
+  ) {
+    return _CFStringConvertNSStringEncodingToEncoding1(
+      encoding,
+    );
+  }
+
+  late final _CFStringConvertNSStringEncodingToEncoding1Ptr = _lookup<
+          ffi.NativeFunction<CFStringEncoding Function(pkg_ffi.UnsignedLong)>>(
+      'CFStringConvertNSStringEncodingToEncoding');
+  late final _CFStringConvertNSStringEncodingToEncoding1 =
+      _CFStringConvertNSStringEncodingToEncoding1Ptr.asFunction<
+          int Function(int)>();
+
+  int CFStringConvertEncodingToWindowsCodepage1(
+    int encoding,
+  ) {
+    return _CFStringConvertEncodingToWindowsCodepage1(
+      encoding,
+    );
+  }
+
+  late final _CFStringConvertEncodingToWindowsCodepage1Ptr =
+      _lookup<ffi.NativeFunction<UInt32 Function(CFStringEncoding)>>(
+          'CFStringConvertEncodingToWindowsCodepage');
+  late final _CFStringConvertEncodingToWindowsCodepage1 =
+      _CFStringConvertEncodingToWindowsCodepage1Ptr.asFunction<
+          int Function(int)>();
+
+  int CFStringConvertWindowsCodepageToEncoding1(
+    int codepage,
+  ) {
+    return _CFStringConvertWindowsCodepageToEncoding1(
+      codepage,
+    );
+  }
+
+  late final _CFStringConvertWindowsCodepageToEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function(UInt32)>>(
+          'CFStringConvertWindowsCodepageToEncoding');
+  late final _CFStringConvertWindowsCodepageToEncoding1 =
+      _CFStringConvertWindowsCodepageToEncoding1Ptr.asFunction<
+          int Function(int)>();
+
+  int CFStringConvertIANACharSetNameToEncoding1(
+    CFStringRef theString,
+  ) {
+    return _CFStringConvertIANACharSetNameToEncoding1(
+      theString,
+    );
+  }
+
+  late final _CFStringConvertIANACharSetNameToEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function(CFStringRef)>>(
+          'CFStringConvertIANACharSetNameToEncoding');
+  late final _CFStringConvertIANACharSetNameToEncoding1 =
+      _CFStringConvertIANACharSetNameToEncoding1Ptr.asFunction<
+          int Function(CFStringRef)>();
+
+  CFStringRef CFStringConvertEncodingToIANACharSetName1(
+    int encoding,
+  ) {
+    return _CFStringConvertEncodingToIANACharSetName1(
+      encoding,
+    );
+  }
+
+  late final _CFStringConvertEncodingToIANACharSetName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFStringEncoding)>>(
+          'CFStringConvertEncodingToIANACharSetName');
+  late final _CFStringConvertEncodingToIANACharSetName1 =
+      _CFStringConvertEncodingToIANACharSetName1Ptr.asFunction<
+          CFStringRef Function(int)>();
+
+  int CFStringGetMostCompatibleMacStringEncoding1(
+    int encoding,
+  ) {
+    return _CFStringGetMostCompatibleMacStringEncoding1(
+      encoding,
+    );
+  }
+
+  late final _CFStringGetMostCompatibleMacStringEncoding1Ptr =
+      _lookup<ffi.NativeFunction<CFStringEncoding Function(CFStringEncoding)>>(
+          'CFStringGetMostCompatibleMacStringEncoding');
+  late final _CFStringGetMostCompatibleMacStringEncoding1 =
+      _CFStringGetMostCompatibleMacStringEncoding1Ptr.asFunction<
+          int Function(int)>();
+
+  void CFShow1(
+    CFTypeRef obj,
+  ) {
+    return _CFShow1(
+      obj,
+    );
+  }
+
+  late final _CFShow1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFShow');
+  late final _CFShow1 = _CFShow1Ptr.asFunction<void Function(CFTypeRef)>();
+
+  void CFShowStr1(
+    CFStringRef str,
+  ) {
+    return _CFShowStr1(
+      str,
+    );
+  }
+
+  late final _CFShowStr1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFStringRef)>>('CFShowStr');
+  late final _CFShowStr1 =
+      _CFShowStr1Ptr.asFunction<void Function(CFStringRef)>();
+
+  CFStringRef __CFStringMakeConstantString1(
+    ffi.Pointer<pkg_ffi.Char> cStr,
+  ) {
+    return ___CFStringMakeConstantString1(
+      cStr,
+    );
+  }
+
+  late final ___CFStringMakeConstantString1Ptr = _lookup<
+          ffi.NativeFunction<CFStringRef Function(ffi.Pointer<pkg_ffi.Char>)>>(
+      '__CFStringMakeConstantString');
+  late final ___CFStringMakeConstantString1 = ___CFStringMakeConstantString1Ptr
+      .asFunction<CFStringRef Function(ffi.Pointer<pkg_ffi.Char>)>();
+
+  int CFTimeZoneGetTypeID1() {
+    return _CFTimeZoneGetTypeID1();
+  }
+
+  late final _CFTimeZoneGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFTimeZoneGetTypeID');
+  late final _CFTimeZoneGetTypeID1 =
+      _CFTimeZoneGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFTimeZoneRef CFTimeZoneCopySystem1() {
+    return _CFTimeZoneCopySystem1();
+  }
+
+  late final _CFTimeZoneCopySystem1Ptr =
+      _lookup<ffi.NativeFunction<CFTimeZoneRef Function()>>(
+          'CFTimeZoneCopySystem');
+  late final _CFTimeZoneCopySystem1 =
+      _CFTimeZoneCopySystem1Ptr.asFunction<CFTimeZoneRef Function()>();
+
+  void CFTimeZoneResetSystem1() {
+    return _CFTimeZoneResetSystem1();
+  }
+
+  late final _CFTimeZoneResetSystem1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('CFTimeZoneResetSystem');
+  late final _CFTimeZoneResetSystem1 =
+      _CFTimeZoneResetSystem1Ptr.asFunction<void Function()>();
+
+  CFTimeZoneRef CFTimeZoneCopyDefault1() {
+    return _CFTimeZoneCopyDefault1();
+  }
+
+  late final _CFTimeZoneCopyDefault1Ptr =
+      _lookup<ffi.NativeFunction<CFTimeZoneRef Function()>>(
+          'CFTimeZoneCopyDefault');
+  late final _CFTimeZoneCopyDefault1 =
+      _CFTimeZoneCopyDefault1Ptr.asFunction<CFTimeZoneRef Function()>();
+
+  void CFTimeZoneSetDefault1(
+    CFTimeZoneRef tz,
+  ) {
+    return _CFTimeZoneSetDefault1(
+      tz,
+    );
+  }
+
+  late final _CFTimeZoneSetDefault1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTimeZoneRef)>>(
+          'CFTimeZoneSetDefault');
+  late final _CFTimeZoneSetDefault1 =
+      _CFTimeZoneSetDefault1Ptr.asFunction<void Function(CFTimeZoneRef)>();
+
+  CFArrayRef CFTimeZoneCopyKnownNames1() {
+    return _CFTimeZoneCopyKnownNames1();
+  }
+
+  late final _CFTimeZoneCopyKnownNames1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFTimeZoneCopyKnownNames');
+  late final _CFTimeZoneCopyKnownNames1 =
+      _CFTimeZoneCopyKnownNames1Ptr.asFunction<CFArrayRef Function()>();
+
+  CFDictionaryRef CFTimeZoneCopyAbbreviationDictionary1() {
+    return _CFTimeZoneCopyAbbreviationDictionary1();
+  }
+
+  late final _CFTimeZoneCopyAbbreviationDictionary1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function()>>(
+          'CFTimeZoneCopyAbbreviationDictionary');
+  late final _CFTimeZoneCopyAbbreviationDictionary1 =
+      _CFTimeZoneCopyAbbreviationDictionary1Ptr.asFunction<
+          CFDictionaryRef Function()>();
+
+  void CFTimeZoneSetAbbreviationDictionary1(
+    CFDictionaryRef dict,
+  ) {
+    return _CFTimeZoneSetAbbreviationDictionary1(
+      dict,
+    );
+  }
+
+  late final _CFTimeZoneSetAbbreviationDictionary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFDictionaryRef)>>(
+          'CFTimeZoneSetAbbreviationDictionary');
+  late final _CFTimeZoneSetAbbreviationDictionary1 =
+      _CFTimeZoneSetAbbreviationDictionary1Ptr.asFunction<
+          void Function(CFDictionaryRef)>();
+
+  CFTimeZoneRef CFTimeZoneCreate1(
+    CFAllocatorRef allocator,
+    CFStringRef name,
+    CFDataRef data,
+  ) {
+    return _CFTimeZoneCreate1(
+      allocator,
+      name,
+      data,
+    );
+  }
+
+  late final _CFTimeZoneCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTimeZoneRef Function(
+              CFAllocatorRef, CFStringRef, CFDataRef)>>('CFTimeZoneCreate');
+  late final _CFTimeZoneCreate1 = _CFTimeZoneCreate1Ptr.asFunction<
+      CFTimeZoneRef Function(CFAllocatorRef, CFStringRef, CFDataRef)>();
+
+  CFTimeZoneRef CFTimeZoneCreateWithTimeIntervalFromGMT1(
+    CFAllocatorRef allocator,
+    double ti,
+  ) {
+    return _CFTimeZoneCreateWithTimeIntervalFromGMT1(
+      allocator,
+      ti,
+    );
+  }
+
+  late final _CFTimeZoneCreateWithTimeIntervalFromGMT1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTimeZoneRef Function(CFAllocatorRef,
+              CFTimeInterval)>>('CFTimeZoneCreateWithTimeIntervalFromGMT');
+  late final _CFTimeZoneCreateWithTimeIntervalFromGMT1 =
+      _CFTimeZoneCreateWithTimeIntervalFromGMT1Ptr.asFunction<
+          CFTimeZoneRef Function(CFAllocatorRef, double)>();
+
+  CFTimeZoneRef CFTimeZoneCreateWithName1(
+    CFAllocatorRef allocator,
+    CFStringRef name,
+    int tryAbbrev,
+  ) {
+    return _CFTimeZoneCreateWithName1(
+      allocator,
+      name,
+      tryAbbrev,
+    );
+  }
+
+  late final _CFTimeZoneCreateWithName1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTimeZoneRef Function(CFAllocatorRef, CFStringRef,
+              Boolean)>>('CFTimeZoneCreateWithName');
+  late final _CFTimeZoneCreateWithName1 = _CFTimeZoneCreateWithName1Ptr
+      .asFunction<CFTimeZoneRef Function(CFAllocatorRef, CFStringRef, int)>();
+
+  CFStringRef CFTimeZoneGetName1(
+    CFTimeZoneRef tz,
+  ) {
+    return _CFTimeZoneGetName1(
+      tz,
+    );
+  }
+
+  late final _CFTimeZoneGetName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTimeZoneRef)>>(
+          'CFTimeZoneGetName');
+  late final _CFTimeZoneGetName1 =
+      _CFTimeZoneGetName1Ptr.asFunction<CFStringRef Function(CFTimeZoneRef)>();
+
+  CFDataRef CFTimeZoneGetData1(
+    CFTimeZoneRef tz,
+  ) {
+    return _CFTimeZoneGetData1(
+      tz,
+    );
+  }
+
+  late final _CFTimeZoneGetData1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(CFTimeZoneRef)>>(
+          'CFTimeZoneGetData');
+  late final _CFTimeZoneGetData1 =
+      _CFTimeZoneGetData1Ptr.asFunction<CFDataRef Function(CFTimeZoneRef)>();
+
+  double CFTimeZoneGetSecondsFromGMT1(
+    CFTimeZoneRef tz,
+    double at,
+  ) {
+    return _CFTimeZoneGetSecondsFromGMT1(
+      tz,
+      at,
+    );
+  }
+
+  late final _CFTimeZoneGetSecondsFromGMT1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTimeInterval Function(
+              CFTimeZoneRef, CFAbsoluteTime)>>('CFTimeZoneGetSecondsFromGMT');
+  late final _CFTimeZoneGetSecondsFromGMT1 = _CFTimeZoneGetSecondsFromGMT1Ptr
+      .asFunction<double Function(CFTimeZoneRef, double)>();
+
+  CFStringRef CFTimeZoneCopyAbbreviation1(
+    CFTimeZoneRef tz,
+    double at,
+  ) {
+    return _CFTimeZoneCopyAbbreviation1(
+      tz,
+      at,
+    );
+  }
+
+  late final _CFTimeZoneCopyAbbreviation1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFTimeZoneRef, CFAbsoluteTime)>>('CFTimeZoneCopyAbbreviation');
+  late final _CFTimeZoneCopyAbbreviation1 = _CFTimeZoneCopyAbbreviation1Ptr
+      .asFunction<CFStringRef Function(CFTimeZoneRef, double)>();
+
+  int CFTimeZoneIsDaylightSavingTime1(
+    CFTimeZoneRef tz,
+    double at,
+  ) {
+    return _CFTimeZoneIsDaylightSavingTime1(
+      tz,
+      at,
+    );
+  }
+
+  late final _CFTimeZoneIsDaylightSavingTime1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFTimeZoneRef, CFAbsoluteTime)>>(
+      'CFTimeZoneIsDaylightSavingTime');
+  late final _CFTimeZoneIsDaylightSavingTime1 =
+      _CFTimeZoneIsDaylightSavingTime1Ptr.asFunction<
+          int Function(CFTimeZoneRef, double)>();
+
+  double CFTimeZoneGetDaylightSavingTimeOffset1(
+    CFTimeZoneRef tz,
+    double at,
+  ) {
+    return _CFTimeZoneGetDaylightSavingTimeOffset1(
+      tz,
+      at,
+    );
+  }
+
+  late final _CFTimeZoneGetDaylightSavingTimeOffset1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTimeInterval Function(CFTimeZoneRef,
+              CFAbsoluteTime)>>('CFTimeZoneGetDaylightSavingTimeOffset');
+  late final _CFTimeZoneGetDaylightSavingTimeOffset1 =
+      _CFTimeZoneGetDaylightSavingTimeOffset1Ptr.asFunction<
+          double Function(CFTimeZoneRef, double)>();
+
+  double CFTimeZoneGetNextDaylightSavingTimeTransition1(
+    CFTimeZoneRef tz,
+    double at,
+  ) {
+    return _CFTimeZoneGetNextDaylightSavingTimeTransition1(
+      tz,
+      at,
+    );
+  }
+
+  late final _CFTimeZoneGetNextDaylightSavingTimeTransition1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFAbsoluteTime Function(CFTimeZoneRef, CFAbsoluteTime)>>(
+      'CFTimeZoneGetNextDaylightSavingTimeTransition');
+  late final _CFTimeZoneGetNextDaylightSavingTimeTransition1 =
+      _CFTimeZoneGetNextDaylightSavingTimeTransition1Ptr.asFunction<
+          double Function(CFTimeZoneRef, double)>();
+
+  CFStringRef CFTimeZoneCopyLocalizedName1(
+    CFTimeZoneRef tz,
+    int style,
+    CFLocaleRef locale,
+  ) {
+    return _CFTimeZoneCopyLocalizedName1(
+      tz,
+      style,
+      locale,
+    );
+  }
+
+  late final _CFTimeZoneCopyLocalizedName1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFTimeZoneRef, ffi.Int32,
+              CFLocaleRef)>>('CFTimeZoneCopyLocalizedName');
+  late final _CFTimeZoneCopyLocalizedName1 = _CFTimeZoneCopyLocalizedName1Ptr
+      .asFunction<CFStringRef Function(CFTimeZoneRef, int, CFLocaleRef)>();
+
+  int CFCalendarGetTypeID1() {
+    return _CFCalendarGetTypeID1();
+  }
+
+  late final _CFCalendarGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFCalendarGetTypeID');
+  late final _CFCalendarGetTypeID1 =
+      _CFCalendarGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFCalendarRef CFCalendarCopyCurrent1() {
+    return _CFCalendarCopyCurrent1();
+  }
+
+  late final _CFCalendarCopyCurrent1Ptr =
+      _lookup<ffi.NativeFunction<CFCalendarRef Function()>>(
+          'CFCalendarCopyCurrent');
+  late final _CFCalendarCopyCurrent1 =
+      _CFCalendarCopyCurrent1Ptr.asFunction<CFCalendarRef Function()>();
+
+  CFCalendarRef CFCalendarCreateWithIdentifier1(
+    CFAllocatorRef allocator,
+    CFCalendarIdentifier identifier,
+  ) {
+    return _CFCalendarCreateWithIdentifier1(
+      allocator,
+      identifier,
+    );
+  }
+
+  late final _CFCalendarCreateWithIdentifier1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFCalendarRef Function(CFAllocatorRef,
+              CFCalendarIdentifier)>>('CFCalendarCreateWithIdentifier');
+  late final _CFCalendarCreateWithIdentifier1 =
+      _CFCalendarCreateWithIdentifier1Ptr.asFunction<
+          CFCalendarRef Function(CFAllocatorRef, CFCalendarIdentifier)>();
+
+  CFCalendarIdentifier CFCalendarGetIdentifier1(
+    CFCalendarRef calendar,
+  ) {
+    return _CFCalendarGetIdentifier1(
+      calendar,
+    );
+  }
+
+  late final _CFCalendarGetIdentifier1Ptr =
+      _lookup<ffi.NativeFunction<CFCalendarIdentifier Function(CFCalendarRef)>>(
+          'CFCalendarGetIdentifier');
+  late final _CFCalendarGetIdentifier1 = _CFCalendarGetIdentifier1Ptr
+      .asFunction<CFCalendarIdentifier Function(CFCalendarRef)>();
+
+  CFLocaleRef CFCalendarCopyLocale1(
+    CFCalendarRef calendar,
+  ) {
+    return _CFCalendarCopyLocale1(
+      calendar,
+    );
+  }
+
+  late final _CFCalendarCopyLocale1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleRef Function(CFCalendarRef)>>(
+          'CFCalendarCopyLocale');
+  late final _CFCalendarCopyLocale1 = _CFCalendarCopyLocale1Ptr.asFunction<
+      CFLocaleRef Function(CFCalendarRef)>();
+
+  void CFCalendarSetLocale1(
+    CFCalendarRef calendar,
+    CFLocaleRef locale,
+  ) {
+    return _CFCalendarSetLocale1(
+      calendar,
+      locale,
+    );
+  }
+
+  late final _CFCalendarSetLocale1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFCalendarRef, CFLocaleRef)>>(
+      'CFCalendarSetLocale');
+  late final _CFCalendarSetLocale1 = _CFCalendarSetLocale1Ptr.asFunction<
+      void Function(CFCalendarRef, CFLocaleRef)>();
+
+  CFTimeZoneRef CFCalendarCopyTimeZone1(
+    CFCalendarRef calendar,
+  ) {
+    return _CFCalendarCopyTimeZone1(
+      calendar,
+    );
+  }
+
+  late final _CFCalendarCopyTimeZone1Ptr =
+      _lookup<ffi.NativeFunction<CFTimeZoneRef Function(CFCalendarRef)>>(
+          'CFCalendarCopyTimeZone');
+  late final _CFCalendarCopyTimeZone1 = _CFCalendarCopyTimeZone1Ptr.asFunction<
+      CFTimeZoneRef Function(CFCalendarRef)>();
+
+  void CFCalendarSetTimeZone1(
+    CFCalendarRef calendar,
+    CFTimeZoneRef tz,
+  ) {
+    return _CFCalendarSetTimeZone1(
+      calendar,
+      tz,
+    );
+  }
+
+  late final _CFCalendarSetTimeZone1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFCalendarRef, CFTimeZoneRef)>>(
+      'CFCalendarSetTimeZone');
+  late final _CFCalendarSetTimeZone1 = _CFCalendarSetTimeZone1Ptr.asFunction<
+      void Function(CFCalendarRef, CFTimeZoneRef)>();
+
+  int CFCalendarGetFirstWeekday1(
+    CFCalendarRef calendar,
+  ) {
+    return _CFCalendarGetFirstWeekday1(
+      calendar,
+    );
+  }
+
+  late final _CFCalendarGetFirstWeekday1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFCalendarRef)>>(
+          'CFCalendarGetFirstWeekday');
+  late final _CFCalendarGetFirstWeekday1 =
+      _CFCalendarGetFirstWeekday1Ptr.asFunction<int Function(CFCalendarRef)>();
+
+  void CFCalendarSetFirstWeekday1(
+    CFCalendarRef calendar,
+    int wkdy,
+  ) {
+    return _CFCalendarSetFirstWeekday1(
+      calendar,
+      wkdy,
+    );
+  }
+
+  late final _CFCalendarSetFirstWeekday1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFCalendarRef, CFIndex)>>(
+          'CFCalendarSetFirstWeekday');
+  late final _CFCalendarSetFirstWeekday1 = _CFCalendarSetFirstWeekday1Ptr
+      .asFunction<void Function(CFCalendarRef, int)>();
+
+  int CFCalendarGetMinimumDaysInFirstWeek1(
+    CFCalendarRef calendar,
+  ) {
+    return _CFCalendarGetMinimumDaysInFirstWeek1(
+      calendar,
+    );
+  }
+
+  late final _CFCalendarGetMinimumDaysInFirstWeek1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFCalendarRef)>>(
+          'CFCalendarGetMinimumDaysInFirstWeek');
+  late final _CFCalendarGetMinimumDaysInFirstWeek1 =
+      _CFCalendarGetMinimumDaysInFirstWeek1Ptr.asFunction<
+          int Function(CFCalendarRef)>();
+
+  void CFCalendarSetMinimumDaysInFirstWeek1(
+    CFCalendarRef calendar,
+    int mwd,
+  ) {
+    return _CFCalendarSetMinimumDaysInFirstWeek1(
+      calendar,
+      mwd,
+    );
+  }
+
+  late final _CFCalendarSetMinimumDaysInFirstWeek1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFCalendarRef, CFIndex)>>(
+          'CFCalendarSetMinimumDaysInFirstWeek');
+  late final _CFCalendarSetMinimumDaysInFirstWeek1 =
+      _CFCalendarSetMinimumDaysInFirstWeek1Ptr.asFunction<
+          void Function(CFCalendarRef, int)>();
+
+  CFRange CFCalendarGetMinimumRangeOfUnit1(
+    CFCalendarRef calendar,
+    int unit,
+  ) {
+    return _CFCalendarGetMinimumRangeOfUnit1(
+      calendar,
+      unit,
+    );
+  }
+
+  late final _CFCalendarGetMinimumRangeOfUnit1Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFCalendarRef, ffi.Int32)>>(
+          'CFCalendarGetMinimumRangeOfUnit');
+  late final _CFCalendarGetMinimumRangeOfUnit1 =
+      _CFCalendarGetMinimumRangeOfUnit1Ptr.asFunction<
+          CFRange Function(CFCalendarRef, int)>();
+
+  CFRange CFCalendarGetMaximumRangeOfUnit1(
+    CFCalendarRef calendar,
+    int unit,
+  ) {
+    return _CFCalendarGetMaximumRangeOfUnit1(
+      calendar,
+      unit,
+    );
+  }
+
+  late final _CFCalendarGetMaximumRangeOfUnit1Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFCalendarRef, ffi.Int32)>>(
+          'CFCalendarGetMaximumRangeOfUnit');
+  late final _CFCalendarGetMaximumRangeOfUnit1 =
+      _CFCalendarGetMaximumRangeOfUnit1Ptr.asFunction<
+          CFRange Function(CFCalendarRef, int)>();
+
+  CFRange CFCalendarGetRangeOfUnit1(
+    CFCalendarRef calendar,
+    int smallerUnit,
+    int biggerUnit,
+    double at,
+  ) {
+    return _CFCalendarGetRangeOfUnit1(
+      calendar,
+      smallerUnit,
+      biggerUnit,
+      at,
+    );
+  }
+
+  late final _CFCalendarGetRangeOfUnit1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRange Function(CFCalendarRef, ffi.Int32, ffi.Int32,
+              CFAbsoluteTime)>>('CFCalendarGetRangeOfUnit');
+  late final _CFCalendarGetRangeOfUnit1 = _CFCalendarGetRangeOfUnit1Ptr
+      .asFunction<CFRange Function(CFCalendarRef, int, int, double)>();
+
+  int CFCalendarGetOrdinalityOfUnit1(
+    CFCalendarRef calendar,
+    int smallerUnit,
+    int biggerUnit,
+    double at,
+  ) {
+    return _CFCalendarGetOrdinalityOfUnit1(
+      calendar,
+      smallerUnit,
+      biggerUnit,
+      at,
+    );
+  }
+
+  late final _CFCalendarGetOrdinalityOfUnit1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFCalendarRef, ffi.Int32, ffi.Int32,
+              CFAbsoluteTime)>>('CFCalendarGetOrdinalityOfUnit');
+  late final _CFCalendarGetOrdinalityOfUnit1 =
+      _CFCalendarGetOrdinalityOfUnit1Ptr.asFunction<
+          int Function(CFCalendarRef, int, int, double)>();
+
+  int CFCalendarGetTimeRangeOfUnit1(
+    CFCalendarRef calendar,
+    int unit,
+    double at,
+    ffi.Pointer<CFAbsoluteTime> startp,
+    ffi.Pointer<CFTimeInterval> tip,
+  ) {
+    return _CFCalendarGetTimeRangeOfUnit1(
+      calendar,
+      unit,
+      at,
+      startp,
+      tip,
+    );
+  }
+
+  late final _CFCalendarGetTimeRangeOfUnit1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFCalendarRef,
+              ffi.Int32,
+              CFAbsoluteTime,
+              ffi.Pointer<CFAbsoluteTime>,
+              ffi.Pointer<CFTimeInterval>)>>('CFCalendarGetTimeRangeOfUnit');
+  late final _CFCalendarGetTimeRangeOfUnit1 =
+      _CFCalendarGetTimeRangeOfUnit1Ptr.asFunction<
+          int Function(CFCalendarRef, int, double, ffi.Pointer<CFAbsoluteTime>,
+              ffi.Pointer<CFTimeInterval>)>();
+
+  int CFCalendarComposeAbsoluteTime1(
+    CFCalendarRef calendar,
+    ffi.Pointer<CFAbsoluteTime> at,
+    ffi.Pointer<pkg_ffi.Char> componentDesc,
+  ) {
+    return _CFCalendarComposeAbsoluteTime1(
+      calendar,
+      at,
+      componentDesc,
+    );
+  }
+
+  late final _CFCalendarComposeAbsoluteTime1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFCalendarRef, ffi.Pointer<CFAbsoluteTime>,
+              ffi.Pointer<pkg_ffi.Char>)>>('CFCalendarComposeAbsoluteTime');
+  late final _CFCalendarComposeAbsoluteTime1 =
+      _CFCalendarComposeAbsoluteTime1Ptr.asFunction<
+          int Function(CFCalendarRef, ffi.Pointer<CFAbsoluteTime>,
+              ffi.Pointer<pkg_ffi.Char>)>();
+
+  int CFCalendarDecomposeAbsoluteTime1(
+    CFCalendarRef calendar,
+    double at,
+    ffi.Pointer<pkg_ffi.Char> componentDesc,
+  ) {
+    return _CFCalendarDecomposeAbsoluteTime1(
+      calendar,
+      at,
+      componentDesc,
+    );
+  }
+
+  late final _CFCalendarDecomposeAbsoluteTime1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFCalendarRef, CFAbsoluteTime,
+              ffi.Pointer<pkg_ffi.Char>)>>('CFCalendarDecomposeAbsoluteTime');
+  late final _CFCalendarDecomposeAbsoluteTime1 =
+      _CFCalendarDecomposeAbsoluteTime1Ptr.asFunction<
+          int Function(CFCalendarRef, double, ffi.Pointer<pkg_ffi.Char>)>();
+
+  int CFCalendarAddComponents1(
+    CFCalendarRef calendar,
+    ffi.Pointer<CFAbsoluteTime> at,
+    int options,
+    ffi.Pointer<pkg_ffi.Char> componentDesc,
+  ) {
+    return _CFCalendarAddComponents1(
+      calendar,
+      at,
+      options,
+      componentDesc,
+    );
+  }
+
+  late final _CFCalendarAddComponents1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFCalendarRef,
+              ffi.Pointer<CFAbsoluteTime>,
+              CFOptionFlags,
+              ffi.Pointer<pkg_ffi.Char>)>>('CFCalendarAddComponents');
+  late final _CFCalendarAddComponents1 =
+      _CFCalendarAddComponents1Ptr.asFunction<
+          int Function(CFCalendarRef, ffi.Pointer<CFAbsoluteTime>, int,
+              ffi.Pointer<pkg_ffi.Char>)>();
+
+  int CFCalendarGetComponentDifference1(
+    CFCalendarRef calendar,
+    double startingAT,
+    double resultAT,
+    int options,
+    ffi.Pointer<pkg_ffi.Char> componentDesc,
+  ) {
+    return _CFCalendarGetComponentDifference1(
+      calendar,
+      startingAT,
+      resultAT,
+      options,
+      componentDesc,
+    );
+  }
+
+  late final _CFCalendarGetComponentDifference1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFCalendarRef,
+              CFAbsoluteTime,
+              CFAbsoluteTime,
+              CFOptionFlags,
+              ffi.Pointer<pkg_ffi.Char>)>>('CFCalendarGetComponentDifference');
+  late final _CFCalendarGetComponentDifference1 =
+      _CFCalendarGetComponentDifference1Ptr.asFunction<
+          int Function(
+              CFCalendarRef, double, double, int, ffi.Pointer<pkg_ffi.Char>)>();
+
+  CFStringRef CFDateFormatterCreateDateFormatFromTemplate1(
+    CFAllocatorRef allocator,
+    CFStringRef tmplate,
+    int options,
+    CFLocaleRef locale,
+  ) {
+    return _CFDateFormatterCreateDateFormatFromTemplate1(
+      allocator,
+      tmplate,
+      options,
+      locale,
+    );
+  }
+
+  late final _CFDateFormatterCreateDateFormatFromTemplate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef, CFOptionFlags,
+              CFLocaleRef)>>('CFDateFormatterCreateDateFormatFromTemplate');
+  late final _CFDateFormatterCreateDateFormatFromTemplate1 =
+      _CFDateFormatterCreateDateFormatFromTemplate1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFStringRef, int, CFLocaleRef)>();
+
+  int CFDateFormatterGetTypeID1() {
+    return _CFDateFormatterGetTypeID1();
+  }
+
+  late final _CFDateFormatterGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFDateFormatterGetTypeID');
+  late final _CFDateFormatterGetTypeID1 =
+      _CFDateFormatterGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFDateFormatterRef CFDateFormatterCreateISO8601Formatter1(
+    CFAllocatorRef allocator,
+    int formatOptions,
+  ) {
+    return _CFDateFormatterCreateISO8601Formatter1(
+      allocator,
+      formatOptions,
+    );
+  }
+
+  late final _CFDateFormatterCreateISO8601Formatter1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDateFormatterRef Function(CFAllocatorRef,
+              ffi.Int32)>>('CFDateFormatterCreateISO8601Formatter');
+  late final _CFDateFormatterCreateISO8601Formatter1 =
+      _CFDateFormatterCreateISO8601Formatter1Ptr.asFunction<
+          CFDateFormatterRef Function(CFAllocatorRef, int)>();
+
+  CFDateFormatterRef CFDateFormatterCreate1(
+    CFAllocatorRef allocator,
+    CFLocaleRef locale,
+    int dateStyle,
+    int timeStyle,
+  ) {
+    return _CFDateFormatterCreate1(
+      allocator,
+      locale,
+      dateStyle,
+      timeStyle,
+    );
+  }
+
+  late final _CFDateFormatterCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDateFormatterRef Function(CFAllocatorRef, CFLocaleRef, ffi.Int32,
+              ffi.Int32)>>('CFDateFormatterCreate');
+  late final _CFDateFormatterCreate1 = _CFDateFormatterCreate1Ptr.asFunction<
+      CFDateFormatterRef Function(CFAllocatorRef, CFLocaleRef, int, int)>();
+
+  CFLocaleRef CFDateFormatterGetLocale1(
+    CFDateFormatterRef formatter,
+  ) {
+    return _CFDateFormatterGetLocale1(
+      formatter,
+    );
+  }
+
+  late final _CFDateFormatterGetLocale1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleRef Function(CFDateFormatterRef)>>(
+          'CFDateFormatterGetLocale');
+  late final _CFDateFormatterGetLocale1 = _CFDateFormatterGetLocale1Ptr
+      .asFunction<CFLocaleRef Function(CFDateFormatterRef)>();
+
+  int CFDateFormatterGetDateStyle1(
+    CFDateFormatterRef formatter,
+  ) {
+    return _CFDateFormatterGetDateStyle1(
+      formatter,
+    );
+  }
+
+  late final _CFDateFormatterGetDateStyle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFDateFormatterRef)>>(
+          'CFDateFormatterGetDateStyle');
+  late final _CFDateFormatterGetDateStyle1 = _CFDateFormatterGetDateStyle1Ptr
+      .asFunction<int Function(CFDateFormatterRef)>();
+
+  int CFDateFormatterGetTimeStyle1(
+    CFDateFormatterRef formatter,
+  ) {
+    return _CFDateFormatterGetTimeStyle1(
+      formatter,
+    );
+  }
+
+  late final _CFDateFormatterGetTimeStyle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFDateFormatterRef)>>(
+          'CFDateFormatterGetTimeStyle');
+  late final _CFDateFormatterGetTimeStyle1 = _CFDateFormatterGetTimeStyle1Ptr
+      .asFunction<int Function(CFDateFormatterRef)>();
+
+  CFStringRef CFDateFormatterGetFormat1(
+    CFDateFormatterRef formatter,
+  ) {
+    return _CFDateFormatterGetFormat1(
+      formatter,
+    );
+  }
+
+  late final _CFDateFormatterGetFormat1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFDateFormatterRef)>>(
+          'CFDateFormatterGetFormat');
+  late final _CFDateFormatterGetFormat1 = _CFDateFormatterGetFormat1Ptr
+      .asFunction<CFStringRef Function(CFDateFormatterRef)>();
+
+  void CFDateFormatterSetFormat1(
+    CFDateFormatterRef formatter,
+    CFStringRef formatString,
+  ) {
+    return _CFDateFormatterSetFormat1(
+      formatter,
+      formatString,
+    );
+  }
+
+  late final _CFDateFormatterSetFormat1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFDateFormatterRef, CFStringRef)>>('CFDateFormatterSetFormat');
+  late final _CFDateFormatterSetFormat1 = _CFDateFormatterSetFormat1Ptr
+      .asFunction<void Function(CFDateFormatterRef, CFStringRef)>();
+
+  CFStringRef CFDateFormatterCreateStringWithDate1(
+    CFAllocatorRef allocator,
+    CFDateFormatterRef formatter,
+    CFDateRef date,
+  ) {
+    return _CFDateFormatterCreateStringWithDate1(
+      allocator,
+      formatter,
+      date,
+    );
+  }
+
+  late final _CFDateFormatterCreateStringWithDate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFDateFormatterRef,
+              CFDateRef)>>('CFDateFormatterCreateStringWithDate');
+  late final _CFDateFormatterCreateStringWithDate1 =
+      _CFDateFormatterCreateStringWithDate1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFDateFormatterRef, CFDateRef)>();
+
+  CFStringRef CFDateFormatterCreateStringWithAbsoluteTime1(
+    CFAllocatorRef allocator,
+    CFDateFormatterRef formatter,
+    double at,
+  ) {
+    return _CFDateFormatterCreateStringWithAbsoluteTime1(
+      allocator,
+      formatter,
+      at,
+    );
+  }
+
+  late final _CFDateFormatterCreateStringWithAbsoluteTime1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFDateFormatterRef,
+              CFAbsoluteTime)>>('CFDateFormatterCreateStringWithAbsoluteTime');
+  late final _CFDateFormatterCreateStringWithAbsoluteTime1 =
+      _CFDateFormatterCreateStringWithAbsoluteTime1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFDateFormatterRef, double)>();
+
+  CFDateRef CFDateFormatterCreateDateFromString1(
+    CFAllocatorRef allocator,
+    CFDateFormatterRef formatter,
+    CFStringRef string,
+    ffi.Pointer<CFRange> rangep,
+  ) {
+    return _CFDateFormatterCreateDateFromString1(
+      allocator,
+      formatter,
+      string,
+      rangep,
+    );
+  }
+
+  late final _CFDateFormatterCreateDateFromString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDateRef Function(CFAllocatorRef, CFDateFormatterRef, CFStringRef,
+              ffi.Pointer<CFRange>)>>('CFDateFormatterCreateDateFromString');
+  late final _CFDateFormatterCreateDateFromString1 =
+      _CFDateFormatterCreateDateFromString1Ptr.asFunction<
+          CFDateRef Function(CFAllocatorRef, CFDateFormatterRef, CFStringRef,
+              ffi.Pointer<CFRange>)>();
+
+  int CFDateFormatterGetAbsoluteTimeFromString1(
+    CFDateFormatterRef formatter,
+    CFStringRef string,
+    ffi.Pointer<CFRange> rangep,
+    ffi.Pointer<CFAbsoluteTime> atp,
+  ) {
+    return _CFDateFormatterGetAbsoluteTimeFromString1(
+      formatter,
+      string,
+      rangep,
+      atp,
+    );
+  }
+
+  late final _CFDateFormatterGetAbsoluteTimeFromString1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(CFDateFormatterRef, CFStringRef,
+                  ffi.Pointer<CFRange>, ffi.Pointer<CFAbsoluteTime>)>>(
+      'CFDateFormatterGetAbsoluteTimeFromString');
+  late final _CFDateFormatterGetAbsoluteTimeFromString1 =
+      _CFDateFormatterGetAbsoluteTimeFromString1Ptr.asFunction<
+          int Function(CFDateFormatterRef, CFStringRef, ffi.Pointer<CFRange>,
+              ffi.Pointer<CFAbsoluteTime>)>();
+
+  void CFDateFormatterSetProperty1(
+    CFDateFormatterRef formatter,
+    CFStringRef key,
+    CFTypeRef value,
+  ) {
+    return _CFDateFormatterSetProperty1(
+      formatter,
+      key,
+      value,
+    );
+  }
+
+  late final _CFDateFormatterSetProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFDateFormatterRef, CFStringRef,
+              CFTypeRef)>>('CFDateFormatterSetProperty');
+  late final _CFDateFormatterSetProperty1 = _CFDateFormatterSetProperty1Ptr
+      .asFunction<void Function(CFDateFormatterRef, CFStringRef, CFTypeRef)>();
+
+  CFTypeRef CFDateFormatterCopyProperty1(
+    CFDateFormatterRef formatter,
+    CFDateFormatterKey key,
+  ) {
+    return _CFDateFormatterCopyProperty1(
+      formatter,
+      key,
+    );
+  }
+
+  late final _CFDateFormatterCopyProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFDateFormatterRef,
+              CFDateFormatterKey)>>('CFDateFormatterCopyProperty');
+  late final _CFDateFormatterCopyProperty1 = _CFDateFormatterCopyProperty1Ptr
+      .asFunction<CFTypeRef Function(CFDateFormatterRef, CFDateFormatterKey)>();
+
+  int CFErrorGetTypeID1() {
+    return _CFErrorGetTypeID1();
+  }
+
+  late final _CFErrorGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFErrorGetTypeID');
+  late final _CFErrorGetTypeID1 =
+      _CFErrorGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFErrorRef CFErrorCreate1(
+    CFAllocatorRef allocator,
+    CFErrorDomain domain,
+    int code,
+    CFDictionaryRef userInfo,
+  ) {
+    return _CFErrorCreate1(
+      allocator,
+      domain,
+      code,
+      userInfo,
+    );
+  }
+
+  late final _CFErrorCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFErrorRef Function(CFAllocatorRef, CFErrorDomain, CFIndex,
+              CFDictionaryRef)>>('CFErrorCreate');
+  late final _CFErrorCreate1 = _CFErrorCreate1Ptr.asFunction<
+      CFErrorRef Function(
+          CFAllocatorRef, CFErrorDomain, int, CFDictionaryRef)>();
+
+  CFErrorRef CFErrorCreateWithUserInfoKeysAndValues1(
+    CFAllocatorRef allocator,
+    CFErrorDomain domain,
+    int code,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> userInfoKeys,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> userInfoValues,
+    int numUserInfoValues,
+  ) {
+    return _CFErrorCreateWithUserInfoKeysAndValues1(
+      allocator,
+      domain,
+      code,
+      userInfoKeys,
+      userInfoValues,
+      numUserInfoValues,
+    );
+  }
+
+  late final _CFErrorCreateWithUserInfoKeysAndValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFErrorRef Function(
+              CFAllocatorRef,
+              CFErrorDomain,
+              CFIndex,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex)>>('CFErrorCreateWithUserInfoKeysAndValues');
+  late final _CFErrorCreateWithUserInfoKeysAndValues1 =
+      _CFErrorCreateWithUserInfoKeysAndValues1Ptr.asFunction<
+          CFErrorRef Function(
+              CFAllocatorRef,
+              CFErrorDomain,
+              int,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              int)>();
+
+  CFErrorDomain CFErrorGetDomain1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorGetDomain1(
+      err,
+    );
+  }
+
+  late final _CFErrorGetDomain1Ptr =
+      _lookup<ffi.NativeFunction<CFErrorDomain Function(CFErrorRef)>>(
+          'CFErrorGetDomain');
+  late final _CFErrorGetDomain1 =
+      _CFErrorGetDomain1Ptr.asFunction<CFErrorDomain Function(CFErrorRef)>();
+
+  int CFErrorGetCode1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorGetCode1(
+      err,
+    );
+  }
+
+  late final _CFErrorGetCode1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFErrorRef)>>(
+          'CFErrorGetCode');
+  late final _CFErrorGetCode1 =
+      _CFErrorGetCode1Ptr.asFunction<int Function(CFErrorRef)>();
+
+  CFDictionaryRef CFErrorCopyUserInfo1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorCopyUserInfo1(
+      err,
+    );
+  }
+
+  late final _CFErrorCopyUserInfo1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(CFErrorRef)>>(
+          'CFErrorCopyUserInfo');
+  late final _CFErrorCopyUserInfo1 = _CFErrorCopyUserInfo1Ptr.asFunction<
+      CFDictionaryRef Function(CFErrorRef)>();
+
+  CFStringRef CFErrorCopyDescription1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorCopyDescription1(
+      err,
+    );
+  }
+
+  late final _CFErrorCopyDescription1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFErrorRef)>>(
+          'CFErrorCopyDescription');
+  late final _CFErrorCopyDescription1 = _CFErrorCopyDescription1Ptr.asFunction<
+      CFStringRef Function(CFErrorRef)>();
+
+  CFStringRef CFErrorCopyFailureReason1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorCopyFailureReason1(
+      err,
+    );
+  }
+
+  late final _CFErrorCopyFailureReason1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFErrorRef)>>(
+          'CFErrorCopyFailureReason');
+  late final _CFErrorCopyFailureReason1 = _CFErrorCopyFailureReason1Ptr
+      .asFunction<CFStringRef Function(CFErrorRef)>();
+
+  CFStringRef CFErrorCopyRecoverySuggestion1(
+    CFErrorRef err,
+  ) {
+    return _CFErrorCopyRecoverySuggestion1(
+      err,
+    );
+  }
+
+  late final _CFErrorCopyRecoverySuggestion1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFErrorRef)>>(
+          'CFErrorCopyRecoverySuggestion');
+  late final _CFErrorCopyRecoverySuggestion1 =
+      _CFErrorCopyRecoverySuggestion1Ptr.asFunction<
+          CFStringRef Function(CFErrorRef)>();
+
+  int CFBooleanGetTypeID1() {
+    return _CFBooleanGetTypeID1();
+  }
+
+  late final _CFBooleanGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFBooleanGetTypeID');
+  late final _CFBooleanGetTypeID1 =
+      _CFBooleanGetTypeID1Ptr.asFunction<int Function()>();
+
+  int CFBooleanGetValue1(
+    CFBooleanRef boolean,
+  ) {
+    return _CFBooleanGetValue1(
+      boolean,
+    );
+  }
+
+  late final _CFBooleanGetValue1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFBooleanRef)>>(
+          'CFBooleanGetValue');
+  late final _CFBooleanGetValue1 =
+      _CFBooleanGetValue1Ptr.asFunction<int Function(CFBooleanRef)>();
+
+  int CFNumberGetTypeID1() {
+    return _CFNumberGetTypeID1();
+  }
+
+  late final _CFNumberGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNumberGetTypeID');
+  late final _CFNumberGetTypeID1 =
+      _CFNumberGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFNumberRef CFNumberCreate1(
+    CFAllocatorRef allocator,
+    int theType,
+    ffi.Pointer<ffi.Void> valuePtr,
+  ) {
+    return _CFNumberCreate1(
+      allocator,
+      theType,
+      valuePtr,
+    );
+  }
+
+  late final _CFNumberCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFNumberRef Function(CFAllocatorRef, ffi.Int32,
+              ffi.Pointer<ffi.Void>)>>('CFNumberCreate');
+  late final _CFNumberCreate1 = _CFNumberCreate1Ptr.asFunction<
+      CFNumberRef Function(CFAllocatorRef, int, ffi.Pointer<ffi.Void>)>();
+
+  int CFNumberGetType1(
+    CFNumberRef number,
+  ) {
+    return _CFNumberGetType1(
+      number,
+    );
+  }
+
+  late final _CFNumberGetType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFNumberRef)>>(
+          'CFNumberGetType');
+  late final _CFNumberGetType1 =
+      _CFNumberGetType1Ptr.asFunction<int Function(CFNumberRef)>();
+
+  int CFNumberGetByteSize1(
+    CFNumberRef number,
+  ) {
+    return _CFNumberGetByteSize1(
+      number,
+    );
+  }
+
+  late final _CFNumberGetByteSize1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFNumberRef)>>(
+          'CFNumberGetByteSize');
+  late final _CFNumberGetByteSize1 =
+      _CFNumberGetByteSize1Ptr.asFunction<int Function(CFNumberRef)>();
+
+  int CFNumberIsFloatType1(
+    CFNumberRef number,
+  ) {
+    return _CFNumberIsFloatType1(
+      number,
+    );
+  }
+
+  late final _CFNumberIsFloatType1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFNumberRef)>>(
+          'CFNumberIsFloatType');
+  late final _CFNumberIsFloatType1 =
+      _CFNumberIsFloatType1Ptr.asFunction<int Function(CFNumberRef)>();
+
+  int CFNumberGetValue1(
+    CFNumberRef number,
+    int theType,
+    ffi.Pointer<ffi.Void> valuePtr,
+  ) {
+    return _CFNumberGetValue1(
+      number,
+      theType,
+      valuePtr,
+    );
+  }
+
+  late final _CFNumberGetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFNumberRef, ffi.Int32,
+              ffi.Pointer<ffi.Void>)>>('CFNumberGetValue');
+  late final _CFNumberGetValue1 = _CFNumberGetValue1Ptr.asFunction<
+      int Function(CFNumberRef, int, ffi.Pointer<ffi.Void>)>();
+
+  int CFNumberCompare1(
+    CFNumberRef number,
+    CFNumberRef otherNumber,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFNumberCompare1(
+      number,
+      otherNumber,
+      context,
+    );
+  }
+
+  late final _CFNumberCompare1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFNumberRef, CFNumberRef,
+              ffi.Pointer<ffi.Void>)>>('CFNumberCompare');
+  late final _CFNumberCompare1 = _CFNumberCompare1Ptr.asFunction<
+      int Function(CFNumberRef, CFNumberRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFNumberFormatterGetTypeID1() {
+    return _CFNumberFormatterGetTypeID1();
+  }
+
+  late final _CFNumberFormatterGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFNumberFormatterGetTypeID');
+  late final _CFNumberFormatterGetTypeID1 =
+      _CFNumberFormatterGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFNumberFormatterRef CFNumberFormatterCreate1(
+    CFAllocatorRef allocator,
+    CFLocaleRef locale,
+    int style,
+  ) {
+    return _CFNumberFormatterCreate1(
+      allocator,
+      locale,
+      style,
+    );
+  }
+
+  late final _CFNumberFormatterCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFNumberFormatterRef Function(CFAllocatorRef, CFLocaleRef,
+              ffi.Int32)>>('CFNumberFormatterCreate');
+  late final _CFNumberFormatterCreate1 =
+      _CFNumberFormatterCreate1Ptr.asFunction<
+          CFNumberFormatterRef Function(CFAllocatorRef, CFLocaleRef, int)>();
+
+  CFLocaleRef CFNumberFormatterGetLocale1(
+    CFNumberFormatterRef formatter,
+  ) {
+    return _CFNumberFormatterGetLocale1(
+      formatter,
+    );
+  }
+
+  late final _CFNumberFormatterGetLocale1Ptr =
+      _lookup<ffi.NativeFunction<CFLocaleRef Function(CFNumberFormatterRef)>>(
+          'CFNumberFormatterGetLocale');
+  late final _CFNumberFormatterGetLocale1 = _CFNumberFormatterGetLocale1Ptr
+      .asFunction<CFLocaleRef Function(CFNumberFormatterRef)>();
+
+  int CFNumberFormatterGetStyle1(
+    CFNumberFormatterRef formatter,
+  ) {
+    return _CFNumberFormatterGetStyle1(
+      formatter,
+    );
+  }
+
+  late final _CFNumberFormatterGetStyle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFNumberFormatterRef)>>(
+          'CFNumberFormatterGetStyle');
+  late final _CFNumberFormatterGetStyle1 = _CFNumberFormatterGetStyle1Ptr
+      .asFunction<int Function(CFNumberFormatterRef)>();
+
+  CFStringRef CFNumberFormatterGetFormat1(
+    CFNumberFormatterRef formatter,
+  ) {
+    return _CFNumberFormatterGetFormat1(
+      formatter,
+    );
+  }
+
+  late final _CFNumberFormatterGetFormat1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFNumberFormatterRef)>>(
+          'CFNumberFormatterGetFormat');
+  late final _CFNumberFormatterGetFormat1 = _CFNumberFormatterGetFormat1Ptr
+      .asFunction<CFStringRef Function(CFNumberFormatterRef)>();
+
+  void CFNumberFormatterSetFormat1(
+    CFNumberFormatterRef formatter,
+    CFStringRef formatString,
+  ) {
+    return _CFNumberFormatterSetFormat1(
+      formatter,
+      formatString,
+    );
+  }
+
+  late final _CFNumberFormatterSetFormat1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFNumberFormatterRef,
+              CFStringRef)>>('CFNumberFormatterSetFormat');
+  late final _CFNumberFormatterSetFormat1 = _CFNumberFormatterSetFormat1Ptr
+      .asFunction<void Function(CFNumberFormatterRef, CFStringRef)>();
+
+  CFStringRef CFNumberFormatterCreateStringWithNumber1(
+    CFAllocatorRef allocator,
+    CFNumberFormatterRef formatter,
+    CFNumberRef number,
+  ) {
+    return _CFNumberFormatterCreateStringWithNumber1(
+      allocator,
+      formatter,
+      number,
+    );
+  }
+
+  late final _CFNumberFormatterCreateStringWithNumber1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFNumberFormatterRef,
+              CFNumberRef)>>('CFNumberFormatterCreateStringWithNumber');
+  late final _CFNumberFormatterCreateStringWithNumber1 =
+      _CFNumberFormatterCreateStringWithNumber1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFNumberFormatterRef, CFNumberRef)>();
+
+  CFStringRef CFNumberFormatterCreateStringWithValue1(
+    CFAllocatorRef allocator,
+    CFNumberFormatterRef formatter,
+    int numberType,
+    ffi.Pointer<ffi.Void> valuePtr,
+  ) {
+    return _CFNumberFormatterCreateStringWithValue1(
+      allocator,
+      formatter,
+      numberType,
+      valuePtr,
+    );
+  }
+
+  late final _CFNumberFormatterCreateStringWithValue1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFStringRef Function(CFAllocatorRef, CFNumberFormatterRef,
+                  ffi.Int32, ffi.Pointer<ffi.Void>)>>(
+      'CFNumberFormatterCreateStringWithValue');
+  late final _CFNumberFormatterCreateStringWithValue1 =
+      _CFNumberFormatterCreateStringWithValue1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFNumberFormatterRef, int,
+              ffi.Pointer<ffi.Void>)>();
+
+  CFNumberRef CFNumberFormatterCreateNumberFromString1(
+    CFAllocatorRef allocator,
+    CFNumberFormatterRef formatter,
+    CFStringRef string,
+    ffi.Pointer<CFRange> rangep,
+    int options,
+  ) {
+    return _CFNumberFormatterCreateNumberFromString1(
+      allocator,
+      formatter,
+      string,
+      rangep,
+      options,
+    );
+  }
+
+  late final _CFNumberFormatterCreateNumberFromString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFNumberRef Function(
+              CFAllocatorRef,
+              CFNumberFormatterRef,
+              CFStringRef,
+              ffi.Pointer<CFRange>,
+              CFOptionFlags)>>('CFNumberFormatterCreateNumberFromString');
+  late final _CFNumberFormatterCreateNumberFromString1 =
+      _CFNumberFormatterCreateNumberFromString1Ptr.asFunction<
+          CFNumberRef Function(CFAllocatorRef, CFNumberFormatterRef,
+              CFStringRef, ffi.Pointer<CFRange>, int)>();
+
+  int CFNumberFormatterGetValueFromString1(
+    CFNumberFormatterRef formatter,
+    CFStringRef string,
+    ffi.Pointer<CFRange> rangep,
+    int numberType,
+    ffi.Pointer<ffi.Void> valuePtr,
+  ) {
+    return _CFNumberFormatterGetValueFromString1(
+      formatter,
+      string,
+      rangep,
+      numberType,
+      valuePtr,
+    );
+  }
+
+  late final _CFNumberFormatterGetValueFromString1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFNumberFormatterRef,
+              CFStringRef,
+              ffi.Pointer<CFRange>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Void>)>>('CFNumberFormatterGetValueFromString');
+  late final _CFNumberFormatterGetValueFromString1 =
+      _CFNumberFormatterGetValueFromString1Ptr.asFunction<
+          int Function(CFNumberFormatterRef, CFStringRef, ffi.Pointer<CFRange>,
+              int, ffi.Pointer<ffi.Void>)>();
+
+  void CFNumberFormatterSetProperty1(
+    CFNumberFormatterRef formatter,
+    CFNumberFormatterKey key,
+    CFTypeRef value,
+  ) {
+    return _CFNumberFormatterSetProperty1(
+      formatter,
+      key,
+      value,
+    );
+  }
+
+  late final _CFNumberFormatterSetProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFNumberFormatterRef, CFNumberFormatterKey,
+              CFTypeRef)>>('CFNumberFormatterSetProperty');
+  late final _CFNumberFormatterSetProperty1 =
+      _CFNumberFormatterSetProperty1Ptr.asFunction<
+          void Function(
+              CFNumberFormatterRef, CFNumberFormatterKey, CFTypeRef)>();
+
+  CFTypeRef CFNumberFormatterCopyProperty1(
+    CFNumberFormatterRef formatter,
+    CFNumberFormatterKey key,
+  ) {
+    return _CFNumberFormatterCopyProperty1(
+      formatter,
+      key,
+    );
+  }
+
+  late final _CFNumberFormatterCopyProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFNumberFormatterRef,
+              CFNumberFormatterKey)>>('CFNumberFormatterCopyProperty');
+  late final _CFNumberFormatterCopyProperty1 =
+      _CFNumberFormatterCopyProperty1Ptr.asFunction<
+          CFTypeRef Function(CFNumberFormatterRef, CFNumberFormatterKey)>();
+
+  int CFNumberFormatterGetDecimalInfoForCurrencyCode1(
+    CFStringRef currencyCode,
+    ffi.Pointer<ffi.Int32> defaultFractionDigits,
+    ffi.Pointer<ffi.Double> roundingIncrement,
+  ) {
+    return _CFNumberFormatterGetDecimalInfoForCurrencyCode1(
+      currencyCode,
+      defaultFractionDigits,
+      roundingIncrement,
+    );
+  }
+
+  late final _CFNumberFormatterGetDecimalInfoForCurrencyCode1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(CFStringRef, ffi.Pointer<ffi.Int32>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'CFNumberFormatterGetDecimalInfoForCurrencyCode');
+  late final _CFNumberFormatterGetDecimalInfoForCurrencyCode1 =
+      _CFNumberFormatterGetDecimalInfoForCurrencyCode1Ptr.asFunction<
+          int Function(
+              CFStringRef, ffi.Pointer<ffi.Int32>, ffi.Pointer<ffi.Double>)>();
+
+  CFPropertyListRef CFPreferencesCopyAppValue1(
+    CFStringRef key,
+    CFStringRef applicationID,
+  ) {
+    return _CFPreferencesCopyAppValue1(
+      key,
+      applicationID,
+    );
+  }
+
+  late final _CFPreferencesCopyAppValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(
+              CFStringRef, CFStringRef)>>('CFPreferencesCopyAppValue');
+  late final _CFPreferencesCopyAppValue1 = _CFPreferencesCopyAppValue1Ptr
+      .asFunction<CFPropertyListRef Function(CFStringRef, CFStringRef)>();
+
+  int CFPreferencesGetAppBooleanValue1(
+    CFStringRef key,
+    CFStringRef applicationID,
+    ffi.Pointer<Boolean> keyExistsAndHasValidFormat,
+  ) {
+    return _CFPreferencesGetAppBooleanValue1(
+      key,
+      applicationID,
+      keyExistsAndHasValidFormat,
+    );
+  }
+
+  late final _CFPreferencesGetAppBooleanValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, CFStringRef,
+              ffi.Pointer<Boolean>)>>('CFPreferencesGetAppBooleanValue');
+  late final _CFPreferencesGetAppBooleanValue1 =
+      _CFPreferencesGetAppBooleanValue1Ptr.asFunction<
+          int Function(CFStringRef, CFStringRef, ffi.Pointer<Boolean>)>();
+
+  int CFPreferencesGetAppIntegerValue1(
+    CFStringRef key,
+    CFStringRef applicationID,
+    ffi.Pointer<Boolean> keyExistsAndHasValidFormat,
+  ) {
+    return _CFPreferencesGetAppIntegerValue1(
+      key,
+      applicationID,
+      keyExistsAndHasValidFormat,
+    );
+  }
+
+  late final _CFPreferencesGetAppIntegerValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFStringRef, CFStringRef,
+              ffi.Pointer<Boolean>)>>('CFPreferencesGetAppIntegerValue');
+  late final _CFPreferencesGetAppIntegerValue1 =
+      _CFPreferencesGetAppIntegerValue1Ptr.asFunction<
+          int Function(CFStringRef, CFStringRef, ffi.Pointer<Boolean>)>();
+
+  void CFPreferencesSetAppValue1(
+    CFStringRef key,
+    CFPropertyListRef value,
+    CFStringRef applicationID,
+  ) {
+    return _CFPreferencesSetAppValue1(
+      key,
+      value,
+      applicationID,
+    );
+  }
+
+  late final _CFPreferencesSetAppValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFStringRef, CFPropertyListRef,
+              CFStringRef)>>('CFPreferencesSetAppValue');
+  late final _CFPreferencesSetAppValue1 = _CFPreferencesSetAppValue1Ptr
+      .asFunction<void Function(CFStringRef, CFPropertyListRef, CFStringRef)>();
+
+  void CFPreferencesAddSuitePreferencesToApp1(
+    CFStringRef applicationID,
+    CFStringRef suiteID,
+  ) {
+    return _CFPreferencesAddSuitePreferencesToApp1(
+      applicationID,
+      suiteID,
+    );
+  }
+
+  late final _CFPreferencesAddSuitePreferencesToApp1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFStringRef, CFStringRef)>>(
+          'CFPreferencesAddSuitePreferencesToApp');
+  late final _CFPreferencesAddSuitePreferencesToApp1 =
+      _CFPreferencesAddSuitePreferencesToApp1Ptr.asFunction<
+          void Function(CFStringRef, CFStringRef)>();
+
+  void CFPreferencesRemoveSuitePreferencesFromApp1(
+    CFStringRef applicationID,
+    CFStringRef suiteID,
+  ) {
+    return _CFPreferencesRemoveSuitePreferencesFromApp1(
+      applicationID,
+      suiteID,
+    );
+  }
+
+  late final _CFPreferencesRemoveSuitePreferencesFromApp1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFStringRef, CFStringRef)>>(
+          'CFPreferencesRemoveSuitePreferencesFromApp');
+  late final _CFPreferencesRemoveSuitePreferencesFromApp1 =
+      _CFPreferencesRemoveSuitePreferencesFromApp1Ptr.asFunction<
+          void Function(CFStringRef, CFStringRef)>();
+
+  int CFPreferencesAppSynchronize1(
+    CFStringRef applicationID,
+  ) {
+    return _CFPreferencesAppSynchronize1(
+      applicationID,
+    );
+  }
+
+  late final _CFPreferencesAppSynchronize1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFStringRef)>>(
+          'CFPreferencesAppSynchronize');
+  late final _CFPreferencesAppSynchronize1 =
+      _CFPreferencesAppSynchronize1Ptr.asFunction<int Function(CFStringRef)>();
+
+  CFPropertyListRef CFPreferencesCopyValue1(
+    CFStringRef key,
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesCopyValue1(
+      key,
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesCopyValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(CFStringRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFPreferencesCopyValue');
+  late final _CFPreferencesCopyValue1 = _CFPreferencesCopyValue1Ptr.asFunction<
+      CFPropertyListRef Function(
+          CFStringRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFDictionaryRef CFPreferencesCopyMultiple1(
+    CFArrayRef keysToFetch,
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesCopyMultiple1(
+      keysToFetch,
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesCopyMultiple1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(CFArrayRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFPreferencesCopyMultiple');
+  late final _CFPreferencesCopyMultiple1 =
+      _CFPreferencesCopyMultiple1Ptr.asFunction<
+          CFDictionaryRef Function(
+              CFArrayRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  void CFPreferencesSetValue1(
+    CFStringRef key,
+    CFPropertyListRef value,
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesSetValue1(
+      key,
+      value,
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesSetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFStringRef, CFPropertyListRef, CFStringRef,
+              CFStringRef, CFStringRef)>>('CFPreferencesSetValue');
+  late final _CFPreferencesSetValue1 = _CFPreferencesSetValue1Ptr.asFunction<
+      void Function(CFStringRef, CFPropertyListRef, CFStringRef, CFStringRef,
+          CFStringRef)>();
+
+  void CFPreferencesSetMultiple1(
+    CFDictionaryRef keysToSet,
+    CFArrayRef keysToRemove,
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesSetMultiple1(
+      keysToSet,
+      keysToRemove,
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesSetMultiple1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFDictionaryRef, CFArrayRef, CFStringRef,
+              CFStringRef, CFStringRef)>>('CFPreferencesSetMultiple');
+  late final _CFPreferencesSetMultiple1 =
+      _CFPreferencesSetMultiple1Ptr.asFunction<
+          void Function(CFDictionaryRef, CFArrayRef, CFStringRef, CFStringRef,
+              CFStringRef)>();
+
+  int CFPreferencesSynchronize1(
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesSynchronize1(
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesSynchronize1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFStringRef, CFStringRef,
+              CFStringRef)>>('CFPreferencesSynchronize');
+  late final _CFPreferencesSynchronize1 = _CFPreferencesSynchronize1Ptr
+      .asFunction<int Function(CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFArrayRef CFPreferencesCopyApplicationList1(
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesCopyApplicationList1(
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesCopyApplicationList1Ptr = _lookup<
+          ffi.NativeFunction<CFArrayRef Function(CFStringRef, CFStringRef)>>(
+      'CFPreferencesCopyApplicationList');
+  late final _CFPreferencesCopyApplicationList1 =
+      _CFPreferencesCopyApplicationList1Ptr.asFunction<
+          CFArrayRef Function(CFStringRef, CFStringRef)>();
+
+  CFArrayRef CFPreferencesCopyKeyList1(
+    CFStringRef applicationID,
+    CFStringRef userName,
+    CFStringRef hostName,
+  ) {
+    return _CFPreferencesCopyKeyList1(
+      applicationID,
+      userName,
+      hostName,
+    );
+  }
+
+  late final _CFPreferencesCopyKeyList1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFStringRef, CFStringRef,
+              CFStringRef)>>('CFPreferencesCopyKeyList');
+  late final _CFPreferencesCopyKeyList1 = _CFPreferencesCopyKeyList1Ptr
+      .asFunction<CFArrayRef Function(CFStringRef, CFStringRef, CFStringRef)>();
+
+  int CFPreferencesAppValueIsForced1(
+    CFStringRef key,
+    CFStringRef applicationID,
+  ) {
+    return _CFPreferencesAppValueIsForced1(
+      key,
+      applicationID,
+    );
+  }
+
+  late final _CFPreferencesAppValueIsForced1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFStringRef, CFStringRef)>>(
+          'CFPreferencesAppValueIsForced');
+  late final _CFPreferencesAppValueIsForced1 =
+      _CFPreferencesAppValueIsForced1Ptr.asFunction<
+          int Function(CFStringRef, CFStringRef)>();
+
+  int CFURLGetTypeID1() {
+    return _CFURLGetTypeID1();
+  }
+
+  late final _CFURLGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFURLGetTypeID');
+  late final _CFURLGetTypeID1 =
+      _CFURLGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFURLRef CFURLCreateWithBytes1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> URLBytes,
+    int length,
+    int encoding,
+    CFURLRef baseURL,
+  ) {
+    return _CFURLCreateWithBytes1(
+      allocator,
+      URLBytes,
+      length,
+      encoding,
+      baseURL,
+    );
+  }
+
+  late final _CFURLCreateWithBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+              CFStringEncoding, CFURLRef)>>('CFURLCreateWithBytes');
+  late final _CFURLCreateWithBytes1 = _CFURLCreateWithBytes1Ptr.asFunction<
+      CFURLRef Function(
+          CFAllocatorRef, ffi.Pointer<UInt8>, int, int, CFURLRef)>();
+
+  CFDataRef CFURLCreateData1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    int encoding,
+    int escapeWhitespace,
+  ) {
+    return _CFURLCreateData1(
+      allocator,
+      url,
+      encoding,
+      escapeWhitespace,
+    );
+  }
+
+  late final _CFURLCreateData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef, CFURLRef, CFStringEncoding,
+              Boolean)>>('CFURLCreateData');
+  late final _CFURLCreateData1 = _CFURLCreateData1Ptr.asFunction<
+      CFDataRef Function(CFAllocatorRef, CFURLRef, int, int)>();
+
+  CFURLRef CFURLCreateWithString1(
+    CFAllocatorRef allocator,
+    CFStringRef URLString,
+    CFURLRef baseURL,
+  ) {
+    return _CFURLCreateWithString1(
+      allocator,
+      URLString,
+      baseURL,
+    );
+  }
+
+  late final _CFURLCreateWithString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(
+              CFAllocatorRef, CFStringRef, CFURLRef)>>('CFURLCreateWithString');
+  late final _CFURLCreateWithString1 = _CFURLCreateWithString1Ptr.asFunction<
+      CFURLRef Function(CFAllocatorRef, CFStringRef, CFURLRef)>();
+
+  CFURLRef CFURLCreateAbsoluteURLWithBytes1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UInt8> relativeURLBytes,
+    int length,
+    int encoding,
+    CFURLRef baseURL,
+    int useCompatibilityMode,
+  ) {
+    return _CFURLCreateAbsoluteURLWithBytes1(
+      alloc,
+      relativeURLBytes,
+      length,
+      encoding,
+      baseURL,
+      useCompatibilityMode,
+    );
+  }
+
+  late final _CFURLCreateAbsoluteURLWithBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<UInt8>,
+              CFIndex,
+              CFStringEncoding,
+              CFURLRef,
+              Boolean)>>('CFURLCreateAbsoluteURLWithBytes');
+  late final _CFURLCreateAbsoluteURLWithBytes1 =
+      _CFURLCreateAbsoluteURLWithBytes1Ptr.asFunction<
+          CFURLRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, int, int, CFURLRef, int)>();
+
+  CFURLRef CFURLCreateWithFileSystemPath1(
+    CFAllocatorRef allocator,
+    CFStringRef filePath,
+    int pathStyle,
+    int isDirectory,
+  ) {
+    return _CFURLCreateWithFileSystemPath1(
+      allocator,
+      filePath,
+      pathStyle,
+      isDirectory,
+    );
+  }
+
+  late final _CFURLCreateWithFileSystemPath1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFStringRef, ffi.Int32,
+              Boolean)>>('CFURLCreateWithFileSystemPath');
+  late final _CFURLCreateWithFileSystemPath1 =
+      _CFURLCreateWithFileSystemPath1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFStringRef, int, int)>();
+
+  CFURLRef CFURLCreateFromFileSystemRepresentation1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> buffer,
+    int bufLen,
+    int isDirectory,
+  ) {
+    return _CFURLCreateFromFileSystemRepresentation1(
+      allocator,
+      buffer,
+      bufLen,
+      isDirectory,
+    );
+  }
+
+  late final _CFURLCreateFromFileSystemRepresentation1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+              Boolean)>>('CFURLCreateFromFileSystemRepresentation');
+  late final _CFURLCreateFromFileSystemRepresentation1 =
+      _CFURLCreateFromFileSystemRepresentation1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, int, int)>();
+
+  CFURLRef CFURLCreateWithFileSystemPathRelativeToBase1(
+    CFAllocatorRef allocator,
+    CFStringRef filePath,
+    int pathStyle,
+    int isDirectory,
+    CFURLRef baseURL,
+  ) {
+    return _CFURLCreateWithFileSystemPathRelativeToBase1(
+      allocator,
+      filePath,
+      pathStyle,
+      isDirectory,
+      baseURL,
+    );
+  }
+
+  late final _CFURLCreateWithFileSystemPathRelativeToBase1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFStringRef, ffi.Int32, Boolean,
+              CFURLRef)>>('CFURLCreateWithFileSystemPathRelativeToBase');
+  late final _CFURLCreateWithFileSystemPathRelativeToBase1 =
+      _CFURLCreateWithFileSystemPathRelativeToBase1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFStringRef, int, int, CFURLRef)>();
+
+  CFURLRef CFURLCreateFromFileSystemRepresentationRelativeToBase1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<UInt8> buffer,
+    int bufLen,
+    int isDirectory,
+    CFURLRef baseURL,
+  ) {
+    return _CFURLCreateFromFileSystemRepresentationRelativeToBase1(
+      allocator,
+      buffer,
+      bufLen,
+      isDirectory,
+      baseURL,
+    );
+  }
+
+  late final _CFURLCreateFromFileSystemRepresentationRelativeToBase1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFURLRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+                      Boolean, CFURLRef)>>(
+          'CFURLCreateFromFileSystemRepresentationRelativeToBase');
+  late final _CFURLCreateFromFileSystemRepresentationRelativeToBase1 =
+      _CFURLCreateFromFileSystemRepresentationRelativeToBase1Ptr.asFunction<
+          CFURLRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, int, int, CFURLRef)>();
+
+  int CFURLGetFileSystemRepresentation1(
+    CFURLRef url,
+    int resolveAgainstBase,
+    ffi.Pointer<UInt8> buffer,
+    int maxBufLen,
+  ) {
+    return _CFURLGetFileSystemRepresentation1(
+      url,
+      resolveAgainstBase,
+      buffer,
+      maxBufLen,
+    );
+  }
+
+  late final _CFURLGetFileSystemRepresentation1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, Boolean, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFURLGetFileSystemRepresentation');
+  late final _CFURLGetFileSystemRepresentation1 =
+      _CFURLGetFileSystemRepresentation1Ptr.asFunction<
+          int Function(CFURLRef, int, ffi.Pointer<UInt8>, int)>();
+
+  CFURLRef CFURLCopyAbsoluteURL1(
+    CFURLRef relativeURL,
+  ) {
+    return _CFURLCopyAbsoluteURL1(
+      relativeURL,
+    );
+  }
+
+  late final _CFURLCopyAbsoluteURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFURLRef)>>(
+          'CFURLCopyAbsoluteURL');
+  late final _CFURLCopyAbsoluteURL1 =
+      _CFURLCopyAbsoluteURL1Ptr.asFunction<CFURLRef Function(CFURLRef)>();
+
+  CFStringRef CFURLGetString1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLGetString1(
+      anURL,
+    );
+  }
+
+  late final _CFURLGetString1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLGetString');
+  late final _CFURLGetString1 =
+      _CFURLGetString1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFURLRef CFURLGetBaseURL1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLGetBaseURL1(
+      anURL,
+    );
+  }
+
+  late final _CFURLGetBaseURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFURLRef)>>(
+          'CFURLGetBaseURL');
+  late final _CFURLGetBaseURL1 =
+      _CFURLGetBaseURL1Ptr.asFunction<CFURLRef Function(CFURLRef)>();
+
+  int CFURLCanBeDecomposed1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCanBeDecomposed1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCanBeDecomposed1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLRef)>>(
+          'CFURLCanBeDecomposed');
+  late final _CFURLCanBeDecomposed1 =
+      _CFURLCanBeDecomposed1Ptr.asFunction<int Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyScheme1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyScheme1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyScheme1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyScheme');
+  late final _CFURLCopyScheme1 =
+      _CFURLCopyScheme1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyNetLocation1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyNetLocation1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyNetLocation1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyNetLocation');
+  late final _CFURLCopyNetLocation1 =
+      _CFURLCopyNetLocation1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyPath1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyPath1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyPath1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyPath');
+  late final _CFURLCopyPath1 =
+      _CFURLCopyPath1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyStrictPath1(
+    CFURLRef anURL,
+    ffi.Pointer<Boolean> isAbsolute,
+  ) {
+    return _CFURLCopyStrictPath1(
+      anURL,
+      isAbsolute,
+    );
+  }
+
+  late final _CFURLCopyStrictPath1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFURLRef, ffi.Pointer<Boolean>)>>('CFURLCopyStrictPath');
+  late final _CFURLCopyStrictPath1 = _CFURLCopyStrictPath1Ptr.asFunction<
+      CFStringRef Function(CFURLRef, ffi.Pointer<Boolean>)>();
+
+  CFStringRef CFURLCopyFileSystemPath1(
+    CFURLRef anURL,
+    int pathStyle,
+  ) {
+    return _CFURLCopyFileSystemPath1(
+      anURL,
+      pathStyle,
+    );
+  }
+
+  late final _CFURLCopyFileSystemPath1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef, ffi.Int32)>>(
+          'CFURLCopyFileSystemPath');
+  late final _CFURLCopyFileSystemPath1 = _CFURLCopyFileSystemPath1Ptr
+      .asFunction<CFStringRef Function(CFURLRef, int)>();
+
+  int CFURLHasDirectoryPath1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLHasDirectoryPath1(
+      anURL,
+    );
+  }
+
+  late final _CFURLHasDirectoryPath1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLRef)>>(
+          'CFURLHasDirectoryPath');
+  late final _CFURLHasDirectoryPath1 =
+      _CFURLHasDirectoryPath1Ptr.asFunction<int Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyResourceSpecifier1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyResourceSpecifier1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyResourceSpecifier1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyResourceSpecifier');
+  late final _CFURLCopyResourceSpecifier1 = _CFURLCopyResourceSpecifier1Ptr
+      .asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyHostName1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyHostName1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyHostName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyHostName');
+  late final _CFURLCopyHostName1 =
+      _CFURLCopyHostName1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  int CFURLGetPortNumber1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLGetPortNumber1(
+      anURL,
+    );
+  }
+
+  late final _CFURLGetPortNumber1Ptr =
+      _lookup<ffi.NativeFunction<SInt32 Function(CFURLRef)>>(
+          'CFURLGetPortNumber');
+  late final _CFURLGetPortNumber1 =
+      _CFURLGetPortNumber1Ptr.asFunction<int Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyUserName1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyUserName1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyUserName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyUserName');
+  late final _CFURLCopyUserName1 =
+      _CFURLCopyUserName1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyPassword1(
+    CFURLRef anURL,
+  ) {
+    return _CFURLCopyPassword1(
+      anURL,
+    );
+  }
+
+  late final _CFURLCopyPassword1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyPassword');
+  late final _CFURLCopyPassword1 =
+      _CFURLCopyPassword1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyParameterString1(
+    CFURLRef anURL,
+    CFStringRef charactersToLeaveEscaped,
+  ) {
+    return _CFURLCopyParameterString1(
+      anURL,
+      charactersToLeaveEscaped,
+    );
+  }
+
+  late final _CFURLCopyParameterString1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef, CFStringRef)>>(
+          'CFURLCopyParameterString');
+  late final _CFURLCopyParameterString1 = _CFURLCopyParameterString1Ptr
+      .asFunction<CFStringRef Function(CFURLRef, CFStringRef)>();
+
+  CFStringRef CFURLCopyQueryString1(
+    CFURLRef anURL,
+    CFStringRef charactersToLeaveEscaped,
+  ) {
+    return _CFURLCopyQueryString1(
+      anURL,
+      charactersToLeaveEscaped,
+    );
+  }
+
+  late final _CFURLCopyQueryString1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef, CFStringRef)>>(
+          'CFURLCopyQueryString');
+  late final _CFURLCopyQueryString1 = _CFURLCopyQueryString1Ptr.asFunction<
+      CFStringRef Function(CFURLRef, CFStringRef)>();
+
+  CFStringRef CFURLCopyFragment1(
+    CFURLRef anURL,
+    CFStringRef charactersToLeaveEscaped,
+  ) {
+    return _CFURLCopyFragment1(
+      anURL,
+      charactersToLeaveEscaped,
+    );
+  }
+
+  late final _CFURLCopyFragment1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef, CFStringRef)>>(
+          'CFURLCopyFragment');
+  late final _CFURLCopyFragment1 = _CFURLCopyFragment1Ptr.asFunction<
+      CFStringRef Function(CFURLRef, CFStringRef)>();
+
+  CFStringRef CFURLCopyLastPathComponent1(
+    CFURLRef url,
+  ) {
+    return _CFURLCopyLastPathComponent1(
+      url,
+    );
+  }
+
+  late final _CFURLCopyLastPathComponent1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyLastPathComponent');
+  late final _CFURLCopyLastPathComponent1 = _CFURLCopyLastPathComponent1Ptr
+      .asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFStringRef CFURLCopyPathExtension1(
+    CFURLRef url,
+  ) {
+    return _CFURLCopyPathExtension1(
+      url,
+    );
+  }
+
+  late final _CFURLCopyPathExtension1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFURLRef)>>(
+          'CFURLCopyPathExtension');
+  late final _CFURLCopyPathExtension1 =
+      _CFURLCopyPathExtension1Ptr.asFunction<CFStringRef Function(CFURLRef)>();
+
+  CFURLRef CFURLCreateCopyAppendingPathComponent1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    CFStringRef pathComponent,
+    int isDirectory,
+  ) {
+    return _CFURLCreateCopyAppendingPathComponent1(
+      allocator,
+      url,
+      pathComponent,
+      isDirectory,
+    );
+  }
+
+  late final _CFURLCreateCopyAppendingPathComponent1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef, CFStringRef,
+              Boolean)>>('CFURLCreateCopyAppendingPathComponent');
+  late final _CFURLCreateCopyAppendingPathComponent1 =
+      _CFURLCreateCopyAppendingPathComponent1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef, CFStringRef, int)>();
+
+  CFURLRef CFURLCreateCopyDeletingLastPathComponent1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+  ) {
+    return _CFURLCreateCopyDeletingLastPathComponent1(
+      allocator,
+      url,
+    );
+  }
+
+  late final _CFURLCreateCopyDeletingLastPathComponent1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFAllocatorRef, CFURLRef)>>(
+          'CFURLCreateCopyDeletingLastPathComponent');
+  late final _CFURLCreateCopyDeletingLastPathComponent1 =
+      _CFURLCreateCopyDeletingLastPathComponent1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef)>();
+
+  CFURLRef CFURLCreateCopyAppendingPathExtension1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    CFStringRef extension1,
+  ) {
+    return _CFURLCreateCopyAppendingPathExtension1(
+      allocator,
+      url,
+      extension1,
+    );
+  }
+
+  late final _CFURLCreateCopyAppendingPathExtension1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef,
+              CFStringRef)>>('CFURLCreateCopyAppendingPathExtension');
+  late final _CFURLCreateCopyAppendingPathExtension1 =
+      _CFURLCreateCopyAppendingPathExtension1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef, CFStringRef)>();
+
+  CFURLRef CFURLCreateCopyDeletingPathExtension1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+  ) {
+    return _CFURLCreateCopyDeletingPathExtension1(
+      allocator,
+      url,
+    );
+  }
+
+  late final _CFURLCreateCopyDeletingPathExtension1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFAllocatorRef, CFURLRef)>>(
+          'CFURLCreateCopyDeletingPathExtension');
+  late final _CFURLCreateCopyDeletingPathExtension1 =
+      _CFURLCreateCopyDeletingPathExtension1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef)>();
+
+  int CFURLGetBytes1(
+    CFURLRef url,
+    ffi.Pointer<UInt8> buffer,
+    int bufferLength,
+  ) {
+    return _CFURLGetBytes1(
+      url,
+      buffer,
+      bufferLength,
+    );
+  }
+
+  late final _CFURLGetBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(
+              CFURLRef, ffi.Pointer<UInt8>, CFIndex)>>('CFURLGetBytes');
+  late final _CFURLGetBytes1 = _CFURLGetBytes1Ptr.asFunction<
+      int Function(CFURLRef, ffi.Pointer<UInt8>, int)>();
+
+  CFRange CFURLGetByteRangeForComponent1(
+    CFURLRef url,
+    int component,
+    ffi.Pointer<CFRange> rangeIncludingSeparators,
+  ) {
+    return _CFURLGetByteRangeForComponent1(
+      url,
+      component,
+      rangeIncludingSeparators,
+    );
+  }
+
+  late final _CFURLGetByteRangeForComponent1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRange Function(CFURLRef, ffi.Int32,
+              ffi.Pointer<CFRange>)>>('CFURLGetByteRangeForComponent');
+  late final _CFURLGetByteRangeForComponent1 =
+      _CFURLGetByteRangeForComponent1Ptr.asFunction<
+          CFRange Function(CFURLRef, int, ffi.Pointer<CFRange>)>();
+
+  CFStringRef CFURLCreateStringByReplacingPercentEscapes1(
+    CFAllocatorRef allocator,
+    CFStringRef originalString,
+    CFStringRef charactersToLeaveEscaped,
+  ) {
+    return _CFURLCreateStringByReplacingPercentEscapes1(
+      allocator,
+      originalString,
+      charactersToLeaveEscaped,
+    );
+  }
+
+  late final _CFURLCreateStringByReplacingPercentEscapes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef,
+              CFStringRef)>>('CFURLCreateStringByReplacingPercentEscapes');
+  late final _CFURLCreateStringByReplacingPercentEscapes1 =
+      _CFURLCreateStringByReplacingPercentEscapes1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef, CFStringRef)>();
+
+  CFStringRef CFURLCreateStringByReplacingPercentEscapesUsingEncoding1(
+    CFAllocatorRef allocator,
+    CFStringRef origString,
+    CFStringRef charsToLeaveEscaped,
+    int encoding,
+  ) {
+    return _CFURLCreateStringByReplacingPercentEscapesUsingEncoding1(
+      allocator,
+      origString,
+      charsToLeaveEscaped,
+      encoding,
+    );
+  }
+
+  late final _CFURLCreateStringByReplacingPercentEscapesUsingEncoding1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFStringRef Function(CFAllocatorRef, CFStringRef, CFStringRef,
+                      CFStringEncoding)>>(
+          'CFURLCreateStringByReplacingPercentEscapesUsingEncoding');
+  late final _CFURLCreateStringByReplacingPercentEscapesUsingEncoding1 =
+      _CFURLCreateStringByReplacingPercentEscapesUsingEncoding1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFStringRef, CFStringRef, int)>();
+
+  CFStringRef CFURLCreateStringByAddingPercentEscapes1(
+    CFAllocatorRef allocator,
+    CFStringRef originalString,
+    CFStringRef charactersToLeaveUnescaped,
+    CFStringRef legalURLCharactersToBeEscaped,
+    int encoding,
+  ) {
+    return _CFURLCreateStringByAddingPercentEscapes1(
+      allocator,
+      originalString,
+      charactersToLeaveUnescaped,
+      legalURLCharactersToBeEscaped,
+      encoding,
+    );
+  }
+
+  late final _CFURLCreateStringByAddingPercentEscapes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(
+              CFAllocatorRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringEncoding)>>('CFURLCreateStringByAddingPercentEscapes');
+  late final _CFURLCreateStringByAddingPercentEscapes1 =
+      _CFURLCreateStringByAddingPercentEscapes1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, CFStringRef, CFStringRef, CFStringRef, int)>();
+
+  int CFURLIsFileReferenceURL1(
+    CFURLRef url,
+  ) {
+    return _CFURLIsFileReferenceURL1(
+      url,
+    );
+  }
+
+  late final _CFURLIsFileReferenceURL1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLRef)>>(
+          'CFURLIsFileReferenceURL');
+  late final _CFURLIsFileReferenceURL1 =
+      _CFURLIsFileReferenceURL1Ptr.asFunction<int Function(CFURLRef)>();
+
+  CFURLRef CFURLCreateFileReferenceURL1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCreateFileReferenceURL1(
+      allocator,
+      url,
+      error,
+    );
+  }
+
+  late final _CFURLCreateFileReferenceURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCreateFileReferenceURL');
+  late final _CFURLCreateFileReferenceURL1 =
+      _CFURLCreateFileReferenceURL1Ptr.asFunction<
+          CFURLRef Function(
+              CFAllocatorRef, CFURLRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFURLRef CFURLCreateFilePathURL1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCreateFilePathURL1(
+      allocator,
+      url,
+      error,
+    );
+  }
+
+  late final _CFURLCreateFilePathURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFAllocatorRef, CFURLRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCreateFilePathURL');
+  late final _CFURLCreateFilePathURL1 = _CFURLCreateFilePathURL1Ptr.asFunction<
+      CFURLRef Function(CFAllocatorRef, CFURLRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFURLRef CFURLCreateFromFSRef1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<FSRef> fsRef,
+  ) {
+    return _CFURLCreateFromFSRef1(
+      allocator,
+      fsRef,
+    );
+  }
+
+  late final _CFURLCreateFromFSRef1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(
+              CFAllocatorRef, ffi.Pointer<FSRef>)>>('CFURLCreateFromFSRef');
+  late final _CFURLCreateFromFSRef1 = _CFURLCreateFromFSRef1Ptr.asFunction<
+      CFURLRef Function(CFAllocatorRef, ffi.Pointer<FSRef>)>();
+
+  int CFURLGetFSRef1(
+    CFURLRef url,
+    ffi.Pointer<FSRef> fsRef,
+  ) {
+    return _CFURLGetFSRef1(
+      url,
+      fsRef,
+    );
+  }
+
+  late final _CFURLGetFSRef1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFURLRef, ffi.Pointer<FSRef>)>>(
+      'CFURLGetFSRef');
+  late final _CFURLGetFSRef1 = _CFURLGetFSRef1Ptr.asFunction<
+      int Function(CFURLRef, ffi.Pointer<FSRef>)>();
+
+  int CFURLCopyResourcePropertyForKey1(
+    CFURLRef url,
+    CFStringRef key,
+    ffi.Pointer<ffi.Void> propertyValueTypeRefPtr,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCopyResourcePropertyForKey1(
+      url,
+      key,
+      propertyValueTypeRefPtr,
+      error,
+    );
+  }
+
+  late final _CFURLCopyResourcePropertyForKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, CFStringRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCopyResourcePropertyForKey');
+  late final _CFURLCopyResourcePropertyForKey1 =
+      _CFURLCopyResourcePropertyForKey1Ptr.asFunction<
+          int Function(CFURLRef, CFStringRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<CFErrorRef>)>();
+
+  CFDictionaryRef CFURLCopyResourcePropertiesForKeys1(
+    CFURLRef url,
+    CFArrayRef keys,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCopyResourcePropertiesForKeys1(
+      url,
+      keys,
+      error,
+    );
+  }
+
+  late final _CFURLCopyResourcePropertiesForKeys1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(CFURLRef, CFArrayRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCopyResourcePropertiesForKeys');
+  late final _CFURLCopyResourcePropertiesForKeys1 =
+      _CFURLCopyResourcePropertiesForKeys1Ptr.asFunction<
+          CFDictionaryRef Function(
+              CFURLRef, CFArrayRef, ffi.Pointer<CFErrorRef>)>();
+
+  int CFURLSetResourcePropertyForKey1(
+    CFURLRef url,
+    CFStringRef key,
+    CFTypeRef propertyValue,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLSetResourcePropertyForKey1(
+      url,
+      key,
+      propertyValue,
+      error,
+    );
+  }
+
+  late final _CFURLSetResourcePropertyForKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, CFStringRef, CFTypeRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLSetResourcePropertyForKey');
+  late final _CFURLSetResourcePropertyForKey1 =
+      _CFURLSetResourcePropertyForKey1Ptr.asFunction<
+          int Function(
+              CFURLRef, CFStringRef, CFTypeRef, ffi.Pointer<CFErrorRef>)>();
+
+  int CFURLSetResourcePropertiesForKeys1(
+    CFURLRef url,
+    CFDictionaryRef keyedPropertyValues,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLSetResourcePropertiesForKeys1(
+      url,
+      keyedPropertyValues,
+      error,
+    );
+  }
+
+  late final _CFURLSetResourcePropertiesForKeys1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, CFDictionaryRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLSetResourcePropertiesForKeys');
+  late final _CFURLSetResourcePropertiesForKeys1 =
+      _CFURLSetResourcePropertiesForKeys1Ptr.asFunction<
+          int Function(CFURLRef, CFDictionaryRef, ffi.Pointer<CFErrorRef>)>();
+
+  void CFURLClearResourcePropertyCacheForKey1(
+    CFURLRef url,
+    CFStringRef key,
+  ) {
+    return _CFURLClearResourcePropertyCacheForKey1(
+      url,
+      key,
+    );
+  }
+
+  late final _CFURLClearResourcePropertyCacheForKey1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFURLRef, CFStringRef)>>(
+          'CFURLClearResourcePropertyCacheForKey');
+  late final _CFURLClearResourcePropertyCacheForKey1 =
+      _CFURLClearResourcePropertyCacheForKey1Ptr.asFunction<
+          void Function(CFURLRef, CFStringRef)>();
+
+  void CFURLClearResourcePropertyCache1(
+    CFURLRef url,
+  ) {
+    return _CFURLClearResourcePropertyCache1(
+      url,
+    );
+  }
+
+  late final _CFURLClearResourcePropertyCache1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFURLRef)>>(
+          'CFURLClearResourcePropertyCache');
+  late final _CFURLClearResourcePropertyCache1 =
+      _CFURLClearResourcePropertyCache1Ptr.asFunction<
+          void Function(CFURLRef)>();
+
+  void CFURLSetTemporaryResourcePropertyForKey1(
+    CFURLRef url,
+    CFStringRef key,
+    CFTypeRef propertyValue,
+  ) {
+    return _CFURLSetTemporaryResourcePropertyForKey1(
+      url,
+      key,
+      propertyValue,
+    );
+  }
+
+  late final _CFURLSetTemporaryResourcePropertyForKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFURLRef, CFStringRef,
+              CFTypeRef)>>('CFURLSetTemporaryResourcePropertyForKey');
+  late final _CFURLSetTemporaryResourcePropertyForKey1 =
+      _CFURLSetTemporaryResourcePropertyForKey1Ptr.asFunction<
+          void Function(CFURLRef, CFStringRef, CFTypeRef)>();
+
+  int CFURLResourceIsReachable1(
+    CFURLRef url,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLResourceIsReachable1(
+      url,
+      error,
+    );
+  }
+
+  late final _CFURLResourceIsReachable1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFURLRef, ffi.Pointer<CFErrorRef>)>>('CFURLResourceIsReachable');
+  late final _CFURLResourceIsReachable1 = _CFURLResourceIsReachable1Ptr
+      .asFunction<int Function(CFURLRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef CFURLCreateBookmarkData1(
+    CFAllocatorRef allocator,
+    CFURLRef url,
+    int options,
+    CFArrayRef resourcePropertiesToInclude,
+    CFURLRef relativeToURL,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCreateBookmarkData1(
+      allocator,
+      url,
+      options,
+      resourcePropertiesToInclude,
+      relativeToURL,
+      error,
+    );
+  }
+
+  late final _CFURLCreateBookmarkData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef, CFURLRef, ffi.Int32, CFArrayRef,
+              CFURLRef, ffi.Pointer<CFErrorRef>)>>('CFURLCreateBookmarkData');
+  late final _CFURLCreateBookmarkData1 =
+      _CFURLCreateBookmarkData1Ptr.asFunction<
+          CFDataRef Function(CFAllocatorRef, CFURLRef, int, CFArrayRef,
+              CFURLRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFURLRef CFURLCreateByResolvingBookmarkData1(
+    CFAllocatorRef allocator,
+    CFDataRef bookmark,
+    int options,
+    CFURLRef relativeToURL,
+    CFArrayRef resourcePropertiesToInclude,
+    ffi.Pointer<Boolean> isStale,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLCreateByResolvingBookmarkData1(
+      allocator,
+      bookmark,
+      options,
+      relativeToURL,
+      resourcePropertiesToInclude,
+      isStale,
+      error,
+    );
+  }
+
+  late final _CFURLCreateByResolvingBookmarkData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(
+              CFAllocatorRef,
+              CFDataRef,
+              ffi.Int32,
+              CFURLRef,
+              CFArrayRef,
+              ffi.Pointer<Boolean>,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCreateByResolvingBookmarkData');
+  late final _CFURLCreateByResolvingBookmarkData1 =
+      _CFURLCreateByResolvingBookmarkData1Ptr.asFunction<
+          CFURLRef Function(CFAllocatorRef, CFDataRef, int, CFURLRef,
+              CFArrayRef, ffi.Pointer<Boolean>, ffi.Pointer<CFErrorRef>)>();
+
+  CFDictionaryRef CFURLCreateResourcePropertiesForKeysFromBookmarkData1(
+    CFAllocatorRef allocator,
+    CFArrayRef resourcePropertiesToReturn,
+    CFDataRef bookmark,
+  ) {
+    return _CFURLCreateResourcePropertiesForKeysFromBookmarkData1(
+      allocator,
+      resourcePropertiesToReturn,
+      bookmark,
+    );
+  }
+
+  late final _CFURLCreateResourcePropertiesForKeysFromBookmarkData1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFDictionaryRef Function(
+                      CFAllocatorRef, CFArrayRef, CFDataRef)>>(
+          'CFURLCreateResourcePropertiesForKeysFromBookmarkData');
+  late final _CFURLCreateResourcePropertiesForKeysFromBookmarkData1 =
+      _CFURLCreateResourcePropertiesForKeysFromBookmarkData1Ptr.asFunction<
+          CFDictionaryRef Function(CFAllocatorRef, CFArrayRef, CFDataRef)>();
+
+  CFTypeRef CFURLCreateResourcePropertyForKeyFromBookmarkData1(
+    CFAllocatorRef allocator,
+    CFStringRef resourcePropertyKey,
+    CFDataRef bookmark,
+  ) {
+    return _CFURLCreateResourcePropertyForKeyFromBookmarkData1(
+      allocator,
+      resourcePropertyKey,
+      bookmark,
+    );
+  }
+
+  late final _CFURLCreateResourcePropertyForKeyFromBookmarkData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFAllocatorRef, CFStringRef,
+              CFDataRef)>>('CFURLCreateResourcePropertyForKeyFromBookmarkData');
+  late final _CFURLCreateResourcePropertyForKeyFromBookmarkData1 =
+      _CFURLCreateResourcePropertyForKeyFromBookmarkData1Ptr.asFunction<
+          CFTypeRef Function(CFAllocatorRef, CFStringRef, CFDataRef)>();
+
+  CFDataRef CFURLCreateBookmarkDataFromFile1(
+    CFAllocatorRef allocator,
+    CFURLRef fileURL,
+    ffi.Pointer<CFErrorRef> errorRef,
+  ) {
+    return _CFURLCreateBookmarkDataFromFile1(
+      allocator,
+      fileURL,
+      errorRef,
+    );
+  }
+
+  late final _CFURLCreateBookmarkDataFromFile1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef, CFURLRef,
+              ffi.Pointer<CFErrorRef>)>>('CFURLCreateBookmarkDataFromFile');
+  late final _CFURLCreateBookmarkDataFromFile1 =
+      _CFURLCreateBookmarkDataFromFile1Ptr.asFunction<
+          CFDataRef Function(
+              CFAllocatorRef, CFURLRef, ffi.Pointer<CFErrorRef>)>();
+
+  int CFURLWriteBookmarkDataToFile1(
+    CFDataRef bookmarkRef,
+    CFURLRef fileURL,
+    int options,
+    ffi.Pointer<CFErrorRef> errorRef,
+  ) {
+    return _CFURLWriteBookmarkDataToFile1(
+      bookmarkRef,
+      fileURL,
+      options,
+      errorRef,
+    );
+  }
+
+  late final _CFURLWriteBookmarkDataToFile1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFDataRef,
+              CFURLRef,
+              CFURLBookmarkFileCreationOptions,
+              ffi.Pointer<CFErrorRef>)>>('CFURLWriteBookmarkDataToFile');
+  late final _CFURLWriteBookmarkDataToFile1 =
+      _CFURLWriteBookmarkDataToFile1Ptr.asFunction<
+          int Function(CFDataRef, CFURLRef, int, ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef CFURLCreateBookmarkDataFromAliasRecord1(
+    CFAllocatorRef allocatorRef,
+    CFDataRef aliasRecordDataRef,
+  ) {
+    return _CFURLCreateBookmarkDataFromAliasRecord1(
+      allocatorRef,
+      aliasRecordDataRef,
+    );
+  }
+
+  late final _CFURLCreateBookmarkDataFromAliasRecord1Ptr = _lookup<
+          ffi.NativeFunction<CFDataRef Function(CFAllocatorRef, CFDataRef)>>(
+      'CFURLCreateBookmarkDataFromAliasRecord');
+  late final _CFURLCreateBookmarkDataFromAliasRecord1 =
+      _CFURLCreateBookmarkDataFromAliasRecord1Ptr.asFunction<
+          CFDataRef Function(CFAllocatorRef, CFDataRef)>();
+
+  int CFURLStartAccessingSecurityScopedResource1(
+    CFURLRef url,
+  ) {
+    return _CFURLStartAccessingSecurityScopedResource1(
+      url,
+    );
+  }
+
+  late final _CFURLStartAccessingSecurityScopedResource1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLRef)>>(
+          'CFURLStartAccessingSecurityScopedResource');
+  late final _CFURLStartAccessingSecurityScopedResource1 =
+      _CFURLStartAccessingSecurityScopedResource1Ptr.asFunction<
+          int Function(CFURLRef)>();
+
+  void CFURLStopAccessingSecurityScopedResource1(
+    CFURLRef url,
+  ) {
+    return _CFURLStopAccessingSecurityScopedResource1(
+      url,
+    );
+  }
+
+  late final _CFURLStopAccessingSecurityScopedResource1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFURLRef)>>(
+          'CFURLStopAccessingSecurityScopedResource');
+  late final _CFURLStopAccessingSecurityScopedResource1 =
+      _CFURLStopAccessingSecurityScopedResource1Ptr.asFunction<
+          void Function(CFURLRef)>();
+
+  int CFRunLoopGetTypeID1() {
+    return _CFRunLoopGetTypeID1();
+  }
+
+  late final _CFRunLoopGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFRunLoopGetTypeID');
+  late final _CFRunLoopGetTypeID1 =
+      _CFRunLoopGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFRunLoopRef CFRunLoopGetCurrent1() {
+    return _CFRunLoopGetCurrent1();
+  }
+
+  late final _CFRunLoopGetCurrent1Ptr =
+      _lookup<ffi.NativeFunction<CFRunLoopRef Function()>>(
+          'CFRunLoopGetCurrent');
+  late final _CFRunLoopGetCurrent1 =
+      _CFRunLoopGetCurrent1Ptr.asFunction<CFRunLoopRef Function()>();
+
+  CFRunLoopRef CFRunLoopGetMain1() {
+    return _CFRunLoopGetMain1();
+  }
+
+  late final _CFRunLoopGetMain1Ptr =
+      _lookup<ffi.NativeFunction<CFRunLoopRef Function()>>('CFRunLoopGetMain');
+  late final _CFRunLoopGetMain1 =
+      _CFRunLoopGetMain1Ptr.asFunction<CFRunLoopRef Function()>();
+
+  CFRunLoopMode CFRunLoopCopyCurrentMode1(
+    CFRunLoopRef rl,
+  ) {
+    return _CFRunLoopCopyCurrentMode1(
+      rl,
+    );
+  }
+
+  late final _CFRunLoopCopyCurrentMode1Ptr =
+      _lookup<ffi.NativeFunction<CFRunLoopMode Function(CFRunLoopRef)>>(
+          'CFRunLoopCopyCurrentMode');
+  late final _CFRunLoopCopyCurrentMode1 = _CFRunLoopCopyCurrentMode1Ptr
+      .asFunction<CFRunLoopMode Function(CFRunLoopRef)>();
+
+  CFArrayRef CFRunLoopCopyAllModes1(
+    CFRunLoopRef rl,
+  ) {
+    return _CFRunLoopCopyAllModes1(
+      rl,
+    );
+  }
+
+  late final _CFRunLoopCopyAllModes1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFRunLoopRef)>>(
+          'CFRunLoopCopyAllModes');
+  late final _CFRunLoopCopyAllModes1 = _CFRunLoopCopyAllModes1Ptr.asFunction<
+      CFArrayRef Function(CFRunLoopRef)>();
+
+  void CFRunLoopAddCommonMode1(
+    CFRunLoopRef rl,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopAddCommonMode1(
+      rl,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopAddCommonMode1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFRunLoopRef, CFRunLoopMode)>>(
+      'CFRunLoopAddCommonMode');
+  late final _CFRunLoopAddCommonMode1 = _CFRunLoopAddCommonMode1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopMode)>();
+
+  double CFRunLoopGetNextTimerFireDate1(
+    CFRunLoopRef rl,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopGetNextTimerFireDate1(
+      rl,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopGetNextTimerFireDate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAbsoluteTime Function(
+              CFRunLoopRef, CFRunLoopMode)>>('CFRunLoopGetNextTimerFireDate');
+  late final _CFRunLoopGetNextTimerFireDate1 =
+      _CFRunLoopGetNextTimerFireDate1Ptr.asFunction<
+          double Function(CFRunLoopRef, CFRunLoopMode)>();
+
+  void CFRunLoopRun1() {
+    return _CFRunLoopRun1();
+  }
+
+  late final _CFRunLoopRun1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('CFRunLoopRun');
+  late final _CFRunLoopRun1 = _CFRunLoopRun1Ptr.asFunction<void Function()>();
+
+  int CFRunLoopRunInMode1(
+    CFRunLoopMode mode,
+    double seconds,
+    int returnAfterSourceHandled,
+  ) {
+    return _CFRunLoopRunInMode1(
+      mode,
+      seconds,
+      returnAfterSourceHandled,
+    );
+  }
+
+  late final _CFRunLoopRunInMode1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              CFRunLoopMode, CFTimeInterval, Boolean)>>('CFRunLoopRunInMode');
+  late final _CFRunLoopRunInMode1 = _CFRunLoopRunInMode1Ptr.asFunction<
+      int Function(CFRunLoopMode, double, int)>();
+
+  int CFRunLoopIsWaiting1(
+    CFRunLoopRef rl,
+  ) {
+    return _CFRunLoopIsWaiting1(
+      rl,
+    );
+  }
+
+  late final _CFRunLoopIsWaiting1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopRef)>>(
+          'CFRunLoopIsWaiting');
+  late final _CFRunLoopIsWaiting1 =
+      _CFRunLoopIsWaiting1Ptr.asFunction<int Function(CFRunLoopRef)>();
+
+  void CFRunLoopWakeUp1(
+    CFRunLoopRef rl,
+  ) {
+    return _CFRunLoopWakeUp1(
+      rl,
+    );
+  }
+
+  late final _CFRunLoopWakeUp1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopRef)>>(
+          'CFRunLoopWakeUp');
+  late final _CFRunLoopWakeUp1 =
+      _CFRunLoopWakeUp1Ptr.asFunction<void Function(CFRunLoopRef)>();
+
+  void CFRunLoopStop1(
+    CFRunLoopRef rl,
+  ) {
+    return _CFRunLoopStop1(
+      rl,
+    );
+  }
+
+  late final _CFRunLoopStop1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopRef)>>(
+          'CFRunLoopStop');
+  late final _CFRunLoopStop1 =
+      _CFRunLoopStop1Ptr.asFunction<void Function(CFRunLoopRef)>();
+
+  void CFRunLoopPerformBlock1(
+    CFRunLoopRef rl,
+    CFTypeRef mode,
+    ffi.Pointer<ObjCObject> block,
+  ) {
+    return _CFRunLoopPerformBlock1(
+      rl,
+      mode,
+      block,
+    );
+  }
+
+  late final _CFRunLoopPerformBlock1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFTypeRef,
+              ffi.Pointer<ObjCObject>)>>('CFRunLoopPerformBlock');
+  late final _CFRunLoopPerformBlock1 = _CFRunLoopPerformBlock1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFTypeRef, ffi.Pointer<ObjCObject>)>();
+
+  int CFRunLoopContainsSource1(
+    CFRunLoopRef rl,
+    CFRunLoopSourceRef source,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopContainsSource1(
+      rl,
+      source,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopContainsSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFRunLoopRef, CFRunLoopSourceRef,
+              CFRunLoopMode)>>('CFRunLoopContainsSource');
+  late final _CFRunLoopContainsSource1 =
+      _CFRunLoopContainsSource1Ptr.asFunction<
+          int Function(CFRunLoopRef, CFRunLoopSourceRef, CFRunLoopMode)>();
+
+  void CFRunLoopAddSource1(
+    CFRunLoopRef rl,
+    CFRunLoopSourceRef source,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopAddSource1(
+      rl,
+      source,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopAddSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopSourceRef,
+              CFRunLoopMode)>>('CFRunLoopAddSource');
+  late final _CFRunLoopAddSource1 = _CFRunLoopAddSource1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopSourceRef, CFRunLoopMode)>();
+
+  void CFRunLoopRemoveSource1(
+    CFRunLoopRef rl,
+    CFRunLoopSourceRef source,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopRemoveSource1(
+      rl,
+      source,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopRemoveSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopSourceRef,
+              CFRunLoopMode)>>('CFRunLoopRemoveSource');
+  late final _CFRunLoopRemoveSource1 = _CFRunLoopRemoveSource1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopSourceRef, CFRunLoopMode)>();
+
+  int CFRunLoopContainsObserver1(
+    CFRunLoopRef rl,
+    CFRunLoopObserverRef observer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopContainsObserver1(
+      rl,
+      observer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopContainsObserver1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFRunLoopRef, CFRunLoopObserverRef,
+              CFRunLoopMode)>>('CFRunLoopContainsObserver');
+  late final _CFRunLoopContainsObserver1 =
+      _CFRunLoopContainsObserver1Ptr.asFunction<
+          int Function(CFRunLoopRef, CFRunLoopObserverRef, CFRunLoopMode)>();
+
+  void CFRunLoopAddObserver1(
+    CFRunLoopRef rl,
+    CFRunLoopObserverRef observer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopAddObserver1(
+      rl,
+      observer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopAddObserver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopObserverRef,
+              CFRunLoopMode)>>('CFRunLoopAddObserver');
+  late final _CFRunLoopAddObserver1 = _CFRunLoopAddObserver1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopObserverRef, CFRunLoopMode)>();
+
+  void CFRunLoopRemoveObserver1(
+    CFRunLoopRef rl,
+    CFRunLoopObserverRef observer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopRemoveObserver1(
+      rl,
+      observer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopRemoveObserver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopObserverRef,
+              CFRunLoopMode)>>('CFRunLoopRemoveObserver');
+  late final _CFRunLoopRemoveObserver1 =
+      _CFRunLoopRemoveObserver1Ptr.asFunction<
+          void Function(CFRunLoopRef, CFRunLoopObserverRef, CFRunLoopMode)>();
+
+  int CFRunLoopContainsTimer1(
+    CFRunLoopRef rl,
+    CFRunLoopTimerRef timer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopContainsTimer1(
+      rl,
+      timer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopContainsTimer1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFRunLoopRef, CFRunLoopTimerRef,
+              CFRunLoopMode)>>('CFRunLoopContainsTimer');
+  late final _CFRunLoopContainsTimer1 = _CFRunLoopContainsTimer1Ptr.asFunction<
+      int Function(CFRunLoopRef, CFRunLoopTimerRef, CFRunLoopMode)>();
+
+  void CFRunLoopAddTimer1(
+    CFRunLoopRef rl,
+    CFRunLoopTimerRef timer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopAddTimer1(
+      rl,
+      timer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopAddTimer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopTimerRef,
+              CFRunLoopMode)>>('CFRunLoopAddTimer');
+  late final _CFRunLoopAddTimer1 = _CFRunLoopAddTimer1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopTimerRef, CFRunLoopMode)>();
+
+  void CFRunLoopRemoveTimer1(
+    CFRunLoopRef rl,
+    CFRunLoopTimerRef timer,
+    CFRunLoopMode mode,
+  ) {
+    return _CFRunLoopRemoveTimer1(
+      rl,
+      timer,
+      mode,
+    );
+  }
+
+  late final _CFRunLoopRemoveTimer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopRef, CFRunLoopTimerRef,
+              CFRunLoopMode)>>('CFRunLoopRemoveTimer');
+  late final _CFRunLoopRemoveTimer1 = _CFRunLoopRemoveTimer1Ptr.asFunction<
+      void Function(CFRunLoopRef, CFRunLoopTimerRef, CFRunLoopMode)>();
+
+  int CFRunLoopSourceGetTypeID1() {
+    return _CFRunLoopSourceGetTypeID1();
+  }
+
+  late final _CFRunLoopSourceGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFRunLoopSourceGetTypeID');
+  late final _CFRunLoopSourceGetTypeID1 =
+      _CFRunLoopSourceGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFRunLoopSourceRef CFRunLoopSourceCreate1(
+    CFAllocatorRef allocator,
+    int order,
+    ffi.Pointer<CFRunLoopSourceContext> context,
+  ) {
+    return _CFRunLoopSourceCreate1(
+      allocator,
+      order,
+      context,
+    );
+  }
+
+  late final _CFRunLoopSourceCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFIndex,
+              ffi.Pointer<CFRunLoopSourceContext>)>>('CFRunLoopSourceCreate');
+  late final _CFRunLoopSourceCreate1 = _CFRunLoopSourceCreate1Ptr.asFunction<
+      CFRunLoopSourceRef Function(
+          CFAllocatorRef, int, ffi.Pointer<CFRunLoopSourceContext>)>();
+
+  int CFRunLoopSourceGetOrder1(
+    CFRunLoopSourceRef source,
+  ) {
+    return _CFRunLoopSourceGetOrder1(
+      source,
+    );
+  }
+
+  late final _CFRunLoopSourceGetOrder1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFRunLoopSourceRef)>>(
+          'CFRunLoopSourceGetOrder');
+  late final _CFRunLoopSourceGetOrder1 = _CFRunLoopSourceGetOrder1Ptr
+      .asFunction<int Function(CFRunLoopSourceRef)>();
+
+  void CFRunLoopSourceInvalidate1(
+    CFRunLoopSourceRef source,
+  ) {
+    return _CFRunLoopSourceInvalidate1(
+      source,
+    );
+  }
+
+  late final _CFRunLoopSourceInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopSourceRef)>>(
+          'CFRunLoopSourceInvalidate');
+  late final _CFRunLoopSourceInvalidate1 = _CFRunLoopSourceInvalidate1Ptr
+      .asFunction<void Function(CFRunLoopSourceRef)>();
+
+  int CFRunLoopSourceIsValid1(
+    CFRunLoopSourceRef source,
+  ) {
+    return _CFRunLoopSourceIsValid1(
+      source,
+    );
+  }
+
+  late final _CFRunLoopSourceIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopSourceRef)>>(
+          'CFRunLoopSourceIsValid');
+  late final _CFRunLoopSourceIsValid1 = _CFRunLoopSourceIsValid1Ptr.asFunction<
+      int Function(CFRunLoopSourceRef)>();
+
+  void CFRunLoopSourceGetContext1(
+    CFRunLoopSourceRef source,
+    ffi.Pointer<CFRunLoopSourceContext> context,
+  ) {
+    return _CFRunLoopSourceGetContext1(
+      source,
+      context,
+    );
+  }
+
+  late final _CFRunLoopSourceGetContext1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFRunLoopSourceRef, ffi.Pointer<CFRunLoopSourceContext>)>>(
+      'CFRunLoopSourceGetContext');
+  late final _CFRunLoopSourceGetContext1 =
+      _CFRunLoopSourceGetContext1Ptr.asFunction<
+          void Function(
+              CFRunLoopSourceRef, ffi.Pointer<CFRunLoopSourceContext>)>();
+
+  void CFRunLoopSourceSignal1(
+    CFRunLoopSourceRef source,
+  ) {
+    return _CFRunLoopSourceSignal1(
+      source,
+    );
+  }
+
+  late final _CFRunLoopSourceSignal1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopSourceRef)>>(
+          'CFRunLoopSourceSignal');
+  late final _CFRunLoopSourceSignal1 = _CFRunLoopSourceSignal1Ptr.asFunction<
+      void Function(CFRunLoopSourceRef)>();
+
+  int CFRunLoopObserverGetTypeID1() {
+    return _CFRunLoopObserverGetTypeID1();
+  }
+
+  late final _CFRunLoopObserverGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFRunLoopObserverGetTypeID');
+  late final _CFRunLoopObserverGetTypeID1 =
+      _CFRunLoopObserverGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFRunLoopObserverRef CFRunLoopObserverCreate1(
+    CFAllocatorRef allocator,
+    int activities,
+    int repeats,
+    int order,
+    CFRunLoopObserverCallBack callout,
+    ffi.Pointer<CFRunLoopObserverContext> context,
+  ) {
+    return _CFRunLoopObserverCreate1(
+      allocator,
+      activities,
+      repeats,
+      order,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFRunLoopObserverCreate1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFRunLoopObserverRef Function(
+                  CFAllocatorRef,
+                  CFOptionFlags,
+                  Boolean,
+                  CFIndex,
+                  CFRunLoopObserverCallBack,
+                  ffi.Pointer<CFRunLoopObserverContext>)>>(
+      'CFRunLoopObserverCreate');
+  late final _CFRunLoopObserverCreate1 =
+      _CFRunLoopObserverCreate1Ptr.asFunction<
+          CFRunLoopObserverRef Function(
+              CFAllocatorRef,
+              int,
+              int,
+              int,
+              CFRunLoopObserverCallBack,
+              ffi.Pointer<CFRunLoopObserverContext>)>();
+
+  CFRunLoopObserverRef CFRunLoopObserverCreateWithHandler1(
+    CFAllocatorRef allocator,
+    int activities,
+    int repeats,
+    int order,
+    ffi.Pointer<ObjCObject> block,
+  ) {
+    return _CFRunLoopObserverCreateWithHandler1(
+      allocator,
+      activities,
+      repeats,
+      order,
+      block,
+    );
+  }
+
+  late final _CFRunLoopObserverCreateWithHandler1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopObserverRef Function(
+              CFAllocatorRef,
+              CFOptionFlags,
+              Boolean,
+              CFIndex,
+              ffi.Pointer<ObjCObject>)>>('CFRunLoopObserverCreateWithHandler');
+  late final _CFRunLoopObserverCreateWithHandler1 =
+      _CFRunLoopObserverCreateWithHandler1Ptr.asFunction<
+          CFRunLoopObserverRef Function(
+              CFAllocatorRef, int, int, int, ffi.Pointer<ObjCObject>)>();
+
+  int CFRunLoopObserverGetActivities1(
+    CFRunLoopObserverRef observer,
+  ) {
+    return _CFRunLoopObserverGetActivities1(
+      observer,
+    );
+  }
+
+  late final _CFRunLoopObserverGetActivities1Ptr =
+      _lookup<ffi.NativeFunction<CFOptionFlags Function(CFRunLoopObserverRef)>>(
+          'CFRunLoopObserverGetActivities');
+  late final _CFRunLoopObserverGetActivities1 =
+      _CFRunLoopObserverGetActivities1Ptr.asFunction<
+          int Function(CFRunLoopObserverRef)>();
+
+  int CFRunLoopObserverDoesRepeat1(
+    CFRunLoopObserverRef observer,
+  ) {
+    return _CFRunLoopObserverDoesRepeat1(
+      observer,
+    );
+  }
+
+  late final _CFRunLoopObserverDoesRepeat1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopObserverRef)>>(
+          'CFRunLoopObserverDoesRepeat');
+  late final _CFRunLoopObserverDoesRepeat1 = _CFRunLoopObserverDoesRepeat1Ptr
+      .asFunction<int Function(CFRunLoopObserverRef)>();
+
+  int CFRunLoopObserverGetOrder1(
+    CFRunLoopObserverRef observer,
+  ) {
+    return _CFRunLoopObserverGetOrder1(
+      observer,
+    );
+  }
+
+  late final _CFRunLoopObserverGetOrder1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFRunLoopObserverRef)>>(
+          'CFRunLoopObserverGetOrder');
+  late final _CFRunLoopObserverGetOrder1 = _CFRunLoopObserverGetOrder1Ptr
+      .asFunction<int Function(CFRunLoopObserverRef)>();
+
+  void CFRunLoopObserverInvalidate1(
+    CFRunLoopObserverRef observer,
+  ) {
+    return _CFRunLoopObserverInvalidate1(
+      observer,
+    );
+  }
+
+  late final _CFRunLoopObserverInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopObserverRef)>>(
+          'CFRunLoopObserverInvalidate');
+  late final _CFRunLoopObserverInvalidate1 = _CFRunLoopObserverInvalidate1Ptr
+      .asFunction<void Function(CFRunLoopObserverRef)>();
+
+  int CFRunLoopObserverIsValid1(
+    CFRunLoopObserverRef observer,
+  ) {
+    return _CFRunLoopObserverIsValid1(
+      observer,
+    );
+  }
+
+  late final _CFRunLoopObserverIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopObserverRef)>>(
+          'CFRunLoopObserverIsValid');
+  late final _CFRunLoopObserverIsValid1 = _CFRunLoopObserverIsValid1Ptr
+      .asFunction<int Function(CFRunLoopObserverRef)>();
+
+  void CFRunLoopObserverGetContext1(
+    CFRunLoopObserverRef observer,
+    ffi.Pointer<CFRunLoopObserverContext> context,
+  ) {
+    return _CFRunLoopObserverGetContext1(
+      observer,
+      context,
+    );
+  }
+
+  late final _CFRunLoopObserverGetContext1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(CFRunLoopObserverRef,
+                  ffi.Pointer<CFRunLoopObserverContext>)>>(
+      'CFRunLoopObserverGetContext');
+  late final _CFRunLoopObserverGetContext1 =
+      _CFRunLoopObserverGetContext1Ptr.asFunction<
+          void Function(
+              CFRunLoopObserverRef, ffi.Pointer<CFRunLoopObserverContext>)>();
+
+  int CFRunLoopTimerGetTypeID1() {
+    return _CFRunLoopTimerGetTypeID1();
+  }
+
+  late final _CFRunLoopTimerGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFRunLoopTimerGetTypeID');
+  late final _CFRunLoopTimerGetTypeID1 =
+      _CFRunLoopTimerGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFRunLoopTimerRef CFRunLoopTimerCreate1(
+    CFAllocatorRef allocator,
+    double fireDate,
+    double interval,
+    int flags,
+    int order,
+    CFRunLoopTimerCallBack callout,
+    ffi.Pointer<CFRunLoopTimerContext> context,
+  ) {
+    return _CFRunLoopTimerCreate1(
+      allocator,
+      fireDate,
+      interval,
+      flags,
+      order,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFRunLoopTimerCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopTimerRef Function(
+              CFAllocatorRef,
+              CFAbsoluteTime,
+              CFTimeInterval,
+              CFOptionFlags,
+              CFIndex,
+              CFRunLoopTimerCallBack,
+              ffi.Pointer<CFRunLoopTimerContext>)>>('CFRunLoopTimerCreate');
+  late final _CFRunLoopTimerCreate1 = _CFRunLoopTimerCreate1Ptr.asFunction<
+      CFRunLoopTimerRef Function(CFAllocatorRef, double, double, int, int,
+          CFRunLoopTimerCallBack, ffi.Pointer<CFRunLoopTimerContext>)>();
+
+  CFRunLoopTimerRef CFRunLoopTimerCreateWithHandler1(
+    CFAllocatorRef allocator,
+    double fireDate,
+    double interval,
+    int flags,
+    int order,
+    ffi.Pointer<ObjCObject> block,
+  ) {
+    return _CFRunLoopTimerCreateWithHandler1(
+      allocator,
+      fireDate,
+      interval,
+      flags,
+      order,
+      block,
+    );
+  }
+
+  late final _CFRunLoopTimerCreateWithHandler1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopTimerRef Function(
+              CFAllocatorRef,
+              CFAbsoluteTime,
+              CFTimeInterval,
+              CFOptionFlags,
+              CFIndex,
+              ffi.Pointer<ObjCObject>)>>('CFRunLoopTimerCreateWithHandler');
+  late final _CFRunLoopTimerCreateWithHandler1 =
+      _CFRunLoopTimerCreateWithHandler1Ptr.asFunction<
+          CFRunLoopTimerRef Function(CFAllocatorRef, double, double, int, int,
+              ffi.Pointer<ObjCObject>)>();
+
+  double CFRunLoopTimerGetNextFireDate1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerGetNextFireDate1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerGetNextFireDate1Ptr =
+      _lookup<ffi.NativeFunction<CFAbsoluteTime Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerGetNextFireDate');
+  late final _CFRunLoopTimerGetNextFireDate1 =
+      _CFRunLoopTimerGetNextFireDate1Ptr.asFunction<
+          double Function(CFRunLoopTimerRef)>();
+
+  void CFRunLoopTimerSetNextFireDate1(
+    CFRunLoopTimerRef timer,
+    double fireDate,
+  ) {
+    return _CFRunLoopTimerSetNextFireDate1(
+      timer,
+      fireDate,
+    );
+  }
+
+  late final _CFRunLoopTimerSetNextFireDate1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopTimerRef,
+              CFAbsoluteTime)>>('CFRunLoopTimerSetNextFireDate');
+  late final _CFRunLoopTimerSetNextFireDate1 =
+      _CFRunLoopTimerSetNextFireDate1Ptr.asFunction<
+          void Function(CFRunLoopTimerRef, double)>();
+
+  double CFRunLoopTimerGetInterval1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerGetInterval1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerGetInterval1Ptr =
+      _lookup<ffi.NativeFunction<CFTimeInterval Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerGetInterval');
+  late final _CFRunLoopTimerGetInterval1 = _CFRunLoopTimerGetInterval1Ptr
+      .asFunction<double Function(CFRunLoopTimerRef)>();
+
+  int CFRunLoopTimerDoesRepeat1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerDoesRepeat1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerDoesRepeat1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerDoesRepeat');
+  late final _CFRunLoopTimerDoesRepeat1 = _CFRunLoopTimerDoesRepeat1Ptr
+      .asFunction<int Function(CFRunLoopTimerRef)>();
+
+  int CFRunLoopTimerGetOrder1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerGetOrder1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerGetOrder1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerGetOrder');
+  late final _CFRunLoopTimerGetOrder1 =
+      _CFRunLoopTimerGetOrder1Ptr.asFunction<int Function(CFRunLoopTimerRef)>();
+
+  void CFRunLoopTimerInvalidate1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerInvalidate1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerInvalidate');
+  late final _CFRunLoopTimerInvalidate1 = _CFRunLoopTimerInvalidate1Ptr
+      .asFunction<void Function(CFRunLoopTimerRef)>();
+
+  int CFRunLoopTimerIsValid1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerIsValid1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerIsValid');
+  late final _CFRunLoopTimerIsValid1 =
+      _CFRunLoopTimerIsValid1Ptr.asFunction<int Function(CFRunLoopTimerRef)>();
+
+  void CFRunLoopTimerGetContext1(
+    CFRunLoopTimerRef timer,
+    ffi.Pointer<CFRunLoopTimerContext> context,
+  ) {
+    return _CFRunLoopTimerGetContext1(
+      timer,
+      context,
+    );
+  }
+
+  late final _CFRunLoopTimerGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopTimerRef,
+              ffi.Pointer<CFRunLoopTimerContext>)>>('CFRunLoopTimerGetContext');
+  late final _CFRunLoopTimerGetContext1 =
+      _CFRunLoopTimerGetContext1Ptr.asFunction<
+          void Function(
+              CFRunLoopTimerRef, ffi.Pointer<CFRunLoopTimerContext>)>();
+
+  double CFRunLoopTimerGetTolerance1(
+    CFRunLoopTimerRef timer,
+  ) {
+    return _CFRunLoopTimerGetTolerance1(
+      timer,
+    );
+  }
+
+  late final _CFRunLoopTimerGetTolerance1Ptr =
+      _lookup<ffi.NativeFunction<CFTimeInterval Function(CFRunLoopTimerRef)>>(
+          'CFRunLoopTimerGetTolerance');
+  late final _CFRunLoopTimerGetTolerance1 = _CFRunLoopTimerGetTolerance1Ptr
+      .asFunction<double Function(CFRunLoopTimerRef)>();
+
+  void CFRunLoopTimerSetTolerance1(
+    CFRunLoopTimerRef timer,
+    double tolerance,
+  ) {
+    return _CFRunLoopTimerSetTolerance1(
+      timer,
+      tolerance,
+    );
+  }
+
+  late final _CFRunLoopTimerSetTolerance1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFRunLoopTimerRef,
+              CFTimeInterval)>>('CFRunLoopTimerSetTolerance');
+  late final _CFRunLoopTimerSetTolerance1 = _CFRunLoopTimerSetTolerance1Ptr
+      .asFunction<void Function(CFRunLoopTimerRef, double)>();
+
+  int CFSocketGetTypeID1() {
+    return _CFSocketGetTypeID1();
+  }
+
+  late final _CFSocketGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFSocketGetTypeID');
+  late final _CFSocketGetTypeID1 =
+      _CFSocketGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFSocketRef CFSocketCreate1(
+    CFAllocatorRef allocator,
+    int protocolFamily,
+    int socketType,
+    int protocol,
+    int callBackTypes,
+    CFSocketCallBack callout,
+    ffi.Pointer<CFSocketContext> context,
+  ) {
+    return _CFSocketCreate1(
+      allocator,
+      protocolFamily,
+      socketType,
+      protocol,
+      callBackTypes,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFSocketCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFSocketRef Function(
+              CFAllocatorRef,
+              SInt32,
+              SInt32,
+              SInt32,
+              CFOptionFlags,
+              CFSocketCallBack,
+              ffi.Pointer<CFSocketContext>)>>('CFSocketCreate');
+  late final _CFSocketCreate1 = _CFSocketCreate1Ptr.asFunction<
+      CFSocketRef Function(CFAllocatorRef, int, int, int, int, CFSocketCallBack,
+          ffi.Pointer<CFSocketContext>)>();
+
+  CFSocketRef CFSocketCreateWithNative1(
+    CFAllocatorRef allocator,
+    int sock,
+    int callBackTypes,
+    CFSocketCallBack callout,
+    ffi.Pointer<CFSocketContext> context,
+  ) {
+    return _CFSocketCreateWithNative1(
+      allocator,
+      sock,
+      callBackTypes,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFSocketCreateWithNative1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFSocketRef Function(
+              CFAllocatorRef,
+              CFSocketNativeHandle,
+              CFOptionFlags,
+              CFSocketCallBack,
+              ffi.Pointer<CFSocketContext>)>>('CFSocketCreateWithNative');
+  late final _CFSocketCreateWithNative1 =
+      _CFSocketCreateWithNative1Ptr.asFunction<
+          CFSocketRef Function(CFAllocatorRef, int, int, CFSocketCallBack,
+              ffi.Pointer<CFSocketContext>)>();
+
+  CFSocketRef CFSocketCreateWithSocketSignature1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFSocketSignature> signature,
+    int callBackTypes,
+    CFSocketCallBack callout,
+    ffi.Pointer<CFSocketContext> context,
+  ) {
+    return _CFSocketCreateWithSocketSignature1(
+      allocator,
+      signature,
+      callBackTypes,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFSocketCreateWithSocketSignature1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFSocketRef Function(
+                  CFAllocatorRef,
+                  ffi.Pointer<CFSocketSignature>,
+                  CFOptionFlags,
+                  CFSocketCallBack,
+                  ffi.Pointer<CFSocketContext>)>>(
+      'CFSocketCreateWithSocketSignature');
+  late final _CFSocketCreateWithSocketSignature1 =
+      _CFSocketCreateWithSocketSignature1Ptr.asFunction<
+          CFSocketRef Function(CFAllocatorRef, ffi.Pointer<CFSocketSignature>,
+              int, CFSocketCallBack, ffi.Pointer<CFSocketContext>)>();
+
+  CFSocketRef CFSocketCreateConnectedToSocketSignature1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFSocketSignature> signature,
+    int callBackTypes,
+    CFSocketCallBack callout,
+    ffi.Pointer<CFSocketContext> context,
+    double timeout,
+  ) {
+    return _CFSocketCreateConnectedToSocketSignature1(
+      allocator,
+      signature,
+      callBackTypes,
+      callout,
+      context,
+      timeout,
+    );
+  }
+
+  late final _CFSocketCreateConnectedToSocketSignature1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFSocketRef Function(
+              CFAllocatorRef,
+              ffi.Pointer<CFSocketSignature>,
+              CFOptionFlags,
+              CFSocketCallBack,
+              ffi.Pointer<CFSocketContext>,
+              CFTimeInterval)>>('CFSocketCreateConnectedToSocketSignature');
+  late final _CFSocketCreateConnectedToSocketSignature1 =
+      _CFSocketCreateConnectedToSocketSignature1Ptr.asFunction<
+          CFSocketRef Function(CFAllocatorRef, ffi.Pointer<CFSocketSignature>,
+              int, CFSocketCallBack, ffi.Pointer<CFSocketContext>, double)>();
+
+  int CFSocketSetAddress1(
+    CFSocketRef s,
+    CFDataRef address,
+  ) {
+    return _CFSocketSetAddress1(
+      s,
+      address,
+    );
+  }
+
+  late final _CFSocketSetAddress1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFSocketRef, CFDataRef)>>(
+          'CFSocketSetAddress');
+  late final _CFSocketSetAddress1 = _CFSocketSetAddress1Ptr.asFunction<
+      int Function(CFSocketRef, CFDataRef)>();
+
+  int CFSocketConnectToAddress1(
+    CFSocketRef s,
+    CFDataRef address,
+    double timeout,
+  ) {
+    return _CFSocketConnectToAddress1(
+      s,
+      address,
+      timeout,
+    );
+  }
+
+  late final _CFSocketConnectToAddress1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFSocketRef, CFDataRef,
+              CFTimeInterval)>>('CFSocketConnectToAddress');
+  late final _CFSocketConnectToAddress1 = _CFSocketConnectToAddress1Ptr
+      .asFunction<int Function(CFSocketRef, CFDataRef, double)>();
+
+  void CFSocketInvalidate1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketInvalidate1(
+      s,
+    );
+  }
+
+  late final _CFSocketInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFSocketRef)>>(
+          'CFSocketInvalidate');
+  late final _CFSocketInvalidate1 =
+      _CFSocketInvalidate1Ptr.asFunction<void Function(CFSocketRef)>();
+
+  int CFSocketIsValid1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketIsValid1(
+      s,
+    );
+  }
+
+  late final _CFSocketIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFSocketRef)>>(
+          'CFSocketIsValid');
+  late final _CFSocketIsValid1 =
+      _CFSocketIsValid1Ptr.asFunction<int Function(CFSocketRef)>();
+
+  CFDataRef CFSocketCopyAddress1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketCopyAddress1(
+      s,
+    );
+  }
+
+  late final _CFSocketCopyAddress1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(CFSocketRef)>>(
+          'CFSocketCopyAddress');
+  late final _CFSocketCopyAddress1 =
+      _CFSocketCopyAddress1Ptr.asFunction<CFDataRef Function(CFSocketRef)>();
+
+  CFDataRef CFSocketCopyPeerAddress1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketCopyPeerAddress1(
+      s,
+    );
+  }
+
+  late final _CFSocketCopyPeerAddress1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(CFSocketRef)>>(
+          'CFSocketCopyPeerAddress');
+  late final _CFSocketCopyPeerAddress1 = _CFSocketCopyPeerAddress1Ptr
+      .asFunction<CFDataRef Function(CFSocketRef)>();
+
+  void CFSocketGetContext1(
+    CFSocketRef s,
+    ffi.Pointer<CFSocketContext> context,
+  ) {
+    return _CFSocketGetContext1(
+      s,
+      context,
+    );
+  }
+
+  late final _CFSocketGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFSocketRef,
+              ffi.Pointer<CFSocketContext>)>>('CFSocketGetContext');
+  late final _CFSocketGetContext1 = _CFSocketGetContext1Ptr.asFunction<
+      void Function(CFSocketRef, ffi.Pointer<CFSocketContext>)>();
+
+  int CFSocketGetNative1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketGetNative1(
+      s,
+    );
+  }
+
+  late final _CFSocketGetNative1Ptr =
+      _lookup<ffi.NativeFunction<CFSocketNativeHandle Function(CFSocketRef)>>(
+          'CFSocketGetNative');
+  late final _CFSocketGetNative1 =
+      _CFSocketGetNative1Ptr.asFunction<int Function(CFSocketRef)>();
+
+  CFRunLoopSourceRef CFSocketCreateRunLoopSource1(
+    CFAllocatorRef allocator,
+    CFSocketRef s,
+    int order,
+  ) {
+    return _CFSocketCreateRunLoopSource1(
+      allocator,
+      s,
+      order,
+    );
+  }
+
+  late final _CFSocketCreateRunLoopSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFSocketRef,
+              CFIndex)>>('CFSocketCreateRunLoopSource');
+  late final _CFSocketCreateRunLoopSource1 =
+      _CFSocketCreateRunLoopSource1Ptr.asFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFSocketRef, int)>();
+
+  int CFSocketGetSocketFlags1(
+    CFSocketRef s,
+  ) {
+    return _CFSocketGetSocketFlags1(
+      s,
+    );
+  }
+
+  late final _CFSocketGetSocketFlags1Ptr =
+      _lookup<ffi.NativeFunction<CFOptionFlags Function(CFSocketRef)>>(
+          'CFSocketGetSocketFlags');
+  late final _CFSocketGetSocketFlags1 =
+      _CFSocketGetSocketFlags1Ptr.asFunction<int Function(CFSocketRef)>();
+
+  void CFSocketSetSocketFlags1(
+    CFSocketRef s,
+    int flags,
+  ) {
+    return _CFSocketSetSocketFlags1(
+      s,
+      flags,
+    );
+  }
+
+  late final _CFSocketSetSocketFlags1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFSocketRef, CFOptionFlags)>>(
+      'CFSocketSetSocketFlags');
+  late final _CFSocketSetSocketFlags1 =
+      _CFSocketSetSocketFlags1Ptr.asFunction<void Function(CFSocketRef, int)>();
+
+  void CFSocketDisableCallBacks1(
+    CFSocketRef s,
+    int callBackTypes,
+  ) {
+    return _CFSocketDisableCallBacks1(
+      s,
+      callBackTypes,
+    );
+  }
+
+  late final _CFSocketDisableCallBacks1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFSocketRef, CFOptionFlags)>>(
+      'CFSocketDisableCallBacks');
+  late final _CFSocketDisableCallBacks1 = _CFSocketDisableCallBacks1Ptr
+      .asFunction<void Function(CFSocketRef, int)>();
+
+  void CFSocketEnableCallBacks1(
+    CFSocketRef s,
+    int callBackTypes,
+  ) {
+    return _CFSocketEnableCallBacks1(
+      s,
+      callBackTypes,
+    );
+  }
+
+  late final _CFSocketEnableCallBacks1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFSocketRef, CFOptionFlags)>>(
+      'CFSocketEnableCallBacks');
+  late final _CFSocketEnableCallBacks1 = _CFSocketEnableCallBacks1Ptr
+      .asFunction<void Function(CFSocketRef, int)>();
+
+  int CFSocketSendData1(
+    CFSocketRef s,
+    CFDataRef address,
+    CFDataRef data,
+    double timeout,
+  ) {
+    return _CFSocketSendData1(
+      s,
+      address,
+      data,
+      timeout,
+    );
+  }
+
+  late final _CFSocketSendData1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFSocketRef, CFDataRef, CFDataRef,
+              CFTimeInterval)>>('CFSocketSendData');
+  late final _CFSocketSendData1 = _CFSocketSendData1Ptr.asFunction<
+      int Function(CFSocketRef, CFDataRef, CFDataRef, double)>();
+
+  int CFSocketRegisterValue1(
+    ffi.Pointer<CFSocketSignature> nameServerSignature,
+    double timeout,
+    CFStringRef name,
+    CFPropertyListRef value,
+  ) {
+    return _CFSocketRegisterValue1(
+      nameServerSignature,
+      timeout,
+      name,
+      value,
+    );
+  }
+
+  late final _CFSocketRegisterValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<CFSocketSignature>, CFTimeInterval,
+              CFStringRef, CFPropertyListRef)>>('CFSocketRegisterValue');
+  late final _CFSocketRegisterValue1 = _CFSocketRegisterValue1Ptr.asFunction<
+      int Function(ffi.Pointer<CFSocketSignature>, double, CFStringRef,
+          CFPropertyListRef)>();
+
+  int CFSocketCopyRegisteredValue1(
+    ffi.Pointer<CFSocketSignature> nameServerSignature,
+    double timeout,
+    CFStringRef name,
+    ffi.Pointer<CFPropertyListRef> value,
+    ffi.Pointer<CFDataRef> nameServerAddress,
+  ) {
+    return _CFSocketCopyRegisteredValue1(
+      nameServerSignature,
+      timeout,
+      name,
+      value,
+      nameServerAddress,
+    );
+  }
+
+  late final _CFSocketCopyRegisteredValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<CFSocketSignature>,
+              CFTimeInterval,
+              CFStringRef,
+              ffi.Pointer<CFPropertyListRef>,
+              ffi.Pointer<CFDataRef>)>>('CFSocketCopyRegisteredValue');
+  late final _CFSocketCopyRegisteredValue1 =
+      _CFSocketCopyRegisteredValue1Ptr.asFunction<
+          int Function(ffi.Pointer<CFSocketSignature>, double, CFStringRef,
+              ffi.Pointer<CFPropertyListRef>, ffi.Pointer<CFDataRef>)>();
+
+  int CFSocketRegisterSocketSignature1(
+    ffi.Pointer<CFSocketSignature> nameServerSignature,
+    double timeout,
+    CFStringRef name,
+    ffi.Pointer<CFSocketSignature> signature,
+  ) {
+    return _CFSocketRegisterSocketSignature1(
+      nameServerSignature,
+      timeout,
+      name,
+      signature,
+    );
+  }
+
+  late final _CFSocketRegisterSocketSignature1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<CFSocketSignature>, CFTimeInterval,
+                  CFStringRef, ffi.Pointer<CFSocketSignature>)>>(
+      'CFSocketRegisterSocketSignature');
+  late final _CFSocketRegisterSocketSignature1 =
+      _CFSocketRegisterSocketSignature1Ptr.asFunction<
+          int Function(ffi.Pointer<CFSocketSignature>, double, CFStringRef,
+              ffi.Pointer<CFSocketSignature>)>();
+
+  int CFSocketCopyRegisteredSocketSignature1(
+    ffi.Pointer<CFSocketSignature> nameServerSignature,
+    double timeout,
+    CFStringRef name,
+    ffi.Pointer<CFSocketSignature> signature,
+    ffi.Pointer<CFDataRef> nameServerAddress,
+  ) {
+    return _CFSocketCopyRegisteredSocketSignature1(
+      nameServerSignature,
+      timeout,
+      name,
+      signature,
+      nameServerAddress,
+    );
+  }
+
+  late final _CFSocketCopyRegisteredSocketSignature1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<CFSocketSignature>,
+                  CFTimeInterval,
+                  CFStringRef,
+                  ffi.Pointer<CFSocketSignature>,
+                  ffi.Pointer<CFDataRef>)>>(
+      'CFSocketCopyRegisteredSocketSignature');
+  late final _CFSocketCopyRegisteredSocketSignature1 =
+      _CFSocketCopyRegisteredSocketSignature1Ptr.asFunction<
+          int Function(ffi.Pointer<CFSocketSignature>, double, CFStringRef,
+              ffi.Pointer<CFSocketSignature>, ffi.Pointer<CFDataRef>)>();
+
+  int CFSocketUnregister1(
+    ffi.Pointer<CFSocketSignature> nameServerSignature,
+    double timeout,
+    CFStringRef name,
+  ) {
+    return _CFSocketUnregister1(
+      nameServerSignature,
+      timeout,
+      name,
+    );
+  }
+
+  late final _CFSocketUnregister1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<CFSocketSignature>, CFTimeInterval,
+              CFStringRef)>>('CFSocketUnregister');
+  late final _CFSocketUnregister1 = _CFSocketUnregister1Ptr.asFunction<
+      int Function(ffi.Pointer<CFSocketSignature>, double, CFStringRef)>();
+
+  void CFSocketSetDefaultNameRegistryPortNumber1(
+    int port,
+  ) {
+    return _CFSocketSetDefaultNameRegistryPortNumber1(
+      port,
+    );
+  }
+
+  late final _CFSocketSetDefaultNameRegistryPortNumber1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(UInt16)>>(
+          'CFSocketSetDefaultNameRegistryPortNumber');
+  late final _CFSocketSetDefaultNameRegistryPortNumber1 =
+      _CFSocketSetDefaultNameRegistryPortNumber1Ptr.asFunction<
+          void Function(int)>();
+
+  int CFSocketGetDefaultNameRegistryPortNumber1() {
+    return _CFSocketGetDefaultNameRegistryPortNumber1();
+  }
+
+  late final _CFSocketGetDefaultNameRegistryPortNumber1Ptr =
+      _lookup<ffi.NativeFunction<UInt16 Function()>>(
+          'CFSocketGetDefaultNameRegistryPortNumber');
+  late final _CFSocketGetDefaultNameRegistryPortNumber1 =
+      _CFSocketGetDefaultNameRegistryPortNumber1Ptr.asFunction<
+          int Function()>();
+
+  int CFReadStreamGetTypeID1() {
+    return _CFReadStreamGetTypeID1();
+  }
+
+  late final _CFReadStreamGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFReadStreamGetTypeID');
+  late final _CFReadStreamGetTypeID1 =
+      _CFReadStreamGetTypeID1Ptr.asFunction<int Function()>();
+
+  int CFWriteStreamGetTypeID1() {
+    return _CFWriteStreamGetTypeID1();
+  }
+
+  late final _CFWriteStreamGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFWriteStreamGetTypeID');
+  late final _CFWriteStreamGetTypeID1 =
+      _CFWriteStreamGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFReadStreamRef CFReadStreamCreateWithBytesNoCopy1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UInt8> bytes,
+    int length,
+    CFAllocatorRef bytesDeallocator,
+  ) {
+    return _CFReadStreamCreateWithBytesNoCopy1(
+      alloc,
+      bytes,
+      length,
+      bytesDeallocator,
+    );
+  }
+
+  late final _CFReadStreamCreateWithBytesNoCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFReadStreamRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, CFIndex,
+              CFAllocatorRef)>>('CFReadStreamCreateWithBytesNoCopy');
+  late final _CFReadStreamCreateWithBytesNoCopy1 =
+      _CFReadStreamCreateWithBytesNoCopy1Ptr.asFunction<
+          CFReadStreamRef Function(
+              CFAllocatorRef, ffi.Pointer<UInt8>, int, CFAllocatorRef)>();
+
+  CFWriteStreamRef CFWriteStreamCreateWithBuffer1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<UInt8> buffer,
+    int bufferCapacity,
+  ) {
+    return _CFWriteStreamCreateWithBuffer1(
+      alloc,
+      buffer,
+      bufferCapacity,
+    );
+  }
+
+  late final _CFWriteStreamCreateWithBuffer1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFWriteStreamRef Function(CFAllocatorRef, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFWriteStreamCreateWithBuffer');
+  late final _CFWriteStreamCreateWithBuffer1 =
+      _CFWriteStreamCreateWithBuffer1Ptr.asFunction<
+          CFWriteStreamRef Function(CFAllocatorRef, ffi.Pointer<UInt8>, int)>();
+
+  CFWriteStreamRef CFWriteStreamCreateWithAllocatedBuffers1(
+    CFAllocatorRef alloc,
+    CFAllocatorRef bufferAllocator,
+  ) {
+    return _CFWriteStreamCreateWithAllocatedBuffers1(
+      alloc,
+      bufferAllocator,
+    );
+  }
+
+  late final _CFWriteStreamCreateWithAllocatedBuffers1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFWriteStreamRef Function(CFAllocatorRef,
+              CFAllocatorRef)>>('CFWriteStreamCreateWithAllocatedBuffers');
+  late final _CFWriteStreamCreateWithAllocatedBuffers1 =
+      _CFWriteStreamCreateWithAllocatedBuffers1Ptr.asFunction<
+          CFWriteStreamRef Function(CFAllocatorRef, CFAllocatorRef)>();
+
+  CFReadStreamRef CFReadStreamCreateWithFile1(
+    CFAllocatorRef alloc,
+    CFURLRef fileURL,
+  ) {
+    return _CFReadStreamCreateWithFile1(
+      alloc,
+      fileURL,
+    );
+  }
+
+  late final _CFReadStreamCreateWithFile1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFReadStreamRef Function(
+              CFAllocatorRef, CFURLRef)>>('CFReadStreamCreateWithFile');
+  late final _CFReadStreamCreateWithFile1 = _CFReadStreamCreateWithFile1Ptr
+      .asFunction<CFReadStreamRef Function(CFAllocatorRef, CFURLRef)>();
+
+  CFWriteStreamRef CFWriteStreamCreateWithFile1(
+    CFAllocatorRef alloc,
+    CFURLRef fileURL,
+  ) {
+    return _CFWriteStreamCreateWithFile1(
+      alloc,
+      fileURL,
+    );
+  }
+
+  late final _CFWriteStreamCreateWithFile1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFWriteStreamRef Function(
+              CFAllocatorRef, CFURLRef)>>('CFWriteStreamCreateWithFile');
+  late final _CFWriteStreamCreateWithFile1 = _CFWriteStreamCreateWithFile1Ptr
+      .asFunction<CFWriteStreamRef Function(CFAllocatorRef, CFURLRef)>();
+
+  void CFStreamCreateBoundPair1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<CFReadStreamRef> readStream,
+    ffi.Pointer<CFWriteStreamRef> writeStream,
+    int transferBufferSize,
+  ) {
+    return _CFStreamCreateBoundPair1(
+      alloc,
+      readStream,
+      writeStream,
+      transferBufferSize,
+    );
+  }
+
+  late final _CFStreamCreateBoundPair1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef,
+              ffi.Pointer<CFReadStreamRef>,
+              ffi.Pointer<CFWriteStreamRef>,
+              CFIndex)>>('CFStreamCreateBoundPair');
+  late final _CFStreamCreateBoundPair1 =
+      _CFStreamCreateBoundPair1Ptr.asFunction<
+          void Function(CFAllocatorRef, ffi.Pointer<CFReadStreamRef>,
+              ffi.Pointer<CFWriteStreamRef>, int)>();
+
+  void CFStreamCreatePairWithSocket1(
+    CFAllocatorRef alloc,
+    int sock,
+    ffi.Pointer<CFReadStreamRef> readStream,
+    ffi.Pointer<CFWriteStreamRef> writeStream,
+  ) {
+    return _CFStreamCreatePairWithSocket1(
+      alloc,
+      sock,
+      readStream,
+      writeStream,
+    );
+  }
+
+  late final _CFStreamCreatePairWithSocket1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef,
+              CFSocketNativeHandle,
+              ffi.Pointer<CFReadStreamRef>,
+              ffi.Pointer<CFWriteStreamRef>)>>('CFStreamCreatePairWithSocket');
+  late final _CFStreamCreatePairWithSocket1 =
+      _CFStreamCreatePairWithSocket1Ptr.asFunction<
+          void Function(CFAllocatorRef, int, ffi.Pointer<CFReadStreamRef>,
+              ffi.Pointer<CFWriteStreamRef>)>();
+
+  void CFStreamCreatePairWithSocketToHost1(
+    CFAllocatorRef alloc,
+    CFStringRef host,
+    int port,
+    ffi.Pointer<CFReadStreamRef> readStream,
+    ffi.Pointer<CFWriteStreamRef> writeStream,
+  ) {
+    return _CFStreamCreatePairWithSocketToHost1(
+      alloc,
+      host,
+      port,
+      readStream,
+      writeStream,
+    );
+  }
+
+  late final _CFStreamCreatePairWithSocketToHost1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFAllocatorRef,
+                  CFStringRef,
+                  UInt32,
+                  ffi.Pointer<CFReadStreamRef>,
+                  ffi.Pointer<CFWriteStreamRef>)>>(
+      'CFStreamCreatePairWithSocketToHost');
+  late final _CFStreamCreatePairWithSocketToHost1 =
+      _CFStreamCreatePairWithSocketToHost1Ptr.asFunction<
+          void Function(CFAllocatorRef, CFStringRef, int,
+              ffi.Pointer<CFReadStreamRef>, ffi.Pointer<CFWriteStreamRef>)>();
+
+  void CFStreamCreatePairWithPeerSocketSignature1(
+    CFAllocatorRef alloc,
+    ffi.Pointer<CFSocketSignature> signature,
+    ffi.Pointer<CFReadStreamRef> readStream,
+    ffi.Pointer<CFWriteStreamRef> writeStream,
+  ) {
+    return _CFStreamCreatePairWithPeerSocketSignature1(
+      alloc,
+      signature,
+      readStream,
+      writeStream,
+    );
+  }
+
+  late final _CFStreamCreatePairWithPeerSocketSignature1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFAllocatorRef,
+                  ffi.Pointer<CFSocketSignature>,
+                  ffi.Pointer<CFReadStreamRef>,
+                  ffi.Pointer<CFWriteStreamRef>)>>(
+      'CFStreamCreatePairWithPeerSocketSignature');
+  late final _CFStreamCreatePairWithPeerSocketSignature1 =
+      _CFStreamCreatePairWithPeerSocketSignature1Ptr.asFunction<
+          void Function(CFAllocatorRef, ffi.Pointer<CFSocketSignature>,
+              ffi.Pointer<CFReadStreamRef>, ffi.Pointer<CFWriteStreamRef>)>();
+
+  int CFReadStreamGetStatus1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamGetStatus1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamGetStatus1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFReadStreamRef)>>(
+          'CFReadStreamGetStatus');
+  late final _CFReadStreamGetStatus1 =
+      _CFReadStreamGetStatus1Ptr.asFunction<int Function(CFReadStreamRef)>();
+
+  int CFWriteStreamGetStatus1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamGetStatus1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamGetStatus1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFWriteStreamRef)>>(
+          'CFWriteStreamGetStatus');
+  late final _CFWriteStreamGetStatus1 =
+      _CFWriteStreamGetStatus1Ptr.asFunction<int Function(CFWriteStreamRef)>();
+
+  CFErrorRef CFReadStreamCopyError1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamCopyError1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamCopyError1Ptr =
+      _lookup<ffi.NativeFunction<CFErrorRef Function(CFReadStreamRef)>>(
+          'CFReadStreamCopyError');
+  late final _CFReadStreamCopyError1 = _CFReadStreamCopyError1Ptr.asFunction<
+      CFErrorRef Function(CFReadStreamRef)>();
+
+  CFErrorRef CFWriteStreamCopyError1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamCopyError1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamCopyError1Ptr =
+      _lookup<ffi.NativeFunction<CFErrorRef Function(CFWriteStreamRef)>>(
+          'CFWriteStreamCopyError');
+  late final _CFWriteStreamCopyError1 = _CFWriteStreamCopyError1Ptr.asFunction<
+      CFErrorRef Function(CFWriteStreamRef)>();
+
+  int CFReadStreamOpen1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamOpen1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamOpen1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFReadStreamRef)>>(
+          'CFReadStreamOpen');
+  late final _CFReadStreamOpen1 =
+      _CFReadStreamOpen1Ptr.asFunction<int Function(CFReadStreamRef)>();
+
+  int CFWriteStreamOpen1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamOpen1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamOpen1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFWriteStreamRef)>>(
+          'CFWriteStreamOpen');
+  late final _CFWriteStreamOpen1 =
+      _CFWriteStreamOpen1Ptr.asFunction<int Function(CFWriteStreamRef)>();
+
+  void CFReadStreamClose1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamClose1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamClose1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFReadStreamRef)>>(
+          'CFReadStreamClose');
+  late final _CFReadStreamClose1 =
+      _CFReadStreamClose1Ptr.asFunction<void Function(CFReadStreamRef)>();
+
+  void CFWriteStreamClose1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamClose1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamClose1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFWriteStreamRef)>>(
+          'CFWriteStreamClose');
+  late final _CFWriteStreamClose1 =
+      _CFWriteStreamClose1Ptr.asFunction<void Function(CFWriteStreamRef)>();
+
+  int CFReadStreamHasBytesAvailable1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamHasBytesAvailable1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamHasBytesAvailable1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFReadStreamRef)>>(
+          'CFReadStreamHasBytesAvailable');
+  late final _CFReadStreamHasBytesAvailable1 =
+      _CFReadStreamHasBytesAvailable1Ptr.asFunction<
+          int Function(CFReadStreamRef)>();
+
+  int CFReadStreamRead1(
+    CFReadStreamRef stream,
+    ffi.Pointer<UInt8> buffer,
+    int bufferLength,
+  ) {
+    return _CFReadStreamRead1(
+      stream,
+      buffer,
+      bufferLength,
+    );
+  }
+
+  late final _CFReadStreamRead1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFReadStreamRef, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFReadStreamRead');
+  late final _CFReadStreamRead1 = _CFReadStreamRead1Ptr.asFunction<
+      int Function(CFReadStreamRef, ffi.Pointer<UInt8>, int)>();
+
+  ffi.Pointer<UInt8> CFReadStreamGetBuffer1(
+    CFReadStreamRef stream,
+    int maxBytesToRead,
+    ffi.Pointer<CFIndex> numBytesRead,
+  ) {
+    return _CFReadStreamGetBuffer1(
+      stream,
+      maxBytesToRead,
+      numBytesRead,
+    );
+  }
+
+  late final _CFReadStreamGetBuffer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<UInt8> Function(CFReadStreamRef, CFIndex,
+              ffi.Pointer<CFIndex>)>>('CFReadStreamGetBuffer');
+  late final _CFReadStreamGetBuffer1 = _CFReadStreamGetBuffer1Ptr.asFunction<
+      ffi.Pointer<UInt8> Function(
+          CFReadStreamRef, int, ffi.Pointer<CFIndex>)>();
+
+  int CFWriteStreamCanAcceptBytes1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamCanAcceptBytes1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamCanAcceptBytes1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFWriteStreamRef)>>(
+          'CFWriteStreamCanAcceptBytes');
+  late final _CFWriteStreamCanAcceptBytes1 = _CFWriteStreamCanAcceptBytes1Ptr
+      .asFunction<int Function(CFWriteStreamRef)>();
+
+  int CFWriteStreamWrite1(
+    CFWriteStreamRef stream,
+    ffi.Pointer<UInt8> buffer,
+    int bufferLength,
+  ) {
+    return _CFWriteStreamWrite1(
+      stream,
+      buffer,
+      bufferLength,
+    );
+  }
+
+  late final _CFWriteStreamWrite1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFWriteStreamRef, ffi.Pointer<UInt8>,
+              CFIndex)>>('CFWriteStreamWrite');
+  late final _CFWriteStreamWrite1 = _CFWriteStreamWrite1Ptr.asFunction<
+      int Function(CFWriteStreamRef, ffi.Pointer<UInt8>, int)>();
+
+  CFTypeRef CFReadStreamCopyProperty1(
+    CFReadStreamRef stream,
+    CFStreamPropertyKey propertyName,
+  ) {
+    return _CFReadStreamCopyProperty1(
+      stream,
+      propertyName,
+    );
+  }
+
+  late final _CFReadStreamCopyProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFReadStreamRef,
+              CFStreamPropertyKey)>>('CFReadStreamCopyProperty');
+  late final _CFReadStreamCopyProperty1 = _CFReadStreamCopyProperty1Ptr
+      .asFunction<CFTypeRef Function(CFReadStreamRef, CFStreamPropertyKey)>();
+
+  CFTypeRef CFWriteStreamCopyProperty1(
+    CFWriteStreamRef stream,
+    CFStreamPropertyKey propertyName,
+  ) {
+    return _CFWriteStreamCopyProperty1(
+      stream,
+      propertyName,
+    );
+  }
+
+  late final _CFWriteStreamCopyProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFWriteStreamRef,
+              CFStreamPropertyKey)>>('CFWriteStreamCopyProperty');
+  late final _CFWriteStreamCopyProperty1 = _CFWriteStreamCopyProperty1Ptr
+      .asFunction<CFTypeRef Function(CFWriteStreamRef, CFStreamPropertyKey)>();
+
+  int CFReadStreamSetProperty1(
+    CFReadStreamRef stream,
+    CFStreamPropertyKey propertyName,
+    CFTypeRef propertyValue,
+  ) {
+    return _CFReadStreamSetProperty1(
+      stream,
+      propertyName,
+      propertyValue,
+    );
+  }
+
+  late final _CFReadStreamSetProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFReadStreamRef, CFStreamPropertyKey,
+              CFTypeRef)>>('CFReadStreamSetProperty');
+  late final _CFReadStreamSetProperty1 =
+      _CFReadStreamSetProperty1Ptr.asFunction<
+          int Function(CFReadStreamRef, CFStreamPropertyKey, CFTypeRef)>();
+
+  int CFWriteStreamSetProperty1(
+    CFWriteStreamRef stream,
+    CFStreamPropertyKey propertyName,
+    CFTypeRef propertyValue,
+  ) {
+    return _CFWriteStreamSetProperty1(
+      stream,
+      propertyName,
+      propertyValue,
+    );
+  }
+
+  late final _CFWriteStreamSetProperty1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFWriteStreamRef, CFStreamPropertyKey,
+              CFTypeRef)>>('CFWriteStreamSetProperty');
+  late final _CFWriteStreamSetProperty1 =
+      _CFWriteStreamSetProperty1Ptr.asFunction<
+          int Function(CFWriteStreamRef, CFStreamPropertyKey, CFTypeRef)>();
+
+  int CFReadStreamSetClient1(
+    CFReadStreamRef stream,
+    int streamEvents,
+    CFReadStreamClientCallBack clientCB,
+    ffi.Pointer<CFStreamClientContext> clientContext,
+  ) {
+    return _CFReadStreamSetClient1(
+      stream,
+      streamEvents,
+      clientCB,
+      clientContext,
+    );
+  }
+
+  late final _CFReadStreamSetClient1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFReadStreamRef,
+              CFOptionFlags,
+              CFReadStreamClientCallBack,
+              ffi.Pointer<CFStreamClientContext>)>>('CFReadStreamSetClient');
+  late final _CFReadStreamSetClient1 = _CFReadStreamSetClient1Ptr.asFunction<
+      int Function(CFReadStreamRef, int, CFReadStreamClientCallBack,
+          ffi.Pointer<CFStreamClientContext>)>();
+
+  int CFWriteStreamSetClient1(
+    CFWriteStreamRef stream,
+    int streamEvents,
+    CFWriteStreamClientCallBack clientCB,
+    ffi.Pointer<CFStreamClientContext> clientContext,
+  ) {
+    return _CFWriteStreamSetClient1(
+      stream,
+      streamEvents,
+      clientCB,
+      clientContext,
+    );
+  }
+
+  late final _CFWriteStreamSetClient1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFWriteStreamRef,
+              CFOptionFlags,
+              CFWriteStreamClientCallBack,
+              ffi.Pointer<CFStreamClientContext>)>>('CFWriteStreamSetClient');
+  late final _CFWriteStreamSetClient1 = _CFWriteStreamSetClient1Ptr.asFunction<
+      int Function(CFWriteStreamRef, int, CFWriteStreamClientCallBack,
+          ffi.Pointer<CFStreamClientContext>)>();
+
+  void CFReadStreamScheduleWithRunLoop1(
+    CFReadStreamRef stream,
+    CFRunLoopRef runLoop,
+    CFRunLoopMode runLoopMode,
+  ) {
+    return _CFReadStreamScheduleWithRunLoop1(
+      stream,
+      runLoop,
+      runLoopMode,
+    );
+  }
+
+  late final _CFReadStreamScheduleWithRunLoop1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFReadStreamRef, CFRunLoopRef,
+              CFRunLoopMode)>>('CFReadStreamScheduleWithRunLoop');
+  late final _CFReadStreamScheduleWithRunLoop1 =
+      _CFReadStreamScheduleWithRunLoop1Ptr.asFunction<
+          void Function(CFReadStreamRef, CFRunLoopRef, CFRunLoopMode)>();
+
+  void CFWriteStreamScheduleWithRunLoop1(
+    CFWriteStreamRef stream,
+    CFRunLoopRef runLoop,
+    CFRunLoopMode runLoopMode,
+  ) {
+    return _CFWriteStreamScheduleWithRunLoop1(
+      stream,
+      runLoop,
+      runLoopMode,
+    );
+  }
+
+  late final _CFWriteStreamScheduleWithRunLoop1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFWriteStreamRef, CFRunLoopRef,
+              CFRunLoopMode)>>('CFWriteStreamScheduleWithRunLoop');
+  late final _CFWriteStreamScheduleWithRunLoop1 =
+      _CFWriteStreamScheduleWithRunLoop1Ptr.asFunction<
+          void Function(CFWriteStreamRef, CFRunLoopRef, CFRunLoopMode)>();
+
+  void CFReadStreamUnscheduleFromRunLoop1(
+    CFReadStreamRef stream,
+    CFRunLoopRef runLoop,
+    CFRunLoopMode runLoopMode,
+  ) {
+    return _CFReadStreamUnscheduleFromRunLoop1(
+      stream,
+      runLoop,
+      runLoopMode,
+    );
+  }
+
+  late final _CFReadStreamUnscheduleFromRunLoop1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFReadStreamRef, CFRunLoopRef,
+              CFRunLoopMode)>>('CFReadStreamUnscheduleFromRunLoop');
+  late final _CFReadStreamUnscheduleFromRunLoop1 =
+      _CFReadStreamUnscheduleFromRunLoop1Ptr.asFunction<
+          void Function(CFReadStreamRef, CFRunLoopRef, CFRunLoopMode)>();
+
+  void CFWriteStreamUnscheduleFromRunLoop1(
+    CFWriteStreamRef stream,
+    CFRunLoopRef runLoop,
+    CFRunLoopMode runLoopMode,
+  ) {
+    return _CFWriteStreamUnscheduleFromRunLoop1(
+      stream,
+      runLoop,
+      runLoopMode,
+    );
+  }
+
+  late final _CFWriteStreamUnscheduleFromRunLoop1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFWriteStreamRef, CFRunLoopRef,
+              CFRunLoopMode)>>('CFWriteStreamUnscheduleFromRunLoop');
+  late final _CFWriteStreamUnscheduleFromRunLoop1 =
+      _CFWriteStreamUnscheduleFromRunLoop1Ptr.asFunction<
+          void Function(CFWriteStreamRef, CFRunLoopRef, CFRunLoopMode)>();
+
+  void CFReadStreamSetDispatchQueue1(
+    CFReadStreamRef stream,
+    dispatch_queue_t q,
+  ) {
+    return _CFReadStreamSetDispatchQueue1(
+      stream,
+      q,
+    );
+  }
+
+  late final _CFReadStreamSetDispatchQueue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFReadStreamRef,
+              dispatch_queue_t)>>('CFReadStreamSetDispatchQueue');
+  late final _CFReadStreamSetDispatchQueue1 = _CFReadStreamSetDispatchQueue1Ptr
+      .asFunction<void Function(CFReadStreamRef, dispatch_queue_t)>();
+
+  void CFWriteStreamSetDispatchQueue1(
+    CFWriteStreamRef stream,
+    dispatch_queue_t q,
+  ) {
+    return _CFWriteStreamSetDispatchQueue1(
+      stream,
+      q,
+    );
+  }
+
+  late final _CFWriteStreamSetDispatchQueue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFWriteStreamRef,
+              dispatch_queue_t)>>('CFWriteStreamSetDispatchQueue');
+  late final _CFWriteStreamSetDispatchQueue1 =
+      _CFWriteStreamSetDispatchQueue1Ptr.asFunction<
+          void Function(CFWriteStreamRef, dispatch_queue_t)>();
+
+  dispatch_queue_t CFReadStreamCopyDispatchQueue1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamCopyDispatchQueue1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamCopyDispatchQueue1Ptr =
+      _lookup<ffi.NativeFunction<dispatch_queue_t Function(CFReadStreamRef)>>(
+          'CFReadStreamCopyDispatchQueue');
+  late final _CFReadStreamCopyDispatchQueue1 =
+      _CFReadStreamCopyDispatchQueue1Ptr.asFunction<
+          dispatch_queue_t Function(CFReadStreamRef)>();
+
+  dispatch_queue_t CFWriteStreamCopyDispatchQueue1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamCopyDispatchQueue1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamCopyDispatchQueue1Ptr =
+      _lookup<ffi.NativeFunction<dispatch_queue_t Function(CFWriteStreamRef)>>(
+          'CFWriteStreamCopyDispatchQueue');
+  late final _CFWriteStreamCopyDispatchQueue1 =
+      _CFWriteStreamCopyDispatchQueue1Ptr.asFunction<
+          dispatch_queue_t Function(CFWriteStreamRef)>();
+
+  CFStreamError CFReadStreamGetError1(
+    CFReadStreamRef stream,
+  ) {
+    return _CFReadStreamGetError1(
+      stream,
+    );
+  }
+
+  late final _CFReadStreamGetError1Ptr =
+      _lookup<ffi.NativeFunction<CFStreamError Function(CFReadStreamRef)>>(
+          'CFReadStreamGetError');
+  late final _CFReadStreamGetError1 = _CFReadStreamGetError1Ptr.asFunction<
+      CFStreamError Function(CFReadStreamRef)>();
+
+  CFStreamError CFWriteStreamGetError1(
+    CFWriteStreamRef stream,
+  ) {
+    return _CFWriteStreamGetError1(
+      stream,
+    );
+  }
+
+  late final _CFWriteStreamGetError1Ptr =
+      _lookup<ffi.NativeFunction<CFStreamError Function(CFWriteStreamRef)>>(
+          'CFWriteStreamGetError');
+  late final _CFWriteStreamGetError1 = _CFWriteStreamGetError1Ptr.asFunction<
+      CFStreamError Function(CFWriteStreamRef)>();
+
+  CFPropertyListRef CFPropertyListCreateFromXMLData1(
+    CFAllocatorRef allocator,
+    CFDataRef xmlData,
+    int mutabilityOption,
+    ffi.Pointer<CFStringRef> errorString,
+  ) {
+    return _CFPropertyListCreateFromXMLData1(
+      allocator,
+      xmlData,
+      mutabilityOption,
+      errorString,
+    );
+  }
+
+  late final _CFPropertyListCreateFromXMLData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFDataRef, CFOptionFlags,
+              ffi.Pointer<CFStringRef>)>>('CFPropertyListCreateFromXMLData');
+  late final _CFPropertyListCreateFromXMLData1 =
+      _CFPropertyListCreateFromXMLData1Ptr.asFunction<
+          CFPropertyListRef Function(
+              CFAllocatorRef, CFDataRef, int, ffi.Pointer<CFStringRef>)>();
+
+  CFDataRef CFPropertyListCreateXMLData1(
+    CFAllocatorRef allocator,
+    CFPropertyListRef propertyList,
+  ) {
+    return _CFPropertyListCreateXMLData1(
+      allocator,
+      propertyList,
+    );
+  }
+
+  late final _CFPropertyListCreateXMLData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(CFAllocatorRef,
+              CFPropertyListRef)>>('CFPropertyListCreateXMLData');
+  late final _CFPropertyListCreateXMLData1 = _CFPropertyListCreateXMLData1Ptr
+      .asFunction<CFDataRef Function(CFAllocatorRef, CFPropertyListRef)>();
+
+  CFPropertyListRef CFPropertyListCreateDeepCopy1(
+    CFAllocatorRef allocator,
+    CFPropertyListRef propertyList,
+    int mutabilityOption,
+  ) {
+    return _CFPropertyListCreateDeepCopy1(
+      allocator,
+      propertyList,
+      mutabilityOption,
+    );
+  }
+
+  late final _CFPropertyListCreateDeepCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFPropertyListRef,
+              CFOptionFlags)>>('CFPropertyListCreateDeepCopy');
+  late final _CFPropertyListCreateDeepCopy1 =
+      _CFPropertyListCreateDeepCopy1Ptr.asFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFPropertyListRef, int)>();
+
+  int CFPropertyListIsValid1(
+    CFPropertyListRef plist,
+    int format,
+  ) {
+    return _CFPropertyListIsValid1(
+      plist,
+      format,
+    );
+  }
+
+  late final _CFPropertyListIsValid1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFPropertyListRef, ffi.Int32)>>(
+      'CFPropertyListIsValid');
+  late final _CFPropertyListIsValid1 = _CFPropertyListIsValid1Ptr.asFunction<
+      int Function(CFPropertyListRef, int)>();
+
+  int CFPropertyListWriteToStream1(
+    CFPropertyListRef propertyList,
+    CFWriteStreamRef stream,
+    int format,
+    ffi.Pointer<CFStringRef> errorString,
+  ) {
+    return _CFPropertyListWriteToStream1(
+      propertyList,
+      stream,
+      format,
+      errorString,
+    );
+  }
+
+  late final _CFPropertyListWriteToStream1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFPropertyListRef, CFWriteStreamRef, ffi.Int32,
+              ffi.Pointer<CFStringRef>)>>('CFPropertyListWriteToStream');
+  late final _CFPropertyListWriteToStream1 =
+      _CFPropertyListWriteToStream1Ptr.asFunction<
+          int Function(CFPropertyListRef, CFWriteStreamRef, int,
+              ffi.Pointer<CFStringRef>)>();
+
+  CFPropertyListRef CFPropertyListCreateFromStream1(
+    CFAllocatorRef allocator,
+    CFReadStreamRef stream,
+    int streamLength,
+    int mutabilityOption,
+    ffi.Pointer<ffi.Int32> format,
+    ffi.Pointer<CFStringRef> errorString,
+  ) {
+    return _CFPropertyListCreateFromStream1(
+      allocator,
+      stream,
+      streamLength,
+      mutabilityOption,
+      format,
+      errorString,
+    );
+  }
+
+  late final _CFPropertyListCreateFromStream1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(
+              CFAllocatorRef,
+              CFReadStreamRef,
+              CFIndex,
+              CFOptionFlags,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<CFStringRef>)>>('CFPropertyListCreateFromStream');
+  late final _CFPropertyListCreateFromStream1 =
+      _CFPropertyListCreateFromStream1Ptr.asFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFReadStreamRef, int, int,
+              ffi.Pointer<ffi.Int32>, ffi.Pointer<CFStringRef>)>();
+
+  CFPropertyListRef CFPropertyListCreateWithData1(
+    CFAllocatorRef allocator,
+    CFDataRef data,
+    int options,
+    ffi.Pointer<ffi.Int32> format,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFPropertyListCreateWithData1(
+      allocator,
+      data,
+      options,
+      format,
+      error,
+    );
+  }
+
+  late final _CFPropertyListCreateWithData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(
+              CFAllocatorRef,
+              CFDataRef,
+              CFOptionFlags,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<CFErrorRef>)>>('CFPropertyListCreateWithData');
+  late final _CFPropertyListCreateWithData1 =
+      _CFPropertyListCreateWithData1Ptr.asFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFDataRef, int,
+              ffi.Pointer<ffi.Int32>, ffi.Pointer<CFErrorRef>)>();
+
+  CFPropertyListRef CFPropertyListCreateWithStream1(
+    CFAllocatorRef allocator,
+    CFReadStreamRef stream,
+    int streamLength,
+    int options,
+    ffi.Pointer<ffi.Int32> format,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFPropertyListCreateWithStream1(
+      allocator,
+      stream,
+      streamLength,
+      options,
+      format,
+      error,
+    );
+  }
+
+  late final _CFPropertyListCreateWithStream1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFPropertyListRef Function(
+              CFAllocatorRef,
+              CFReadStreamRef,
+              CFIndex,
+              CFOptionFlags,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<CFErrorRef>)>>('CFPropertyListCreateWithStream');
+  late final _CFPropertyListCreateWithStream1 =
+      _CFPropertyListCreateWithStream1Ptr.asFunction<
+          CFPropertyListRef Function(CFAllocatorRef, CFReadStreamRef, int, int,
+              ffi.Pointer<ffi.Int32>, ffi.Pointer<CFErrorRef>)>();
+
+  int CFPropertyListWrite1(
+    CFPropertyListRef propertyList,
+    CFWriteStreamRef stream,
+    int format,
+    int options,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFPropertyListWrite1(
+      propertyList,
+      stream,
+      format,
+      options,
+      error,
+    );
+  }
+
+  late final _CFPropertyListWrite1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFPropertyListRef, CFWriteStreamRef, ffi.Int32,
+              CFOptionFlags, ffi.Pointer<CFErrorRef>)>>('CFPropertyListWrite');
+  late final _CFPropertyListWrite1 = _CFPropertyListWrite1Ptr.asFunction<
+      int Function(CFPropertyListRef, CFWriteStreamRef, int, int,
+          ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef CFPropertyListCreateData1(
+    CFAllocatorRef allocator,
+    CFPropertyListRef propertyList,
+    int format,
+    int options,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFPropertyListCreateData1(
+      allocator,
+      propertyList,
+      format,
+      options,
+      error,
+    );
+  }
+
+  late final _CFPropertyListCreateData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(
+              CFAllocatorRef,
+              CFPropertyListRef,
+              ffi.Int32,
+              CFOptionFlags,
+              ffi.Pointer<CFErrorRef>)>>('CFPropertyListCreateData');
+  late final _CFPropertyListCreateData1 =
+      _CFPropertyListCreateData1Ptr.asFunction<
+          CFDataRef Function(CFAllocatorRef, CFPropertyListRef, int, int,
+              ffi.Pointer<CFErrorRef>)>();
+
+  int CFSetGetTypeID1() {
+    return _CFSetGetTypeID1();
+  }
+
+  late final _CFSetGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFSetGetTypeID');
+  late final _CFSetGetTypeID1 =
+      _CFSetGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFSetRef CFSetCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+    int numValues,
+    ffi.Pointer<CFSetCallBacks> callBacks,
+  ) {
+    return _CFSetCreate1(
+      allocator,
+      values,
+      numValues,
+      callBacks,
+    );
+  }
+
+  late final _CFSetCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFSetRef Function(CFAllocatorRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              CFIndex, ffi.Pointer<CFSetCallBacks>)>>('CFSetCreate');
+  late final _CFSetCreate1 = _CFSetCreate1Ptr.asFunction<
+      CFSetRef Function(CFAllocatorRef, ffi.Pointer<ffi.Pointer<ffi.Void>>, int,
+          ffi.Pointer<CFSetCallBacks>)>();
+
+  CFSetRef CFSetCreateCopy1(
+    CFAllocatorRef allocator,
+    CFSetRef theSet,
+  ) {
+    return _CFSetCreateCopy1(
+      allocator,
+      theSet,
+    );
+  }
+
+  late final _CFSetCreateCopy1Ptr =
+      _lookup<ffi.NativeFunction<CFSetRef Function(CFAllocatorRef, CFSetRef)>>(
+          'CFSetCreateCopy');
+  late final _CFSetCreateCopy1 = _CFSetCreateCopy1Ptr.asFunction<
+      CFSetRef Function(CFAllocatorRef, CFSetRef)>();
+
+  CFMutableSetRef CFSetCreateMutable1(
+    CFAllocatorRef allocator,
+    int capacity,
+    ffi.Pointer<CFSetCallBacks> callBacks,
+  ) {
+    return _CFSetCreateMutable1(
+      allocator,
+      capacity,
+      callBacks,
+    );
+  }
+
+  late final _CFSetCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableSetRef Function(CFAllocatorRef, CFIndex,
+              ffi.Pointer<CFSetCallBacks>)>>('CFSetCreateMutable');
+  late final _CFSetCreateMutable1 = _CFSetCreateMutable1Ptr.asFunction<
+      CFMutableSetRef Function(
+          CFAllocatorRef, int, ffi.Pointer<CFSetCallBacks>)>();
+
+  CFMutableSetRef CFSetCreateMutableCopy1(
+    CFAllocatorRef allocator,
+    int capacity,
+    CFSetRef theSet,
+  ) {
+    return _CFSetCreateMutableCopy1(
+      allocator,
+      capacity,
+      theSet,
+    );
+  }
+
+  late final _CFSetCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableSetRef Function(
+              CFAllocatorRef, CFIndex, CFSetRef)>>('CFSetCreateMutableCopy');
+  late final _CFSetCreateMutableCopy1 = _CFSetCreateMutableCopy1Ptr.asFunction<
+      CFMutableSetRef Function(CFAllocatorRef, int, CFSetRef)>();
+
+  int CFSetGetCount1(
+    CFSetRef theSet,
+  ) {
+    return _CFSetGetCount1(
+      theSet,
+    );
+  }
+
+  late final _CFSetGetCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFSetRef)>>('CFSetGetCount');
+  late final _CFSetGetCount1 =
+      _CFSetGetCount1Ptr.asFunction<int Function(CFSetRef)>();
+
+  int CFSetGetCountOfValue1(
+    CFSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetGetCountOfValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetGetCountOfValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(
+              CFSetRef, ffi.Pointer<ffi.Void>)>>('CFSetGetCountOfValue');
+  late final _CFSetGetCountOfValue1 = _CFSetGetCountOfValue1Ptr.asFunction<
+      int Function(CFSetRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFSetContainsValue1(
+    CFSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetContainsValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetContainsValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(
+              CFSetRef, ffi.Pointer<ffi.Void>)>>('CFSetContainsValue');
+  late final _CFSetContainsValue1 = _CFSetContainsValue1Ptr.asFunction<
+      int Function(CFSetRef, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> CFSetGetValue1(
+    CFSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetGetValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetGetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFSetRef, ffi.Pointer<ffi.Void>)>>('CFSetGetValue');
+  late final _CFSetGetValue1 = _CFSetGetValue1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFSetRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFSetGetValueIfPresent1(
+    CFSetRef theSet,
+    ffi.Pointer<ffi.Void> candidate,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> value,
+  ) {
+    return _CFSetGetValueIfPresent1(
+      theSet,
+      candidate,
+      value,
+    );
+  }
+
+  late final _CFSetGetValueIfPresent1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFSetRef, ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFSetGetValueIfPresent');
+  late final _CFSetGetValueIfPresent1 = _CFSetGetValueIfPresent1Ptr.asFunction<
+      int Function(CFSetRef, ffi.Pointer<ffi.Void>,
+          ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFSetGetValues1(
+    CFSetRef theSet,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> values,
+  ) {
+    return _CFSetGetValues1(
+      theSet,
+      values,
+    );
+  }
+
+  late final _CFSetGetValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFSetRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('CFSetGetValues');
+  late final _CFSetGetValues1 = _CFSetGetValues1Ptr.asFunction<
+      void Function(CFSetRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  void CFSetApplyFunction1(
+    CFSetRef theSet,
+    CFSetApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFSetApplyFunction1(
+      theSet,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFSetApplyFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFSetRef, CFSetApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFSetApplyFunction');
+  late final _CFSetApplyFunction1 = _CFSetApplyFunction1Ptr.asFunction<
+      void Function(CFSetRef, CFSetApplierFunction, ffi.Pointer<ffi.Void>)>();
+
+  void CFSetAddValue1(
+    CFMutableSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetAddValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetAddValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableSetRef, ffi.Pointer<ffi.Void>)>>('CFSetAddValue');
+  late final _CFSetAddValue1 = _CFSetAddValue1Ptr.asFunction<
+      void Function(CFMutableSetRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFSetReplaceValue1(
+    CFMutableSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetReplaceValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetReplaceValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableSetRef, ffi.Pointer<ffi.Void>)>>('CFSetReplaceValue');
+  late final _CFSetReplaceValue1 = _CFSetReplaceValue1Ptr.asFunction<
+      void Function(CFMutableSetRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFSetSetValue1(
+    CFMutableSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetSetValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetSetValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableSetRef, ffi.Pointer<ffi.Void>)>>('CFSetSetValue');
+  late final _CFSetSetValue1 = _CFSetSetValue1Ptr.asFunction<
+      void Function(CFMutableSetRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFSetRemoveValue1(
+    CFMutableSetRef theSet,
+    ffi.Pointer<ffi.Void> value,
+  ) {
+    return _CFSetRemoveValue1(
+      theSet,
+      value,
+    );
+  }
+
+  late final _CFSetRemoveValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFMutableSetRef, ffi.Pointer<ffi.Void>)>>('CFSetRemoveValue');
+  late final _CFSetRemoveValue1 = _CFSetRemoveValue1Ptr.asFunction<
+      void Function(CFMutableSetRef, ffi.Pointer<ffi.Void>)>();
+
+  void CFSetRemoveAllValues1(
+    CFMutableSetRef theSet,
+  ) {
+    return _CFSetRemoveAllValues1(
+      theSet,
+    );
+  }
+
+  late final _CFSetRemoveAllValues1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMutableSetRef)>>(
+          'CFSetRemoveAllValues');
+  late final _CFSetRemoveAllValues1 =
+      _CFSetRemoveAllValues1Ptr.asFunction<void Function(CFMutableSetRef)>();
+
+  int CFTreeGetTypeID1() {
+    return _CFTreeGetTypeID1();
+  }
+
+  late final _CFTreeGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFTreeGetTypeID');
+  late final _CFTreeGetTypeID1 =
+      _CFTreeGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFTreeRef CFTreeCreate1(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFTreeContext> context,
+  ) {
+    return _CFTreeCreate1(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFTreeCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTreeRef Function(
+              CFAllocatorRef, ffi.Pointer<CFTreeContext>)>>('CFTreeCreate');
+  late final _CFTreeCreate1 = _CFTreeCreate1Ptr.asFunction<
+      CFTreeRef Function(CFAllocatorRef, ffi.Pointer<CFTreeContext>)>();
+
+  CFTreeRef CFTreeGetParent1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeGetParent1(
+      tree,
+    );
+  }
+
+  late final _CFTreeGetParent1Ptr =
+      _lookup<ffi.NativeFunction<CFTreeRef Function(CFTreeRef)>>(
+          'CFTreeGetParent');
+  late final _CFTreeGetParent1 =
+      _CFTreeGetParent1Ptr.asFunction<CFTreeRef Function(CFTreeRef)>();
+
+  CFTreeRef CFTreeGetNextSibling1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeGetNextSibling1(
+      tree,
+    );
+  }
+
+  late final _CFTreeGetNextSibling1Ptr =
+      _lookup<ffi.NativeFunction<CFTreeRef Function(CFTreeRef)>>(
+          'CFTreeGetNextSibling');
+  late final _CFTreeGetNextSibling1 =
+      _CFTreeGetNextSibling1Ptr.asFunction<CFTreeRef Function(CFTreeRef)>();
+
+  CFTreeRef CFTreeGetFirstChild1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeGetFirstChild1(
+      tree,
+    );
+  }
+
+  late final _CFTreeGetFirstChild1Ptr =
+      _lookup<ffi.NativeFunction<CFTreeRef Function(CFTreeRef)>>(
+          'CFTreeGetFirstChild');
+  late final _CFTreeGetFirstChild1 =
+      _CFTreeGetFirstChild1Ptr.asFunction<CFTreeRef Function(CFTreeRef)>();
+
+  void CFTreeGetContext1(
+    CFTreeRef tree,
+    ffi.Pointer<CFTreeContext> context,
+  ) {
+    return _CFTreeGetContext1(
+      tree,
+      context,
+    );
+  }
+
+  late final _CFTreeGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFTreeRef, ffi.Pointer<CFTreeContext>)>>('CFTreeGetContext');
+  late final _CFTreeGetContext1 = _CFTreeGetContext1Ptr.asFunction<
+      void Function(CFTreeRef, ffi.Pointer<CFTreeContext>)>();
+
+  int CFTreeGetChildCount1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeGetChildCount1(
+      tree,
+    );
+  }
+
+  late final _CFTreeGetChildCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTreeRef)>>(
+          'CFTreeGetChildCount');
+  late final _CFTreeGetChildCount1 =
+      _CFTreeGetChildCount1Ptr.asFunction<int Function(CFTreeRef)>();
+
+  CFTreeRef CFTreeGetChildAtIndex1(
+    CFTreeRef tree,
+    int idx,
+  ) {
+    return _CFTreeGetChildAtIndex1(
+      tree,
+      idx,
+    );
+  }
+
+  late final _CFTreeGetChildAtIndex1Ptr =
+      _lookup<ffi.NativeFunction<CFTreeRef Function(CFTreeRef, CFIndex)>>(
+          'CFTreeGetChildAtIndex');
+  late final _CFTreeGetChildAtIndex1 = _CFTreeGetChildAtIndex1Ptr.asFunction<
+      CFTreeRef Function(CFTreeRef, int)>();
+
+  void CFTreeGetChildren1(
+    CFTreeRef tree,
+    ffi.Pointer<CFTreeRef> children,
+  ) {
+    return _CFTreeGetChildren1(
+      tree,
+      children,
+    );
+  }
+
+  late final _CFTreeGetChildren1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFTreeRef, ffi.Pointer<CFTreeRef>)>>('CFTreeGetChildren');
+  late final _CFTreeGetChildren1 = _CFTreeGetChildren1Ptr.asFunction<
+      void Function(CFTreeRef, ffi.Pointer<CFTreeRef>)>();
+
+  void CFTreeApplyFunctionToChildren1(
+    CFTreeRef tree,
+    CFTreeApplierFunction applier,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFTreeApplyFunctionToChildren1(
+      tree,
+      applier,
+      context,
+    );
+  }
+
+  late final _CFTreeApplyFunctionToChildren1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFTreeRef, CFTreeApplierFunction,
+              ffi.Pointer<ffi.Void>)>>('CFTreeApplyFunctionToChildren');
+  late final _CFTreeApplyFunctionToChildren1 =
+      _CFTreeApplyFunctionToChildren1Ptr.asFunction<
+          void Function(
+              CFTreeRef, CFTreeApplierFunction, ffi.Pointer<ffi.Void>)>();
+
+  CFTreeRef CFTreeFindRoot1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeFindRoot1(
+      tree,
+    );
+  }
+
+  late final _CFTreeFindRoot1Ptr =
+      _lookup<ffi.NativeFunction<CFTreeRef Function(CFTreeRef)>>(
+          'CFTreeFindRoot');
+  late final _CFTreeFindRoot1 =
+      _CFTreeFindRoot1Ptr.asFunction<CFTreeRef Function(CFTreeRef)>();
+
+  void CFTreeSetContext1(
+    CFTreeRef tree,
+    ffi.Pointer<CFTreeContext> context,
+  ) {
+    return _CFTreeSetContext1(
+      tree,
+      context,
+    );
+  }
+
+  late final _CFTreeSetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFTreeRef, ffi.Pointer<CFTreeContext>)>>('CFTreeSetContext');
+  late final _CFTreeSetContext1 = _CFTreeSetContext1Ptr.asFunction<
+      void Function(CFTreeRef, ffi.Pointer<CFTreeContext>)>();
+
+  void CFTreePrependChild1(
+    CFTreeRef tree,
+    CFTreeRef newChild,
+  ) {
+    return _CFTreePrependChild1(
+      tree,
+      newChild,
+    );
+  }
+
+  late final _CFTreePrependChild1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTreeRef, CFTreeRef)>>(
+          'CFTreePrependChild');
+  late final _CFTreePrependChild1 =
+      _CFTreePrependChild1Ptr.asFunction<void Function(CFTreeRef, CFTreeRef)>();
+
+  void CFTreeAppendChild1(
+    CFTreeRef tree,
+    CFTreeRef newChild,
+  ) {
+    return _CFTreeAppendChild1(
+      tree,
+      newChild,
+    );
+  }
+
+  late final _CFTreeAppendChild1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTreeRef, CFTreeRef)>>(
+          'CFTreeAppendChild');
+  late final _CFTreeAppendChild1 =
+      _CFTreeAppendChild1Ptr.asFunction<void Function(CFTreeRef, CFTreeRef)>();
+
+  void CFTreeInsertSibling1(
+    CFTreeRef tree,
+    CFTreeRef newSibling,
+  ) {
+    return _CFTreeInsertSibling1(
+      tree,
+      newSibling,
+    );
+  }
+
+  late final _CFTreeInsertSibling1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTreeRef, CFTreeRef)>>(
+          'CFTreeInsertSibling');
+  late final _CFTreeInsertSibling1 = _CFTreeInsertSibling1Ptr.asFunction<
+      void Function(CFTreeRef, CFTreeRef)>();
+
+  void CFTreeRemove1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeRemove1(
+      tree,
+    );
+  }
+
+  late final _CFTreeRemove1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTreeRef)>>('CFTreeRemove');
+  late final _CFTreeRemove1 =
+      _CFTreeRemove1Ptr.asFunction<void Function(CFTreeRef)>();
+
+  void CFTreeRemoveAllChildren1(
+    CFTreeRef tree,
+  ) {
+    return _CFTreeRemoveAllChildren1(
+      tree,
+    );
+  }
+
+  late final _CFTreeRemoveAllChildren1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTreeRef)>>(
+          'CFTreeRemoveAllChildren');
+  late final _CFTreeRemoveAllChildren1 =
+      _CFTreeRemoveAllChildren1Ptr.asFunction<void Function(CFTreeRef)>();
+
+  void CFTreeSortChildren1(
+    CFTreeRef tree,
+    CFComparatorFunction comparator,
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _CFTreeSortChildren1(
+      tree,
+      comparator,
+      context,
+    );
+  }
+
+  late final _CFTreeSortChildren1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFTreeRef, CFComparatorFunction,
+              ffi.Pointer<ffi.Void>)>>('CFTreeSortChildren');
+  late final _CFTreeSortChildren1 = _CFTreeSortChildren1Ptr.asFunction<
+      void Function(CFTreeRef, CFComparatorFunction, ffi.Pointer<ffi.Void>)>();
+
+  int CFURLCreateDataAndPropertiesFromResource1(
+    CFAllocatorRef alloc,
+    CFURLRef url,
+    ffi.Pointer<CFDataRef> resourceData,
+    ffi.Pointer<CFDictionaryRef> properties,
+    CFArrayRef desiredProperties,
+    ffi.Pointer<SInt32> errorCode,
+  ) {
+    return _CFURLCreateDataAndPropertiesFromResource1(
+      alloc,
+      url,
+      resourceData,
+      properties,
+      desiredProperties,
+      errorCode,
+    );
+  }
+
+  late final _CFURLCreateDataAndPropertiesFromResource1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(
+                  CFAllocatorRef,
+                  CFURLRef,
+                  ffi.Pointer<CFDataRef>,
+                  ffi.Pointer<CFDictionaryRef>,
+                  CFArrayRef,
+                  ffi.Pointer<SInt32>)>>(
+      'CFURLCreateDataAndPropertiesFromResource');
+  late final _CFURLCreateDataAndPropertiesFromResource1 =
+      _CFURLCreateDataAndPropertiesFromResource1Ptr.asFunction<
+          int Function(CFAllocatorRef, CFURLRef, ffi.Pointer<CFDataRef>,
+              ffi.Pointer<CFDictionaryRef>, CFArrayRef, ffi.Pointer<SInt32>)>();
+
+  int CFURLWriteDataAndPropertiesToResource1(
+    CFURLRef url,
+    CFDataRef dataToWrite,
+    CFDictionaryRef propertiesToWrite,
+    ffi.Pointer<SInt32> errorCode,
+  ) {
+    return _CFURLWriteDataAndPropertiesToResource1(
+      url,
+      dataToWrite,
+      propertiesToWrite,
+      errorCode,
+    );
+  }
+
+  late final _CFURLWriteDataAndPropertiesToResource1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, CFDataRef, CFDictionaryRef,
+              ffi.Pointer<SInt32>)>>('CFURLWriteDataAndPropertiesToResource');
+  late final _CFURLWriteDataAndPropertiesToResource1 =
+      _CFURLWriteDataAndPropertiesToResource1Ptr.asFunction<
+          int Function(
+              CFURLRef, CFDataRef, CFDictionaryRef, ffi.Pointer<SInt32>)>();
+
+  int CFURLDestroyResource1(
+    CFURLRef url,
+    ffi.Pointer<SInt32> errorCode,
+  ) {
+    return _CFURLDestroyResource1(
+      url,
+      errorCode,
+    );
+  }
+
+  late final _CFURLDestroyResource1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFURLRef, ffi.Pointer<SInt32>)>>(
+      'CFURLDestroyResource');
+  late final _CFURLDestroyResource1 = _CFURLDestroyResource1Ptr.asFunction<
+      int Function(CFURLRef, ffi.Pointer<SInt32>)>();
+
+  CFTypeRef CFURLCreatePropertyFromResource1(
+    CFAllocatorRef alloc,
+    CFURLRef url,
+    CFStringRef property,
+    ffi.Pointer<SInt32> errorCode,
+  ) {
+    return _CFURLCreatePropertyFromResource1(
+      alloc,
+      url,
+      property,
+      errorCode,
+    );
+  }
+
+  late final _CFURLCreatePropertyFromResource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFAllocatorRef, CFURLRef, CFStringRef,
+              ffi.Pointer<SInt32>)>>('CFURLCreatePropertyFromResource');
+  late final _CFURLCreatePropertyFromResource1 =
+      _CFURLCreatePropertyFromResource1Ptr.asFunction<
+          CFTypeRef Function(
+              CFAllocatorRef, CFURLRef, CFStringRef, ffi.Pointer<SInt32>)>();
+
+  int CFUUIDGetTypeID1() {
+    return _CFUUIDGetTypeID1();
+  }
+
+  late final _CFUUIDGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFUUIDGetTypeID');
+  late final _CFUUIDGetTypeID1 =
+      _CFUUIDGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFUUIDRef CFUUIDCreate1(
+    CFAllocatorRef alloc,
+  ) {
+    return _CFUUIDCreate1(
+      alloc,
+    );
+  }
+
+  late final _CFUUIDCreate1Ptr =
+      _lookup<ffi.NativeFunction<CFUUIDRef Function(CFAllocatorRef)>>(
+          'CFUUIDCreate');
+  late final _CFUUIDCreate1 =
+      _CFUUIDCreate1Ptr.asFunction<CFUUIDRef Function(CFAllocatorRef)>();
+
+  CFUUIDRef CFUUIDCreateWithBytes1(
+    CFAllocatorRef alloc,
+    int byte0,
+    int byte1,
+    int byte2,
+    int byte3,
+    int byte4,
+    int byte5,
+    int byte6,
+    int byte7,
+    int byte8,
+    int byte9,
+    int byte10,
+    int byte11,
+    int byte12,
+    int byte13,
+    int byte14,
+    int byte15,
+  ) {
+    return _CFUUIDCreateWithBytes1(
+      alloc,
+      byte0,
+      byte1,
+      byte2,
+      byte3,
+      byte4,
+      byte5,
+      byte6,
+      byte7,
+      byte8,
+      byte9,
+      byte10,
+      byte11,
+      byte12,
+      byte13,
+      byte14,
+      byte15,
+    );
+  }
+
+  late final _CFUUIDCreateWithBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFUUIDRef Function(
+              CFAllocatorRef,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8)>>('CFUUIDCreateWithBytes');
+  late final _CFUUIDCreateWithBytes1 = _CFUUIDCreateWithBytes1Ptr.asFunction<
+      CFUUIDRef Function(CFAllocatorRef, int, int, int, int, int, int, int, int,
+          int, int, int, int, int, int, int, int)>();
+
+  CFUUIDRef CFUUIDCreateFromString1(
+    CFAllocatorRef alloc,
+    CFStringRef uuidStr,
+  ) {
+    return _CFUUIDCreateFromString1(
+      alloc,
+      uuidStr,
+    );
+  }
+
+  late final _CFUUIDCreateFromString1Ptr = _lookup<
+          ffi.NativeFunction<CFUUIDRef Function(CFAllocatorRef, CFStringRef)>>(
+      'CFUUIDCreateFromString');
+  late final _CFUUIDCreateFromString1 = _CFUUIDCreateFromString1Ptr.asFunction<
+      CFUUIDRef Function(CFAllocatorRef, CFStringRef)>();
+
+  CFStringRef CFUUIDCreateString1(
+    CFAllocatorRef alloc,
+    CFUUIDRef uuid,
+  ) {
+    return _CFUUIDCreateString1(
+      alloc,
+      uuid,
+    );
+  }
+
+  late final _CFUUIDCreateString1Ptr = _lookup<
+          ffi.NativeFunction<CFStringRef Function(CFAllocatorRef, CFUUIDRef)>>(
+      'CFUUIDCreateString');
+  late final _CFUUIDCreateString1 = _CFUUIDCreateString1Ptr.asFunction<
+      CFStringRef Function(CFAllocatorRef, CFUUIDRef)>();
+
+  CFUUIDRef CFUUIDGetConstantUUIDWithBytes1(
+    CFAllocatorRef alloc,
+    int byte0,
+    int byte1,
+    int byte2,
+    int byte3,
+    int byte4,
+    int byte5,
+    int byte6,
+    int byte7,
+    int byte8,
+    int byte9,
+    int byte10,
+    int byte11,
+    int byte12,
+    int byte13,
+    int byte14,
+    int byte15,
+  ) {
+    return _CFUUIDGetConstantUUIDWithBytes1(
+      alloc,
+      byte0,
+      byte1,
+      byte2,
+      byte3,
+      byte4,
+      byte5,
+      byte6,
+      byte7,
+      byte8,
+      byte9,
+      byte10,
+      byte11,
+      byte12,
+      byte13,
+      byte14,
+      byte15,
+    );
+  }
+
+  late final _CFUUIDGetConstantUUIDWithBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFUUIDRef Function(
+              CFAllocatorRef,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8,
+              UInt8)>>('CFUUIDGetConstantUUIDWithBytes');
+  late final _CFUUIDGetConstantUUIDWithBytes1 =
+      _CFUUIDGetConstantUUIDWithBytes1Ptr.asFunction<
+          CFUUIDRef Function(CFAllocatorRef, int, int, int, int, int, int, int,
+              int, int, int, int, int, int, int, int, int)>();
+
+  CFUUIDBytes CFUUIDGetUUIDBytes1(
+    CFUUIDRef uuid,
+  ) {
+    return _CFUUIDGetUUIDBytes1(
+      uuid,
+    );
+  }
+
+  late final _CFUUIDGetUUIDBytes1Ptr =
+      _lookup<ffi.NativeFunction<CFUUIDBytes Function(CFUUIDRef)>>(
+          'CFUUIDGetUUIDBytes');
+  late final _CFUUIDGetUUIDBytes1 =
+      _CFUUIDGetUUIDBytes1Ptr.asFunction<CFUUIDBytes Function(CFUUIDRef)>();
+
+  CFUUIDRef CFUUIDCreateFromUUIDBytes1(
+    CFAllocatorRef alloc,
+    CFUUIDBytes bytes,
+  ) {
+    return _CFUUIDCreateFromUUIDBytes1(
+      alloc,
+      bytes,
+    );
+  }
+
+  late final _CFUUIDCreateFromUUIDBytes1Ptr = _lookup<
+          ffi.NativeFunction<CFUUIDRef Function(CFAllocatorRef, CFUUIDBytes)>>(
+      'CFUUIDCreateFromUUIDBytes');
+  late final _CFUUIDCreateFromUUIDBytes1 = _CFUUIDCreateFromUUIDBytes1Ptr
+      .asFunction<CFUUIDRef Function(CFAllocatorRef, CFUUIDBytes)>();
+
+  CFURLRef CFCopyHomeDirectoryURL1() {
+    return _CFCopyHomeDirectoryURL1();
+  }
+
+  late final _CFCopyHomeDirectoryURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function()>>(
+          'CFCopyHomeDirectoryURL');
+  late final _CFCopyHomeDirectoryURL1 =
+      _CFCopyHomeDirectoryURL1Ptr.asFunction<CFURLRef Function()>();
+
+  CFBundleRef CFBundleGetMainBundle1() {
+    return _CFBundleGetMainBundle1();
+  }
+
+  late final _CFBundleGetMainBundle1Ptr =
+      _lookup<ffi.NativeFunction<CFBundleRef Function()>>(
+          'CFBundleGetMainBundle');
+  late final _CFBundleGetMainBundle1 =
+      _CFBundleGetMainBundle1Ptr.asFunction<CFBundleRef Function()>();
+
+  CFBundleRef CFBundleGetBundleWithIdentifier1(
+    CFStringRef bundleID,
+  ) {
+    return _CFBundleGetBundleWithIdentifier1(
+      bundleID,
+    );
+  }
+
+  late final _CFBundleGetBundleWithIdentifier1Ptr =
+      _lookup<ffi.NativeFunction<CFBundleRef Function(CFStringRef)>>(
+          'CFBundleGetBundleWithIdentifier');
+  late final _CFBundleGetBundleWithIdentifier1 =
+      _CFBundleGetBundleWithIdentifier1Ptr.asFunction<
+          CFBundleRef Function(CFStringRef)>();
+
+  CFArrayRef CFBundleGetAllBundles1() {
+    return _CFBundleGetAllBundles1();
+  }
+
+  late final _CFBundleGetAllBundles1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function()>>(
+          'CFBundleGetAllBundles');
+  late final _CFBundleGetAllBundles1 =
+      _CFBundleGetAllBundles1Ptr.asFunction<CFArrayRef Function()>();
+
+  int CFBundleGetTypeID1() {
+    return _CFBundleGetTypeID1();
+  }
+
+  late final _CFBundleGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFBundleGetTypeID');
+  late final _CFBundleGetTypeID1 =
+      _CFBundleGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFBundleRef CFBundleCreate1(
+    CFAllocatorRef allocator,
+    CFURLRef bundleURL,
+  ) {
+    return _CFBundleCreate1(
+      allocator,
+      bundleURL,
+    );
+  }
+
+  late final _CFBundleCreate1Ptr = _lookup<
+          ffi.NativeFunction<CFBundleRef Function(CFAllocatorRef, CFURLRef)>>(
+      'CFBundleCreate');
+  late final _CFBundleCreate1 = _CFBundleCreate1Ptr.asFunction<
+      CFBundleRef Function(CFAllocatorRef, CFURLRef)>();
+
+  CFArrayRef CFBundleCreateBundlesFromDirectory1(
+    CFAllocatorRef allocator,
+    CFURLRef directoryURL,
+    CFStringRef bundleType,
+  ) {
+    return _CFBundleCreateBundlesFromDirectory1(
+      allocator,
+      directoryURL,
+      bundleType,
+    );
+  }
+
+  late final _CFBundleCreateBundlesFromDirectory1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFAllocatorRef, CFURLRef,
+              CFStringRef)>>('CFBundleCreateBundlesFromDirectory');
+  late final _CFBundleCreateBundlesFromDirectory1 =
+      _CFBundleCreateBundlesFromDirectory1Ptr.asFunction<
+          CFArrayRef Function(CFAllocatorRef, CFURLRef, CFStringRef)>();
+
+  CFURLRef CFBundleCopyBundleURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyBundleURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyBundleURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopyBundleURL');
+  late final _CFBundleCopyBundleURL1 =
+      _CFBundleCopyBundleURL1Ptr.asFunction<CFURLRef Function(CFBundleRef)>();
+
+  CFTypeRef CFBundleGetValueForInfoDictionaryKey1(
+    CFBundleRef bundle,
+    CFStringRef key,
+  ) {
+    return _CFBundleGetValueForInfoDictionaryKey1(
+      bundle,
+      key,
+    );
+  }
+
+  late final _CFBundleGetValueForInfoDictionaryKey1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFBundleRef, CFStringRef)>>(
+          'CFBundleGetValueForInfoDictionaryKey');
+  late final _CFBundleGetValueForInfoDictionaryKey1 =
+      _CFBundleGetValueForInfoDictionaryKey1Ptr.asFunction<
+          CFTypeRef Function(CFBundleRef, CFStringRef)>();
+
+  CFDictionaryRef CFBundleGetInfoDictionary1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetInfoDictionary1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetInfoDictionary1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(CFBundleRef)>>(
+          'CFBundleGetInfoDictionary');
+  late final _CFBundleGetInfoDictionary1 = _CFBundleGetInfoDictionary1Ptr
+      .asFunction<CFDictionaryRef Function(CFBundleRef)>();
+
+  CFDictionaryRef CFBundleGetLocalInfoDictionary1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetLocalInfoDictionary1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetLocalInfoDictionary1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(CFBundleRef)>>(
+          'CFBundleGetLocalInfoDictionary');
+  late final _CFBundleGetLocalInfoDictionary1 =
+      _CFBundleGetLocalInfoDictionary1Ptr.asFunction<
+          CFDictionaryRef Function(CFBundleRef)>();
+
+  void CFBundleGetPackageInfo1(
+    CFBundleRef bundle,
+    ffi.Pointer<UInt32> packageType,
+    ffi.Pointer<UInt32> packageCreator,
+  ) {
+    return _CFBundleGetPackageInfo1(
+      bundle,
+      packageType,
+      packageCreator,
+    );
+  }
+
+  late final _CFBundleGetPackageInfo1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFBundleRef, ffi.Pointer<UInt32>,
+              ffi.Pointer<UInt32>)>>('CFBundleGetPackageInfo');
+  late final _CFBundleGetPackageInfo1 = _CFBundleGetPackageInfo1Ptr.asFunction<
+      void Function(CFBundleRef, ffi.Pointer<UInt32>, ffi.Pointer<UInt32>)>();
+
+  CFStringRef CFBundleGetIdentifier1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetIdentifier1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetIdentifier1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFBundleRef)>>(
+          'CFBundleGetIdentifier');
+  late final _CFBundleGetIdentifier1 = _CFBundleGetIdentifier1Ptr.asFunction<
+      CFStringRef Function(CFBundleRef)>();
+
+  int CFBundleGetVersionNumber1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetVersionNumber1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetVersionNumber1Ptr =
+      _lookup<ffi.NativeFunction<UInt32 Function(CFBundleRef)>>(
+          'CFBundleGetVersionNumber');
+  late final _CFBundleGetVersionNumber1 =
+      _CFBundleGetVersionNumber1Ptr.asFunction<int Function(CFBundleRef)>();
+
+  CFStringRef CFBundleGetDevelopmentRegion1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetDevelopmentRegion1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetDevelopmentRegion1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFBundleRef)>>(
+          'CFBundleGetDevelopmentRegion');
+  late final _CFBundleGetDevelopmentRegion1 = _CFBundleGetDevelopmentRegion1Ptr
+      .asFunction<CFStringRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopySupportFilesDirectoryURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopySupportFilesDirectoryURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopySupportFilesDirectoryURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopySupportFilesDirectoryURL');
+  late final _CFBundleCopySupportFilesDirectoryURL1 =
+      _CFBundleCopySupportFilesDirectoryURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopyResourcesDirectoryURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyResourcesDirectoryURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyResourcesDirectoryURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopyResourcesDirectoryURL');
+  late final _CFBundleCopyResourcesDirectoryURL1 =
+      _CFBundleCopyResourcesDirectoryURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopyPrivateFrameworksURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyPrivateFrameworksURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyPrivateFrameworksURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopyPrivateFrameworksURL');
+  late final _CFBundleCopyPrivateFrameworksURL1 =
+      _CFBundleCopyPrivateFrameworksURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopySharedFrameworksURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopySharedFrameworksURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopySharedFrameworksURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopySharedFrameworksURL');
+  late final _CFBundleCopySharedFrameworksURL1 =
+      _CFBundleCopySharedFrameworksURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopySharedSupportURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopySharedSupportURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopySharedSupportURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopySharedSupportURL');
+  late final _CFBundleCopySharedSupportURL1 = _CFBundleCopySharedSupportURL1Ptr
+      .asFunction<CFURLRef Function(CFBundleRef)>();
+
+  CFURLRef CFBundleCopyBuiltInPlugInsURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyBuiltInPlugInsURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyBuiltInPlugInsURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopyBuiltInPlugInsURL');
+  late final _CFBundleCopyBuiltInPlugInsURL1 =
+      _CFBundleCopyBuiltInPlugInsURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef)>();
+
+  CFDictionaryRef CFBundleCopyInfoDictionaryInDirectory1(
+    CFURLRef bundleURL,
+  ) {
+    return _CFBundleCopyInfoDictionaryInDirectory1(
+      bundleURL,
+    );
+  }
+
+  late final _CFBundleCopyInfoDictionaryInDirectory1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(CFURLRef)>>(
+          'CFBundleCopyInfoDictionaryInDirectory');
+  late final _CFBundleCopyInfoDictionaryInDirectory1 =
+      _CFBundleCopyInfoDictionaryInDirectory1Ptr.asFunction<
+          CFDictionaryRef Function(CFURLRef)>();
+
+  int CFBundleGetPackageInfoInDirectory1(
+    CFURLRef url,
+    ffi.Pointer<UInt32> packageType,
+    ffi.Pointer<UInt32> packageCreator,
+  ) {
+    return _CFBundleGetPackageInfoInDirectory1(
+      url,
+      packageType,
+      packageCreator,
+    );
+  }
+
+  late final _CFBundleGetPackageInfoInDirectory1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFURLRef, ffi.Pointer<UInt32>,
+              ffi.Pointer<UInt32>)>>('CFBundleGetPackageInfoInDirectory');
+  late final _CFBundleGetPackageInfoInDirectory1 =
+      _CFBundleGetPackageInfoInDirectory1Ptr.asFunction<
+          int Function(CFURLRef, ffi.Pointer<UInt32>, ffi.Pointer<UInt32>)>();
+
+  CFURLRef CFBundleCopyResourceURL1(
+    CFBundleRef bundle,
+    CFStringRef resourceName,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+  ) {
+    return _CFBundleCopyResourceURL1(
+      bundle,
+      resourceName,
+      resourceType,
+      subDirName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFBundleRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURL');
+  late final _CFBundleCopyResourceURL1 =
+      _CFBundleCopyResourceURL1Ptr.asFunction<
+          CFURLRef Function(
+              CFBundleRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFArrayRef CFBundleCopyResourceURLsOfType1(
+    CFBundleRef bundle,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+  ) {
+    return _CFBundleCopyResourceURLsOfType1(
+      bundle,
+      resourceType,
+      subDirName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURLsOfType1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFBundleRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURLsOfType');
+  late final _CFBundleCopyResourceURLsOfType1 =
+      _CFBundleCopyResourceURLsOfType1Ptr.asFunction<
+          CFArrayRef Function(CFBundleRef, CFStringRef, CFStringRef)>();
+
+  CFStringRef CFBundleCopyLocalizedString1(
+    CFBundleRef bundle,
+    CFStringRef key,
+    CFStringRef value,
+    CFStringRef tableName,
+  ) {
+    return _CFBundleCopyLocalizedString1(
+      bundle,
+      key,
+      value,
+      tableName,
+    );
+  }
+
+  late final _CFBundleCopyLocalizedString1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFBundleRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyLocalizedString');
+  late final _CFBundleCopyLocalizedString1 =
+      _CFBundleCopyLocalizedString1Ptr.asFunction<
+          CFStringRef Function(
+              CFBundleRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFURLRef CFBundleCopyResourceURLInDirectory1(
+    CFURLRef bundleURL,
+    CFStringRef resourceName,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+  ) {
+    return _CFBundleCopyResourceURLInDirectory1(
+      bundleURL,
+      resourceName,
+      resourceType,
+      subDirName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURLInDirectory1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFURLRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURLInDirectory');
+  late final _CFBundleCopyResourceURLInDirectory1 =
+      _CFBundleCopyResourceURLInDirectory1Ptr.asFunction<
+          CFURLRef Function(CFURLRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFArrayRef CFBundleCopyResourceURLsOfTypeInDirectory1(
+    CFURLRef bundleURL,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+  ) {
+    return _CFBundleCopyResourceURLsOfTypeInDirectory1(
+      bundleURL,
+      resourceType,
+      subDirName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURLsOfTypeInDirectory1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFURLRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURLsOfTypeInDirectory');
+  late final _CFBundleCopyResourceURLsOfTypeInDirectory1 =
+      _CFBundleCopyResourceURLsOfTypeInDirectory1Ptr.asFunction<
+          CFArrayRef Function(CFURLRef, CFStringRef, CFStringRef)>();
+
+  CFArrayRef CFBundleCopyBundleLocalizations1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyBundleLocalizations1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyBundleLocalizations1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFBundleRef)>>(
+          'CFBundleCopyBundleLocalizations');
+  late final _CFBundleCopyBundleLocalizations1 =
+      _CFBundleCopyBundleLocalizations1Ptr.asFunction<
+          CFArrayRef Function(CFBundleRef)>();
+
+  CFArrayRef CFBundleCopyPreferredLocalizationsFromArray1(
+    CFArrayRef locArray,
+  ) {
+    return _CFBundleCopyPreferredLocalizationsFromArray1(
+      locArray,
+    );
+  }
+
+  late final _CFBundleCopyPreferredLocalizationsFromArray1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFArrayRef)>>(
+          'CFBundleCopyPreferredLocalizationsFromArray');
+  late final _CFBundleCopyPreferredLocalizationsFromArray1 =
+      _CFBundleCopyPreferredLocalizationsFromArray1Ptr.asFunction<
+          CFArrayRef Function(CFArrayRef)>();
+
+  CFArrayRef CFBundleCopyLocalizationsForPreferences1(
+    CFArrayRef locArray,
+    CFArrayRef prefArray,
+  ) {
+    return _CFBundleCopyLocalizationsForPreferences1(
+      locArray,
+      prefArray,
+    );
+  }
+
+  late final _CFBundleCopyLocalizationsForPreferences1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFArrayRef, CFArrayRef)>>(
+          'CFBundleCopyLocalizationsForPreferences');
+  late final _CFBundleCopyLocalizationsForPreferences1 =
+      _CFBundleCopyLocalizationsForPreferences1Ptr.asFunction<
+          CFArrayRef Function(CFArrayRef, CFArrayRef)>();
+
+  CFURLRef CFBundleCopyResourceURLForLocalization1(
+    CFBundleRef bundle,
+    CFStringRef resourceName,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+    CFStringRef localizationName,
+  ) {
+    return _CFBundleCopyResourceURLForLocalization1(
+      bundle,
+      resourceName,
+      resourceType,
+      subDirName,
+      localizationName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURLForLocalization1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLRef Function(CFBundleRef, CFStringRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURLForLocalization');
+  late final _CFBundleCopyResourceURLForLocalization1 =
+      _CFBundleCopyResourceURLForLocalization1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef, CFStringRef, CFStringRef, CFStringRef,
+              CFStringRef)>();
+
+  CFArrayRef CFBundleCopyResourceURLsOfTypeForLocalization1(
+    CFBundleRef bundle,
+    CFStringRef resourceType,
+    CFStringRef subDirName,
+    CFStringRef localizationName,
+  ) {
+    return _CFBundleCopyResourceURLsOfTypeForLocalization1(
+      bundle,
+      resourceType,
+      subDirName,
+      localizationName,
+    );
+  }
+
+  late final _CFBundleCopyResourceURLsOfTypeForLocalization1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFArrayRef Function(CFBundleRef, CFStringRef, CFStringRef,
+              CFStringRef)>>('CFBundleCopyResourceURLsOfTypeForLocalization');
+  late final _CFBundleCopyResourceURLsOfTypeForLocalization1 =
+      _CFBundleCopyResourceURLsOfTypeForLocalization1Ptr.asFunction<
+          CFArrayRef Function(
+              CFBundleRef, CFStringRef, CFStringRef, CFStringRef)>();
+
+  CFDictionaryRef CFBundleCopyInfoDictionaryForURL1(
+    CFURLRef url,
+  ) {
+    return _CFBundleCopyInfoDictionaryForURL1(
+      url,
+    );
+  }
+
+  late final _CFBundleCopyInfoDictionaryForURL1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(CFURLRef)>>(
+          'CFBundleCopyInfoDictionaryForURL');
+  late final _CFBundleCopyInfoDictionaryForURL1 =
+      _CFBundleCopyInfoDictionaryForURL1Ptr.asFunction<
+          CFDictionaryRef Function(CFURLRef)>();
+
+  CFArrayRef CFBundleCopyLocalizationsForURL1(
+    CFURLRef url,
+  ) {
+    return _CFBundleCopyLocalizationsForURL1(
+      url,
+    );
+  }
+
+  late final _CFBundleCopyLocalizationsForURL1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFURLRef)>>(
+          'CFBundleCopyLocalizationsForURL');
+  late final _CFBundleCopyLocalizationsForURL1 =
+      _CFBundleCopyLocalizationsForURL1Ptr.asFunction<
+          CFArrayRef Function(CFURLRef)>();
+
+  CFArrayRef CFBundleCopyExecutableArchitecturesForURL1(
+    CFURLRef url,
+  ) {
+    return _CFBundleCopyExecutableArchitecturesForURL1(
+      url,
+    );
+  }
+
+  late final _CFBundleCopyExecutableArchitecturesForURL1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFURLRef)>>(
+          'CFBundleCopyExecutableArchitecturesForURL');
+  late final _CFBundleCopyExecutableArchitecturesForURL1 =
+      _CFBundleCopyExecutableArchitecturesForURL1Ptr.asFunction<
+          CFArrayRef Function(CFURLRef)>();
+
+  CFURLRef CFBundleCopyExecutableURL1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyExecutableURL1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyExecutableURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef)>>(
+          'CFBundleCopyExecutableURL');
+  late final _CFBundleCopyExecutableURL1 = _CFBundleCopyExecutableURL1Ptr
+      .asFunction<CFURLRef Function(CFBundleRef)>();
+
+  CFArrayRef CFBundleCopyExecutableArchitectures1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleCopyExecutableArchitectures1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleCopyExecutableArchitectures1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFBundleRef)>>(
+          'CFBundleCopyExecutableArchitectures');
+  late final _CFBundleCopyExecutableArchitectures1 =
+      _CFBundleCopyExecutableArchitectures1Ptr.asFunction<
+          CFArrayRef Function(CFBundleRef)>();
+
+  int CFBundlePreflightExecutable1(
+    CFBundleRef bundle,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFBundlePreflightExecutable1(
+      bundle,
+      error,
+    );
+  }
+
+  late final _CFBundlePreflightExecutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFBundleRef,
+              ffi.Pointer<CFErrorRef>)>>('CFBundlePreflightExecutable');
+  late final _CFBundlePreflightExecutable1 = _CFBundlePreflightExecutable1Ptr
+      .asFunction<int Function(CFBundleRef, ffi.Pointer<CFErrorRef>)>();
+
+  int CFBundleLoadExecutableAndReturnError1(
+    CFBundleRef bundle,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFBundleLoadExecutableAndReturnError1(
+      bundle,
+      error,
+    );
+  }
+
+  late final _CFBundleLoadExecutableAndReturnError1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(CFBundleRef, ffi.Pointer<CFErrorRef>)>>(
+      'CFBundleLoadExecutableAndReturnError');
+  late final _CFBundleLoadExecutableAndReturnError1 =
+      _CFBundleLoadExecutableAndReturnError1Ptr.asFunction<
+          int Function(CFBundleRef, ffi.Pointer<CFErrorRef>)>();
+
+  int CFBundleLoadExecutable1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleLoadExecutable1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleLoadExecutable1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFBundleRef)>>(
+          'CFBundleLoadExecutable');
+  late final _CFBundleLoadExecutable1 =
+      _CFBundleLoadExecutable1Ptr.asFunction<int Function(CFBundleRef)>();
+
+  int CFBundleIsExecutableLoaded1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleIsExecutableLoaded1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleIsExecutableLoaded1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFBundleRef)>>(
+          'CFBundleIsExecutableLoaded');
+  late final _CFBundleIsExecutableLoaded1 =
+      _CFBundleIsExecutableLoaded1Ptr.asFunction<int Function(CFBundleRef)>();
+
+  void CFBundleUnloadExecutable1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleUnloadExecutable1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleUnloadExecutable1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFBundleRef)>>(
+          'CFBundleUnloadExecutable');
+  late final _CFBundleUnloadExecutable1 =
+      _CFBundleUnloadExecutable1Ptr.asFunction<void Function(CFBundleRef)>();
+
+  ffi.Pointer<ffi.Void> CFBundleGetFunctionPointerForName1(
+    CFBundleRef bundle,
+    CFStringRef functionName,
+  ) {
+    return _CFBundleGetFunctionPointerForName1(
+      bundle,
+      functionName,
+    );
+  }
+
+  late final _CFBundleGetFunctionPointerForName1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFBundleRef, CFStringRef)>>('CFBundleGetFunctionPointerForName');
+  late final _CFBundleGetFunctionPointerForName1 =
+      _CFBundleGetFunctionPointerForName1Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(CFBundleRef, CFStringRef)>();
+
+  void CFBundleGetFunctionPointersForNames1(
+    CFBundleRef bundle,
+    CFArrayRef functionNames,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> ftbl,
+  ) {
+    return _CFBundleGetFunctionPointersForNames1(
+      bundle,
+      functionNames,
+      ftbl,
+    );
+  }
+
+  late final _CFBundleGetFunctionPointersForNames1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(CFBundleRef, CFArrayRef,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFBundleGetFunctionPointersForNames');
+  late final _CFBundleGetFunctionPointersForNames1 =
+      _CFBundleGetFunctionPointersForNames1Ptr.asFunction<
+          void Function(
+              CFBundleRef, CFArrayRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  ffi.Pointer<ffi.Void> CFBundleGetDataPointerForName1(
+    CFBundleRef bundle,
+    CFStringRef symbolName,
+  ) {
+    return _CFBundleGetDataPointerForName1(
+      bundle,
+      symbolName,
+    );
+  }
+
+  late final _CFBundleGetDataPointerForName1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFBundleRef, CFStringRef)>>('CFBundleGetDataPointerForName');
+  late final _CFBundleGetDataPointerForName1 =
+      _CFBundleGetDataPointerForName1Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(CFBundleRef, CFStringRef)>();
+
+  void CFBundleGetDataPointersForNames1(
+    CFBundleRef bundle,
+    CFArrayRef symbolNames,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> stbl,
+  ) {
+    return _CFBundleGetDataPointersForNames1(
+      bundle,
+      symbolNames,
+      stbl,
+    );
+  }
+
+  late final _CFBundleGetDataPointersForNames1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(CFBundleRef, CFArrayRef,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFBundleGetDataPointersForNames');
+  late final _CFBundleGetDataPointersForNames1 =
+      _CFBundleGetDataPointersForNames1Ptr.asFunction<
+          void Function(
+              CFBundleRef, CFArrayRef, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  CFURLRef CFBundleCopyAuxiliaryExecutableURL1(
+    CFBundleRef bundle,
+    CFStringRef executableName,
+  ) {
+    return _CFBundleCopyAuxiliaryExecutableURL1(
+      bundle,
+      executableName,
+    );
+  }
+
+  late final _CFBundleCopyAuxiliaryExecutableURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFBundleRef, CFStringRef)>>(
+          'CFBundleCopyAuxiliaryExecutableURL');
+  late final _CFBundleCopyAuxiliaryExecutableURL1 =
+      _CFBundleCopyAuxiliaryExecutableURL1Ptr.asFunction<
+          CFURLRef Function(CFBundleRef, CFStringRef)>();
+
+  int CFBundleIsExecutableLoadable1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleIsExecutableLoadable1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleIsExecutableLoadable1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFBundleRef)>>(
+          'CFBundleIsExecutableLoadable');
+  late final _CFBundleIsExecutableLoadable1 =
+      _CFBundleIsExecutableLoadable1Ptr.asFunction<int Function(CFBundleRef)>();
+
+  int CFBundleIsExecutableLoadableForURL1(
+    CFURLRef url,
+  ) {
+    return _CFBundleIsExecutableLoadableForURL1(
+      url,
+    );
+  }
+
+  late final _CFBundleIsExecutableLoadableForURL1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLRef)>>(
+          'CFBundleIsExecutableLoadableForURL');
+  late final _CFBundleIsExecutableLoadableForURL1 =
+      _CFBundleIsExecutableLoadableForURL1Ptr.asFunction<
+          int Function(CFURLRef)>();
+
+  int CFBundleIsArchitectureLoadable1(
+    int arch,
+  ) {
+    return _CFBundleIsArchitectureLoadable1(
+      arch,
+    );
+  }
+
+  late final _CFBundleIsArchitectureLoadable1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(cpu_type_t)>>(
+          'CFBundleIsArchitectureLoadable');
+  late final _CFBundleIsArchitectureLoadable1 =
+      _CFBundleIsArchitectureLoadable1Ptr.asFunction<int Function(int)>();
+
+  CFPlugInRef CFBundleGetPlugIn1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleGetPlugIn1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleGetPlugIn1Ptr =
+      _lookup<ffi.NativeFunction<CFPlugInRef Function(CFBundleRef)>>(
+          'CFBundleGetPlugIn');
+  late final _CFBundleGetPlugIn1 =
+      _CFBundleGetPlugIn1Ptr.asFunction<CFPlugInRef Function(CFBundleRef)>();
+
+  int CFBundleOpenBundleResourceMap1(
+    CFBundleRef bundle,
+  ) {
+    return _CFBundleOpenBundleResourceMap1(
+      bundle,
+    );
+  }
+
+  late final _CFBundleOpenBundleResourceMap1Ptr =
+      _lookup<ffi.NativeFunction<CFBundleRefNum Function(CFBundleRef)>>(
+          'CFBundleOpenBundleResourceMap');
+  late final _CFBundleOpenBundleResourceMap1 =
+      _CFBundleOpenBundleResourceMap1Ptr.asFunction<
+          int Function(CFBundleRef)>();
+
+  int CFBundleOpenBundleResourceFiles1(
+    CFBundleRef bundle,
+    ffi.Pointer<CFBundleRefNum> refNum,
+    ffi.Pointer<CFBundleRefNum> localizedRefNum,
+  ) {
+    return _CFBundleOpenBundleResourceFiles1(
+      bundle,
+      refNum,
+      localizedRefNum,
+    );
+  }
+
+  late final _CFBundleOpenBundleResourceFiles1Ptr = _lookup<
+      ffi.NativeFunction<
+          SInt32 Function(CFBundleRef, ffi.Pointer<CFBundleRefNum>,
+              ffi.Pointer<CFBundleRefNum>)>>('CFBundleOpenBundleResourceFiles');
+  late final _CFBundleOpenBundleResourceFiles1 =
+      _CFBundleOpenBundleResourceFiles1Ptr.asFunction<
+          int Function(CFBundleRef, ffi.Pointer<CFBundleRefNum>,
+              ffi.Pointer<CFBundleRefNum>)>();
+
+  void CFBundleCloseBundleResourceMap1(
+    CFBundleRef bundle,
+    int refNum,
+  ) {
+    return _CFBundleCloseBundleResourceMap1(
+      bundle,
+      refNum,
+    );
+  }
+
+  late final _CFBundleCloseBundleResourceMap1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFBundleRef, CFBundleRefNum)>>(
+      'CFBundleCloseBundleResourceMap');
+  late final _CFBundleCloseBundleResourceMap1 =
+      _CFBundleCloseBundleResourceMap1Ptr.asFunction<
+          void Function(CFBundleRef, int)>();
+
+  int CFMessagePortGetTypeID1() {
+    return _CFMessagePortGetTypeID1();
+  }
+
+  late final _CFMessagePortGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFMessagePortGetTypeID');
+  late final _CFMessagePortGetTypeID1 =
+      _CFMessagePortGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFMessagePortRef CFMessagePortCreateLocal1(
+    CFAllocatorRef allocator,
+    CFStringRef name,
+    CFMessagePortCallBack callout,
+    ffi.Pointer<CFMessagePortContext> context,
+    ffi.Pointer<Boolean> shouldFreeInfo,
+  ) {
+    return _CFMessagePortCreateLocal1(
+      allocator,
+      name,
+      callout,
+      context,
+      shouldFreeInfo,
+    );
+  }
+
+  late final _CFMessagePortCreateLocal1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMessagePortRef Function(
+              CFAllocatorRef,
+              CFStringRef,
+              CFMessagePortCallBack,
+              ffi.Pointer<CFMessagePortContext>,
+              ffi.Pointer<Boolean>)>>('CFMessagePortCreateLocal');
+  late final _CFMessagePortCreateLocal1 =
+      _CFMessagePortCreateLocal1Ptr.asFunction<
+          CFMessagePortRef Function(
+              CFAllocatorRef,
+              CFStringRef,
+              CFMessagePortCallBack,
+              ffi.Pointer<CFMessagePortContext>,
+              ffi.Pointer<Boolean>)>();
+
+  CFMessagePortRef CFMessagePortCreateRemote1(
+    CFAllocatorRef allocator,
+    CFStringRef name,
+  ) {
+    return _CFMessagePortCreateRemote1(
+      allocator,
+      name,
+    );
+  }
+
+  late final _CFMessagePortCreateRemote1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMessagePortRef Function(
+              CFAllocatorRef, CFStringRef)>>('CFMessagePortCreateRemote');
+  late final _CFMessagePortCreateRemote1 = _CFMessagePortCreateRemote1Ptr
+      .asFunction<CFMessagePortRef Function(CFAllocatorRef, CFStringRef)>();
+
+  int CFMessagePortIsRemote1(
+    CFMessagePortRef ms,
+  ) {
+    return _CFMessagePortIsRemote1(
+      ms,
+    );
+  }
+
+  late final _CFMessagePortIsRemote1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFMessagePortRef)>>(
+          'CFMessagePortIsRemote');
+  late final _CFMessagePortIsRemote1 =
+      _CFMessagePortIsRemote1Ptr.asFunction<int Function(CFMessagePortRef)>();
+
+  CFStringRef CFMessagePortGetName1(
+    CFMessagePortRef ms,
+  ) {
+    return _CFMessagePortGetName1(
+      ms,
+    );
+  }
+
+  late final _CFMessagePortGetName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFMessagePortRef)>>(
+          'CFMessagePortGetName');
+  late final _CFMessagePortGetName1 = _CFMessagePortGetName1Ptr.asFunction<
+      CFStringRef Function(CFMessagePortRef)>();
+
+  int CFMessagePortSetName1(
+    CFMessagePortRef ms,
+    CFStringRef newName,
+  ) {
+    return _CFMessagePortSetName1(
+      ms,
+      newName,
+    );
+  }
+
+  late final _CFMessagePortSetName1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFMessagePortRef, CFStringRef)>>(
+      'CFMessagePortSetName');
+  late final _CFMessagePortSetName1 = _CFMessagePortSetName1Ptr.asFunction<
+      int Function(CFMessagePortRef, CFStringRef)>();
+
+  void CFMessagePortGetContext1(
+    CFMessagePortRef ms,
+    ffi.Pointer<CFMessagePortContext> context,
+  ) {
+    return _CFMessagePortGetContext1(
+      ms,
+      context,
+    );
+  }
+
+  late final _CFMessagePortGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMessagePortRef,
+              ffi.Pointer<CFMessagePortContext>)>>('CFMessagePortGetContext');
+  late final _CFMessagePortGetContext1 =
+      _CFMessagePortGetContext1Ptr.asFunction<
+          void Function(CFMessagePortRef, ffi.Pointer<CFMessagePortContext>)>();
+
+  void CFMessagePortInvalidate1(
+    CFMessagePortRef ms,
+  ) {
+    return _CFMessagePortInvalidate1(
+      ms,
+    );
+  }
+
+  late final _CFMessagePortInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMessagePortRef)>>(
+          'CFMessagePortInvalidate');
+  late final _CFMessagePortInvalidate1 = _CFMessagePortInvalidate1Ptr
+      .asFunction<void Function(CFMessagePortRef)>();
+
+  int CFMessagePortIsValid1(
+    CFMessagePortRef ms,
+  ) {
+    return _CFMessagePortIsValid1(
+      ms,
+    );
+  }
+
+  late final _CFMessagePortIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFMessagePortRef)>>(
+          'CFMessagePortIsValid');
+  late final _CFMessagePortIsValid1 =
+      _CFMessagePortIsValid1Ptr.asFunction<int Function(CFMessagePortRef)>();
+
+  CFMessagePortInvalidationCallBack CFMessagePortGetInvalidationCallBack1(
+    CFMessagePortRef ms,
+  ) {
+    return _CFMessagePortGetInvalidationCallBack1(
+      ms,
+    );
+  }
+
+  late final _CFMessagePortGetInvalidationCallBack1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMessagePortInvalidationCallBack Function(
+              CFMessagePortRef)>>('CFMessagePortGetInvalidationCallBack');
+  late final _CFMessagePortGetInvalidationCallBack1 =
+      _CFMessagePortGetInvalidationCallBack1Ptr.asFunction<
+          CFMessagePortInvalidationCallBack Function(CFMessagePortRef)>();
+
+  void CFMessagePortSetInvalidationCallBack1(
+    CFMessagePortRef ms,
+    CFMessagePortInvalidationCallBack callout,
+  ) {
+    return _CFMessagePortSetInvalidationCallBack1(
+      ms,
+      callout,
+    );
+  }
+
+  late final _CFMessagePortSetInvalidationCallBack1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFMessagePortRef, CFMessagePortInvalidationCallBack)>>(
+      'CFMessagePortSetInvalidationCallBack');
+  late final _CFMessagePortSetInvalidationCallBack1 =
+      _CFMessagePortSetInvalidationCallBack1Ptr.asFunction<
+          void Function(CFMessagePortRef, CFMessagePortInvalidationCallBack)>();
+
+  int CFMessagePortSendRequest1(
+    CFMessagePortRef remote,
+    int msgid,
+    CFDataRef data,
+    double sendTimeout,
+    double rcvTimeout,
+    CFStringRef replyMode,
+    ffi.Pointer<CFDataRef> returnData,
+  ) {
+    return _CFMessagePortSendRequest1(
+      remote,
+      msgid,
+      data,
+      sendTimeout,
+      rcvTimeout,
+      replyMode,
+      returnData,
+    );
+  }
+
+  late final _CFMessagePortSendRequest1Ptr = _lookup<
+      ffi.NativeFunction<
+          SInt32 Function(
+              CFMessagePortRef,
+              SInt32,
+              CFDataRef,
+              CFTimeInterval,
+              CFTimeInterval,
+              CFStringRef,
+              ffi.Pointer<CFDataRef>)>>('CFMessagePortSendRequest');
+  late final _CFMessagePortSendRequest1 =
+      _CFMessagePortSendRequest1Ptr.asFunction<
+          int Function(CFMessagePortRef, int, CFDataRef, double, double,
+              CFStringRef, ffi.Pointer<CFDataRef>)>();
+
+  CFRunLoopSourceRef CFMessagePortCreateRunLoopSource1(
+    CFAllocatorRef allocator,
+    CFMessagePortRef local,
+    int order,
+  ) {
+    return _CFMessagePortCreateRunLoopSource1(
+      allocator,
+      local,
+      order,
+    );
+  }
+
+  late final _CFMessagePortCreateRunLoopSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFMessagePortRef,
+              CFIndex)>>('CFMessagePortCreateRunLoopSource');
+  late final _CFMessagePortCreateRunLoopSource1 =
+      _CFMessagePortCreateRunLoopSource1Ptr.asFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFMessagePortRef, int)>();
+
+  void CFMessagePortSetDispatchQueue1(
+    CFMessagePortRef ms,
+    dispatch_queue_t queue,
+  ) {
+    return _CFMessagePortSetDispatchQueue1(
+      ms,
+      queue,
+    );
+  }
+
+  late final _CFMessagePortSetDispatchQueue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMessagePortRef,
+              dispatch_queue_t)>>('CFMessagePortSetDispatchQueue');
+  late final _CFMessagePortSetDispatchQueue1 =
+      _CFMessagePortSetDispatchQueue1Ptr.asFunction<
+          void Function(CFMessagePortRef, dispatch_queue_t)>();
+
+  int CFPlugInGetTypeID1() {
+    return _CFPlugInGetTypeID1();
+  }
+
+  late final _CFPlugInGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFPlugInGetTypeID');
+  late final _CFPlugInGetTypeID1 =
+      _CFPlugInGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFPlugInRef CFPlugInCreate1(
+    CFAllocatorRef allocator,
+    CFURLRef plugInURL,
+  ) {
+    return _CFPlugInCreate1(
+      allocator,
+      plugInURL,
+    );
+  }
+
+  late final _CFPlugInCreate1Ptr = _lookup<
+          ffi.NativeFunction<CFPlugInRef Function(CFAllocatorRef, CFURLRef)>>(
+      'CFPlugInCreate');
+  late final _CFPlugInCreate1 = _CFPlugInCreate1Ptr.asFunction<
+      CFPlugInRef Function(CFAllocatorRef, CFURLRef)>();
+
+  CFBundleRef CFPlugInGetBundle1(
+    CFPlugInRef plugIn,
+  ) {
+    return _CFPlugInGetBundle1(
+      plugIn,
+    );
+  }
+
+  late final _CFPlugInGetBundle1Ptr =
+      _lookup<ffi.NativeFunction<CFBundleRef Function(CFPlugInRef)>>(
+          'CFPlugInGetBundle');
+  late final _CFPlugInGetBundle1 =
+      _CFPlugInGetBundle1Ptr.asFunction<CFBundleRef Function(CFPlugInRef)>();
+
+  void CFPlugInSetLoadOnDemand1(
+    CFPlugInRef plugIn,
+    int flag,
+  ) {
+    return _CFPlugInSetLoadOnDemand1(
+      plugIn,
+      flag,
+    );
+  }
+
+  late final _CFPlugInSetLoadOnDemand1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFPlugInRef, Boolean)>>(
+          'CFPlugInSetLoadOnDemand');
+  late final _CFPlugInSetLoadOnDemand1 = _CFPlugInSetLoadOnDemand1Ptr
+      .asFunction<void Function(CFPlugInRef, int)>();
+
+  int CFPlugInIsLoadOnDemand1(
+    CFPlugInRef plugIn,
+  ) {
+    return _CFPlugInIsLoadOnDemand1(
+      plugIn,
+    );
+  }
+
+  late final _CFPlugInIsLoadOnDemand1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFPlugInRef)>>(
+          'CFPlugInIsLoadOnDemand');
+  late final _CFPlugInIsLoadOnDemand1 =
+      _CFPlugInIsLoadOnDemand1Ptr.asFunction<int Function(CFPlugInRef)>();
+
+  CFArrayRef CFPlugInFindFactoriesForPlugInType1(
+    CFUUIDRef typeUUID,
+  ) {
+    return _CFPlugInFindFactoriesForPlugInType1(
+      typeUUID,
+    );
+  }
+
+  late final _CFPlugInFindFactoriesForPlugInType1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFUUIDRef)>>(
+          'CFPlugInFindFactoriesForPlugInType');
+  late final _CFPlugInFindFactoriesForPlugInType1 =
+      _CFPlugInFindFactoriesForPlugInType1Ptr.asFunction<
+          CFArrayRef Function(CFUUIDRef)>();
+
+  CFArrayRef CFPlugInFindFactoriesForPlugInTypeInPlugIn1(
+    CFUUIDRef typeUUID,
+    CFPlugInRef plugIn,
+  ) {
+    return _CFPlugInFindFactoriesForPlugInTypeInPlugIn1(
+      typeUUID,
+      plugIn,
+    );
+  }
+
+  late final _CFPlugInFindFactoriesForPlugInTypeInPlugIn1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(CFUUIDRef, CFPlugInRef)>>(
+          'CFPlugInFindFactoriesForPlugInTypeInPlugIn');
+  late final _CFPlugInFindFactoriesForPlugInTypeInPlugIn1 =
+      _CFPlugInFindFactoriesForPlugInTypeInPlugIn1Ptr.asFunction<
+          CFArrayRef Function(CFUUIDRef, CFPlugInRef)>();
+
+  ffi.Pointer<ffi.Void> CFPlugInInstanceCreate1(
+    CFAllocatorRef allocator,
+    CFUUIDRef factoryUUID,
+    CFUUIDRef typeUUID,
+  ) {
+    return _CFPlugInInstanceCreate1(
+      allocator,
+      factoryUUID,
+      typeUUID,
+    );
+  }
+
+  late final _CFPlugInInstanceCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFUUIDRef, CFUUIDRef)>>('CFPlugInInstanceCreate');
+  late final _CFPlugInInstanceCreate1 = _CFPlugInInstanceCreate1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, CFUUIDRef, CFUUIDRef)>();
+
+  int CFPlugInRegisterFactoryFunction1(
+    CFUUIDRef factoryUUID,
+    CFPlugInFactoryFunction func,
+  ) {
+    return _CFPlugInRegisterFactoryFunction1(
+      factoryUUID,
+      func,
+    );
+  }
+
+  late final _CFPlugInRegisterFactoryFunction1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFUUIDRef,
+              CFPlugInFactoryFunction)>>('CFPlugInRegisterFactoryFunction');
+  late final _CFPlugInRegisterFactoryFunction1 =
+      _CFPlugInRegisterFactoryFunction1Ptr.asFunction<
+          int Function(CFUUIDRef, CFPlugInFactoryFunction)>();
+
+  int CFPlugInRegisterFactoryFunctionByName1(
+    CFUUIDRef factoryUUID,
+    CFPlugInRef plugIn,
+    CFStringRef functionName,
+  ) {
+    return _CFPlugInRegisterFactoryFunctionByName1(
+      factoryUUID,
+      plugIn,
+      functionName,
+    );
+  }
+
+  late final _CFPlugInRegisterFactoryFunctionByName1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFUUIDRef, CFPlugInRef,
+              CFStringRef)>>('CFPlugInRegisterFactoryFunctionByName');
+  late final _CFPlugInRegisterFactoryFunctionByName1 =
+      _CFPlugInRegisterFactoryFunctionByName1Ptr.asFunction<
+          int Function(CFUUIDRef, CFPlugInRef, CFStringRef)>();
+
+  int CFPlugInUnregisterFactory1(
+    CFUUIDRef factoryUUID,
+  ) {
+    return _CFPlugInUnregisterFactory1(
+      factoryUUID,
+    );
+  }
+
+  late final _CFPlugInUnregisterFactory1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFUUIDRef)>>(
+          'CFPlugInUnregisterFactory');
+  late final _CFPlugInUnregisterFactory1 =
+      _CFPlugInUnregisterFactory1Ptr.asFunction<int Function(CFUUIDRef)>();
+
+  int CFPlugInRegisterPlugInType1(
+    CFUUIDRef factoryUUID,
+    CFUUIDRef typeUUID,
+  ) {
+    return _CFPlugInRegisterPlugInType1(
+      factoryUUID,
+      typeUUID,
+    );
+  }
+
+  late final _CFPlugInRegisterPlugInType1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFUUIDRef, CFUUIDRef)>>(
+          'CFPlugInRegisterPlugInType');
+  late final _CFPlugInRegisterPlugInType1 = _CFPlugInRegisterPlugInType1Ptr
+      .asFunction<int Function(CFUUIDRef, CFUUIDRef)>();
+
+  int CFPlugInUnregisterPlugInType1(
+    CFUUIDRef factoryUUID,
+    CFUUIDRef typeUUID,
+  ) {
+    return _CFPlugInUnregisterPlugInType1(
+      factoryUUID,
+      typeUUID,
+    );
+  }
+
+  late final _CFPlugInUnregisterPlugInType1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFUUIDRef, CFUUIDRef)>>(
+          'CFPlugInUnregisterPlugInType');
+  late final _CFPlugInUnregisterPlugInType1 = _CFPlugInUnregisterPlugInType1Ptr
+      .asFunction<int Function(CFUUIDRef, CFUUIDRef)>();
+
+  void CFPlugInAddInstanceForFactory1(
+    CFUUIDRef factoryID,
+  ) {
+    return _CFPlugInAddInstanceForFactory1(
+      factoryID,
+    );
+  }
+
+  late final _CFPlugInAddInstanceForFactory1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFUUIDRef)>>(
+          'CFPlugInAddInstanceForFactory');
+  late final _CFPlugInAddInstanceForFactory1 =
+      _CFPlugInAddInstanceForFactory1Ptr.asFunction<void Function(CFUUIDRef)>();
+
+  void CFPlugInRemoveInstanceForFactory1(
+    CFUUIDRef factoryID,
+  ) {
+    return _CFPlugInRemoveInstanceForFactory1(
+      factoryID,
+    );
+  }
+
+  late final _CFPlugInRemoveInstanceForFactory1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFUUIDRef)>>(
+          'CFPlugInRemoveInstanceForFactory');
+  late final _CFPlugInRemoveInstanceForFactory1 =
+      _CFPlugInRemoveInstanceForFactory1Ptr.asFunction<
+          void Function(CFUUIDRef)>();
+
+  int CFPlugInInstanceGetInterfaceFunctionTable1(
+    CFPlugInInstanceRef instance,
+    CFStringRef interfaceName,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> ftbl,
+  ) {
+    return _CFPlugInInstanceGetInterfaceFunctionTable1(
+      instance,
+      interfaceName,
+      ftbl,
+    );
+  }
+
+  late final _CFPlugInInstanceGetInterfaceFunctionTable1Ptr = _lookup<
+          ffi.NativeFunction<
+              Boolean Function(CFPlugInInstanceRef, CFStringRef,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'CFPlugInInstanceGetInterfaceFunctionTable');
+  late final _CFPlugInInstanceGetInterfaceFunctionTable1 =
+      _CFPlugInInstanceGetInterfaceFunctionTable1Ptr.asFunction<
+          int Function(CFPlugInInstanceRef, CFStringRef,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  CFStringRef CFPlugInInstanceGetFactoryName1(
+    CFPlugInInstanceRef instance,
+  ) {
+    return _CFPlugInInstanceGetFactoryName1(
+      instance,
+    );
+  }
+
+  late final _CFPlugInInstanceGetFactoryName1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFPlugInInstanceRef)>>(
+          'CFPlugInInstanceGetFactoryName');
+  late final _CFPlugInInstanceGetFactoryName1 =
+      _CFPlugInInstanceGetFactoryName1Ptr.asFunction<
+          CFStringRef Function(CFPlugInInstanceRef)>();
+
+  ffi.Pointer<ffi.Void> CFPlugInInstanceGetInstanceData1(
+    CFPlugInInstanceRef instance,
+  ) {
+    return _CFPlugInInstanceGetInstanceData1(
+      instance,
+    );
+  }
+
+  late final _CFPlugInInstanceGetInstanceData1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFPlugInInstanceRef)>>('CFPlugInInstanceGetInstanceData');
+  late final _CFPlugInInstanceGetInstanceData1 =
+      _CFPlugInInstanceGetInstanceData1Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(CFPlugInInstanceRef)>();
+
+  int CFPlugInInstanceGetTypeID1() {
+    return _CFPlugInInstanceGetTypeID1();
+  }
+
+  late final _CFPlugInInstanceGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFPlugInInstanceGetTypeID');
+  late final _CFPlugInInstanceGetTypeID1 =
+      _CFPlugInInstanceGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFPlugInInstanceRef CFPlugInInstanceCreateWithInstanceDataSize1(
+    CFAllocatorRef allocator,
+    int instanceDataSize,
+    CFPlugInInstanceDeallocateInstanceDataFunction deallocateInstanceFunction,
+    CFStringRef factoryName,
+    CFPlugInInstanceGetInterfaceFunction getInterfaceFunction,
+  ) {
+    return _CFPlugInInstanceCreateWithInstanceDataSize1(
+      allocator,
+      instanceDataSize,
+      deallocateInstanceFunction,
+      factoryName,
+      getInterfaceFunction,
+    );
+  }
+
+  late final _CFPlugInInstanceCreateWithInstanceDataSize1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFPlugInInstanceRef Function(
+                  CFAllocatorRef,
+                  CFIndex,
+                  CFPlugInInstanceDeallocateInstanceDataFunction,
+                  CFStringRef,
+                  CFPlugInInstanceGetInterfaceFunction)>>(
+      'CFPlugInInstanceCreateWithInstanceDataSize');
+  late final _CFPlugInInstanceCreateWithInstanceDataSize1 =
+      _CFPlugInInstanceCreateWithInstanceDataSize1Ptr.asFunction<
+          CFPlugInInstanceRef Function(
+              CFAllocatorRef,
+              int,
+              CFPlugInInstanceDeallocateInstanceDataFunction,
+              CFStringRef,
+              CFPlugInInstanceGetInterfaceFunction)>();
+
+  int CFMachPortGetTypeID1() {
+    return _CFMachPortGetTypeID1();
+  }
+
+  late final _CFMachPortGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFMachPortGetTypeID');
+  late final _CFMachPortGetTypeID1 =
+      _CFMachPortGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFMachPortRef CFMachPortCreate1(
+    CFAllocatorRef allocator,
+    CFMachPortCallBack callout,
+    ffi.Pointer<CFMachPortContext> context,
+    ffi.Pointer<Boolean> shouldFreeInfo,
+  ) {
+    return _CFMachPortCreate1(
+      allocator,
+      callout,
+      context,
+      shouldFreeInfo,
+    );
+  }
+
+  late final _CFMachPortCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMachPortRef Function(
+              CFAllocatorRef,
+              CFMachPortCallBack,
+              ffi.Pointer<CFMachPortContext>,
+              ffi.Pointer<Boolean>)>>('CFMachPortCreate');
+  late final _CFMachPortCreate1 = _CFMachPortCreate1Ptr.asFunction<
+      CFMachPortRef Function(CFAllocatorRef, CFMachPortCallBack,
+          ffi.Pointer<CFMachPortContext>, ffi.Pointer<Boolean>)>();
+
+  CFMachPortRef CFMachPortCreateWithPort1(
+    CFAllocatorRef allocator,
+    int portNum,
+    CFMachPortCallBack callout,
+    ffi.Pointer<CFMachPortContext> context,
+    ffi.Pointer<Boolean> shouldFreeInfo,
+  ) {
+    return _CFMachPortCreateWithPort1(
+      allocator,
+      portNum,
+      callout,
+      context,
+      shouldFreeInfo,
+    );
+  }
+
+  late final _CFMachPortCreateWithPort1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMachPortRef Function(
+              CFAllocatorRef,
+              mach_port_t,
+              CFMachPortCallBack,
+              ffi.Pointer<CFMachPortContext>,
+              ffi.Pointer<Boolean>)>>('CFMachPortCreateWithPort');
+  late final _CFMachPortCreateWithPort1 =
+      _CFMachPortCreateWithPort1Ptr.asFunction<
+          CFMachPortRef Function(CFAllocatorRef, int, CFMachPortCallBack,
+              ffi.Pointer<CFMachPortContext>, ffi.Pointer<Boolean>)>();
+
+  int CFMachPortGetPort1(
+    CFMachPortRef port,
+  ) {
+    return _CFMachPortGetPort1(
+      port,
+    );
+  }
+
+  late final _CFMachPortGetPort1Ptr =
+      _lookup<ffi.NativeFunction<mach_port_t Function(CFMachPortRef)>>(
+          'CFMachPortGetPort');
+  late final _CFMachPortGetPort1 =
+      _CFMachPortGetPort1Ptr.asFunction<int Function(CFMachPortRef)>();
+
+  void CFMachPortGetContext1(
+    CFMachPortRef port,
+    ffi.Pointer<CFMachPortContext> context,
+  ) {
+    return _CFMachPortGetContext1(
+      port,
+      context,
+    );
+  }
+
+  late final _CFMachPortGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMachPortRef,
+              ffi.Pointer<CFMachPortContext>)>>('CFMachPortGetContext');
+  late final _CFMachPortGetContext1 = _CFMachPortGetContext1Ptr.asFunction<
+      void Function(CFMachPortRef, ffi.Pointer<CFMachPortContext>)>();
+
+  void CFMachPortInvalidate1(
+    CFMachPortRef port,
+  ) {
+    return _CFMachPortInvalidate1(
+      port,
+    );
+  }
+
+  late final _CFMachPortInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFMachPortRef)>>(
+          'CFMachPortInvalidate');
+  late final _CFMachPortInvalidate1 =
+      _CFMachPortInvalidate1Ptr.asFunction<void Function(CFMachPortRef)>();
+
+  int CFMachPortIsValid1(
+    CFMachPortRef port,
+  ) {
+    return _CFMachPortIsValid1(
+      port,
+    );
+  }
+
+  late final _CFMachPortIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFMachPortRef)>>(
+          'CFMachPortIsValid');
+  late final _CFMachPortIsValid1 =
+      _CFMachPortIsValid1Ptr.asFunction<int Function(CFMachPortRef)>();
+
+  CFMachPortInvalidationCallBack CFMachPortGetInvalidationCallBack1(
+    CFMachPortRef port,
+  ) {
+    return _CFMachPortGetInvalidationCallBack1(
+      port,
+    );
+  }
+
+  late final _CFMachPortGetInvalidationCallBack1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMachPortInvalidationCallBack Function(
+              CFMachPortRef)>>('CFMachPortGetInvalidationCallBack');
+  late final _CFMachPortGetInvalidationCallBack1 =
+      _CFMachPortGetInvalidationCallBack1Ptr.asFunction<
+          CFMachPortInvalidationCallBack Function(CFMachPortRef)>();
+
+  void CFMachPortSetInvalidationCallBack1(
+    CFMachPortRef port,
+    CFMachPortInvalidationCallBack callout,
+  ) {
+    return _CFMachPortSetInvalidationCallBack1(
+      port,
+      callout,
+    );
+  }
+
+  late final _CFMachPortSetInvalidationCallBack1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFMachPortRef, CFMachPortInvalidationCallBack)>>(
+      'CFMachPortSetInvalidationCallBack');
+  late final _CFMachPortSetInvalidationCallBack1 =
+      _CFMachPortSetInvalidationCallBack1Ptr.asFunction<
+          void Function(CFMachPortRef, CFMachPortInvalidationCallBack)>();
+
+  CFRunLoopSourceRef CFMachPortCreateRunLoopSource1(
+    CFAllocatorRef allocator,
+    CFMachPortRef port,
+    int order,
+  ) {
+    return _CFMachPortCreateRunLoopSource1(
+      allocator,
+      port,
+      order,
+    );
+  }
+
+  late final _CFMachPortCreateRunLoopSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFMachPortRef,
+              CFIndex)>>('CFMachPortCreateRunLoopSource');
+  late final _CFMachPortCreateRunLoopSource1 =
+      _CFMachPortCreateRunLoopSource1Ptr.asFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFMachPortRef, int)>();
+
+  int CFAttributedStringGetTypeID1() {
+    return _CFAttributedStringGetTypeID1();
+  }
+
+  late final _CFAttributedStringGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFAttributedStringGetTypeID');
+  late final _CFAttributedStringGetTypeID1 =
+      _CFAttributedStringGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFAttributedStringRef CFAttributedStringCreate1(
+    CFAllocatorRef alloc,
+    CFStringRef str,
+    CFDictionaryRef attributes,
+  ) {
+    return _CFAttributedStringCreate1(
+      alloc,
+      str,
+      attributes,
+    );
+  }
+
+  late final _CFAttributedStringCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAttributedStringRef Function(CFAllocatorRef, CFStringRef,
+              CFDictionaryRef)>>('CFAttributedStringCreate');
+  late final _CFAttributedStringCreate1 =
+      _CFAttributedStringCreate1Ptr.asFunction<
+          CFAttributedStringRef Function(
+              CFAllocatorRef, CFStringRef, CFDictionaryRef)>();
+
+  CFAttributedStringRef CFAttributedStringCreateWithSubstring1(
+    CFAllocatorRef alloc,
+    CFAttributedStringRef aStr,
+    CFRange range,
+  ) {
+    return _CFAttributedStringCreateWithSubstring1(
+      alloc,
+      aStr,
+      range,
+    );
+  }
+
+  late final _CFAttributedStringCreateWithSubstring1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAttributedStringRef Function(CFAllocatorRef, CFAttributedStringRef,
+              CFRange)>>('CFAttributedStringCreateWithSubstring');
+  late final _CFAttributedStringCreateWithSubstring1 =
+      _CFAttributedStringCreateWithSubstring1Ptr.asFunction<
+          CFAttributedStringRef Function(
+              CFAllocatorRef, CFAttributedStringRef, CFRange)>();
+
+  CFAttributedStringRef CFAttributedStringCreateCopy1(
+    CFAllocatorRef alloc,
+    CFAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringCreateCopy1(
+      alloc,
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAttributedStringRef Function(CFAllocatorRef,
+              CFAttributedStringRef)>>('CFAttributedStringCreateCopy');
+  late final _CFAttributedStringCreateCopy1 =
+      _CFAttributedStringCreateCopy1Ptr.asFunction<
+          CFAttributedStringRef Function(
+              CFAllocatorRef, CFAttributedStringRef)>();
+
+  CFStringRef CFAttributedStringGetString1(
+    CFAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringGetString1(
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringGetString1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFAttributedStringRef)>>(
+          'CFAttributedStringGetString');
+  late final _CFAttributedStringGetString1 = _CFAttributedStringGetString1Ptr
+      .asFunction<CFStringRef Function(CFAttributedStringRef)>();
+
+  int CFAttributedStringGetLength1(
+    CFAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringGetLength1(
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringGetLength1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFAttributedStringRef)>>(
+          'CFAttributedStringGetLength');
+  late final _CFAttributedStringGetLength1 = _CFAttributedStringGetLength1Ptr
+      .asFunction<int Function(CFAttributedStringRef)>();
+
+  CFDictionaryRef CFAttributedStringGetAttributes1(
+    CFAttributedStringRef aStr,
+    int loc,
+    ffi.Pointer<CFRange> effectiveRange,
+  ) {
+    return _CFAttributedStringGetAttributes1(
+      aStr,
+      loc,
+      effectiveRange,
+    );
+  }
+
+  late final _CFAttributedStringGetAttributes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(CFAttributedStringRef, CFIndex,
+              ffi.Pointer<CFRange>)>>('CFAttributedStringGetAttributes');
+  late final _CFAttributedStringGetAttributes1 =
+      _CFAttributedStringGetAttributes1Ptr.asFunction<
+          CFDictionaryRef Function(
+              CFAttributedStringRef, int, ffi.Pointer<CFRange>)>();
+
+  CFTypeRef CFAttributedStringGetAttribute1(
+    CFAttributedStringRef aStr,
+    int loc,
+    CFStringRef attrName,
+    ffi.Pointer<CFRange> effectiveRange,
+  ) {
+    return _CFAttributedStringGetAttribute1(
+      aStr,
+      loc,
+      attrName,
+      effectiveRange,
+    );
+  }
+
+  late final _CFAttributedStringGetAttribute1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFAttributedStringRef, CFIndex, CFStringRef,
+              ffi.Pointer<CFRange>)>>('CFAttributedStringGetAttribute');
+  late final _CFAttributedStringGetAttribute1 =
+      _CFAttributedStringGetAttribute1Ptr.asFunction<
+          CFTypeRef Function(
+              CFAttributedStringRef, int, CFStringRef, ffi.Pointer<CFRange>)>();
+
+  CFDictionaryRef CFAttributedStringGetAttributesAndLongestEffectiveRange1(
+    CFAttributedStringRef aStr,
+    int loc,
+    CFRange inRange,
+    ffi.Pointer<CFRange> longestEffectiveRange,
+  ) {
+    return _CFAttributedStringGetAttributesAndLongestEffectiveRange1(
+      aStr,
+      loc,
+      inRange,
+      longestEffectiveRange,
+    );
+  }
+
+  late final _CFAttributedStringGetAttributesAndLongestEffectiveRange1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFDictionaryRef Function(CFAttributedStringRef, CFIndex,
+                      CFRange, ffi.Pointer<CFRange>)>>(
+          'CFAttributedStringGetAttributesAndLongestEffectiveRange');
+  late final _CFAttributedStringGetAttributesAndLongestEffectiveRange1 =
+      _CFAttributedStringGetAttributesAndLongestEffectiveRange1Ptr.asFunction<
+          CFDictionaryRef Function(
+              CFAttributedStringRef, int, CFRange, ffi.Pointer<CFRange>)>();
+
+  CFTypeRef CFAttributedStringGetAttributeAndLongestEffectiveRange1(
+    CFAttributedStringRef aStr,
+    int loc,
+    CFStringRef attrName,
+    CFRange inRange,
+    ffi.Pointer<CFRange> longestEffectiveRange,
+  ) {
+    return _CFAttributedStringGetAttributeAndLongestEffectiveRange1(
+      aStr,
+      loc,
+      attrName,
+      inRange,
+      longestEffectiveRange,
+    );
+  }
+
+  late final _CFAttributedStringGetAttributeAndLongestEffectiveRange1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  CFTypeRef Function(CFAttributedStringRef, CFIndex,
+                      CFStringRef, CFRange, ffi.Pointer<CFRange>)>>(
+          'CFAttributedStringGetAttributeAndLongestEffectiveRange');
+  late final _CFAttributedStringGetAttributeAndLongestEffectiveRange1 =
+      _CFAttributedStringGetAttributeAndLongestEffectiveRange1Ptr.asFunction<
+          CFTypeRef Function(CFAttributedStringRef, int, CFStringRef, CFRange,
+              ffi.Pointer<CFRange>)>();
+
+  CFMutableAttributedStringRef CFAttributedStringCreateMutableCopy1(
+    CFAllocatorRef alloc,
+    int maxLength,
+    CFAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringCreateMutableCopy1(
+      alloc,
+      maxLength,
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringCreateMutableCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableAttributedStringRef Function(CFAllocatorRef, CFIndex,
+              CFAttributedStringRef)>>('CFAttributedStringCreateMutableCopy');
+  late final _CFAttributedStringCreateMutableCopy1 =
+      _CFAttributedStringCreateMutableCopy1Ptr.asFunction<
+          CFMutableAttributedStringRef Function(
+              CFAllocatorRef, int, CFAttributedStringRef)>();
+
+  CFMutableAttributedStringRef CFAttributedStringCreateMutable1(
+    CFAllocatorRef alloc,
+    int maxLength,
+  ) {
+    return _CFAttributedStringCreateMutable1(
+      alloc,
+      maxLength,
+    );
+  }
+
+  late final _CFAttributedStringCreateMutable1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFMutableAttributedStringRef Function(
+              CFAllocatorRef, CFIndex)>>('CFAttributedStringCreateMutable');
+  late final _CFAttributedStringCreateMutable1 =
+      _CFAttributedStringCreateMutable1Ptr.asFunction<
+          CFMutableAttributedStringRef Function(CFAllocatorRef, int)>();
+
+  void CFAttributedStringReplaceString1(
+    CFMutableAttributedStringRef aStr,
+    CFRange range,
+    CFStringRef replacement,
+  ) {
+    return _CFAttributedStringReplaceString1(
+      aStr,
+      range,
+      replacement,
+    );
+  }
+
+  late final _CFAttributedStringReplaceString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableAttributedStringRef, CFRange,
+              CFStringRef)>>('CFAttributedStringReplaceString');
+  late final _CFAttributedStringReplaceString1 =
+      _CFAttributedStringReplaceString1Ptr.asFunction<
+          void Function(CFMutableAttributedStringRef, CFRange, CFStringRef)>();
+
+  CFMutableStringRef CFAttributedStringGetMutableString1(
+    CFMutableAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringGetMutableString1(
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringGetMutableString1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFMutableStringRef Function(CFMutableAttributedStringRef)>>(
+      'CFAttributedStringGetMutableString');
+  late final _CFAttributedStringGetMutableString1 =
+      _CFAttributedStringGetMutableString1Ptr.asFunction<
+          CFMutableStringRef Function(CFMutableAttributedStringRef)>();
+
+  void CFAttributedStringSetAttributes1(
+    CFMutableAttributedStringRef aStr,
+    CFRange range,
+    CFDictionaryRef replacement,
+    int clearOtherAttributes,
+  ) {
+    return _CFAttributedStringSetAttributes1(
+      aStr,
+      range,
+      replacement,
+      clearOtherAttributes,
+    );
+  }
+
+  late final _CFAttributedStringSetAttributes1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableAttributedStringRef, CFRange,
+              CFDictionaryRef, Boolean)>>('CFAttributedStringSetAttributes');
+  late final _CFAttributedStringSetAttributes1 =
+      _CFAttributedStringSetAttributes1Ptr.asFunction<
+          void Function(
+              CFMutableAttributedStringRef, CFRange, CFDictionaryRef, int)>();
+
+  void CFAttributedStringSetAttribute1(
+    CFMutableAttributedStringRef aStr,
+    CFRange range,
+    CFStringRef attrName,
+    CFTypeRef value,
+  ) {
+    return _CFAttributedStringSetAttribute1(
+      aStr,
+      range,
+      attrName,
+      value,
+    );
+  }
+
+  late final _CFAttributedStringSetAttribute1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableAttributedStringRef, CFRange, CFStringRef,
+              CFTypeRef)>>('CFAttributedStringSetAttribute');
+  late final _CFAttributedStringSetAttribute1 =
+      _CFAttributedStringSetAttribute1Ptr.asFunction<
+          void Function(
+              CFMutableAttributedStringRef, CFRange, CFStringRef, CFTypeRef)>();
+
+  void CFAttributedStringRemoveAttribute1(
+    CFMutableAttributedStringRef aStr,
+    CFRange range,
+    CFStringRef attrName,
+  ) {
+    return _CFAttributedStringRemoveAttribute1(
+      aStr,
+      range,
+      attrName,
+    );
+  }
+
+  late final _CFAttributedStringRemoveAttribute1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFMutableAttributedStringRef, CFRange,
+              CFStringRef)>>('CFAttributedStringRemoveAttribute');
+  late final _CFAttributedStringRemoveAttribute1 =
+      _CFAttributedStringRemoveAttribute1Ptr.asFunction<
+          void Function(CFMutableAttributedStringRef, CFRange, CFStringRef)>();
+
+  void CFAttributedStringReplaceAttributedString1(
+    CFMutableAttributedStringRef aStr,
+    CFRange range,
+    CFAttributedStringRef replacement,
+  ) {
+    return _CFAttributedStringReplaceAttributedString1(
+      aStr,
+      range,
+      replacement,
+    );
+  }
+
+  late final _CFAttributedStringReplaceAttributedString1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(CFMutableAttributedStringRef, CFRange,
+                  CFAttributedStringRef)>>(
+      'CFAttributedStringReplaceAttributedString');
+  late final _CFAttributedStringReplaceAttributedString1 =
+      _CFAttributedStringReplaceAttributedString1Ptr.asFunction<
+          void Function(
+              CFMutableAttributedStringRef, CFRange, CFAttributedStringRef)>();
+
+  void CFAttributedStringBeginEditing1(
+    CFMutableAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringBeginEditing1(
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringBeginEditing1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableAttributedStringRef)>>(
+      'CFAttributedStringBeginEditing');
+  late final _CFAttributedStringBeginEditing1 =
+      _CFAttributedStringBeginEditing1Ptr.asFunction<
+          void Function(CFMutableAttributedStringRef)>();
+
+  void CFAttributedStringEndEditing1(
+    CFMutableAttributedStringRef aStr,
+  ) {
+    return _CFAttributedStringEndEditing1(
+      aStr,
+    );
+  }
+
+  late final _CFAttributedStringEndEditing1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(CFMutableAttributedStringRef)>>(
+      'CFAttributedStringEndEditing');
+  late final _CFAttributedStringEndEditing1 = _CFAttributedStringEndEditing1Ptr
+      .asFunction<void Function(CFMutableAttributedStringRef)>();
+
+  int CFURLEnumeratorGetTypeID1() {
+    return _CFURLEnumeratorGetTypeID1();
+  }
+
+  late final _CFURLEnumeratorGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFURLEnumeratorGetTypeID');
+  late final _CFURLEnumeratorGetTypeID1 =
+      _CFURLEnumeratorGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFURLEnumeratorRef CFURLEnumeratorCreateForDirectoryURL1(
+    CFAllocatorRef alloc,
+    CFURLRef directoryURL,
+    int option,
+    CFArrayRef propertyKeys,
+  ) {
+    return _CFURLEnumeratorCreateForDirectoryURL1(
+      alloc,
+      directoryURL,
+      option,
+      propertyKeys,
+    );
+  }
+
+  late final _CFURLEnumeratorCreateForDirectoryURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLEnumeratorRef Function(CFAllocatorRef, CFURLRef, ffi.Int32,
+              CFArrayRef)>>('CFURLEnumeratorCreateForDirectoryURL');
+  late final _CFURLEnumeratorCreateForDirectoryURL1 =
+      _CFURLEnumeratorCreateForDirectoryURL1Ptr.asFunction<
+          CFURLEnumeratorRef Function(
+              CFAllocatorRef, CFURLRef, int, CFArrayRef)>();
+
+  CFURLEnumeratorRef CFURLEnumeratorCreateForMountedVolumes1(
+    CFAllocatorRef alloc,
+    int option,
+    CFArrayRef propertyKeys,
+  ) {
+    return _CFURLEnumeratorCreateForMountedVolumes1(
+      alloc,
+      option,
+      propertyKeys,
+    );
+  }
+
+  late final _CFURLEnumeratorCreateForMountedVolumes1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFURLEnumeratorRef Function(CFAllocatorRef, ffi.Int32,
+              CFArrayRef)>>('CFURLEnumeratorCreateForMountedVolumes');
+  late final _CFURLEnumeratorCreateForMountedVolumes1 =
+      _CFURLEnumeratorCreateForMountedVolumes1Ptr.asFunction<
+          CFURLEnumeratorRef Function(CFAllocatorRef, int, CFArrayRef)>();
+
+  int CFURLEnumeratorGetNextURL1(
+    CFURLEnumeratorRef enumerator,
+    ffi.Pointer<CFURLRef> url,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _CFURLEnumeratorGetNextURL1(
+      enumerator,
+      url,
+      error,
+    );
+  }
+
+  late final _CFURLEnumeratorGetNextURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFURLEnumeratorRef, ffi.Pointer<CFURLRef>,
+              ffi.Pointer<CFErrorRef>)>>('CFURLEnumeratorGetNextURL');
+  late final _CFURLEnumeratorGetNextURL1 =
+      _CFURLEnumeratorGetNextURL1Ptr.asFunction<
+          int Function(CFURLEnumeratorRef, ffi.Pointer<CFURLRef>,
+              ffi.Pointer<CFErrorRef>)>();
+
+  void CFURLEnumeratorSkipDescendents1(
+    CFURLEnumeratorRef enumerator,
+  ) {
+    return _CFURLEnumeratorSkipDescendents1(
+      enumerator,
+    );
+  }
+
+  late final _CFURLEnumeratorSkipDescendents1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFURLEnumeratorRef)>>(
+          'CFURLEnumeratorSkipDescendents');
+  late final _CFURLEnumeratorSkipDescendents1 =
+      _CFURLEnumeratorSkipDescendents1Ptr.asFunction<
+          void Function(CFURLEnumeratorRef)>();
+
+  int CFURLEnumeratorGetDescendentLevel1(
+    CFURLEnumeratorRef enumerator,
+  ) {
+    return _CFURLEnumeratorGetDescendentLevel1(
+      enumerator,
+    );
+  }
+
+  late final _CFURLEnumeratorGetDescendentLevel1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFURLEnumeratorRef)>>(
+          'CFURLEnumeratorGetDescendentLevel');
+  late final _CFURLEnumeratorGetDescendentLevel1 =
+      _CFURLEnumeratorGetDescendentLevel1Ptr.asFunction<
+          int Function(CFURLEnumeratorRef)>();
+
+  int CFURLEnumeratorGetSourceDidChange1(
+    CFURLEnumeratorRef enumerator,
+  ) {
+    return _CFURLEnumeratorGetSourceDidChange1(
+      enumerator,
+    );
+  }
+
+  late final _CFURLEnumeratorGetSourceDidChange1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFURLEnumeratorRef)>>(
+          'CFURLEnumeratorGetSourceDidChange');
+  late final _CFURLEnumeratorGetSourceDidChange1 =
+      _CFURLEnumeratorGetSourceDidChange1Ptr.asFunction<
+          int Function(CFURLEnumeratorRef)>();
+
+  int CFFileSecurityGetTypeID1() {
+    return _CFFileSecurityGetTypeID1();
+  }
+
+  late final _CFFileSecurityGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFFileSecurityGetTypeID');
+  late final _CFFileSecurityGetTypeID1 =
+      _CFFileSecurityGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFFileSecurityRef CFFileSecurityCreate1(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFFileSecurityCreate1(
+      allocator,
+    );
+  }
+
+  late final _CFFileSecurityCreate1Ptr =
+      _lookup<ffi.NativeFunction<CFFileSecurityRef Function(CFAllocatorRef)>>(
+          'CFFileSecurityCreate');
+  late final _CFFileSecurityCreate1 = _CFFileSecurityCreate1Ptr.asFunction<
+      CFFileSecurityRef Function(CFAllocatorRef)>();
+
+  CFFileSecurityRef CFFileSecurityCreateCopy1(
+    CFAllocatorRef allocator,
+    CFFileSecurityRef fileSec,
+  ) {
+    return _CFFileSecurityCreateCopy1(
+      allocator,
+      fileSec,
+    );
+  }
+
+  late final _CFFileSecurityCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFFileSecurityRef Function(
+              CFAllocatorRef, CFFileSecurityRef)>>('CFFileSecurityCreateCopy');
+  late final _CFFileSecurityCreateCopy1 =
+      _CFFileSecurityCreateCopy1Ptr.asFunction<
+          CFFileSecurityRef Function(CFAllocatorRef, CFFileSecurityRef)>();
+
+  int CFFileSecurityCopyOwnerUUID1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<CFUUIDRef> ownerUUID,
+  ) {
+    return _CFFileSecurityCopyOwnerUUID1(
+      fileSec,
+      ownerUUID,
+    );
+  }
+
+  late final _CFFileSecurityCopyOwnerUUID1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<CFUUIDRef>)>>('CFFileSecurityCopyOwnerUUID');
+  late final _CFFileSecurityCopyOwnerUUID1 = _CFFileSecurityCopyOwnerUUID1Ptr
+      .asFunction<int Function(CFFileSecurityRef, ffi.Pointer<CFUUIDRef>)>();
+
+  int CFFileSecuritySetOwnerUUID1(
+    CFFileSecurityRef fileSec,
+    CFUUIDRef ownerUUID,
+  ) {
+    return _CFFileSecuritySetOwnerUUID1(
+      fileSec,
+      ownerUUID,
+    );
+  }
+
+  late final _CFFileSecuritySetOwnerUUID1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFFileSecurityRef, CFUUIDRef)>>(
+      'CFFileSecuritySetOwnerUUID');
+  late final _CFFileSecuritySetOwnerUUID1 = _CFFileSecuritySetOwnerUUID1Ptr
+      .asFunction<int Function(CFFileSecurityRef, CFUUIDRef)>();
+
+  int CFFileSecurityCopyGroupUUID1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<CFUUIDRef> groupUUID,
+  ) {
+    return _CFFileSecurityCopyGroupUUID1(
+      fileSec,
+      groupUUID,
+    );
+  }
+
+  late final _CFFileSecurityCopyGroupUUID1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<CFUUIDRef>)>>('CFFileSecurityCopyGroupUUID');
+  late final _CFFileSecurityCopyGroupUUID1 = _CFFileSecurityCopyGroupUUID1Ptr
+      .asFunction<int Function(CFFileSecurityRef, ffi.Pointer<CFUUIDRef>)>();
+
+  int CFFileSecuritySetGroupUUID1(
+    CFFileSecurityRef fileSec,
+    CFUUIDRef groupUUID,
+  ) {
+    return _CFFileSecuritySetGroupUUID1(
+      fileSec,
+      groupUUID,
+    );
+  }
+
+  late final _CFFileSecuritySetGroupUUID1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFFileSecurityRef, CFUUIDRef)>>(
+      'CFFileSecuritySetGroupUUID');
+  late final _CFFileSecuritySetGroupUUID1 = _CFFileSecuritySetGroupUUID1Ptr
+      .asFunction<int Function(CFFileSecurityRef, CFUUIDRef)>();
+
+  int CFFileSecurityCopyAccessControlList1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<acl_t> accessControlList,
+  ) {
+    return _CFFileSecurityCopyAccessControlList1(
+      fileSec,
+      accessControlList,
+    );
+  }
+
+  late final _CFFileSecurityCopyAccessControlList1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<acl_t>)>>('CFFileSecurityCopyAccessControlList');
+  late final _CFFileSecurityCopyAccessControlList1 =
+      _CFFileSecurityCopyAccessControlList1Ptr.asFunction<
+          int Function(CFFileSecurityRef, ffi.Pointer<acl_t>)>();
+
+  int CFFileSecuritySetAccessControlList1(
+    CFFileSecurityRef fileSec,
+    acl_t accessControlList,
+  ) {
+    return _CFFileSecuritySetAccessControlList1(
+      fileSec,
+      accessControlList,
+    );
+  }
+
+  late final _CFFileSecuritySetAccessControlList1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFFileSecurityRef, acl_t)>>(
+          'CFFileSecuritySetAccessControlList');
+  late final _CFFileSecuritySetAccessControlList1 =
+      _CFFileSecuritySetAccessControlList1Ptr.asFunction<
+          int Function(CFFileSecurityRef, acl_t)>();
+
+  int CFFileSecurityGetOwner1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<uid_t> owner,
+  ) {
+    return _CFFileSecurityGetOwner1(
+      fileSec,
+      owner,
+    );
+  }
+
+  late final _CFFileSecurityGetOwner1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<uid_t>)>>('CFFileSecurityGetOwner');
+  late final _CFFileSecurityGetOwner1 = _CFFileSecurityGetOwner1Ptr.asFunction<
+      int Function(CFFileSecurityRef, ffi.Pointer<uid_t>)>();
+
+  int CFFileSecuritySetOwner1(
+    CFFileSecurityRef fileSec,
+    int owner,
+  ) {
+    return _CFFileSecuritySetOwner1(
+      fileSec,
+      owner,
+    );
+  }
+
+  late final _CFFileSecuritySetOwner1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFFileSecurityRef, uid_t)>>(
+          'CFFileSecuritySetOwner');
+  late final _CFFileSecuritySetOwner1 = _CFFileSecuritySetOwner1Ptr.asFunction<
+      int Function(CFFileSecurityRef, int)>();
+
+  int CFFileSecurityGetGroup1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<gid_t> group,
+  ) {
+    return _CFFileSecurityGetGroup1(
+      fileSec,
+      group,
+    );
+  }
+
+  late final _CFFileSecurityGetGroup1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<gid_t>)>>('CFFileSecurityGetGroup');
+  late final _CFFileSecurityGetGroup1 = _CFFileSecurityGetGroup1Ptr.asFunction<
+      int Function(CFFileSecurityRef, ffi.Pointer<gid_t>)>();
+
+  int CFFileSecuritySetGroup1(
+    CFFileSecurityRef fileSec,
+    int group,
+  ) {
+    return _CFFileSecuritySetGroup1(
+      fileSec,
+      group,
+    );
+  }
+
+  late final _CFFileSecuritySetGroup1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFFileSecurityRef, gid_t)>>(
+          'CFFileSecuritySetGroup');
+  late final _CFFileSecuritySetGroup1 = _CFFileSecuritySetGroup1Ptr.asFunction<
+      int Function(CFFileSecurityRef, int)>();
+
+  int CFFileSecurityGetMode1(
+    CFFileSecurityRef fileSec,
+    ffi.Pointer<mode_t> mode,
+  ) {
+    return _CFFileSecurityGetMode1(
+      fileSec,
+      mode,
+    );
+  }
+
+  late final _CFFileSecurityGetMode1Ptr = _lookup<
+      ffi.NativeFunction<
+          Boolean Function(CFFileSecurityRef,
+              ffi.Pointer<mode_t>)>>('CFFileSecurityGetMode');
+  late final _CFFileSecurityGetMode1 = _CFFileSecurityGetMode1Ptr.asFunction<
+      int Function(CFFileSecurityRef, ffi.Pointer<mode_t>)>();
+
+  int CFFileSecuritySetMode1(
+    CFFileSecurityRef fileSec,
+    int mode,
+  ) {
+    return _CFFileSecuritySetMode1(
+      fileSec,
+      mode,
+    );
+  }
+
+  late final _CFFileSecuritySetMode1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFFileSecurityRef, mode_t)>>(
+          'CFFileSecuritySetMode');
+  late final _CFFileSecuritySetMode1 = _CFFileSecuritySetMode1Ptr.asFunction<
+      int Function(CFFileSecurityRef, int)>();
+
+  int CFFileSecurityClearProperties1(
+    CFFileSecurityRef fileSec,
+    int clearPropertyMask,
+  ) {
+    return _CFFileSecurityClearProperties1(
+      fileSec,
+      clearPropertyMask,
+    );
+  }
+
+  late final _CFFileSecurityClearProperties1Ptr = _lookup<
+          ffi.NativeFunction<Boolean Function(CFFileSecurityRef, ffi.Int32)>>(
+      'CFFileSecurityClearProperties');
+  late final _CFFileSecurityClearProperties1 =
+      _CFFileSecurityClearProperties1Ptr.asFunction<
+          int Function(CFFileSecurityRef, int)>();
+
+  CFStringRef CFStringTokenizerCopyBestStringLanguage1(
+    CFStringRef string,
+    CFRange range,
+  ) {
+    return _CFStringTokenizerCopyBestStringLanguage1(
+      string,
+      range,
+    );
+  }
+
+  late final _CFStringTokenizerCopyBestStringLanguage1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFStringRef, CFRange)>>(
+          'CFStringTokenizerCopyBestStringLanguage');
+  late final _CFStringTokenizerCopyBestStringLanguage1 =
+      _CFStringTokenizerCopyBestStringLanguage1Ptr.asFunction<
+          CFStringRef Function(CFStringRef, CFRange)>();
+
+  int CFStringTokenizerGetTypeID1() {
+    return _CFStringTokenizerGetTypeID1();
+  }
+
+  late final _CFStringTokenizerGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFStringTokenizerGetTypeID');
+  late final _CFStringTokenizerGetTypeID1 =
+      _CFStringTokenizerGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFStringTokenizerRef CFStringTokenizerCreate1(
+    CFAllocatorRef alloc,
+    CFStringRef string,
+    CFRange range,
+    int options,
+    CFLocaleRef locale,
+  ) {
+    return _CFStringTokenizerCreate1(
+      alloc,
+      string,
+      range,
+      options,
+      locale,
+    );
+  }
+
+  late final _CFStringTokenizerCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringTokenizerRef Function(CFAllocatorRef, CFStringRef, CFRange,
+              CFOptionFlags, CFLocaleRef)>>('CFStringTokenizerCreate');
+  late final _CFStringTokenizerCreate1 =
+      _CFStringTokenizerCreate1Ptr.asFunction<
+          CFStringTokenizerRef Function(
+              CFAllocatorRef, CFStringRef, CFRange, int, CFLocaleRef)>();
+
+  void CFStringTokenizerSetString1(
+    CFStringTokenizerRef tokenizer,
+    CFStringRef string,
+    CFRange range,
+  ) {
+    return _CFStringTokenizerSetString1(
+      tokenizer,
+      string,
+      range,
+    );
+  }
+
+  late final _CFStringTokenizerSetString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFStringTokenizerRef, CFStringRef,
+              CFRange)>>('CFStringTokenizerSetString');
+  late final _CFStringTokenizerSetString1 = _CFStringTokenizerSetString1Ptr
+      .asFunction<void Function(CFStringTokenizerRef, CFStringRef, CFRange)>();
+
+  int CFStringTokenizerGoToTokenAtIndex1(
+    CFStringTokenizerRef tokenizer,
+    int index,
+  ) {
+    return _CFStringTokenizerGoToTokenAtIndex1(
+      tokenizer,
+      index,
+    );
+  }
+
+  late final _CFStringTokenizerGoToTokenAtIndex1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(CFStringTokenizerRef,
+              CFIndex)>>('CFStringTokenizerGoToTokenAtIndex');
+  late final _CFStringTokenizerGoToTokenAtIndex1 =
+      _CFStringTokenizerGoToTokenAtIndex1Ptr.asFunction<
+          int Function(CFStringTokenizerRef, int)>();
+
+  int CFStringTokenizerAdvanceToNextToken1(
+    CFStringTokenizerRef tokenizer,
+  ) {
+    return _CFStringTokenizerAdvanceToNextToken1(
+      tokenizer,
+    );
+  }
+
+  late final _CFStringTokenizerAdvanceToNextToken1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFStringTokenizerRef)>>(
+          'CFStringTokenizerAdvanceToNextToken');
+  late final _CFStringTokenizerAdvanceToNextToken1 =
+      _CFStringTokenizerAdvanceToNextToken1Ptr.asFunction<
+          int Function(CFStringTokenizerRef)>();
+
+  CFRange CFStringTokenizerGetCurrentTokenRange1(
+    CFStringTokenizerRef tokenizer,
+  ) {
+    return _CFStringTokenizerGetCurrentTokenRange1(
+      tokenizer,
+    );
+  }
+
+  late final _CFStringTokenizerGetCurrentTokenRange1Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFStringTokenizerRef)>>(
+          'CFStringTokenizerGetCurrentTokenRange');
+  late final _CFStringTokenizerGetCurrentTokenRange1 =
+      _CFStringTokenizerGetCurrentTokenRange1Ptr.asFunction<
+          CFRange Function(CFStringTokenizerRef)>();
+
+  CFTypeRef CFStringTokenizerCopyCurrentTokenAttribute1(
+    CFStringTokenizerRef tokenizer,
+    int attribute,
+  ) {
+    return _CFStringTokenizerCopyCurrentTokenAttribute1(
+      tokenizer,
+      attribute,
+    );
+  }
+
+  late final _CFStringTokenizerCopyCurrentTokenAttribute1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFTypeRef Function(CFStringTokenizerRef,
+              CFOptionFlags)>>('CFStringTokenizerCopyCurrentTokenAttribute');
+  late final _CFStringTokenizerCopyCurrentTokenAttribute1 =
+      _CFStringTokenizerCopyCurrentTokenAttribute1Ptr.asFunction<
+          CFTypeRef Function(CFStringTokenizerRef, int)>();
+
+  int CFStringTokenizerGetCurrentSubTokens1(
+    CFStringTokenizerRef tokenizer,
+    ffi.Pointer<CFRange> ranges,
+    int maxRangeLength,
+    CFMutableArrayRef derivedSubTokens,
+  ) {
+    return _CFStringTokenizerGetCurrentSubTokens1(
+      tokenizer,
+      ranges,
+      maxRangeLength,
+      derivedSubTokens,
+    );
+  }
+
+  late final _CFStringTokenizerGetCurrentSubTokens1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFStringTokenizerRef, ffi.Pointer<CFRange>, CFIndex,
+              CFMutableArrayRef)>>('CFStringTokenizerGetCurrentSubTokens');
+  late final _CFStringTokenizerGetCurrentSubTokens1 =
+      _CFStringTokenizerGetCurrentSubTokens1Ptr.asFunction<
+          int Function(CFStringTokenizerRef, ffi.Pointer<CFRange>, int,
+              CFMutableArrayRef)>();
+
+  int CFFileDescriptorGetTypeID1() {
+    return _CFFileDescriptorGetTypeID1();
+  }
+
+  late final _CFFileDescriptorGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFFileDescriptorGetTypeID');
+  late final _CFFileDescriptorGetTypeID1 =
+      _CFFileDescriptorGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFFileDescriptorRef CFFileDescriptorCreate1(
+    CFAllocatorRef allocator,
+    int fd,
+    int closeOnInvalidate,
+    CFFileDescriptorCallBack callout,
+    ffi.Pointer<CFFileDescriptorContext> context,
+  ) {
+    return _CFFileDescriptorCreate1(
+      allocator,
+      fd,
+      closeOnInvalidate,
+      callout,
+      context,
+    );
+  }
+
+  late final _CFFileDescriptorCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFFileDescriptorRef Function(
+              CFAllocatorRef,
+              CFFileDescriptorNativeDescriptor,
+              Boolean,
+              CFFileDescriptorCallBack,
+              ffi.Pointer<CFFileDescriptorContext>)>>('CFFileDescriptorCreate');
+  late final _CFFileDescriptorCreate1 = _CFFileDescriptorCreate1Ptr.asFunction<
+      CFFileDescriptorRef Function(CFAllocatorRef, int, int,
+          CFFileDescriptorCallBack, ffi.Pointer<CFFileDescriptorContext>)>();
+
+  int CFFileDescriptorGetNativeDescriptor1(
+    CFFileDescriptorRef f,
+  ) {
+    return _CFFileDescriptorGetNativeDescriptor1(
+      f,
+    );
+  }
+
+  late final _CFFileDescriptorGetNativeDescriptor1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFFileDescriptorNativeDescriptor Function(
+              CFFileDescriptorRef)>>('CFFileDescriptorGetNativeDescriptor');
+  late final _CFFileDescriptorGetNativeDescriptor1 =
+      _CFFileDescriptorGetNativeDescriptor1Ptr.asFunction<
+          int Function(CFFileDescriptorRef)>();
+
+  void CFFileDescriptorGetContext1(
+    CFFileDescriptorRef f,
+    ffi.Pointer<CFFileDescriptorContext> context,
+  ) {
+    return _CFFileDescriptorGetContext1(
+      f,
+      context,
+    );
+  }
+
+  late final _CFFileDescriptorGetContext1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  CFFileDescriptorRef, ffi.Pointer<CFFileDescriptorContext>)>>(
+      'CFFileDescriptorGetContext');
+  late final _CFFileDescriptorGetContext1 =
+      _CFFileDescriptorGetContext1Ptr.asFunction<
+          void Function(
+              CFFileDescriptorRef, ffi.Pointer<CFFileDescriptorContext>)>();
+
+  void CFFileDescriptorEnableCallBacks1(
+    CFFileDescriptorRef f,
+    int callBackTypes,
+  ) {
+    return _CFFileDescriptorEnableCallBacks1(
+      f,
+      callBackTypes,
+    );
+  }
+
+  late final _CFFileDescriptorEnableCallBacks1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFFileDescriptorRef,
+              CFOptionFlags)>>('CFFileDescriptorEnableCallBacks');
+  late final _CFFileDescriptorEnableCallBacks1 =
+      _CFFileDescriptorEnableCallBacks1Ptr.asFunction<
+          void Function(CFFileDescriptorRef, int)>();
+
+  void CFFileDescriptorDisableCallBacks1(
+    CFFileDescriptorRef f,
+    int callBackTypes,
+  ) {
+    return _CFFileDescriptorDisableCallBacks1(
+      f,
+      callBackTypes,
+    );
+  }
+
+  late final _CFFileDescriptorDisableCallBacks1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFFileDescriptorRef,
+              CFOptionFlags)>>('CFFileDescriptorDisableCallBacks');
+  late final _CFFileDescriptorDisableCallBacks1 =
+      _CFFileDescriptorDisableCallBacks1Ptr.asFunction<
+          void Function(CFFileDescriptorRef, int)>();
+
+  void CFFileDescriptorInvalidate1(
+    CFFileDescriptorRef f,
+  ) {
+    return _CFFileDescriptorInvalidate1(
+      f,
+    );
+  }
+
+  late final _CFFileDescriptorInvalidate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFFileDescriptorRef)>>(
+          'CFFileDescriptorInvalidate');
+  late final _CFFileDescriptorInvalidate1 = _CFFileDescriptorInvalidate1Ptr
+      .asFunction<void Function(CFFileDescriptorRef)>();
+
+  int CFFileDescriptorIsValid1(
+    CFFileDescriptorRef f,
+  ) {
+    return _CFFileDescriptorIsValid1(
+      f,
+    );
+  }
+
+  late final _CFFileDescriptorIsValid1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFFileDescriptorRef)>>(
+          'CFFileDescriptorIsValid');
+  late final _CFFileDescriptorIsValid1 = _CFFileDescriptorIsValid1Ptr
+      .asFunction<int Function(CFFileDescriptorRef)>();
+
+  CFRunLoopSourceRef CFFileDescriptorCreateRunLoopSource1(
+    CFAllocatorRef allocator,
+    CFFileDescriptorRef f,
+    int order,
+  ) {
+    return _CFFileDescriptorCreateRunLoopSource1(
+      allocator,
+      f,
+      order,
+    );
+  }
+
+  late final _CFFileDescriptorCreateRunLoopSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFFileDescriptorRef,
+              CFIndex)>>('CFFileDescriptorCreateRunLoopSource');
+  late final _CFFileDescriptorCreateRunLoopSource1 =
+      _CFFileDescriptorCreateRunLoopSource1Ptr.asFunction<
+          CFRunLoopSourceRef Function(
+              CFAllocatorRef, CFFileDescriptorRef, int)>();
+
+  int CFUserNotificationGetTypeID1() {
+    return _CFUserNotificationGetTypeID1();
+  }
+
+  late final _CFUserNotificationGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'CFUserNotificationGetTypeID');
+  late final _CFUserNotificationGetTypeID1 =
+      _CFUserNotificationGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFUserNotificationRef CFUserNotificationCreate1(
+    CFAllocatorRef allocator,
+    double timeout,
+    int flags,
+    ffi.Pointer<SInt32> error,
+    CFDictionaryRef dictionary,
+  ) {
+    return _CFUserNotificationCreate1(
+      allocator,
+      timeout,
+      flags,
+      error,
+      dictionary,
+    );
+  }
+
+  late final _CFUserNotificationCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFUserNotificationRef Function(
+              CFAllocatorRef,
+              CFTimeInterval,
+              CFOptionFlags,
+              ffi.Pointer<SInt32>,
+              CFDictionaryRef)>>('CFUserNotificationCreate');
+  late final _CFUserNotificationCreate1 =
+      _CFUserNotificationCreate1Ptr.asFunction<
+          CFUserNotificationRef Function(CFAllocatorRef, double, int,
+              ffi.Pointer<SInt32>, CFDictionaryRef)>();
+
+  int CFUserNotificationReceiveResponse1(
+    CFUserNotificationRef userNotification,
+    double timeout,
+    ffi.Pointer<CFOptionFlags> responseFlags,
+  ) {
+    return _CFUserNotificationReceiveResponse1(
+      userNotification,
+      timeout,
+      responseFlags,
+    );
+  }
+
+  late final _CFUserNotificationReceiveResponse1Ptr = _lookup<
+          ffi.NativeFunction<
+              SInt32 Function(CFUserNotificationRef, CFTimeInterval,
+                  ffi.Pointer<CFOptionFlags>)>>(
+      'CFUserNotificationReceiveResponse');
+  late final _CFUserNotificationReceiveResponse1 =
+      _CFUserNotificationReceiveResponse1Ptr.asFunction<
+          int Function(
+              CFUserNotificationRef, double, ffi.Pointer<CFOptionFlags>)>();
+
+  CFStringRef CFUserNotificationGetResponseValue1(
+    CFUserNotificationRef userNotification,
+    CFStringRef key,
+    int idx,
+  ) {
+    return _CFUserNotificationGetResponseValue1(
+      userNotification,
+      key,
+      idx,
+    );
+  }
+
+  late final _CFUserNotificationGetResponseValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFUserNotificationRef, CFStringRef,
+              CFIndex)>>('CFUserNotificationGetResponseValue');
+  late final _CFUserNotificationGetResponseValue1 =
+      _CFUserNotificationGetResponseValue1Ptr.asFunction<
+          CFStringRef Function(CFUserNotificationRef, CFStringRef, int)>();
+
+  CFDictionaryRef CFUserNotificationGetResponseDictionary1(
+    CFUserNotificationRef userNotification,
+  ) {
+    return _CFUserNotificationGetResponseDictionary1(
+      userNotification,
+    );
+  }
+
+  late final _CFUserNotificationGetResponseDictionary1Ptr = _lookup<
+          ffi.NativeFunction<CFDictionaryRef Function(CFUserNotificationRef)>>(
+      'CFUserNotificationGetResponseDictionary');
+  late final _CFUserNotificationGetResponseDictionary1 =
+      _CFUserNotificationGetResponseDictionary1Ptr.asFunction<
+          CFDictionaryRef Function(CFUserNotificationRef)>();
+
+  int CFUserNotificationUpdate1(
+    CFUserNotificationRef userNotification,
+    double timeout,
+    int flags,
+    CFDictionaryRef dictionary,
+  ) {
+    return _CFUserNotificationUpdate1(
+      userNotification,
+      timeout,
+      flags,
+      dictionary,
+    );
+  }
+
+  late final _CFUserNotificationUpdate1Ptr = _lookup<
+      ffi.NativeFunction<
+          SInt32 Function(CFUserNotificationRef, CFTimeInterval, CFOptionFlags,
+              CFDictionaryRef)>>('CFUserNotificationUpdate');
+  late final _CFUserNotificationUpdate1 =
+      _CFUserNotificationUpdate1Ptr.asFunction<
+          int Function(CFUserNotificationRef, double, int, CFDictionaryRef)>();
+
+  int CFUserNotificationCancel1(
+    CFUserNotificationRef userNotification,
+  ) {
+    return _CFUserNotificationCancel1(
+      userNotification,
+    );
+  }
+
+  late final _CFUserNotificationCancel1Ptr =
+      _lookup<ffi.NativeFunction<SInt32 Function(CFUserNotificationRef)>>(
+          'CFUserNotificationCancel');
+  late final _CFUserNotificationCancel1 = _CFUserNotificationCancel1Ptr
+      .asFunction<int Function(CFUserNotificationRef)>();
+
+  CFRunLoopSourceRef CFUserNotificationCreateRunLoopSource1(
+    CFAllocatorRef allocator,
+    CFUserNotificationRef userNotification,
+    CFUserNotificationCallBack callout,
+    int order,
+  ) {
+    return _CFUserNotificationCreateRunLoopSource1(
+      allocator,
+      userNotification,
+      callout,
+      order,
+    );
+  }
+
+  late final _CFUserNotificationCreateRunLoopSource1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFRunLoopSourceRef Function(
+              CFAllocatorRef,
+              CFUserNotificationRef,
+              CFUserNotificationCallBack,
+              CFIndex)>>('CFUserNotificationCreateRunLoopSource');
+  late final _CFUserNotificationCreateRunLoopSource1 =
+      _CFUserNotificationCreateRunLoopSource1Ptr.asFunction<
+          CFRunLoopSourceRef Function(CFAllocatorRef, CFUserNotificationRef,
+              CFUserNotificationCallBack, int)>();
+
+  int CFUserNotificationDisplayNotice1(
+    double timeout,
+    int flags,
+    CFURLRef iconURL,
+    CFURLRef soundURL,
+    CFURLRef localizationURL,
+    CFStringRef alertHeader,
+    CFStringRef alertMessage,
+    CFStringRef defaultButtonTitle,
+  ) {
+    return _CFUserNotificationDisplayNotice1(
+      timeout,
+      flags,
+      iconURL,
+      soundURL,
+      localizationURL,
+      alertHeader,
+      alertMessage,
+      defaultButtonTitle,
+    );
+  }
+
+  late final _CFUserNotificationDisplayNotice1Ptr = _lookup<
+      ffi.NativeFunction<
+          SInt32 Function(
+              CFTimeInterval,
+              CFOptionFlags,
+              CFURLRef,
+              CFURLRef,
+              CFURLRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef)>>('CFUserNotificationDisplayNotice');
+  late final _CFUserNotificationDisplayNotice1 =
+      _CFUserNotificationDisplayNotice1Ptr.asFunction<
+          int Function(double, int, CFURLRef, CFURLRef, CFURLRef, CFStringRef,
+              CFStringRef, CFStringRef)>();
+
+  int CFUserNotificationDisplayAlert1(
+    double timeout,
+    int flags,
+    CFURLRef iconURL,
+    CFURLRef soundURL,
+    CFURLRef localizationURL,
+    CFStringRef alertHeader,
+    CFStringRef alertMessage,
+    CFStringRef defaultButtonTitle,
+    CFStringRef alternateButtonTitle,
+    CFStringRef otherButtonTitle,
+    ffi.Pointer<CFOptionFlags> responseFlags,
+  ) {
+    return _CFUserNotificationDisplayAlert1(
+      timeout,
+      flags,
+      iconURL,
+      soundURL,
+      localizationURL,
+      alertHeader,
+      alertMessage,
+      defaultButtonTitle,
+      alternateButtonTitle,
+      otherButtonTitle,
+      responseFlags,
+    );
+  }
+
+  late final _CFUserNotificationDisplayAlert1Ptr = _lookup<
+      ffi.NativeFunction<
+          SInt32 Function(
+              CFTimeInterval,
+              CFOptionFlags,
+              CFURLRef,
+              CFURLRef,
+              CFURLRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              ffi.Pointer<CFOptionFlags>)>>('CFUserNotificationDisplayAlert');
+  late final _CFUserNotificationDisplayAlert1 =
+      _CFUserNotificationDisplayAlert1Ptr.asFunction<
+          int Function(
+              double,
+              int,
+              CFURLRef,
+              CFURLRef,
+              CFURLRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              CFStringRef,
+              ffi.Pointer<CFOptionFlags>)>();
+
+  int CFXMLNodeGetTypeID1() {
+    return _CFXMLNodeGetTypeID1();
+  }
+
+  late final _CFXMLNodeGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFXMLNodeGetTypeID');
+  late final _CFXMLNodeGetTypeID1 =
+      _CFXMLNodeGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFXMLNodeRef CFXMLNodeCreate1(
+    CFAllocatorRef alloc,
+    int xmlType,
+    CFStringRef dataString,
+    ffi.Pointer<ffi.Void> additionalInfoPtr,
+    int version,
+  ) {
+    return _CFXMLNodeCreate1(
+      alloc,
+      xmlType,
+      dataString,
+      additionalInfoPtr,
+      version,
+    );
+  }
+
+  late final _CFXMLNodeCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLNodeRef Function(CFAllocatorRef, ffi.Int32, CFStringRef,
+              ffi.Pointer<ffi.Void>, CFIndex)>>('CFXMLNodeCreate');
+  late final _CFXMLNodeCreate1 = _CFXMLNodeCreate1Ptr.asFunction<
+      CFXMLNodeRef Function(
+          CFAllocatorRef, int, CFStringRef, ffi.Pointer<ffi.Void>, int)>();
+
+  CFXMLNodeRef CFXMLNodeCreateCopy1(
+    CFAllocatorRef alloc,
+    CFXMLNodeRef origNode,
+  ) {
+    return _CFXMLNodeCreateCopy1(
+      alloc,
+      origNode,
+    );
+  }
+
+  late final _CFXMLNodeCreateCopy1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLNodeRef Function(
+              CFAllocatorRef, CFXMLNodeRef)>>('CFXMLNodeCreateCopy');
+  late final _CFXMLNodeCreateCopy1 = _CFXMLNodeCreateCopy1Ptr.asFunction<
+      CFXMLNodeRef Function(CFAllocatorRef, CFXMLNodeRef)>();
+
+  int CFXMLNodeGetTypeCode1(
+    CFXMLNodeRef node,
+  ) {
+    return _CFXMLNodeGetTypeCode1(
+      node,
+    );
+  }
+
+  late final _CFXMLNodeGetTypeCode1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFXMLNodeRef)>>(
+          'CFXMLNodeGetTypeCode');
+  late final _CFXMLNodeGetTypeCode1 =
+      _CFXMLNodeGetTypeCode1Ptr.asFunction<int Function(CFXMLNodeRef)>();
+
+  CFStringRef CFXMLNodeGetString1(
+    CFXMLNodeRef node,
+  ) {
+    return _CFXMLNodeGetString1(
+      node,
+    );
+  }
+
+  late final _CFXMLNodeGetString1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFXMLNodeRef)>>(
+          'CFXMLNodeGetString');
+  late final _CFXMLNodeGetString1 =
+      _CFXMLNodeGetString1Ptr.asFunction<CFStringRef Function(CFXMLNodeRef)>();
+
+  ffi.Pointer<ffi.Void> CFXMLNodeGetInfoPtr1(
+    CFXMLNodeRef node,
+  ) {
+    return _CFXMLNodeGetInfoPtr1(
+      node,
+    );
+  }
+
+  late final _CFXMLNodeGetInfoPtr1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(CFXMLNodeRef)>>(
+          'CFXMLNodeGetInfoPtr');
+  late final _CFXMLNodeGetInfoPtr1 = _CFXMLNodeGetInfoPtr1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFXMLNodeRef)>();
+
+  int CFXMLNodeGetVersion1(
+    CFXMLNodeRef node,
+  ) {
+    return _CFXMLNodeGetVersion1(
+      node,
+    );
+  }
+
+  late final _CFXMLNodeGetVersion1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFXMLNodeRef)>>(
+          'CFXMLNodeGetVersion');
+  late final _CFXMLNodeGetVersion1 =
+      _CFXMLNodeGetVersion1Ptr.asFunction<int Function(CFXMLNodeRef)>();
+
+  CFXMLTreeRef CFXMLTreeCreateWithNode1(
+    CFAllocatorRef allocator,
+    CFXMLNodeRef node,
+  ) {
+    return _CFXMLTreeCreateWithNode1(
+      allocator,
+      node,
+    );
+  }
+
+  late final _CFXMLTreeCreateWithNode1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLTreeRef Function(
+              CFAllocatorRef, CFXMLNodeRef)>>('CFXMLTreeCreateWithNode');
+  late final _CFXMLTreeCreateWithNode1 = _CFXMLTreeCreateWithNode1Ptr
+      .asFunction<CFXMLTreeRef Function(CFAllocatorRef, CFXMLNodeRef)>();
+
+  CFXMLNodeRef CFXMLTreeGetNode1(
+    CFXMLTreeRef xmlTree,
+  ) {
+    return _CFXMLTreeGetNode1(
+      xmlTree,
+    );
+  }
+
+  late final _CFXMLTreeGetNode1Ptr =
+      _lookup<ffi.NativeFunction<CFXMLNodeRef Function(CFXMLTreeRef)>>(
+          'CFXMLTreeGetNode');
+  late final _CFXMLTreeGetNode1 =
+      _CFXMLTreeGetNode1Ptr.asFunction<CFXMLNodeRef Function(CFXMLTreeRef)>();
+
+  int CFXMLParserGetTypeID1() {
+    return _CFXMLParserGetTypeID1();
+  }
+
+  late final _CFXMLParserGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFXMLParserGetTypeID');
+  late final _CFXMLParserGetTypeID1 =
+      _CFXMLParserGetTypeID1Ptr.asFunction<int Function()>();
+
+  CFXMLParserRef CFXMLParserCreate1(
+    CFAllocatorRef allocator,
+    CFDataRef xmlData,
+    CFURLRef dataSource,
+    int parseOptions,
+    int versionOfNodes,
+    ffi.Pointer<CFXMLParserCallBacks> callBacks,
+    ffi.Pointer<CFXMLParserContext> context,
+  ) {
+    return _CFXMLParserCreate1(
+      allocator,
+      xmlData,
+      dataSource,
+      parseOptions,
+      versionOfNodes,
+      callBacks,
+      context,
+    );
+  }
+
+  late final _CFXMLParserCreate1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLParserRef Function(
+              CFAllocatorRef,
+              CFDataRef,
+              CFURLRef,
+              CFOptionFlags,
+              CFIndex,
+              ffi.Pointer<CFXMLParserCallBacks>,
+              ffi.Pointer<CFXMLParserContext>)>>('CFXMLParserCreate');
+  late final _CFXMLParserCreate1 = _CFXMLParserCreate1Ptr.asFunction<
+      CFXMLParserRef Function(
+          CFAllocatorRef,
+          CFDataRef,
+          CFURLRef,
+          int,
+          int,
+          ffi.Pointer<CFXMLParserCallBacks>,
+          ffi.Pointer<CFXMLParserContext>)>();
+
+  CFXMLParserRef CFXMLParserCreateWithDataFromURL1(
+    CFAllocatorRef allocator,
+    CFURLRef dataSource,
+    int parseOptions,
+    int versionOfNodes,
+    ffi.Pointer<CFXMLParserCallBacks> callBacks,
+    ffi.Pointer<CFXMLParserContext> context,
+  ) {
+    return _CFXMLParserCreateWithDataFromURL1(
+      allocator,
+      dataSource,
+      parseOptions,
+      versionOfNodes,
+      callBacks,
+      context,
+    );
+  }
+
+  late final _CFXMLParserCreateWithDataFromURL1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFXMLParserRef Function(
+                  CFAllocatorRef,
+                  CFURLRef,
+                  CFOptionFlags,
+                  CFIndex,
+                  ffi.Pointer<CFXMLParserCallBacks>,
+                  ffi.Pointer<CFXMLParserContext>)>>(
+      'CFXMLParserCreateWithDataFromURL');
+  late final _CFXMLParserCreateWithDataFromURL1 =
+      _CFXMLParserCreateWithDataFromURL1Ptr.asFunction<
+          CFXMLParserRef Function(
+              CFAllocatorRef,
+              CFURLRef,
+              int,
+              int,
+              ffi.Pointer<CFXMLParserCallBacks>,
+              ffi.Pointer<CFXMLParserContext>)>();
+
+  void CFXMLParserGetContext1(
+    CFXMLParserRef parser,
+    ffi.Pointer<CFXMLParserContext> context,
+  ) {
+    return _CFXMLParserGetContext1(
+      parser,
+      context,
+    );
+  }
+
+  late final _CFXMLParserGetContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFXMLParserRef,
+              ffi.Pointer<CFXMLParserContext>)>>('CFXMLParserGetContext');
+  late final _CFXMLParserGetContext1 = _CFXMLParserGetContext1Ptr.asFunction<
+      void Function(CFXMLParserRef, ffi.Pointer<CFXMLParserContext>)>();
+
+  void CFXMLParserGetCallBacks1(
+    CFXMLParserRef parser,
+    ffi.Pointer<CFXMLParserCallBacks> callBacks,
+  ) {
+    return _CFXMLParserGetCallBacks1(
+      parser,
+      callBacks,
+    );
+  }
+
+  late final _CFXMLParserGetCallBacks1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFXMLParserRef,
+              ffi.Pointer<CFXMLParserCallBacks>)>>('CFXMLParserGetCallBacks');
+  late final _CFXMLParserGetCallBacks1 =
+      _CFXMLParserGetCallBacks1Ptr.asFunction<
+          void Function(CFXMLParserRef, ffi.Pointer<CFXMLParserCallBacks>)>();
+
+  CFURLRef CFXMLParserGetSourceURL1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserGetSourceURL1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserGetSourceURL1Ptr =
+      _lookup<ffi.NativeFunction<CFURLRef Function(CFXMLParserRef)>>(
+          'CFXMLParserGetSourceURL');
+  late final _CFXMLParserGetSourceURL1 = _CFXMLParserGetSourceURL1Ptr
+      .asFunction<CFURLRef Function(CFXMLParserRef)>();
+
+  int CFXMLParserGetLocation1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserGetLocation1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserGetLocation1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFXMLParserRef)>>(
+          'CFXMLParserGetLocation');
+  late final _CFXMLParserGetLocation1 =
+      _CFXMLParserGetLocation1Ptr.asFunction<int Function(CFXMLParserRef)>();
+
+  int CFXMLParserGetLineNumber1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserGetLineNumber1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserGetLineNumber1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFXMLParserRef)>>(
+          'CFXMLParserGetLineNumber');
+  late final _CFXMLParserGetLineNumber1 =
+      _CFXMLParserGetLineNumber1Ptr.asFunction<int Function(CFXMLParserRef)>();
+
+  ffi.Pointer<ffi.Void> CFXMLParserGetDocument1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserGetDocument1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserGetDocument1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(CFXMLParserRef)>>(
+      'CFXMLParserGetDocument');
+  late final _CFXMLParserGetDocument1 = _CFXMLParserGetDocument1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFXMLParserRef)>();
+
+  int CFXMLParserGetStatusCode1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserGetStatusCode1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserGetStatusCode1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(CFXMLParserRef)>>(
+          'CFXMLParserGetStatusCode');
+  late final _CFXMLParserGetStatusCode1 =
+      _CFXMLParserGetStatusCode1Ptr.asFunction<int Function(CFXMLParserRef)>();
+
+  CFStringRef CFXMLParserCopyErrorDescription1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserCopyErrorDescription1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserCopyErrorDescription1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFXMLParserRef)>>(
+          'CFXMLParserCopyErrorDescription');
+  late final _CFXMLParserCopyErrorDescription1 =
+      _CFXMLParserCopyErrorDescription1Ptr.asFunction<
+          CFStringRef Function(CFXMLParserRef)>();
+
+  void CFXMLParserAbort1(
+    CFXMLParserRef parser,
+    int errorCode,
+    CFStringRef errorDescription,
+  ) {
+    return _CFXMLParserAbort1(
+      parser,
+      errorCode,
+      errorDescription,
+    );
+  }
+
+  late final _CFXMLParserAbort1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFXMLParserRef, ffi.Int32, CFStringRef)>>('CFXMLParserAbort');
+  late final _CFXMLParserAbort1 = _CFXMLParserAbort1Ptr.asFunction<
+      void Function(CFXMLParserRef, int, CFStringRef)>();
+
+  int CFXMLParserParse1(
+    CFXMLParserRef parser,
+  ) {
+    return _CFXMLParserParse1(
+      parser,
+    );
+  }
+
+  late final _CFXMLParserParse1Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFXMLParserRef)>>(
+          'CFXMLParserParse');
+  late final _CFXMLParserParse1 =
+      _CFXMLParserParse1Ptr.asFunction<int Function(CFXMLParserRef)>();
+
+  CFXMLTreeRef CFXMLTreeCreateFromData1(
+    CFAllocatorRef allocator,
+    CFDataRef xmlData,
+    CFURLRef dataSource,
+    int parseOptions,
+    int versionOfNodes,
+  ) {
+    return _CFXMLTreeCreateFromData1(
+      allocator,
+      xmlData,
+      dataSource,
+      parseOptions,
+      versionOfNodes,
+    );
+  }
+
+  late final _CFXMLTreeCreateFromData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLTreeRef Function(CFAllocatorRef, CFDataRef, CFURLRef,
+              CFOptionFlags, CFIndex)>>('CFXMLTreeCreateFromData');
+  late final _CFXMLTreeCreateFromData1 =
+      _CFXMLTreeCreateFromData1Ptr.asFunction<
+          CFXMLTreeRef Function(
+              CFAllocatorRef, CFDataRef, CFURLRef, int, int)>();
+
+  CFXMLTreeRef CFXMLTreeCreateFromDataWithError1(
+    CFAllocatorRef allocator,
+    CFDataRef xmlData,
+    CFURLRef dataSource,
+    int parseOptions,
+    int versionOfNodes,
+    ffi.Pointer<CFDictionaryRef> errorDict,
+  ) {
+    return _CFXMLTreeCreateFromDataWithError1(
+      allocator,
+      xmlData,
+      dataSource,
+      parseOptions,
+      versionOfNodes,
+      errorDict,
+    );
+  }
+
+  late final _CFXMLTreeCreateFromDataWithError1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFXMLTreeRef Function(CFAllocatorRef, CFDataRef, CFURLRef,
+                  CFOptionFlags, CFIndex, ffi.Pointer<CFDictionaryRef>)>>(
+      'CFXMLTreeCreateFromDataWithError');
+  late final _CFXMLTreeCreateFromDataWithError1 =
+      _CFXMLTreeCreateFromDataWithError1Ptr.asFunction<
+          CFXMLTreeRef Function(CFAllocatorRef, CFDataRef, CFURLRef, int, int,
+              ffi.Pointer<CFDictionaryRef>)>();
+
+  CFXMLTreeRef CFXMLTreeCreateWithDataFromURL1(
+    CFAllocatorRef allocator,
+    CFURLRef dataSource,
+    int parseOptions,
+    int versionOfNodes,
+  ) {
+    return _CFXMLTreeCreateWithDataFromURL1(
+      allocator,
+      dataSource,
+      parseOptions,
+      versionOfNodes,
+    );
+  }
+
+  late final _CFXMLTreeCreateWithDataFromURL1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFXMLTreeRef Function(CFAllocatorRef, CFURLRef, CFOptionFlags,
+              CFIndex)>>('CFXMLTreeCreateWithDataFromURL');
+  late final _CFXMLTreeCreateWithDataFromURL1 =
+      _CFXMLTreeCreateWithDataFromURL1Ptr.asFunction<
+          CFXMLTreeRef Function(CFAllocatorRef, CFURLRef, int, int)>();
+
+  CFDataRef CFXMLTreeCreateXMLData1(
+    CFAllocatorRef allocator,
+    CFXMLTreeRef xmlTree,
+  ) {
+    return _CFXMLTreeCreateXMLData1(
+      allocator,
+      xmlTree,
+    );
+  }
+
+  late final _CFXMLTreeCreateXMLData1Ptr = _lookup<
+          ffi.NativeFunction<CFDataRef Function(CFAllocatorRef, CFXMLTreeRef)>>(
+      'CFXMLTreeCreateXMLData');
+  late final _CFXMLTreeCreateXMLData1 = _CFXMLTreeCreateXMLData1Ptr.asFunction<
+      CFDataRef Function(CFAllocatorRef, CFXMLTreeRef)>();
+
+  CFStringRef CFXMLCreateStringByEscapingEntities1(
+    CFAllocatorRef allocator,
+    CFStringRef string,
+    CFDictionaryRef entitiesDictionary,
+  ) {
+    return _CFXMLCreateStringByEscapingEntities1(
+      allocator,
+      string,
+      entitiesDictionary,
+    );
+  }
+
+  late final _CFXMLCreateStringByEscapingEntities1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef,
+              CFDictionaryRef)>>('CFXMLCreateStringByEscapingEntities');
+  late final _CFXMLCreateStringByEscapingEntities1 =
+      _CFXMLCreateStringByEscapingEntities1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef, CFDictionaryRef)>();
+
+  CFStringRef CFXMLCreateStringByUnescapingEntities1(
+    CFAllocatorRef allocator,
+    CFStringRef string,
+    CFDictionaryRef entitiesDictionary,
+  ) {
+    return _CFXMLCreateStringByUnescapingEntities1(
+      allocator,
+      string,
+      entitiesDictionary,
+    );
+  }
+
+  late final _CFXMLCreateStringByUnescapingEntities1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef,
+              CFDictionaryRef)>>('CFXMLCreateStringByUnescapingEntities');
+  late final _CFXMLCreateStringByUnescapingEntities1 =
+      _CFXMLCreateStringByUnescapingEntities1Ptr.asFunction<
+          CFStringRef Function(CFAllocatorRef, CFStringRef, CFDictionaryRef)>();
+
+  int SecTrustGetTypeID1() {
+    return _SecTrustGetTypeID1();
+  }
+
+  late final _SecTrustGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('SecTrustGetTypeID');
+  late final _SecTrustGetTypeID1 =
+      _SecTrustGetTypeID1Ptr.asFunction<int Function()>();
+
+  int SecTrustCreateWithCertificates1(
+    CFTypeRef certificates,
+    CFTypeRef policies,
+    ffi.Pointer<SecTrustRef> trust,
+  ) {
+    return _SecTrustCreateWithCertificates1(
+      certificates,
+      policies,
+      trust,
+    );
+  }
+
+  late final _SecTrustCreateWithCertificates1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(CFTypeRef, CFTypeRef,
+              ffi.Pointer<SecTrustRef>)>>('SecTrustCreateWithCertificates');
+  late final _SecTrustCreateWithCertificates1 =
+      _SecTrustCreateWithCertificates1Ptr.asFunction<
+          int Function(CFTypeRef, CFTypeRef, ffi.Pointer<SecTrustRef>)>();
+
+  int SecTrustSetPolicies1(
+    SecTrustRef trust,
+    CFTypeRef policies,
+  ) {
+    return _SecTrustSetPolicies1(
+      trust,
+      policies,
+    );
+  }
+
+  late final _SecTrustSetPolicies1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFTypeRef)>>(
+          'SecTrustSetPolicies');
+  late final _SecTrustSetPolicies1 = _SecTrustSetPolicies1Ptr.asFunction<
+      int Function(SecTrustRef, CFTypeRef)>();
+
+  int SecTrustCopyPolicies1(
+    SecTrustRef trust,
+    ffi.Pointer<CFArrayRef> policies,
+  ) {
+    return _SecTrustCopyPolicies1(
+      trust,
+      policies,
+    );
+  }
+
+  late final _SecTrustCopyPolicies1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SecTrustRef, ffi.Pointer<CFArrayRef>)>>('SecTrustCopyPolicies');
+  late final _SecTrustCopyPolicies1 = _SecTrustCopyPolicies1Ptr.asFunction<
+      int Function(SecTrustRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SecTrustSetNetworkFetchAllowed1(
+    SecTrustRef trust,
+    int allowFetch,
+  ) {
+    return _SecTrustSetNetworkFetchAllowed1(
+      trust,
+      allowFetch,
+    );
+  }
+
+  late final _SecTrustSetNetworkFetchAllowed1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, Boolean)>>(
+          'SecTrustSetNetworkFetchAllowed');
+  late final _SecTrustSetNetworkFetchAllowed1 =
+      _SecTrustSetNetworkFetchAllowed1Ptr.asFunction<
+          int Function(SecTrustRef, int)>();
+
+  int SecTrustGetNetworkFetchAllowed1(
+    SecTrustRef trust,
+    ffi.Pointer<Boolean> allowFetch,
+  ) {
+    return _SecTrustGetNetworkFetchAllowed1(
+      trust,
+      allowFetch,
+    );
+  }
+
+  late final _SecTrustGetNetworkFetchAllowed1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef,
+              ffi.Pointer<Boolean>)>>('SecTrustGetNetworkFetchAllowed');
+  late final _SecTrustGetNetworkFetchAllowed1 =
+      _SecTrustGetNetworkFetchAllowed1Ptr.asFunction<
+          int Function(SecTrustRef, ffi.Pointer<Boolean>)>();
+
+  int SecTrustSetAnchorCertificates1(
+    SecTrustRef trust,
+    CFArrayRef anchorCertificates,
+  ) {
+    return _SecTrustSetAnchorCertificates1(
+      trust,
+      anchorCertificates,
+    );
+  }
+
+  late final _SecTrustSetAnchorCertificates1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFArrayRef)>>(
+          'SecTrustSetAnchorCertificates');
+  late final _SecTrustSetAnchorCertificates1 =
+      _SecTrustSetAnchorCertificates1Ptr.asFunction<
+          int Function(SecTrustRef, CFArrayRef)>();
+
+  int SecTrustSetAnchorCertificatesOnly1(
+    SecTrustRef trust,
+    int anchorCertificatesOnly,
+  ) {
+    return _SecTrustSetAnchorCertificatesOnly1(
+      trust,
+      anchorCertificatesOnly,
+    );
+  }
+
+  late final _SecTrustSetAnchorCertificatesOnly1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, Boolean)>>(
+          'SecTrustSetAnchorCertificatesOnly');
+  late final _SecTrustSetAnchorCertificatesOnly1 =
+      _SecTrustSetAnchorCertificatesOnly1Ptr.asFunction<
+          int Function(SecTrustRef, int)>();
+
+  int SecTrustCopyCustomAnchorCertificates1(
+    SecTrustRef trust,
+    ffi.Pointer<CFArrayRef> anchors,
+  ) {
+    return _SecTrustCopyCustomAnchorCertificates1(
+      trust,
+      anchors,
+    );
+  }
+
+  late final _SecTrustCopyCustomAnchorCertificates1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(SecTrustRef, ffi.Pointer<CFArrayRef>)>>(
+      'SecTrustCopyCustomAnchorCertificates');
+  late final _SecTrustCopyCustomAnchorCertificates1 =
+      _SecTrustCopyCustomAnchorCertificates1Ptr.asFunction<
+          int Function(SecTrustRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SecTrustSetVerifyDate1(
+    SecTrustRef trust,
+    CFDateRef verifyDate,
+  ) {
+    return _SecTrustSetVerifyDate1(
+      trust,
+      verifyDate,
+    );
+  }
+
+  late final _SecTrustSetVerifyDate1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFDateRef)>>(
+          'SecTrustSetVerifyDate');
+  late final _SecTrustSetVerifyDate1 = _SecTrustSetVerifyDate1Ptr.asFunction<
+      int Function(SecTrustRef, CFDateRef)>();
+
+  double SecTrustGetVerifyTime1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustGetVerifyTime1(
+      trust,
+    );
+  }
+
+  late final _SecTrustGetVerifyTime1Ptr =
+      _lookup<ffi.NativeFunction<CFAbsoluteTime Function(SecTrustRef)>>(
+          'SecTrustGetVerifyTime');
+  late final _SecTrustGetVerifyTime1 =
+      _SecTrustGetVerifyTime1Ptr.asFunction<double Function(SecTrustRef)>();
+
+  int SecTrustEvaluate1(
+    SecTrustRef trust,
+    ffi.Pointer<ffi.Int32> result,
+  ) {
+    return _SecTrustEvaluate1(
+      trust,
+      result,
+    );
+  }
+
+  late final _SecTrustEvaluate1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SecTrustRef, ffi.Pointer<ffi.Int32>)>>('SecTrustEvaluate');
+  late final _SecTrustEvaluate1 = _SecTrustEvaluate1Ptr.asFunction<
+      int Function(SecTrustRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SecTrustEvaluateAsync1(
+    SecTrustRef trust,
+    dispatch_queue_t queue,
+    SecTrustCallback result,
+  ) {
+    return _SecTrustEvaluateAsync1(
+      trust,
+      queue,
+      result,
+    );
+  }
+
+  late final _SecTrustEvaluateAsync1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef, dispatch_queue_t,
+              SecTrustCallback)>>('SecTrustEvaluateAsync');
+  late final _SecTrustEvaluateAsync1 = _SecTrustEvaluateAsync1Ptr.asFunction<
+      int Function(SecTrustRef, dispatch_queue_t, SecTrustCallback)>();
+
+  bool SecTrustEvaluateWithError1(
+    SecTrustRef trust,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecTrustEvaluateWithError1(
+          trust,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _SecTrustEvaluateWithError1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(SecTrustRef,
+              ffi.Pointer<CFErrorRef>)>>('SecTrustEvaluateWithError');
+  late final _SecTrustEvaluateWithError1 = _SecTrustEvaluateWithError1Ptr
+      .asFunction<int Function(SecTrustRef, ffi.Pointer<CFErrorRef>)>();
+
+  int SecTrustEvaluateAsyncWithError1(
+    SecTrustRef trust,
+    dispatch_queue_t queue,
+    SecTrustWithErrorCallback result,
+  ) {
+    return _SecTrustEvaluateAsyncWithError1(
+      trust,
+      queue,
+      result,
+    );
+  }
+
+  late final _SecTrustEvaluateAsyncWithError1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef, dispatch_queue_t,
+              SecTrustWithErrorCallback)>>('SecTrustEvaluateAsyncWithError');
+  late final _SecTrustEvaluateAsyncWithError1 =
+      _SecTrustEvaluateAsyncWithError1Ptr.asFunction<
+          int Function(
+              SecTrustRef, dispatch_queue_t, SecTrustWithErrorCallback)>();
+
+  int SecTrustGetTrustResult1(
+    SecTrustRef trust,
+    ffi.Pointer<ffi.Int32> result,
+  ) {
+    return _SecTrustGetTrustResult1(
+      trust,
+      result,
+    );
+  }
+
+  late final _SecTrustGetTrustResult1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SecTrustRef, ffi.Pointer<ffi.Int32>)>>('SecTrustGetTrustResult');
+  late final _SecTrustGetTrustResult1 = _SecTrustGetTrustResult1Ptr.asFunction<
+      int Function(SecTrustRef, ffi.Pointer<ffi.Int32>)>();
+
+  SecKeyRef SecTrustCopyPublicKey1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyPublicKey1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyPublicKey1Ptr =
+      _lookup<ffi.NativeFunction<SecKeyRef Function(SecTrustRef)>>(
+          'SecTrustCopyPublicKey');
+  late final _SecTrustCopyPublicKey1 =
+      _SecTrustCopyPublicKey1Ptr.asFunction<SecKeyRef Function(SecTrustRef)>();
+
+  SecKeyRef SecTrustCopyKey1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyKey1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyKey1Ptr =
+      _lookup<ffi.NativeFunction<SecKeyRef Function(SecTrustRef)>>(
+          'SecTrustCopyKey');
+  late final _SecTrustCopyKey1 =
+      _SecTrustCopyKey1Ptr.asFunction<SecKeyRef Function(SecTrustRef)>();
+
+  int SecTrustGetCertificateCount1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustGetCertificateCount1(
+      trust,
+    );
+  }
+
+  late final _SecTrustGetCertificateCount1Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(SecTrustRef)>>(
+          'SecTrustGetCertificateCount');
+  late final _SecTrustGetCertificateCount1 =
+      _SecTrustGetCertificateCount1Ptr.asFunction<int Function(SecTrustRef)>();
+
+  SecCertificateRef SecTrustGetCertificateAtIndex1(
+    SecTrustRef trust,
+    int ix,
+  ) {
+    return _SecTrustGetCertificateAtIndex1(
+      trust,
+      ix,
+    );
+  }
+
+  late final _SecTrustGetCertificateAtIndex1Ptr = _lookup<
+          ffi.NativeFunction<SecCertificateRef Function(SecTrustRef, CFIndex)>>(
+      'SecTrustGetCertificateAtIndex');
+  late final _SecTrustGetCertificateAtIndex1 =
+      _SecTrustGetCertificateAtIndex1Ptr.asFunction<
+          SecCertificateRef Function(SecTrustRef, int)>();
+
+  CFDataRef SecTrustCopyExceptions1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyExceptions1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyExceptions1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(SecTrustRef)>>(
+          'SecTrustCopyExceptions');
+  late final _SecTrustCopyExceptions1 =
+      _SecTrustCopyExceptions1Ptr.asFunction<CFDataRef Function(SecTrustRef)>();
+
+  bool SecTrustSetExceptions1(
+    SecTrustRef trust,
+    CFDataRef exceptions,
+  ) {
+    return _SecTrustSetExceptions1(
+          trust,
+          exceptions,
+        ) !=
+        0;
+  }
+
+  late final _SecTrustSetExceptions1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(SecTrustRef, CFDataRef)>>(
+          'SecTrustSetExceptions');
+  late final _SecTrustSetExceptions1 = _SecTrustSetExceptions1Ptr.asFunction<
+      int Function(SecTrustRef, CFDataRef)>();
+
+  CFArrayRef SecTrustCopyProperties1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyProperties1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyProperties1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(SecTrustRef)>>(
+          'SecTrustCopyProperties');
+  late final _SecTrustCopyProperties1 = _SecTrustCopyProperties1Ptr.asFunction<
+      CFArrayRef Function(SecTrustRef)>();
+
+  CFDictionaryRef SecTrustCopyResult1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyResult1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyResult1Ptr =
+      _lookup<ffi.NativeFunction<CFDictionaryRef Function(SecTrustRef)>>(
+          'SecTrustCopyResult');
+  late final _SecTrustCopyResult1 = _SecTrustCopyResult1Ptr.asFunction<
+      CFDictionaryRef Function(SecTrustRef)>();
+
+  int SecTrustSetOCSPResponse1(
+    SecTrustRef trust,
+    CFTypeRef responseData,
+  ) {
+    return _SecTrustSetOCSPResponse1(
+      trust,
+      responseData,
+    );
+  }
+
+  late final _SecTrustSetOCSPResponse1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFTypeRef)>>(
+          'SecTrustSetOCSPResponse');
+  late final _SecTrustSetOCSPResponse1 = _SecTrustSetOCSPResponse1Ptr
+      .asFunction<int Function(SecTrustRef, CFTypeRef)>();
+
+  int SecTrustSetSignedCertificateTimestamps1(
+    SecTrustRef trust,
+    CFArrayRef sctArray,
+  ) {
+    return _SecTrustSetSignedCertificateTimestamps1(
+      trust,
+      sctArray,
+    );
+  }
+
+  late final _SecTrustSetSignedCertificateTimestamps1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFArrayRef)>>(
+          'SecTrustSetSignedCertificateTimestamps');
+  late final _SecTrustSetSignedCertificateTimestamps1 =
+      _SecTrustSetSignedCertificateTimestamps1Ptr.asFunction<
+          int Function(SecTrustRef, CFArrayRef)>();
+
+  CFArrayRef SecTrustCopyCertificateChain1(
+    SecTrustRef trust,
+  ) {
+    return _SecTrustCopyCertificateChain1(
+      trust,
+    );
+  }
+
+  late final _SecTrustCopyCertificateChain1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(SecTrustRef)>>(
+          'SecTrustCopyCertificateChain');
+  late final _SecTrustCopyCertificateChain1 = _SecTrustCopyCertificateChain1Ptr
+      .asFunction<CFArrayRef Function(SecTrustRef)>();
+
+  void cssmPerror1(
+    ffi.Pointer<pkg_ffi.Char> how,
+    int error,
+  ) {
+    return _cssmPerror1(
+      how,
+      error,
+    );
+  }
+
+  late final _cssmPerror1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<pkg_ffi.Char>, CSSM_RETURN)>>('cssmPerror');
+  late final _cssmPerror1 = _cssmPerror1Ptr
+      .asFunction<void Function(ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  bool cssmOidToAlg1(
+    ffi.Pointer<SecAsn1Oid> oid,
+    ffi.Pointer<CSSM_ALGORITHMS> alg,
+  ) {
+    return _cssmOidToAlg1(
+          oid,
+          alg,
+        ) !=
+        0;
+  }
+
+  late final _cssmOidToAlg1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<SecAsn1Oid>,
+              ffi.Pointer<CSSM_ALGORITHMS>)>>('cssmOidToAlg');
+  late final _cssmOidToAlg1 = _cssmOidToAlg1Ptr.asFunction<
+      int Function(ffi.Pointer<SecAsn1Oid>, ffi.Pointer<CSSM_ALGORITHMS>)>();
+
+  ffi.Pointer<SecAsn1Oid> cssmAlgToOid1(
+    int algId,
+  ) {
+    return _cssmAlgToOid1(
+      algId,
+    );
+  }
+
+  late final _cssmAlgToOid1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<SecAsn1Oid> Function(CSSM_ALGORITHMS)>>('cssmAlgToOid');
+  late final _cssmAlgToOid1 =
+      _cssmAlgToOid1Ptr.asFunction<ffi.Pointer<SecAsn1Oid> Function(int)>();
+
+  int SecTrustSetOptions1(
+    SecTrustRef trustRef,
+    int options,
+  ) {
+    return _SecTrustSetOptions1(
+      trustRef,
+      options,
+    );
+  }
+
+  late final _SecTrustSetOptions1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, ffi.Int32)>>(
+          'SecTrustSetOptions');
+  late final _SecTrustSetOptions1 =
+      _SecTrustSetOptions1Ptr.asFunction<int Function(SecTrustRef, int)>();
+
+  int SecTrustSetParameters1(
+    SecTrustRef trustRef,
+    int action,
+    CFDataRef actionData,
+  ) {
+    return _SecTrustSetParameters1(
+      trustRef,
+      action,
+      actionData,
+    );
+  }
+
+  late final _SecTrustSetParameters1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef, CSSM_TP_ACTION,
+              CFDataRef)>>('SecTrustSetParameters');
+  late final _SecTrustSetParameters1 = _SecTrustSetParameters1Ptr.asFunction<
+      int Function(SecTrustRef, int, CFDataRef)>();
+
+  int SecTrustSetKeychains1(
+    SecTrustRef trust,
+    CFTypeRef keychainOrArray,
+  ) {
+    return _SecTrustSetKeychains1(
+      trust,
+      keychainOrArray,
+    );
+  }
+
+  late final _SecTrustSetKeychains1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SecTrustRef, CFTypeRef)>>(
+          'SecTrustSetKeychains');
+  late final _SecTrustSetKeychains1 = _SecTrustSetKeychains1Ptr.asFunction<
+      int Function(SecTrustRef, CFTypeRef)>();
+
+  int SecTrustGetResult1(
+    SecTrustRef trustRef,
+    ffi.Pointer<ffi.Int32> result,
+    ffi.Pointer<CFArrayRef> certChain,
+    ffi.Pointer<ffi.Pointer<CSSM_TP_APPLE_EVIDENCE_INFO>> statusChain,
+  ) {
+    return _SecTrustGetResult1(
+      trustRef,
+      result,
+      certChain,
+      statusChain,
+    );
+  }
+
+  late final _SecTrustGetResult1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(
+                  SecTrustRef,
+                  ffi.Pointer<ffi.Int32>,
+                  ffi.Pointer<CFArrayRef>,
+                  ffi.Pointer<ffi.Pointer<CSSM_TP_APPLE_EVIDENCE_INFO>>)>>(
+      'SecTrustGetResult');
+  late final _SecTrustGetResult1 = _SecTrustGetResult1Ptr.asFunction<
+      int Function(SecTrustRef, ffi.Pointer<ffi.Int32>, ffi.Pointer<CFArrayRef>,
+          ffi.Pointer<ffi.Pointer<CSSM_TP_APPLE_EVIDENCE_INFO>>)>();
+
+  int SecTrustGetCssmResult1(
+    SecTrustRef trust,
+    ffi.Pointer<CSSM_TP_VERIFY_CONTEXT_RESULT_PTR> result,
+  ) {
+    return _SecTrustGetCssmResult1(
+      trust,
+      result,
+    );
+  }
+
+  late final _SecTrustGetCssmResult1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(SecTrustRef,
+                  ffi.Pointer<CSSM_TP_VERIFY_CONTEXT_RESULT_PTR>)>>(
+      'SecTrustGetCssmResult');
+  late final _SecTrustGetCssmResult1 = _SecTrustGetCssmResult1Ptr.asFunction<
+      int Function(
+          SecTrustRef, ffi.Pointer<CSSM_TP_VERIFY_CONTEXT_RESULT_PTR>)>();
+
+  int SecTrustGetCssmResultCode1(
+    SecTrustRef trust,
+    ffi.Pointer<OSStatus> resultCode,
+  ) {
+    return _SecTrustGetCssmResultCode1(
+      trust,
+      resultCode,
+    );
+  }
+
+  late final _SecTrustGetCssmResultCode1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef,
+              ffi.Pointer<OSStatus>)>>('SecTrustGetCssmResultCode');
+  late final _SecTrustGetCssmResultCode1 = _SecTrustGetCssmResultCode1Ptr
+      .asFunction<int Function(SecTrustRef, ffi.Pointer<OSStatus>)>();
+
+  int SecTrustGetTPHandle1(
+    SecTrustRef trust,
+    ffi.Pointer<CSSM_TP_HANDLE> handle,
+  ) {
+    return _SecTrustGetTPHandle1(
+      trust,
+      handle,
+    );
+  }
+
+  late final _SecTrustGetTPHandle1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecTrustRef,
+              ffi.Pointer<CSSM_TP_HANDLE>)>>('SecTrustGetTPHandle');
+  late final _SecTrustGetTPHandle1 = _SecTrustGetTPHandle1Ptr.asFunction<
+      int Function(SecTrustRef, ffi.Pointer<CSSM_TP_HANDLE>)>();
+
+  int SecTrustCopyAnchorCertificates1(
+    ffi.Pointer<CFArrayRef> anchors,
+  ) {
+    return _SecTrustCopyAnchorCertificates1(
+      anchors,
+    );
+  }
+
+  late final _SecTrustCopyAnchorCertificates1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(ffi.Pointer<CFArrayRef>)>>(
+          'SecTrustCopyAnchorCertificates');
+  late final _SecTrustCopyAnchorCertificates1 =
+      _SecTrustCopyAnchorCertificates1Ptr.asFunction<
+          int Function(ffi.Pointer<CFArrayRef>)>();
+
+  int SecCertificateGetTypeID1() {
+    return _SecCertificateGetTypeID1();
+  }
+
+  late final _SecCertificateGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>(
+          'SecCertificateGetTypeID');
+  late final _SecCertificateGetTypeID1 =
+      _SecCertificateGetTypeID1Ptr.asFunction<int Function()>();
+
+  SecCertificateRef SecCertificateCreateWithData1(
+    CFAllocatorRef allocator,
+    CFDataRef data,
+  ) {
+    return _SecCertificateCreateWithData1(
+      allocator,
+      data,
+    );
+  }
+
+  late final _SecCertificateCreateWithData1Ptr = _lookup<
+      ffi.NativeFunction<
+          SecCertificateRef Function(
+              CFAllocatorRef, CFDataRef)>>('SecCertificateCreateWithData');
+  late final _SecCertificateCreateWithData1 = _SecCertificateCreateWithData1Ptr
+      .asFunction<SecCertificateRef Function(CFAllocatorRef, CFDataRef)>();
+
+  CFDataRef SecCertificateCopyData1(
+    SecCertificateRef certificate,
+  ) {
+    return _SecCertificateCopyData1(
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopyData1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(SecCertificateRef)>>(
+          'SecCertificateCopyData');
+  late final _SecCertificateCopyData1 = _SecCertificateCopyData1Ptr.asFunction<
+      CFDataRef Function(SecCertificateRef)>();
+
+  CFStringRef SecCertificateCopySubjectSummary1(
+    SecCertificateRef certificate,
+  ) {
+    return _SecCertificateCopySubjectSummary1(
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopySubjectSummary1Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(SecCertificateRef)>>(
+          'SecCertificateCopySubjectSummary');
+  late final _SecCertificateCopySubjectSummary1 =
+      _SecCertificateCopySubjectSummary1Ptr.asFunction<
+          CFStringRef Function(SecCertificateRef)>();
+
+  int SecCertificateCopyCommonName1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFStringRef> commonName,
+  ) {
+    return _SecCertificateCopyCommonName1(
+      certificate,
+      commonName,
+    );
+  }
+
+  late final _SecCertificateCopyCommonName1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              ffi.Pointer<CFStringRef>)>>('SecCertificateCopyCommonName');
+  late final _SecCertificateCopyCommonName1 = _SecCertificateCopyCommonName1Ptr
+      .asFunction<int Function(SecCertificateRef, ffi.Pointer<CFStringRef>)>();
+
+  int SecCertificateCopyEmailAddresses1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFArrayRef> emailAddresses,
+  ) {
+    return _SecCertificateCopyEmailAddresses1(
+      certificate,
+      emailAddresses,
+    );
+  }
+
+  late final _SecCertificateCopyEmailAddresses1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              ffi.Pointer<CFArrayRef>)>>('SecCertificateCopyEmailAddresses');
+  late final _SecCertificateCopyEmailAddresses1 =
+      _SecCertificateCopyEmailAddresses1Ptr.asFunction<
+          int Function(SecCertificateRef, ffi.Pointer<CFArrayRef>)>();
+
+  CFDataRef SecCertificateCopyNormalizedIssuerSequence1(
+    SecCertificateRef certificate,
+  ) {
+    return _SecCertificateCopyNormalizedIssuerSequence1(
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopyNormalizedIssuerSequence1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(SecCertificateRef)>>(
+          'SecCertificateCopyNormalizedIssuerSequence');
+  late final _SecCertificateCopyNormalizedIssuerSequence1 =
+      _SecCertificateCopyNormalizedIssuerSequence1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef)>();
+
+  CFDataRef SecCertificateCopyNormalizedSubjectSequence1(
+    SecCertificateRef certificate,
+  ) {
+    return _SecCertificateCopyNormalizedSubjectSequence1(
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopyNormalizedSubjectSequence1Ptr =
+      _lookup<ffi.NativeFunction<CFDataRef Function(SecCertificateRef)>>(
+          'SecCertificateCopyNormalizedSubjectSequence');
+  late final _SecCertificateCopyNormalizedSubjectSequence1 =
+      _SecCertificateCopyNormalizedSubjectSequence1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef)>();
+
+  SecKeyRef SecCertificateCopyKey1(
+    SecCertificateRef certificate,
+  ) {
+    return _SecCertificateCopyKey1(
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopyKey1Ptr =
+      _lookup<ffi.NativeFunction<SecKeyRef Function(SecCertificateRef)>>(
+          'SecCertificateCopyKey');
+  late final _SecCertificateCopyKey1 = _SecCertificateCopyKey1Ptr.asFunction<
+      SecKeyRef Function(SecCertificateRef)>();
+
+  int SecCertificateCopyPublicKey1(
+    SecCertificateRef certificate,
+    ffi.Pointer<SecKeyRef> key,
+  ) {
+    return _SecCertificateCopyPublicKey1(
+      certificate,
+      key,
+    );
+  }
+
+  late final _SecCertificateCopyPublicKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              ffi.Pointer<SecKeyRef>)>>('SecCertificateCopyPublicKey');
+  late final _SecCertificateCopyPublicKey1 = _SecCertificateCopyPublicKey1Ptr
+      .asFunction<int Function(SecCertificateRef, ffi.Pointer<SecKeyRef>)>();
+
+  CFDataRef SecCertificateCopySerialNumberData1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopySerialNumberData1(
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopySerialNumberData1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(SecCertificateRef,
+              ffi.Pointer<CFErrorRef>)>>('SecCertificateCopySerialNumberData');
+  late final _SecCertificateCopySerialNumberData1 =
+      _SecCertificateCopySerialNumberData1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef SecCertificateCopySerialNumber1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopySerialNumber1(
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopySerialNumber1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDataRef Function(SecCertificateRef,
+              ffi.Pointer<CFErrorRef>)>>('SecCertificateCopySerialNumber');
+  late final _SecCertificateCopySerialNumber1 =
+      _SecCertificateCopySerialNumber1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  int SecCertificateCreateFromData1(
+    ffi.Pointer<SecAsn1Item> data,
+    int type,
+    int encoding,
+    ffi.Pointer<SecCertificateRef> certificate,
+  ) {
+    return _SecCertificateCreateFromData1(
+      data,
+      type,
+      encoding,
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCreateFromData1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              ffi.Pointer<SecAsn1Item>,
+              CSSM_CERT_TYPE,
+              CSSM_CERT_ENCODING,
+              ffi.Pointer<SecCertificateRef>)>>('SecCertificateCreateFromData');
+  late final _SecCertificateCreateFromData1 =
+      _SecCertificateCreateFromData1Ptr.asFunction<
+          int Function(ffi.Pointer<SecAsn1Item>, int, int,
+              ffi.Pointer<SecCertificateRef>)>();
+
+  int SecCertificateAddToKeychain1(
+    SecCertificateRef certificate,
+    SecKeychainRef keychain,
+  ) {
+    return _SecCertificateAddToKeychain1(
+      certificate,
+      keychain,
+    );
+  }
+
+  late final _SecCertificateAddToKeychain1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              SecKeychainRef)>>('SecCertificateAddToKeychain');
+  late final _SecCertificateAddToKeychain1 = _SecCertificateAddToKeychain1Ptr
+      .asFunction<int Function(SecCertificateRef, SecKeychainRef)>();
+
+  int SecCertificateGetData1(
+    SecCertificateRef certificate,
+    CSSM_DATA_PTR data,
+  ) {
+    return _SecCertificateGetData1(
+      certificate,
+      data,
+    );
+  }
+
+  late final _SecCertificateGetData1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SecCertificateRef, CSSM_DATA_PTR)>>('SecCertificateGetData');
+  late final _SecCertificateGetData1 = _SecCertificateGetData1Ptr.asFunction<
+      int Function(SecCertificateRef, CSSM_DATA_PTR)>();
+
+  int SecCertificateGetType1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CSSM_CERT_TYPE> certificateType,
+  ) {
+    return _SecCertificateGetType1(
+      certificate,
+      certificateType,
+    );
+  }
+
+  late final _SecCertificateGetType1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              ffi.Pointer<CSSM_CERT_TYPE>)>>('SecCertificateGetType');
+  late final _SecCertificateGetType1 = _SecCertificateGetType1Ptr.asFunction<
+      int Function(SecCertificateRef, ffi.Pointer<CSSM_CERT_TYPE>)>();
+
+  int SecCertificateGetSubject1(
+    SecCertificateRef certificate,
+    ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>> subject,
+  ) {
+    return _SecCertificateGetSubject1(
+      certificate,
+      subject,
+    );
+  }
+
+  late final _SecCertificateGetSubject1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(SecCertificateRef,
+                  ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>>)>>(
+      'SecCertificateGetSubject');
+  late final _SecCertificateGetSubject1 =
+      _SecCertificateGetSubject1Ptr.asFunction<
+          int Function(
+              SecCertificateRef, ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>>)>();
+
+  int SecCertificateGetIssuer1(
+    SecCertificateRef certificate,
+    ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>> issuer,
+  ) {
+    return _SecCertificateGetIssuer1(
+      certificate,
+      issuer,
+    );
+  }
+
+  late final _SecCertificateGetIssuer1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(SecCertificateRef,
+                  ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>>)>>(
+      'SecCertificateGetIssuer');
+  late final _SecCertificateGetIssuer1 =
+      _SecCertificateGetIssuer1Ptr.asFunction<
+          int Function(
+              SecCertificateRef, ffi.Pointer<ffi.Pointer<CSSM_X509_NAME>>)>();
+
+  int SecCertificateGetCLHandle1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CSSM_CL_HANDLE> clHandle,
+  ) {
+    return _SecCertificateGetCLHandle1(
+      certificate,
+      clHandle,
+    );
+  }
+
+  late final _SecCertificateGetCLHandle1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef,
+              ffi.Pointer<CSSM_CL_HANDLE>)>>('SecCertificateGetCLHandle');
+  late final _SecCertificateGetCLHandle1 =
+      _SecCertificateGetCLHandle1Ptr.asFunction<
+          int Function(SecCertificateRef, ffi.Pointer<CSSM_CL_HANDLE>)>();
+
+  int SecCertificateGetAlgorithmID1(
+    SecCertificateRef certificate,
+    ffi.Pointer<ffi.Pointer<SecAsn1AlgId>> algid,
+  ) {
+    return _SecCertificateGetAlgorithmID1(
+      certificate,
+      algid,
+    );
+  }
+
+  late final _SecCertificateGetAlgorithmID1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(
+                  SecCertificateRef, ffi.Pointer<ffi.Pointer<SecAsn1AlgId>>)>>(
+      'SecCertificateGetAlgorithmID');
+  late final _SecCertificateGetAlgorithmID1 =
+      _SecCertificateGetAlgorithmID1Ptr.asFunction<
+          int Function(
+              SecCertificateRef, ffi.Pointer<ffi.Pointer<SecAsn1AlgId>>)>();
+
+  int SecCertificateCopyPreference1(
+    CFStringRef name,
+    int keyUsage,
+    ffi.Pointer<SecCertificateRef> certificate,
+  ) {
+    return _SecCertificateCopyPreference1(
+      name,
+      keyUsage,
+      certificate,
+    );
+  }
+
+  late final _SecCertificateCopyPreference1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(CFStringRef, uint32,
+              ffi.Pointer<SecCertificateRef>)>>('SecCertificateCopyPreference');
+  late final _SecCertificateCopyPreference1 =
+      _SecCertificateCopyPreference1Ptr.asFunction<
+          int Function(CFStringRef, int, ffi.Pointer<SecCertificateRef>)>();
+
+  SecCertificateRef SecCertificateCopyPreferred1(
+    CFStringRef name,
+    CFArrayRef keyUsage,
+  ) {
+    return _SecCertificateCopyPreferred1(
+      name,
+      keyUsage,
+    );
+  }
+
+  late final _SecCertificateCopyPreferred1Ptr = _lookup<
+      ffi.NativeFunction<
+          SecCertificateRef Function(
+              CFStringRef, CFArrayRef)>>('SecCertificateCopyPreferred');
+  late final _SecCertificateCopyPreferred1 = _SecCertificateCopyPreferred1Ptr
+      .asFunction<SecCertificateRef Function(CFStringRef, CFArrayRef)>();
+
+  int SecCertificateSetPreference1(
+    SecCertificateRef certificate,
+    CFStringRef name,
+    int keyUsage,
+    CFDateRef date,
+  ) {
+    return _SecCertificateSetPreference1(
+      certificate,
+      name,
+      keyUsage,
+      date,
+    );
+  }
+
+  late final _SecCertificateSetPreference1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef, CFStringRef, uint32,
+              CFDateRef)>>('SecCertificateSetPreference');
+  late final _SecCertificateSetPreference1 =
+      _SecCertificateSetPreference1Ptr.asFunction<
+          int Function(SecCertificateRef, CFStringRef, int, CFDateRef)>();
+
+  int SecCertificateSetPreferred1(
+    SecCertificateRef certificate,
+    CFStringRef name,
+    CFArrayRef keyUsage,
+  ) {
+    return _SecCertificateSetPreferred1(
+      certificate,
+      name,
+      keyUsage,
+    );
+  }
+
+  late final _SecCertificateSetPreferred1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecCertificateRef, CFStringRef,
+              CFArrayRef)>>('SecCertificateSetPreferred');
+  late final _SecCertificateSetPreferred1 = _SecCertificateSetPreferred1Ptr
+      .asFunction<int Function(SecCertificateRef, CFStringRef, CFArrayRef)>();
+
+  CFDictionaryRef SecCertificateCopyValues1(
+    SecCertificateRef certificate,
+    CFArrayRef keys,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopyValues1(
+      certificate,
+      keys,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopyValues1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFDictionaryRef Function(SecCertificateRef, CFArrayRef,
+              ffi.Pointer<CFErrorRef>)>>('SecCertificateCopyValues');
+  late final _SecCertificateCopyValues1 =
+      _SecCertificateCopyValues1Ptr.asFunction<
+          CFDictionaryRef Function(
+              SecCertificateRef, CFArrayRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFStringRef SecCertificateCopyLongDescription1(
+    CFAllocatorRef alloc,
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopyLongDescription1(
+      alloc,
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopyLongDescription1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, SecCertificateRef,
+              ffi.Pointer<CFErrorRef>)>>('SecCertificateCopyLongDescription');
+  late final _SecCertificateCopyLongDescription1 =
+      _SecCertificateCopyLongDescription1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFStringRef SecCertificateCopyShortDescription1(
+    CFAllocatorRef alloc,
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopyShortDescription1(
+      alloc,
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopyShortDescription1Ptr = _lookup<
+      ffi.NativeFunction<
+          CFStringRef Function(CFAllocatorRef, SecCertificateRef,
+              ffi.Pointer<CFErrorRef>)>>('SecCertificateCopyShortDescription');
+  late final _SecCertificateCopyShortDescription1 =
+      _SecCertificateCopyShortDescription1Ptr.asFunction<
+          CFStringRef Function(
+              CFAllocatorRef, SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef SecCertificateCopyNormalizedIssuerContent1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopyNormalizedIssuerContent1(
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopyNormalizedIssuerContent1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>>(
+      'SecCertificateCopyNormalizedIssuerContent');
+  late final _SecCertificateCopyNormalizedIssuerContent1 =
+      _SecCertificateCopyNormalizedIssuerContent1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  CFDataRef SecCertificateCopyNormalizedSubjectContent1(
+    SecCertificateRef certificate,
+    ffi.Pointer<CFErrorRef> error,
+  ) {
+    return _SecCertificateCopyNormalizedSubjectContent1(
+      certificate,
+      error,
+    );
+  }
+
+  late final _SecCertificateCopyNormalizedSubjectContent1Ptr = _lookup<
+          ffi.NativeFunction<
+              CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>>(
+      'SecCertificateCopyNormalizedSubjectContent');
+  late final _SecCertificateCopyNormalizedSubjectContent1 =
+      _SecCertificateCopyNormalizedSubjectContent1Ptr.asFunction<
+          CFDataRef Function(SecCertificateRef, ffi.Pointer<CFErrorRef>)>();
+
+  int SecIdentityGetTypeID1() {
+    return _SecIdentityGetTypeID1();
+  }
+
+  late final _SecIdentityGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('SecIdentityGetTypeID');
+  late final _SecIdentityGetTypeID1 =
+      _SecIdentityGetTypeID1Ptr.asFunction<int Function()>();
+
+  int SecIdentityCreateWithCertificate1(
+    CFTypeRef keychainOrArray,
+    SecCertificateRef certificateRef,
+    ffi.Pointer<SecIdentityRef> identityRef,
+  ) {
+    return _SecIdentityCreateWithCertificate1(
+      keychainOrArray,
+      certificateRef,
+      identityRef,
+    );
+  }
+
+  late final _SecIdentityCreateWithCertificate1Ptr = _lookup<
+          ffi.NativeFunction<
+              OSStatus Function(
+                  CFTypeRef, SecCertificateRef, ffi.Pointer<SecIdentityRef>)>>(
+      'SecIdentityCreateWithCertificate');
+  late final _SecIdentityCreateWithCertificate1 =
+      _SecIdentityCreateWithCertificate1Ptr.asFunction<
+          int Function(
+              CFTypeRef, SecCertificateRef, ffi.Pointer<SecIdentityRef>)>();
+
+  int SecIdentityCopyCertificate1(
+    SecIdentityRef identityRef,
+    ffi.Pointer<SecCertificateRef> certificateRef,
+  ) {
+    return _SecIdentityCopyCertificate1(
+      identityRef,
+      certificateRef,
+    );
+  }
+
+  late final _SecIdentityCopyCertificate1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecIdentityRef,
+              ffi.Pointer<SecCertificateRef>)>>('SecIdentityCopyCertificate');
+  late final _SecIdentityCopyCertificate1 =
+      _SecIdentityCopyCertificate1Ptr.asFunction<
+          int Function(SecIdentityRef, ffi.Pointer<SecCertificateRef>)>();
+
+  int SecIdentityCopyPrivateKey1(
+    SecIdentityRef identityRef,
+    ffi.Pointer<SecKeyRef> privateKeyRef,
+  ) {
+    return _SecIdentityCopyPrivateKey1(
+      identityRef,
+      privateKeyRef,
+    );
+  }
+
+  late final _SecIdentityCopyPrivateKey1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecIdentityRef,
+              ffi.Pointer<SecKeyRef>)>>('SecIdentityCopyPrivateKey');
+  late final _SecIdentityCopyPrivateKey1 = _SecIdentityCopyPrivateKey1Ptr
+      .asFunction<int Function(SecIdentityRef, ffi.Pointer<SecKeyRef>)>();
+
+  int SecIdentityCopyPreference1(
+    CFStringRef name,
+    int keyUsage,
+    CFArrayRef validIssuers,
+    ffi.Pointer<SecIdentityRef> identity,
+  ) {
+    return _SecIdentityCopyPreference1(
+      name,
+      keyUsage,
+      validIssuers,
+      identity,
+    );
+  }
+
+  late final _SecIdentityCopyPreference1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(CFStringRef, CSSM_KEYUSE, CFArrayRef,
+              ffi.Pointer<SecIdentityRef>)>>('SecIdentityCopyPreference');
+  late final _SecIdentityCopyPreference1 =
+      _SecIdentityCopyPreference1Ptr.asFunction<
+          int Function(
+              CFStringRef, int, CFArrayRef, ffi.Pointer<SecIdentityRef>)>();
+
+  SecIdentityRef SecIdentityCopyPreferred1(
+    CFStringRef name,
+    CFArrayRef keyUsage,
+    CFArrayRef validIssuers,
+  ) {
+    return _SecIdentityCopyPreferred1(
+      name,
+      keyUsage,
+      validIssuers,
+    );
+  }
+
+  late final _SecIdentityCopyPreferred1Ptr = _lookup<
+      ffi.NativeFunction<
+          SecIdentityRef Function(CFStringRef, CFArrayRef,
+              CFArrayRef)>>('SecIdentityCopyPreferred');
+  late final _SecIdentityCopyPreferred1 =
+      _SecIdentityCopyPreferred1Ptr.asFunction<
+          SecIdentityRef Function(CFStringRef, CFArrayRef, CFArrayRef)>();
+
+  int SecIdentitySetPreference1(
+    SecIdentityRef identity,
+    CFStringRef name,
+    int keyUsage,
+  ) {
+    return _SecIdentitySetPreference1(
+      identity,
+      name,
+      keyUsage,
+    );
+  }
+
+  late final _SecIdentitySetPreference1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecIdentityRef, CFStringRef,
+              CSSM_KEYUSE)>>('SecIdentitySetPreference');
+  late final _SecIdentitySetPreference1 = _SecIdentitySetPreference1Ptr
+      .asFunction<int Function(SecIdentityRef, CFStringRef, int)>();
+
+  int SecIdentitySetPreferred1(
+    SecIdentityRef identity,
+    CFStringRef name,
+    CFArrayRef keyUsage,
+  ) {
+    return _SecIdentitySetPreferred1(
+      identity,
+      name,
+      keyUsage,
+    );
+  }
+
+  late final _SecIdentitySetPreferred1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SecIdentityRef, CFStringRef,
+              CFArrayRef)>>('SecIdentitySetPreferred');
+  late final _SecIdentitySetPreferred1 = _SecIdentitySetPreferred1Ptr
+      .asFunction<int Function(SecIdentityRef, CFStringRef, CFArrayRef)>();
+
+  int SecIdentityCopySystemIdentity1(
+    CFStringRef domain,
+    ffi.Pointer<SecIdentityRef> idRef,
+    ffi.Pointer<CFStringRef> actualDomain,
+  ) {
+    return _SecIdentityCopySystemIdentity1(
+      domain,
+      idRef,
+      actualDomain,
+    );
+  }
+
+  late final _SecIdentityCopySystemIdentity1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(CFStringRef, ffi.Pointer<SecIdentityRef>,
+              ffi.Pointer<CFStringRef>)>>('SecIdentityCopySystemIdentity');
+  late final _SecIdentityCopySystemIdentity1 =
+      _SecIdentityCopySystemIdentity1Ptr.asFunction<
+          int Function(CFStringRef, ffi.Pointer<SecIdentityRef>,
+              ffi.Pointer<CFStringRef>)>();
+
+  int SecIdentitySetSystemIdentity1(
+    CFStringRef domain,
+    SecIdentityRef idRef,
+  ) {
+    return _SecIdentitySetSystemIdentity1(
+      domain,
+      idRef,
+    );
+  }
+
+  late final _SecIdentitySetSystemIdentity1Ptr = _lookup<
+          ffi.NativeFunction<OSStatus Function(CFStringRef, SecIdentityRef)>>(
+      'SecIdentitySetSystemIdentity');
+  late final _SecIdentitySetSystemIdentity1 = _SecIdentitySetSystemIdentity1Ptr
+      .asFunction<int Function(CFStringRef, SecIdentityRef)>();
+
+  sec_trust_t sec_trust_create1(
+    SecTrustRef trust,
+  ) {
+    return _sec_trust_create1(
+      trust,
+    );
+  }
+
+  late final _sec_trust_create1Ptr =
+      _lookup<ffi.NativeFunction<sec_trust_t Function(SecTrustRef)>>(
+          'sec_trust_create');
+  late final _sec_trust_create1 =
+      _sec_trust_create1Ptr.asFunction<sec_trust_t Function(SecTrustRef)>();
+
+  SecTrustRef sec_trust_copy_ref1(
+    sec_trust_t trust,
+  ) {
+    return _sec_trust_copy_ref1(
+      trust,
+    );
+  }
+
+  late final _sec_trust_copy_ref1Ptr =
+      _lookup<ffi.NativeFunction<SecTrustRef Function(sec_trust_t)>>(
+          'sec_trust_copy_ref');
+  late final _sec_trust_copy_ref1 =
+      _sec_trust_copy_ref1Ptr.asFunction<SecTrustRef Function(sec_trust_t)>();
+
+  sec_identity_t sec_identity_create1(
+    SecIdentityRef identity,
+  ) {
+    return _sec_identity_create1(
+      identity,
+    );
+  }
+
+  late final _sec_identity_create1Ptr =
+      _lookup<ffi.NativeFunction<sec_identity_t Function(SecIdentityRef)>>(
+          'sec_identity_create');
+  late final _sec_identity_create1 = _sec_identity_create1Ptr
+      .asFunction<sec_identity_t Function(SecIdentityRef)>();
+
+  sec_identity_t sec_identity_create_with_certificates1(
+    SecIdentityRef identity,
+    CFArrayRef certificates,
+  ) {
+    return _sec_identity_create_with_certificates1(
+      identity,
+      certificates,
+    );
+  }
+
+  late final _sec_identity_create_with_certificates1Ptr = _lookup<
+      ffi.NativeFunction<
+          sec_identity_t Function(SecIdentityRef,
+              CFArrayRef)>>('sec_identity_create_with_certificates');
+  late final _sec_identity_create_with_certificates1 =
+      _sec_identity_create_with_certificates1Ptr
+          .asFunction<sec_identity_t Function(SecIdentityRef, CFArrayRef)>();
+
+  bool sec_identity_access_certificates1(
+    sec_identity_t identity,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_identity_access_certificates1(
+          identity,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_identity_access_certificates1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(sec_identity_t,
+              ffi.Pointer<ObjCObject>)>>('sec_identity_access_certificates');
+  late final _sec_identity_access_certificates1 =
+      _sec_identity_access_certificates1Ptr
+          .asFunction<int Function(sec_identity_t, ffi.Pointer<ObjCObject>)>();
+
+  SecIdentityRef sec_identity_copy_ref1(
+    sec_identity_t identity,
+  ) {
+    return _sec_identity_copy_ref1(
+      identity,
+    );
+  }
+
+  late final _sec_identity_copy_ref1Ptr =
+      _lookup<ffi.NativeFunction<SecIdentityRef Function(sec_identity_t)>>(
+          'sec_identity_copy_ref');
+  late final _sec_identity_copy_ref1 = _sec_identity_copy_ref1Ptr
+      .asFunction<SecIdentityRef Function(sec_identity_t)>();
+
+  CFArrayRef sec_identity_copy_certificates_ref1(
+    sec_identity_t identity,
+  ) {
+    return _sec_identity_copy_certificates_ref1(
+      identity,
+    );
+  }
+
+  late final _sec_identity_copy_certificates_ref1Ptr =
+      _lookup<ffi.NativeFunction<CFArrayRef Function(sec_identity_t)>>(
+          'sec_identity_copy_certificates_ref');
+  late final _sec_identity_copy_certificates_ref1 =
+      _sec_identity_copy_certificates_ref1Ptr
+          .asFunction<CFArrayRef Function(sec_identity_t)>();
+
+  sec_certificate_t sec_certificate_create1(
+    SecCertificateRef certificate,
+  ) {
+    return _sec_certificate_create1(
+      certificate,
+    );
+  }
+
+  late final _sec_certificate_create1Ptr = _lookup<
+          ffi.NativeFunction<sec_certificate_t Function(SecCertificateRef)>>(
+      'sec_certificate_create');
+  late final _sec_certificate_create1 = _sec_certificate_create1Ptr
+      .asFunction<sec_certificate_t Function(SecCertificateRef)>();
+
+  SecCertificateRef sec_certificate_copy_ref1(
+    sec_certificate_t certificate,
+  ) {
+    return _sec_certificate_copy_ref1(
+      certificate,
+    );
+  }
+
+  late final _sec_certificate_copy_ref1Ptr = _lookup<
+          ffi.NativeFunction<SecCertificateRef Function(sec_certificate_t)>>(
+      'sec_certificate_copy_ref');
+  late final _sec_certificate_copy_ref1 = _sec_certificate_copy_ref1Ptr
+      .asFunction<SecCertificateRef Function(sec_certificate_t)>();
+
+  ffi.Pointer<pkg_ffi.Char> sec_protocol_metadata_get_negotiated_protocol1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_negotiated_protocol1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_negotiated_protocol1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<pkg_ffi.Char> Function(sec_protocol_metadata_t)>>(
+      'sec_protocol_metadata_get_negotiated_protocol');
+  late final _sec_protocol_metadata_get_negotiated_protocol1 =
+      _sec_protocol_metadata_get_negotiated_protocol1Ptr.asFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(sec_protocol_metadata_t)>();
+
+  dispatch_data_t sec_protocol_metadata_copy_peer_public_key1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_copy_peer_public_key1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_copy_peer_public_key1Ptr = _lookup<
+          ffi.NativeFunction<
+              dispatch_data_t Function(sec_protocol_metadata_t)>>(
+      'sec_protocol_metadata_copy_peer_public_key');
+  late final _sec_protocol_metadata_copy_peer_public_key1 =
+      _sec_protocol_metadata_copy_peer_public_key1Ptr
+          .asFunction<dispatch_data_t Function(sec_protocol_metadata_t)>();
+
+  int sec_protocol_metadata_get_negotiated_tls_protocol_version1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_negotiated_tls_protocol_version1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_negotiated_tls_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(sec_protocol_metadata_t)>>(
+          'sec_protocol_metadata_get_negotiated_tls_protocol_version');
+  late final _sec_protocol_metadata_get_negotiated_tls_protocol_version1 =
+      _sec_protocol_metadata_get_negotiated_tls_protocol_version1Ptr
+          .asFunction<int Function(sec_protocol_metadata_t)>();
+
+  int sec_protocol_metadata_get_negotiated_protocol_version1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_negotiated_protocol_version1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_negotiated_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(sec_protocol_metadata_t)>>(
+          'sec_protocol_metadata_get_negotiated_protocol_version');
+  late final _sec_protocol_metadata_get_negotiated_protocol_version1 =
+      _sec_protocol_metadata_get_negotiated_protocol_version1Ptr
+          .asFunction<int Function(sec_protocol_metadata_t)>();
+
+  int sec_protocol_metadata_get_negotiated_tls_ciphersuite1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_negotiated_tls_ciphersuite1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_negotiated_tls_ciphersuite1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(sec_protocol_metadata_t)>>(
+          'sec_protocol_metadata_get_negotiated_tls_ciphersuite');
+  late final _sec_protocol_metadata_get_negotiated_tls_ciphersuite1 =
+      _sec_protocol_metadata_get_negotiated_tls_ciphersuite1Ptr
+          .asFunction<int Function(sec_protocol_metadata_t)>();
+
+  int sec_protocol_metadata_get_negotiated_ciphersuite1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_negotiated_ciphersuite1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_negotiated_ciphersuite1Ptr = _lookup<
+          ffi.NativeFunction<SSLCipherSuite Function(sec_protocol_metadata_t)>>(
+      'sec_protocol_metadata_get_negotiated_ciphersuite');
+  late final _sec_protocol_metadata_get_negotiated_ciphersuite1 =
+      _sec_protocol_metadata_get_negotiated_ciphersuite1Ptr
+          .asFunction<int Function(sec_protocol_metadata_t)>();
+
+  bool sec_protocol_metadata_get_early_data_accepted1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_early_data_accepted1(
+          metadata,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_get_early_data_accepted1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(sec_protocol_metadata_t)>>(
+          'sec_protocol_metadata_get_early_data_accepted');
+  late final _sec_protocol_metadata_get_early_data_accepted1 =
+      _sec_protocol_metadata_get_early_data_accepted1Ptr
+          .asFunction<int Function(sec_protocol_metadata_t)>();
+
+  bool sec_protocol_metadata_access_peer_certificate_chain1(
+    sec_protocol_metadata_t metadata,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_protocol_metadata_access_peer_certificate_chain1(
+          metadata,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_access_peer_certificate_chain1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>>(
+      'sec_protocol_metadata_access_peer_certificate_chain');
+  late final _sec_protocol_metadata_access_peer_certificate_chain1 =
+      _sec_protocol_metadata_access_peer_certificate_chain1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>();
+
+  bool sec_protocol_metadata_access_ocsp_response1(
+    sec_protocol_metadata_t metadata,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_protocol_metadata_access_ocsp_response1(
+          metadata,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_access_ocsp_response1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>>(
+      'sec_protocol_metadata_access_ocsp_response');
+  late final _sec_protocol_metadata_access_ocsp_response1 =
+      _sec_protocol_metadata_access_ocsp_response1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>();
+
+  bool sec_protocol_metadata_access_supported_signature_algorithms1(
+    sec_protocol_metadata_t metadata,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_protocol_metadata_access_supported_signature_algorithms1(
+          metadata,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_access_supported_signature_algorithms1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Uint8 Function(
+                      sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>>(
+          'sec_protocol_metadata_access_supported_signature_algorithms');
+  late final _sec_protocol_metadata_access_supported_signature_algorithms1 =
+      _sec_protocol_metadata_access_supported_signature_algorithms1Ptr
+          .asFunction<
+              int Function(sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>();
+
+  bool sec_protocol_metadata_access_distinguished_names1(
+    sec_protocol_metadata_t metadata,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_protocol_metadata_access_distinguished_names1(
+          metadata,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_access_distinguished_names1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>>(
+      'sec_protocol_metadata_access_distinguished_names');
+  late final _sec_protocol_metadata_access_distinguished_names1 =
+      _sec_protocol_metadata_access_distinguished_names1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>();
+
+  bool sec_protocol_metadata_access_pre_shared_keys1(
+    sec_protocol_metadata_t metadata,
+    ffi.Pointer<ObjCObject> handler,
+  ) {
+    return _sec_protocol_metadata_access_pre_shared_keys1(
+          metadata,
+          handler,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_access_pre_shared_keys1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>>(
+      'sec_protocol_metadata_access_pre_shared_keys');
+  late final _sec_protocol_metadata_access_pre_shared_keys1 =
+      _sec_protocol_metadata_access_pre_shared_keys1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<pkg_ffi.Char> sec_protocol_metadata_get_server_name1(
+    sec_protocol_metadata_t metadata,
+  ) {
+    return _sec_protocol_metadata_get_server_name1(
+      metadata,
+    );
+  }
+
+  late final _sec_protocol_metadata_get_server_name1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<pkg_ffi.Char> Function(sec_protocol_metadata_t)>>(
+      'sec_protocol_metadata_get_server_name');
+  late final _sec_protocol_metadata_get_server_name1 =
+      _sec_protocol_metadata_get_server_name1Ptr.asFunction<
+          ffi.Pointer<pkg_ffi.Char> Function(sec_protocol_metadata_t)>();
+
+  bool sec_protocol_metadata_peers_are_equal1(
+    sec_protocol_metadata_t metadataA,
+    sec_protocol_metadata_t metadataB,
+  ) {
+    return _sec_protocol_metadata_peers_are_equal1(
+          metadataA,
+          metadataB,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_peers_are_equal1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  sec_protocol_metadata_t, sec_protocol_metadata_t)>>(
+      'sec_protocol_metadata_peers_are_equal');
+  late final _sec_protocol_metadata_peers_are_equal1 =
+      _sec_protocol_metadata_peers_are_equal1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, sec_protocol_metadata_t)>();
+
+  bool sec_protocol_metadata_challenge_parameters_are_equal1(
+    sec_protocol_metadata_t metadataA,
+    sec_protocol_metadata_t metadataB,
+  ) {
+    return _sec_protocol_metadata_challenge_parameters_are_equal1(
+          metadataA,
+          metadataB,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_metadata_challenge_parameters_are_equal1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Uint8 Function(
+                      sec_protocol_metadata_t, sec_protocol_metadata_t)>>(
+          'sec_protocol_metadata_challenge_parameters_are_equal');
+  late final _sec_protocol_metadata_challenge_parameters_are_equal1 =
+      _sec_protocol_metadata_challenge_parameters_are_equal1Ptr.asFunction<
+          int Function(sec_protocol_metadata_t, sec_protocol_metadata_t)>();
+
+  dispatch_data_t sec_protocol_metadata_create_secret1(
+    sec_protocol_metadata_t metadata,
+    int label_len,
+    ffi.Pointer<pkg_ffi.Char> label,
+    int exporter_length,
+  ) {
+    return _sec_protocol_metadata_create_secret1(
+      metadata,
+      label_len,
+      label,
+      exporter_length,
+    );
+  }
+
+  late final _sec_protocol_metadata_create_secret1Ptr = _lookup<
+      ffi.NativeFunction<
+          dispatch_data_t Function(
+              sec_protocol_metadata_t,
+              pkg_ffi.Size,
+              ffi.Pointer<pkg_ffi.Char>,
+              pkg_ffi.Size)>>('sec_protocol_metadata_create_secret');
+  late final _sec_protocol_metadata_create_secret1 =
+      _sec_protocol_metadata_create_secret1Ptr.asFunction<
+          dispatch_data_t Function(
+              sec_protocol_metadata_t, int, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  dispatch_data_t sec_protocol_metadata_create_secret_with_context1(
+    sec_protocol_metadata_t metadata,
+    int label_len,
+    ffi.Pointer<pkg_ffi.Char> label,
+    int context_len,
+    ffi.Pointer<ffi.Uint8> context,
+    int exporter_length,
+  ) {
+    return _sec_protocol_metadata_create_secret_with_context1(
+      metadata,
+      label_len,
+      label,
+      context_len,
+      context,
+      exporter_length,
+    );
+  }
+
+  late final _sec_protocol_metadata_create_secret_with_context1Ptr = _lookup<
+      ffi.NativeFunction<
+          dispatch_data_t Function(
+              sec_protocol_metadata_t,
+              pkg_ffi.Size,
+              ffi.Pointer<pkg_ffi.Char>,
+              pkg_ffi.Size,
+              ffi.Pointer<ffi.Uint8>,
+              pkg_ffi
+                  .Size)>>('sec_protocol_metadata_create_secret_with_context');
+  late final _sec_protocol_metadata_create_secret_with_context1 =
+      _sec_protocol_metadata_create_secret_with_context1Ptr.asFunction<
+          dispatch_data_t Function(sec_protocol_metadata_t, int,
+              ffi.Pointer<pkg_ffi.Char>, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  bool sec_protocol_options_are_equal1(
+    sec_protocol_options_t optionsA,
+    sec_protocol_options_t optionsB,
+  ) {
+    return _sec_protocol_options_are_equal1(
+          optionsA,
+          optionsB,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_options_are_equal1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(sec_protocol_options_t,
+              sec_protocol_options_t)>>('sec_protocol_options_are_equal');
+  late final _sec_protocol_options_are_equal1 =
+      _sec_protocol_options_are_equal1Ptr.asFunction<
+          int Function(sec_protocol_options_t, sec_protocol_options_t)>();
+
+  void sec_protocol_options_set_local_identity1(
+    sec_protocol_options_t options,
+    sec_identity_t identity,
+  ) {
+    return _sec_protocol_options_set_local_identity1(
+      options,
+      identity,
+    );
+  }
+
+  late final _sec_protocol_options_set_local_identity1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              sec_identity_t)>>('sec_protocol_options_set_local_identity');
+  late final _sec_protocol_options_set_local_identity1 =
+      _sec_protocol_options_set_local_identity1Ptr
+          .asFunction<void Function(sec_protocol_options_t, sec_identity_t)>();
+
+  void sec_protocol_options_append_tls_ciphersuite1(
+    sec_protocol_options_t options,
+    int ciphersuite,
+  ) {
+    return _sec_protocol_options_append_tls_ciphersuite1(
+      options,
+      ciphersuite,
+    );
+  }
+
+  late final _sec_protocol_options_append_tls_ciphersuite1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_append_tls_ciphersuite');
+  late final _sec_protocol_options_append_tls_ciphersuite1 =
+      _sec_protocol_options_append_tls_ciphersuite1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_add_tls_ciphersuite1(
+    sec_protocol_options_t options,
+    int ciphersuite,
+  ) {
+    return _sec_protocol_options_add_tls_ciphersuite1(
+      options,
+      ciphersuite,
+    );
+  }
+
+  late final _sec_protocol_options_add_tls_ciphersuite1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              SSLCipherSuite)>>('sec_protocol_options_add_tls_ciphersuite');
+  late final _sec_protocol_options_add_tls_ciphersuite1 =
+      _sec_protocol_options_add_tls_ciphersuite1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_append_tls_ciphersuite_group1(
+    sec_protocol_options_t options,
+    int group,
+  ) {
+    return _sec_protocol_options_append_tls_ciphersuite_group1(
+      options,
+      group,
+    );
+  }
+
+  late final _sec_protocol_options_append_tls_ciphersuite_group1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_append_tls_ciphersuite_group');
+  late final _sec_protocol_options_append_tls_ciphersuite_group1 =
+      _sec_protocol_options_append_tls_ciphersuite_group1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_add_tls_ciphersuite_group1(
+    sec_protocol_options_t options,
+    int group,
+  ) {
+    return _sec_protocol_options_add_tls_ciphersuite_group1(
+      options,
+      group,
+    );
+  }
+
+  late final _sec_protocol_options_add_tls_ciphersuite_group1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_add_tls_ciphersuite_group');
+  late final _sec_protocol_options_add_tls_ciphersuite_group1 =
+      _sec_protocol_options_add_tls_ciphersuite_group1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_min_version1(
+    sec_protocol_options_t options,
+    int version,
+  ) {
+    return _sec_protocol_options_set_tls_min_version1(
+      options,
+      version,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_min_version1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_set_tls_min_version');
+  late final _sec_protocol_options_set_tls_min_version1 =
+      _sec_protocol_options_set_tls_min_version1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_min_tls_protocol_version1(
+    sec_protocol_options_t options,
+    int version,
+  ) {
+    return _sec_protocol_options_set_min_tls_protocol_version1(
+      options,
+      version,
+    );
+  }
+
+  late final _sec_protocol_options_set_min_tls_protocol_version1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_set_min_tls_protocol_version');
+  late final _sec_protocol_options_set_min_tls_protocol_version1 =
+      _sec_protocol_options_set_min_tls_protocol_version1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  int sec_protocol_options_get_default_min_tls_protocol_version1() {
+    return _sec_protocol_options_get_default_min_tls_protocol_version1();
+  }
+
+  late final _sec_protocol_options_get_default_min_tls_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>(
+          'sec_protocol_options_get_default_min_tls_protocol_version');
+  late final _sec_protocol_options_get_default_min_tls_protocol_version1 =
+      _sec_protocol_options_get_default_min_tls_protocol_version1Ptr
+          .asFunction<int Function()>();
+
+  int sec_protocol_options_get_default_min_dtls_protocol_version1() {
+    return _sec_protocol_options_get_default_min_dtls_protocol_version1();
+  }
+
+  late final _sec_protocol_options_get_default_min_dtls_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>(
+          'sec_protocol_options_get_default_min_dtls_protocol_version');
+  late final _sec_protocol_options_get_default_min_dtls_protocol_version1 =
+      _sec_protocol_options_get_default_min_dtls_protocol_version1Ptr
+          .asFunction<int Function()>();
+
+  void sec_protocol_options_set_tls_max_version1(
+    sec_protocol_options_t options,
+    int version,
+  ) {
+    return _sec_protocol_options_set_tls_max_version1(
+      options,
+      version,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_max_version1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_set_tls_max_version');
+  late final _sec_protocol_options_set_tls_max_version1 =
+      _sec_protocol_options_set_tls_max_version1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_max_tls_protocol_version1(
+    sec_protocol_options_t options,
+    int version,
+  ) {
+    return _sec_protocol_options_set_max_tls_protocol_version1(
+      options,
+      version,
+    );
+  }
+
+  late final _sec_protocol_options_set_max_tls_protocol_version1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Int32)>>('sec_protocol_options_set_max_tls_protocol_version');
+  late final _sec_protocol_options_set_max_tls_protocol_version1 =
+      _sec_protocol_options_set_max_tls_protocol_version1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  int sec_protocol_options_get_default_max_tls_protocol_version1() {
+    return _sec_protocol_options_get_default_max_tls_protocol_version1();
+  }
+
+  late final _sec_protocol_options_get_default_max_tls_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>(
+          'sec_protocol_options_get_default_max_tls_protocol_version');
+  late final _sec_protocol_options_get_default_max_tls_protocol_version1 =
+      _sec_protocol_options_get_default_max_tls_protocol_version1Ptr
+          .asFunction<int Function()>();
+
+  int sec_protocol_options_get_default_max_dtls_protocol_version1() {
+    return _sec_protocol_options_get_default_max_dtls_protocol_version1();
+  }
+
+  late final _sec_protocol_options_get_default_max_dtls_protocol_version1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function()>>(
+          'sec_protocol_options_get_default_max_dtls_protocol_version');
+  late final _sec_protocol_options_get_default_max_dtls_protocol_version1 =
+      _sec_protocol_options_get_default_max_dtls_protocol_version1Ptr
+          .asFunction<int Function()>();
+
+  bool sec_protocol_options_get_enable_encrypted_client_hello1(
+    sec_protocol_options_t options,
+  ) {
+    return _sec_protocol_options_get_enable_encrypted_client_hello1(
+          options,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_options_get_enable_encrypted_client_hello1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(sec_protocol_options_t)>>(
+          'sec_protocol_options_get_enable_encrypted_client_hello');
+  late final _sec_protocol_options_get_enable_encrypted_client_hello1 =
+      _sec_protocol_options_get_enable_encrypted_client_hello1Ptr
+          .asFunction<int Function(sec_protocol_options_t)>();
+
+  bool sec_protocol_options_get_quic_use_legacy_codepoint1(
+    sec_protocol_options_t options,
+  ) {
+    return _sec_protocol_options_get_quic_use_legacy_codepoint1(
+          options,
+        ) !=
+        0;
+  }
+
+  late final _sec_protocol_options_get_quic_use_legacy_codepoint1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(sec_protocol_options_t)>>(
+          'sec_protocol_options_get_quic_use_legacy_codepoint');
+  late final _sec_protocol_options_get_quic_use_legacy_codepoint1 =
+      _sec_protocol_options_get_quic_use_legacy_codepoint1Ptr
+          .asFunction<int Function(sec_protocol_options_t)>();
+
+  void sec_protocol_options_add_tls_application_protocol1(
+    sec_protocol_options_t options,
+    ffi.Pointer<pkg_ffi.Char> application_protocol,
+  ) {
+    return _sec_protocol_options_add_tls_application_protocol1(
+      options,
+      application_protocol,
+    );
+  }
+
+  late final _sec_protocol_options_add_tls_application_protocol1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  sec_protocol_options_t, ffi.Pointer<pkg_ffi.Char>)>>(
+      'sec_protocol_options_add_tls_application_protocol');
+  late final _sec_protocol_options_add_tls_application_protocol1 =
+      _sec_protocol_options_add_tls_application_protocol1Ptr.asFunction<
+          void Function(sec_protocol_options_t, ffi.Pointer<pkg_ffi.Char>)>();
+
+  void sec_protocol_options_set_tls_server_name1(
+    sec_protocol_options_t options,
+    ffi.Pointer<pkg_ffi.Char> server_name,
+  ) {
+    return _sec_protocol_options_set_tls_server_name1(
+      options,
+      server_name,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_server_name1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  sec_protocol_options_t, ffi.Pointer<pkg_ffi.Char>)>>(
+      'sec_protocol_options_set_tls_server_name');
+  late final _sec_protocol_options_set_tls_server_name1 =
+      _sec_protocol_options_set_tls_server_name1Ptr.asFunction<
+          void Function(sec_protocol_options_t, ffi.Pointer<pkg_ffi.Char>)>();
+
+  void sec_protocol_options_set_tls_diffie_hellman_parameters1(
+    sec_protocol_options_t options,
+    dispatch_data_t params,
+  ) {
+    return _sec_protocol_options_set_tls_diffie_hellman_parameters1(
+      options,
+      params,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_diffie_hellman_parameters1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(sec_protocol_options_t, dispatch_data_t)>>(
+          'sec_protocol_options_set_tls_diffie_hellman_parameters');
+  late final _sec_protocol_options_set_tls_diffie_hellman_parameters1 =
+      _sec_protocol_options_set_tls_diffie_hellman_parameters1Ptr
+          .asFunction<void Function(sec_protocol_options_t, dispatch_data_t)>();
+
+  void sec_protocol_options_add_pre_shared_key1(
+    sec_protocol_options_t options,
+    dispatch_data_t psk,
+    dispatch_data_t psk_identity,
+  ) {
+    return _sec_protocol_options_add_pre_shared_key1(
+      options,
+      psk,
+      psk_identity,
+    );
+  }
+
+  late final _sec_protocol_options_add_pre_shared_key1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t, dispatch_data_t,
+              dispatch_data_t)>>('sec_protocol_options_add_pre_shared_key');
+  late final _sec_protocol_options_add_pre_shared_key1 =
+      _sec_protocol_options_add_pre_shared_key1Ptr.asFunction<
+          void Function(
+              sec_protocol_options_t, dispatch_data_t, dispatch_data_t)>();
+
+  void sec_protocol_options_set_tls_pre_shared_key_identity_hint1(
+    sec_protocol_options_t options,
+    dispatch_data_t psk_identity_hint,
+  ) {
+    return _sec_protocol_options_set_tls_pre_shared_key_identity_hint1(
+      options,
+      psk_identity_hint,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_pre_shared_key_identity_hint1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(sec_protocol_options_t, dispatch_data_t)>>(
+          'sec_protocol_options_set_tls_pre_shared_key_identity_hint');
+  late final _sec_protocol_options_set_tls_pre_shared_key_identity_hint1 =
+      _sec_protocol_options_set_tls_pre_shared_key_identity_hint1Ptr
+          .asFunction<void Function(sec_protocol_options_t, dispatch_data_t)>();
+
+  void sec_protocol_options_set_pre_shared_key_selection_block1(
+    sec_protocol_options_t options,
+    sec_protocol_pre_shared_key_selection_t psk_selection_block,
+    dispatch_queue_t psk_selection_queue,
+  ) {
+    return _sec_protocol_options_set_pre_shared_key_selection_block1(
+      options,
+      psk_selection_block,
+      psk_selection_queue,
+    );
+  }
+
+  late final _sec_protocol_options_set_pre_shared_key_selection_block1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(
+                      sec_protocol_options_t,
+                      sec_protocol_pre_shared_key_selection_t,
+                      dispatch_queue_t)>>(
+          'sec_protocol_options_set_pre_shared_key_selection_block');
+  late final _sec_protocol_options_set_pre_shared_key_selection_block1 =
+      _sec_protocol_options_set_pre_shared_key_selection_block1Ptr.asFunction<
+          void Function(sec_protocol_options_t,
+              sec_protocol_pre_shared_key_selection_t, dispatch_queue_t)>();
+
+  void sec_protocol_options_set_tls_tickets_enabled1(
+    sec_protocol_options_t options,
+    bool tickets_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_tickets_enabled1(
+      options,
+      tickets_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_tickets_enabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_tickets_enabled');
+  late final _sec_protocol_options_set_tls_tickets_enabled1 =
+      _sec_protocol_options_set_tls_tickets_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_is_fallback_attempt1(
+    sec_protocol_options_t options,
+    bool is_fallback_attempt,
+  ) {
+    return _sec_protocol_options_set_tls_is_fallback_attempt1(
+      options,
+      is_fallback_attempt ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_is_fallback_attempt1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_is_fallback_attempt');
+  late final _sec_protocol_options_set_tls_is_fallback_attempt1 =
+      _sec_protocol_options_set_tls_is_fallback_attempt1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_resumption_enabled1(
+    sec_protocol_options_t options,
+    bool resumption_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_resumption_enabled1(
+      options,
+      resumption_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_resumption_enabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_resumption_enabled');
+  late final _sec_protocol_options_set_tls_resumption_enabled1 =
+      _sec_protocol_options_set_tls_resumption_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_false_start_enabled1(
+    sec_protocol_options_t options,
+    bool false_start_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_false_start_enabled1(
+      options,
+      false_start_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_false_start_enabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_false_start_enabled');
+  late final _sec_protocol_options_set_tls_false_start_enabled1 =
+      _sec_protocol_options_set_tls_false_start_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_ocsp_enabled1(
+    sec_protocol_options_t options,
+    bool ocsp_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_ocsp_enabled1(
+      options,
+      ocsp_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_ocsp_enabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_ocsp_enabled');
+  late final _sec_protocol_options_set_tls_ocsp_enabled1 =
+      _sec_protocol_options_set_tls_ocsp_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_sct_enabled1(
+    sec_protocol_options_t options,
+    bool sct_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_sct_enabled1(
+      options,
+      sct_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_sct_enabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t,
+              ffi.Uint8)>>('sec_protocol_options_set_tls_sct_enabled');
+  late final _sec_protocol_options_set_tls_sct_enabled1 =
+      _sec_protocol_options_set_tls_sct_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_tls_renegotiation_enabled1(
+    sec_protocol_options_t options,
+    bool renegotiation_enabled,
+  ) {
+    return _sec_protocol_options_set_tls_renegotiation_enabled1(
+      options,
+      renegotiation_enabled ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_tls_renegotiation_enabled1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(sec_protocol_options_t, ffi.Uint8)>>(
+      'sec_protocol_options_set_tls_renegotiation_enabled');
+  late final _sec_protocol_options_set_tls_renegotiation_enabled1 =
+      _sec_protocol_options_set_tls_renegotiation_enabled1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_peer_authentication_required1(
+    sec_protocol_options_t options,
+    bool peer_authentication_required,
+  ) {
+    return _sec_protocol_options_set_peer_authentication_required1(
+      options,
+      peer_authentication_required ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_peer_authentication_required1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(sec_protocol_options_t, ffi.Uint8)>>(
+          'sec_protocol_options_set_peer_authentication_required');
+  late final _sec_protocol_options_set_peer_authentication_required1 =
+      _sec_protocol_options_set_peer_authentication_required1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_peer_authentication_optional1(
+    sec_protocol_options_t options,
+    bool peer_authentication_optional,
+  ) {
+    return _sec_protocol_options_set_peer_authentication_optional1(
+      options,
+      peer_authentication_optional ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_peer_authentication_optional1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(sec_protocol_options_t, ffi.Uint8)>>(
+          'sec_protocol_options_set_peer_authentication_optional');
+  late final _sec_protocol_options_set_peer_authentication_optional1 =
+      _sec_protocol_options_set_peer_authentication_optional1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_enable_encrypted_client_hello1(
+    sec_protocol_options_t options,
+    bool enable_encrypted_client_hello,
+  ) {
+    return _sec_protocol_options_set_enable_encrypted_client_hello1(
+      options,
+      enable_encrypted_client_hello ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_enable_encrypted_client_hello1Ptr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(sec_protocol_options_t, ffi.Uint8)>>(
+          'sec_protocol_options_set_enable_encrypted_client_hello');
+  late final _sec_protocol_options_set_enable_encrypted_client_hello1 =
+      _sec_protocol_options_set_enable_encrypted_client_hello1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_quic_use_legacy_codepoint1(
+    sec_protocol_options_t options,
+    bool quic_use_legacy_codepoint,
+  ) {
+    return _sec_protocol_options_set_quic_use_legacy_codepoint1(
+      options,
+      quic_use_legacy_codepoint ? 1 : 0,
+    );
+  }
+
+  late final _sec_protocol_options_set_quic_use_legacy_codepoint1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(sec_protocol_options_t, ffi.Uint8)>>(
+      'sec_protocol_options_set_quic_use_legacy_codepoint');
+  late final _sec_protocol_options_set_quic_use_legacy_codepoint1 =
+      _sec_protocol_options_set_quic_use_legacy_codepoint1Ptr
+          .asFunction<void Function(sec_protocol_options_t, int)>();
+
+  void sec_protocol_options_set_key_update_block1(
+    sec_protocol_options_t options,
+    sec_protocol_key_update_t key_update_block,
+    dispatch_queue_t key_update_queue,
+  ) {
+    return _sec_protocol_options_set_key_update_block1(
+      options,
+      key_update_block,
+      key_update_queue,
+    );
+  }
+
+  late final _sec_protocol_options_set_key_update_block1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t, sec_protocol_key_update_t,
+              dispatch_queue_t)>>('sec_protocol_options_set_key_update_block');
+  late final _sec_protocol_options_set_key_update_block1 =
+      _sec_protocol_options_set_key_update_block1Ptr.asFunction<
+          void Function(sec_protocol_options_t, sec_protocol_key_update_t,
+              dispatch_queue_t)>();
+
+  void sec_protocol_options_set_challenge_block1(
+    sec_protocol_options_t options,
+    sec_protocol_challenge_t challenge_block,
+    dispatch_queue_t challenge_queue,
+  ) {
+    return _sec_protocol_options_set_challenge_block1(
+      options,
+      challenge_block,
+      challenge_queue,
+    );
+  }
+
+  late final _sec_protocol_options_set_challenge_block1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t, sec_protocol_challenge_t,
+              dispatch_queue_t)>>('sec_protocol_options_set_challenge_block');
+  late final _sec_protocol_options_set_challenge_block1 =
+      _sec_protocol_options_set_challenge_block1Ptr.asFunction<
+          void Function(sec_protocol_options_t, sec_protocol_challenge_t,
+              dispatch_queue_t)>();
+
+  void sec_protocol_options_set_verify_block1(
+    sec_protocol_options_t options,
+    sec_protocol_verify_t verify_block,
+    dispatch_queue_t verify_block_queue,
+  ) {
+    return _sec_protocol_options_set_verify_block1(
+      options,
+      verify_block,
+      verify_block_queue,
+    );
+  }
+
+  late final _sec_protocol_options_set_verify_block1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(sec_protocol_options_t, sec_protocol_verify_t,
+              dispatch_queue_t)>>('sec_protocol_options_set_verify_block');
+  late final _sec_protocol_options_set_verify_block1 =
+      _sec_protocol_options_set_verify_block1Ptr.asFunction<
+          void Function(sec_protocol_options_t, sec_protocol_verify_t,
+              dispatch_queue_t)>();
+
+  int SSLContextGetTypeID1() {
+    return _SSLContextGetTypeID1();
+  }
+
+  late final _SSLContextGetTypeID1Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('SSLContextGetTypeID');
+  late final _SSLContextGetTypeID1 =
+      _SSLContextGetTypeID1Ptr.asFunction<int Function()>();
+
+  SSLContextRef SSLCreateContext1(
+    CFAllocatorRef alloc,
+    int protocolSide,
+    int connectionType,
+  ) {
+    return _SSLCreateContext1(
+      alloc,
+      protocolSide,
+      connectionType,
+    );
+  }
+
+  late final _SSLCreateContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          SSLContextRef Function(
+              CFAllocatorRef, ffi.Int32, ffi.Int32)>>('SSLCreateContext');
+  late final _SSLCreateContext1 = _SSLCreateContext1Ptr.asFunction<
+      SSLContextRef Function(CFAllocatorRef, int, int)>();
+
+  int SSLNewContext1(
+    int isServer,
+    ffi.Pointer<SSLContextRef> contextPtr,
+  ) {
+    return _SSLNewContext1(
+      isServer,
+      contextPtr,
+    );
+  }
+
+  late final _SSLNewContext1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              Boolean, ffi.Pointer<SSLContextRef>)>>('SSLNewContext');
+  late final _SSLNewContext1 = _SSLNewContext1Ptr.asFunction<
+      int Function(int, ffi.Pointer<SSLContextRef>)>();
+
+  int SSLDisposeContext1(
+    SSLContextRef context,
+  ) {
+    return _SSLDisposeContext1(
+      context,
+    );
+  }
+
+  late final _SSLDisposeContext1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef)>>(
+          'SSLDisposeContext');
+  late final _SSLDisposeContext1 =
+      _SSLDisposeContext1Ptr.asFunction<int Function(SSLContextRef)>();
+
+  int SSLGetSessionState1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> state,
+  ) {
+    return _SSLGetSessionState1(
+      context,
+      state,
+    );
+  }
+
+  late final _SSLGetSessionState1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<ffi.Int32>)>>('SSLGetSessionState');
+  late final _SSLGetSessionState1 = _SSLGetSessionState1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLSetSessionOption1(
+    SSLContextRef context,
+    int option,
+    int value,
+  ) {
+    return _SSLSetSessionOption1(
+      context,
+      option,
+      value,
+    );
+  }
+
+  late final _SSLSetSessionOption1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Int32, Boolean)>>('SSLSetSessionOption');
+  late final _SSLSetSessionOption1 = _SSLSetSessionOption1Ptr.asFunction<
+      int Function(SSLContextRef, int, int)>();
+
+  int SSLGetSessionOption1(
+    SSLContextRef context,
+    int option,
+    ffi.Pointer<Boolean> value,
+  ) {
+    return _SSLGetSessionOption1(
+      context,
+      option,
+      value,
+    );
+  }
+
+  late final _SSLGetSessionOption1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Int32,
+              ffi.Pointer<Boolean>)>>('SSLGetSessionOption');
+  late final _SSLGetSessionOption1 = _SSLGetSessionOption1Ptr.asFunction<
+      int Function(SSLContextRef, int, ffi.Pointer<Boolean>)>();
+
+  int SSLSetIOFuncs1(
+    SSLContextRef context,
+    SSLReadFunc readFunc,
+    SSLWriteFunc writeFunc,
+  ) {
+    return _SSLSetIOFuncs1(
+      context,
+      readFunc,
+      writeFunc,
+    );
+  }
+
+  late final _SSLSetIOFuncs1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, SSLReadFunc, SSLWriteFunc)>>('SSLSetIOFuncs');
+  late final _SSLSetIOFuncs1 = _SSLSetIOFuncs1Ptr.asFunction<
+      int Function(SSLContextRef, SSLReadFunc, SSLWriteFunc)>();
+
+  int SSLSetSessionConfig1(
+    SSLContextRef context,
+    CFStringRef config,
+  ) {
+    return _SSLSetSessionConfig1(
+      context,
+      config,
+    );
+  }
+
+  late final _SSLSetSessionConfig1Ptr = _lookup<
+          ffi.NativeFunction<OSStatus Function(SSLContextRef, CFStringRef)>>(
+      'SSLSetSessionConfig');
+  late final _SSLSetSessionConfig1 = _SSLSetSessionConfig1Ptr.asFunction<
+      int Function(SSLContextRef, CFStringRef)>();
+
+  int SSLSetProtocolVersionMin1(
+    SSLContextRef context,
+    int minVersion,
+  ) {
+    return _SSLSetProtocolVersionMin1(
+      context,
+      minVersion,
+    );
+  }
+
+  late final _SSLSetProtocolVersionMin1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, ffi.Int32)>>(
+          'SSLSetProtocolVersionMin');
+  late final _SSLSetProtocolVersionMin1 = _SSLSetProtocolVersionMin1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetProtocolVersionMin1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> minVersion,
+  ) {
+    return _SSLGetProtocolVersionMin1(
+      context,
+      minVersion,
+    );
+  }
+
+  late final _SSLGetProtocolVersionMin1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<ffi.Int32>)>>('SSLGetProtocolVersionMin');
+  late final _SSLGetProtocolVersionMin1 = _SSLGetProtocolVersionMin1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLSetProtocolVersionMax1(
+    SSLContextRef context,
+    int maxVersion,
+  ) {
+    return _SSLSetProtocolVersionMax1(
+      context,
+      maxVersion,
+    );
+  }
+
+  late final _SSLSetProtocolVersionMax1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, ffi.Int32)>>(
+          'SSLSetProtocolVersionMax');
+  late final _SSLSetProtocolVersionMax1 = _SSLSetProtocolVersionMax1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetProtocolVersionMax1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> maxVersion,
+  ) {
+    return _SSLGetProtocolVersionMax1(
+      context,
+      maxVersion,
+    );
+  }
+
+  late final _SSLGetProtocolVersionMax1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<ffi.Int32>)>>('SSLGetProtocolVersionMax');
+  late final _SSLGetProtocolVersionMax1 = _SSLGetProtocolVersionMax1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLSetProtocolVersionEnabled1(
+    SSLContextRef context,
+    int protocol,
+    int enable,
+  ) {
+    return _SSLSetProtocolVersionEnabled1(
+      context,
+      protocol,
+      enable,
+    );
+  }
+
+  late final _SSLSetProtocolVersionEnabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Int32,
+              Boolean)>>('SSLSetProtocolVersionEnabled');
+  late final _SSLSetProtocolVersionEnabled1 = _SSLSetProtocolVersionEnabled1Ptr
+      .asFunction<int Function(SSLContextRef, int, int)>();
+
+  int SSLGetProtocolVersionEnabled1(
+    SSLContextRef context,
+    int protocol,
+    ffi.Pointer<Boolean> enable,
+  ) {
+    return _SSLGetProtocolVersionEnabled1(
+      context,
+      protocol,
+      enable,
+    );
+  }
+
+  late final _SSLGetProtocolVersionEnabled1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Int32,
+              ffi.Pointer<Boolean>)>>('SSLGetProtocolVersionEnabled');
+  late final _SSLGetProtocolVersionEnabled1 = _SSLGetProtocolVersionEnabled1Ptr
+      .asFunction<int Function(SSLContextRef, int, ffi.Pointer<Boolean>)>();
+
+  int SSLSetProtocolVersion1(
+    SSLContextRef context,
+    int version,
+  ) {
+    return _SSLSetProtocolVersion1(
+      context,
+      version,
+    );
+  }
+
+  late final _SSLSetProtocolVersion1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, ffi.Int32)>>(
+          'SSLSetProtocolVersion');
+  late final _SSLSetProtocolVersion1 =
+      _SSLSetProtocolVersion1Ptr.asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetProtocolVersion1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> protocol,
+  ) {
+    return _SSLGetProtocolVersion1(
+      context,
+      protocol,
+    );
+  }
+
+  late final _SSLGetProtocolVersion1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<ffi.Int32>)>>('SSLGetProtocolVersion');
+  late final _SSLGetProtocolVersion1 = _SSLGetProtocolVersion1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLSetCertificate1(
+    SSLContextRef context,
+    CFArrayRef certRefs,
+  ) {
+    return _SSLSetCertificate1(
+      context,
+      certRefs,
+    );
+  }
+
+  late final _SSLSetCertificate1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, CFArrayRef)>>(
+          'SSLSetCertificate');
+  late final _SSLSetCertificate1 = _SSLSetCertificate1Ptr.asFunction<
+      int Function(SSLContextRef, CFArrayRef)>();
+
+  int SSLSetConnection1(
+    SSLContextRef context,
+    SSLConnectionRef connection,
+  ) {
+    return _SSLSetConnection1(
+      context,
+      connection,
+    );
+  }
+
+  late final _SSLSetConnection1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, SSLConnectionRef)>>('SSLSetConnection');
+  late final _SSLSetConnection1 = _SSLSetConnection1Ptr.asFunction<
+      int Function(SSLContextRef, SSLConnectionRef)>();
+
+  int SSLGetConnection1(
+    SSLContextRef context,
+    ffi.Pointer<SSLConnectionRef> connection,
+  ) {
+    return _SSLGetConnection1(
+      context,
+      connection,
+    );
+  }
+
+  late final _SSLGetConnection1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<SSLConnectionRef>)>>('SSLGetConnection');
+  late final _SSLGetConnection1 = _SSLGetConnection1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SSLConnectionRef>)>();
+
+  int SSLSetPeerDomainName1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Char> peerName,
+    int peerNameLen,
+  ) {
+    return _SSLSetPeerDomainName1(
+      context,
+      peerName,
+      peerNameLen,
+    );
+  }
+
+  late final _SSLSetPeerDomainName1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>,
+              pkg_ffi.Size)>>('SSLSetPeerDomainName');
+  late final _SSLSetPeerDomainName1 = _SSLSetPeerDomainName1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>, int)>();
+
+  int SSLGetPeerDomainNameLength1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Size> peerNameLen,
+  ) {
+    return _SSLGetPeerDomainNameLength1(
+      context,
+      peerNameLen,
+    );
+  }
+
+  late final _SSLGetPeerDomainNameLength1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetPeerDomainNameLength');
+  late final _SSLGetPeerDomainNameLength1 = _SSLGetPeerDomainNameLength1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetPeerDomainName1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Char> peerName,
+    ffi.Pointer<pkg_ffi.Size> peerNameLen,
+  ) {
+    return _SSLGetPeerDomainName1(
+      context,
+      peerName,
+      peerNameLen,
+    );
+  }
+
+  late final _SSLGetPeerDomainName1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetPeerDomainName');
+  late final _SSLGetPeerDomainName1 = _SSLGetPeerDomainName1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLCopyRequestedPeerNameLength1(
+    SSLContextRef ctx,
+    ffi.Pointer<pkg_ffi.Size> peerNameLen,
+  ) {
+    return _SSLCopyRequestedPeerNameLength1(
+      ctx,
+      peerNameLen,
+    );
+  }
+
+  late final _SSLCopyRequestedPeerNameLength1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLCopyRequestedPeerNameLength');
+  late final _SSLCopyRequestedPeerNameLength1 =
+      _SSLCopyRequestedPeerNameLength1Ptr.asFunction<
+          int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLCopyRequestedPeerName1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Char> peerName,
+    ffi.Pointer<pkg_ffi.Size> peerNameLen,
+  ) {
+    return _SSLCopyRequestedPeerName1(
+      context,
+      peerName,
+      peerNameLen,
+    );
+  }
+
+  late final _SSLCopyRequestedPeerName1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLCopyRequestedPeerName');
+  late final _SSLCopyRequestedPeerName1 =
+      _SSLCopyRequestedPeerName1Ptr.asFunction<
+          int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Char>,
+              ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLSetDatagramHelloCookie1(
+    SSLContextRef dtlsContext,
+    ffi.Pointer<ffi.Void> cookie,
+    int cookieLen,
+  ) {
+    return _SSLSetDatagramHelloCookie1(
+      dtlsContext,
+      cookie,
+      cookieLen,
+    );
+  }
+
+  late final _SSLSetDatagramHelloCookie1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>,
+              pkg_ffi.Size)>>('SSLSetDatagramHelloCookie');
+  late final _SSLSetDatagramHelloCookie1 = _SSLSetDatagramHelloCookie1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int)>();
+
+  int SSLSetMaxDatagramRecordSize1(
+    SSLContextRef dtlsContext,
+    int maxSize,
+  ) {
+    return _SSLSetMaxDatagramRecordSize1(
+      dtlsContext,
+      maxSize,
+    );
+  }
+
+  late final _SSLSetMaxDatagramRecordSize1Ptr = _lookup<
+          ffi.NativeFunction<OSStatus Function(SSLContextRef, pkg_ffi.Size)>>(
+      'SSLSetMaxDatagramRecordSize');
+  late final _SSLSetMaxDatagramRecordSize1 = _SSLSetMaxDatagramRecordSize1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetMaxDatagramRecordSize1(
+    SSLContextRef dtlsContext,
+    ffi.Pointer<pkg_ffi.Size> maxSize,
+  ) {
+    return _SSLGetMaxDatagramRecordSize1(
+      dtlsContext,
+      maxSize,
+    );
+  }
+
+  late final _SSLGetMaxDatagramRecordSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetMaxDatagramRecordSize');
+  late final _SSLGetMaxDatagramRecordSize1 = _SSLGetMaxDatagramRecordSize1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetNegotiatedProtocolVersion1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> protocol,
+  ) {
+    return _SSLGetNegotiatedProtocolVersion1(
+      context,
+      protocol,
+    );
+  }
+
+  late final _SSLGetNegotiatedProtocolVersion1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<ffi.Int32>)>>('SSLGetNegotiatedProtocolVersion');
+  late final _SSLGetNegotiatedProtocolVersion1 =
+      _SSLGetNegotiatedProtocolVersion1Ptr.asFunction<
+          int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLGetNumberSupportedCiphers1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Size> numCiphers,
+  ) {
+    return _SSLGetNumberSupportedCiphers1(
+      context,
+      numCiphers,
+    );
+  }
+
+  late final _SSLGetNumberSupportedCiphers1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetNumberSupportedCiphers');
+  late final _SSLGetNumberSupportedCiphers1 = _SSLGetNumberSupportedCiphers1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetSupportedCiphers1(
+    SSLContextRef context,
+    ffi.Pointer<SSLCipherSuite> ciphers,
+    ffi.Pointer<pkg_ffi.Size> numCiphers,
+  ) {
+    return _SSLGetSupportedCiphers1(
+      context,
+      ciphers,
+      numCiphers,
+    );
+  }
+
+  late final _SSLGetSupportedCiphers1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetSupportedCiphers');
+  late final _SSLGetSupportedCiphers1 = _SSLGetSupportedCiphers1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetNumberEnabledCiphers1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Size> numCiphers,
+  ) {
+    return _SSLGetNumberEnabledCiphers1(
+      context,
+      numCiphers,
+    );
+  }
+
+  late final _SSLGetNumberEnabledCiphers1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetNumberEnabledCiphers');
+  late final _SSLGetNumberEnabledCiphers1 = _SSLGetNumberEnabledCiphers1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLSetEnabledCiphers1(
+    SSLContextRef context,
+    ffi.Pointer<SSLCipherSuite> ciphers,
+    int numCiphers,
+  ) {
+    return _SSLSetEnabledCiphers1(
+      context,
+      ciphers,
+      numCiphers,
+    );
+  }
+
+  late final _SSLSetEnabledCiphers1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>,
+              pkg_ffi.Size)>>('SSLSetEnabledCiphers');
+  late final _SSLSetEnabledCiphers1 = _SSLSetEnabledCiphers1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>, int)>();
+
+  int SSLGetEnabledCiphers1(
+    SSLContextRef context,
+    ffi.Pointer<SSLCipherSuite> ciphers,
+    ffi.Pointer<pkg_ffi.Size> numCiphers,
+  ) {
+    return _SSLGetEnabledCiphers1(
+      context,
+      ciphers,
+      numCiphers,
+    );
+  }
+
+  late final _SSLGetEnabledCiphers1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetEnabledCiphers');
+  late final _SSLGetEnabledCiphers1 = _SSLGetEnabledCiphers1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLSetSessionTicketsEnabled1(
+    SSLContextRef context,
+    int enabled,
+  ) {
+    return _SSLSetSessionTicketsEnabled1(
+      context,
+      enabled,
+    );
+  }
+
+  late final _SSLSetSessionTicketsEnabled1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetSessionTicketsEnabled');
+  late final _SSLSetSessionTicketsEnabled1 = _SSLSetSessionTicketsEnabled1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLSetEnableCertVerify1(
+    SSLContextRef context,
+    int enableVerify,
+  ) {
+    return _SSLSetEnableCertVerify1(
+      context,
+      enableVerify,
+    );
+  }
+
+  late final _SSLSetEnableCertVerify1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetEnableCertVerify');
+  late final _SSLSetEnableCertVerify1 = _SSLSetEnableCertVerify1Ptr.asFunction<
+      int Function(SSLContextRef, int)>();
+
+  int SSLGetEnableCertVerify1(
+    SSLContextRef context,
+    ffi.Pointer<Boolean> enableVerify,
+  ) {
+    return _SSLGetEnableCertVerify1(
+      context,
+      enableVerify,
+    );
+  }
+
+  late final _SSLGetEnableCertVerify1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<Boolean>)>>('SSLGetEnableCertVerify');
+  late final _SSLGetEnableCertVerify1 = _SSLGetEnableCertVerify1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<Boolean>)>();
+
+  int SSLSetAllowsExpiredCerts1(
+    SSLContextRef context,
+    int allowsExpired,
+  ) {
+    return _SSLSetAllowsExpiredCerts1(
+      context,
+      allowsExpired,
+    );
+  }
+
+  late final _SSLSetAllowsExpiredCerts1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetAllowsExpiredCerts');
+  late final _SSLSetAllowsExpiredCerts1 = _SSLSetAllowsExpiredCerts1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetAllowsExpiredCerts1(
+    SSLContextRef context,
+    ffi.Pointer<Boolean> allowsExpired,
+  ) {
+    return _SSLGetAllowsExpiredCerts1(
+      context,
+      allowsExpired,
+    );
+  }
+
+  late final _SSLGetAllowsExpiredCerts1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<Boolean>)>>('SSLGetAllowsExpiredCerts');
+  late final _SSLGetAllowsExpiredCerts1 = _SSLGetAllowsExpiredCerts1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<Boolean>)>();
+
+  int SSLSetAllowsExpiredRoots1(
+    SSLContextRef context,
+    int allowsExpired,
+  ) {
+    return _SSLSetAllowsExpiredRoots1(
+      context,
+      allowsExpired,
+    );
+  }
+
+  late final _SSLSetAllowsExpiredRoots1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetAllowsExpiredRoots');
+  late final _SSLSetAllowsExpiredRoots1 = _SSLSetAllowsExpiredRoots1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetAllowsExpiredRoots1(
+    SSLContextRef context,
+    ffi.Pointer<Boolean> allowsExpired,
+  ) {
+    return _SSLGetAllowsExpiredRoots1(
+      context,
+      allowsExpired,
+    );
+  }
+
+  late final _SSLGetAllowsExpiredRoots1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<Boolean>)>>('SSLGetAllowsExpiredRoots');
+  late final _SSLGetAllowsExpiredRoots1 = _SSLGetAllowsExpiredRoots1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<Boolean>)>();
+
+  int SSLSetAllowsAnyRoot1(
+    SSLContextRef context,
+    int anyRoot,
+  ) {
+    return _SSLSetAllowsAnyRoot1(
+      context,
+      anyRoot,
+    );
+  }
+
+  late final _SSLSetAllowsAnyRoot1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetAllowsAnyRoot');
+  late final _SSLSetAllowsAnyRoot1 =
+      _SSLSetAllowsAnyRoot1Ptr.asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetAllowsAnyRoot1(
+    SSLContextRef context,
+    ffi.Pointer<Boolean> anyRoot,
+  ) {
+    return _SSLGetAllowsAnyRoot1(
+      context,
+      anyRoot,
+    );
+  }
+
+  late final _SSLGetAllowsAnyRoot1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<Boolean>)>>('SSLGetAllowsAnyRoot');
+  late final _SSLGetAllowsAnyRoot1 = _SSLGetAllowsAnyRoot1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<Boolean>)>();
+
+  int SSLSetTrustedRoots1(
+    SSLContextRef context,
+    CFArrayRef trustedRoots,
+    int replaceExisting,
+  ) {
+    return _SSLSetTrustedRoots1(
+      context,
+      trustedRoots,
+      replaceExisting,
+    );
+  }
+
+  late final _SSLSetTrustedRoots1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, CFArrayRef, Boolean)>>('SSLSetTrustedRoots');
+  late final _SSLSetTrustedRoots1 = _SSLSetTrustedRoots1Ptr.asFunction<
+      int Function(SSLContextRef, CFArrayRef, int)>();
+
+  int SSLCopyTrustedRoots1(
+    SSLContextRef context,
+    ffi.Pointer<CFArrayRef> trustedRoots,
+  ) {
+    return _SSLCopyTrustedRoots1(
+      context,
+      trustedRoots,
+    );
+  }
+
+  late final _SSLCopyTrustedRoots1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<CFArrayRef>)>>('SSLCopyTrustedRoots');
+  late final _SSLCopyTrustedRoots1 = _SSLCopyTrustedRoots1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SSLCopyPeerCertificates1(
+    SSLContextRef context,
+    ffi.Pointer<CFArrayRef> certs,
+  ) {
+    return _SSLCopyPeerCertificates1(
+      context,
+      certs,
+    );
+  }
+
+  late final _SSLCopyPeerCertificates1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<CFArrayRef>)>>('SSLCopyPeerCertificates');
+  late final _SSLCopyPeerCertificates1 = _SSLCopyPeerCertificates1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SSLCopyPeerTrust1(
+    SSLContextRef context,
+    ffi.Pointer<SecTrustRef> trust,
+  ) {
+    return _SSLCopyPeerTrust1(
+      context,
+      trust,
+    );
+  }
+
+  late final _SSLCopyPeerTrust1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<SecTrustRef>)>>('SSLCopyPeerTrust');
+  late final _SSLCopyPeerTrust1 = _SSLCopyPeerTrust1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SecTrustRef>)>();
+
+  int SSLSetPeerID1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Void> peerID,
+    int peerIDLen,
+  ) {
+    return _SSLSetPeerID1(
+      context,
+      peerID,
+      peerIDLen,
+    );
+  }
+
+  late final _SSLSetPeerID1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>,
+              pkg_ffi.Size)>>('SSLSetPeerID');
+  late final _SSLSetPeerID1 = _SSLSetPeerID1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int)>();
+
+  int SSLGetPeerID1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peerID,
+    ffi.Pointer<pkg_ffi.Size> peerIDLen,
+  ) {
+    return _SSLGetPeerID1(
+      context,
+      peerID,
+      peerIDLen,
+    );
+  }
+
+  late final _SSLGetPeerID1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetPeerID');
+  late final _SSLGetPeerID1 = _SSLGetPeerID1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetNegotiatedCipher1(
+    SSLContextRef context,
+    ffi.Pointer<SSLCipherSuite> cipherSuite,
+  ) {
+    return _SSLGetNegotiatedCipher1(
+      context,
+      cipherSuite,
+    );
+  }
+
+  late final _SSLGetNegotiatedCipher1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<SSLCipherSuite>)>>('SSLGetNegotiatedCipher');
+  late final _SSLGetNegotiatedCipher1 = _SSLGetNegotiatedCipher1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<SSLCipherSuite>)>();
+
+  int SSLSetALPNProtocols1(
+    SSLContextRef context,
+    CFArrayRef protocols,
+  ) {
+    return _SSLSetALPNProtocols1(
+      context,
+      protocols,
+    );
+  }
+
+  late final _SSLSetALPNProtocols1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, CFArrayRef)>>(
+          'SSLSetALPNProtocols');
+  late final _SSLSetALPNProtocols1 = _SSLSetALPNProtocols1Ptr.asFunction<
+      int Function(SSLContextRef, CFArrayRef)>();
+
+  int SSLCopyALPNProtocols1(
+    SSLContextRef context,
+    ffi.Pointer<CFArrayRef> protocols,
+  ) {
+    return _SSLCopyALPNProtocols1(
+      context,
+      protocols,
+    );
+  }
+
+  late final _SSLCopyALPNProtocols1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<CFArrayRef>)>>('SSLCopyALPNProtocols');
+  late final _SSLCopyALPNProtocols1 = _SSLCopyALPNProtocols1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SSLSetOCSPResponse1(
+    SSLContextRef context,
+    CFDataRef response,
+  ) {
+    return _SSLSetOCSPResponse1(
+      context,
+      response,
+    );
+  }
+
+  late final _SSLSetOCSPResponse1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, CFDataRef)>>(
+          'SSLSetOCSPResponse');
+  late final _SSLSetOCSPResponse1 = _SSLSetOCSPResponse1Ptr.asFunction<
+      int Function(SSLContextRef, CFDataRef)>();
+
+  int SSLSetEncryptionCertificate1(
+    SSLContextRef context,
+    CFArrayRef certRefs,
+  ) {
+    return _SSLSetEncryptionCertificate1(
+      context,
+      certRefs,
+    );
+  }
+
+  late final _SSLSetEncryptionCertificate1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, CFArrayRef)>>(
+          'SSLSetEncryptionCertificate');
+  late final _SSLSetEncryptionCertificate1 = _SSLSetEncryptionCertificate1Ptr
+      .asFunction<int Function(SSLContextRef, CFArrayRef)>();
+
+  int SSLSetClientSideAuthenticate1(
+    SSLContextRef context,
+    int auth,
+  ) {
+    return _SSLSetClientSideAuthenticate1(
+      context,
+      auth,
+    );
+  }
+
+  late final _SSLSetClientSideAuthenticate1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, ffi.Int32)>>(
+          'SSLSetClientSideAuthenticate');
+  late final _SSLSetClientSideAuthenticate1 = _SSLSetClientSideAuthenticate1Ptr
+      .asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLAddDistinguishedName1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Void> derDN,
+    int derDNLen,
+  ) {
+    return _SSLAddDistinguishedName1(
+      context,
+      derDN,
+      derDNLen,
+    );
+  }
+
+  late final _SSLAddDistinguishedName1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>,
+              pkg_ffi.Size)>>('SSLAddDistinguishedName');
+  late final _SSLAddDistinguishedName1 = _SSLAddDistinguishedName1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int)>();
+
+  int SSLSetCertificateAuthorities1(
+    SSLContextRef context,
+    CFTypeRef certificateOrArray,
+    int replaceExisting,
+  ) {
+    return _SSLSetCertificateAuthorities1(
+      context,
+      certificateOrArray,
+      replaceExisting,
+    );
+  }
+
+  late final _SSLSetCertificateAuthorities1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, CFTypeRef,
+              Boolean)>>('SSLSetCertificateAuthorities');
+  late final _SSLSetCertificateAuthorities1 = _SSLSetCertificateAuthorities1Ptr
+      .asFunction<int Function(SSLContextRef, CFTypeRef, int)>();
+
+  int SSLCopyCertificateAuthorities1(
+    SSLContextRef context,
+    ffi.Pointer<CFArrayRef> certificates,
+  ) {
+    return _SSLCopyCertificateAuthorities1(
+      context,
+      certificates,
+    );
+  }
+
+  late final _SSLCopyCertificateAuthorities1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<CFArrayRef>)>>('SSLCopyCertificateAuthorities');
+  late final _SSLCopyCertificateAuthorities1 =
+      _SSLCopyCertificateAuthorities1Ptr.asFunction<
+          int Function(SSLContextRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SSLCopyDistinguishedNames1(
+    SSLContextRef context,
+    ffi.Pointer<CFArrayRef> names,
+  ) {
+    return _SSLCopyDistinguishedNames1(
+      context,
+      names,
+    );
+  }
+
+  late final _SSLCopyDistinguishedNames1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<CFArrayRef>)>>('SSLCopyDistinguishedNames');
+  late final _SSLCopyDistinguishedNames1 = _SSLCopyDistinguishedNames1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<CFArrayRef>)>();
+
+  int SSLGetClientCertificateState1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Int32> clientState,
+  ) {
+    return _SSLGetClientCertificateState1(
+      context,
+      clientState,
+    );
+  }
+
+  late final _SSLGetClientCertificateState1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<ffi.Int32>)>>('SSLGetClientCertificateState');
+  late final _SSLGetClientCertificateState1 = _SSLGetClientCertificateState1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Int32>)>();
+
+  int SSLSetDiffieHellmanParams1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Void> dhParams,
+    int dhParamsLen,
+  ) {
+    return _SSLSetDiffieHellmanParams1(
+      context,
+      dhParams,
+      dhParamsLen,
+    );
+  }
+
+  late final _SSLSetDiffieHellmanParams1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>,
+              pkg_ffi.Size)>>('SSLSetDiffieHellmanParams');
+  late final _SSLSetDiffieHellmanParams1 = _SSLSetDiffieHellmanParams1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int)>();
+
+  int SSLGetDiffieHellmanParams1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> dhParams,
+    ffi.Pointer<pkg_ffi.Size> dhParamsLen,
+  ) {
+    return _SSLGetDiffieHellmanParams1(
+      context,
+      dhParams,
+      dhParamsLen,
+    );
+  }
+
+  late final _SSLGetDiffieHellmanParams1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetDiffieHellmanParams');
+  late final _SSLGetDiffieHellmanParams1 =
+      _SSLGetDiffieHellmanParams1Ptr.asFunction<
+          int Function(SSLContextRef, ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLSetRsaBlinding1(
+    SSLContextRef context,
+    int blinding,
+  ) {
+    return _SSLSetRsaBlinding1(
+      context,
+      blinding,
+    );
+  }
+
+  late final _SSLSetRsaBlinding1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, Boolean)>>(
+          'SSLSetRsaBlinding');
+  late final _SSLSetRsaBlinding1 =
+      _SSLSetRsaBlinding1Ptr.asFunction<int Function(SSLContextRef, int)>();
+
+  int SSLGetRsaBlinding1(
+    SSLContextRef context,
+    ffi.Pointer<Boolean> blinding,
+  ) {
+    return _SSLGetRsaBlinding1(
+      context,
+      blinding,
+    );
+  }
+
+  late final _SSLGetRsaBlinding1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(
+              SSLContextRef, ffi.Pointer<Boolean>)>>('SSLGetRsaBlinding');
+  late final _SSLGetRsaBlinding1 = _SSLGetRsaBlinding1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<Boolean>)>();
+
+  int SSLHandshake1(
+    SSLContextRef context,
+  ) {
+    return _SSLHandshake1(
+      context,
+    );
+  }
+
+  late final _SSLHandshake1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef)>>(
+          'SSLHandshake');
+  late final _SSLHandshake1 =
+      _SSLHandshake1Ptr.asFunction<int Function(SSLContextRef)>();
+
+  int SSLReHandshake1(
+    SSLContextRef context,
+  ) {
+    return _SSLReHandshake1(
+      context,
+    );
+  }
+
+  late final _SSLReHandshake1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef)>>(
+          'SSLReHandshake');
+  late final _SSLReHandshake1 =
+      _SSLReHandshake1Ptr.asFunction<int Function(SSLContextRef)>();
+
+  int SSLWrite1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Void> data,
+    int dataLength,
+    ffi.Pointer<pkg_ffi.Size> processed,
+  ) {
+    return _SSLWrite1(
+      context,
+      data,
+      dataLength,
+      processed,
+    );
+  }
+
+  late final _SSLWrite1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>, pkg_ffi.Size,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLWrite');
+  late final _SSLWrite1 = _SSLWrite1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLRead1(
+    SSLContextRef context,
+    ffi.Pointer<ffi.Void> data,
+    int dataLength,
+    ffi.Pointer<pkg_ffi.Size> processed,
+  ) {
+    return _SSLRead1(
+      context,
+      data,
+      dataLength,
+      processed,
+    );
+  }
+
+  late final _SSLRead1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef, ffi.Pointer<ffi.Void>, pkg_ffi.Size,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLRead');
+  late final _SSLRead1 = _SSLRead1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<ffi.Void>, int,
+          ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetBufferedReadSize1(
+    SSLContextRef context,
+    ffi.Pointer<pkg_ffi.Size> bufferSize,
+  ) {
+    return _SSLGetBufferedReadSize1(
+      context,
+      bufferSize,
+    );
+  }
+
+  late final _SSLGetBufferedReadSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetBufferedReadSize');
+  late final _SSLGetBufferedReadSize1 = _SSLGetBufferedReadSize1Ptr.asFunction<
+      int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLGetDatagramWriteSize1(
+    SSLContextRef dtlsContext,
+    ffi.Pointer<pkg_ffi.Size> bufSize,
+  ) {
+    return _SSLGetDatagramWriteSize1(
+      dtlsContext,
+      bufSize,
+    );
+  }
+
+  late final _SSLGetDatagramWriteSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          OSStatus Function(SSLContextRef,
+              ffi.Pointer<pkg_ffi.Size>)>>('SSLGetDatagramWriteSize');
+  late final _SSLGetDatagramWriteSize1 = _SSLGetDatagramWriteSize1Ptr
+      .asFunction<int Function(SSLContextRef, ffi.Pointer<pkg_ffi.Size>)>();
+
+  int SSLClose1(
+    SSLContextRef context,
+  ) {
+    return _SSLClose1(
+      context,
+    );
+  }
+
+  late final _SSLClose1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef)>>('SSLClose');
+  late final _SSLClose1 =
+      _SSLClose1Ptr.asFunction<int Function(SSLContextRef)>();
+
+  int SSLSetError1(
+    SSLContextRef context,
+    int status,
+  ) {
+    return _SSLSetError1(
+      context,
+      status,
+    );
+  }
+
+  late final _SSLSetError1Ptr =
+      _lookup<ffi.NativeFunction<OSStatus Function(SSLContextRef, OSStatus)>>(
+          'SSLSetError');
+  late final _SSLSetError1 =
+      _SSLSetError1Ptr.asFunction<int Function(SSLContextRef, int)>();
+
+  late final ffi.Pointer<ObjCObject> _class_URLSessionHelper1 =
+      _getClass1("URLSessionHelper");
+  late final ffi.Pointer<ObjCSel> _sel_dataTaskForSession_withRequest_toPort_1 =
+      _registerName1("dataTaskForSession:withRequest:toPort:");
+  ffi.Pointer<ObjCObject> _objc_msgSend_174(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    ffi.Pointer<ObjCObject> session,
+    ffi.Pointer<ObjCObject> request,
+    int dart_port,
+  ) {
+    return __objc_msgSend_174(
+      obj,
+      sel,
+      session,
+      request,
+      dart_port,
+    );
+  }
+
+  late final __objc_msgSend_174Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>,
+              ffi.Pointer<ObjCSel>,
+              ffi.Pointer<ObjCObject>,
+              ffi.Pointer<ObjCObject>,
+              Dart_Port)>>('objc_msgSend');
+  late final __objc_msgSend_174 = __objc_msgSend_174Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>,
+          ffi.Pointer<ObjCSel>,
+          ffi.Pointer<ObjCObject>,
+          ffi.Pointer<ObjCObject>,
+          int)>();
 }
 
 class ObjCObject extends ffi.Opaque {}
@@ -34132,6 +62238,11 @@ class NSNotification extends NSObject {
     return NSNotification._(other._id, other._lib);
   }
 
+  static NSNotification castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSNotification._(other, lib);
+  }
+
   NSNotificationName get name {
     return _lib._objc_msgSend_1(_id, _lib._sel_name1);
   }
@@ -34181,6 +62292,11 @@ class NSObject extends _ObjCWrapper {
 
   static NSObject castFrom<T extends _ObjCWrapper>(T other) {
     return NSObject._(other._id, other._lib);
+  }
+
+  static NSObject castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSObject._(other, lib);
   }
 
   static void load(NativeLibrary _lib) {
@@ -34354,6 +62470,11 @@ class NSMethodSignature extends _ObjCWrapper {
   static NSMethodSignature castFrom<T extends _ObjCWrapper>(T other) {
     return NSMethodSignature._(other._id, other._lib);
   }
+
+  static NSMethodSignature castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMethodSignature._(other, lib);
+  }
 }
 
 class NSString extends _ObjCWrapper {
@@ -34361,6 +62482,11 @@ class NSString extends _ObjCWrapper {
 
   static NSString castFrom<T extends _ObjCWrapper>(T other) {
     return NSString._(other._id, other._lib);
+  }
+
+  static NSString castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSString._(other, lib);
   }
 
   factory NSString(NativeLibrary _lib, String str) {
@@ -34397,6 +62523,11 @@ class NSNotificationCenter extends NSObject {
 
   static NSNotificationCenter castFrom<T extends _ObjCWrapper>(T other) {
     return NSNotificationCenter._(other._id, other._lib);
+  }
+
+  static NSNotificationCenter castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSNotificationCenter._(other, lib);
   }
 
   static NSObject getDefaultCenter(NativeLibrary _lib) {
@@ -34473,6 +62604,11 @@ class NSDate extends NSObject {
     return NSDate._(other._id, other._lib);
   }
 
+  static NSDate castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSDate._(other, lib);
+  }
+
   double get timeIntervalSinceReferenceDate {
     return _lib._objc_msgSend_21(
         _id, _lib._sel_timeIntervalSinceReferenceDate1);
@@ -34542,6 +62678,11 @@ class NSURLRequest extends NSObject {
 
   static NSURLRequest castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLRequest._(other._id, other._lib);
+  }
+
+  static NSURLRequest castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLRequest._(other, lib);
   }
 
   static NSURLRequest requestWithURL(NativeLibrary _lib, NSObject? URL) {
@@ -34648,6 +62789,11 @@ class NSMutableURLRequest extends NSURLRequest {
 
   static NSMutableURLRequest castFrom<T extends _ObjCWrapper>(T other) {
     return NSMutableURLRequest._(other._id, other._lib);
+  }
+
+  static NSMutableURLRequest castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableURLRequest._(other, lib);
   }
 
   @override
@@ -34797,6 +62943,11 @@ class NSHTTPCookieStorage extends NSObject {
     return NSHTTPCookieStorage._(other._id, other._lib);
   }
 
+  static NSHTTPCookieStorage castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSHTTPCookieStorage._(other, lib);
+  }
+
   static NSObject getSharedHTTPCookieStorage(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSHTTPCookieStorage1, _lib._sel_sharedHTTPCookieStorage1);
@@ -34883,6 +63034,11 @@ class NSEnumerator extends NSObject {
     return NSEnumerator._(other._id, other._lib);
   }
 
+  static NSEnumerator castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSEnumerator._(other, lib);
+  }
+
   NSObject nextObject() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_nextObject1);
     return NSObject._(_ret, _lib);
@@ -34907,6 +63063,11 @@ class NSDictionary extends NSObject {
 
   static NSDictionary castFrom<T extends _ObjCWrapper>(T other) {
     return NSDictionary._(other._id, other._lib);
+  }
+
+  static NSDictionary castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSDictionary._(other, lib);
   }
 
   int get count {
@@ -34960,6 +63121,11 @@ class NSMutableDictionary extends NSDictionary {
     return NSMutableDictionary._(other._id, other._lib);
   }
 
+  static NSMutableDictionary castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableDictionary._(other, lib);
+  }
+
   void removeObjectForKey(NSObject aKey) {
     _lib._objc_msgSend_8(_id, _lib._sel_removeObjectForKey_1, aKey._id);
   }
@@ -35007,6 +63173,11 @@ class NSProgress extends NSObject {
 
   static NSProgress castFrom<T extends _ObjCWrapper>(T other) {
     return NSProgress._(other._id, other._lib);
+  }
+
+  static NSProgress castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSProgress._(other, lib);
   }
 
   static NSProgress currentProgress(NativeLibrary _lib) {
@@ -39138,6 +67309,11 @@ class NSURLSession extends NSObject {
     return NSURLSession._(other._id, other._lib);
   }
 
+  static NSURLSession castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSession._(other, lib);
+  }
+
   static NSObject getSharedSession(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSession1, _lib._sel_sharedSession1);
@@ -39346,6 +67522,11 @@ class NSURLSessionDataTask extends NSURLSessionTask {
     return NSURLSessionDataTask._(other._id, other._lib);
   }
 
+  static NSURLSessionDataTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionDataTask._(other, lib);
+  }
+
   @override
   NSURLSessionDataTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
@@ -39377,6 +67558,11 @@ class NSURLSessionTask extends NSObject {
 
   static NSURLSessionTask castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLSessionTask._(other._id, other._lib);
+  }
+
+  static NSURLSessionTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionTask._(other, lib);
   }
 
   int get taskIdentifier {
@@ -39535,6 +67721,11 @@ class NSURLSessionUploadTask extends NSURLSessionDataTask {
     return NSURLSessionUploadTask._(other._id, other._lib);
   }
 
+  static NSURLSessionUploadTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionUploadTask._(other, lib);
+  }
+
   @override
   NSURLSessionUploadTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
@@ -39566,6 +67757,11 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
 
   static NSURLSessionDownloadTask castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLSessionDownloadTask._(other._id, other._lib);
+  }
+
+  static NSURLSessionDownloadTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionDownloadTask._(other, lib);
   }
 
   void cancelByProducingResumeData(NSObject completionHandler) {
@@ -39604,6 +67800,11 @@ class NSURLSessionStreamTask extends NSURLSessionTask {
 
   static NSURLSessionStreamTask castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLSessionStreamTask._(other._id, other._lib);
+  }
+
+  static NSURLSessionStreamTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionStreamTask._(other, lib);
   }
 
   void readDataOfMinLength_maxLength_timeout_completionHandler(
@@ -39674,6 +67875,11 @@ class NSURLSessionWebSocketTask extends NSURLSessionTask {
 
   static NSURLSessionWebSocketTask castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLSessionWebSocketTask._(other._id, other._lib);
+  }
+
+  static NSURLSessionWebSocketTask castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionWebSocketTask._(other, lib);
   }
 
   void sendMessage_completionHandler(
@@ -39770,6 +67976,11 @@ class NSURLSessionWebSocketMessage extends NSObject {
     return NSURLSessionWebSocketMessage._(other._id, other._lib);
   }
 
+  static NSURLSessionWebSocketMessage castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionWebSocketMessage._(other, lib);
+  }
+
   NSURLSessionWebSocketMessage initWithData(NSObject? data) {
     final _ret = _lib._objc_msgSend_16(
         _id, _lib._sel_initWithData_1, data?._id ?? ffi.nullptr);
@@ -39856,6 +68067,11 @@ class NSURLSessionConfiguration extends NSObject {
 
   static NSURLSessionConfiguration castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLSessionConfiguration._(other._id, other._lib);
+  }
+
+  static NSURLSessionConfiguration castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionConfiguration._(other, lib);
   }
 
   static NSObject getDefaultSessionConfiguration(NativeLibrary _lib) {
@@ -40194,6 +68410,11 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
     return NSURLSessionTaskTransactionMetrics._(other._id, other._lib);
   }
 
+  static NSURLSessionTaskTransactionMetrics castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionTaskTransactionMetrics._(other, lib);
+  }
+
   NSObject get request {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_request1);
     return NSObject._(_ret, _lib);
@@ -40389,6 +68610,11 @@ class NSURLSessionTaskMetrics extends NSObject {
     return NSURLSessionTaskMetrics._(other._id, other._lib);
   }
 
+  static NSURLSessionTaskMetrics castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLSessionTaskMetrics._(other, lib);
+  }
+
   NSObject get transactionMetrics {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_transactionMetrics1);
     return NSObject._(_ret, _lib);
@@ -40435,6 +68661,11 @@ class NSValue extends NSObject {
     return NSValue._(other._id, other._lib);
   }
 
+  static NSValue castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSValue._(other, lib);
+  }
+
   void getValue_size(ffi.Pointer<ffi.Void> value, int size) {
     _lib._objc_msgSend_74(_id, _lib._sel_getValue_size_1, value, size);
   }
@@ -40472,6 +68703,11 @@ class NSNumber extends NSValue {
 
   static NSNumber castFrom<T extends _ObjCWrapper>(T other) {
     return NSNumber._(other._id, other._lib);
+  }
+
+  static NSNumber castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSNumber._(other, lib);
   }
 
   @override
@@ -40678,6 +68914,11 @@ class NSOrderedCollectionChange extends NSObject {
     return NSOrderedCollectionChange._(other._id, other._lib);
   }
 
+  static NSOrderedCollectionChange castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSOrderedCollectionChange._(other, lib);
+  }
+
   NSObject get object {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_object1);
     return NSObject._(_ret, _lib);
@@ -40739,6 +68980,11 @@ class NSIndexSet extends NSObject {
 
   static NSIndexSet castFrom<T extends _ObjCWrapper>(T other) {
     return NSIndexSet._(other._id, other._lib);
+  }
+
+  static NSIndexSet castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSIndexSet._(other, lib);
   }
 
   static NSIndexSet indexSet(NativeLibrary _lib) {
@@ -40951,6 +69197,11 @@ class NSMutableIndexSet extends NSIndexSet {
     return NSMutableIndexSet._(other._id, other._lib);
   }
 
+  static NSMutableIndexSet castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableIndexSet._(other, lib);
+  }
+
   void addIndexes(NSObject? indexSet) {
     _lib._objc_msgSend_8(
         _id, _lib._sel_addIndexes_1, indexSet?._id ?? ffi.nullptr);
@@ -41035,6 +69286,11 @@ class NSOrderedCollectionDifference extends NSObject {
     return NSOrderedCollectionDifference._(other._id, other._lib);
   }
 
+  static NSOrderedCollectionDifference castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSOrderedCollectionDifference._(other, lib);
+  }
+
   NSOrderedCollectionDifference initWithChanges(NSObject? changes) {
     final _ret = _lib._objc_msgSend_16(
         _id, _lib._sel_initWithChanges_1, changes?._id ?? ffi.nullptr);
@@ -41113,6 +69369,11 @@ class NSArray extends _ObjCWrapper {
   static NSArray castFrom<T extends _ObjCWrapper>(T other) {
     return NSArray._(other._id, other._lib);
   }
+
+  static NSArray castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSArray._(other, lib);
+  }
 }
 
 abstract class NSBinarySearchingOptions {
@@ -41127,6 +69388,11 @@ class NSMutableArray extends NSArray {
 
   static NSMutableArray castFrom<T extends _ObjCWrapper>(T other) {
     return NSMutableArray._(other._id, other._lib);
+  }
+
+  static NSMutableArray castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableArray._(other, lib);
   }
 
   void addObject(NSObject anObject) {
@@ -41186,6 +69452,11 @@ class NSItemProvider extends NSObject {
 
   static NSItemProvider castFrom<T extends _ObjCWrapper>(T other) {
     return NSItemProvider._(other._id, other._lib);
+  }
+
+  static NSItemProvider castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSItemProvider._(other, lib);
   }
 
   @override
@@ -41417,6 +69688,11 @@ class NSMutableString extends NSString {
     return NSMutableString._(other._id, other._lib);
   }
 
+  static NSMutableString castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableString._(other, lib);
+  }
+
   void replaceCharactersInRange_withString(NSRange range, NSObject? aString) {
     _lib._objc_msgSend_127(_id, _lib._sel_replaceCharactersInRange_withString_1,
         range, aString?._id ?? ffi.nullptr);
@@ -41440,6 +69716,11 @@ class NSSimpleCString extends NSString {
     return NSSimpleCString._(other._id, other._lib);
   }
 
+  static NSSimpleCString castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSSimpleCString._(other, lib);
+  }
+
   static NSString stringWithCString_encoding(
       NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSSimpleCString1,
@@ -41456,6 +69737,11 @@ class NSConstantString extends NSSimpleCString {
     return NSConstantString._(other._id, other._lib);
   }
 
+  static NSConstantString castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSConstantString._(other, lib);
+  }
+
   static NSString stringWithCString_encoding(
       NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSConstantString1,
@@ -41470,6 +69756,11 @@ class NSCharacterSet extends NSObject {
 
   static NSCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
     return NSCharacterSet._(other._id, other._lib);
+  }
+
+  static NSCharacterSet castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSCharacterSet._(other, lib);
   }
 
   static NSObject getControlCharacterSet(NativeLibrary _lib) {
@@ -41650,6 +69941,11 @@ class NSMutableCharacterSet extends NSCharacterSet {
 
   static NSMutableCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
     return NSMutableCharacterSet._(other._id, other._lib);
+  }
+
+  static NSMutableCharacterSet castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableCharacterSet._(other, lib);
   }
 
   void addCharactersInRange(NSRange aRange) {
@@ -41943,6 +70239,11 @@ class NSURLHandle extends NSObject {
     return NSURLHandle._(other._id, other._lib);
   }
 
+  static NSURLHandle castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLHandle._(other, lib);
+  }
+
   static void registerURLHandleClass(
       NativeLibrary _lib, NSObject anURLHandleSubclass) {
     _lib._objc_msgSend_8(_lib._class_NSURLHandle1,
@@ -42079,6 +70380,11 @@ class NSData extends _ObjCWrapper {
   static NSData castFrom<T extends _ObjCWrapper>(T other) {
     return NSData._(other._id, other._lib);
   }
+
+  static NSData castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSData._(other, lib);
+  }
 }
 
 class NSURL extends NSObject {
@@ -42086,6 +70392,11 @@ class NSURL extends NSObject {
 
   static NSURL castFrom<T extends _ObjCWrapper>(T other) {
     return NSURL._(other._id, other._lib);
+  }
+
+  static NSURL castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURL._(other, lib);
   }
 
   NSURL initWithScheme_host_path(
@@ -42565,6 +70876,11 @@ class NSURLQueryItem extends NSObject {
     return NSURLQueryItem._(other._id, other._lib);
   }
 
+  static NSURLQueryItem castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLQueryItem._(other, lib);
+  }
+
   NSURLQueryItem initWithName_value(NSObject? name, NSObject? value) {
     final _ret = _lib._objc_msgSend_40(_id, _lib._sel_initWithName_value_1,
         name?._id ?? ffi.nullptr, value?._id ?? ffi.nullptr);
@@ -42610,6 +70926,11 @@ class NSURLComponents extends NSObject {
 
   static NSURLComponents castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLComponents._(other._id, other._lib);
+  }
+
+  static NSURLComponents castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLComponents._(other, lib);
   }
 
   @override
@@ -42865,6 +71186,11 @@ class NSFileSecurity extends NSObject {
     return NSFileSecurity._(other._id, other._lib);
   }
 
+  static NSFileSecurity castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSFileSecurity._(other, lib);
+  }
+
   NSFileSecurity initWithCoder(NSObject? coder) {
     final _ret = _lib._objc_msgSend_16(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
@@ -42901,6 +71227,11 @@ class NSURLResponse extends NSObject {
 
   static NSURLResponse castFrom<T extends _ObjCWrapper>(T other) {
     return NSURLResponse._(other._id, other._lib);
+  }
+
+  static NSURLResponse castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSURLResponse._(other, lib);
   }
 
   /// !
@@ -43018,6 +71349,11 @@ class NSHTTPURLResponse extends NSURLResponse {
     return NSHTTPURLResponse._(other._id, other._lib);
   }
 
+  static NSHTTPURLResponse castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSHTTPURLResponse._(other, lib);
+  }
+
   /// !
   /// @method	initWithURL:statusCode:HTTPVersion:headerFields:
   /// @abstract initializer for NSHTTPURLResponse objects.
@@ -43112,6 +71448,11 @@ class NSException extends NSObject {
     return NSException._(other._id, other._lib);
   }
 
+  static NSException castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSException._(other, lib);
+  }
+
   static NSException exceptionWithName_reason_userInfo(NativeLibrary _lib,
       NSExceptionName name, NSObject? reason, NSObject? userInfo) {
     final _ret = _lib._objc_msgSend_164(
@@ -43185,6 +71526,11 @@ class NSAssertionHandler extends NSObject {
     return NSAssertionHandler._(other._id, other._lib);
   }
 
+  static NSAssertionHandler castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSAssertionHandler._(other, lib);
+  }
+
   static NSObject getCurrentHandler(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSAssertionHandler1, _lib._sel_currentHandler1);
@@ -43237,6 +71583,11 @@ class NSOperation extends NSObject {
 
   static NSOperation castFrom<T extends _ObjCWrapper>(T other) {
     return NSOperation._(other._id, other._lib);
+  }
+
+  static NSOperation castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSOperation._(other, lib);
   }
 
   void start() {
@@ -43364,6 +71715,11 @@ class NSBlockOperation extends NSOperation {
     return NSBlockOperation._(other._id, other._lib);
   }
 
+  static NSBlockOperation castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSBlockOperation._(other, lib);
+  }
+
   static NSBlockOperation blockOperationWithBlock(
       NativeLibrary _lib, NSObject block) {
     final _ret = _lib._objc_msgSend_16(_lib._class_NSBlockOperation1,
@@ -43399,6 +71755,11 @@ class NSInvocationOperation extends NSOperation {
 
   static NSInvocationOperation castFrom<T extends _ObjCWrapper>(T other) {
     return NSInvocationOperation._(other._id, other._lib);
+  }
+
+  static NSInvocationOperation castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSInvocationOperation._(other, lib);
   }
 
   NSInvocationOperation initWithTarget_selector_object(
@@ -43443,6 +71804,11 @@ class NSOperationQueue extends NSObject {
 
   static NSOperationQueue castFrom<T extends _ObjCWrapper>(T other) {
     return NSOperationQueue._(other._id, other._lib);
+  }
+
+  static NSOperationQueue castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSOperationQueue._(other, lib);
   }
 
   /// @property progress
@@ -43564,6 +71930,1052 @@ class NSOperationQueue extends NSObject {
 }
 
 typedef dispatch_queue_t1 = ffi.Pointer<ObjCObject>;
+typedef NSErrorDomain = ffi.Pointer<ObjCObject>;
+typedef NSErrorUserInfoKey = ffi.Pointer<ObjCObject>;
+
+class NSError extends NSObject {
+  NSError._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+
+  static NSError castFrom<T extends _ObjCWrapper>(T other) {
+    return NSError._(other._id, other._lib);
+  }
+
+  static NSError castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSError._(other, lib);
+  }
+
+  NSError initWithDomain_code_userInfo(
+      NSErrorDomain domain, int code, NSObject? dict) {
+    final _ret = _lib._objc_msgSend_172(
+        _id,
+        _lib._sel_initWithDomain_code_userInfo_1,
+        domain,
+        code,
+        dict?._id ?? ffi.nullptr);
+    return NSError._(_ret, _lib);
+  }
+
+  static NSError errorWithDomain_code_userInfo(
+      NativeLibrary _lib, NSErrorDomain domain, int code, NSObject? dict) {
+    final _ret = _lib._objc_msgSend_172(
+        _lib._class_NSError1,
+        _lib._sel_errorWithDomain_code_userInfo_1,
+        domain,
+        code,
+        dict?._id ?? ffi.nullptr);
+    return NSError._(_ret, _lib);
+  }
+
+  NSErrorDomain get domain {
+    return _lib._objc_msgSend_1(_id, _lib._sel_domain1);
+  }
+
+  int get code {
+    return _lib._objc_msgSend_59(_id, _lib._sel_code1);
+  }
+
+  NSObject get userInfo {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_userInfo1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get localizedDescription {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedDescription1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get localizedFailureReason {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedFailureReason1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get localizedRecoverySuggestion {
+    final _ret =
+        _lib._objc_msgSend_1(_id, _lib._sel_localizedRecoverySuggestion1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get localizedRecoveryOptions {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedRecoveryOptions1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get recoveryAttempter {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_recoveryAttempter1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get helpAnchor {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_helpAnchor1);
+    return NSObject._(_ret, _lib);
+  }
+
+  NSObject get underlyingErrors {
+    final _ret = _lib._objc_msgSend_1(_id, _lib._sel_underlyingErrors1);
+    return NSObject._(_ret, _lib);
+  }
+
+  static void setUserInfoValueProviderForDomain_provider(
+      NativeLibrary _lib, NSErrorDomain errorDomain, NSObject provider) {
+    _lib._objc_msgSend_18(
+        _lib._class_NSError1,
+        _lib._sel_setUserInfoValueProviderForDomain_provider_1,
+        errorDomain,
+        provider._id);
+  }
+
+  static NSObject userInfoValueProviderForDomain(
+      NativeLibrary _lib,
+      NSObject? err,
+      NSErrorUserInfoKey userInfoKey,
+      NSErrorDomain errorDomain) {
+    final _ret = _lib._objc_msgSend_15(
+        _lib._class_NSError1,
+        _lib._sel_userInfoValueProviderForDomain_1,
+        err?._id ?? ffi.nullptr,
+        userInfoKey,
+        errorDomain);
+    return NSObject._(_ret, _lib);
+  }
+
+  static NSError new1(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_new1);
+    return NSError._(_ret, _lib);
+  }
+
+  static NSError alloc(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_alloc1);
+    return NSError._(_ret, _lib);
+  }
+}
+
+/// Read/Write Options
+abstract class NSDataReadingOptions {
+  static const int NSDataReadingMappedIfSafe = 1;
+  static const int NSDataReadingUncached = 2;
+  static const int NSDataReadingMappedAlways = 8;
+  static const int NSDataReadingMapped = 1;
+  static const int NSMappedRead = 1;
+  static const int NSUncachedRead = 2;
+}
+
+abstract class NSDataWritingOptions {
+  static const int NSDataWritingAtomic = 1;
+  static const int NSDataWritingWithoutOverwriting = 2;
+  static const int NSDataWritingFileProtectionNone = 268435456;
+  static const int NSDataWritingFileProtectionComplete = 536870912;
+  static const int NSDataWritingFileProtectionCompleteUnlessOpen = 805306368;
+  static const int
+      NSDataWritingFileProtectionCompleteUntilFirstUserAuthentication =
+      1073741824;
+  static const int NSDataWritingFileProtectionMask = 4026531840;
+  static const int NSAtomicWrite = 1;
+}
+
+/// Data Search Options
+abstract class NSDataSearchOptions {
+  static const int NSDataSearchBackwards = 1;
+  static const int NSDataSearchAnchored = 2;
+}
+
+/// Base 64 Options
+abstract class NSDataBase64EncodingOptions {
+  static const int NSDataBase64Encoding64CharacterLineLength = 1;
+  static const int NSDataBase64Encoding76CharacterLineLength = 2;
+  static const int NSDataBase64EncodingEndLineWithCarriageReturn = 16;
+  static const int NSDataBase64EncodingEndLineWithLineFeed = 32;
+}
+
+abstract class NSDataBase64DecodingOptions {
+  static const int NSDataBase64DecodingIgnoreUnknownCharacters = 1;
+}
+
+abstract class NSDataCompressionAlgorithm {
+  static const int NSDataCompressionAlgorithmLZFSE = 0;
+  static const int NSDataCompressionAlgorithmLZ4 = 1;
+  static const int NSDataCompressionAlgorithmLZMA = 2;
+  static const int NSDataCompressionAlgorithmZlib = 3;
+}
+
+/// Mutable Data
+class NSMutableData extends NSData {
+  NSMutableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
+      : super._(id, lib);
+
+  static NSMutableData castFrom<T extends _ObjCWrapper>(T other) {
+    return NSMutableData._(other._id, other._lib);
+  }
+
+  static NSMutableData castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSMutableData._(other, lib);
+  }
+
+  ffi.Pointer<ffi.Void> get mutableBytes {
+    return _lib._objc_msgSend_173(_id, _lib._sel_mutableBytes1);
+  }
+
+  int get length {
+    return _lib._objc_msgSend_11(_id, _lib._sel_length1);
+  }
+
+  set length(int value) {
+    _lib._objc_msgSend_116(_id, _lib._sel_setLength_1, value);
+  }
+}
+
+/// Purgeable Data
+class NSPurgeableData extends NSMutableData {
+  NSPurgeableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
+      : super._(id, lib);
+
+  static NSPurgeableData castFrom<T extends _ObjCWrapper>(T other) {
+    return NSPurgeableData._(other._id, other._lib);
+  }
+
+  static NSPurgeableData castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return NSPurgeableData._(other, lib);
+  }
+}
+
+class _Dart_Isolate extends ffi.Opaque {}
+
+class _Dart_IsolateGroup extends ffi.Opaque {}
+
+class _Dart_Handle extends ffi.Opaque {}
+
+class _Dart_WeakPersistentHandle extends ffi.Opaque {}
+
+class _Dart_FinalizableHandle extends ffi.Opaque {}
+
+typedef Dart_WeakPersistentHandle = ffi.Pointer<_Dart_WeakPersistentHandle>;
+typedef Dart_HandleFinalizer = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FinalizableHandle = ffi.Pointer<_Dart_FinalizableHandle>;
+
+class Dart_IsolateFlags extends ffi.Struct {
+  @ffi.Int32()
+  external int version;
+
+  @ffi.Uint8()
+  external int enable_asserts;
+
+  @ffi.Uint8()
+  external int use_field_guards;
+
+  @ffi.Uint8()
+  external int use_osr;
+
+  @ffi.Uint8()
+  external int obfuscate;
+
+  @ffi.Uint8()
+  external int load_vmservice_library;
+
+  @ffi.Uint8()
+  external int copy_parent_code;
+
+  @ffi.Uint8()
+  external int null_safety;
+
+  @ffi.Uint8()
+  external int is_system_isolate;
+}
+
+/// Forward declaration
+class Dart_CodeObserver extends ffi.Struct {
+  external ffi.Pointer<ffi.Void> data;
+
+  external Dart_OnNewCodeCallback on_new_code;
+}
+
+/// Callback provided by the embedder that is used by the VM to notify on code
+/// object creation, *before* it is invoked the first time.
+/// This is useful for embedders wanting to e.g. keep track of PCs beyond
+/// the lifetime of the garbage collected code objects.
+/// Note that an address range may be used by more than one code object over the
+/// lifecycle of a process. Clients of this function should record timestamps for
+/// these compilation events and when collecting PCs to disambiguate reused
+/// address ranges.
+typedef Dart_OnNewCodeCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<Dart_CodeObserver>,
+            ffi.Pointer<pkg_ffi.Char>, uintptr_t, uintptr_t)>>;
+typedef uintptr_t = pkg_ffi.UnsignedLong;
+
+/// Describes how to initialize the VM. Used with Dart_Initialize.
+///
+/// \param version Identifies the version of the struct used by the client.
+/// should be initialized to DART_INITIALIZE_PARAMS_CURRENT_VERSION.
+/// \param vm_isolate_snapshot A buffer containing a snapshot of the VM isolate
+/// or NULL if no snapshot is provided. If provided, the buffer must remain
+/// valid until Dart_Cleanup returns.
+/// \param instructions_snapshot A buffer containing a snapshot of precompiled
+/// instructions, or NULL if no snapshot is provided. If provided, the buffer
+/// must remain valid until Dart_Cleanup returns.
+/// \param initialize_isolate A function to be called during isolate
+/// initialization inside an existing isolate group.
+/// See Dart_InitializeIsolateCallback.
+/// \param create_group A function to be called during isolate group creation.
+/// See Dart_IsolateGroupCreateCallback.
+/// \param shutdown A function to be called right before an isolate is shutdown.
+/// See Dart_IsolateShutdownCallback.
+/// \param cleanup A function to be called after an isolate was shutdown.
+/// See Dart_IsolateCleanupCallback.
+/// \param cleanup_group A function to be called after an isolate group is shutdown.
+/// See Dart_IsolateGroupCleanupCallback.
+/// \param get_service_assets A function to be called by the service isolate when
+/// it requires the vmservice assets archive.
+/// See Dart_GetVMServiceAssetsArchive.
+/// \param code_observer An external code observer callback function.
+/// The observer can be invoked as early as during the Dart_Initialize() call.
+class Dart_InitializeParams extends ffi.Struct {
+  @ffi.Int32()
+  external int version;
+
+  external ffi.Pointer<ffi.Uint8> vm_snapshot_data;
+
+  external ffi.Pointer<ffi.Uint8> vm_snapshot_instructions;
+
+  external Dart_IsolateGroupCreateCallback create_group;
+
+  external Dart_InitializeIsolateCallback initialize_isolate;
+
+  external Dart_IsolateShutdownCallback shutdown_isolate;
+
+  external Dart_IsolateCleanupCallback cleanup_isolate;
+
+  external Dart_IsolateGroupCleanupCallback cleanup_group;
+
+  external Dart_ThreadExitCallback thread_exit;
+
+  external Dart_FileOpenCallback file_open;
+
+  external Dart_FileReadCallback file_read;
+
+  external Dart_FileWriteCallback file_write;
+
+  external Dart_FileCloseCallback file_close;
+
+  external Dart_EntropySource entropy_source;
+
+  external Dart_GetVMServiceAssetsArchive get_service_assets;
+
+  @ffi.Uint8()
+  external int start_kernel_isolate;
+
+  external ffi.Pointer<Dart_CodeObserver> code_observer;
+}
+
+/// An isolate creation and initialization callback function.
+///
+/// This callback, provided by the embedder, is called when the VM
+/// needs to create an isolate. The callback should create an isolate
+/// by calling Dart_CreateIsolateGroup and load any scripts required for
+/// execution.
+///
+/// This callback may be called on a different thread than the one
+/// running the parent isolate.
+///
+/// When the function returns NULL, it is the responsibility of this
+/// function to ensure that Dart_ShutdownIsolate has been called if
+/// required (for example, if the isolate was created successfully by
+/// Dart_CreateIsolateGroup() but the root library fails to load
+/// successfully, then the function should call Dart_ShutdownIsolate
+/// before returning).
+///
+/// When the function returns NULL, the function should set *error to
+/// a malloc-allocated buffer containing a useful error message.  The
+/// caller of this function (the VM) will make sure that the buffer is
+/// freed.
+///
+/// \param script_uri The uri of the main source file or snapshot to load.
+/// Either the URI of the parent isolate set in Dart_CreateIsolateGroup for
+/// Isolate.spawn, or the argument to Isolate.spawnUri canonicalized by the
+/// library tag handler of the parent isolate.
+/// The callback is responsible for loading the program by a call to
+/// Dart_LoadScriptFromKernel.
+/// \param main The name of the main entry point this isolate will
+/// eventually run.  This is provided for advisory purposes only to
+/// improve debugging messages.  The main function is not invoked by
+/// this function.
+/// \param package_root Ignored.
+/// \param package_config Uri of the package configuration file (either in format
+/// of .packages or .dart_tool/package_config.json) for this isolate
+/// to resolve package imports against. If this parameter is not passed the
+/// package resolution of the parent isolate should be used.
+/// \param flags Default flags for this isolate being spawned. Either inherited
+/// from the spawning isolate or passed as parameters when spawning the
+/// isolate from Dart code.
+/// \param isolate_data The isolate data which was passed to the
+/// parent isolate when it was created by calling Dart_CreateIsolateGroup().
+/// \param error A structure into which the embedder can place a
+/// C string containing an error message in the case of failures.
+///
+/// \return The embedder returns NULL if the creation and
+/// initialization was not successful and the isolate if successful.
+typedef Dart_IsolateGroupCreateCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_Isolate Function(
+            ffi.Pointer<pkg_ffi.Char>,
+            ffi.Pointer<pkg_ffi.Char>,
+            ffi.Pointer<pkg_ffi.Char>,
+            ffi.Pointer<pkg_ffi.Char>,
+            ffi.Pointer<Dart_IsolateFlags>,
+            ffi.Pointer<ffi.Void>,
+            ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>;
+
+/// An isolate is the unit of concurrency in Dart. Each isolate has
+/// its own memory and thread of control. No state is shared between
+/// isolates. Instead, isolates communicate by message passing.
+///
+/// Each thread keeps track of its current isolate, which is the
+/// isolate which is ready to execute on the current thread. The
+/// current isolate may be NULL, in which case no isolate is ready to
+/// execute. Most of the Dart apis require there to be a current
+/// isolate in order to function without error. The current isolate is
+/// set by any call to Dart_CreateIsolateGroup or Dart_EnterIsolate.
+typedef Dart_Isolate = ffi.Pointer<_Dart_Isolate>;
+
+/// An isolate initialization callback function.
+///
+/// This callback, provided by the embedder, is called when the VM has created an
+/// isolate within an existing isolate group (i.e. from the same source as an
+/// existing isolate).
+///
+/// The callback should setup native resolvers and might want to set a custom
+/// message handler via [Dart_SetMessageNotifyCallback] and mark the isolate as
+/// runnable.
+///
+/// This callback may be called on a different thread than the one
+/// running the parent isolate.
+///
+/// When the function returns `false`, it is the responsibility of this
+/// function to ensure that `Dart_ShutdownIsolate` has been called.
+///
+/// When the function returns `false`, the function should set *error to
+/// a malloc-allocated buffer containing a useful error message.  The
+/// caller of this function (the VM) will make sure that the buffer is
+/// freed.
+///
+/// \param child_isolate_data The callback data to associate with the new
+/// child isolate.
+/// \param error A structure into which the embedder can place a
+/// C string containing an error message in the case the initialization fails.
+///
+/// \return The embedder returns true if the initialization was successful and
+/// false otherwise (in which case the VM will terminate the isolate).
+typedef Dart_InitializeIsolateCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Uint8 Function(ffi.Pointer<ffi.Pointer<ffi.Void>>,
+            ffi.Pointer<ffi.Pointer<pkg_ffi.Char>>)>>;
+
+/// An isolate shutdown callback function.
+///
+/// This callback, provided by the embedder, is called before the vm
+/// shuts down an isolate.  The isolate being shutdown will be the current
+/// isolate. It is safe to run Dart code.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+/// \param isolate_data The same callback data which was passed to the isolate
+/// when it was created.
+typedef Dart_IsolateShutdownCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+
+/// An isolate cleanup callback function.
+///
+/// This callback, provided by the embedder, is called after the vm
+/// shuts down an isolate. There will be no current isolate and it is *not*
+/// safe to run Dart code.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+/// \param isolate_data The same callback data which was passed to the isolate
+/// when it was created.
+typedef Dart_IsolateCleanupCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>;
+
+/// An isolate group cleanup callback function.
+///
+/// This callback, provided by the embedder, is called after the vm
+/// shuts down an isolate group.
+///
+/// This function should be used to dispose of native resources that
+/// are allocated to an isolate in order to avoid leaks.
+///
+/// \param isolate_group_data The same callback data which was passed to the
+/// isolate group when it was created.
+typedef Dart_IsolateGroupCleanupCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
+
+/// A thread death callback function.
+/// This callback, provided by the embedder, is called before a thread in the
+/// vm thread pool exits.
+/// This function could be used to dispose of native resources that
+/// are associated and attached to the thread, in order to avoid leaks.
+typedef Dart_ThreadExitCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
+
+/// Callbacks provided by the embedder for file operations. If the
+/// embedder does not allow file operations these callbacks can be
+/// NULL.
+///
+/// Dart_FileOpenCallback - opens a file for reading or writing.
+/// \param name The name of the file to open.
+/// \param write A boolean variable which indicates if the file is to
+/// opened for writing. If there is an existing file it needs to truncated.
+///
+/// Dart_FileReadCallback - Read contents of file.
+/// \param data Buffer allocated in the callback into which the contents
+/// of the file are read into. It is the responsibility of the caller to
+/// free this buffer.
+/// \param file_length A variable into which the length of the file is returned.
+/// In the case of an error this value would be -1.
+/// \param stream Handle to the opened file.
+///
+/// Dart_FileWriteCallback - Write data into file.
+/// \param data Buffer which needs to be written into the file.
+/// \param length Length of the buffer.
+/// \param stream Handle to the opened file.
+///
+/// Dart_FileCloseCallback - Closes the opened file.
+/// \param stream Handle to the opened file.
+typedef Dart_FileOpenCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Pointer<ffi.Void> Function(ffi.Pointer<pkg_ffi.Char>, ffi.Uint8)>>;
+typedef Dart_FileReadCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+            ffi.Pointer<ffi.IntPtr>, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FileWriteCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>, ffi.IntPtr, ffi.Pointer<ffi.Void>)>>;
+typedef Dart_FileCloseCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
+typedef Dart_EntropySource = ffi.Pointer<
+    ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>;
+
+/// Callback provided by the embedder that is used by the vmservice isolate
+/// to request the asset archive. The asset archive must be an uncompressed tar
+/// archive that is stored in a Uint8List.
+///
+/// If the embedder has no vmservice isolate assets, the callback can be NULL.
+///
+/// \return The embedder must return a handle to a Uint8List containing an
+/// uncompressed tar archive or null.
+typedef Dart_GetVMServiceAssetsArchive
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function()>>;
+typedef Dart_IsolateGroup = ffi.Pointer<_Dart_IsolateGroup>;
+
+/// A message notification callback.
+///
+/// This callback allows the embedder to provide an alternate wakeup
+/// mechanism for the delivery of inter-isolate messages.  It is the
+/// responsibility of the embedder to call Dart_HandleMessage to
+/// process the message.
+typedef Dart_MessageNotifyCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>;
+
+/// A port is used to send or receive inter-isolate messages
+typedef Dart_Port = ffi.Int64;
+
+abstract class Dart_CoreType_Id {
+  static const int Dart_CoreType_Dynamic = 0;
+  static const int Dart_CoreType_Int = 1;
+  static const int Dart_CoreType_String = 2;
+}
+
+abstract class Dart_TypedData_Type {
+  static const int Dart_TypedData_kByteData = 0;
+  static const int Dart_TypedData_kInt8 = 1;
+  static const int Dart_TypedData_kUint8 = 2;
+  static const int Dart_TypedData_kUint8Clamped = 3;
+  static const int Dart_TypedData_kInt16 = 4;
+  static const int Dart_TypedData_kUint16 = 5;
+  static const int Dart_TypedData_kInt32 = 6;
+  static const int Dart_TypedData_kUint32 = 7;
+  static const int Dart_TypedData_kInt64 = 8;
+  static const int Dart_TypedData_kUint64 = 9;
+  static const int Dart_TypedData_kFloat32 = 10;
+  static const int Dart_TypedData_kFloat64 = 11;
+  static const int Dart_TypedData_kInt32x4 = 12;
+  static const int Dart_TypedData_kFloat32x4 = 13;
+  static const int Dart_TypedData_kFloat64x2 = 14;
+  static const int Dart_TypedData_kInvalid = 15;
+}
+
+class _Dart_NativeArguments extends ffi.Opaque {}
+
+/// The arguments to a native function.
+///
+/// This object is passed to a native function to represent its
+/// arguments and return value. It allows access to the arguments to a
+/// native function by index. It also allows the return value of a
+/// native function to be set.
+typedef Dart_NativeArguments = ffi.Pointer<_Dart_NativeArguments>;
+
+abstract class Dart_NativeArgument_Type {
+  static const int Dart_NativeArgument_kBool = 0;
+  static const int Dart_NativeArgument_kInt32 = 1;
+  static const int Dart_NativeArgument_kUint32 = 2;
+  static const int Dart_NativeArgument_kInt64 = 3;
+  static const int Dart_NativeArgument_kUint64 = 4;
+  static const int Dart_NativeArgument_kDouble = 5;
+  static const int Dart_NativeArgument_kString = 6;
+  static const int Dart_NativeArgument_kInstance = 7;
+  static const int Dart_NativeArgument_kNativeFields = 8;
+}
+
+class _Dart_NativeArgument_Descriptor extends ffi.Struct {
+  @ffi.Uint8()
+  external int type;
+
+  @ffi.Uint8()
+  external int index;
+}
+
+class _Dart_NativeArgument_Value extends ffi.Opaque {}
+
+typedef Dart_NativeArgument_Descriptor = _Dart_NativeArgument_Descriptor;
+typedef Dart_NativeArgument_Value = _Dart_NativeArgument_Value;
+
+/// An environment lookup callback function.
+///
+/// \param name The name of the value to lookup in the environment.
+///
+/// \return A valid handle to a string if the name exists in the
+/// current environment or Dart_Null() if not.
+typedef Dart_EnvironmentCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+
+/// Native entry resolution callback.
+///
+/// For libraries and scripts which have native functions, the embedder
+/// can provide a native entry resolver. This callback is used to map a
+/// name/arity to a Dart_NativeFunction. If no function is found, the
+/// callback should return NULL.
+///
+/// The parameters to the native resolver function are:
+/// \param name a Dart string which is the name of the native function.
+/// \param num_of_arguments is the number of arguments expected by the
+/// native function.
+/// \param auto_setup_scope is a boolean flag that can be set by the resolver
+/// to indicate if this function needs a Dart API scope (see Dart_EnterScope/
+/// Dart_ExitScope) to be setup automatically by the VM before calling into
+/// the native function. By default most native functions would require this
+/// to be true but some light weight native functions which do not call back
+/// into the VM through the Dart API may not require a Dart scope to be
+/// setup automatically.
+///
+/// \return A valid Dart_NativeFunction which resolves to a native entry point
+/// for the native function.
+///
+/// See Dart_SetNativeResolver.
+typedef Dart_NativeEntryResolver = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_NativeFunction Function(
+            ffi.Handle, pkg_ffi.Int, ffi.Pointer<ffi.Uint8>)>>;
+
+/// A native function.
+typedef Dart_NativeFunction
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(Dart_NativeArguments)>>;
+
+/// Native entry symbol lookup callback.
+///
+/// For libraries and scripts which have native functions, the embedder
+/// can provide a callback for mapping a native entry to a symbol. This callback
+/// maps a native function entry PC to the native function name. If no native
+/// entry symbol can be found, the callback should return NULL.
+///
+/// The parameters to the native reverse resolver function are:
+/// \param nf A Dart_NativeFunction.
+///
+/// \return A const UTF-8 string containing the symbol name or NULL.
+///
+/// See Dart_SetNativeResolver.
+typedef Dart_NativeEntrySymbol = ffi.Pointer<
+    ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(Dart_NativeFunction)>>;
+
+/// FFI Native C function pointer resolver callback.
+///
+/// See Dart_SetFfiNativeResolver.
+typedef Dart_FfiNativeResolver = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Pointer<ffi.Void> Function(ffi.Pointer<pkg_ffi.Char>, uintptr_t)>>;
+
+abstract class Dart_LibraryTag {
+  static const int Dart_kCanonicalizeUrl = 0;
+  static const int Dart_kImportTag = 1;
+  static const int Dart_kKernelTag = 2;
+}
+
+/// The library tag handler is a multi-purpose callback provided by the
+/// embedder to the Dart VM. The embedder implements the tag handler to
+/// provide the ability to load Dart scripts and imports.
+///
+/// -- TAGS --
+///
+/// Dart_kCanonicalizeUrl
+///
+/// This tag indicates that the embedder should canonicalize 'url' with
+/// respect to 'library'.  For most embedders, the
+/// Dart_DefaultCanonicalizeUrl function is a sufficient implementation
+/// of this tag.  The return value should be a string holding the
+/// canonicalized url.
+///
+/// Dart_kImportTag
+///
+/// This tag is used to load a library from IsolateMirror.loadUri. The embedder
+/// should call Dart_LoadLibraryFromKernel to provide the library to the VM. The
+/// return value should be an error or library (the result from
+/// Dart_LoadLibraryFromKernel).
+///
+/// Dart_kKernelTag
+///
+/// This tag is used to load the intermediate file (kernel) generated by
+/// the Dart front end. This tag is typically used when a 'hot-reload'
+/// of an application is needed and the VM is 'use dart front end' mode.
+/// The dart front end typically compiles all the scripts, imports and part
+/// files into one intermediate file hence we don't use the source/import or
+/// script tags. The return value should be an error or a TypedData containing
+/// the kernel bytes.
+typedef Dart_LibraryTagHandler = ffi.Pointer<
+    ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.Handle, ffi.Handle)>>;
+
+/// Handles deferred loading requests. When this handler is invoked, it should
+/// eventually load the deferred loading unit with the given id and call
+/// Dart_DeferredLoadComplete or Dart_DeferredLoadCompleteError. It is
+/// recommended that the loading occur asynchronously, but it is permitted to
+/// call Dart_DeferredLoadComplete or Dart_DeferredLoadCompleteError before the
+/// handler returns.
+///
+/// If an error is returned, it will be propogated through
+/// `prefix.loadLibrary()`. This is useful for synchronous
+/// implementations, which must propogate any unwind errors from
+/// Dart_DeferredLoadComplete or Dart_DeferredLoadComplete. Otherwise the handler
+/// should return a non-error such as `Dart_Null()`.
+typedef Dart_DeferredLoadHandler
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>;
+
+/// Experimental support for Dart to Kernel parser isolate.
+///
+/// TODO(hausner): Document finalized interface.
+abstract class Dart_KernelCompilationStatus {
+  static const int Dart_KernelCompilationStatus_Unknown = -1;
+  static const int Dart_KernelCompilationStatus_Ok = 0;
+  static const int Dart_KernelCompilationStatus_Error = 1;
+  static const int Dart_KernelCompilationStatus_Crash = 2;
+  static const int Dart_KernelCompilationStatus_MsgFailed = 3;
+}
+
+class Dart_KernelCompilationResult extends ffi.Struct {
+  @ffi.Int32()
+  external int status;
+
+  @ffi.Uint8()
+  external int null_safety;
+
+  external ffi.Pointer<pkg_ffi.Char> error;
+
+  external ffi.Pointer<ffi.Uint8> kernel;
+
+  @ffi.IntPtr()
+  external int kernel_size;
+}
+
+abstract class Dart_KernelCompilationVerbosityLevel {
+  static const int Dart_KernelCompilationVerbosityLevel_Error = 0;
+  static const int Dart_KernelCompilationVerbosityLevel_Warning = 1;
+  static const int Dart_KernelCompilationVerbosityLevel_Info = 2;
+  static const int Dart_KernelCompilationVerbosityLevel_All = 3;
+}
+
+class Dart_SourceFile extends ffi.Struct {
+  external ffi.Pointer<pkg_ffi.Char> uri;
+
+  external ffi.Pointer<pkg_ffi.Char> source;
+}
+
+typedef Dart_StreamingWriteCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>;
+typedef Dart_CreateLoadingUnitCallback = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(
+            ffi.Pointer<ffi.Void>,
+            ffi.IntPtr,
+            ffi.Pointer<ffi.Pointer<ffi.Void>>,
+            ffi.Pointer<ffi.Pointer<ffi.Void>>)>>;
+typedef Dart_StreamingCloseCallback
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>;
+
+/// A Dart_CObject is used for representing Dart objects as native C
+/// data outside the Dart heap. These objects are totally detached from
+/// the Dart heap. Only a subset of the Dart objects have a
+/// representation as a Dart_CObject.
+///
+/// The string encoding in the 'value.as_string' is UTF-8.
+///
+/// All the different types from dart:typed_data are exposed as type
+/// kTypedData. The specific type from dart:typed_data is in the type
+/// field of the as_typed_data structure. The length in the
+/// as_typed_data structure is always in bytes.
+///
+/// The data for kTypedData is copied on message send and ownership remains with
+/// the caller. The ownership of data for kExternalTyped is passed to the VM on
+/// message send and returned when the VM invokes the
+/// Dart_HandleFinalizer callback; a non-NULL callback must be provided.
+abstract class Dart_CObject_Type {
+  static const int Dart_CObject_kNull = 0;
+  static const int Dart_CObject_kBool = 1;
+  static const int Dart_CObject_kInt32 = 2;
+  static const int Dart_CObject_kInt64 = 3;
+  static const int Dart_CObject_kDouble = 4;
+  static const int Dart_CObject_kString = 5;
+  static const int Dart_CObject_kArray = 6;
+  static const int Dart_CObject_kTypedData = 7;
+  static const int Dart_CObject_kExternalTypedData = 8;
+  static const int Dart_CObject_kSendPort = 9;
+  static const int Dart_CObject_kCapability = 10;
+  static const int Dart_CObject_kNativePointer = 11;
+  static const int Dart_CObject_kUnsupported = 12;
+  static const int Dart_CObject_kNumberOfTypes = 13;
+}
+
+class _Dart_CObject extends ffi.Struct {
+  @ffi.Int32()
+  external int type;
+
+  external UnnamedUnion5 value;
+}
+
+class UnnamedUnion5 extends ffi.Union {
+  @ffi.Uint8()
+  external int as_bool;
+
+  @ffi.Int32()
+  external int as_int32;
+
+  @ffi.Int64()
+  external int as_int64;
+
+  @ffi.Double()
+  external double as_double;
+
+  external ffi.Pointer<pkg_ffi.Char> as_string;
+
+  external UnnamedStruct3 as_send_port;
+
+  external UnnamedStruct4 as_capability;
+
+  external UnnamedStruct5 as_array;
+
+  external UnnamedStruct6 as_typed_data;
+
+  external UnnamedStruct7 as_external_typed_data;
+
+  external UnnamedStruct8 as_native_pointer;
+}
+
+class UnnamedStruct3 extends ffi.Struct {
+  @Dart_Port()
+  external int id;
+
+  @Dart_Port()
+  external int origin_id;
+}
+
+class UnnamedStruct4 extends ffi.Struct {
+  @ffi.Int64()
+  external int id;
+}
+
+class UnnamedStruct5 extends ffi.Struct {
+  @ffi.IntPtr()
+  external int length;
+
+  external ffi.Pointer<ffi.Pointer<_Dart_CObject>> values;
+}
+
+class UnnamedStruct6 extends ffi.Struct {
+  @ffi.Int32()
+  external int type;
+
+  @ffi.IntPtr()
+  external int length;
+
+  external ffi.Pointer<ffi.Uint8> values;
+}
+
+class UnnamedStruct7 extends ffi.Struct {
+  @ffi.Int32()
+  external int type;
+
+  @ffi.IntPtr()
+  external int length;
+
+  external ffi.Pointer<ffi.Uint8> data;
+
+  external ffi.Pointer<ffi.Void> peer;
+
+  external Dart_HandleFinalizer callback;
+}
+
+class UnnamedStruct8 extends ffi.Struct {
+  @ffi.IntPtr()
+  external int ptr;
+
+  @ffi.IntPtr()
+  external int size;
+
+  external Dart_HandleFinalizer callback;
+}
+
+typedef Dart_CObject = _Dart_CObject;
+
+/// A native message handler.
+///
+/// This handler is associated with a native port by calling
+/// Dart_NewNativePort.
+///
+/// The message received is decoded into the message structure. The
+/// lifetime of the message data is controlled by the caller. All the
+/// data references from the message are allocated by the caller and
+/// will be reclaimed when returning to it.
+typedef Dart_NativeMessageHandler = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(Dart_Port, ffi.Pointer<Dart_CObject>)>>;
+typedef Dart_PostCObject_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Uint8 Function(Dart_Port_DL, ffi.Pointer<Dart_CObject>)>>;
+typedef Dart_Port_DL = ffi.Int64;
+typedef Dart_PostInteger_Type = ffi
+    .Pointer<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port_DL, ffi.Int64)>>;
+typedef Dart_NewNativePort_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_Port_DL Function(ffi.Pointer<pkg_ffi.Char>,
+            Dart_NativeMessageHandler_DL, ffi.Uint8)>>;
+typedef Dart_NativeMessageHandler_DL = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(Dart_Port_DL, ffi.Pointer<Dart_CObject>)>>;
+typedef Dart_CloseNativePort_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port_DL)>>;
+typedef Dart_IsError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_IsApiError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_IsUnhandledExceptionError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_IsCompilationError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_IsFatalError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_GetError_Type = ffi.Pointer<
+    ffi.NativeFunction<ffi.Pointer<pkg_ffi.Char> Function(ffi.Handle)>>;
+typedef Dart_ErrorHasException_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>;
+typedef Dart_ErrorGetException_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+typedef Dart_ErrorGetStackTrace_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+typedef Dart_NewApiError_Type = ffi.Pointer<
+    ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>;
+typedef Dart_NewCompilationError_Type = ffi.Pointer<
+    ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<pkg_ffi.Char>)>>;
+typedef Dart_NewUnhandledExceptionError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+typedef Dart_PropagateError_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>;
+typedef Dart_HandleFromPersistent_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+typedef Dart_HandleFromWeakPersistent_Type = ffi.Pointer<
+    ffi.NativeFunction<ffi.Handle Function(Dart_WeakPersistentHandle)>>;
+typedef Dart_NewPersistentHandle_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>;
+typedef Dart_SetPersistentHandle_Type = ffi
+    .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Handle, ffi.Handle)>>;
+typedef Dart_DeletePersistentHandle_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>;
+typedef Dart_NewWeakPersistentHandle_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_WeakPersistentHandle Function(ffi.Handle, ffi.Pointer<ffi.Void>,
+            ffi.IntPtr, Dart_HandleFinalizer)>>;
+typedef Dart_DeleteWeakPersistentHandle_Type = ffi
+    .Pointer<ffi.NativeFunction<ffi.Void Function(Dart_WeakPersistentHandle)>>;
+typedef Dart_UpdateExternalSize_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(Dart_WeakPersistentHandle, ffi.IntPtr)>>;
+typedef Dart_NewFinalizableHandle_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        Dart_FinalizableHandle Function(ffi.Handle, ffi.Pointer<ffi.Void>,
+            ffi.IntPtr, Dart_HandleFinalizer)>>;
+typedef Dart_DeleteFinalizableHandle_Type = ffi.Pointer<
+    ffi.NativeFunction<ffi.Void Function(Dart_FinalizableHandle, ffi.Handle)>>;
+typedef Dart_UpdateFinalizableExternalSize_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Void Function(Dart_FinalizableHandle, ffi.Handle, ffi.IntPtr)>>;
+typedef Dart_Post_Type = ffi
+    .Pointer<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port_DL, ffi.Handle)>>;
+typedef Dart_NewSendPort_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Handle Function(Dart_Port_DL)>>;
+typedef Dart_SendPortGetId_Type = ffi.Pointer<
+    ffi.NativeFunction<
+        ffi.Handle Function(ffi.Handle, ffi.Pointer<Dart_Port_DL>)>>;
+typedef Dart_EnterScope_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
+typedef Dart_ExitScope_Type
+    = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
+
+class URLSessionHelper extends NSObject {
+  URLSessionHelper._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
+      : super._(id, lib);
+
+  static URLSessionHelper castFrom<T extends _ObjCWrapper>(T other) {
+    return URLSessionHelper._(other._id, other._lib);
+  }
+
+  static URLSessionHelper castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return URLSessionHelper._(other, lib);
+  }
+
+  static NSURLSessionDataTask dataTaskForSession_withRequest_toPort(
+      NativeLibrary _lib, NSObject? session, NSObject? request, int dart_port) {
+    final _ret = _lib._objc_msgSend_174(
+        _lib._class_URLSessionHelper1,
+        _lib._sel_dataTaskForSession_withRequest_toPort_1,
+        session?._id ?? ffi.nullptr,
+        request?._id ?? ffi.nullptr,
+        dart_port);
+    return NSURLSessionDataTask._(_ret, _lib);
+  }
+
+  static URLSessionHelper new1(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_new1);
+    return URLSessionHelper._(_ret, _lib);
+  }
+
+  static URLSessionHelper alloc(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_alloc1);
+    return URLSessionHelper._(_ret, _lib);
+  }
+}
 
 const int NSScannedOption = 1;
 
@@ -48227,6 +77639,14 @@ const int NSProprietaryStringEncoding = 65536;
 
 const int NSOpenStepUnicodeReservedBase = 62464;
 
+const int kNativeArgNumberPos = 0;
+
+const int kNativeArgNumberSize = 8;
+
+const int kNativeArgTypePos = 8;
+
+const int kNativeArgTypeSize = 8;
+
 const int NS_BLOCKS_AVAILABLE = 1;
 
 const int __COREFOUNDATION_CFAVAILABILITY__ = 1;
@@ -48964,3 +78384,43 @@ const int NSOperationQualityOfServiceUserInitiated = 25;
 const int NSOperationQualityOfServiceUtility = 17;
 
 const int NSOperationQualityOfServiceBackground = 9;
+
+const int DART_FLAGS_CURRENT_VERSION = 12;
+
+const int DART_INITIALIZE_PARAMS_CURRENT_VERSION = 4;
+
+const int ILLEGAL_PORT = 0;
+
+const String DART_KERNEL_ISOLATE_NAME = 'kernel-service';
+
+const String DART_VM_SERVICE_ISOLATE_NAME = 'vm-service';
+
+const String kSnapshotBuildIdCSymbol = 'kDartSnapshotBuildId';
+
+const String kVmSnapshotDataCSymbol = 'kDartVmSnapshotData';
+
+const String kVmSnapshotInstructionsCSymbol = 'kDartVmSnapshotInstructions';
+
+const String kVmSnapshotBssCSymbol = 'kDartVmSnapshotBss';
+
+const String kIsolateSnapshotDataCSymbol = 'kDartIsolateSnapshotData';
+
+const String kIsolateSnapshotInstructionsCSymbol =
+    'kDartIsolateSnapshotInstructions';
+
+const String kIsolateSnapshotBssCSymbol = 'kDartIsolateSnapshotBss';
+
+const String kSnapshotBuildIdAsmSymbol = '_kDartSnapshotBuildId';
+
+const String kVmSnapshotDataAsmSymbol = '_kDartVmSnapshotData';
+
+const String kVmSnapshotInstructionsAsmSymbol = '_kDartVmSnapshotInstructions';
+
+const String kVmSnapshotBssAsmSymbol = '_kDartVmSnapshotBss';
+
+const String kIsolateSnapshotDataAsmSymbol = '_kDartIsolateSnapshotData';
+
+const String kIsolateSnapshotInstructionsAsmSymbol =
+    '_kDartIsolateSnapshotInstructions';
+
+const String kIsolateSnapshotBssAsmSymbol = '_kDartIsolateSnapshotBss';

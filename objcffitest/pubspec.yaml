@@ -13,6 +13,12 @@ ffigen:
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSProgress.h'
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLResponse.h'
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSOperation.h'
+      - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSError.h'
+      - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSData.h'
+      - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSDictionary.h'
+      - 'src/urlsessionhelper.h'
+  compiler-opts:
+    - '-I/Users/bquinlan/dart/flutter/bin/cache/dart-sdk/include/'
 
 dependencies:
   ffi: ^1.1.2
@@ -22,4 +28,3 @@ dependencies:
 dev_dependencies: 
   ffigen:
     path: ../../ffigen
-
