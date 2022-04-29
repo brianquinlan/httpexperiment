@@ -3,6 +3,8 @@ import 'dart:ffi' as ffi;
 import 'dart:core';
 import 'dart:io';
 import 'dart:isolate';
+import 'dart:typed_data';
+import 'dart:math';
 
 late ns.NativeLibrary _lib = loadLibrary();
 late ns.NativeLibrary _helperLib = loadHelperLibrary();
@@ -28,6 +30,12 @@ ns.NativeLibrary loadHelperLibrary() {
   return ns.NativeLibrary(lib);
 }
 
+enum HTTPCookieAcceptPolicy {
+  HTTPCookieAcceptPolicyAlways,
+  HTTPCookieAcceptPolicyNever,
+  HTTPCookieAcceptPolicyOnlyFromMainDocumentDomain,
+}
+
 class URLSessionConfiguration {
   final ns.NSURLSessionConfiguration _configuration;
 
@@ -35,18 +43,29 @@ class URLSessionConfiguration {
 
   factory URLSessionConfiguration.defaultSessionConfiguration() {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
-        ns.NSURLSessionConfiguration.getDefaultSessionConfiguration(_lib)));
+        ns.NSURLSessionConfiguration.getDefaultSessionConfiguration(_lib)!));
   }
 
   factory URLSessionConfiguration.ephemeralSessionConfiguration() {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
-        ns.NSURLSessionConfiguration.getEphemeralSessionConfiguration(_lib)));
+        ns.NSURLSessionConfiguration.getEphemeralSessionConfiguration(_lib)!));
   }
 
   bool get allowsCellularAccess => _configuration.allowsCellularAccess;
-  bool get waitsForConnectivity => _configuration.waitsForConnectivity;
+  bool get allowsConstrainedNetworkAccess =>
+      _configuration.allowsConstrainedNetworkAccess;
+  bool get allowsExpensiveNetworkAccess =>
+      _configuration.allowsExpensiveNetworkAccess;
+  bool get discretionary => _configuration.discretionary;
+  // TODO: Use an enum for httpCookieAcceptPolicy.
+  HTTPCookieAcceptPolicy get httpCookieAcceptPolicy =>
+      HTTPCookieAcceptPolicy.values[_configuration.HTTPCookieAcceptPolicy];
+  bool get httpShouldSetCookies => _configuration.HTTPShouldSetCookies;
+  bool get httpShouldUsePipelining => _configuration.HTTPShouldUsePipelining;
+  bool get sessionSendsLaunchEvents => _configuration.sessionSendsLaunchEvents;
+  bool get shouldUseExtendedBackgroundIdleMode =>
+      _configuration.shouldUseExtendedBackgroundIdleMode;
   Duration get timeoutIntervalForRequest {
-    _configuration.timeoutIntervalForRequest;
     return Duration(
         microseconds: (_configuration.timeoutIntervalForRequest *
                 Duration.microsecondsPerSecond)
@@ -58,12 +77,22 @@ class URLSessionConfiguration {
         interval.inMicroseconds.toDouble() * Duration.microsecondsPerSecond;
   }
 
+  bool get waitsForConnectivity => _configuration.waitsForConnectivity;
+
   @override
   String toString() {
     return "[URLSessionConfiguration " +
         "allowsCellularAccess=$allowsCellularAccess " +
-        "waitsForConnectivity=$waitsForConnectivity " +
-        "timeoutIntervalForRequest=$timeoutIntervalForRequest" +
+        "allowsConstrainedNetworkAccess=$allowsConstrainedNetworkAccess " +
+        "allowsExpensiveNetworkAccess=$allowsExpensiveNetworkAccess " +
+        "discretionary=$discretionary " +
+        "httpCookieAcceptPolicy=$httpCookieAcceptPolicy " +
+        "httpShouldSetCookies=$httpShouldSetCookies " +
+        "httpShouldUsePipelining=$httpShouldUsePipelining " +
+        "sessionSendsLaunchEvents=$sessionSendsLaunchEvents " +
+        "shouldUseExtendedBackgroundIdleMode=$shouldUseExtendedBackgroundIdleMode " +
+        "timeoutIntervalForRequest=$timeoutIntervalForRequest " +
+        "waitsForConnectivity=$waitsForConnectivity" +
         "]";
   }
 }
@@ -103,6 +132,18 @@ class URLRequest {
   }
 }
 
+class MutableURLRequest extends URLRequest {
+  MutableURLRequest._(ns.NSMutableURLRequest nsMutableURLRequest)
+      : super._(nsMutableURLRequest) {}
+
+  factory MutableURLRequest.fromUrl(Uri uri) {
+    final url = ns.NSURL.URLWithString(
+        _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
+    return MutableURLRequest._(
+        ns.NSMutableURLRequest.requestWithURL(_lib, url));
+  }
+}
+
 class HTTPURLResponse {
   final ns.NSHTTPURLResponse _nsHttpUrlResponse;
 
@@ -111,8 +152,7 @@ class HTTPURLResponse {
   int get statusCode => _nsHttpUrlResponse.statusCode;
   int get expectedContentLength => _nsHttpUrlResponse.expectedContentLength;
 
-  String get mimeType =>
-      ns.NSString.castFrom(_nsHttpUrlResponse.MIMEType).toString();
+  String? get mimeType => _toString(_nsHttpUrlResponse.MIMEType);
 
   @override
   String toString() {
@@ -129,9 +169,23 @@ class Data {
 
   Data._(this._nsData) {}
 
+  int get length => _nsData.length;
+  Uint8List get bytes {
+    final bytes = _nsData.bytes;
+    if (bytes.address == 0) {
+      return Uint8List(0);
+    } else {
+      // This is unsafe! It is only a view into the underlying NSData!
+      return bytes.cast<ffi.Uint8>().asTypedList(length);
+    }
+  }
+
   @override
   String toString() {
-    return "[Data]";
+    final subrange =
+        length == 0 ? Uint8List(0) : bytes.sublist(0, min(length - 1, 20));
+    final b = subrange.map((e) => e.toRadixString(16)).join();
+    return "[Data " + "length=$length " + "bytes=$b..." + "]";
   }
 }
 
@@ -159,9 +213,9 @@ class Error {
   String toString() {
     return "[Error " +
         "code=$code " +
-//        "localizedDescription=$localizedDescription " +
-//        "localizedFailureReason=$localizedFailureReason " +
-//        "localizedRecoverySuggestion=$localizedRecoverySuggestion " +
+        "localizedDescription=$localizedDescription " +
+        "localizedFailureReason=$localizedFailureReason " +
+        "localizedRecoverySuggestion=$localizedRecoverySuggestion " +
         "]";
   }
 }
@@ -173,7 +227,7 @@ class URLSession {
 
   URLSessionConfiguration get configuration {
     return URLSessionConfiguration._(
-        ns.NSURLSessionConfiguration.castFrom(_nsUrlSession.configuration));
+        ns.NSURLSessionConfiguration.castFrom(_nsUrlSession.configuration!));
   }
 
   factory URLSession.sessionWithConfiguration(URLSessionConfiguration config) {
@@ -183,27 +237,33 @@ class URLSession {
 
   factory URLSession.sharedSession() {
     return URLSession._(
-        ns.NSURLSession.castFrom(ns.NSURLSession.getSharedSession(_lib)));
+        ns.NSURLSession.castFrom(ns.NSURLSession.getSharedSession(_lib)!));
   }
 
   URLSessionTask dataTask(
       URLRequest request,
-      void Function(Data data, HTTPURLResponse response, Error? error)
+      void Function(Data? data, HTTPURLResponse? response, Error? error)
           completion) {
     final port = ReceivePort();
     port.listen((message) {
       final dp = ffi.Pointer<ns.ObjCObject>.fromAddress(message[0]);
       final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(message[1]);
+      final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(message[2]);
 
+      Data? data = null;
+      HTTPURLResponse? response = null;
       Error? error = null;
-      if (message[2] != 0) {
-        final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(message[2]);
+
+      if (dp.address != 0) {
+        data = Data._(ns.NSData.castFromPointer(_lib, dp));
+      }
+      if (rp.address != 0) {
+        response =
+            HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
+      }
+      if (ep.address != 0) {
         error = Error._(ns.NSError.castFromPointer(_lib, ep));
       }
-
-      final data = Data._(ns.NSData.castFromPointer(_lib, dp));
-      final response =
-          HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
 
       try {
         completion(data, response, error);
@@ -228,6 +288,7 @@ void main() {
       (data, response, error) {
     if (error == null) {
       print(response);
+      print(data);
     } else {
       print(error);
     }
