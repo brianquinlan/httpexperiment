@@ -107,6 +107,13 @@ class URLSessionConfiguration {
   }
 }
 
+enum URLSessionTaskState {
+  URLSessionTaskStateRunning,
+  URLSessionTaskStateSuspended,
+  URLSessionTaskStateCanceling,
+  URLSessionTaskStateCompleted,
+}
+
 class URLSessionTask {
   final ns.NSURLSessionTask _nsUrlSessionTask;
 
@@ -120,13 +127,20 @@ class URLSessionTask {
     this._nsUrlSessionTask.suspend();
   }
 
+  URLSessionTaskState get state =>
+      URLSessionTaskState.values[_nsUrlSessionTask.state];
+
   int get countOfBytesReceived => _nsUrlSessionTask.countOfBytesReceived;
+  int get countOfBytesExpectedToReceive =>
+      _nsUrlSessionTask.countOfBytesExpectedToReceive;
 
   @override
   String toString() {
     return "[URLSessionTask " +
-        "countOfBytesReceived=$countOfBytesReceived" +
-        "]";
+        "countOfBytesExpectedToReceive=$countOfBytesExpectedToReceive " +
+        "countOfBytesReceived=$countOfBytesReceived " +
+        "state=$state"
+            "]";
   }
 }
 
@@ -364,10 +378,11 @@ Future<void> useSession() async {
   });
   print(task);
   task.resume();
-  for (var i = 0; i < 10; ++i) {
+  while (task.state == URLSessionTaskState.URLSessionTaskStateRunning) {
     print(task);
-    sleep(Duration(milliseconds: 100));
+    sleep(Duration(milliseconds: 200));
   }
+  print(task);
   await complete.future;
 }
 
