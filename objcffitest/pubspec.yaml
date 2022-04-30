@@ -9,6 +9,7 @@ ffigen:
   headers:
     entry-points:
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSData.h'
+      - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSMutableURLRequest.h'
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURLSession.h'
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSURL.h'
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSProgress.h'
@@ -23,6 +24,7 @@ ffigen:
 
 dependencies:
   ffi: ^1.1.2
+  http: ^0.13.4
   native_library:
     path: ../native_library
 

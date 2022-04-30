@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'nsurlsession_bindings.dart' as ns;
 import 'dart:ffi' as ffi;
 import 'dart:core';
@@ -5,6 +7,8 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:typed_data';
 import 'dart:math';
+
+import 'package:http/http.dart';
 
 late ns.NativeLibrary _lib = loadLibrary();
 late ns.NativeLibrary _helperLib = loadHelperLibrary();
@@ -41,6 +45,12 @@ class URLSessionConfiguration {
 
   URLSessionConfiguration._(this._configuration) {}
 
+  factory URLSessionConfiguration.backgroundSession(String identifier) {
+    return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
+        ns.NSURLSessionConfiguration
+            .backgroundSessionConfigurationWithIdentifier(
+                _lib, ns.NSObject.castFrom(identifier.toNSString(_lib)))));
+  }
   factory URLSessionConfiguration.defaultSessionConfiguration() {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
         ns.NSURLSessionConfiguration.getDefaultSessionConfiguration(_lib)!));
@@ -133,7 +143,9 @@ class URLRequest {
 }
 
 class MutableURLRequest extends URLRequest {
-  MutableURLRequest._(ns.NSMutableURLRequest nsMutableURLRequest)
+  final ns.NSMutableURLRequest nsMutableURLRequest;
+
+  MutableURLRequest._(this.nsMutableURLRequest)
       : super._(nsMutableURLRequest) {}
 
   factory MutableURLRequest.fromUrl(Uri uri) {
@@ -279,8 +291,64 @@ class URLSession {
   }
 }
 
-void main() {
-  final session = URLSession.sharedSession();
+class _A {
+  final Data? data;
+  final HTTPURLResponse? response;
+  final Error? error;
+
+  _A(this.data, this.response, this.error);
+}
+
+class CocoaClient extends BaseClient {
+  late URLSession _urlSession = URLSession.sharedSession();
+
+  URLSession get urlSession => _urlSession;
+
+  CocoaClient._(this._urlSession);
+
+  factory CocoaClient.sharedUrlSession() {
+    return CocoaClient._(URLSession.sharedSession());
+  }
+
+  factory CocoaClient.fromUrlSession(URLSession urlSession) {
+    return CocoaClient._(urlSession);
+  }
+
+  @override
+  Future<StreamedResponse> send(BaseRequest request) async {
+    final stream = request.finalize();
+
+    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url);
+    final callbackComplete = Completer<_A>();
+
+    final task = urlSession.dataTask(urlRequest, (data, response, error) {
+      callbackComplete.complete(_A(data, response, error));
+    });
+    task.resume();
+
+    final result = await callbackComplete.future;
+
+    result.data!.bytes.toList();
+    return StreamedResponse(
+      Stream.fromIterable([result.data!.bytes.toList()]),
+      result.response!.statusCode,
+      contentLength: result.response!.expectedContentLength,
+    );
+  }
+}
+
+late Client client;
+
+Future<void> useClient() async {
+  final r = await client.get(Uri.parse("http://www.google.com"));
+  print(r.body.substring(0, 70));
+  print(r.statusCode);
+  print(r.contentLength);
+}
+
+Future<void> useSession() async {
+  final session = (client as CocoaClient).urlSession;
+  final complete = Completer();
   print(session.configuration);
   final task = session.dataTask(
       URLRequest.fromUrl(Uri.parse(
@@ -292,6 +360,7 @@ void main() {
     } else {
       print(error);
     }
+    complete.complete();
   });
   print(task);
   task.resume();
@@ -299,4 +368,15 @@ void main() {
     print(task);
     sleep(Duration(milliseconds: 100));
   }
+  await complete.future;
+}
+
+void main() async {
+  URLSessionConfiguration config =
+      URLSessionConfiguration.defaultSessionConfiguration();
+  URLSession session = URLSession.sessionWithConfiguration(config);
+  client = CocoaClient.fromUrlSession(session);
+
+  await useClient();
+  await useSession();
 }
