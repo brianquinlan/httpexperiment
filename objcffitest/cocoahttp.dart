@@ -170,6 +170,19 @@ class MutableURLRequest extends URLRequest {
   }
 }
 
+Map<String, String> _foo(ns.NSDictionary d) {
+  final m = Map<String, String>();
+
+  final keys = ns.NSArray.castFrom(d.allKeys!);
+  for (var i = 0; i < keys.count; ++i) {
+    final key = _toString(keys.objectAtIndex(i))!;
+    final value = _toString(d.objectForKey(keys.objectAtIndex(i)))!;
+    m[key] = value;
+  }
+
+  return m;
+}
+
 class HTTPURLResponse {
   final ns.NSHTTPURLResponse _nsHttpUrlResponse;
 
@@ -177,8 +190,12 @@ class HTTPURLResponse {
 
   int get statusCode => _nsHttpUrlResponse.statusCode;
   int get expectedContentLength => _nsHttpUrlResponse.expectedContentLength;
-
   String? get mimeType => _toString(_nsHttpUrlResponse.MIMEType);
+  Map<String, String> get allHeaderFields {
+    final headers =
+        ns.NSDictionary.castFrom(_nsHttpUrlResponse.allHeaderFields!);
+    return (_foo(headers));
+  }
 
   @override
   String toString() {
@@ -347,17 +364,19 @@ class CocoaClient extends BaseClient {
       Stream.fromIterable([result.data!.bytes.toList()]),
       result.response!.statusCode,
       contentLength: result.response!.expectedContentLength,
+      headers: result.response!.allHeaderFields,
     );
   }
 }
 
-late Client client;
+late Client client; // from pkg:http
 
 Future<void> useClient() async {
   final r = await client.get(Uri.parse("http://www.google.com"));
   print(r.body.substring(0, 70));
   print(r.statusCode);
   print(r.contentLength);
+  print(r.headers);
 }
 
 Future<void> useSession() async {
