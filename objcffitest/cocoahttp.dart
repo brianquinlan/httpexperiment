@@ -414,3 +414,15 @@ void main() async {
   await useClient();
   await useSession();
 }
+
+/*
+// https://clang.llvm.org/docs/AutomaticReferenceCounting.html#void-objc-release-id-value
+// https://dart-review.googlesource.com/c/sdk/+/229544/11/tests/ffi/vmspecific_native_finalizer_test.dart#55
+
+final stdlib = ffi.DynamicLibrary.process();
+typedef PosixFreeNative = ffi.Void Function(ffi.Pointer<ffi.Void>);
+final objc_release =
+    stdlib.lookup<ffi.NativeFunction<PosixFreeNative>>('objc_release');
+final objcReleaseFinalizer = ffi.NativeFinalizer(objc_release);
+implements Finalizable
+*/
