@@ -149,6 +149,18 @@ class URLRequest {
 
   URLRequest._(this._nsUrlRequest) {}
 
+  String? get httpMethod {
+    return _toString(_nsUrlRequest.HTTPMethod);
+  }
+
+  Data? get httpBody {
+    final body = _nsUrlRequest.HTTPBody;
+    if (body == null) {
+      return null;
+    }
+    return Data._(ns.NSData.castFrom(body));
+  }
+
   factory URLRequest.fromUrl(Uri uri) {
     final url = ns.NSURL.URLWithString(
         _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
@@ -161,6 +173,25 @@ class MutableURLRequest extends URLRequest {
 
   MutableURLRequest._(this.nsMutableURLRequest)
       : super._(nsMutableURLRequest) {}
+
+  @override
+  String get httpMethod {
+    return _toString(nsMutableURLRequest.HTTPMethod)!;
+  }
+
+  set httpMethod(String method) {
+    nsMutableURLRequest.HTTPMethod =
+        ns.NSObject.castFrom(method.toNSString(_lib));
+  }
+
+  @override
+  Data get httpBody {
+    return Data._(ns.NSData.castFrom(nsMutableURLRequest.HTTPBody!));
+  }
+
+  set httpBody(Data data) {
+    nsMutableURLRequest.HTTPBody = data._nsData;
+  }
 
   factory MutableURLRequest.fromUrl(Uri uri) {
     final url = ns.NSURL.URLWithString(
@@ -348,7 +379,8 @@ class CocoaClient extends BaseClient {
   Future<StreamedResponse> send(BaseRequest request) async {
     final stream = request.finalize();
 
-    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url);
+    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url)
+      ..httpMethod = request.method;
     final callbackComplete = Completer<_A>();
 
     final task = urlSession.dataTask(urlRequest, (data, response, error) {
@@ -376,6 +408,10 @@ Future<void> useClient() async {
   print(r.statusCode);
   print(r.contentLength);
   print(r.headers);
+
+  final p =
+      await client.post(Uri.parse("https://ptsv2.com/t/5e7uf-1651618013/post"));
+  print(p.statusCode);
 }
 
 Future<void> useSession() async {
