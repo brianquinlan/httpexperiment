@@ -267,7 +267,6 @@ class URLSession {
   final ns.NSURLSession _nsUrlSession;
 
   URLSession._(this._nsUrlSession) {}
-
   URLSessionConfiguration get configuration {
     return URLSessionConfiguration._(
         ns.NSURLSessionConfiguration.castFrom(_nsUrlSession.configuration!));
@@ -372,7 +371,7 @@ class CocoaClient extends BaseClient {
 late Client client; // from pkg:http
 
 Future<void> useClient() async {
-  final r = await client.get(Uri.parse("http://www.google.com"));
+  final r = await client.get(Uri.parse("http://www.sweetapp.com"));
   print(r.body.substring(0, 70));
   print(r.statusCode);
   print(r.contentLength);
@@ -414,15 +413,3 @@ void main() async {
   await useClient();
   await useSession();
 }
-
-/*
-// https://clang.llvm.org/docs/AutomaticReferenceCounting.html#void-objc-release-id-value
-// https://dart-review.googlesource.com/c/sdk/+/229544/11/tests/ffi/vmspecific_native_finalizer_test.dart#55
-
-final stdlib = ffi.DynamicLibrary.process();
-typedef PosixFreeNative = ffi.Void Function(ffi.Pointer<ffi.Void>);
-final objc_release =
-    stdlib.lookup<ffi.NativeFunction<PosixFreeNative>>('objc_release');
-final objcReleaseFinalizer = ffi.NativeFinalizer(objc_release);
-implements Finalizable
-*/
