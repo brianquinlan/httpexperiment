@@ -40,17 +40,21 @@ enum HTTPCookieAcceptPolicy {
   HTTPCookieAcceptPolicyOnlyFromMainDocumentDomain,
 }
 
-class URLSessionConfiguration {
-  final ns.NSURLSessionConfiguration _configuration;
+class _Object<T extends ns.NSObject> {
+  final T _nsObject;
 
-  URLSessionConfiguration._(this._configuration) {}
+  _Object(this._nsObject);
+}
 
+class URLSessionConfiguration extends _Object<ns.NSURLSessionConfiguration> {
+  URLSessionConfiguration._(ns.NSURLSessionConfiguration c) : super(c) {}
   factory URLSessionConfiguration.backgroundSession(String identifier) {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
         ns.NSURLSessionConfiguration
             .backgroundSessionConfigurationWithIdentifier(
                 _lib, ns.NSObject.castFrom(identifier.toNSString(_lib)))));
   }
+
   factory URLSessionConfiguration.defaultSessionConfiguration() {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
         ns.NSURLSessionConfiguration.getDefaultSessionConfiguration(_lib)!));
@@ -61,33 +65,33 @@ class URLSessionConfiguration {
         ns.NSURLSessionConfiguration.getEphemeralSessionConfiguration(_lib)!));
   }
 
-  bool get allowsCellularAccess => _configuration.allowsCellularAccess;
+  bool get allowsCellularAccess => _nsObject.allowsCellularAccess;
   bool get allowsConstrainedNetworkAccess =>
-      _configuration.allowsConstrainedNetworkAccess;
+      _nsObject.allowsConstrainedNetworkAccess;
   bool get allowsExpensiveNetworkAccess =>
-      _configuration.allowsExpensiveNetworkAccess;
-  bool get discretionary => _configuration.discretionary;
+      _nsObject.allowsExpensiveNetworkAccess;
+  bool get discretionary => _nsObject.discretionary;
   // TODO: Use an enum for httpCookieAcceptPolicy.
   HTTPCookieAcceptPolicy get httpCookieAcceptPolicy =>
-      HTTPCookieAcceptPolicy.values[_configuration.HTTPCookieAcceptPolicy];
-  bool get httpShouldSetCookies => _configuration.HTTPShouldSetCookies;
-  bool get httpShouldUsePipelining => _configuration.HTTPShouldUsePipelining;
-  bool get sessionSendsLaunchEvents => _configuration.sessionSendsLaunchEvents;
+      HTTPCookieAcceptPolicy.values[_nsObject.HTTPCookieAcceptPolicy];
+  bool get httpShouldSetCookies => _nsObject.HTTPShouldSetCookies;
+  bool get httpShouldUsePipelining => _nsObject.HTTPShouldUsePipelining;
+  bool get sessionSendsLaunchEvents => _nsObject.sessionSendsLaunchEvents;
   bool get shouldUseExtendedBackgroundIdleMode =>
-      _configuration.shouldUseExtendedBackgroundIdleMode;
+      _nsObject.shouldUseExtendedBackgroundIdleMode;
   Duration get timeoutIntervalForRequest {
     return Duration(
-        microseconds: (_configuration.timeoutIntervalForRequest *
+        microseconds: (_nsObject.timeoutIntervalForRequest *
                 Duration.microsecondsPerSecond)
             .round());
   }
 
   set timeoutIntervalForRequest(Duration interval) {
-    _configuration.timeoutIntervalForRequest =
+    _nsObject.timeoutIntervalForRequest =
         interval.inMicroseconds.toDouble() * Duration.microsecondsPerSecond;
   }
 
-  bool get waitsForConnectivity => _configuration.waitsForConnectivity;
+  bool get waitsForConnectivity => _nsObject.waitsForConnectivity;
 
   @override
   String toString() {
@@ -305,7 +309,7 @@ class URLSession {
 
   factory URLSession.sessionWithConfiguration(URLSessionConfiguration config) {
     return URLSession._(
-        ns.NSURLSession.sessionWithConfiguration(_lib, config._configuration));
+        ns.NSURLSession.sessionWithConfiguration(_lib, config._nsObject));
   }
 
   factory URLSession.sharedSession() {
