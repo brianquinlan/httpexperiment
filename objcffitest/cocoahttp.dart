@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:ffi/ffi.dart' as pffi;
 import 'nsurlsession_bindings.dart' as ns;
 import 'dart:ffi' as ffi;
 import 'dart:core';
@@ -165,6 +166,12 @@ class URLRequest {
     return Data._(ns.NSData.castFrom(body));
   }
 
+  Map<String, String> get allHttpHeaderFields {
+    final headers =
+        ns.NSDictionary.castFrom(_nsUrlRequest.allHTTPHeaderFields!);
+    return (_foo(headers));
+  }
+
   factory URLRequest.fromUrl(Uri uri) {
     final url = ns.NSURL.URLWithString(
         _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
@@ -193,7 +200,14 @@ class MutableURLRequest extends URLRequest {
     return Data._(ns.NSData.castFrom(nsMutableURLRequest.HTTPBody!));
   }
 
+  void setValueForHttpHeaderField(String value, String field) {
+    nsMutableURLRequest.setValue_forHTTPHeaderField(
+        ns.NSObject.castFrom(field.toNSString(_lib)),
+        ns.NSObject.castFrom(value.toNSString(_lib)));
+  }
+
   set httpBody(Data data) {
+    print('This is some data: $data');
     nsMutableURLRequest.HTTPBody = data._nsData;
   }
 
@@ -202,6 +216,15 @@ class MutableURLRequest extends URLRequest {
         _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
     return MutableURLRequest._(
         ns.NSMutableURLRequest.requestWithURL(_lib, url));
+  }
+
+  @override
+  String toString() {
+    return "[MutableURLRequest " +
+        "httpMethod=$httpMethod " +
+        "allHttpHeaderFields=$allHttpHeaderFields " +
+        "httpBody=$httpBody " +
+        "]";
   }
 }
 
@@ -246,6 +269,18 @@ class Data {
   final ns.NSData _nsData;
 
   Data._(this._nsData) {}
+
+  factory Data.fromUint8List(Uint8List l) {
+    final f = pffi.calloc<ffi.Uint8>(l.length);
+    try {
+      f.asTypedList(l.length).setAll(0, l);
+
+      final data = ns.NSData.dataWithBytes_length(_lib, f.cast(), l.length);
+      return Data._(data);
+    } finally {
+      pffi.calloc.free(f);
+    }
+  }
 
   int get length => _nsData.length;
   Uint8List get bytes {
@@ -383,10 +418,21 @@ class CocoaClient extends BaseClient {
   Future<StreamedResponse> send(BaseRequest request) async {
     final stream = request.finalize();
 
-    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url)
-      ..httpMethod = request.method;
-    final callbackComplete = Completer<_A>();
+    final bytes = await stream.toBytes();
+    print("bytes: $bytes");
+    final d = Data.fromUint8List(bytes);
 
+    print("string: ${String.fromCharCodes(bytes)}");
+
+    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url)
+      ..httpMethod = request.method
+      ..httpBody = d;
+
+    // This will preserve Apple default headers - is that what we want?
+    request.headers.forEach(
+        (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
+    final callbackComplete = Completer<_A>();
+    print(urlRequest);
     final task = urlSession.dataTask(urlRequest, (data, response, error) {
       callbackComplete.complete(_A(data, response, error));
     });
@@ -413,8 +459,10 @@ Future<void> useClient() async {
   print(r.contentLength);
   print(r.headers);
 
-  final p =
-      await client.post(Uri.parse("https://ptsv2.com/t/5e7uf-1651618013/post"));
+  final p = await client.post(
+      Uri.parse("https://ptsv2.com/t/5e7uf-1651618013/post"),
+      headers: {"Content-type": "text/plain"},
+      body: "This is a test".codeUnits);
   print(p.statusCode);
 }
 
