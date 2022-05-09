@@ -6,7 +6,8 @@ cmake_minimum_required(VERSION 3.10)
 project(cupertinohttp_library VERSION 0.0.1 LANGUAGES C)
 
 add_library(cupertinohttp SHARED
-  "cupertinohttp.c"
+  "urlsessionhelper.m"
+  "${CMAKE_CURRENT_LIST_DIR}/dart-sdk/include/dart_api_dl.c"
 )
 
 set_target_properties(cupertinohttp PROPERTIES
@@ -15,3 +16,6 @@ set_target_properties(cupertinohttp PROPERTIES
 )
 
 target_compile_definitions(cupertinohttp PUBLIC DART_SHARED_LIB)
+
+find_library(FOUNDATION_LIB Foundation)
+target_link_libraries(cupertinohttp PRIVATE ${FOUNDATION_LIB})
