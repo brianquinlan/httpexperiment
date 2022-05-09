@@ -1,1 +1,0 @@
-/usr/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=10.11 -dynamiclib -Wl,-headerpad_max_install_names -o libmylib_dylib_dependency.dylib -install_name @rpath/libmylib_dylib_dependency.dylib CMakeFiles/mylib_dylib_dependency.dir/mylib_dylib_dependency.c.o 

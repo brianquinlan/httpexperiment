@@ -1,4 +1,0 @@
-/Users/bquinlan/dart/httpexperiment/cupertinohttp/out/windows_ia32/CMakeFiles/mylib_dylib_dependency.dir
-/Users/bquinlan/dart/httpexperiment/cupertinohttp/out/windows_ia32/CMakeFiles/mylib_dylib.dir
-/Users/bquinlan/dart/httpexperiment/cupertinohttp/out/windows_ia32/CMakeFiles/edit_cache.dir
-/Users/bquinlan/dart/httpexperiment/cupertinohttp/out/windows_ia32/CMakeFiles/rebuild_cache.dir
