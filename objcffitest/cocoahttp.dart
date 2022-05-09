@@ -298,7 +298,7 @@ class Data {
     final subrange =
         length == 0 ? Uint8List(0) : bytes.sublist(0, min(length - 1, 20));
     final b = subrange.map((e) => e.toRadixString(16)).join();
-    return "[Data " + "length=$length " + "bytes=$b..." + "]";
+    return "[Data " + "length=$length " + "bytes=0x$b..." + "]";
   }
 }
 
