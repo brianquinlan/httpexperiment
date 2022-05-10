@@ -12,17 +12,17 @@ import 'package:ffi/ffi.dart' as pkg_ffi;
 ///
 /// Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
 ///
-class CupertinohttpBindings {
+class NativeLibrary {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  CupertinohttpBindings(ffi.DynamicLibrary dynamicLibrary)
+  NativeLibrary(ffi.DynamicLibrary dynamicLibrary)
       : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  CupertinohttpBindings.fromLookup(
+  NativeLibrary.fromLookup(
       ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
           lookup)
       : _lookup = lookup;
@@ -70012,7 +70012,7 @@ class _NSZone extends ffi.Opaque {}
 
 class _ObjCWrapper {
   final ffi.Pointer<ObjCObject> _id;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
 
   _ObjCWrapper._(this._id, this._lib);
 
@@ -70026,23 +70026,22 @@ class _ObjCWrapper {
 }
 
 class NSObject extends _ObjCWrapper {
-  NSObject._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSObject._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSObject castFrom<T extends _ObjCWrapper>(T other) {
     return NSObject._(other._id, other._lib);
   }
 
   static NSObject castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSObject._(other, lib);
   }
 
-  static void load(CupertinohttpBindings _lib) {
+  static void load(NativeLibrary _lib) {
     _lib._objc_msgSend_0(_lib._class_NSObject1, _lib._sel_load1);
   }
 
-  static void initialize(CupertinohttpBindings _lib) {
+  static void initialize(NativeLibrary _lib) {
     _lib._objc_msgSend_0(_lib._class_NSObject1, _lib._sel_initialize1);
   }
 
@@ -70051,19 +70050,18 @@ class NSObject extends _ObjCWrapper {
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject new1(CupertinohttpBindings _lib) {
+  static NSObject new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_new1);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject allocWithZone(
-      CupertinohttpBindings _lib, ffi.Pointer<_NSZone> zone) {
+  static NSObject allocWithZone(NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_allocWithZone_1, zone);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject alloc(CupertinohttpBindings _lib) {
+  static NSObject alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_alloc1);
     return NSObject._(_ret, _lib);
   }
@@ -70086,28 +70084,26 @@ class NSObject extends _ObjCWrapper {
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject copyWithZone(
-      CupertinohttpBindings _lib, ffi.Pointer<_NSZone> zone) {
+  static NSObject copyWithZone(NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_copyWithZone_1, zone);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject mutableCopyWithZone(
-      CupertinohttpBindings _lib, ffi.Pointer<_NSZone> zone) {
+      NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_mutableCopyWithZone_1, zone);
     return NSObject._(_ret, _lib);
   }
 
   static bool instancesRespondToSelector(
-      CupertinohttpBindings _lib, ffi.Pointer<ObjCSel> aSelector) {
+      NativeLibrary _lib, ffi.Pointer<ObjCSel> aSelector) {
     return _lib._objc_msgSend_3(_lib._class_NSObject1,
         _lib._sel_instancesRespondToSelector_1, aSelector);
   }
 
-  static bool conformsToProtocol(
-      CupertinohttpBindings _lib, NSObject? protocol) {
+  static bool conformsToProtocol(NativeLibrary _lib, NSObject? protocol) {
     return _lib._objc_msgSend_4(_lib._class_NSObject1,
         _lib._sel_conformsToProtocol_1, protocol?._id ?? ffi.nullptr);
   }
@@ -70117,7 +70113,7 @@ class NSObject extends _ObjCWrapper {
   }
 
   static IMP instanceMethodForSelector(
-      CupertinohttpBindings _lib, ffi.Pointer<ObjCSel> aSelector) {
+      NativeLibrary _lib, ffi.Pointer<ObjCSel> aSelector) {
     return _lib._objc_msgSend_5(_lib._class_NSObject1,
         _lib._sel_instanceMethodForSelector_1, aSelector);
   }
@@ -70144,7 +70140,7 @@ class NSObject extends _ObjCWrapper {
   }
 
   static NSMethodSignature instanceMethodSignatureForSelector(
-      CupertinohttpBindings _lib, ffi.Pointer<ObjCSel> aSelector) {
+      NativeLibrary _lib, ffi.Pointer<ObjCSel> aSelector) {
     final _ret = _lib._objc_msgSend_9(_lib._class_NSObject1,
         _lib._sel_instanceMethodSignatureForSelector_1, aSelector);
     return NSMethodSignature._(_ret, _lib);
@@ -70158,55 +70154,54 @@ class NSObject extends _ObjCWrapper {
     return _lib._objc_msgSend_10(_id, _lib._sel_retainWeakReference1);
   }
 
-  static bool isSubclassOfClass(CupertinohttpBindings _lib, NSObject aClass) {
+  static bool isSubclassOfClass(NativeLibrary _lib, NSObject aClass) {
     return _lib._objc_msgSend_4(
         _lib._class_NSObject1, _lib._sel_isSubclassOfClass_1, aClass._id);
   }
 
-  static bool resolveClassMethod(
-      CupertinohttpBindings _lib, ffi.Pointer<ObjCSel> sel) {
+  static bool resolveClassMethod(NativeLibrary _lib, ffi.Pointer<ObjCSel> sel) {
     return _lib._objc_msgSend_3(
         _lib._class_NSObject1, _lib._sel_resolveClassMethod_1, sel);
   }
 
   static bool resolveInstanceMethod(
-      CupertinohttpBindings _lib, ffi.Pointer<ObjCSel> sel) {
+      NativeLibrary _lib, ffi.Pointer<ObjCSel> sel) {
     return _lib._objc_msgSend_3(
         _lib._class_NSObject1, _lib._sel_resolveInstanceMethod_1, sel);
   }
 
-  static int hash(CupertinohttpBindings _lib) {
+  static int hash(NativeLibrary _lib) {
     return _lib._objc_msgSend_11(_lib._class_NSObject1, _lib._sel_hash1);
   }
 
-  static NSObject superclass(CupertinohttpBindings _lib) {
+  static NSObject superclass(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_superclass1);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject class1(CupertinohttpBindings _lib) {
+  static NSObject class1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_class1);
     return NSObject._(_ret, _lib);
   }
 
-  static NSString description(CupertinohttpBindings _lib) {
+  static NSString description(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_54(_lib._class_NSObject1, _lib._sel_description1);
     return NSString._(_ret, _lib);
   }
 
-  static NSString debugDescription(CupertinohttpBindings _lib) {
+  static NSString debugDescription(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_54(
         _lib._class_NSObject1, _lib._sel_debugDescription1);
     return NSString._(_ret, _lib);
   }
 
-  static int version(CupertinohttpBindings _lib) {
+  static int version(NativeLibrary _lib) {
     return _lib._objc_msgSend_30(_lib._class_NSObject1, _lib._sel_version1);
   }
 
-  static void setVersion(CupertinohttpBindings _lib, int aVersion) {
+  static void setVersion(NativeLibrary _lib, int aVersion) {
     _lib._objc_msgSend_100(
         _lib._class_NSObject1, _lib._sel_setVersion_1, aVersion);
   }
@@ -70228,7 +70223,7 @@ class NSObject extends _ObjCWrapper {
     return NSObject._(_ret, _lib);
   }
 
-  static void poseAsClass(CupertinohttpBindings _lib, NSObject aClass) {
+  static void poseAsClass(NativeLibrary _lib, NSObject aClass) {
     _lib._objc_msgSend_8(
         _lib._class_NSObject1, _lib._sel_poseAsClass_1, aClass._id);
   }
@@ -70301,7 +70296,7 @@ typedef instancetype = ffi.Pointer<ObjCObject>;
 typedef IMP = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
 
 class NSMethodSignature extends _ObjCWrapper {
-  NSMethodSignature._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMethodSignature._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMethodSignature castFrom<T extends _ObjCWrapper>(T other) {
@@ -70309,25 +70304,24 @@ class NSMethodSignature extends _ObjCWrapper {
   }
 
   static NSMethodSignature castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMethodSignature._(other, lib);
   }
 }
 
 class NSString extends _ObjCWrapper {
-  NSString._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSString castFrom<T extends _ObjCWrapper>(T other) {
     return NSString._(other._id, other._lib);
   }
 
   static NSString castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSString._(other, lib);
   }
 
-  factory NSString(CupertinohttpBindings _lib, String str) {
+  factory NSString(NativeLibrary _lib, String str) {
     final cstr = str.toNativeUtf8();
     final nsstr = stringWithCString_encoding(_lib, cstr.cast(), 4 /* UTF8 */);
     pkg_ffi.calloc.free(cstr);
@@ -70715,19 +70709,19 @@ class NSString extends _ObjCWrapper {
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
-      CupertinohttpBindings _lib) {
+      NativeLibrary _lib) {
     return _lib._objc_msgSend_62(
         _lib._class_NSString1, _lib._sel_availableStringEncodings1);
   }
 
   static NSString localizedNameOfStringEncoding(
-      CupertinohttpBindings _lib, int encoding) {
+      NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
     return NSString._(_ret, _lib);
   }
 
-  static int getDefaultCStringEncoding(CupertinohttpBindings _lib) {
+  static int getDefaultCStringEncoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_11(
         _lib._class_NSString1, _lib._sel_defaultCStringEncoding1);
   }
@@ -70974,41 +70968,39 @@ class NSString extends _ObjCWrapper {
     return NSString._(_ret, _lib);
   }
 
-  static NSString string(CupertinohttpBindings _lib) {
+  static NSString string(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSString1, _lib._sel_string1);
     return NSString._(_ret, _lib);
   }
 
-  static NSString stringWithString(
-      CupertinohttpBindings _lib, NSObject? string) {
+  static NSString stringWithString(NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
     return NSString._(_ret, _lib);
   }
 
   static NSString stringWithCharacters_length(
-      CupertinohttpBindings _lib, ffi.Pointer<unichar> characters, int length) {
+      NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_72(_lib._class_NSString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
     return NSString._(_ret, _lib);
   }
 
-  static NSString stringWithUTF8String(CupertinohttpBindings _lib,
-      ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
+  static NSString stringWithUTF8String(
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
     return NSString._(_ret, _lib);
   }
 
-  static NSString stringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+  static NSString stringWithFormat(NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSString._(_ret, _lib);
   }
 
   static NSString localizedStringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSString._(_ret, _lib);
@@ -71022,7 +71014,7 @@ class NSString extends _ObjCWrapper {
   }
 
   static NSString stringWithCString_encoding(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
     return NSString._(_ret, _lib);
@@ -71050,11 +71042,8 @@ class NSString extends _ObjCWrapper {
     return NSString._(_ret, _lib);
   }
 
-  static NSString stringWithContentsOfURL_encoding_error(
-      CupertinohttpBindings _lib,
-      NSObject? url,
-      int enc,
-      ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
+  static NSString stringWithContentsOfURL_encoding_error(NativeLibrary _lib,
+      NSObject? url, int enc, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_82(
         _lib._class_NSString1,
         _lib._sel_stringWithContentsOfURL_encoding_error_1,
@@ -71064,11 +71053,8 @@ class NSString extends _ObjCWrapper {
     return NSString._(_ret, _lib);
   }
 
-  static NSString stringWithContentsOfFile_encoding_error(
-      CupertinohttpBindings _lib,
-      NSObject? path,
-      int enc,
-      ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
+  static NSString stringWithContentsOfFile_encoding_error(NativeLibrary _lib,
+      NSObject? path, int enc, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_82(
         _lib._class_NSString1,
         _lib._sel_stringWithContentsOfFile_encoding_error_1,
@@ -71105,7 +71091,7 @@ class NSString extends _ObjCWrapper {
   }
 
   static NSString stringWithContentsOfURL_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -71119,7 +71105,7 @@ class NSString extends _ObjCWrapper {
   }
 
   static NSString stringWithContentsOfFile_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -71134,7 +71120,7 @@ class NSString extends _ObjCWrapper {
 
   static int
       stringEncodingForData_encodingOptions_convertedString_usedLossyConversion(
-          CupertinohttpBindings _lib,
+          NativeLibrary _lib,
           NSObject? data,
           NSObject? opts,
           ffi.Pointer<ffi.Pointer<ObjCObject>> string,
@@ -71216,15 +71202,13 @@ class NSString extends _ObjCWrapper {
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject stringWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+  static NSObject stringWithContentsOfFile(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject stringWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+  static NSObject stringWithContentsOfURL(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
@@ -71253,14 +71237,14 @@ class NSString extends _ObjCWrapper {
   }
 
   static NSObject stringWithCString_length(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_73(
         _lib._class_NSString1, _lib._sel_stringWithCString_1, bytes);
     return NSObject._(_ret, _lib);
@@ -71301,7 +71285,7 @@ class NSString extends _ObjCWrapper {
 }
 
 extension StringToNSString on String {
-  NSString toNSString(CupertinohttpBindings lib) => NSString(lib, this);
+  NSString toNSString(NativeLibrary lib) => NSString(lib, this);
 }
 
 typedef NSRange = _NSRange;
@@ -71362,7 +71346,7 @@ void _ObjCBlock_fnPtrTrampoline(
 
 class ObjCBlock {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock._(this._impl, this._lib);
 
   ObjCBlock.fromFunctionPointer(
@@ -71430,7 +71414,7 @@ void _ObjCBlock1_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock1 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock1._(this._impl, this._lib);
 
   ObjCBlock1.fromFunctionPointer(
@@ -71457,15 +71441,14 @@ typedef NSStringEncoding = NSUInteger;
 
 /// Immutable Data
 class NSData extends NSObject {
-  NSData._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSData castFrom<T extends _ObjCWrapper>(T other) {
     return NSData._(other._id, other._lib);
   }
 
   static NSData castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSData._(other, lib);
   }
 
@@ -71539,37 +71522,34 @@ class NSData extends NSObject {
         _id, _lib._sel_enumerateByteRangesUsingBlock_1, block._impl);
   }
 
-  static NSData data(CupertinohttpBindings _lib) {
+  static NSData data(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_data1);
     return NSData._(_ret, _lib);
   }
 
   static NSData dataWithBytes_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(
         _lib._class_NSData1, _lib._sel_dataWithBytes_length_1, bytes, length);
     return NSData._(_ret, _lib);
   }
 
   static NSData dataWithBytesNoCopy_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(_lib._class_NSData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
     return NSData._(_ret, _lib);
   }
 
   static NSData dataWithBytesNoCopy_length_freeWhenDone(
-      CupertinohttpBindings _lib,
-      ffi.Pointer<ffi.Void> bytes,
-      int length,
-      bool b) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_45(_lib._class_NSData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
     return NSData._(_ret, _lib);
   }
 
   static NSData dataWithContentsOfFile_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -71583,7 +71563,7 @@ class NSData extends NSObject {
   }
 
   static NSData dataWithContentsOfURL_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -71596,15 +71576,13 @@ class NSData extends NSObject {
     return NSData._(_ret, _lib);
   }
 
-  static NSData dataWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+  static NSData dataWithContentsOfFile(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSData._(_ret, _lib);
   }
 
-  static NSData dataWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+  static NSData dataWithContentsOfURL(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSData._(_ret, _lib);
@@ -71680,7 +71658,7 @@ class NSData extends NSObject {
     return NSData._(_ret, _lib);
   }
 
-  static NSData dataWithData(CupertinohttpBindings _lib, NSObject? data) {
+  static NSData dataWithData(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
     return NSData._(_ret, _lib);
@@ -71741,7 +71719,7 @@ class NSData extends NSObject {
   }
 
   static NSObject dataWithContentsOfMappedFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+      NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
@@ -71765,12 +71743,12 @@ class NSData extends NSObject {
     return NSString._(_ret, _lib);
   }
 
-  static NSData new1(CupertinohttpBindings _lib) {
+  static NSData new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_new1);
     return NSData._(_ret, _lib);
   }
 
-  static NSData alloc(CupertinohttpBindings _lib) {
+  static NSData alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_alloc1);
     return NSData._(_ret, _lib);
   }
@@ -71814,7 +71792,7 @@ void _ObjCBlock2_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock2 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock2._(this._impl, this._lib);
 
   ObjCBlock2.fromFunctionPointer(
@@ -71872,7 +71850,7 @@ void _ObjCBlock3_fnPtrTrampoline(
 
 class ObjCBlock3 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock3._(this._impl, this._lib);
 
   ObjCBlock3.fromFunctionPointer(
@@ -71946,7 +71924,7 @@ void _ObjCBlock4_fnPtrTrampoline(
 
 class ObjCBlock4 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock4._(this._impl, this._lib);
 
   ObjCBlock4.fromFunctionPointer(
@@ -71969,7 +71947,7 @@ class ObjCBlock4 {
 
 /// Immutable Dictionary
 class NSDictionary extends NSObject {
-  NSDictionary._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSDictionary castFrom<T extends _ObjCWrapper>(T other) {
@@ -71977,7 +71955,7 @@ class NSDictionary extends NSObject {
   }
 
   static NSDictionary castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSDictionary._(other, lib);
   }
 
@@ -72100,21 +72078,21 @@ class NSDictionary extends NSObject {
         url?._id ?? ffi.nullptr, atomically);
   }
 
-  static NSDictionary dictionary(CupertinohttpBindings _lib) {
+  static NSDictionary dictionary(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_dictionary1);
     return NSDictionary._(_ret, _lib);
   }
 
   static NSDictionary dictionaryWithObject_forKey(
-      CupertinohttpBindings _lib, NSObject object, NSObject key) {
+      NativeLibrary _lib, NSObject object, NSObject key) {
     final _ret = _lib._objc_msgSend_75(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObject_forKey_1, object._id, key._id);
     return NSDictionary._(_ret, _lib);
   }
 
   static NSDictionary dictionaryWithObjects_forKeys_count(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects,
       ffi.Pointer<ffi.Pointer<ObjCObject>> keys,
       int cnt) {
@@ -72124,21 +72102,21 @@ class NSDictionary extends NSObject {
   }
 
   static NSDictionary dictionaryWithObjectsAndKeys(
-      CupertinohttpBindings _lib, NSObject firstObject) {
+      NativeLibrary _lib, NSObject firstObject) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObjectsAndKeys_1, firstObject._id);
     return NSDictionary._(_ret, _lib);
   }
 
   static NSDictionary dictionaryWithDictionary(
-      CupertinohttpBindings _lib, NSObject? dict) {
+      NativeLibrary _lib, NSObject? dict) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithDictionary_1, dict?._id ?? ffi.nullptr);
     return NSDictionary._(_ret, _lib);
   }
 
   static NSDictionary dictionaryWithObjects_forKeys(
-      CupertinohttpBindings _lib, NSObject? objects, NSObject? keys) {
+      NativeLibrary _lib, NSObject? objects, NSObject? keys) {
     final _ret = _lib._objc_msgSend_75(
         _lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObjects_forKeys_1,
@@ -72182,8 +72160,7 @@ class NSDictionary extends NSObject {
   /// The array of keys may contain duplicates, which are ignored (it is undefined which object of each duplicate pair is used).
   /// As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and the hash codes must satisfy the hash/isEqual: invariant.
   /// Keys with duplicate hash codes are allowed, but will cause lower performance and increase memory usage.
-  static NSObject sharedKeySetForKeys(
-      CupertinohttpBindings _lib, NSObject? keys) {
+  static NSObject sharedKeySetForKeys(NativeLibrary _lib, NSObject? keys) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSDictionary1,
         _lib._sel_sharedKeySetForKeys_1, keys?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
@@ -72201,13 +72178,13 @@ class NSDictionary extends NSObject {
         len);
   }
 
-  static NSDictionary new1(CupertinohttpBindings _lib) {
+  static NSDictionary new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_new1);
     return NSDictionary._(_ret, _lib);
   }
 
-  static NSDictionary alloc(CupertinohttpBindings _lib) {
+  static NSDictionary alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_alloc1);
     return NSDictionary._(_ret, _lib);
@@ -72233,7 +72210,7 @@ void _ObjCBlock5_fnPtrTrampoline(
 
 class ObjCBlock5 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock5._(this._impl, this._lib);
 
   ObjCBlock5.fromFunctionPointer(
@@ -72271,7 +72248,7 @@ class NSFastEnumerationState extends ffi.Struct {
 }
 
 class NSEnumerator extends NSObject {
-  NSEnumerator._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSEnumerator._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSEnumerator castFrom<T extends _ObjCWrapper>(T other) {
@@ -72279,7 +72256,7 @@ class NSEnumerator extends NSObject {
   }
 
   static NSEnumerator castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSEnumerator._(other, lib);
   }
 
@@ -72293,13 +72270,13 @@ class NSEnumerator extends NSObject {
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSEnumerator new1(CupertinohttpBindings _lib) {
+  static NSEnumerator new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSEnumerator1, _lib._sel_new1);
     return NSEnumerator._(_ret, _lib);
   }
 
-  static NSEnumerator alloc(CupertinohttpBindings _lib) {
+  static NSEnumerator alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSEnumerator1, _lib._sel_alloc1);
     return NSEnumerator._(_ret, _lib);
@@ -72307,15 +72284,14 @@ class NSEnumerator extends NSObject {
 }
 
 class NSValue extends NSObject {
-  NSValue._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSValue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSValue castFrom<T extends _ObjCWrapper>(T other) {
     return NSValue._(other._id, other._lib);
   }
 
   static NSValue castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSValue._(other, lib);
   }
 
@@ -72340,14 +72316,14 @@ class NSValue extends NSObject {
     return NSValue._(_ret, _lib);
   }
 
-  static NSValue valueWithBytes_objCType(CupertinohttpBindings _lib,
+  static NSValue valueWithBytes_objCType(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<pkg_ffi.Char> type) {
     final _ret = _lib._objc_msgSend_105(
         _lib._class_NSValue1, _lib._sel_valueWithBytes_objCType_1, value, type);
     return NSValue._(_ret, _lib);
   }
 
-  static NSValue value_withObjCType(CupertinohttpBindings _lib,
+  static NSValue value_withObjCType(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<pkg_ffi.Char> type) {
     final _ret = _lib._objc_msgSend_105(
         _lib._class_NSValue1, _lib._sel_value_withObjCType_1, value, type);
@@ -72355,7 +72331,7 @@ class NSValue extends NSObject {
   }
 
   static NSValue valueWithNonretainedObject(
-      CupertinohttpBindings _lib, NSObject anObject) {
+      NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_106(_lib._class_NSValue1,
         _lib._sel_valueWithNonretainedObject_1, anObject._id);
     return NSValue._(_ret, _lib);
@@ -72367,7 +72343,7 @@ class NSValue extends NSObject {
   }
 
   static NSValue valueWithPointer(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> pointer) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> pointer) {
     final _ret = _lib._objc_msgSend_107(
         _lib._class_NSValue1, _lib._sel_valueWithPointer_1, pointer);
     return NSValue._(_ret, _lib);
@@ -72386,7 +72362,7 @@ class NSValue extends NSObject {
     _lib._objc_msgSend_53(_id, _lib._sel_getValue_1, value);
   }
 
-  static NSValue valueWithRange(CupertinohttpBindings _lib, NSRange range) {
+  static NSValue valueWithRange(NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_108(
         _lib._class_NSValue1, _lib._sel_valueWithRange_1, range);
     return NSValue._(_ret, _lib);
@@ -72396,27 +72372,26 @@ class NSValue extends NSObject {
     return _lib._objc_msgSend_109(_id, _lib._sel_rangeValue1);
   }
 
-  static NSValue new1(CupertinohttpBindings _lib) {
+  static NSValue new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSValue1, _lib._sel_new1);
     return NSValue._(_ret, _lib);
   }
 
-  static NSValue alloc(CupertinohttpBindings _lib) {
+  static NSValue alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSValue1, _lib._sel_alloc1);
     return NSValue._(_ret, _lib);
   }
 }
 
 class NSNumber extends NSValue {
-  NSNumber._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSNumber._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSNumber castFrom<T extends _ObjCWrapper>(T other) {
     return NSNumber._(other._id, other._lib);
   }
 
   static NSNumber castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSNumber._(other, lib);
   }
 
@@ -72591,109 +72566,104 @@ class NSNumber extends NSValue {
     return NSString._(_ret, _lib);
   }
 
-  static NSNumber numberWithChar(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithChar(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_110(
         _lib._class_NSNumber1, _lib._sel_numberWithChar_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedChar(
-      CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedChar(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_111(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedChar_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithShort(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithShort(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_112(
         _lib._class_NSNumber1, _lib._sel_numberWithShort_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedShort(
-      CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedShort(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_113(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedShort_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithInt(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithInt(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_114(
         _lib._class_NSNumber1, _lib._sel_numberWithInt_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedInt(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedInt(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_115(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedInt_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithLong(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithLong(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_116(
         _lib._class_NSNumber1, _lib._sel_numberWithLong_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedLong(
-      CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedLong(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_117(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedLong_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithLongLong(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithLongLong(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_118(
         _lib._class_NSNumber1, _lib._sel_numberWithLongLong_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedLongLong(
-      CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedLongLong(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_119(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedLongLong_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithFloat(CupertinohttpBindings _lib, double value) {
+  static NSNumber numberWithFloat(NativeLibrary _lib, double value) {
     final _ret = _lib._objc_msgSend_120(
         _lib._class_NSNumber1, _lib._sel_numberWithFloat_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithDouble(CupertinohttpBindings _lib, double value) {
+  static NSNumber numberWithDouble(NativeLibrary _lib, double value) {
     final _ret = _lib._objc_msgSend_121(
         _lib._class_NSNumber1, _lib._sel_numberWithDouble_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithBool(CupertinohttpBindings _lib, bool value) {
+  static NSNumber numberWithBool(NativeLibrary _lib, bool value) {
     final _ret = _lib._objc_msgSend_122(
         _lib._class_NSNumber1, _lib._sel_numberWithBool_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithInteger(CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithInteger(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_116(
         _lib._class_NSNumber1, _lib._sel_numberWithInteger_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber numberWithUnsignedInteger(
-      CupertinohttpBindings _lib, int value) {
+  static NSNumber numberWithUnsignedInteger(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_117(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedInteger_1, value);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSValue valueWithBytes_objCType(CupertinohttpBindings _lib,
+  static NSValue valueWithBytes_objCType(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<pkg_ffi.Char> type) {
     final _ret = _lib._objc_msgSend_105(_lib._class_NSNumber1,
         _lib._sel_valueWithBytes_objCType_1, value, type);
     return NSValue._(_ret, _lib);
   }
 
-  static NSValue value_withObjCType(CupertinohttpBindings _lib,
+  static NSValue value_withObjCType(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<pkg_ffi.Char> type) {
     final _ret = _lib._objc_msgSend_105(
         _lib._class_NSNumber1, _lib._sel_value_withObjCType_1, value, type);
@@ -72701,31 +72671,31 @@ class NSNumber extends NSValue {
   }
 
   static NSValue valueWithNonretainedObject(
-      CupertinohttpBindings _lib, NSObject anObject) {
+      NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_106(_lib._class_NSNumber1,
         _lib._sel_valueWithNonretainedObject_1, anObject._id);
     return NSValue._(_ret, _lib);
   }
 
   static NSValue valueWithPointer(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> pointer) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> pointer) {
     final _ret = _lib._objc_msgSend_107(
         _lib._class_NSNumber1, _lib._sel_valueWithPointer_1, pointer);
     return NSValue._(_ret, _lib);
   }
 
-  static NSValue valueWithRange(CupertinohttpBindings _lib, NSRange range) {
+  static NSValue valueWithRange(NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_108(
         _lib._class_NSNumber1, _lib._sel_valueWithRange_1, range);
     return NSValue._(_ret, _lib);
   }
 
-  static NSNumber new1(CupertinohttpBindings _lib) {
+  static NSNumber new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSNumber1, _lib._sel_new1);
     return NSNumber._(_ret, _lib);
   }
 
-  static NSNumber alloc(CupertinohttpBindings _lib) {
+  static NSNumber alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSNumber1, _lib._sel_alloc1);
     return NSNumber._(_ret, _lib);
   }
@@ -72737,8 +72707,7 @@ abstract class NSCollectionChangeType {
 }
 
 class NSOrderedCollectionChange extends NSObject {
-  NSOrderedCollectionChange._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSOrderedCollectionChange._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSOrderedCollectionChange castFrom<T extends _ObjCWrapper>(T other) {
@@ -72746,7 +72715,7 @@ class NSOrderedCollectionChange extends NSObject {
   }
 
   static NSOrderedCollectionChange castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSOrderedCollectionChange._(other, lib);
   }
 
@@ -72792,13 +72761,13 @@ class NSOrderedCollectionChange extends NSObject {
     return NSOrderedCollectionChange._(_ret, _lib);
   }
 
-  static NSOrderedCollectionChange new1(CupertinohttpBindings _lib) {
+  static NSOrderedCollectionChange new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionChange1, _lib._sel_new1);
     return NSOrderedCollectionChange._(_ret, _lib);
   }
 
-  static NSOrderedCollectionChange alloc(CupertinohttpBindings _lib) {
+  static NSOrderedCollectionChange alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionChange1, _lib._sel_alloc1);
     return NSOrderedCollectionChange._(_ret, _lib);
@@ -72806,7 +72775,7 @@ class NSOrderedCollectionChange extends NSObject {
 }
 
 class NSIndexSet extends NSObject {
-  NSIndexSet._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSIndexSet castFrom<T extends _ObjCWrapper>(T other) {
@@ -72814,24 +72783,24 @@ class NSIndexSet extends NSObject {
   }
 
   static NSIndexSet castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSIndexSet._(other, lib);
   }
 
-  static NSIndexSet indexSet(CupertinohttpBindings _lib) {
+  static NSIndexSet indexSet(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_indexSet1);
     return NSIndexSet._(_ret, _lib);
   }
 
-  static NSIndexSet indexSetWithIndex(CupertinohttpBindings _lib, int value) {
+  static NSIndexSet indexSetWithIndex(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSIndexSet1, _lib._sel_indexSetWithIndex_1, value);
     return NSIndexSet._(_ret, _lib);
   }
 
   static NSIndexSet indexSetWithIndexesInRange(
-      CupertinohttpBindings _lib, NSRange range) {
+      NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSIndexSet1, _lib._sel_indexSetWithIndexesInRange_1, range);
     return NSIndexSet._(_ret, _lib);
@@ -73006,12 +72975,12 @@ class NSIndexSet extends NSObject {
         block._impl);
   }
 
-  static NSIndexSet new1(CupertinohttpBindings _lib) {
+  static NSIndexSet new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_new1);
     return NSIndexSet._(_ret, _lib);
   }
 
-  static NSIndexSet alloc(CupertinohttpBindings _lib) {
+  static NSIndexSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_alloc1);
     return NSIndexSet._(_ret, _lib);
@@ -73031,7 +73000,7 @@ void _ObjCBlock6_fnPtrTrampoline(
 
 class ObjCBlock6 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock6._(this._impl, this._lib);
 
   ObjCBlock6.fromFunctionPointer(
@@ -73064,7 +73033,7 @@ int _ObjCBlock7_fnPtrTrampoline(
 
 class ObjCBlock7 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock7._(this._impl, this._lib);
 
   ObjCBlock7.fromFunctionPointer(
@@ -73097,7 +73066,7 @@ void _ObjCBlock8_fnPtrTrampoline(
 
 class ObjCBlock8 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock8._(this._impl, this._lib);
 
   ObjCBlock8.fromFunctionPointer(
@@ -73117,7 +73086,7 @@ class ObjCBlock8 {
 }
 
 class NSMutableIndexSet extends NSIndexSet {
-  NSMutableIndexSet._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableIndexSet castFrom<T extends _ObjCWrapper>(T other) {
@@ -73125,7 +73094,7 @@ class NSMutableIndexSet extends NSIndexSet {
   }
 
   static NSMutableIndexSet castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableIndexSet._(other, lib);
   }
 
@@ -73164,33 +73133,32 @@ class NSMutableIndexSet extends NSIndexSet {
         _id, _lib._sel_shiftIndexesStartingAtIndex_by_1, index, delta);
   }
 
-  static NSMutableIndexSet indexSet(CupertinohttpBindings _lib) {
+  static NSMutableIndexSet indexSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableIndexSet1, _lib._sel_indexSet1);
     return NSMutableIndexSet._(_ret, _lib);
   }
 
-  static NSMutableIndexSet indexSetWithIndex(
-      CupertinohttpBindings _lib, int value) {
+  static NSMutableIndexSet indexSetWithIndex(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSMutableIndexSet1, _lib._sel_indexSetWithIndex_1, value);
     return NSMutableIndexSet._(_ret, _lib);
   }
 
   static NSMutableIndexSet indexSetWithIndexesInRange(
-      CupertinohttpBindings _lib, NSRange range) {
+      NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_133(_lib._class_NSMutableIndexSet1,
         _lib._sel_indexSetWithIndexesInRange_1, range);
     return NSMutableIndexSet._(_ret, _lib);
   }
 
-  static NSMutableIndexSet new1(CupertinohttpBindings _lib) {
+  static NSMutableIndexSet new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableIndexSet1, _lib._sel_new1);
     return NSMutableIndexSet._(_ret, _lib);
   }
 
-  static NSMutableIndexSet alloc(CupertinohttpBindings _lib) {
+  static NSMutableIndexSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableIndexSet1, _lib._sel_alloc1);
     return NSMutableIndexSet._(_ret, _lib);
@@ -73206,8 +73174,7 @@ abstract class NSOrderedCollectionDifferenceCalculationOptions {
 }
 
 class NSOrderedCollectionDifference extends NSObject {
-  NSOrderedCollectionDifference._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSOrderedCollectionDifference._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSOrderedCollectionDifference castFrom<T extends _ObjCWrapper>(
@@ -73216,7 +73183,7 @@ class NSOrderedCollectionDifference extends NSObject {
   }
 
   static NSOrderedCollectionDifference castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSOrderedCollectionDifference._(other, lib);
   }
 
@@ -73279,13 +73246,13 @@ class NSOrderedCollectionDifference extends NSObject {
     return NSOrderedCollectionDifference._(_ret, _lib);
   }
 
-  static NSOrderedCollectionDifference new1(CupertinohttpBindings _lib) {
+  static NSOrderedCollectionDifference new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionDifference1, _lib._sel_new1);
     return NSOrderedCollectionDifference._(_ret, _lib);
   }
 
-  static NSOrderedCollectionDifference alloc(CupertinohttpBindings _lib) {
+  static NSOrderedCollectionDifference alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionDifference1, _lib._sel_alloc1);
     return NSOrderedCollectionDifference._(_ret, _lib);
@@ -73294,15 +73261,14 @@ class NSOrderedCollectionDifference extends NSObject {
 
 /// Immutable Array
 class NSArray extends NSObject {
-  NSArray._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSArray castFrom<T extends _ObjCWrapper>(T other) {
     return NSArray._(other._id, other._lib);
   }
 
   static NSArray castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSArray._(other, lib);
   }
 
@@ -73520,33 +73486,31 @@ class NSArray extends NSObject {
         cmp);
   }
 
-  static NSArray array(CupertinohttpBindings _lib) {
+  static NSArray array(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_array1);
     return NSArray._(_ret, _lib);
   }
 
-  static NSArray arrayWithObject(
-      CupertinohttpBindings _lib, NSObject anObject) {
+  static NSArray arrayWithObject(NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_47(
         _lib._class_NSArray1, _lib._sel_arrayWithObject_1, anObject._id);
     return NSArray._(_ret, _lib);
   }
 
-  static NSArray arrayWithObjects_count(CupertinohttpBindings _lib,
+  static NSArray arrayWithObjects_count(NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects, int cnt) {
     final _ret = _lib._objc_msgSend_153(
         _lib._class_NSArray1, _lib._sel_arrayWithObjects_count_1, objects, cnt);
     return NSArray._(_ret, _lib);
   }
 
-  static NSArray arrayWithObjects(
-      CupertinohttpBindings _lib, NSObject firstObj) {
+  static NSArray arrayWithObjects(NativeLibrary _lib, NSObject firstObj) {
     final _ret = _lib._objc_msgSend_47(
         _lib._class_NSArray1, _lib._sel_arrayWithObjects_1, firstObj._id);
     return NSArray._(_ret, _lib);
   }
 
-  static NSArray arrayWithArray(CupertinohttpBindings _lib, NSObject? array) {
+  static NSArray arrayWithArray(NativeLibrary _lib, NSObject? array) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSArray1,
         _lib._sel_arrayWithArray_1, array?._id ?? ffi.nullptr);
     return NSArray._(_ret, _lib);
@@ -73585,12 +73549,12 @@ class NSArray extends NSObject {
         url?._id ?? ffi.nullptr, atomically);
   }
 
-  static NSArray new1(CupertinohttpBindings _lib) {
+  static NSArray new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_new1);
     return NSArray._(_ret, _lib);
   }
 
-  static NSArray alloc(CupertinohttpBindings _lib) {
+  static NSArray alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_alloc1);
     return NSArray._(_ret, _lib);
   }
@@ -73610,7 +73574,7 @@ void _ObjCBlock9_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock9 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock9._(this._impl, this._lib);
 
   ObjCBlock9.fromFunctionPointer(
@@ -73647,7 +73611,7 @@ int _ObjCBlock10_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock10 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock10._(this._impl, this._lib);
 
   ObjCBlock10.fromFunctionPointer(
@@ -73692,7 +73656,7 @@ int _ObjCBlock11_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock11 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock11._(this._impl, this._lib);
 
   ObjCBlock11.fromFunctionPointer(
@@ -73716,7 +73680,7 @@ class ObjCBlock11 {
 
 /// Mutable Array
 class NSMutableArray extends NSArray {
-  NSMutableArray._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableArray castFrom<T extends _ObjCWrapper>(T other) {
@@ -73724,7 +73688,7 @@ class NSMutableArray extends NSArray {
   }
 
   static NSMutableArray castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableArray._(other, lib);
   }
 
@@ -73886,8 +73850,7 @@ class NSMutableArray extends NSArray {
         _id, _lib._sel_sortWithOptions_usingComparator_1, opts, cmptr);
   }
 
-  static NSMutableArray arrayWithCapacity(
-      CupertinohttpBindings _lib, int numItems) {
+  static NSMutableArray arrayWithCapacity(NativeLibrary _lib, int numItems) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSMutableArray1, _lib._sel_arrayWithCapacity_1, numItems);
     return NSMutableArray._(_ret, _lib);
@@ -73898,20 +73861,19 @@ class NSMutableArray extends NSArray {
         _id, _lib._sel_applyDifference_1, difference?._id ?? ffi.nullptr);
   }
 
-  static NSMutableArray array(CupertinohttpBindings _lib) {
+  static NSMutableArray array(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_array1);
     return NSMutableArray._(_ret, _lib);
   }
 
-  static NSMutableArray arrayWithObject(
-      CupertinohttpBindings _lib, NSObject anObject) {
+  static NSMutableArray arrayWithObject(NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_47(
         _lib._class_NSMutableArray1, _lib._sel_arrayWithObject_1, anObject._id);
     return NSMutableArray._(_ret, _lib);
   }
 
-  static NSMutableArray arrayWithObjects_count(CupertinohttpBindings _lib,
+  static NSMutableArray arrayWithObjects_count(NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects, int cnt) {
     final _ret = _lib._objc_msgSend_153(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithObjects_count_1, objects, cnt);
@@ -73919,26 +73881,25 @@ class NSMutableArray extends NSArray {
   }
 
   static NSMutableArray arrayWithObjects(
-      CupertinohttpBindings _lib, NSObject firstObj) {
+      NativeLibrary _lib, NSObject firstObj) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithObjects_1, firstObj._id);
     return NSMutableArray._(_ret, _lib);
   }
 
-  static NSMutableArray arrayWithArray(
-      CupertinohttpBindings _lib, NSObject? array) {
+  static NSMutableArray arrayWithArray(NativeLibrary _lib, NSObject? array) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithArray_1, array?._id ?? ffi.nullptr);
     return NSMutableArray._(_ret, _lib);
   }
 
-  static NSMutableArray new1(CupertinohttpBindings _lib) {
+  static NSMutableArray new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_new1);
     return NSMutableArray._(_ret, _lib);
   }
 
-  static NSMutableArray alloc(CupertinohttpBindings _lib) {
+  static NSMutableArray alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_alloc1);
     return NSMutableArray._(_ret, _lib);
@@ -73947,7 +73908,7 @@ class NSMutableArray extends NSArray {
 
 /// Mutable Data
 class NSMutableData extends NSData {
-  NSMutableData._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableData castFrom<T extends _ObjCWrapper>(T other) {
@@ -73955,7 +73916,7 @@ class NSMutableData extends NSData {
   }
 
   static NSMutableData castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableData._(other, lib);
   }
 
@@ -74009,14 +73970,13 @@ class NSMutableData extends NSData {
         replacementLength);
   }
 
-  static NSMutableData dataWithCapacity(
-      CupertinohttpBindings _lib, int aNumItems) {
+  static NSMutableData dataWithCapacity(NativeLibrary _lib, int aNumItems) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSMutableData1, _lib._sel_dataWithCapacity_1, aNumItems);
     return NSMutableData._(_ret, _lib);
   }
 
-  static NSMutableData dataWithLength(CupertinohttpBindings _lib, int length) {
+  static NSMutableData dataWithLength(NativeLibrary _lib, int length) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSMutableData1, _lib._sel_dataWithLength_1, length);
     return NSMutableData._(_ret, _lib);
@@ -74047,38 +74007,35 @@ class NSMutableData extends NSData {
         _id, _lib._sel_compressUsingAlgorithm_error_1, algorithm, error);
   }
 
-  static NSMutableData data(CupertinohttpBindings _lib) {
+  static NSMutableData data(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_data1);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSMutableData dataWithBytes_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytes_length_1, bytes, length);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSMutableData dataWithBytesNoCopy_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSMutableData dataWithBytesNoCopy_length_freeWhenDone(
-      CupertinohttpBindings _lib,
-      ffi.Pointer<ffi.Void> bytes,
-      int length,
-      bool b) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_45(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSMutableData dataWithContentsOfFile_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -74092,7 +74049,7 @@ class NSMutableData extends NSData {
   }
 
   static NSMutableData dataWithContentsOfURL_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -74106,40 +74063,39 @@ class NSMutableData extends NSData {
   }
 
   static NSMutableData dataWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+      NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSMutableData dataWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+      NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSMutableData._(_ret, _lib);
   }
 
-  static NSMutableData dataWithData(
-      CupertinohttpBindings _lib, NSObject? data) {
+  static NSMutableData dataWithData(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
     return NSMutableData._(_ret, _lib);
   }
 
   static NSObject dataWithContentsOfMappedFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+      NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSMutableData new1(CupertinohttpBindings _lib) {
+  static NSMutableData new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_new1);
     return NSMutableData._(_ret, _lib);
   }
 
-  static NSMutableData alloc(CupertinohttpBindings _lib) {
+  static NSMutableData alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_alloc1);
     return NSMutableData._(_ret, _lib);
@@ -74148,7 +74104,7 @@ class NSMutableData extends NSData {
 
 /// Purgeable Data
 class NSPurgeableData extends NSMutableData {
-  NSPurgeableData._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSPurgeableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSPurgeableData castFrom<T extends _ObjCWrapper>(T other) {
@@ -74156,56 +74112,51 @@ class NSPurgeableData extends NSMutableData {
   }
 
   static NSPurgeableData castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSPurgeableData._(other, lib);
   }
 
-  static NSPurgeableData dataWithCapacity(
-      CupertinohttpBindings _lib, int aNumItems) {
+  static NSPurgeableData dataWithCapacity(NativeLibrary _lib, int aNumItems) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSPurgeableData1, _lib._sel_dataWithCapacity_1, aNumItems);
     return NSPurgeableData._(_ret, _lib);
   }
 
-  static NSPurgeableData dataWithLength(
-      CupertinohttpBindings _lib, int length) {
+  static NSPurgeableData dataWithLength(NativeLibrary _lib, int length) {
     final _ret = _lib._objc_msgSend_132(
         _lib._class_NSPurgeableData1, _lib._sel_dataWithLength_1, length);
     return NSPurgeableData._(_ret, _lib);
   }
 
-  static NSPurgeableData data(CupertinohttpBindings _lib) {
+  static NSPurgeableData data(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_data1);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSPurgeableData dataWithBytes_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytes_length_1, bytes, length);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSPurgeableData dataWithBytesNoCopy_length(
-      CupertinohttpBindings _lib, ffi.Pointer<ffi.Void> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_44(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSPurgeableData dataWithBytesNoCopy_length_freeWhenDone(
-      CupertinohttpBindings _lib,
-      ffi.Pointer<ffi.Void> bytes,
-      int length,
-      bool b) {
+      NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_45(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSPurgeableData dataWithContentsOfFile_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -74219,7 +74170,7 @@ class NSPurgeableData extends NSMutableData {
   }
 
   static NSPurgeableData dataWithContentsOfURL_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int readOptionsMask,
       ffi.Pointer<ffi.Pointer<ObjCObject>> errorPtr) {
@@ -74233,40 +74184,39 @@ class NSPurgeableData extends NSMutableData {
   }
 
   static NSPurgeableData dataWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+      NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSPurgeableData dataWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+      NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSPurgeableData._(_ret, _lib);
   }
 
-  static NSPurgeableData dataWithData(
-      CupertinohttpBindings _lib, NSObject? data) {
+  static NSPurgeableData dataWithData(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
     return NSPurgeableData._(_ret, _lib);
   }
 
   static NSObject dataWithContentsOfMappedFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+      NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSPurgeableData new1(CupertinohttpBindings _lib) {
+  static NSPurgeableData new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_new1);
     return NSPurgeableData._(_ret, _lib);
   }
 
-  static NSPurgeableData alloc(CupertinohttpBindings _lib) {
+  static NSPurgeableData alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_alloc1);
     return NSPurgeableData._(_ret, _lib);
@@ -74275,7 +74225,7 @@ class NSPurgeableData extends NSMutableData {
 
 /// Mutable Dictionary
 class NSMutableDictionary extends NSDictionary {
-  NSMutableDictionary._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableDictionary castFrom<T extends _ObjCWrapper>(T other) {
@@ -74283,7 +74233,7 @@ class NSMutableDictionary extends NSDictionary {
   }
 
   static NSMutableDictionary castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableDictionary._(other, lib);
   }
 
@@ -74340,27 +74290,27 @@ class NSMutableDictionary extends NSDictionary {
   }
 
   static NSMutableDictionary dictionaryWithCapacity(
-      CupertinohttpBindings _lib, int numItems) {
+      NativeLibrary _lib, int numItems) {
     final _ret = _lib._objc_msgSend_132(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithCapacity_1, numItems);
     return NSMutableDictionary._(_ret, _lib);
   }
 
-  static NSMutableDictionary dictionary(CupertinohttpBindings _lib) {
+  static NSMutableDictionary dictionary(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableDictionary1, _lib._sel_dictionary1);
     return NSMutableDictionary._(_ret, _lib);
   }
 
   static NSMutableDictionary dictionaryWithObject_forKey(
-      CupertinohttpBindings _lib, NSObject object, NSObject key) {
+      NativeLibrary _lib, NSObject object, NSObject key) {
     final _ret = _lib._objc_msgSend_75(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObject_forKey_1, object._id, key._id);
     return NSMutableDictionary._(_ret, _lib);
   }
 
   static NSMutableDictionary dictionaryWithObjects_forKeys_count(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects,
       ffi.Pointer<ffi.Pointer<ObjCObject>> keys,
       int cnt) {
@@ -74370,21 +74320,21 @@ class NSMutableDictionary extends NSDictionary {
   }
 
   static NSMutableDictionary dictionaryWithObjectsAndKeys(
-      CupertinohttpBindings _lib, NSObject firstObject) {
+      NativeLibrary _lib, NSObject firstObject) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObjectsAndKeys_1, firstObject._id);
     return NSMutableDictionary._(_ret, _lib);
   }
 
   static NSMutableDictionary dictionaryWithDictionary(
-      CupertinohttpBindings _lib, NSObject? dict) {
+      NativeLibrary _lib, NSObject? dict) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithDictionary_1, dict?._id ?? ffi.nullptr);
     return NSMutableDictionary._(_ret, _lib);
   }
 
   static NSMutableDictionary dictionaryWithObjects_forKeys(
-      CupertinohttpBindings _lib, NSObject? objects, NSObject? keys) {
+      NativeLibrary _lib, NSObject? objects, NSObject? keys) {
     final _ret = _lib._objc_msgSend_75(
         _lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObjects_forKeys_1,
@@ -74400,20 +74350,19 @@ class NSMutableDictionary extends NSDictionary {
   /// The array of keys may contain duplicates, which are ignored (it is undefined which object of each duplicate pair is used).
   /// As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and the hash codes must satisfy the hash/isEqual: invariant.
   /// Keys with duplicate hash codes are allowed, but will cause lower performance and increase memory usage.
-  static NSObject sharedKeySetForKeys(
-      CupertinohttpBindings _lib, NSObject? keys) {
+  static NSObject sharedKeySetForKeys(NativeLibrary _lib, NSObject? keys) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableDictionary1,
         _lib._sel_sharedKeySetForKeys_1, keys?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSMutableDictionary new1(CupertinohttpBindings _lib) {
+  static NSMutableDictionary new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableDictionary1, _lib._sel_new1);
     return NSMutableDictionary._(_ret, _lib);
   }
 
-  static NSMutableDictionary alloc(CupertinohttpBindings _lib) {
+  static NSMutableDictionary alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableDictionary1, _lib._sel_alloc1);
     return NSMutableDictionary._(_ret, _lib);
@@ -74421,7 +74370,7 @@ class NSMutableDictionary extends NSDictionary {
 }
 
 class NSNotification extends NSObject {
-  NSNotification._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSNotification._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSNotification castFrom<T extends _ObjCWrapper>(T other) {
@@ -74429,7 +74378,7 @@ class NSNotification extends NSObject {
   }
 
   static NSNotification castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSNotification._(other, lib);
   }
 
@@ -74465,17 +74414,14 @@ class NSNotification extends NSObject {
   }
 
   static NSNotification notificationWithName_object(
-      CupertinohttpBindings _lib, NSNotificationName aName, NSObject anObject) {
+      NativeLibrary _lib, NSNotificationName aName, NSObject anObject) {
     final _ret = _lib._objc_msgSend_75(_lib._class_NSNotification1,
         _lib._sel_notificationWithName_object_1, aName, anObject._id);
     return NSNotification._(_ret, _lib);
   }
 
-  static NSNotification notificationWithName_object_userInfo(
-      CupertinohttpBindings _lib,
-      NSNotificationName aName,
-      NSObject anObject,
-      NSObject? aUserInfo) {
+  static NSNotification notificationWithName_object_userInfo(NativeLibrary _lib,
+      NSNotificationName aName, NSObject anObject, NSObject? aUserInfo) {
     final _ret = _lib._objc_msgSend_182(
         _lib._class_NSNotification1,
         _lib._sel_notificationWithName_object_userInfo_1,
@@ -74491,13 +74437,13 @@ class NSNotification extends NSObject {
     return NSNotification._(_ret, _lib);
   }
 
-  static NSNotification new1(CupertinohttpBindings _lib) {
+  static NSNotification new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotification1, _lib._sel_new1);
     return NSNotification._(_ret, _lib);
   }
 
-  static NSNotification alloc(CupertinohttpBindings _lib) {
+  static NSNotification alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotification1, _lib._sel_alloc1);
     return NSNotification._(_ret, _lib);
@@ -74507,7 +74453,7 @@ class NSNotification extends NSObject {
 typedef NSNotificationName = ffi.Pointer<ObjCObject>;
 
 class NSNotificationCenter extends NSObject {
-  NSNotificationCenter._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSNotificationCenter._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSNotificationCenter castFrom<T extends _ObjCWrapper>(T other) {
@@ -74515,11 +74461,11 @@ class NSNotificationCenter extends NSObject {
   }
 
   static NSNotificationCenter castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSNotificationCenter._(other, lib);
   }
 
-  static NSObject? getDefaultCenter(CupertinohttpBindings _lib) {
+  static NSObject? getDefaultCenter(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSNotificationCenter1, _lib._sel_defaultCenter1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
@@ -74577,13 +74523,13 @@ class NSNotificationCenter extends NSObject {
     return NSObject._(_ret, _lib);
   }
 
-  static NSNotificationCenter new1(CupertinohttpBindings _lib) {
+  static NSNotificationCenter new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotificationCenter1, _lib._sel_new1);
     return NSNotificationCenter._(_ret, _lib);
   }
 
-  static NSNotificationCenter alloc(CupertinohttpBindings _lib) {
+  static NSNotificationCenter alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSNotificationCenter1, _lib._sel_alloc1);
     return NSNotificationCenter._(_ret, _lib);
@@ -74600,7 +74546,7 @@ void _ObjCBlock12_fnPtrTrampoline(
 
 class ObjCBlock12 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock12._(this._impl, this._lib);
 
   ObjCBlock12.fromFunctionPointer(
@@ -74620,15 +74566,14 @@ class ObjCBlock12 {
 }
 
 class NSDate extends NSObject {
-  NSDate._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSDate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSDate castFrom<T extends _ObjCWrapper>(T other) {
     return NSDate._(other._id, other._lib);
   }
 
   static NSDate castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSDate._(other, lib);
   }
 
@@ -74713,34 +74658,32 @@ class NSDate extends NSObject {
     return NSString._(_ret, _lib);
   }
 
-  static NSDate date(CupertinohttpBindings _lib) {
+  static NSDate date(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_date1);
     return NSDate._(_ret, _lib);
   }
 
-  static NSDate dateWithTimeIntervalSinceNow(
-      CupertinohttpBindings _lib, double secs) {
+  static NSDate dateWithTimeIntervalSinceNow(NativeLibrary _lib, double secs) {
     final _ret = _lib._objc_msgSend_186(
         _lib._class_NSDate1, _lib._sel_dateWithTimeIntervalSinceNow_1, secs);
     return NSDate._(_ret, _lib);
   }
 
   static NSDate dateWithTimeIntervalSinceReferenceDate(
-      CupertinohttpBindings _lib, double ti) {
+      NativeLibrary _lib, double ti) {
     final _ret = _lib._objc_msgSend_186(_lib._class_NSDate1,
         _lib._sel_dateWithTimeIntervalSinceReferenceDate_1, ti);
     return NSDate._(_ret, _lib);
   }
 
-  static NSDate dateWithTimeIntervalSince1970(
-      CupertinohttpBindings _lib, double secs) {
+  static NSDate dateWithTimeIntervalSince1970(NativeLibrary _lib, double secs) {
     final _ret = _lib._objc_msgSend_186(
         _lib._class_NSDate1, _lib._sel_dateWithTimeIntervalSince1970_1, secs);
     return NSDate._(_ret, _lib);
   }
 
   static NSDate dateWithTimeInterval_sinceDate(
-      CupertinohttpBindings _lib, double secsToBeAdded, NSObject? date) {
+      NativeLibrary _lib, double secsToBeAdded, NSObject? date) {
     final _ret = _lib._objc_msgSend_189(
         _lib._class_NSDate1,
         _lib._sel_dateWithTimeInterval_sinceDate_1,
@@ -74749,19 +74692,19 @@ class NSDate extends NSObject {
     return NSDate._(_ret, _lib);
   }
 
-  static NSObject? getDistantFuture(CupertinohttpBindings _lib) {
+  static NSObject? getDistantFuture(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_distantFuture1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getDistantPast(CupertinohttpBindings _lib) {
+  static NSObject? getDistantPast(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_distantPast1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getNow(CupertinohttpBindings _lib) {
+  static NSObject? getNow(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_now1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
@@ -74787,12 +74730,12 @@ class NSDate extends NSObject {
     return NSDate._(_ret, _lib);
   }
 
-  static NSDate new1(CupertinohttpBindings _lib) {
+  static NSDate new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_new1);
     return NSDate._(_ret, _lib);
   }
 
-  static NSDate alloc(CupertinohttpBindings _lib) {
+  static NSDate alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_alloc1);
     return NSDate._(_ret, _lib);
   }
@@ -74945,7 +74888,7 @@ abstract class NSURLRequestNetworkServiceType {
 /// which can are used to perform the load of a URL, or as input to the
 /// NSURLConnection class method which performs synchronous loads.
 class NSURLRequest extends NSObject {
-  NSURLRequest._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLRequest castFrom<T extends _ObjCWrapper>(T other) {
@@ -74953,7 +74896,7 @@ class NSURLRequest extends NSObject {
   }
 
   static NSURLRequest castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLRequest._(other, lib);
   }
 
@@ -74966,8 +74909,7 @@ class NSURLRequest extends NSObject {
   /// seconds).
   /// @param URL The URL for the request.
   /// @result A newly-created and autoreleased NSURLRequest instance.
-  static NSURLRequest requestWithURL(
-      CupertinohttpBindings _lib, NSObject? URL) {
+  static NSURLRequest requestWithURL(NativeLibrary _lib, NSObject? URL) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSURLRequest1,
         _lib._sel_requestWithURL_1, URL?._id ?? ffi.nullptr);
     return NSURLRequest._(_ret, _lib);
@@ -74977,7 +74919,7 @@ class NSURLRequest extends NSObject {
   /// @property supportsSecureCoding
   /// @abstract Indicates that NSURLRequest implements the NSSecureCoding protocol.
   /// @result A BOOL value set to YES.
-  static bool getSupportsSecureCoding(CupertinohttpBindings _lib) {
+  static bool getSupportsSecureCoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_10(
         _lib._class_NSURLRequest1, _lib._sel_supportsSecureCoding1);
   }
@@ -74993,7 +74935,7 @@ class NSURLRequest extends NSObject {
   /// timeout intervals.
   /// @result A newly-created and autoreleased NSURLRequest instance.
   static NSURLRequest requestWithURL_cachePolicy_timeoutInterval(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? URL,
       int cachePolicy,
       double timeoutInterval) {
@@ -75213,13 +75155,13 @@ class NSURLRequest extends NSObject {
     return _lib._objc_msgSend_10(_id, _lib._sel_HTTPShouldUsePipelining1);
   }
 
-  static NSURLRequest new1(CupertinohttpBindings _lib) {
+  static NSURLRequest new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLRequest1, _lib._sel_new1);
     return NSURLRequest._(_ret, _lib);
   }
 
-  static NSURLRequest alloc(CupertinohttpBindings _lib) {
+  static NSURLRequest alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLRequest1, _lib._sel_alloc1);
     return NSURLRequest._(_ret, _lib);
@@ -75255,7 +75197,7 @@ class NSURLRequest extends NSObject {
 /// example.
 /// </ul>
 class NSMutableURLRequest extends NSURLRequest {
-  NSMutableURLRequest._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableURLRequest castFrom<T extends _ObjCWrapper>(T other) {
@@ -75263,7 +75205,7 @@ class NSMutableURLRequest extends NSURLRequest {
   }
 
   static NSMutableURLRequest castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableURLRequest._(other, lib);
   }
 
@@ -75649,8 +75591,7 @@ class NSMutableURLRequest extends NSURLRequest {
   /// seconds).
   /// @param URL The URL for the request.
   /// @result A newly-created and autoreleased NSURLRequest instance.
-  static NSMutableURLRequest requestWithURL(
-      CupertinohttpBindings _lib, NSObject? URL) {
+  static NSMutableURLRequest requestWithURL(NativeLibrary _lib, NSObject? URL) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableURLRequest1,
         _lib._sel_requestWithURL_1, URL?._id ?? ffi.nullptr);
     return NSMutableURLRequest._(_ret, _lib);
@@ -75660,7 +75601,7 @@ class NSMutableURLRequest extends NSURLRequest {
   /// @property supportsSecureCoding
   /// @abstract Indicates that NSURLRequest implements the NSSecureCoding protocol.
   /// @result A BOOL value set to YES.
-  static bool getSupportsSecureCoding(CupertinohttpBindings _lib) {
+  static bool getSupportsSecureCoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_10(
         _lib._class_NSMutableURLRequest1, _lib._sel_supportsSecureCoding1);
   }
@@ -75676,7 +75617,7 @@ class NSMutableURLRequest extends NSURLRequest {
   /// timeout intervals.
   /// @result A newly-created and autoreleased NSURLRequest instance.
   static NSMutableURLRequest requestWithURL_cachePolicy_timeoutInterval(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? URL,
       int cachePolicy,
       double timeoutInterval) {
@@ -75689,13 +75630,13 @@ class NSMutableURLRequest extends NSURLRequest {
     return NSMutableURLRequest._(_ret, _lib);
   }
 
-  static NSMutableURLRequest new1(CupertinohttpBindings _lib) {
+  static NSMutableURLRequest new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableURLRequest1, _lib._sel_new1);
     return NSMutableURLRequest._(_ret, _lib);
   }
 
-  static NSMutableURLRequest alloc(CupertinohttpBindings _lib) {
+  static NSMutableURLRequest alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableURLRequest1, _lib._sel_alloc1);
     return NSMutableURLRequest._(_ret, _lib);
@@ -75714,7 +75655,7 @@ abstract class NSHTTPCookieAcceptPolicy {
 }
 
 class NSHTTPCookieStorage extends NSObject {
-  NSHTTPCookieStorage._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSHTTPCookieStorage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSHTTPCookieStorage castFrom<T extends _ObjCWrapper>(T other) {
@@ -75722,18 +75663,18 @@ class NSHTTPCookieStorage extends NSObject {
   }
 
   static NSHTTPCookieStorage castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSHTTPCookieStorage._(other, lib);
   }
 
-  static NSObject? getSharedHTTPCookieStorage(CupertinohttpBindings _lib) {
+  static NSObject? getSharedHTTPCookieStorage(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSHTTPCookieStorage1, _lib._sel_sharedHTTPCookieStorage1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   static NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(
-      CupertinohttpBindings _lib, NSObject? identifier) {
+      NativeLibrary _lib, NSObject? identifier) {
     final _ret = _lib._objc_msgSend_197(
         _lib._class_NSHTTPCookieStorage1,
         _lib._sel_sharedCookieStorageForGroupContainerIdentifier_1,
@@ -75790,13 +75731,13 @@ class NSHTTPCookieStorage extends NSObject {
         task?._id ?? ffi.nullptr, completionHandler._impl);
   }
 
-  static NSHTTPCookieStorage new1(CupertinohttpBindings _lib) {
+  static NSHTTPCookieStorage new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPCookieStorage1, _lib._sel_new1);
     return NSHTTPCookieStorage._(_ret, _lib);
   }
 
-  static NSHTTPCookieStorage alloc(CupertinohttpBindings _lib) {
+  static NSHTTPCookieStorage alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSHTTPCookieStorage1, _lib._sel_alloc1);
     return NSHTTPCookieStorage._(_ret, _lib);
@@ -75804,7 +75745,7 @@ class NSHTTPCookieStorage extends NSObject {
 }
 
 class NSProgress extends NSObject {
-  NSProgress._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSProgress._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSProgress castFrom<T extends _ObjCWrapper>(T other) {
@@ -75812,32 +75753,32 @@ class NSProgress extends NSObject {
   }
 
   static NSProgress castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSProgress._(other, lib);
   }
 
-  static NSProgress currentProgress(CupertinohttpBindings _lib) {
+  static NSProgress currentProgress(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_201(
         _lib._class_NSProgress1, _lib._sel_currentProgress1);
     return NSProgress._(_ret, _lib);
   }
 
   static NSProgress progressWithTotalUnitCount(
-      CupertinohttpBindings _lib, int unitCount) {
+      NativeLibrary _lib, int unitCount) {
     final _ret = _lib._objc_msgSend_202(_lib._class_NSProgress1,
         _lib._sel_progressWithTotalUnitCount_1, unitCount);
     return NSProgress._(_ret, _lib);
   }
 
   static NSProgress discreteProgressWithTotalUnitCount(
-      CupertinohttpBindings _lib, int unitCount) {
+      NativeLibrary _lib, int unitCount) {
     final _ret = _lib._objc_msgSend_202(_lib._class_NSProgress1,
         _lib._sel_discreteProgressWithTotalUnitCount_1, unitCount);
     return NSProgress._(_ret, _lib);
   }
 
   static NSProgress progressWithTotalUnitCount_parent_pendingUnitCount(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       int unitCount,
       NSObject? parent,
       int portionOfParentTotalUnitCount) {
@@ -76082,7 +76023,7 @@ class NSProgress extends NSObject {
   }
 
   static NSObject addSubscriberForFileURL_withPublishingHandler(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       NSProgressPublishingHandler publishingHandler) {
     final _ret = _lib._objc_msgSend_210(
@@ -76093,8 +76034,7 @@ class NSProgress extends NSObject {
     return NSObject._(_ret, _lib);
   }
 
-  static void removeSubscriber(
-      CupertinohttpBindings _lib, NSObject subscriber) {
+  static void removeSubscriber(NativeLibrary _lib, NSObject subscriber) {
     _lib._objc_msgSend_8(
         _lib._class_NSProgress1, _lib._sel_removeSubscriber_1, subscriber._id);
   }
@@ -76103,12 +76043,12 @@ class NSProgress extends NSObject {
     return _lib._objc_msgSend_10(_id, _lib._sel_isOld1);
   }
 
-  static NSProgress new1(CupertinohttpBindings _lib) {
+  static NSProgress new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSProgress1, _lib._sel_new1);
     return NSProgress._(_ret, _lib);
   }
 
-  static NSProgress alloc(CupertinohttpBindings _lib) {
+  static NSProgress alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSProgress1, _lib._sel_alloc1);
     return NSProgress._(_ret, _lib);
@@ -76123,7 +76063,7 @@ void _ObjCBlock13_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block) {
 
 class ObjCBlock13 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock13._(this._impl, this._lib);
 
   ObjCBlock13.fromFunctionPointer(
@@ -76155,7 +76095,7 @@ NSProgressUnpublishingHandler _ObjCBlock14_fnPtrTrampoline(
 
 class ObjCBlock14 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock14._(this._impl, this._lib);
 
   ObjCBlock14.fromFunctionPointer(
@@ -76959,7 +76899,7 @@ void _ObjCBlock15_fnPtrTrampoline(
 
 class ObjCBlock15 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock15._(this._impl, this._lib);
 
   ObjCBlock15.fromFunctionPointer(
@@ -77010,7 +76950,7 @@ void _ObjCBlock16_fnPtrTrampoline(
 
 class ObjCBlock16 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock16._(this._impl, this._lib);
 
   ObjCBlock16.fromFunctionPointer(
@@ -77825,7 +77765,7 @@ void _ObjCBlock17_fnPtrTrampoline(
 
 class ObjCBlock17 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock17._(this._impl, this._lib);
 
   ObjCBlock17.fromFunctionPointer(
@@ -77860,7 +77800,7 @@ void _ObjCBlock18_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock18 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock18._(this._impl, this._lib);
 
   ObjCBlock18.fromFunctionPointer(
@@ -80070,7 +80010,7 @@ void _ObjCBlock19_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block, int arg0) {
 
 class ObjCBlock19 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock19._(this._impl, this._lib);
 
   ObjCBlock19.fromFunctionPointer(this._lib,
@@ -80097,7 +80037,7 @@ void _ObjCBlock20_fnPtrTrampoline(
 
 class ObjCBlock20 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock20._(this._impl, this._lib);
 
   ObjCBlock20.fromFunctionPointer(
@@ -80140,7 +80080,7 @@ void _ObjCBlock21_fnPtrTrampoline(
 
 class ObjCBlock21 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock21._(this._impl, this._lib);
 
   ObjCBlock21.fromFunctionPointer(
@@ -80182,7 +80122,7 @@ void _ObjCBlock22_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock22 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock22._(this._impl, this._lib);
 
   ObjCBlock22.fromFunctionPointer(
@@ -80222,7 +80162,7 @@ void _ObjCBlock23_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock23 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock23._(this._impl, this._lib);
 
   ObjCBlock23.fromFunctionPointer(
@@ -80264,7 +80204,7 @@ void _ObjCBlock24_fnPtrTrampoline(
 
 class ObjCBlock24 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock24._(this._impl, this._lib);
 
   ObjCBlock24.fromFunctionPointer(
@@ -80296,7 +80236,7 @@ void _ObjCBlock25_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block, int arg0) {
 
 class ObjCBlock25 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock25._(this._impl, this._lib);
 
   ObjCBlock25.fromFunctionPointer(this._lib,
@@ -80427,7 +80367,7 @@ abstract class SSLAuthenticate {
 /// and once the WebSocket handshake is successful, the client can read and write
 /// messages that will be framed using the WebSocket protocol by the framework.
 class NSURLSession extends NSObject {
-  NSURLSession._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSession._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSession castFrom<T extends _ObjCWrapper>(T other) {
@@ -80435,13 +80375,13 @@ class NSURLSession extends NSObject {
   }
 
   static NSURLSession castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSession._(other, lib);
   }
 
   /// The shared session uses the currently set global NSURLCache,
   /// NSHTTPCookieStorage and NSURLCredentialStorage objects.
-  static NSObject? getSharedSession(CupertinohttpBindings _lib) {
+  static NSObject? getSharedSession(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSession1, _lib._sel_sharedSession1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
@@ -80453,7 +80393,7 @@ class NSURLSession extends NSObject {
   /// If you do specify a delegate, the delegate will be retained until after
   /// the delegate has been sent the URLSession:didBecomeInvalidWithError: message.
   static NSURLSession sessionWithConfiguration(
-      CupertinohttpBindings _lib, NSObject? configuration) {
+      NativeLibrary _lib, NSObject? configuration) {
     final _ret = _lib._objc_msgSend_211(
         _lib._class_NSURLSession1,
         _lib._sel_sessionWithConfiguration_1,
@@ -80462,7 +80402,7 @@ class NSURLSession extends NSObject {
   }
 
   static NSURLSession sessionWithConfiguration_delegate_delegateQueue(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? configuration,
       NSObject? delegate,
       NSObject? queue) {
@@ -80669,7 +80609,7 @@ class NSURLSession extends NSObject {
     return NSURLSession._(_ret, _lib);
   }
 
-  static NSURLSession new1(CupertinohttpBindings _lib) {
+  static NSURLSession new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSession1, _lib._sel_new1);
     return NSURLSession._(_ret, _lib);
@@ -80758,7 +80698,7 @@ class NSURLSession extends NSObject {
     return NSURLSessionDownloadTask._(_ret, _lib);
   }
 
-  static NSURLSession alloc(CupertinohttpBindings _lib) {
+  static NSURLSession alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSession1, _lib._sel_alloc1);
     return NSURLSession._(_ret, _lib);
@@ -80786,7 +80726,7 @@ void _ObjCBlock26_fnPtrTrampoline(
 
 class ObjCBlock26 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock26._(this._impl, this._lib);
 
   ObjCBlock26.fromFunctionPointer(
@@ -80815,7 +80755,7 @@ class ObjCBlock26 {
 /// functionality over an NSURLSessionTask and its presence is merely
 /// to provide lexical differentiation from download and upload tasks.
 class NSURLSessionDataTask extends NSURLSessionTask {
-  NSURLSessionDataTask._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionDataTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionDataTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -80823,7 +80763,7 @@ class NSURLSessionDataTask extends NSURLSessionTask {
   }
 
   static NSURLSessionDataTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionDataTask._(other, lib);
   }
 
@@ -80833,13 +80773,13 @@ class NSURLSessionDataTask extends NSURLSessionTask {
     return NSURLSessionDataTask._(_ret, _lib);
   }
 
-  static NSURLSessionDataTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionDataTask new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionDataTask1, _lib._sel_new1);
     return NSURLSessionDataTask._(_ret, _lib);
   }
 
-  static NSURLSessionDataTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionDataTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDataTask1, _lib._sel_alloc1);
     return NSURLSessionDataTask._(_ret, _lib);
@@ -80849,7 +80789,7 @@ class NSURLSessionDataTask extends NSURLSessionTask {
 /// NSURLSessionTask - a cancelable object that refers to the lifetime
 /// of processing a given request.
 class NSURLSessionTask extends NSObject {
-  NSURLSessionTask._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -80857,7 +80797,7 @@ class NSURLSessionTask extends NSObject {
   }
 
   static NSURLSessionTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionTask._(other, lib);
   }
 
@@ -81073,13 +81013,13 @@ class NSURLSessionTask extends NSObject {
     return NSURLSessionTask._(_ret, _lib);
   }
 
-  static NSURLSessionTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionTask new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionTask1, _lib._sel_new1);
     return NSURLSessionTask._(_ret, _lib);
   }
 
-  static NSURLSessionTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionTask alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionTask1, _lib._sel_alloc1);
     return NSURLSessionTask._(_ret, _lib);
@@ -81103,8 +81043,7 @@ abstract class NSURLSessionTaskState {
 /// that may be sent referencing an NSURLSessionDataTask equally apply
 /// to NSURLSessionUploadTasks.
 class NSURLSessionUploadTask extends NSURLSessionDataTask {
-  NSURLSessionUploadTask._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionUploadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionUploadTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -81112,7 +81051,7 @@ class NSURLSessionUploadTask extends NSURLSessionDataTask {
   }
 
   static NSURLSessionUploadTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionUploadTask._(other, lib);
   }
 
@@ -81122,13 +81061,13 @@ class NSURLSessionUploadTask extends NSURLSessionDataTask {
     return NSURLSessionUploadTask._(_ret, _lib);
   }
 
-  static NSURLSessionUploadTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionUploadTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionUploadTask1, _lib._sel_new1);
     return NSURLSessionUploadTask._(_ret, _lib);
   }
 
-  static NSURLSessionUploadTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionUploadTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionUploadTask1, _lib._sel_alloc1);
     return NSURLSessionUploadTask._(_ret, _lib);
@@ -81138,8 +81077,7 @@ class NSURLSessionUploadTask extends NSURLSessionDataTask {
 /// NSURLSessionDownloadTask is a task that represents a download to
 /// local storage.
 class NSURLSessionDownloadTask extends NSURLSessionTask {
-  NSURLSessionDownloadTask._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionDownloadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionDownloadTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -81147,7 +81085,7 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
   }
 
   static NSURLSessionDownloadTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionDownloadTask._(other, lib);
   }
 
@@ -81168,13 +81106,13 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
     return NSURLSessionDownloadTask._(_ret, _lib);
   }
 
-  static NSURLSessionDownloadTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionDownloadTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDownloadTask1, _lib._sel_new1);
     return NSURLSessionDownloadTask._(_ret, _lib);
   }
 
-  static NSURLSessionDownloadTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionDownloadTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDownloadTask1, _lib._sel_alloc1);
     return NSURLSessionDownloadTask._(_ret, _lib);
@@ -81202,8 +81140,7 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
 /// and will receive no more messsages.  These streams are
 /// disassociated from the underlying session.
 class NSURLSessionStreamTask extends NSURLSessionTask {
-  NSURLSessionStreamTask._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionStreamTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionStreamTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -81211,7 +81148,7 @@ class NSURLSessionStreamTask extends NSURLSessionTask {
   }
 
   static NSURLSessionStreamTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionStreamTask._(other, lib);
   }
 
@@ -81288,13 +81225,13 @@ class NSURLSessionStreamTask extends NSURLSessionTask {
     return NSURLSessionStreamTask._(_ret, _lib);
   }
 
-  static NSURLSessionStreamTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionStreamTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionStreamTask1, _lib._sel_new1);
     return NSURLSessionStreamTask._(_ret, _lib);
   }
 
-  static NSURLSessionStreamTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionStreamTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionStreamTask1, _lib._sel_alloc1);
     return NSURLSessionStreamTask._(_ret, _lib);
@@ -81315,7 +81252,7 @@ void _ObjCBlock27_fnPtrTrampoline(ffi.Pointer<_ObjCBlock> block,
 
 class ObjCBlock27 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock27._(this._impl, this._lib);
 
   ObjCBlock27.fromFunctionPointer(
@@ -81347,8 +81284,7 @@ class ObjCBlock27 {
 /// support for cookies and will store cookies to the cookie storage on the session and will attach cookies to
 /// outgoing HTTP handshake requests.
 class NSURLSessionWebSocketTask extends NSURLSessionTask {
-  NSURLSessionWebSocketTask._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionWebSocketTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionWebSocketTask castFrom<T extends _ObjCWrapper>(T other) {
@@ -81356,7 +81292,7 @@ class NSURLSessionWebSocketTask extends NSURLSessionTask {
   }
 
   static NSURLSessionWebSocketTask castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionWebSocketTask._(other, lib);
   }
 
@@ -81421,13 +81357,13 @@ class NSURLSessionWebSocketTask extends NSURLSessionTask {
     return NSURLSessionWebSocketTask._(_ret, _lib);
   }
 
-  static NSURLSessionWebSocketTask new1(CupertinohttpBindings _lib) {
+  static NSURLSessionWebSocketTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketTask1, _lib._sel_new1);
     return NSURLSessionWebSocketTask._(_ret, _lib);
   }
 
-  static NSURLSessionWebSocketTask alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionWebSocketTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketTask1, _lib._sel_alloc1);
     return NSURLSessionWebSocketTask._(_ret, _lib);
@@ -81461,8 +81397,7 @@ abstract class NSURLSessionWebSocketMessageType {
 /// and will be delivered from the receive calls. The message can be initialized with data or string.
 /// If initialized with data, the string property will be nil and vice versa.
 class NSURLSessionWebSocketMessage extends NSObject {
-  NSURLSessionWebSocketMessage._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionWebSocketMessage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionWebSocketMessage castFrom<T extends _ObjCWrapper>(
@@ -81471,7 +81406,7 @@ class NSURLSessionWebSocketMessage extends NSObject {
   }
 
   static NSURLSessionWebSocketMessage castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionWebSocketMessage._(other, lib);
   }
 
@@ -81509,13 +81444,13 @@ class NSURLSessionWebSocketMessage extends NSObject {
     return NSURLSessionWebSocketMessage._(_ret, _lib);
   }
 
-  static NSURLSessionWebSocketMessage new1(CupertinohttpBindings _lib) {
+  static NSURLSessionWebSocketMessage new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketMessage1, _lib._sel_new1);
     return NSURLSessionWebSocketMessage._(_ret, _lib);
   }
 
-  static NSURLSessionWebSocketMessage alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionWebSocketMessage alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketMessage1, _lib._sel_alloc1);
     return NSURLSessionWebSocketMessage._(_ret, _lib);
@@ -81571,8 +81506,7 @@ abstract class NSURLSessionMultipathServiceType {
 /// A background session can be used to perform networking operations
 /// on behalf of a suspended application, within certain constraints.
 class NSURLSessionConfiguration extends NSObject {
-  NSURLSessionConfiguration._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionConfiguration castFrom<T extends _ObjCWrapper>(T other) {
@@ -81580,25 +81514,24 @@ class NSURLSessionConfiguration extends NSObject {
   }
 
   static NSURLSessionConfiguration castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionConfiguration._(other, lib);
   }
 
-  static NSObject? getDefaultSessionConfiguration(CupertinohttpBindings _lib) {
+  static NSObject? getDefaultSessionConfiguration(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLSessionConfiguration1,
         _lib._sel_defaultSessionConfiguration1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getEphemeralSessionConfiguration(
-      CupertinohttpBindings _lib) {
+  static NSObject? getEphemeralSessionConfiguration(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLSessionConfiguration1,
         _lib._sel_ephemeralSessionConfiguration1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   static NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(
-      CupertinohttpBindings _lib, NSObject? identifier) {
+      NativeLibrary _lib, NSObject? identifier) {
     final _ret = _lib._objc_msgSend_234(
         _lib._class_NSURLSessionConfiguration1,
         _lib._sel_backgroundSessionConfigurationWithIdentifier_1,
@@ -81970,14 +81903,14 @@ class NSURLSessionConfiguration extends NSObject {
     return NSURLSessionConfiguration._(_ret, _lib);
   }
 
-  static NSURLSessionConfiguration new1(CupertinohttpBindings _lib) {
+  static NSURLSessionConfiguration new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionConfiguration1, _lib._sel_new1);
     return NSURLSessionConfiguration._(_ret, _lib);
   }
 
   static NSURLSessionConfiguration backgroundSessionConfiguration(
-      CupertinohttpBindings _lib, NSObject? identifier) {
+      NativeLibrary _lib, NSObject? identifier) {
     final _ret = _lib._objc_msgSend_234(
         _lib._class_NSURLSessionConfiguration1,
         _lib._sel_backgroundSessionConfiguration_1,
@@ -81985,7 +81918,7 @@ class NSURLSessionConfiguration extends NSObject {
     return NSURLSessionConfiguration._(_ret, _lib);
   }
 
-  static NSURLSessionConfiguration alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionConfiguration alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionConfiguration1, _lib._sel_alloc1);
     return NSURLSessionConfiguration._(_ret, _lib);
@@ -82066,7 +81999,7 @@ abstract class NSURLSessionTaskMetricsDomainResolutionProtocol {
 /// This class defines the performance metrics collected for a request/response transaction during the task execution.
 class NSURLSessionTaskTransactionMetrics extends NSObject {
   NSURLSessionTaskTransactionMetrics._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+      ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionTaskTransactionMetrics castFrom<T extends _ObjCWrapper>(
@@ -82075,7 +82008,7 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   }
 
   static NSURLSessionTaskTransactionMetrics castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionTaskTransactionMetrics._(other, lib);
   }
 
@@ -82341,13 +82274,13 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
     return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
   }
 
-  static NSURLSessionTaskTransactionMetrics new1(CupertinohttpBindings _lib) {
+  static NSURLSessionTaskTransactionMetrics new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskTransactionMetrics1, _lib._sel_new1);
     return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
   }
 
-  static NSURLSessionTaskTransactionMetrics alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionTaskTransactionMetrics alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskTransactionMetrics1, _lib._sel_alloc1);
     return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
@@ -82355,8 +82288,7 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
 }
 
 class NSURLSessionTaskMetrics extends NSObject {
-  NSURLSessionTaskMetrics._(
-      ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLSessionTaskMetrics._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLSessionTaskMetrics castFrom<T extends _ObjCWrapper>(T other) {
@@ -82364,7 +82296,7 @@ class NSURLSessionTaskMetrics extends NSObject {
   }
 
   static NSURLSessionTaskMetrics castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLSessionTaskMetrics._(other, lib);
   }
 
@@ -82393,13 +82325,13 @@ class NSURLSessionTaskMetrics extends NSObject {
     return NSURLSessionTaskMetrics._(_ret, _lib);
   }
 
-  static NSURLSessionTaskMetrics new1(CupertinohttpBindings _lib) {
+  static NSURLSessionTaskMetrics new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskMetrics1, _lib._sel_new1);
     return NSURLSessionTaskMetrics._(_ret, _lib);
   }
 
-  static NSURLSessionTaskMetrics alloc(CupertinohttpBindings _lib) {
+  static NSURLSessionTaskMetrics alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskMetrics1, _lib._sel_alloc1);
     return NSURLSessionTaskMetrics._(_ret, _lib);
@@ -82418,7 +82350,7 @@ abstract class NSItemProviderFileOptions {
 }
 
 class NSItemProvider extends NSObject {
-  NSItemProvider._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSItemProvider._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSItemProvider castFrom<T extends _ObjCWrapper>(T other) {
@@ -82426,7 +82358,7 @@ class NSItemProvider extends NSObject {
   }
 
   static NSItemProvider castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSItemProvider._(other, lib);
   }
 
@@ -82613,13 +82545,13 @@ class NSItemProvider extends NSObject {
         completionHandler);
   }
 
-  static NSItemProvider new1(CupertinohttpBindings _lib) {
+  static NSItemProvider new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSItemProvider1, _lib._sel_new1);
     return NSItemProvider._(_ret, _lib);
   }
 
-  static NSItemProvider alloc(CupertinohttpBindings _lib) {
+  static NSItemProvider alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSItemProvider1, _lib._sel_alloc1);
     return NSItemProvider._(_ret, _lib);
@@ -82639,7 +82571,7 @@ ffi.Pointer<ObjCObject> _ObjCBlock28_fnPtrTrampoline(
 
 class ObjCBlock28 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock28._(this._impl, this._lib);
 
   ObjCBlock28.fromFunctionPointer(
@@ -82673,7 +82605,7 @@ ffi.Pointer<ObjCObject> _ObjCBlock29_fnPtrTrampoline(
 
 class ObjCBlock29 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock29._(this._impl, this._lib);
 
   ObjCBlock29.fromFunctionPointer(
@@ -82716,7 +82648,7 @@ void _ObjCBlock30_fnPtrTrampoline(
 
 class ObjCBlock30 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock30._(this._impl, this._lib);
 
   ObjCBlock30.fromFunctionPointer(
@@ -82753,7 +82685,7 @@ abstract class NSItemProviderErrorCode {
 typedef NSStringEncodingDetectionOptionsKey = ffi.Pointer<ObjCObject>;
 
 class NSMutableString extends NSString {
-  NSMutableString._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableString castFrom<T extends _ObjCWrapper>(T other) {
@@ -82761,7 +82693,7 @@ class NSMutableString extends NSString {
   }
 
   static NSMutableString castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableString._(other, lib);
   }
 
@@ -82822,81 +82754,80 @@ class NSMutableString extends NSString {
     return NSMutableString._(_ret, _lib);
   }
 
-  static NSMutableString stringWithCapacity(
-      CupertinohttpBindings _lib, int capacity) {
+  static NSMutableString stringWithCapacity(NativeLibrary _lib, int capacity) {
     final _ret = _lib._objc_msgSend_256(
         _lib._class_NSMutableString1, _lib._sel_stringWithCapacity_1, capacity);
     return NSMutableString._(_ret, _lib);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
-      CupertinohttpBindings _lib) {
+      NativeLibrary _lib) {
     return _lib._objc_msgSend_62(
         _lib._class_NSMutableString1, _lib._sel_availableStringEncodings1);
   }
 
   static NSString localizedNameOfStringEncoding(
-      CupertinohttpBindings _lib, int encoding) {
+      NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSMutableString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
     return NSString._(_ret, _lib);
   }
 
-  static int getDefaultCStringEncoding(CupertinohttpBindings _lib) {
+  static int getDefaultCStringEncoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_11(
         _lib._class_NSMutableString1, _lib._sel_defaultCStringEncoding1);
   }
 
-  static NSMutableString string(CupertinohttpBindings _lib) {
+  static NSMutableString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableString1, _lib._sel_string1);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString stringWithString(
-      CupertinohttpBindings _lib, NSObject? string) {
+      NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString stringWithCharacters_length(
-      CupertinohttpBindings _lib, ffi.Pointer<unichar> characters, int length) {
+      NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_72(_lib._class_NSMutableString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
     return NSMutableString._(_ret, _lib);
   }
 
-  static NSMutableString stringWithUTF8String(CupertinohttpBindings _lib,
-      ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
+  static NSMutableString stringWithUTF8String(
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSMutableString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString stringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString localizedStringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString stringWithCString_encoding(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSMutableString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
     return NSMutableString._(_ret, _lib);
   }
 
   static NSMutableString stringWithContentsOfURL_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -82910,7 +82841,7 @@ class NSMutableString extends NSString {
   }
 
   static NSMutableString stringWithContentsOfFile_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -82924,7 +82855,7 @@ class NSMutableString extends NSString {
   }
 
   static NSMutableString stringWithContentsOfURL_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -82938,7 +82869,7 @@ class NSMutableString extends NSString {
   }
 
   static NSMutableString stringWithContentsOfFile_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -82953,7 +82884,7 @@ class NSMutableString extends NSString {
 
   static int
       stringEncodingForData_encodingOptions_convertedString_usedLossyConversion(
-          CupertinohttpBindings _lib,
+          NativeLibrary _lib,
           NSObject? data,
           NSObject? opts,
           ffi.Pointer<ffi.Pointer<ObjCObject>> string,
@@ -82967,29 +82898,27 @@ class NSMutableString extends NSString {
         usedLossyConversion);
   }
 
-  static NSObject stringWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+  static NSObject stringWithContentsOfFile(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject stringWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+  static NSObject stringWithContentsOfURL(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString_length(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSMutableString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_73(
         _lib._class_NSMutableString1, _lib._sel_stringWithCString_1, bytes);
     return NSObject._(_ret, _lib);
@@ -82999,7 +82928,7 @@ class NSMutableString extends NSString {
 typedef NSExceptionName = ffi.Pointer<ObjCObject>;
 
 class NSSimpleCString extends NSString {
-  NSSimpleCString._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSSimpleCString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSSimpleCString castFrom<T extends _ObjCWrapper>(T other) {
@@ -83007,78 +82936,78 @@ class NSSimpleCString extends NSString {
   }
 
   static NSSimpleCString castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSSimpleCString._(other, lib);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
-      CupertinohttpBindings _lib) {
+      NativeLibrary _lib) {
     return _lib._objc_msgSend_62(
         _lib._class_NSSimpleCString1, _lib._sel_availableStringEncodings1);
   }
 
   static NSString localizedNameOfStringEncoding(
-      CupertinohttpBindings _lib, int encoding) {
+      NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSSimpleCString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
     return NSString._(_ret, _lib);
   }
 
-  static int getDefaultCStringEncoding(CupertinohttpBindings _lib) {
+  static int getDefaultCStringEncoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_11(
         _lib._class_NSSimpleCString1, _lib._sel_defaultCStringEncoding1);
   }
 
-  static NSSimpleCString string(CupertinohttpBindings _lib) {
+  static NSSimpleCString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSSimpleCString1, _lib._sel_string1);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString stringWithString(
-      CupertinohttpBindings _lib, NSObject? string) {
+      NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString stringWithCharacters_length(
-      CupertinohttpBindings _lib, ffi.Pointer<unichar> characters, int length) {
+      NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_72(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
     return NSSimpleCString._(_ret, _lib);
   }
 
-  static NSSimpleCString stringWithUTF8String(CupertinohttpBindings _lib,
-      ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
+  static NSSimpleCString stringWithUTF8String(
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString stringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString localizedStringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSSimpleCString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString stringWithCString_encoding(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
     return NSSimpleCString._(_ret, _lib);
   }
 
   static NSSimpleCString stringWithContentsOfURL_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83092,7 +83021,7 @@ class NSSimpleCString extends NSString {
   }
 
   static NSSimpleCString stringWithContentsOfFile_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83106,7 +83035,7 @@ class NSSimpleCString extends NSString {
   }
 
   static NSSimpleCString stringWithContentsOfURL_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83120,7 +83049,7 @@ class NSSimpleCString extends NSString {
   }
 
   static NSSimpleCString stringWithContentsOfFile_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83135,7 +83064,7 @@ class NSSimpleCString extends NSString {
 
   static int
       stringEncodingForData_encodingOptions_convertedString_usedLossyConversion(
-          CupertinohttpBindings _lib,
+          NativeLibrary _lib,
           NSObject? data,
           NSObject? opts,
           ffi.Pointer<ffi.Pointer<ObjCObject>> string,
@@ -83149,29 +83078,27 @@ class NSSimpleCString extends NSString {
         usedLossyConversion);
   }
 
-  static NSObject stringWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+  static NSObject stringWithContentsOfFile(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject stringWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+  static NSObject stringWithContentsOfURL(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString_length(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_73(
         _lib._class_NSSimpleCString1, _lib._sel_stringWithCString_1, bytes);
     return NSObject._(_ret, _lib);
@@ -83179,7 +83106,7 @@ class NSSimpleCString extends NSString {
 }
 
 class NSConstantString extends NSSimpleCString {
-  NSConstantString._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSConstantString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSConstantString castFrom<T extends _ObjCWrapper>(T other) {
@@ -83187,78 +83114,78 @@ class NSConstantString extends NSSimpleCString {
   }
 
   static NSConstantString castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSConstantString._(other, lib);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
-      CupertinohttpBindings _lib) {
+      NativeLibrary _lib) {
     return _lib._objc_msgSend_62(
         _lib._class_NSConstantString1, _lib._sel_availableStringEncodings1);
   }
 
   static NSString localizedNameOfStringEncoding(
-      CupertinohttpBindings _lib, int encoding) {
+      NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_12(_lib._class_NSConstantString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
     return NSString._(_ret, _lib);
   }
 
-  static int getDefaultCStringEncoding(CupertinohttpBindings _lib) {
+  static int getDefaultCStringEncoding(NativeLibrary _lib) {
     return _lib._objc_msgSend_11(
         _lib._class_NSConstantString1, _lib._sel_defaultCStringEncoding1);
   }
 
-  static NSConstantString string(CupertinohttpBindings _lib) {
+  static NSConstantString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSConstantString1, _lib._sel_string1);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString stringWithString(
-      CupertinohttpBindings _lib, NSObject? string) {
+      NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSConstantString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString stringWithCharacters_length(
-      CupertinohttpBindings _lib, ffi.Pointer<unichar> characters, int length) {
+      NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_72(_lib._class_NSConstantString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
     return NSConstantString._(_ret, _lib);
   }
 
-  static NSConstantString stringWithUTF8String(CupertinohttpBindings _lib,
-      ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
+  static NSConstantString stringWithUTF8String(
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSConstantString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString stringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSConstantString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString localizedStringWithFormat(
-      CupertinohttpBindings _lib, NSObject? format) {
+      NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSConstantString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString stringWithCString_encoding(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSConstantString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
     return NSConstantString._(_ret, _lib);
   }
 
   static NSConstantString stringWithContentsOfURL_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83272,7 +83199,7 @@ class NSConstantString extends NSSimpleCString {
   }
 
   static NSConstantString stringWithContentsOfFile_encoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       int enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83286,7 +83213,7 @@ class NSConstantString extends NSSimpleCString {
   }
 
   static NSConstantString stringWithContentsOfURL_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? url,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83300,7 +83227,7 @@ class NSConstantString extends NSSimpleCString {
   }
 
   static NSConstantString stringWithContentsOfFile_usedEncoding_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? path,
       ffi.Pointer<NSStringEncoding> enc,
       ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
@@ -83315,7 +83242,7 @@ class NSConstantString extends NSSimpleCString {
 
   static int
       stringEncodingForData_encodingOptions_convertedString_usedLossyConversion(
-          CupertinohttpBindings _lib,
+          NativeLibrary _lib,
           NSObject? data,
           NSObject? opts,
           ffi.Pointer<ffi.Pointer<ObjCObject>> string,
@@ -83329,29 +83256,27 @@ class NSConstantString extends NSSimpleCString {
         usedLossyConversion);
   }
 
-  static NSObject stringWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? path) {
+  static NSObject stringWithContentsOfFile(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSConstantString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
-  static NSObject stringWithContentsOfURL(
-      CupertinohttpBindings _lib, NSObject? url) {
+  static NSObject stringWithContentsOfURL(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSConstantString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString_length(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_81(_lib._class_NSConstantString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
     return NSObject._(_ret, _lib);
   }
 
   static NSObject stringWithCString(
-      CupertinohttpBindings _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
+      NativeLibrary _lib, ffi.Pointer<pkg_ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_73(
         _lib._class_NSConstantString1, _lib._sel_stringWithCString_1, bytes);
     return NSObject._(_ret, _lib);
@@ -83359,7 +83284,7 @@ class NSConstantString extends NSSimpleCString {
 }
 
 class NSCharacterSet extends NSObject {
-  NSCharacterSet._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
@@ -83367,111 +83292,109 @@ class NSCharacterSet extends NSObject {
   }
 
   static NSCharacterSet castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSCharacterSet._(other, lib);
   }
 
-  static NSObject? getControlCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getControlCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_controlCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getWhitespaceCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getWhitespaceCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_whitespaceCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getWhitespaceAndNewlineCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getWhitespaceAndNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSCharacterSet1,
         _lib._sel_whitespaceAndNewlineCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getDecimalDigitCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getDecimalDigitCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_decimalDigitCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_letterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getLowercaseLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getLowercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_lowercaseLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getUppercaseLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getUppercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_uppercaseLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getNonBaseCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getNonBaseCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_nonBaseCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getAlphanumericCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getAlphanumericCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_alphanumericCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getDecomposableCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getDecomposableCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_decomposableCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getIllegalCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getIllegalCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_illegalCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getPunctuationCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getPunctuationCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_punctuationCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getCapitalizedLetterCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getCapitalizedLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_capitalizedLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getSymbolCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getSymbolCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_symbolCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getNewlineCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_newlineCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   static NSCharacterSet characterSetWithRange(
-      CupertinohttpBindings _lib, NSRange aRange) {
+      NativeLibrary _lib, NSRange aRange) {
     final _ret = _lib._objc_msgSend_257(
         _lib._class_NSCharacterSet1, _lib._sel_characterSetWithRange_1, aRange);
     return NSCharacterSet._(_ret, _lib);
   }
 
   static NSCharacterSet characterSetWithCharactersInString(
-      CupertinohttpBindings _lib, NSObject? aString) {
+      NativeLibrary _lib, NSObject? aString) {
     final _ret = _lib._objc_msgSend_258(
         _lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithCharactersInString_1,
@@ -83480,7 +83403,7 @@ class NSCharacterSet extends NSObject {
   }
 
   static NSCharacterSet characterSetWithBitmapRepresentation(
-      CupertinohttpBindings _lib, NSObject? data) {
+      NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_258(
         _lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithBitmapRepresentation_1,
@@ -83489,7 +83412,7 @@ class NSCharacterSet extends NSObject {
   }
 
   static NSCharacterSet characterSetWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? fName) {
+      NativeLibrary _lib, NSObject? fName) {
     final _ret = _lib._objc_msgSend_258(_lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithContentsOfFile_1, fName?._id ?? ffi.nullptr);
     return NSCharacterSet._(_ret, _lib);
@@ -83531,56 +83454,54 @@ class NSCharacterSet extends NSObject {
   }
 
   /// Returns a character set containing the characters allowed in an URL's user subcomponent.
-  static NSObject? getURLUserAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLUserAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLUserAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's password subcomponent.
-  static NSObject? getURLPasswordAllowedCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getURLPasswordAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLPasswordAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's host subcomponent.
-  static NSObject? getURLHostAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLHostAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLHostAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
-  static NSObject? getURLPathAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLPathAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLPathAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's query component.
-  static NSObject? getURLQueryAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLQueryAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLQueryAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's fragment component.
-  static NSObject? getURLFragmentAllowedCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getURLFragmentAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLFragmentAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSCharacterSet new1(CupertinohttpBindings _lib) {
+  static NSCharacterSet new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSCharacterSet1, _lib._sel_new1);
     return NSCharacterSet._(_ret, _lib);
   }
 
-  static NSCharacterSet alloc(CupertinohttpBindings _lib) {
+  static NSCharacterSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSCharacterSet1, _lib._sel_alloc1);
     return NSCharacterSet._(_ret, _lib);
@@ -83588,7 +83509,7 @@ class NSCharacterSet extends NSObject {
 }
 
 class NSMutableCharacterSet extends NSCharacterSet {
-  NSMutableCharacterSet._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSMutableCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSMutableCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
@@ -83596,7 +83517,7 @@ class NSMutableCharacterSet extends NSCharacterSet {
   }
 
   static NSMutableCharacterSet castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSMutableCharacterSet._(other, lib);
   }
 
@@ -83632,107 +83553,105 @@ class NSMutableCharacterSet extends NSCharacterSet {
     _lib._objc_msgSend_0(_id, _lib._sel_invert1);
   }
 
-  static NSObject? getControlCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getControlCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_controlCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getWhitespaceCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getWhitespaceCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_whitespaceCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getWhitespaceAndNewlineCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getWhitespaceAndNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_whitespaceAndNewlineCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getDecimalDigitCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getDecimalDigitCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_decimalDigitCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_letterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getLowercaseLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getLowercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_lowercaseLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getUppercaseLetterCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getUppercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_uppercaseLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getNonBaseCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getNonBaseCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_nonBaseCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getAlphanumericCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getAlphanumericCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_alphanumericCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getDecomposableCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getDecomposableCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_decomposableCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getIllegalCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getIllegalCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_illegalCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getPunctuationCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getPunctuationCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_punctuationCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getCapitalizedLetterCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getCapitalizedLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_capitalizedLetterCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getSymbolCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getSymbolCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_symbolCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getNewlineCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_newlineCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   static NSMutableCharacterSet characterSetWithRange(
-      CupertinohttpBindings _lib, NSRange aRange) {
+      NativeLibrary _lib, NSRange aRange) {
     final _ret = _lib._objc_msgSend_262(_lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithRange_1, aRange);
     return NSMutableCharacterSet._(_ret, _lib);
   }
 
   static NSMutableCharacterSet characterSetWithCharactersInString(
-      CupertinohttpBindings _lib, NSObject? aString) {
+      NativeLibrary _lib, NSObject? aString) {
     final _ret = _lib._objc_msgSend_263(
         _lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithCharactersInString_1,
@@ -83741,7 +83660,7 @@ class NSMutableCharacterSet extends NSCharacterSet {
   }
 
   static NSMutableCharacterSet characterSetWithBitmapRepresentation(
-      CupertinohttpBindings _lib, NSObject? data) {
+      NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_263(
         _lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithBitmapRepresentation_1,
@@ -83750,63 +83669,61 @@ class NSMutableCharacterSet extends NSCharacterSet {
   }
 
   static NSMutableCharacterSet characterSetWithContentsOfFile(
-      CupertinohttpBindings _lib, NSObject? fName) {
+      NativeLibrary _lib, NSObject? fName) {
     final _ret = _lib._objc_msgSend_263(_lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithContentsOfFile_1, fName?._id ?? ffi.nullptr);
     return NSMutableCharacterSet._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's user subcomponent.
-  static NSObject? getURLUserAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLUserAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLUserAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's password subcomponent.
-  static NSObject? getURLPasswordAllowedCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getURLPasswordAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLPasswordAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's host subcomponent.
-  static NSObject? getURLHostAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLHostAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLHostAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
-  static NSObject? getURLPathAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLPathAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLPathAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's query component.
-  static NSObject? getURLQueryAllowedCharacterSet(CupertinohttpBindings _lib) {
+  static NSObject? getURLQueryAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLQueryAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
   /// Returns a character set containing the characters allowed in an URL's fragment component.
-  static NSObject? getURLFragmentAllowedCharacterSet(
-      CupertinohttpBindings _lib) {
+  static NSObject? getURLFragmentAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLFragmentAllowedCharacterSet1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSMutableCharacterSet new1(CupertinohttpBindings _lib) {
+  static NSMutableCharacterSet new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_new1);
     return NSMutableCharacterSet._(_ret, _lib);
   }
 
-  static NSMutableCharacterSet alloc(CupertinohttpBindings _lib) {
+  static NSMutableCharacterSet alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_alloc1);
     return NSMutableCharacterSet._(_ret, _lib);
@@ -83821,7 +83738,7 @@ abstract class NSURLHandleStatus {
 }
 
 class NSURLHandle extends NSObject {
-  NSURLHandle._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLHandle._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLHandle castFrom<T extends _ObjCWrapper>(T other) {
@@ -83829,18 +83746,17 @@ class NSURLHandle extends NSObject {
   }
 
   static NSURLHandle castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLHandle._(other, lib);
   }
 
   static void registerURLHandleClass(
-      CupertinohttpBindings _lib, NSObject anURLHandleSubclass) {
+      NativeLibrary _lib, NSObject anURLHandleSubclass) {
     _lib._objc_msgSend_8(_lib._class_NSURLHandle1,
         _lib._sel_registerURLHandleClass_1, anURLHandleSubclass._id);
   }
 
-  static NSObject URLHandleClassForURL(
-      CupertinohttpBindings _lib, NSObject? anURL) {
+  static NSObject URLHandleClassForURL(NativeLibrary _lib, NSObject? anURL) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSURLHandle1,
         _lib._sel_URLHandleClassForURL_1, anURL?._id ?? ffi.nullptr);
     return NSObject._(_ret, _lib);
@@ -83901,13 +83817,12 @@ class NSURLHandle extends NSObject {
         newBytes?._id ?? ffi.nullptr, yorn);
   }
 
-  static bool canInitWithURL(CupertinohttpBindings _lib, NSObject? anURL) {
+  static bool canInitWithURL(NativeLibrary _lib, NSObject? anURL) {
     return _lib._objc_msgSend_4(_lib._class_NSURLHandle1,
         _lib._sel_canInitWithURL_1, anURL?._id ?? ffi.nullptr);
   }
 
-  static NSURLHandle cachedHandleForURL(
-      CupertinohttpBindings _lib, NSObject? anURL) {
+  static NSURLHandle cachedHandleForURL(NativeLibrary _lib, NSObject? anURL) {
     final _ret = _lib._objc_msgSend_267(_lib._class_NSURLHandle1,
         _lib._sel_cachedHandleForURL_1, anURL?._id ?? ffi.nullptr);
     return NSURLHandle._(_ret, _lib);
@@ -83953,12 +83868,12 @@ class NSURLHandle extends NSObject {
     _lib._objc_msgSend_0(_id, _lib._sel_endLoadInBackground1);
   }
 
-  static NSURLHandle new1(CupertinohttpBindings _lib) {
+  static NSURLHandle new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLHandle1, _lib._sel_new1);
     return NSURLHandle._(_ret, _lib);
   }
 
-  static NSURLHandle alloc(CupertinohttpBindings _lib) {
+  static NSURLHandle alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLHandle1, _lib._sel_alloc1);
     return NSURLHandle._(_ret, _lib);
@@ -83966,15 +83881,14 @@ class NSURLHandle extends NSObject {
 }
 
 class NSURL extends NSObject {
-  NSURL._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSURL._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSURL castFrom<T extends _ObjCWrapper>(T other) {
     return NSURL._(other._id, other._lib);
   }
 
   static NSURL castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURL._(other, lib);
   }
 
@@ -84030,10 +83944,7 @@ class NSURL extends NSObject {
 
   /// Initializes and returns a newly created file NSURL referencing the local file or directory at path, relative to a base URL.
   static NSURL fileURLWithPath_isDirectory_relativeToURL(
-      CupertinohttpBindings _lib,
-      NSObject? path,
-      bool isDir,
-      NSObject? baseURL) {
+      NativeLibrary _lib, NSObject? path, bool isDir, NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_270(
         _lib._class_NSURL1,
         _lib._sel_fileURLWithPath_isDirectory_relativeToURL_1,
@@ -84045,7 +83956,7 @@ class NSURL extends NSObject {
 
   /// Better to use fileURLWithPath:isDirectory:relativeToURL: if you know if the path is a directory vs non-directory, as it saves an I/O.
   static NSURL fileURLWithPath_relativeToURL(
-      CupertinohttpBindings _lib, NSObject? path, NSObject? baseURL) {
+      NativeLibrary _lib, NSObject? path, NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_271(
         _lib._class_NSURL1,
         _lib._sel_fileURLWithPath_relativeToURL_1,
@@ -84055,7 +83966,7 @@ class NSURL extends NSObject {
   }
 
   static NSURL fileURLWithPath_isDirectory(
-      CupertinohttpBindings _lib, NSObject? path, bool isDir) {
+      NativeLibrary _lib, NSObject? path, bool isDir) {
     final _ret = _lib._objc_msgSend_272(
         _lib._class_NSURL1,
         _lib._sel_fileURLWithPath_isDirectory_1,
@@ -84065,7 +83976,7 @@ class NSURL extends NSObject {
   }
 
   /// Better to use fileURLWithPath:isDirectory: if you know if the path is a directory vs non-directory, as it saves an i/o.
-  static NSURL fileURLWithPath(CupertinohttpBindings _lib, NSObject? path) {
+  static NSURL fileURLWithPath(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_273(_lib._class_NSURL1,
         _lib._sel_fileURLWithPath_1, path?._id ?? ffi.nullptr);
     return NSURL._(_ret, _lib);
@@ -84085,7 +83996,7 @@ class NSURL extends NSObject {
 
   /// Initializes and returns a newly created URL referencing the local file or directory at the file system representation of the path. File system representation is a null-terminated C string with canonical UTF-8 encoding.
   static NSURL fileURLWithFileSystemRepresentation_isDirectory_relativeToURL(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       ffi.Pointer<pkg_ffi.Char> path,
       bool isDir,
       NSObject? baseURL) {
@@ -84114,14 +84025,14 @@ class NSURL extends NSObject {
     return NSURL._(_ret, _lib);
   }
 
-  static NSURL URLWithString(CupertinohttpBindings _lib, NSObject? URLString) {
+  static NSURL URLWithString(NativeLibrary _lib, NSObject? URLString) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSURL1,
         _lib._sel_URLWithString_1, URLString?._id ?? ffi.nullptr);
     return NSURL._(_ret, _lib);
   }
 
   static NSURL URLWithString_relativeToURL(
-      CupertinohttpBindings _lib, NSObject? URLString, NSObject? baseURL) {
+      NativeLibrary _lib, NSObject? URLString, NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_75(
         _lib._class_NSURL1,
         _lib._sel_URLWithString_relativeToURL_1,
@@ -84143,7 +84054,7 @@ class NSURL extends NSObject {
 
   /// Initializes and returns a newly created NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
   static NSURL URLWithDataRepresentation_relativeToURL(
-      CupertinohttpBindings _lib, NSObject? data, NSObject? baseURL) {
+      NativeLibrary _lib, NSObject? data, NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_271(
         _lib._class_NSURL1,
         _lib._sel_URLWithDataRepresentation_relativeToURL_1,
@@ -84165,7 +84076,7 @@ class NSURL extends NSObject {
 
   /// Initializes and returns a newly created absolute NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
   static NSURL absoluteURLWithDataRepresentation_relativeToURL(
-      CupertinohttpBindings _lib, NSObject? data, NSObject? baseURL) {
+      NativeLibrary _lib, NSObject? data, NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_271(
         _lib._class_NSURL1,
         _lib._sel_absoluteURLWithDataRepresentation_relativeToURL_1,
@@ -84391,7 +84302,7 @@ class NSURL extends NSObject {
   /// Creates and Initializes an NSURL that refers to a location specified by resolving bookmark data. If this method returns nil, the optional error is populated.
   static NSURL
       URLByResolvingBookmarkData_options_relativeToURL_bookmarkDataIsStale_error(
-          CupertinohttpBindings _lib,
+          NativeLibrary _lib,
           NSObject? bookmarkData,
           int options,
           NSObject? relativeURL,
@@ -84410,7 +84321,7 @@ class NSURL extends NSObject {
 
   /// Creates an alias file on disk at a specified location with specified bookmark data. bookmarkData must have been created with the NSURLBookmarkCreationSuitableForBookmarkFile option. bookmarkFileURL must either refer to an existing file (which will be overwritten), or to location in an existing directory. If this method returns NO, the optional error is populated.
   static bool writeBookmarkData_toURL_options_error(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? bookmarkData,
       NSObject? bookmarkFileURL,
       int options,
@@ -84425,7 +84336,7 @@ class NSURL extends NSObject {
   }
 
   /// Initializes and returns bookmark data derived from an alias file pointed to by a specified URL. If bookmarkFileURL refers to an alias file created prior to OS X v10.6 that contains Alias Manager information but no bookmark data, this method synthesizes bookmark data for the file. If this method returns nil, the optional error is populated.
-  static NSData bookmarkDataWithContentsOfURL_error(CupertinohttpBindings _lib,
+  static NSData bookmarkDataWithContentsOfURL_error(NativeLibrary _lib,
       NSObject? bookmarkFileURL, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_284(
         _lib._class_NSURL1,
@@ -84436,11 +84347,8 @@ class NSURL extends NSObject {
   }
 
   /// Creates and initializes a NSURL that refers to the location specified by resolving the alias file at url. If the url argument does not refer to an alias file as defined by the NSURLIsAliasFileKey property, the NSURL returned is the same as url argument. This method fails and returns nil if the url argument is unreachable, or if the original file or directory could not be located or is not reachable, or if the original file or directory is on a volume that could not be located or mounted. If this method fails, the optional error is populated. The NSURLBookmarkResolutionWithSecurityScope option is not supported by this method.
-  static NSURL URLByResolvingAliasFileAtURL_options_error(
-      CupertinohttpBindings _lib,
-      NSObject? url,
-      int options,
-      ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
+  static NSURL URLByResolvingAliasFileAtURL_options_error(NativeLibrary _lib,
+      NSObject? url, int options, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_285(
         _lib._class_NSURL1,
         _lib._sel_URLByResolvingAliasFileAtURL_options_error_1,
@@ -84491,7 +84399,7 @@ class NSURL extends NSObject {
 
   /// The following methods work on the path portion of a URL in the same manner that the NSPathUtilities methods on NSString do.
   static NSURL fileURLWithPathComponents(
-      CupertinohttpBindings _lib, NSObject? components) {
+      NativeLibrary _lib, NSObject? components) {
     final _ret = _lib._objc_msgSend_273(_lib._class_NSURL1,
         _lib._sel_fileURLWithPathComponents_1, components?._id ?? ffi.nullptr);
     return NSURL._(_ret, _lib);
@@ -84603,12 +84511,12 @@ class NSURL extends NSObject {
     return NSURLHandle._(_ret, _lib);
   }
 
-  static NSURL new1(CupertinohttpBindings _lib) {
+  static NSURL new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURL1, _lib._sel_new1);
     return NSURL._(_ret, _lib);
   }
 
-  static NSURL alloc(CupertinohttpBindings _lib) {
+  static NSURL alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURL1, _lib._sel_alloc1);
     return NSURL._(_ret, _lib);
   }
@@ -84655,7 +84563,7 @@ typedef NSURLUbiquitousSharedItemPermissions = ffi.Pointer<ObjCObject>;
 
 /// NSURLQueryItem encapsulates a single query name-value pair. The name and value strings of a query name-value pair are not percent encoded. For use with the NSURLComponents queryItems property.
 class NSURLQueryItem extends NSObject {
-  NSURLQueryItem._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLQueryItem._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLQueryItem castFrom<T extends _ObjCWrapper>(T other) {
@@ -84663,7 +84571,7 @@ class NSURLQueryItem extends NSObject {
   }
 
   static NSURLQueryItem castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLQueryItem._(other, lib);
   }
 
@@ -84674,7 +84582,7 @@ class NSURLQueryItem extends NSObject {
   }
 
   static NSURLQueryItem queryItemWithName_value(
-      CupertinohttpBindings _lib, NSObject? name, NSObject? value) {
+      NativeLibrary _lib, NSObject? name, NSObject? value) {
     final _ret = _lib._objc_msgSend_75(
         _lib._class_NSURLQueryItem1,
         _lib._sel_queryItemWithName_value_1,
@@ -84693,13 +84601,13 @@ class NSURLQueryItem extends NSObject {
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSURLQueryItem new1(CupertinohttpBindings _lib) {
+  static NSURLQueryItem new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLQueryItem1, _lib._sel_new1);
     return NSURLQueryItem._(_ret, _lib);
   }
 
-  static NSURLQueryItem alloc(CupertinohttpBindings _lib) {
+  static NSURLQueryItem alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLQueryItem1, _lib._sel_alloc1);
     return NSURLQueryItem._(_ret, _lib);
@@ -84707,7 +84615,7 @@ class NSURLQueryItem extends NSObject {
 }
 
 class NSURLComponents extends NSObject {
-  NSURLComponents._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLComponents._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLComponents castFrom<T extends _ObjCWrapper>(T other) {
@@ -84715,7 +84623,7 @@ class NSURLComponents extends NSObject {
   }
 
   static NSURLComponents castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLComponents._(other, lib);
   }
 
@@ -84739,7 +84647,7 @@ class NSURLComponents extends NSObject {
 
   /// Initializes and returns a newly created NSURLComponents with the components of a URL. If resolvingAgainstBaseURL is YES and url is a relative URL, the components of [url absoluteURL] are used. If the url string from the NSURL is malformed, nil is returned.
   static NSURLComponents componentsWithURL_resolvingAgainstBaseURL(
-      CupertinohttpBindings _lib, NSObject? url, bool resolve) {
+      NativeLibrary _lib, NSObject? url, bool resolve) {
     final _ret = _lib._objc_msgSend_92(
         _lib._class_NSURLComponents1,
         _lib._sel_componentsWithURL_resolvingAgainstBaseURL_1,
@@ -84757,7 +84665,7 @@ class NSURLComponents extends NSObject {
 
   /// Initializes and returns a newly created NSURLComponents with a URL string. If the URLString is malformed, nil is returned.
   static NSURLComponents componentsWithString(
-      CupertinohttpBindings _lib, NSObject? URLString) {
+      NativeLibrary _lib, NSObject? URLString) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSURLComponents1,
         _lib._sel_componentsWithString_1, URLString?._id ?? ffi.nullptr);
     return NSURLComponents._(_ret, _lib);
@@ -85003,13 +84911,13 @@ class NSURLComponents extends NSObject {
         value?._id ?? ffi.nullptr);
   }
 
-  static NSURLComponents new1(CupertinohttpBindings _lib) {
+  static NSURLComponents new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLComponents1, _lib._sel_new1);
     return NSURLComponents._(_ret, _lib);
   }
 
-  static NSURLComponents alloc(CupertinohttpBindings _lib) {
+  static NSURLComponents alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLComponents1, _lib._sel_alloc1);
     return NSURLComponents._(_ret, _lib);
@@ -85018,7 +84926,7 @@ class NSURLComponents extends NSObject {
 
 /// NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by NSFileSecurity.
 class NSFileSecurity extends NSObject {
-  NSFileSecurity._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSFileSecurity._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSFileSecurity castFrom<T extends _ObjCWrapper>(T other) {
@@ -85026,7 +84934,7 @@ class NSFileSecurity extends NSObject {
   }
 
   static NSFileSecurity castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSFileSecurity._(other, lib);
   }
 
@@ -85036,13 +84944,13 @@ class NSFileSecurity extends NSObject {
     return NSFileSecurity._(_ret, _lib);
   }
 
-  static NSFileSecurity new1(CupertinohttpBindings _lib) {
+  static NSFileSecurity new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSFileSecurity1, _lib._sel_new1);
     return NSFileSecurity._(_ret, _lib);
   }
 
-  static NSFileSecurity alloc(CupertinohttpBindings _lib) {
+  static NSFileSecurity alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSFileSecurity1, _lib._sel_alloc1);
     return NSFileSecurity._(_ret, _lib);
@@ -85061,7 +84969,7 @@ class NSFileSecurity extends NSObject {
 /// NSURLConnection and NSURLConnectionDelegate for more information
 /// about receiving the content data for a URL load.
 class NSURLResponse extends NSObject {
-  NSURLResponse._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSURLResponse castFrom<T extends _ObjCWrapper>(T other) {
@@ -85069,7 +84977,7 @@ class NSURLResponse extends NSObject {
   }
 
   static NSURLResponse castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSURLResponse._(other, lib);
   }
 
@@ -85160,13 +85068,13 @@ class NSURLResponse extends NSObject {
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSURLResponse new1(CupertinohttpBindings _lib) {
+  static NSURLResponse new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLResponse1, _lib._sel_new1);
     return NSURLResponse._(_ret, _lib);
   }
 
-  static NSURLResponse alloc(CupertinohttpBindings _lib) {
+  static NSURLResponse alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLResponse1, _lib._sel_alloc1);
     return NSURLResponse._(_ret, _lib);
@@ -85181,7 +85089,7 @@ class NSURLResponse extends NSObject {
 /// provides conveniences for accessing information specific to HTTP
 /// protocol responses.
 class NSHTTPURLResponse extends NSURLResponse {
-  NSHTTPURLResponse._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSHTTPURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSHTTPURLResponse castFrom<T extends _ObjCWrapper>(T other) {
@@ -85189,7 +85097,7 @@ class NSHTTPURLResponse extends NSURLResponse {
   }
 
   static NSHTTPURLResponse castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSHTTPURLResponse._(other, lib);
   }
 
@@ -85260,19 +85168,19 @@ class NSHTTPURLResponse extends NSURLResponse {
   /// @param statusCode the status code to use to produce a localized string.
   /// @result A localized string corresponding to the given status code.
   static NSString localizedStringForStatusCode(
-      CupertinohttpBindings _lib, int statusCode) {
+      NativeLibrary _lib, int statusCode) {
     final _ret = _lib._objc_msgSend_290(_lib._class_NSHTTPURLResponse1,
         _lib._sel_localizedStringForStatusCode_1, statusCode);
     return NSString._(_ret, _lib);
   }
 
-  static NSHTTPURLResponse new1(CupertinohttpBindings _lib) {
+  static NSHTTPURLResponse new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPURLResponse1, _lib._sel_new1);
     return NSHTTPURLResponse._(_ret, _lib);
   }
 
-  static NSHTTPURLResponse alloc(CupertinohttpBindings _lib) {
+  static NSHTTPURLResponse alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPURLResponse1, _lib._sel_alloc1);
     return NSHTTPURLResponse._(_ret, _lib);
@@ -85280,7 +85188,7 @@ class NSHTTPURLResponse extends NSURLResponse {
 }
 
 class NSException extends NSObject {
-  NSException._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSException._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSException castFrom<T extends _ObjCWrapper>(T other) {
@@ -85288,15 +85196,12 @@ class NSException extends NSObject {
   }
 
   static NSException castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSException._(other, lib);
   }
 
-  static NSException exceptionWithName_reason_userInfo(
-      CupertinohttpBindings _lib,
-      NSExceptionName name,
-      NSObject? reason,
-      NSObject? userInfo) {
+  static NSException exceptionWithName_reason_userInfo(NativeLibrary _lib,
+      NSExceptionName name, NSObject? reason, NSObject? userInfo) {
     final _ret = _lib._objc_msgSend_291(
         _lib._class_NSException1,
         _lib._sel_exceptionWithName_reason_userInfo_1,
@@ -85346,13 +85251,13 @@ class NSException extends NSObject {
   }
 
   static void raise_format(
-      CupertinohttpBindings _lib, NSExceptionName name, NSObject? format) {
+      NativeLibrary _lib, NSExceptionName name, NSObject? format) {
     _lib._objc_msgSend_101(_lib._class_NSException1, _lib._sel_raise_format_1,
         name, format?._id ?? ffi.nullptr);
   }
 
-  static void raise_format_arguments(CupertinohttpBindings _lib,
-      NSExceptionName name, NSObject? format, va_list argList) {
+  static void raise_format_arguments(NativeLibrary _lib, NSExceptionName name,
+      NSObject? format, va_list argList) {
     _lib._objc_msgSend_292(
         _lib._class_NSException1,
         _lib._sel_raise_format_arguments_1,
@@ -85361,12 +85266,12 @@ class NSException extends NSObject {
         argList);
   }
 
-  static NSException new1(CupertinohttpBindings _lib) {
+  static NSException new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSException1, _lib._sel_new1);
     return NSException._(_ret, _lib);
   }
 
-  static NSException alloc(CupertinohttpBindings _lib) {
+  static NSException alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSException1, _lib._sel_alloc1);
     return NSException._(_ret, _lib);
@@ -85377,7 +85282,7 @@ typedef NSUncaughtExceptionHandler
     = ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>;
 
 class NSAssertionHandler extends NSObject {
-  NSAssertionHandler._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSAssertionHandler._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSAssertionHandler castFrom<T extends _ObjCWrapper>(T other) {
@@ -85385,11 +85290,11 @@ class NSAssertionHandler extends NSObject {
   }
 
   static NSAssertionHandler castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSAssertionHandler._(other, lib);
   }
 
-  static NSObject? getCurrentHandler(CupertinohttpBindings _lib) {
+  static NSObject? getCurrentHandler(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSAssertionHandler1, _lib._sel_currentHandler1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
@@ -85422,13 +85327,13 @@ class NSAssertionHandler extends NSObject {
         format?._id ?? ffi.nullptr);
   }
 
-  static NSAssertionHandler new1(CupertinohttpBindings _lib) {
+  static NSAssertionHandler new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSAssertionHandler1, _lib._sel_new1);
     return NSAssertionHandler._(_ret, _lib);
   }
 
-  static NSAssertionHandler alloc(CupertinohttpBindings _lib) {
+  static NSAssertionHandler alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSAssertionHandler1, _lib._sel_alloc1);
     return NSAssertionHandler._(_ret, _lib);
@@ -85436,7 +85341,7 @@ class NSAssertionHandler extends NSObject {
 }
 
 class NSOperation extends NSObject {
-  NSOperation._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSOperation castFrom<T extends _ObjCWrapper>(T other) {
@@ -85444,7 +85349,7 @@ class NSOperation extends NSObject {
   }
 
   static NSOperation castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSOperation._(other, lib);
   }
 
@@ -85546,12 +85451,12 @@ class NSOperation extends NSObject {
     _lib._objc_msgSend_8(_id, _lib._sel_setName_1, value?._id ?? ffi.nullptr);
   }
 
-  static NSOperation new1(CupertinohttpBindings _lib) {
+  static NSOperation new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSOperation1, _lib._sel_new1);
     return NSOperation._(_ret, _lib);
   }
 
-  static NSOperation alloc(CupertinohttpBindings _lib) {
+  static NSOperation alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperation1, _lib._sel_alloc1);
     return NSOperation._(_ret, _lib);
@@ -85567,7 +85472,7 @@ abstract class NSOperationQueuePriority {
 }
 
 class NSBlockOperation extends NSOperation {
-  NSBlockOperation._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSBlockOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSBlockOperation castFrom<T extends _ObjCWrapper>(T other) {
@@ -85575,12 +85480,12 @@ class NSBlockOperation extends NSOperation {
   }
 
   static NSBlockOperation castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSBlockOperation._(other, lib);
   }
 
   static NSBlockOperation blockOperationWithBlock(
-      CupertinohttpBindings _lib, ObjCBlock13 block) {
+      NativeLibrary _lib, ObjCBlock13 block) {
     final _ret = _lib._objc_msgSend_299(_lib._class_NSBlockOperation1,
         _lib._sel_blockOperationWithBlock_1, block._impl);
     return NSBlockOperation._(_ret, _lib);
@@ -85595,13 +85500,13 @@ class NSBlockOperation extends NSOperation {
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSBlockOperation new1(CupertinohttpBindings _lib) {
+  static NSBlockOperation new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSBlockOperation1, _lib._sel_new1);
     return NSBlockOperation._(_ret, _lib);
   }
 
-  static NSBlockOperation alloc(CupertinohttpBindings _lib) {
+  static NSBlockOperation alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSBlockOperation1, _lib._sel_alloc1);
     return NSBlockOperation._(_ret, _lib);
@@ -85609,7 +85514,7 @@ class NSBlockOperation extends NSOperation {
 }
 
 class NSInvocationOperation extends NSOperation {
-  NSInvocationOperation._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSInvocationOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSInvocationOperation castFrom<T extends _ObjCWrapper>(T other) {
@@ -85617,7 +85522,7 @@ class NSInvocationOperation extends NSOperation {
   }
 
   static NSInvocationOperation castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSInvocationOperation._(other, lib);
   }
 
@@ -85644,13 +85549,13 @@ class NSInvocationOperation extends NSOperation {
     return NSObject._(_ret, _lib);
   }
 
-  static NSInvocationOperation new1(CupertinohttpBindings _lib) {
+  static NSInvocationOperation new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSInvocationOperation1, _lib._sel_new1);
     return NSInvocationOperation._(_ret, _lib);
   }
 
-  static NSInvocationOperation alloc(CupertinohttpBindings _lib) {
+  static NSInvocationOperation alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSInvocationOperation1, _lib._sel_alloc1);
     return NSInvocationOperation._(_ret, _lib);
@@ -85658,7 +85563,7 @@ class NSInvocationOperation extends NSOperation {
 }
 
 class NSOperationQueue extends NSObject {
-  NSOperationQueue._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  NSOperationQueue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static NSOperationQueue castFrom<T extends _ObjCWrapper>(T other) {
@@ -85666,7 +85571,7 @@ class NSOperationQueue extends NSObject {
   }
 
   static NSOperationQueue castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSOperationQueue._(other, lib);
   }
 
@@ -85765,13 +85670,13 @@ class NSOperationQueue extends NSObject {
     _lib._objc_msgSend_0(_id, _lib._sel_waitUntilAllOperationsAreFinished1);
   }
 
-  static NSObject? getCurrentQueue(CupertinohttpBindings _lib) {
+  static NSObject? getCurrentQueue(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOperationQueue1, _lib._sel_currentQueue1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
   }
 
-  static NSObject? getMainQueue(CupertinohttpBindings _lib) {
+  static NSObject? getMainQueue(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOperationQueue1, _lib._sel_mainQueue1);
     return _ret.address == 0 ? null : NSObject._(_ret, _lib);
@@ -85787,13 +85692,13 @@ class NSOperationQueue extends NSObject {
     return _lib._objc_msgSend_11(_id, _lib._sel_operationCount1);
   }
 
-  static NSOperationQueue new1(CupertinohttpBindings _lib) {
+  static NSOperationQueue new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperationQueue1, _lib._sel_new1);
     return NSOperationQueue._(_ret, _lib);
   }
 
-  static NSOperationQueue alloc(CupertinohttpBindings _lib) {
+  static NSOperationQueue alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperationQueue1, _lib._sel_alloc1);
     return NSOperationQueue._(_ret, _lib);
@@ -85805,15 +85710,14 @@ typedef NSErrorDomain = ffi.Pointer<ObjCObject>;
 typedef NSErrorUserInfoKey = ffi.Pointer<ObjCObject>;
 
 class NSError extends NSObject {
-  NSError._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
-      : super._(id, lib);
+  NSError._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
 
   static NSError castFrom<T extends _ObjCWrapper>(T other) {
     return NSError._(other._id, other._lib);
   }
 
   static NSError castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return NSError._(other, lib);
   }
 
@@ -85829,8 +85733,8 @@ class NSError extends NSObject {
     return NSError._(_ret, _lib);
   }
 
-  static NSError errorWithDomain_code_userInfo(CupertinohttpBindings _lib,
-      NSErrorDomain domain, int code, NSObject? dict) {
+  static NSError errorWithDomain_code_userInfo(
+      NativeLibrary _lib, NSErrorDomain domain, int code, NSObject? dict) {
     final _ret = _lib._objc_msgSend_301(
         _lib._class_NSError1,
         _lib._sel_errorWithDomain_code_userInfo_1,
@@ -85914,9 +85818,7 @@ class NSError extends NSObject {
   ///
   /// If an appropriate result for the requested key cannot be provided, return nil rather than choosing to manufacture a generic fallback response such as "Operation could not be completed, error 42." NSError will take care of the fallback cases.
   static void setUserInfoValueProviderForDomain_provider(
-      CupertinohttpBindings _lib,
-      NSErrorDomain errorDomain,
-      ObjCBlock31 provider) {
+      NativeLibrary _lib, NSErrorDomain errorDomain, ObjCBlock31 provider) {
     _lib._objc_msgSend_302(
         _lib._class_NSError1,
         _lib._sel_setUserInfoValueProviderForDomain_provider_1,
@@ -85925,7 +85827,7 @@ class NSError extends NSObject {
   }
 
   static NSObject userInfoValueProviderForDomain(
-      CupertinohttpBindings _lib,
+      NativeLibrary _lib,
       NSObject? err,
       NSErrorUserInfoKey userInfoKey,
       NSErrorDomain errorDomain) {
@@ -85938,12 +85840,12 @@ class NSError extends NSObject {
     return NSObject._(_ret, _lib);
   }
 
-  static NSError new1(CupertinohttpBindings _lib) {
+  static NSError new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_new1);
     return NSError._(_ret, _lib);
   }
 
-  static NSError alloc(CupertinohttpBindings _lib) {
+  static NSError alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_alloc1);
     return NSError._(_ret, _lib);
   }
@@ -85965,7 +85867,7 @@ ffi.Pointer<ObjCObject> _ObjCBlock31_fnPtrTrampoline(
 
 class ObjCBlock31 {
   final ffi.Pointer<_ObjCBlock> _impl;
-  final CupertinohttpBindings _lib;
+  final NativeLibrary _lib;
   ObjCBlock31._(this._impl, this._lib);
 
   ObjCBlock31.fromFunctionPointer(
@@ -86814,7 +86716,7 @@ typedef __darwin_mode_t1 = __uint16_t1;
 typedef __uint16_t1 = pkg_ffi.UnsignedShort;
 
 class URLSessionHelper extends NSObject {
-  URLSessionHelper._(ffi.Pointer<ObjCObject> id, CupertinohttpBindings lib)
+  URLSessionHelper._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
 
   static URLSessionHelper castFrom<T extends _ObjCWrapper>(T other) {
@@ -86822,15 +86724,12 @@ class URLSessionHelper extends NSObject {
   }
 
   static URLSessionHelper castFromPointer(
-      CupertinohttpBindings lib, ffi.Pointer<ObjCObject> other) {
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
     return URLSessionHelper._(other, lib);
   }
 
   static NSURLSessionDataTask dataTaskForSession_withRequest_toPort(
-      CupertinohttpBindings _lib,
-      NSObject? session,
-      NSObject? request,
-      int dart_port) {
+      NativeLibrary _lib, NSObject? session, NSObject? request, int dart_port) {
     final _ret = _lib._objc_msgSend_303(
         _lib._class_URLSessionHelper1,
         _lib._sel_dataTaskForSession_withRequest_toPort_1,
@@ -86840,13 +86739,13 @@ class URLSessionHelper extends NSObject {
     return NSURLSessionDataTask._(_ret, _lib);
   }
 
-  static URLSessionHelper new1(CupertinohttpBindings _lib) {
+  static URLSessionHelper new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_new1);
     return URLSessionHelper._(_ret, _lib);
   }
 
-  static URLSessionHelper alloc(CupertinohttpBindings _lib) {
+  static URLSessionHelper alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_alloc1);
     return URLSessionHelper._(_ret, _lib);
