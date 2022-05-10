@@ -1,5 +1,5 @@
 # Run with `dart run ffigen --config ffigen.yaml`.
-name: CupertinohttpBindings
+name: NativeLibrary
 description: |
   Bindings for `src/cupertinohttp.h`.
 

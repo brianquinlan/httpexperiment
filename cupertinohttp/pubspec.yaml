@@ -5,11 +5,11 @@ homepage:
 publish_to: none
 
 environment:
-  sdk: '>=2.18.0-98.0.dev <3.0.0'
+  sdk: '>=2.16.0<3.0.0'
   flutter: ">=2.11.0-0.0.pre.1797"
 
 dependencies:
-  ffi: ^1.1.2
+  ffi: ^1.2.0-dev.0
   flutter:
     sdk: flutter
   http: ^0.13.4

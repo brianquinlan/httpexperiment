@@ -37,8 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   volleyhttp: 
     path: ../volleyhttp
-  cocoahttp: 
-    path: ../cocoahttp
+  cupertinohttp: 
+    path: ../cupertinohttp
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

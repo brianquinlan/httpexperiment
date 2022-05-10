@@ -1,131 +1,459 @@
-
 import 'dart:async';
-import 'dart:ffi';
+
+import 'package:ffi/ffi.dart' as pffi;
+import 'src/nsurlsession_bindings.dart' as ns;
+import 'dart:ffi' as ffi;
+import 'dart:core';
 import 'dart:io';
 import 'dart:isolate';
+import 'dart:typed_data';
+import 'dart:math';
+import 'package:native_library/native_library.dart';
 
-import 'cupertinohttp_bindings_generated.dart';
+import 'package:http/http.dart';
 
-/// A very short-lived native function.
-///
-/// For very short-lived functions, it is fine to call them on the main isolate.
-/// They will block the Dart execution while running the native function, so
-/// only do this for native functions which are guaranteed to be short-lived.
-int sum(int a, int b) => _bindings.sum(a, b);
+late ns.NativeLibrary _lib = loadLibrary();
+late ns.NativeLibrary _helperLib = loadHelperLibrary();
 
-/// A longer lived native function, which occupies the thread calling it.
-///
-/// Do not call these kind of native functions in the main isolate. They will
-/// block Dart execution. This will cause dropped frames in Flutter applications.
-/// Instead, call these native functions on a separate isolate.
-///
-/// Modify this to suit your own use case. Example use cases:
-///
-/// 1. Reuse a single isolate for various different kinds of requests.
-/// 2. Use multiple helper isolates for parallel execution.
-Future<int> sumAsync(int a, int b) async {
-  final SendPort helperIsolateSendPort = await _helperIsolateSendPort;
-  final int requestId = _nextSumRequestId++;
-  final _SumRequest request = _SumRequest(requestId, a, b);
-  final Completer<int> completer = Completer<int>();
-  _sumRequests[requestId] = completer;
-  helperIsolateSendPort.send(request);
-  return completer.future;
+ns.NativeLibrary loadLibrary() {
+  final lib = ffi.DynamicLibrary.process();
+  return ns.NativeLibrary(lib);
 }
 
-const String _libName = 'cupertinohttp';
+ns.NativeLibrary loadHelperLibrary() {
+  // XXX Handle not flutter.
+  const String _libName = 'cupertinohttp';
+  final lib = ffi.DynamicLibrary.open('$_libName.framework/$_libName');
 
-/// The dynamic library in which the symbols for [CupertinohttpBindings] can be found.
-final DynamicLibrary _dylib = () {
-  if (Platform.isMacOS || Platform.isIOS) {
-    return DynamicLibrary.open('$_libName.framework/$_libName');
+  final int Function(ffi.Pointer<ffi.Void>) initializeApi = lib.lookupFunction<
+      ffi.IntPtr Function(ffi.Pointer<ffi.Void>),
+      int Function(ffi.Pointer<ffi.Void>)>("Dart_InitializeApiDL");
+  final int initializeResult = initializeApi(ffi.NativeApi.initializeApiDLData);
+  if (initializeResult != 0) {
+    throw 'failed to init API.';
   }
-  if (Platform.isAndroid || Platform.isLinux) {
-    return DynamicLibrary.open('lib$_libName.so');
-  }
-  if (Platform.isWindows) {
-    return DynamicLibrary.open('$_libName.dll');
-  }
-  throw UnsupportedError('Unknown platform: ${Platform.operatingSystem}');
-}();
 
-/// The bindings to the native functions in [_dylib].
-final CupertinohttpBindings _bindings = CupertinohttpBindings(_dylib);
-
-
-/// A request to compute `sum`.
-///
-/// Typically sent from one isolate to another.
-class _SumRequest {
-  final int id;
-  final int a;
-  final int b;
-
-  const _SumRequest(this.id, this.a, this.b);
+  return ns.NativeLibrary(lib);
 }
 
-/// A response with the result of `sum`.
-///
-/// Typically sent from one isolate to another.
-class _SumResponse {
-  final int id;
-  final int result;
-
-  const _SumResponse(this.id, this.result);
+enum HTTPCookieAcceptPolicy {
+  HTTPCookieAcceptPolicyAlways,
+  HTTPCookieAcceptPolicyNever,
+  HTTPCookieAcceptPolicyOnlyFromMainDocumentDomain,
 }
 
-/// Counter to identify [_SumRequest]s and [_SumResponse]s.
-int _nextSumRequestId = 0;
+class _Object<T extends ns.NSObject> {
+  final T _nsObject;
 
-/// Mapping from [_SumRequest] `id`s to the completers corresponding to the correct future of the pending request.
-final Map<int, Completer<int>> _sumRequests = <int, Completer<int>>{};
+  _Object(this._nsObject);
+}
 
-/// The SendPort belonging to the helper isolate.
-Future<SendPort> _helperIsolateSendPort = () async {
-  // The helper isolate is going to send us back a SendPort, which we want to
-  // wait for.
-  final Completer<SendPort> completer = Completer<SendPort>();
+class URLSessionConfiguration extends _Object<ns.NSURLSessionConfiguration> {
+  URLSessionConfiguration._(ns.NSURLSessionConfiguration c) : super(c) {}
+  factory URLSessionConfiguration.backgroundSession(String identifier) {
+    return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
+        ns.NSURLSessionConfiguration
+            .backgroundSessionConfigurationWithIdentifier(
+                _lib, ns.NSObject.castFrom(identifier.toNSString(_lib)))));
+  }
 
-  // Receive port on the main isolate to receive messages from the helper.
-  // We receive two types of messages:
-  // 1. A port to send messages on.
-  // 2. Responses to requests we sent.
-  final ReceivePort receivePort = ReceivePort()
-    ..listen((dynamic data) {
-      if (data is SendPort) {
-        // The helper isolate sent us the port on which we can sent it requests.
-        completer.complete(data);
-        return;
+  factory URLSessionConfiguration.defaultSessionConfiguration() {
+    return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
+        ns.NSURLSessionConfiguration.getDefaultSessionConfiguration(_lib)!));
+  }
+
+  factory URLSessionConfiguration.ephemeralSessionConfiguration() {
+    return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
+        ns.NSURLSessionConfiguration.getEphemeralSessionConfiguration(_lib)!));
+  }
+
+  bool get allowsCellularAccess => _nsObject.allowsCellularAccess;
+  bool get allowsConstrainedNetworkAccess =>
+      _nsObject.allowsConstrainedNetworkAccess;
+  bool get allowsExpensiveNetworkAccess =>
+      _nsObject.allowsExpensiveNetworkAccess;
+  bool get discretionary => _nsObject.discretionary;
+  // TODO: Use an enum for httpCookieAcceptPolicy.
+  HTTPCookieAcceptPolicy get httpCookieAcceptPolicy =>
+      HTTPCookieAcceptPolicy.values[_nsObject.HTTPCookieAcceptPolicy];
+  bool get httpShouldSetCookies => _nsObject.HTTPShouldSetCookies;
+  bool get httpShouldUsePipelining => _nsObject.HTTPShouldUsePipelining;
+  bool get sessionSendsLaunchEvents => _nsObject.sessionSendsLaunchEvents;
+  bool get shouldUseExtendedBackgroundIdleMode =>
+      _nsObject.shouldUseExtendedBackgroundIdleMode;
+  Duration get timeoutIntervalForRequest {
+    return Duration(
+        microseconds: (_nsObject.timeoutIntervalForRequest *
+                Duration.microsecondsPerSecond)
+            .round());
+  }
+
+  set timeoutIntervalForRequest(Duration interval) {
+    _nsObject.timeoutIntervalForRequest =
+        interval.inMicroseconds.toDouble() * Duration.microsecondsPerSecond;
+  }
+
+  bool get waitsForConnectivity => _nsObject.waitsForConnectivity;
+
+  @override
+  String toString() {
+    return "[URLSessionConfiguration "
+        "allowsCellularAccess=$allowsCellularAccess "
+        "allowsConstrainedNetworkAccess=$allowsConstrainedNetworkAccess "
+        "allowsExpensiveNetworkAccess=$allowsExpensiveNetworkAccess "
+        "discretionary=$discretionary "
+        "httpCookieAcceptPolicy=$httpCookieAcceptPolicy "
+        "httpShouldSetCookies=$httpShouldSetCookies "
+        "httpShouldUsePipelining=$httpShouldUsePipelining "
+        "sessionSendsLaunchEvents=$sessionSendsLaunchEvents "
+        "shouldUseExtendedBackgroundIdleMode=$shouldUseExtendedBackgroundIdleMode "
+        "timeoutIntervalForRequest=$timeoutIntervalForRequest "
+        "waitsForConnectivity=$waitsForConnectivity"
+        "]";
+  }
+}
+
+enum URLSessionTaskState {
+  URLSessionTaskStateRunning,
+  URLSessionTaskStateSuspended,
+  URLSessionTaskStateCanceling,
+  URLSessionTaskStateCompleted,
+}
+
+class URLSessionTask {
+  final ns.NSURLSessionTask _nsUrlSessionTask;
+
+  URLSessionTask._(this._nsUrlSessionTask) {}
+
+  void resume() {
+    this._nsUrlSessionTask.resume();
+  }
+
+  void suspend() {
+    this._nsUrlSessionTask.suspend();
+  }
+
+  URLSessionTaskState get state =>
+      URLSessionTaskState.values[_nsUrlSessionTask.state];
+
+  int get countOfBytesReceived => _nsUrlSessionTask.countOfBytesReceived;
+  int get countOfBytesExpectedToReceive =>
+      _nsUrlSessionTask.countOfBytesExpectedToReceive;
+
+  @override
+  String toString() {
+    return "[URLSessionTask " +
+        "countOfBytesExpectedToReceive=$countOfBytesExpectedToReceive " +
+        "countOfBytesReceived=$countOfBytesReceived " +
+        "state=$state"
+            "]";
+  }
+}
+
+class URLRequest {
+  final ns.NSURLRequest _nsUrlRequest;
+
+  URLRequest._(this._nsUrlRequest) {}
+
+  String? get httpMethod {
+    return _toString(_nsUrlRequest.HTTPMethod);
+  }
+
+  Data? get httpBody {
+    final body = _nsUrlRequest.HTTPBody;
+    if (body == null) {
+      return null;
+    }
+    return Data._(ns.NSData.castFrom(body));
+  }
+
+  Map<String, String> get allHttpHeaderFields {
+    final headers =
+        ns.NSDictionary.castFrom(_nsUrlRequest.allHTTPHeaderFields!);
+    return (_foo(headers));
+  }
+
+  factory URLRequest.fromUrl(Uri uri) {
+    final url = ns.NSURL.URLWithString(
+        _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
+    return URLRequest._(ns.NSURLRequest.requestWithURL(_lib, url));
+  }
+}
+
+class MutableURLRequest extends URLRequest {
+  final ns.NSMutableURLRequest nsMutableURLRequest;
+
+  MutableURLRequest._(this.nsMutableURLRequest)
+      : super._(nsMutableURLRequest) {}
+
+  @override
+  String get httpMethod {
+    return _toString(nsMutableURLRequest.HTTPMethod)!;
+  }
+
+  set httpMethod(String method) {
+    nsMutableURLRequest.HTTPMethod =
+        ns.NSObject.castFrom(method.toNSString(_lib));
+  }
+
+  @override
+  Data get httpBody {
+    return Data._(ns.NSData.castFrom(nsMutableURLRequest.HTTPBody!));
+  }
+
+  void setValueForHttpHeaderField(String value, String field) {
+    nsMutableURLRequest.setValue_forHTTPHeaderField(
+        ns.NSObject.castFrom(field.toNSString(_lib)),
+        ns.NSObject.castFrom(value.toNSString(_lib)));
+  }
+
+  set httpBody(Data data) {
+    print('This is some data: $data');
+    nsMutableURLRequest.HTTPBody = data._nsData;
+  }
+
+  factory MutableURLRequest.fromUrl(Uri uri) {
+    final url = ns.NSURL.URLWithString(
+        _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
+    return MutableURLRequest._(
+        ns.NSMutableURLRequest.requestWithURL(_lib, url));
+  }
+
+  @override
+  String toString() {
+    return "[MutableURLRequest " +
+        "httpMethod=$httpMethod " +
+        "allHttpHeaderFields=$allHttpHeaderFields " +
+        "httpBody=$httpBody " +
+        "]";
+  }
+}
+
+Map<String, String> _foo(ns.NSDictionary d) {
+  final m = Map<String, String>();
+
+  final keys = ns.NSArray.castFrom(d.allKeys!);
+  for (var i = 0; i < keys.count; ++i) {
+    final key = _toString(keys.objectAtIndex(i))!;
+    final value = _toString(d.objectForKey(keys.objectAtIndex(i)))!;
+    m[key] = value;
+  }
+
+  return m;
+}
+
+class HTTPURLResponse {
+  final ns.NSHTTPURLResponse _nsHttpUrlResponse;
+
+  HTTPURLResponse._(this._nsHttpUrlResponse) {}
+
+  int get statusCode => _nsHttpUrlResponse.statusCode;
+  int get expectedContentLength => _nsHttpUrlResponse.expectedContentLength;
+  String? get mimeType => _toString(_nsHttpUrlResponse.MIMEType);
+  Map<String, String> get allHeaderFields {
+    final headers =
+        ns.NSDictionary.castFrom(_nsHttpUrlResponse.allHeaderFields!);
+    return (_foo(headers));
+  }
+
+  @override
+  String toString() {
+    return "[HTTPURLResponse " +
+        "statusCode=$statusCode " +
+        "mimeType=$mimeType " +
+        "expectedContentLength=$expectedContentLength" +
+        "]";
+  }
+}
+
+class Data {
+  final ns.NSData _nsData;
+
+  Data._(this._nsData) {}
+
+  factory Data.fromUint8List(Uint8List l) {
+    final f = pffi.calloc<ffi.Uint8>(l.length);
+    try {
+      f.asTypedList(l.length).setAll(0, l);
+
+      final data = ns.NSData.dataWithBytes_length(_lib, f.cast(), l.length);
+      return Data._(data);
+    } finally {
+      pffi.calloc.free(f);
+    }
+  }
+
+  int get length => _nsData.length;
+  Uint8List get bytes {
+    final bytes = _nsData.bytes;
+    if (bytes.address == 0) {
+      return Uint8List(0);
+    } else {
+      // This is unsafe! It is only a view into the underlying NSData!
+      return bytes.cast<ffi.Uint8>().asTypedList(length);
+    }
+  }
+
+  @override
+  String toString() {
+    final subrange =
+        length == 0 ? Uint8List(0) : bytes.sublist(0, min(length - 1, 20));
+    final b = subrange.map((e) => e.toRadixString(16)).join();
+    return "[Data " + "length=$length " + "bytes=0x$b..." + "]";
+  }
+}
+
+String? _toString(ns.NSObject? o) {
+  if (o == null) {
+    return null;
+  }
+
+  return ns.NSString.castFrom(o).toString();
+}
+
+class Error {
+  final ns.NSError _nsError;
+
+  Error._(this._nsError) {}
+
+  int get code => this._nsError.code;
+  String? get localizedDescription => _toString(_nsError.localizedDescription);
+  String? get localizedFailureReason =>
+      _toString(_nsError.localizedFailureReason);
+  String? get localizedRecoverySuggestion =>
+      _toString(_nsError.localizedRecoverySuggestion);
+
+  @override
+  String toString() {
+    return "[Error " +
+        "code=$code " +
+        "localizedDescription=$localizedDescription " +
+        "localizedFailureReason=$localizedFailureReason " +
+        "localizedRecoverySuggestion=$localizedRecoverySuggestion " +
+        "]";
+  }
+}
+
+class URLSession {
+  final ns.NSURLSession _nsUrlSession;
+
+  URLSession._(this._nsUrlSession) {}
+  URLSessionConfiguration get configuration {
+    return URLSessionConfiguration._(
+        ns.NSURLSessionConfiguration.castFrom(_nsUrlSession.configuration!));
+  }
+
+  factory URLSession.sessionWithConfiguration(URLSessionConfiguration config) {
+    return URLSession._(
+        ns.NSURLSession.sessionWithConfiguration(_lib, config._nsObject));
+  }
+
+  factory URLSession.sharedSession() {
+    return URLSession._(
+        ns.NSURLSession.castFrom(ns.NSURLSession.getSharedSession(_lib)!));
+  }
+
+  URLSessionTask dataTask(
+      URLRequest request,
+      void Function(Data? data, HTTPURLResponse? response, Error? error)
+          completion) {
+    final port = ReceivePort();
+    port.listen((message) {
+      final dp = ffi.Pointer<ns.ObjCObject>.fromAddress(message[0]);
+      final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(message[1]);
+      final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(message[2]);
+
+      Data? data = null;
+      HTTPURLResponse? response = null;
+      Error? error = null;
+
+      if (dp.address != 0) {
+        data = Data._(ns.NSData.castFromPointer(_lib, dp));
       }
-      if (data is _SumResponse) {
-        // The helper isolate sent us a response to a request we sent.
-        final Completer<int> completer = _sumRequests[data.id]!;
-        _sumRequests.remove(data.id);
-        completer.complete(data.result);
-        return;
+      if (rp.address != 0) {
+        response =
+            HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
       }
-      throw UnsupportedError('Unsupported message type: ${data.runtimeType}');
+      if (ep.address != 0) {
+        error = Error._(ns.NSError.castFromPointer(_lib, ep));
+      }
+
+      try {
+        completion(data, response, error);
+      } finally {
+        port.close();
+      }
+//      final response = ns.NSError.castFromPointer(ep, _lib);
     });
+    final sendPort = port.sendPort.nativePort;
+    final task = ns.URLSessionHelper.dataTaskForSession_withRequest_toPort(
+        _helperLib, _nsUrlSession, request._nsUrlRequest, sendPort);
+    return URLSessionTask._(task);
+  }
+}
 
-  // Start the helper isolate.
-  await Isolate.spawn((SendPort sendPort) async {
-    final ReceivePort helperReceivePort = ReceivePort()
-      ..listen((dynamic data) {
-        // On the helper isolate listen to requests and respond to them.
-        if (data is _SumRequest) {
-          final int result = _bindings.sum_long_running(data.a, data.b);
-          final _SumResponse response = _SumResponse(data.id, result);
-          sendPort.send(response);
-          return;
-        }
-        throw UnsupportedError('Unsupported message type: ${data.runtimeType}');
-      });
+class _A {
+  final Data? data;
+  final HTTPURLResponse? response;
+  final Error? error;
 
-    // Send the the port to the main isolate on which we can receive requests.
-    sendPort.send(helperReceivePort.sendPort);
-  }, receivePort.sendPort);
+  _A(this.data, this.response, this.error);
+}
 
-  // Wait until the helper isolate has sent us back the SendPort on which we
-  // can start sending requests.
-  return completer.future;
-}();
+class CocoaClient extends BaseClient {
+  late URLSession _urlSession = URLSession.sharedSession();
+
+  URLSession get urlSession => _urlSession;
+
+  CocoaClient._(this._urlSession);
+
+  factory CocoaClient.sharedUrlSession() {
+    return CocoaClient._(URLSession.sharedSession());
+  }
+
+  factory CocoaClient.fromUrlSession(URLSession urlSession) {
+    return CocoaClient._(urlSession);
+  }
+
+  @override
+  Future<StreamedResponse> send(BaseRequest request) async {
+    final stream = request.finalize();
+
+    final bytes = await stream.toBytes();
+    print("bytes: $bytes");
+    final d = Data.fromUint8List(bytes);
+
+    print("string: ${String.fromCharCodes(bytes)}");
+
+    MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url)
+      ..httpMethod = request.method
+      ..httpBody = d;
+
+    // This will preserve Apple default headers - is that what we want?
+    request.headers.forEach(
+        (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
+    final callbackComplete = Completer<_A>();
+    print(urlRequest);
+    final task = urlSession.dataTask(urlRequest, (data, response, error) {
+      callbackComplete.complete(_A(data, response, error));
+    });
+    task.resume();
+
+    final result = await callbackComplete.future;
+
+    result.data!.bytes.toList();
+    return StreamedResponse(
+      Stream.fromIterable([result.data!.bytes.toList()]),
+      result.response!.statusCode,
+      contentLength: result.response!.expectedContentLength,
+      headers: result.response!.allHeaderFields,
+    );
+  }
+}
+/*
+void main() {
+  CocoaClient.sharedUrlSession()
+      .get(Uri.parse("http://www.google.com"))
+      .then((value) => print(value));
+}
+*/

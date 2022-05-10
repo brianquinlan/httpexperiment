@@ -2,16 +2,18 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'package:cocoahttp/cocoahttp.dart';
-import 'package:volleyhttp/volleyhttp.dart';
+import 'package:cupertinohttp/cupertinohttp.dart';
+import 'package:http/http.dart';
 import 'dart:async';
 import 'package:simplehttpclient/simplehttpclient.dart';
 
+late Client client;
+
 void main() {
-  if (Platform.isAndroid) {
-    SimpleHttpClient.global = Volleyhttp();
-  } else if (Platform.isIOS) {
-    SimpleHttpClient.global = CocoaHttp();
+  if (Platform.isIOS) {
+    client = CocoaClient.sharedUrlSession();
+  } else {
+    client = Client();
   }
   runApp(const MyApp());
 }
@@ -66,8 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       content = "Loading...";
     });
-    SimpleHttpClient.current
-        .get(Uri.parse("https://www.example.com/"))
+    client
+        .get(Uri.parse("https://ptsv2.com/t/5e7uf-1651618013/post?key=value"))
         .then((resp) {
       setState(() {
         content = resp.headers.toString();
