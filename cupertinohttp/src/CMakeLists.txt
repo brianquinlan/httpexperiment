@@ -17,8 +17,5 @@ set_target_properties(cupertinohttp PROPERTIES
 
 target_compile_definitions(cupertinohttp PUBLIC DART_SHARED_LIB)
 
-# find_library(FOUNDATION_LIB Foundation)
-# target_link_libraries(cupertinohttp PRIVATE ${FOUNDATION_LIB})
-
-find_library(APPKIT_LIB AppKit)
-target_link_libraries(foo PRIVATE ${APPKIT_LIB})
+find_library(FOUNDATION_LIB Foundation)
+target_link_libraries(cupertinohttp PRIVATE ${FOUNDATION_LIB})

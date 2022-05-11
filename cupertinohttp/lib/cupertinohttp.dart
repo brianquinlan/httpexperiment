@@ -12,6 +12,9 @@ import 'package:native_library/native_library.dart';
 
 import 'package:http/http.dart';
 
+const _packageName = "cupertinohttp";
+const _libName = _packageName;
+
 late ns.NativeLibrary _lib = loadLibrary();
 late ns.NativeLibrary _helperLib = loadHelperLibrary();
 
@@ -20,10 +23,59 @@ ns.NativeLibrary loadLibrary() {
   return ns.NativeLibrary(lib);
 }
 
+ffi.DynamicLibrary _loadHelperDynamicLibrary() {
+  ffi.DynamicLibrary? _jit() {
+    if (Platform.isMacOS) {
+      final Uri dylibPath = sharedLibrariesLocationBuilt(_packageName)
+          .resolve('lib$_libName.dylib');
+      final File file = File.fromUri(dylibPath);
+      if (!file.existsSync()) {
+        throw "Dynamic library '${dylibPath.toFilePath()}' does not exist.";
+      }
+      return ffi.DynamicLibrary.open(dylibPath.path);
+    }
+    return null;
+  }
+
+  switch (Embedders.current) {
+    case Embedder.flutter:
+      switch (FlutterRuntimeModes.current) {
+        case FlutterRuntimeMode.app:
+          if (Platform.isMacOS || Platform.isIOS) {
+            return ffi.DynamicLibrary.open('$_libName.framework/$_libName');
+          }
+          break;
+        case FlutterRuntimeMode.test:
+          final ffi.DynamicLibrary? result = _jit();
+          if (result != null) {
+            return result;
+          }
+          break;
+      }
+      break;
+    case Embedder.standalone:
+      switch (StandaloneRuntimeModes.current) {
+        case StandaloneRuntimeMode.jit:
+          final ffi.DynamicLibrary? result = _jit();
+          if (result != null) {
+            return result;
+          }
+          break;
+        case StandaloneRuntimeMode.executable:
+          // When running from executable, we expect the person assembling the
+          // final executable to locate the dynamic library next to the
+          // executable.
+          if (Platform.isMacOS) {
+            return ffi.DynamicLibrary.open('lib$_libName.dylib');
+          }
+          break;
+      }
+  }
+  throw UnsupportedError('Unimplemented!');
+}
+
 ns.NativeLibrary loadHelperLibrary() {
-  // XXX Handle not flutter.
-  const String _libName = 'cupertinohttp';
-  final lib = ffi.DynamicLibrary.open('$_libName.framework/$_libName');
+  final lib = _loadHelperDynamicLibrary();
 
   final int Function(ffi.Pointer<ffi.Void>) initializeApi = lib.lookupFunction<
       ffi.IntPtr Function(ffi.Pointer<ffi.Void>),
@@ -208,7 +260,6 @@ class MutableURLRequest extends URLRequest {
   }
 
   set httpBody(Data data) {
-    print('This is some data: $data');
     nsMutableURLRequest.HTTPBody = data._nsData;
   }
 
@@ -420,10 +471,7 @@ class CocoaClient extends BaseClient {
     final stream = request.finalize();
 
     final bytes = await stream.toBytes();
-    print("bytes: $bytes");
     final d = Data.fromUint8List(bytes);
-
-    print("string: ${String.fromCharCodes(bytes)}");
 
     MutableURLRequest urlRequest = MutableURLRequest.fromUrl(request.url)
       ..httpMethod = request.method
@@ -433,7 +481,6 @@ class CocoaClient extends BaseClient {
     request.headers.forEach(
         (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
     final callbackComplete = Completer<_A>();
-    print(urlRequest);
     final task = urlSession.dataTask(urlRequest, (data, response, error) {
       callbackComplete.complete(_A(data, response, error));
     });
@@ -441,19 +488,11 @@ class CocoaClient extends BaseClient {
 
     final result = await callbackComplete.future;
 
-    result.data!.bytes.toList();
     return StreamedResponse(
-      Stream.fromIterable([result.data!.bytes.toList()]),
+      Stream.fromIterable([result.data!.bytes]),
       result.response!.statusCode,
       contentLength: result.response!.expectedContentLength,
       headers: result.response!.allHeaderFields,
     );
   }
 }
-/*
-void main() {
-  CocoaClient.sharedUrlSession()
-      .get(Uri.parse("http://www.google.com"))
-      .then((value) => print(value));
-}
-*/
