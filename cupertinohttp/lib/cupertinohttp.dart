@@ -488,10 +488,11 @@ class CocoaClient extends BaseClient {
 
     final result = await callbackComplete.future;
 
+    final contentLength = result.response!.expectedContentLength;
     return StreamedResponse(
       Stream.fromIterable([result.data!.bytes]),
       result.response!.statusCode,
-      contentLength: result.response!.expectedContentLength,
+      contentLength: contentLength == -1 ? null : contentLength,
       headers: result.response!.allHeaderFields,
     );
   }
