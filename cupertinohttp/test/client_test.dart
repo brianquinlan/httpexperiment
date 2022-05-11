@@ -14,6 +14,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
           request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
           request.response.write(message);
           await request.response.close();
         });
@@ -22,6 +23,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       expect(response.body, message);
       expect(response.bodyBytes, message.codeUnits);
       expect(response.contentLength, message.length);
+      expect(response.headers['content-type'], 'text/plain');
     });
 
     test('small response streamed without content length', () async {
@@ -29,6 +31,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
           request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
           request.response.write(message);
           await request.response.close();
         });
@@ -37,6 +40,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       final response = await client.send(request);
       expect(await response.stream.bytesToString(), message);
       expect(response.contentLength, null);
+      expect(response.headers['content-type'], 'text/plain');
     });
 
     test('large response streamed without content length', () async {
@@ -44,6 +48,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
           request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
           for (var i = 0; i <= count; ++i) {
             request.response.write("$i\n");
           }
@@ -58,6 +63,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
           .forEach((s) {
         sum += int.parse(s.trim());
       });
+      expect(response.headers['content-type'], 'text/plain');
       expect(sum, count * (count + 1) / 2);
     }, skip: canStream ? false : 'does not support streamed output');
   });

@@ -285,7 +285,7 @@ Map<String, String> _foo(ns.NSDictionary d) {
 
   final keys = ns.NSArray.castFrom(d.allKeys!);
   for (var i = 0; i < keys.count; ++i) {
-    final key = _toString(keys.objectAtIndex(i))!;
+    final key = _toString(keys.objectAtIndex(i))!.toLowerCase();
     final value = _toString(d.objectForKey(keys.objectAtIndex(i)))!;
     m[key] = value;
   }
