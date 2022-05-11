@@ -63,7 +63,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
   });
 }
 
-testClientHeaders(http.Client client) async {
+testRequestHeaders(http.Client client) async {
   group('client headers', () {
     test('single header', () async {
       late HttpHeaders requestHeaders;
@@ -125,7 +125,7 @@ testClientHeaders(http.Client client) async {
   });
 }
 
-testServerHeaders(http.Client client) async {
+testResponseHeaders(http.Client client) async {
   group('server headers', () {
     test('single header', () async {
       final server = (await HttpServer.bind('localhost', 0))
@@ -178,13 +178,13 @@ testServerHeaders(http.Client client) async {
 void main() {
   group('CocoaClient', () {
     testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
-    testServerHeaders(CocoaClient.sharedUrlSession());
-    testClientHeaders(CocoaClient.sharedUrlSession());
+    testResponseHeaders(CocoaClient.sharedUrlSession());
+    testRequestHeaders(CocoaClient.sharedUrlSession());
   });
 
   group('dart:io', () {
     testResponseBody(http.Client());
-    testServerHeaders(http.Client());
-    testClientHeaders(http.Client());
+    testResponseHeaders(http.Client());
+    testRequestHeaders(http.Client());
   });
 }
