@@ -84,7 +84,22 @@ testRequestHeaders(http.Client client) async {
       expect(requestHeaders['foo'], ['bar']);
     });
 
-    test('differently cased header', () async {
+    test('UPPER case header', () async {
+      late HttpHeaders requestHeaders;
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          request.drain();
+          requestHeaders = request.headers;
+          unawaited(request.response.close());
+        });
+      await client.get(Uri.parse('http://localhost:${server.port}'),
+          headers: {'FOO': 'BAR'});
+      // RFC 2616 14.44 states that header field names are case-insensive.
+      // http.Client canonicalizes field names into lower case.
+      expect(requestHeaders['foo'], ['BAR']);
+    });
+
+    test('test headers different only in case', () async {
       // RFC 2616 14.44 states that header field names are case-insensive.
       late HttpHeaders requestHeaders;
       final server = (await HttpServer.bind('localhost', 0))
@@ -146,6 +161,21 @@ testResponseHeaders(http.Client client) async {
       expect(response.headers['foo'], 'bar');
     });
 
+    test('UPPERCASE header', () async {
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          request.drain();
+          var response = request.response;
+          response.headers.set('FOO', 'BAR', preserveHeaderCase: true);
+          unawaited(response.close());
+        });
+      // RFC 2616 14.44 states that header field names are case-insensive.
+      // http.Client canonicalizes field names into lower case.
+      final response =
+          await client.get(Uri.parse('http://localhost:${server.port}'));
+      expect(response.headers['foo'], 'BAR');
+    });
+
     test('multiple headers', () async {
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
@@ -184,13 +214,13 @@ testResponseHeaders(http.Client client) async {
 void main() {
   group('CocoaClient', () {
     testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
-    testResponseHeaders(CocoaClient.sharedUrlSession());
     testRequestHeaders(CocoaClient.sharedUrlSession());
+    testResponseHeaders(CocoaClient.sharedUrlSession());
   });
 
   group('dart:io', () {
     testResponseBody(http.Client());
-    testResponseHeaders(http.Client());
     testRequestHeaders(http.Client());
+    testResponseHeaders(http.Client());
   });
 }
