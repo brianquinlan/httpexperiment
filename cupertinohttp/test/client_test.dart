@@ -115,7 +115,7 @@ testClientHeaders(http.Client client) async {
           requestHeaders = request.headers;
           unawaited(request.response.close());
         });
-      // The `http.Client` API does not offer a way of sending the name field
+      // The `http.Client` API does not offer a way of sending the same field
       // more than once.
       await client.get(Uri.parse('http://localhost:${server.port}'),
           headers: {'list': 'apple, orange'});
