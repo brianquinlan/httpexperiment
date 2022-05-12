@@ -425,7 +425,6 @@ testResponseHeaders(http.Client client) async {
 testRedirect(http.Client client) async {
   group('redirects', () {
     late HttpServer server;
-
     setUp(() async {
       server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
@@ -439,6 +438,7 @@ testRedirect(http.Client client) async {
           }
         });
     });
+    tearDown(() => server.close);
 
     test('allow redirect', () async {
       final request =
