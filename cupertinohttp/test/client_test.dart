@@ -390,9 +390,10 @@ testResponseHeaders(http.Client client) async {
         ..listen((request) async {
           request.drain();
           var response = request.response;
-          response.headers.set('field1', 'value1');
-          response.headers.set('field2', 'value2');
-          response.headers.set('field3', 'value3');
+          response.headers
+            ..set('field1', 'value1')
+            ..set('field2', 'value2')
+            ..set('field3', 'value3');
           unawaited(response.close());
         });
       final response =
@@ -408,14 +409,74 @@ testResponseHeaders(http.Client client) async {
           request.drain();
           var response = request.response;
           // RFC 2616 14.44 states that header field names are case-insensive.
-          response.headers.add("list", "apple");
-          response.headers.add("list", "orange");
-          response.headers.add("List", "banana");
+          response.headers
+            ..add("list", "apple")
+            ..add("list", "orange")
+            ..add("List", "banana");
           unawaited(response.close());
         });
       final response =
           await client.get(Uri.parse('http://localhost:${server.port}'));
       expect(response.headers['list'], 'apple, orange, banana');
+    });
+  });
+}
+
+testRedirect(http.Client client) async {
+  group('redirects', () {
+    late HttpServer server;
+
+    setUp(() async {
+      server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          if (request.requestedUri.pathSegments.isEmpty) {
+            unawaited(request.response.close());
+          } else {
+            final n = int.parse(request.requestedUri.pathSegments.last);
+            String nextPath = n - 1 == 0 ? '' : '${n - 1}';
+            unawaited(request.response.redirect(
+                Uri.parse('http://localhost:${server.port}/$nextPath')));
+          }
+        });
+    });
+
+    test('allow redirect', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/1'))
+            ..followRedirects = true;
+      final response = await client.send(request);
+      expect(response.statusCode, 200);
+      expect(response.isRedirect, false);
+    });
+
+    test('disallow redirect', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/1'))
+            ..followRedirects = false;
+      final response = await client.send(request);
+      expect(response.statusCode, 302);
+      expect(response.isRedirect, true);
+    });
+
+    test('exactly the right number of allowed redirects', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/5'))
+            ..followRedirects = true
+            ..maxRedirects = 5;
+      final response = await client.send(request);
+      expect(response.statusCode, 200);
+      expect(response.isRedirect, false);
+    });
+
+    test('too many redirects', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/6'))
+            ..followRedirects = true
+            ..maxRedirects = 5;
+      expect(
+          client.send(request),
+          throwsA(isA<http.ClientException>()
+              .having((e) => e.message, 'message', 'Redirect limit exceeded')));
     });
   });
 }
@@ -426,6 +487,7 @@ void main() {
     testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
     testRequestHeaders(CocoaClient.sharedUrlSession());
     testResponseHeaders(CocoaClient.sharedUrlSession());
+    testRedirect(CocoaClient.sharedUrlSession());
   });
 
   group('dart:io', () {
@@ -433,5 +495,6 @@ void main() {
     testResponseBody(http.Client());
     testRequestHeaders(http.Client());
     testResponseHeaders(http.Client());
+    testRedirect(http.Client());
   });
 }
