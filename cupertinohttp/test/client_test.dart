@@ -153,28 +153,41 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
     });
 
     test('large response streamed without content length', () async {
-      const count = 10000000;
+      // The server continuously streams data to the client until
+      // instructed to stop (by setting `serverWriting` to `false`).
+      // The client sets `serverWriting` to `false` after it has
+      // already received some data.
+      //
+      // This ensures that the client supports streamed responses.
+      bool serverWriting = false;
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
           request.drain();
           request.response.headers.set('Content-Type', 'text/plain');
-          for (var i = 0; i <= count; ++i) {
+          serverWriting = true;
+          for (var i = 0; serverWriting; ++i) {
             request.response.write("$i\n");
+            await request.response.flush();
           }
           await request.response.close();
         });
       final request =
           http.Request('GET', Uri.parse('http://localhost:${server.port}'));
       final response = await client.send(request);
-      int sum = 0;
+      int lastReceived = 0;
       await const LineSplitter()
           .bind(const Utf8Decoder().bind(response.stream))
           .forEach((s) {
-        sum += int.parse(s.trim());
+        lastReceived = int.parse(s.trim());
+        if (lastReceived < 1000) {
+          expect(serverWriting, true);
+        } else {
+          serverWriting = false;
+        }
       });
       expect(response.headers['content-type'], 'text/plain');
-      expect(sum, count * (count + 1) / 2);
-    }, skip: canStream ? false : 'does not support streamed output');
+      expect(lastReceived, greaterThanOrEqualTo(1000));
+    }, skip: canStream ? false : 'does not stream response bodies');
   });
 }
 
