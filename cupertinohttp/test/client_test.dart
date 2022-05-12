@@ -130,6 +130,10 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       await client.post(Uri.parse('http://localhost:${server.port}'),
           body: [1, 2, 3, 4, 5]);
 
+      // RFC 2616 7.2.1 says that:
+      //   Any HTTP/1.1 message containing an entity-body SHOULD include a
+      //   Content-Type header field defining the media type of that body.
+      // But we didn't set one so verify that the server didn't get one.
       expect(serverReceivedContentType, null);
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
     });
