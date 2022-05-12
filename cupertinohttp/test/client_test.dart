@@ -111,7 +111,48 @@ testRequestBody(http.Client client) {
           body: {"key": "value"}, encoding: Plus2Encoding());
       expect(serverReceivedContentType,
           ['application/x-www-form-urlencoded; charset=plus2']);
-      expect(serverReceivedBody, "gau;r]hqa");
+      expect(serverReceivedBody, "gau;r]hqa"); // key=value
+    });
+
+    test('client.post() with List<int>', () async {
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: [1, 2, 3, 4, 5]);
+
+      expect(serverReceivedContentType, null);
+      expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
+    });
+
+    test('client.post() with List<int> with encoding', () async {
+      // Encoding should not affect binary payloads.
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: [1, 2, 3, 4, 5], encoding: Plus2Encoding());
+
+      expect(serverReceivedContentType, null);
+      expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
     });
   });
 }
