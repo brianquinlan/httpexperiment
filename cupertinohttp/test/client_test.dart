@@ -32,7 +32,7 @@ class Plus2Encoding extends Encoding {
   String get name => "plus2";
 }
 
-testRequestBody(http.Client client) {
+testRequestBody(http.Client client, {bool canStream = true}) {
   group('request body', () {
     test('client.post() with string body', () async {
       late List<String>? serverReceivedContentType;
@@ -154,6 +154,48 @@ testRequestBody(http.Client client) {
       expect(serverReceivedContentType, null);
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
     });
+
+    test('client.send() with StreamedRequest', () async {
+      // The client continuously streams data to the server until
+      // instructed to stop (by setting `clientWriting` to `false`).
+      // The server sets `serverWriting` to `false` after it has
+      // already received some data.
+      //
+      // This ensures that the client supports streamed data sends.
+      int lastReceived = 0;
+      bool clientWriting = true;
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          await const LineSplitter()
+              .bind(const Utf8Decoder().bind(request))
+              .forEach((s) {
+            lastReceived = int.parse(s.trim());
+            if (lastReceived < 1000) {
+              expect(clientWriting, true);
+            } else {
+              clientWriting = false;
+            }
+          });
+          unawaited(request.response.close());
+        });
+      Stream<String> count() async* {
+        int i = 0;
+        while (clientWriting) {
+          yield "${i++}\n";
+          // Let the event loop run.
+          await Future.delayed(const Duration());
+        }
+      }
+
+      final request = http.StreamedRequest(
+          'POST', Uri.parse('http://localhost:${server.port}'));
+      const Utf8Encoder()
+          .bind(count())
+          .listen(request.sink.add, onDone: request.sink.close);
+      await client.send(request);
+
+      expect(lastReceived, greaterThanOrEqualTo(1000));
+    }, skip: canStream ? false : 'does not stream request bodies');
   });
 }
 
@@ -376,7 +418,7 @@ testResponseHeaders(http.Client client) async {
 
 void main() {
   group('CocoaClient', () {
-    testRequestBody(CocoaClient.sharedUrlSession());
+    testRequestBody(CocoaClient.sharedUrlSession(), canStream: false);
     testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
     testRequestHeaders(CocoaClient.sharedUrlSession());
     testResponseHeaders(CocoaClient.sharedUrlSession());
