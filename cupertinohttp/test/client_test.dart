@@ -7,6 +7,115 @@ import 'package:test/test.dart';
 
 import 'package:cupertinohttp/cupertinohttp.dart';
 
+class Plus2Decoder extends Converter<List<int>, String> {
+  @override
+  String convert(List<int> input) {
+    return const Utf8Decoder().convert(input.map((e) => e + 2).toList());
+  }
+}
+
+class Plus2Encoder extends Converter<String, List<int>> {
+  @override
+  List<int> convert(String input) {
+    return const Utf8Encoder().convert(input).map((e) => e - 2).toList();
+  }
+}
+
+class Plus2Encoding extends Encoding {
+  @override
+  Converter<List<int>, String> get decoder => Plus2Decoder();
+
+  @override
+  Converter<String, List<int>> get encoder => Plus2Encoder();
+
+  @override
+  String get name => "plus2";
+}
+
+testRequestBody(http.Client client) {
+  group('request body', () {
+    test('client.post() with string body', () async {
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: 'Hello World!');
+
+      expect(serverReceivedContentType, ["text/plain; charset=utf-8"]);
+      expect(serverReceivedBody, 'Hello World!');
+    });
+
+    test('client.post() with string body and custom encoding', () async {
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: 'Hello', encoding: Plus2Encoding());
+
+      expect(serverReceivedContentType, ["text/plain; charset=plus2"]);
+      expect(serverReceivedBody, 'Fcjjm');
+    });
+
+    test('client.post() with map body', () async {
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: {"key": "value"});
+      expect(serverReceivedContentType,
+          ['application/x-www-form-urlencoded; charset=utf-8']);
+      expect(serverReceivedBody, "key=value");
+    });
+
+    test('client.post() with map body and encloding', () async {
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          body: {"key": "value"}, encoding: Plus2Encoding());
+      expect(serverReceivedContentType,
+          ['application/x-www-form-urlencoded; charset=plus2']);
+      expect(serverReceivedBody, "gau;r]hqa");
+    });
+  });
+}
+
 testResponseBody(http.Client client, {bool canStream = true}) async {
   group('response body', () {
     test('small response with content length', () async {
@@ -213,12 +322,14 @@ testResponseHeaders(http.Client client) async {
 
 void main() {
   group('CocoaClient', () {
+    testRequestBody(CocoaClient.sharedUrlSession());
     testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
     testRequestHeaders(CocoaClient.sharedUrlSession());
     testResponseHeaders(CocoaClient.sharedUrlSession());
   });
 
   group('dart:io', () {
+    testRequestBody(http.Client());
     testResponseBody(http.Client());
     testRequestHeaders(http.Client());
     testResponseHeaders(http.Client());
