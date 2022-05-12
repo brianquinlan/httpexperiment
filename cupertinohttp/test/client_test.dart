@@ -94,7 +94,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       expect(serverReceivedBody, "key=value");
     });
 
-    test('client.post() with map body and encloding', () async {
+    test('client.post() with map body and encoding', () async {
       late List<String>? serverReceivedContentType;
       late String serverReceivedBody;
 
