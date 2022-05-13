@@ -52,6 +52,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
 
       expect(serverReceivedContentType, ["text/plain; charset=utf-8"]);
       expect(serverReceivedBody, 'Hello World!');
+      server.close();
     });
 
     test('client.post() with string body and custom encoding', () async {
@@ -72,6 +73,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
 
       expect(serverReceivedContentType, ["text/plain; charset=plus2"]);
       expect(serverReceivedBody, 'Fcjjm');
+      server.close();
     });
 
     test('client.post() with map body', () async {
@@ -92,6 +94,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       expect(serverReceivedContentType,
           ['application/x-www-form-urlencoded; charset=utf-8']);
       expect(serverReceivedBody, "key=value");
+      server.close();
     });
 
     test('client.post() with map body and encoding', () async {
@@ -112,6 +115,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       expect(serverReceivedContentType,
           ['application/x-www-form-urlencoded; charset=plus2']);
       expect(serverReceivedBody, "gau;r]hqa"); // key=value
+      server.close();
     });
 
     test('client.post() with List<int>', () async {
@@ -136,6 +140,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       // But we didn't set one so verify that the server didn't get one.
       expect(serverReceivedContentType, null);
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
+      server.close();
     });
 
     test('client.post() with List<int> with encoding', () async {
@@ -157,6 +162,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
 
       expect(serverReceivedContentType, null);
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
+      server.close();
     });
 
     test('client.send() with StreamedRequest', () async {
@@ -199,6 +205,7 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       await client.send(request);
 
       expect(lastReceived, greaterThanOrEqualTo(1000));
+      server.close();
     }, skip: canStream ? false : 'does not stream request bodies');
   });
 }
@@ -220,6 +227,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       expect(response.bodyBytes, message.codeUnits);
       expect(response.contentLength, message.length);
       expect(response.headers['content-type'], 'text/plain');
+      server.close();
     });
 
     test('small response streamed without content length', () async {
@@ -237,6 +245,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       expect(await response.stream.bytesToString(), message);
       expect(response.contentLength, null);
       expect(response.headers['content-type'], 'text/plain');
+      server.close();
     });
 
     test('large response streamed without content length', () async {
@@ -274,6 +283,7 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
       });
       expect(response.headers['content-type'], 'text/plain');
       expect(lastReceived, greaterThanOrEqualTo(1000));
+      server.close();
     }, skip: canStream ? false : 'does not stream response bodies');
   });
 }
@@ -291,6 +301,7 @@ testRequestHeaders(http.Client client) async {
       await client.get(Uri.parse('http://localhost:${server.port}'),
           headers: {'foo': 'bar'});
       expect(requestHeaders['foo'], ['bar']);
+      server.close();
     });
 
     test('UPPER case header', () async {
@@ -306,6 +317,7 @@ testRequestHeaders(http.Client client) async {
       // RFC 2616 14.44 states that header field names are case-insensive.
       // http.Client canonicalizes field names into lower case.
       expect(requestHeaders['foo'], ['BAR']);
+      server.close();
     });
 
     test('test headers different only in case', () async {
@@ -320,6 +332,7 @@ testRequestHeaders(http.Client client) async {
       await client.get(Uri.parse('http://localhost:${server.port}'),
           headers: {'foo': 'bar', 'Foo': 'Bar'});
       expect(requestHeaders['foo']!.first, isIn(['bar', 'Bar']));
+      server.close();
     });
 
     test('multiple headers', () async {
@@ -335,6 +348,7 @@ testRequestHeaders(http.Client client) async {
       await client.get(Uri.parse('http://localhost:${server.port}'),
           headers: {'list': 'apple, orange'});
       expect(requestHeaders['list'], ['apple, orange']);
+      server.close();
     });
 
     test('multiple values per header', () async {
@@ -351,6 +365,7 @@ testRequestHeaders(http.Client client) async {
           headers: {'list': 'apple, orange'});
 
       expect(requestHeaders['list'], ['apple, orange']);
+      server.close();
     });
   });
 }
@@ -368,6 +383,7 @@ testResponseHeaders(http.Client client) async {
       final response =
           await client.get(Uri.parse('http://localhost:${server.port}'));
       expect(response.headers['foo'], 'bar');
+      server.close();
     });
 
     test('UPPERCASE header', () async {
@@ -383,6 +399,7 @@ testResponseHeaders(http.Client client) async {
       final response =
           await client.get(Uri.parse('http://localhost:${server.port}'));
       expect(response.headers['foo'], 'BAR');
+      server.close();
     });
 
     test('multiple headers', () async {
@@ -401,6 +418,7 @@ testResponseHeaders(http.Client client) async {
       expect(response.headers['field1'], 'value1');
       expect(response.headers['field2'], 'value2');
       expect(response.headers['field3'], 'value3');
+      server.close();
     });
 
     test('multiple values per header', () async {
@@ -418,6 +436,7 @@ testResponseHeaders(http.Client client) async {
       final response =
           await client.get(Uri.parse('http://localhost:${server.port}'));
       expect(response.headers['list'], 'apple, orange, banana');
+      server.close();
     });
   });
 }
