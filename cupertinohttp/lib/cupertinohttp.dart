@@ -394,6 +394,15 @@ class URLSession {
         ns.NSURLSessionConfiguration.castFrom(_nsUrlSession.configuration!));
   }
 
+  factory URLSession._sessionWithConfigurationDelegateAndDelegateQueue(
+    URLSessionConfiguration config,
+    _HttpClientDelegate cat,
+  ) {
+    return URLSession._(
+        ns.NSURLSession.sessionWithConfiguration_delegate_delegateQueue(
+            _lib, config._nsObject, cat._nsObject, null));
+  }
+
   factory URLSession.sessionWithConfiguration(URLSessionConfiguration config) {
     return URLSession._(
         ns.NSURLSession.sessionWithConfiguration(_lib, config._nsObject));
@@ -451,19 +460,32 @@ class _A {
   _A(this.data, this.response, this.error);
 }
 
+class _HttpClientDelegate extends _Object<ns.HttpClientDelegate> {
+  _HttpClientDelegate() : super(ns.HttpClientDelegate.new1(_helperLib));
+
+  setMaxRedirects(URLSessionTask task, int redirects) {
+    _nsObject.setMaxRedirects_forTask(redirects, task._nsUrlSessionTask);
+  }
+
+  int getNumRedirects(URLSessionTask task) {
+    return _nsObject.getRedirectsForTask(task._nsUrlSessionTask);
+  }
+}
+
 class CocoaClient extends BaseClient {
-  late URLSession _urlSession = URLSession.sharedSession();
+  URLSession _urlSession;
+  _HttpClientDelegate _delegate;
 
   URLSession get urlSession => _urlSession;
 
-  CocoaClient._(this._urlSession);
+  CocoaClient._(this._urlSession, this._delegate);
 
-  factory CocoaClient.sharedUrlSession() {
-    return CocoaClient._(URLSession.sharedSession());
-  }
-
-  factory CocoaClient.fromUrlSession(URLSession urlSession) {
-    return CocoaClient._(urlSession);
+  factory CocoaClient.defaultSessionConfiguration() {
+    final delegate = _HttpClientDelegate();
+    return CocoaClient._(
+        URLSession._sessionWithConfigurationDelegateAndDelegateQueue(
+            URLSessionConfiguration.defaultSessionConfiguration(), delegate),
+        delegate);
   }
 
   @override
@@ -484,15 +506,22 @@ class CocoaClient extends BaseClient {
     final task = urlSession.dataTask(urlRequest, (data, response, error) {
       callbackComplete.complete(_A(data, response, error));
     });
+    final maxRedirects = request.followRedirects ? request.maxRedirects : 0;
+    _delegate.setMaxRedirects(task, maxRedirects);
     task.resume();
 
     final result = await callbackComplete.future;
+    final numRedirects = _delegate.getNumRedirects(task);
+    if (request.followRedirects && numRedirects > maxRedirects) {
+      throw ClientException('Redirect limit exceeded', request.url);
+    }
 
     final contentLength = result.response!.expectedContentLength;
     return StreamedResponse(
       Stream.fromIterable([result.data!.bytes]),
       result.response!.statusCode,
       contentLength: contentLength == -1 ? null : contentLength,
+      isRedirect: !request.followRedirects && numRedirects > 0,
       headers: result.response!.allHeaderFields
           .map((key, value) => MapEntry(key.toLowerCase(), value)),
     );

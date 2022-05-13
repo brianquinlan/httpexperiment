@@ -69897,6 +69897,54 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>,
           int)>();
+
+  late final ffi.Pointer<ObjCObject> _class_HttpClientDelegate1 =
+      _getClass1("HttpClientDelegate");
+  late final ffi.Pointer<ObjCSel> _sel_setMaxRedirects_forTask_1 =
+      _registerName1("setMaxRedirects:forTask:");
+  void _objc_msgSend_304(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    int max,
+    ffi.Pointer<ObjCObject> task,
+  ) {
+    return __objc_msgSend_304(
+      obj,
+      sel,
+      max,
+      task,
+    );
+  }
+
+  late final __objc_msgSend_304Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+              ffi.Uint32, ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+  late final __objc_msgSend_304 = __objc_msgSend_304Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
+          ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<ObjCSel> _sel_getRedirectsForTask_1 =
+      _registerName1("getRedirectsForTask:");
+  int _objc_msgSend_305(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    ffi.Pointer<ObjCObject> task,
+  ) {
+    return __objc_msgSend_305(
+      obj,
+      sel,
+      task,
+    );
+  }
+
+  late final __objc_msgSend_305Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint32 Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+              ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+  late final __objc_msgSend_305 = __objc_msgSend_305Ptr.asFunction<
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+          ffi.Pointer<ObjCObject>)>();
 }
 
 class ObjCObject extends ffi.Opaque {}
@@ -86749,6 +86797,42 @@ class URLSessionHelper extends NSObject {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_alloc1);
     return URLSessionHelper._(_ret, _lib);
+  }
+}
+
+class HttpClientDelegate extends NSObject {
+  HttpClientDelegate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
+      : super._(id, lib);
+
+  static HttpClientDelegate castFrom<T extends _ObjCWrapper>(T other) {
+    return HttpClientDelegate._(other._id, other._lib);
+  }
+
+  static HttpClientDelegate castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return HttpClientDelegate._(other, lib);
+  }
+
+  void setMaxRedirects_forTask(int max, NSObject? task) {
+    _lib._objc_msgSend_304(_id, _lib._sel_setMaxRedirects_forTask_1, max,
+        task?._id ?? ffi.nullptr);
+  }
+
+  int getRedirectsForTask(NSObject? task) {
+    return _lib._objc_msgSend_305(
+        _id, _lib._sel_getRedirectsForTask_1, task?._id ?? ffi.nullptr);
+  }
+
+  static HttpClientDelegate new1(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_HttpClientDelegate1, _lib._sel_new1);
+    return HttpClientDelegate._(_ret, _lib);
+  }
+
+  static HttpClientDelegate alloc(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_HttpClientDelegate1, _lib._sel_alloc1);
+    return HttpClientDelegate._(_ret, _lib);
   }
 }
 

@@ -445,10 +445,21 @@ testRedirect(http.Client client) async {
   group('redirects', () {
     late HttpServer server;
     setUp(() async {
+      //        URI |  Redirects TO
+      // ===========|==============
+      // ".../loop" |    ".../loop"
+      //   ".../10" |       ".../9"
+      //    ".../9" |       ".../8"
+      //        ... |           ...
+      //    ".../1" |           "/"
+      //        "/" |  <no redirect>
       server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
           if (request.requestedUri.pathSegments.isEmpty) {
             unawaited(request.response.close());
+          } else if (request.requestedUri.pathSegments.last == "loop") {
+            unawaited(request.response
+                .redirect(Uri.parse('http://localhost:${server.port}/loop')));
           } else {
             final n = int.parse(request.requestedUri.pathSegments.last);
             String nextPath = n - 1 == 0 ? '' : '${n - 1}';
@@ -459,6 +470,15 @@ testRedirect(http.Client client) async {
     });
     tearDown(() => server.close);
 
+    test('disallow redirect', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/1'))
+            ..followRedirects = false;
+      final response = await client.send(request);
+      expect(response.statusCode, 302);
+      expect(response.isRedirect, true);
+    });
+
     test('allow redirect', () async {
       final request =
           http.Request('GET', Uri.parse('http://localhost:${server.port}/1'))
@@ -468,13 +488,15 @@ testRedirect(http.Client client) async {
       expect(response.isRedirect, false);
     });
 
-    test('disallow redirect', () async {
+    test('allow redirect, 0 maxRedirects, ', () async {
       final request =
           http.Request('GET', Uri.parse('http://localhost:${server.port}/1'))
-            ..followRedirects = false;
-      final response = await client.send(request);
-      expect(response.statusCode, 302);
-      expect(response.isRedirect, true);
+            ..followRedirects = true
+            ..maxRedirects = 0;
+      expect(
+          client.send(request),
+          throwsA(isA<http.ClientException>()
+              .having((e) => e.message, 'message', 'Redirect limit exceeded')));
     });
 
     test('exactly the right number of allowed redirects', () async {
@@ -497,16 +519,29 @@ testRedirect(http.Client client) async {
           throwsA(isA<http.ClientException>()
               .having((e) => e.message, 'message', 'Redirect limit exceeded')));
     });
+
+    test('loop', () async {
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}/loop'))
+            ..followRedirects = true
+            ..maxRedirects = 5;
+      expect(
+          client.send(request),
+          throwsA(isA<http.ClientException>()
+              .having((e) => e.message, 'message', 'Redirect loop detected')));
+    });
   });
 }
 
 void main() {
   group('CocoaClient', () {
-    testRequestBody(CocoaClient.sharedUrlSession(), canStream: false);
-    testResponseBody(CocoaClient.sharedUrlSession(), canStream: false);
-    testRequestHeaders(CocoaClient.sharedUrlSession());
-    testResponseHeaders(CocoaClient.sharedUrlSession());
-    testRedirect(CocoaClient.sharedUrlSession());
+    testRequestBody(CocoaClient.defaultSessionConfiguration(),
+        canStream: false);
+    testResponseBody(CocoaClient.defaultSessionConfiguration(),
+        canStream: false);
+    testRequestHeaders(CocoaClient.defaultSessionConfiguration());
+    testResponseHeaders(CocoaClient.defaultSessionConfiguration());
+    testRedirect(CocoaClient.defaultSessionConfiguration());
   });
 
   group('dart:io', () {
