@@ -105,7 +105,7 @@ class URLSessionConfiguration extends _Object<ns.NSURLSessionConfiguration> {
   factory URLSessionConfiguration.backgroundSession(String identifier) {
     return URLSessionConfiguration._(ns.NSURLSessionConfiguration.castFrom(
         ns.NSURLSessionConfiguration
-            .backgroundSessionConfigurationWithIdentifier(
+            .backgroundSessionConfigurationWithIdentifier_(
                 _lib, ns.NSObject.castFrom(identifier.toNSString(_lib)))));
   }
 
@@ -226,9 +226,9 @@ class URLRequest {
   }
 
   factory URLRequest.fromUrl(Uri uri) {
-    final url = ns.NSURL.URLWithString(
+    final url = ns.NSURL.URLWithString_(
         _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
-    return URLRequest._(ns.NSURLRequest.requestWithURL(_lib, url));
+    return URLRequest._(ns.NSURLRequest.requestWithURL_(_lib, url));
   }
 }
 
@@ -254,7 +254,7 @@ class MutableURLRequest extends URLRequest {
   }
 
   void setValueForHttpHeaderField(String value, String field) {
-    nsMutableURLRequest.setValue_forHTTPHeaderField(
+    nsMutableURLRequest.setValue_forHTTPHeaderField_(
         ns.NSObject.castFrom(field.toNSString(_lib)),
         ns.NSObject.castFrom(value.toNSString(_lib)));
   }
@@ -264,10 +264,10 @@ class MutableURLRequest extends URLRequest {
   }
 
   factory MutableURLRequest.fromUrl(Uri uri) {
-    final url = ns.NSURL.URLWithString(
+    final url = ns.NSURL.URLWithString_(
         _lib, ns.NSObject.castFrom(uri.toString().toNSString(_lib)));
     return MutableURLRequest._(
-        ns.NSMutableURLRequest.requestWithURL(_lib, url));
+        ns.NSMutableURLRequest.requestWithURL_(_lib, url));
   }
 
   @override
@@ -285,8 +285,8 @@ Map<String, String> _foo(ns.NSDictionary d) {
 
   final keys = ns.NSArray.castFrom(d.allKeys!);
   for (var i = 0; i < keys.count; ++i) {
-    final key = _toString(keys.objectAtIndex(i))!;
-    final value = _toString(d.objectForKey(keys.objectAtIndex(i)))!;
+    final key = _toString(keys.objectAtIndex_(i))!;
+    final value = _toString(d.objectForKey_(keys.objectAtIndex_(i)))!;
     m[key] = value;
   }
 
@@ -327,7 +327,7 @@ class Data {
     try {
       f.asTypedList(l.length).setAll(0, l);
 
-      final data = ns.NSData.dataWithBytes_length(_lib, f.cast(), l.length);
+      final data = ns.NSData.dataWithBytes_length_(_lib, f.cast(), l.length);
       return Data._(data);
     } finally {
       pffi.calloc.free(f);
@@ -399,13 +399,13 @@ class URLSession {
     _HttpClientDelegate cat,
   ) {
     return URLSession._(
-        ns.NSURLSession.sessionWithConfiguration_delegate_delegateQueue(
+        ns.NSURLSession.sessionWithConfiguration_delegate_delegateQueue_(
             _lib, config._nsObject, cat._nsObject, null));
   }
 
   factory URLSession.sessionWithConfiguration(URLSessionConfiguration config) {
     return URLSession._(
-        ns.NSURLSession.sessionWithConfiguration(_lib, config._nsObject));
+        ns.NSURLSession.sessionWithConfiguration_(_lib, config._nsObject));
   }
 
   factory URLSession.sharedSession() {
@@ -414,7 +414,7 @@ class URLSession {
   }
 
   URLSessionTask dataTask(URLRequest request) {
-    final task = _nsUrlSession.dataTaskWithRequest(request._nsUrlRequest);
+    final task = _nsUrlSession.dataTaskWithRequest_(request._nsUrlRequest);
     return URLSessionTask._(task);
   }
 
@@ -451,7 +451,7 @@ class URLSession {
     });
 
     final sendPort = port.sendPort.nativePort;
-    final task = ns.URLSessionHelper.dataTaskForSession_withRequest_toPort(
+    final task = ns.URLSessionHelper.dataTaskForSession_withRequest_toPort_(
         _helperLib, _nsUrlSession, request._nsUrlRequest, sendPort);
     return URLSessionTask._(task);
   }
@@ -462,12 +462,12 @@ class _HttpClientDelegate extends _Object<ns.HttpClientDelegate> {
 
   configureTask(URLSessionTask task, SendPort port, int maxRedirects) {
     final config = ns.TaskConfiguration.alloc(_helperLib)
-        .initWithPort_maxRedirects(port.nativePort, maxRedirects);
-    _nsObject.registerTask_withConfiguration(task._nsUrlSessionTask, config);
+        .initWithPort_maxRedirects_(port.nativePort, maxRedirects);
+    _nsObject.registerTask_withConfiguration_(task._nsUrlSessionTask, config);
   }
 
   int getNumRedirects(URLSessionTask task) {
-    return _nsObject.getNumRedirectsForTask(task._nsUrlSessionTask);
+    return _nsObject.getNumRedirectsForTask_(task._nsUrlSessionTask);
   }
 }
 
