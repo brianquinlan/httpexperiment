@@ -119,7 +119,6 @@ testRequestBody(http.Client client, {bool canStream = true}) {
     });
 
     test('client.post() with List<int>', () async {
-      late List<String>? serverReceivedContentType;
       late String serverReceivedBody;
 
       final server = (await HttpServer.bind('localhost', 0))
@@ -576,8 +575,10 @@ testRedirect(http.Client client) async {
             ..maxRedirects = 5;
       expect(
           client.send(request),
-          throwsA(isA<http.ClientException>()
-              .having((e) => e.message, 'message', 'Redirect loop detected')));
+          throwsA(isA<http.ClientException>().having(
+              (e) => e.message,
+              'message',
+              isIn(['Redirect loop detected', 'Redirect limit exceeded']))));
     });
   });
 }
