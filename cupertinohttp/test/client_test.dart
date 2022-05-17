@@ -124,8 +124,6 @@ testRequestBody(http.Client client, {bool canStream = true}) {
 
       final server = (await HttpServer.bind('localhost', 0))
         ..listen((request) async {
-          serverReceivedContentType =
-              request.headers[HttpHeaders.contentTypeHeader];
           serverReceivedBody = await const Utf8Decoder()
               .bind(request)
               .fold("", (p, e) => "$p$e");
@@ -137,14 +135,13 @@ testRequestBody(http.Client client, {bool canStream = true}) {
       // RFC 2616 7.2.1 says that:
       //   Any HTTP/1.1 message containing an entity-body SHOULD include a
       //   Content-Type header field defining the media type of that body.
-      // But we didn't set one so verify that the server didn't get one.
-      expect(serverReceivedContentType, null);
+      // But we didn't set one explicitly so don't verify what the server
+      // received.
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
       server.close();
     });
 
-    test('client.post() with List<int> with encoding', () async {
-      // Encoding should not affect binary payloads.
+    test('client.post() with List<int> and content-type', () async {
       late List<String>? serverReceivedContentType;
       late String serverReceivedBody;
 
@@ -158,9 +155,59 @@ testRequestBody(http.Client client, {bool canStream = true}) {
           unawaited(request.response.close());
         });
       await client.post(Uri.parse('http://localhost:${server.port}'),
+          headers: {HttpHeaders.contentTypeHeader: 'image/png'},
+          body: [1, 2, 3, 4, 5]);
+
+      expect(serverReceivedContentType, ['image/png']);
+      expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
+      server.close();
+    });
+
+    test('client.post() with List<int> with encoding', () async {
+      // Encoding should not affect binary payloads.
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
           body: [1, 2, 3, 4, 5], encoding: Plus2Encoding());
 
-      expect(serverReceivedContentType, null);
+      // RFC 2616 7.2.1 says that:
+      //   Any HTTP/1.1 message containing an entity-body SHOULD include a
+      //   Content-Type header field defining the media type of that body.
+      // But we didn't set one explicitly so don't verify what the server
+      // received.
+      expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
+      server.close();
+    });
+
+    test('client.post() with List<int> with encoding and content-type',
+        () async {
+      // Encoding should not affect the payload but it should affect the
+      // content-type.
+      late List<String>? serverReceivedContentType;
+      late String serverReceivedBody;
+
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          serverReceivedContentType =
+              request.headers[HttpHeaders.contentTypeHeader];
+          serverReceivedBody = await const Utf8Decoder()
+              .bind(request)
+              .fold("", (p, e) => "$p$e");
+          unawaited(request.response.close());
+        });
+      await client.post(Uri.parse('http://localhost:${server.port}'),
+          headers: {HttpHeaders.contentTypeHeader: 'image/png'},
+          body: [1, 2, 3, 4, 5],
+          encoding: Plus2Encoding());
+
+      expect(serverReceivedContentType, ['image/png; charset=plus2']);
       expect(serverReceivedBody.codeUnits, [1, 2, 3, 4, 5]);
       server.close();
     });
