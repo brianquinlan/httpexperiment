@@ -448,7 +448,6 @@ class URLSession {
       } finally {
         port.close();
       }
-//      final response = ns.NSError.castFromPointer(ep, _lib);
     });
 
     final sendPort = port.sendPort.nativePort;
@@ -458,32 +457,17 @@ class URLSession {
   }
 }
 
-class _A {
-  final Data? data;
-  final HTTPURLResponse? response;
-  final Error? error;
-
-  _A(this.data, this.response, this.error);
-}
-
 class _HttpClientDelegate extends _Object<ns.HttpClientDelegate> {
   _HttpClientDelegate() : super(ns.HttpClientDelegate.new1(_helperLib));
 
-  setMaxRedirects(URLSessionTask task, int redirects) {
-    _nsObject.setMaxRedirects_forTask(redirects, task._nsUrlSessionTask);
+  configureTask(URLSessionTask task, SendPort port, int maxRedirects) {
+    final config = ns.TaskConfiguration.alloc(_helperLib)
+        .initWithPort_maxRedirects(port.nativePort, maxRedirects);
+    _nsObject.registerTask_withConfiguration(task._nsUrlSessionTask, config);
   }
 
   int getNumRedirects(URLSessionTask task) {
-    return _nsObject.getRedirectsForTask(task._nsUrlSessionTask);
-  }
-
-  setResponsePort(URLSessionTask task, SendPort p) {
-    return _nsObject.setResponsePort_forTask(
-        p.nativePort, task._nsUrlSessionTask);
-  }
-
-  setDataPort(URLSessionTask task, SendPort p) {
-    return _nsObject.setDataPort_forTask(p.nativePort, task._nsUrlSessionTask);
+    return _nsObject.getNumRedirectsForTask(task._nsUrlSessionTask);
   }
 }
 
@@ -518,47 +502,44 @@ class CocoaClient extends BaseClient {
     request.headers.forEach(
         (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
 
-    final callbackComplete = Completer();
-    final task = urlSession.dataTask(urlRequest);
-
-    // Setup response listener.
+    final callbackComplete = Completer(); // ClientException | HTTPURLResponse
+    final responseController = StreamController<Uint8List>();
     final responsePort = ReceivePort();
+
     responsePort.listen((message) {
-      final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(message);
-      final response =
-          HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
-      callbackComplete.complete(response);
-      responsePort.close();
-    });
-    _delegate.setResponsePort(task, responsePort.sendPort);
+      final messageType = message[0];
+      final payload = message[1];
 
-    // Setup redirect handling.
-    final maxRedirects = request.followRedirects ? request.maxRedirects : 0;
-    _delegate.setMaxRedirects(task, maxRedirects);
-
-    // Setup data handling.
-    final streamController = StreamController<Uint8List>();
-    final dataPort = ReceivePort();
-    dataPort.listen((message) {
-      if (message is int) {
-        if (message != 0) {
-          final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(message);
-          final error = Error._(ns.NSError.castFromPointer(_lib, ep));
-          final e = ClientException(error.toString());
-          if (callbackComplete.isCompleted) {
-            streamController.addError(e);
-          } else {
-            callbackComplete.complete(e);
+      switch (messageType) {
+        case ns.MessageType.ResponseMessage:
+          final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(payload);
+          final response =
+              HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
+          callbackComplete.complete(response);
+          break;
+        case ns.MessageType.DataMessage:
+          responseController.add(payload);
+          break;
+        case ns.MessageType.CompletedMessage:
+          if (payload != null) {
+            final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(payload);
+            final error = Error._(ns.NSError.castFromPointer(_lib, ep));
+            final e = ClientException(error.toString());
+            if (callbackComplete.isCompleted) {
+              responseController.addError(e);
+            } else {
+              callbackComplete.complete(e);
+            }
           }
-        }
-        streamController.close();
-        dataPort.close();
-      } else {
-        streamController.add(message);
+          responseController.close();
+          responsePort.close();
+          break;
       }
     });
-    _delegate.setDataPort(task, dataPort.sendPort);
 
+    final task = urlSession.dataTask(urlRequest);
+    final maxRedirects = request.followRedirects ? request.maxRedirects : 0;
+    _delegate.configureTask(task, responsePort.sendPort, maxRedirects);
     task.resume();
 
     final result = await callbackComplete.future;
@@ -573,7 +554,7 @@ class CocoaClient extends BaseClient {
 
     final contentLength = response.expectedContentLength;
     return StreamedResponse(
-      streamController.stream,
+      responseController.stream,
       response.statusCode,
       contentLength: contentLength == -1 ? null : contentLength,
       isRedirect: !request.followRedirects && numRedirects > 0,

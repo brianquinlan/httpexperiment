@@ -8,6 +8,7 @@
 // but that would mean that ffigen would process every
 #import <Foundation/NSURLSession.h>
 
+
 @interface URLSessionHelper : NSObject
 
 + (NSURLSessionDataTask *)dataTaskForSession:(NSURLSession *)session
@@ -16,13 +17,24 @@
 
 @end
 
-@interface HttpClientDelegate : NSObject // <NSURLSessionDelegate>
+typedef NS_ENUM(NSInteger, MessageType) {
+  ResponseMessage = 0,
+  DataMessage = 1,
+  CompletedMessage = 2
+};
 
-- (void) setMaxRedirects: (uint32_t)max forTask: (NSURLSessionTask *) task;
-- (uint32_t) getRedirectsForTask: (NSURLSessionTask *) task;
+@interface TaskConfiguration : NSObject
 
-- (void)setDataPort:(Dart_Port) dart_port forTask: (NSURLSessionTask *) task;
-- (void)setResponsePort:(Dart_Port) dart_port forTask: (NSURLSessionTask *) task;
+- (id) initWithPort:(Dart_Port)sendPort maxRedirects:(uint32_t)redirects;
+
+@property (readonly) Dart_Port sendPort;
+@property (readonly) uint32_t maxRedirects;
 
 @end
 
+@interface HttpClientDelegate : NSObject // <NSURLSessionDelegate>
+
+- (void)registerTask:(NSURLSessionTask *) task withConfiguration:(TaskConfiguration *)config;
+- (uint32_t) getNumRedirectsForTask: (NSURLSessionTask *) task;
+
+@end

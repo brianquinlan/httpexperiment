@@ -69898,80 +69898,77 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           int)>();
 
-  late final ffi.Pointer<ObjCObject> _class_HttpClientDelegate1 =
-      _getClass1("HttpClientDelegate");
-  late final ffi.Pointer<ObjCSel> _sel_setMaxRedirects_forTask_1 =
-      _registerName1("setMaxRedirects:forTask:");
-  void _objc_msgSend_304(
+  late final ffi.Pointer<ObjCObject> _class_TaskConfiguration1 =
+      _getClass1("TaskConfiguration");
+  late final ffi.Pointer<ObjCSel> _sel_initWithPort_maxRedirects_1 =
+      _registerName1("initWithPort:maxRedirects:");
+  ffi.Pointer<ObjCObject> _objc_msgSend_304(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
-    int max,
-    ffi.Pointer<ObjCObject> task,
+    int sendPort,
+    int redirects,
   ) {
     return __objc_msgSend_304(
       obj,
       sel,
-      max,
-      task,
+      sendPort,
+      redirects,
     );
   }
 
   late final __objc_msgSend_304Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
-              ffi.Uint32, ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<ObjCSel>, Dart_Port, ffi.Uint32)>>('objc_msgSend');
   late final __objc_msgSend_304 = __objc_msgSend_304Ptr.asFunction<
-      void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
-          ffi.Pointer<ObjCObject>)>();
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getRedirectsForTask_1 =
-      _registerName1("getRedirectsForTask:");
+  late final ffi.Pointer<ObjCSel> _sel_sendPort1 = _registerName1("sendPort");
+  late final ffi.Pointer<ObjCSel> _sel_maxRedirects1 =
+      _registerName1("maxRedirects");
   int _objc_msgSend_305(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
-    ffi.Pointer<ObjCObject> task,
   ) {
     return __objc_msgSend_305(
       obj,
       sel,
-      task,
     );
   }
 
   late final __objc_msgSend_305Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Uint32 Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
-              ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+          ffi.Uint32 Function(
+              ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>>('objc_msgSend');
   late final __objc_msgSend_305 = __objc_msgSend_305Ptr.asFunction<
-      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
-          ffi.Pointer<ObjCObject>)>();
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setDataPort_forTask_1 =
-      _registerName1("setDataPort:forTask:");
-  void _objc_msgSend_306(
+  late final ffi.Pointer<ObjCObject> _class_HttpClientDelegate1 =
+      _getClass1("HttpClientDelegate");
+  late final ffi.Pointer<ObjCSel> _sel_registerTask_withConfiguration_1 =
+      _registerName1("registerTask:withConfiguration:");
+  late final ffi.Pointer<ObjCSel> _sel_getNumRedirectsForTask_1 =
+      _registerName1("getNumRedirectsForTask:");
+  int _objc_msgSend_306(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
-    int dart_port,
     ffi.Pointer<ObjCObject> task,
   ) {
     return __objc_msgSend_306(
       obj,
       sel,
-      dart_port,
       task,
     );
   }
 
   late final __objc_msgSend_306Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
-              Dart_Port, ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+          ffi.Uint32 Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+              ffi.Pointer<ObjCObject>)>>('objc_msgSend');
   late final __objc_msgSend_306 = __objc_msgSend_306Ptr.asFunction<
-      void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
+      int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
-
-  late final ffi.Pointer<ObjCSel> _sel_setResponsePort_forTask_1 =
-      _registerName1("setResponsePort:forTask:");
 }
 
 class ObjCObject extends ffi.Opaque {}
@@ -86827,6 +86824,52 @@ class URLSessionHelper extends NSObject {
   }
 }
 
+abstract class MessageType {
+  static const int ResponseMessage = 0;
+  static const int DataMessage = 1;
+  static const int CompletedMessage = 2;
+}
+
+class TaskConfiguration extends NSObject {
+  TaskConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
+      : super._(id, lib);
+
+  static TaskConfiguration castFrom<T extends _ObjCWrapper>(T other) {
+    return TaskConfiguration._(other._id, other._lib);
+  }
+
+  static TaskConfiguration castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return TaskConfiguration._(other, lib);
+  }
+
+  NSObject initWithPort_maxRedirects(int sendPort, int redirects) {
+    final _ret = _lib._objc_msgSend_304(
+        _id, _lib._sel_initWithPort_maxRedirects_1, sendPort, redirects);
+    return NSObject._(_ret, _lib);
+  }
+
+  int get sendPort {
+    return _lib._objc_msgSend_207(_id, _lib._sel_sendPort1);
+  }
+
+  int get maxRedirects {
+    return _lib._objc_msgSend_305(_id, _lib._sel_maxRedirects1);
+  }
+
+  static TaskConfiguration new1(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_TaskConfiguration1, _lib._sel_new1);
+    return TaskConfiguration._(_ret, _lib);
+  }
+
+  static TaskConfiguration alloc(NativeLibrary _lib) {
+    final _ret =
+        _lib._objc_msgSend_1(_lib._class_TaskConfiguration1, _lib._sel_alloc1);
+    return TaskConfiguration._(_ret, _lib);
+  }
+}
+
 class HttpClientDelegate extends NSObject {
   HttpClientDelegate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
       : super._(id, lib);
@@ -86840,24 +86883,14 @@ class HttpClientDelegate extends NSObject {
     return HttpClientDelegate._(other, lib);
   }
 
-  void setMaxRedirects_forTask(int max, NSObject? task) {
-    _lib._objc_msgSend_304(_id, _lib._sel_setMaxRedirects_forTask_1, max,
-        task?._id ?? ffi.nullptr);
+  void registerTask_withConfiguration(NSObject? task, NSObject? config) {
+    _lib._objc_msgSend_101(_id, _lib._sel_registerTask_withConfiguration_1,
+        task?._id ?? ffi.nullptr, config?._id ?? ffi.nullptr);
   }
 
-  int getRedirectsForTask(NSObject? task) {
-    return _lib._objc_msgSend_305(
-        _id, _lib._sel_getRedirectsForTask_1, task?._id ?? ffi.nullptr);
-  }
-
-  void setDataPort_forTask(int dart_port, NSObject? task) {
-    _lib._objc_msgSend_306(_id, _lib._sel_setDataPort_forTask_1, dart_port,
-        task?._id ?? ffi.nullptr);
-  }
-
-  void setResponsePort_forTask(int dart_port, NSObject? task) {
-    _lib._objc_msgSend_306(_id, _lib._sel_setResponsePort_forTask_1, dart_port,
-        task?._id ?? ffi.nullptr);
+  int getNumRedirectsForTask(NSObject? task) {
+    return _lib._objc_msgSend_306(
+        _id, _lib._sel_getNumRedirectsForTask_1, task?._id ?? ffi.nullptr);
   }
 
   static HttpClientDelegate new1(NativeLibrary _lib) {
