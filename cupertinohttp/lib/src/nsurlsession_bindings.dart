@@ -69945,6 +69945,33 @@ class NativeLibrary {
   late final __objc_msgSend_305 = __objc_msgSend_305Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<ObjCSel> _sel_setDataPort_forTask_1 =
+      _registerName1("setDataPort:forTask:");
+  void _objc_msgSend_306(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    int dart_port,
+    ffi.Pointer<ObjCObject> task,
+  ) {
+    return __objc_msgSend_306(
+      obj,
+      sel,
+      dart_port,
+      task,
+    );
+  }
+
+  late final __objc_msgSend_306Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+              Dart_Port, ffi.Pointer<ObjCObject>)>>('objc_msgSend');
+  late final __objc_msgSend_306 = __objc_msgSend_306Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
+          ffi.Pointer<ObjCObject>)>();
+
+  late final ffi.Pointer<ObjCSel> _sel_setResponsePort_forTask_1 =
+      _registerName1("setResponsePort:forTask:");
 }
 
 class ObjCObject extends ffi.Opaque {}
@@ -86821,6 +86848,16 @@ class HttpClientDelegate extends NSObject {
   int getRedirectsForTask(NSObject? task) {
     return _lib._objc_msgSend_305(
         _id, _lib._sel_getRedirectsForTask_1, task?._id ?? ffi.nullptr);
+  }
+
+  void setDataPort_forTask(int dart_port, NSObject? task) {
+    _lib._objc_msgSend_306(_id, _lib._sel_setDataPort_forTask_1, dart_port,
+        task?._id ?? ffi.nullptr);
+  }
+
+  void setResponsePort_forTask(int dart_port, NSObject? task) {
+    _lib._objc_msgSend_306(_id, _lib._sel_setResponsePort_forTask_1, dart_port,
+        task?._id ?? ffi.nullptr);
   }
 
   static HttpClientDelegate new1(NativeLibrary _lib) {

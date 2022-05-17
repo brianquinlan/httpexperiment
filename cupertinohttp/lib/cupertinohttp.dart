@@ -413,7 +413,12 @@ class URLSession {
         ns.NSURLSession.castFrom(ns.NSURLSession.getSharedSession(_lib)!));
   }
 
-  URLSessionTask dataTask(
+  URLSessionTask dataTask(URLRequest request) {
+    final task = _nsUrlSession.dataTaskWithRequest(request._nsUrlRequest);
+    return URLSessionTask._(task);
+  }
+
+  URLSessionTask dataTaskWithCompletionHandler(
       URLRequest request,
       void Function(Data? data, HTTPURLResponse? response, Error? error)
           completion) {
@@ -445,6 +450,7 @@ class URLSession {
       }
 //      final response = ns.NSError.castFromPointer(ep, _lib);
     });
+
     final sendPort = port.sendPort.nativePort;
     final task = ns.URLSessionHelper.dataTaskForSession_withRequest_toPort(
         _helperLib, _nsUrlSession, request._nsUrlRequest, sendPort);
@@ -469,6 +475,15 @@ class _HttpClientDelegate extends _Object<ns.HttpClientDelegate> {
 
   int getNumRedirects(URLSessionTask task) {
     return _nsObject.getRedirectsForTask(task._nsUrlSessionTask);
+  }
+
+  setResponsePort(URLSessionTask task, SendPort p) {
+    return _nsObject.setResponsePort_forTask(
+        p.nativePort, task._nsUrlSessionTask);
+  }
+
+  setDataPort(URLSessionTask task, SendPort p) {
+    return _nsObject.setDataPort_forTask(p.nativePort, task._nsUrlSessionTask);
   }
 }
 
@@ -502,27 +517,67 @@ class CocoaClient extends BaseClient {
     // This will preserve Apple default headers - is that what we want?
     request.headers.forEach(
         (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
-    final callbackComplete = Completer<_A>();
-    final task = urlSession.dataTask(urlRequest, (data, response, error) {
-      callbackComplete.complete(_A(data, response, error));
+
+    final callbackComplete = Completer();
+    final task = urlSession.dataTask(urlRequest);
+
+    // Setup response listener.
+    final responsePort = ReceivePort();
+    responsePort.listen((message) {
+      final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(message);
+      final response =
+          HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
+      callbackComplete.complete(response);
+      responsePort.close();
     });
+    _delegate.setResponsePort(task, responsePort.sendPort);
+
+    // Setup redirect handling.
     final maxRedirects = request.followRedirects ? request.maxRedirects : 0;
     _delegate.setMaxRedirects(task, maxRedirects);
+
+    // Setup data handling.
+    final streamController = StreamController<Uint8List>();
+    final dataPort = ReceivePort();
+    dataPort.listen((message) {
+      if (message is int) {
+        if (message != 0) {
+          final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(message);
+          final error = Error._(ns.NSError.castFromPointer(_lib, ep));
+          final e = ClientException(error.toString());
+          if (callbackComplete.isCompleted) {
+            streamController.addError(e);
+          } else {
+            callbackComplete.complete(e);
+          }
+        }
+        streamController.close();
+        dataPort.close();
+      } else {
+        streamController.add(message);
+      }
+    });
+    _delegate.setDataPort(task, dataPort.sendPort);
+
     task.resume();
 
     final result = await callbackComplete.future;
+    if (result is ClientException) {
+      throw result;
+    }
+    final response = result as HTTPURLResponse;
     final numRedirects = _delegate.getNumRedirects(task);
     if (request.followRedirects && numRedirects > maxRedirects) {
       throw ClientException('Redirect limit exceeded', request.url);
     }
 
-    final contentLength = result.response!.expectedContentLength;
+    final contentLength = response.expectedContentLength;
     return StreamedResponse(
-      Stream.fromIterable([result.data!.bytes]),
-      result.response!.statusCode,
+      streamController.stream,
+      response.statusCode,
       contentLength: contentLength == -1 ? null : contentLength,
       isRedirect: !request.followRedirects && numRedirects > 0,
-      headers: result.response!.allHeaderFields
+      headers: response.allHeaderFields
           .map((key, value) => MapEntry(key.toLowerCase(), value)),
     );
   }

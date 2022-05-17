@@ -264,6 +264,8 @@ testResponseBody(http.Client client, {bool canStream = true}) async {
           for (var i = 0; serverWriting; ++i) {
             request.response.write("$i\n");
             await request.response.flush();
+            // Let the event loop run.
+            await Future.delayed(const Duration());
           }
           await request.response.close();
         });
@@ -533,22 +535,102 @@ testRedirect(http.Client client) async {
   });
 }
 
-void main() {
-  group('CocoaClient', () {
-    testRequestBody(CocoaClient.defaultSessionConfiguration(),
-        canStream: false);
-    testResponseBody(CocoaClient.defaultSessionConfiguration(),
-        canStream: false);
-    testRequestHeaders(CocoaClient.defaultSessionConfiguration());
-    testResponseHeaders(CocoaClient.defaultSessionConfiguration());
-    testRedirect(CocoaClient.defaultSessionConfiguration());
-  });
+testDisconnects(http.Client client, {bool canStream = true}) async {
+  group('disconnects', () {
+    test('disconnect before headers', () async {
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
+          final socket =
+              await request.response.detachSocket(writeHeaders: false);
+          socket.destroy();
+        });
+      expect(client.get(Uri.parse('http://localhost:${server.port}')),
+          throwsA(isA<http.ClientException>()));
+      server.close();
+    });
 
+    test('disconnect after headers', () async {
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
+          final socket =
+              await request.response.detachSocket(writeHeaders: true);
+          socket.destroy();
+        });
+      expect(client.get(Uri.parse('http://localhost:${server.port}')),
+          throwsA(isA<http.ClientException>()));
+      server.close();
+    });
+
+    test('disconnect during stream', () async {
+      // The server continuously streams data to the client until
+      // instructed to stop (by setting `serverWriting` to `false`).
+      // The client sets `serverWriting` to `false` after it has
+      // already received some data.
+      //
+      // This ensures that the client supports streamed responses.
+      bool serverWriting = false;
+      final server = (await HttpServer.bind('localhost', 0))
+        ..listen((request) async {
+          request.drain();
+          request.response.headers.set('Content-Type', 'text/plain');
+          serverWriting = true;
+          for (var i = 0; serverWriting; ++i) {
+            request.response.write("$i\n");
+            await request.response.flush();
+            // Let the event loop run.
+            await Future.delayed(const Duration());
+          }
+          final socket =
+              await request.response.detachSocket(writeHeaders: false);
+          socket.destroy();
+        });
+      final request =
+          http.Request('GET', Uri.parse('http://localhost:${server.port}'));
+      final response = await client.send(request);
+      int lastReceived = 0;
+      await const LineSplitter()
+          .bind(const Utf8Decoder().bind(response.stream))
+          .forEach((s) {
+        lastReceived = int.parse(s.trim());
+        if (lastReceived < 1000) {
+          expect(serverWriting, true);
+        } else {
+          serverWriting = false;
+        }
+      });
+      expect(response.headers['content-type'], 'text/plain');
+      expect(lastReceived, greaterThanOrEqualTo(1000));
+      server.close();
+    }, skip: canStream ? false : 'does not stream response bodies');
+  });
+}
+
+void main() {
   group('dart:io', () {
     testRequestBody(http.Client());
     testResponseBody(http.Client());
     testRequestHeaders(http.Client());
     testResponseHeaders(http.Client());
     testRedirect(http.Client());
+//    testDisconnects(http.Client());
+  });
+
+  group('CocoaClient', () {
+    testRequestBody(CocoaClient.defaultSessionConfiguration(),
+        canStream: false);
+    testResponseBody(CocoaClient.defaultSessionConfiguration());
+    testRequestHeaders(CocoaClient.defaultSessionConfiguration());
+    testResponseHeaders(CocoaClient.defaultSessionConfiguration());
+    testRedirect(CocoaClient.defaultSessionConfiguration());
+//    testDisconnects(CocoaClient.defaultSessionConfiguration());
   });
 }
+
+// http://hayageek.com/ios-nsurlsession-example/
+// https://developer.apple.com/documentation/foundation/nsurlsessiondatadelegate/1411528-urlsession
+// Returning the wrong type right now: https://developer.apple.com/documentation/foundation/nsurlsession/1407613-datataskwithrequest
+// https://developer.apple.com/documentation/foundation/nsurlsessiondatatask
