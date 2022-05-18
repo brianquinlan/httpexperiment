@@ -69951,6 +69951,8 @@ class NativeLibrary {
       _getClass1("HttpClientDelegate");
   late final ffi.Pointer<ObjCSel> _sel_registerTask_withConfiguration_1 =
       _registerName1("registerTask:withConfiguration:");
+  late final ffi.Pointer<ObjCSel> _sel_unregisterTask_1 =
+      _registerName1("unregisterTask:");
   late final ffi.Pointer<ObjCSel> _sel_getNumRedirectsForTask_1 =
       _registerName1("getNumRedirectsForTask:");
   int _objc_msgSend_307(
@@ -86909,6 +86911,7 @@ abstract class MessageType {
   static const int ResponseMessage = 0;
   static const int DataMessage = 1;
   static const int CompletedMessage = 2;
+  static const int DeniedRedirectMessage = 3;
 }
 
 class TaskConfiguration extends NSObject {
@@ -86967,6 +86970,11 @@ class HttpClientDelegate extends NSObject {
   void registerTask_withConfiguration_(NSObject? task, NSObject? config) {
     _lib._objc_msgSend_102(_id, _lib._sel_registerTask_withConfiguration_1,
         task?._id ?? ffi.nullptr, config?._id ?? ffi.nullptr);
+  }
+
+  void unregisterTask_(NSObject? task) {
+    _lib._objc_msgSend_8(
+        _id, _lib._sel_unregisterTask_1, task?._id ?? ffi.nullptr);
   }
 
   int getNumRedirectsForTask_(NSObject? task) {

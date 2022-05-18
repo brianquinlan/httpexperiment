@@ -664,7 +664,7 @@ void main() {
     testRequestHeaders(http.Client());
     testResponseHeaders(http.Client());
     testRedirect(http.Client());
-//    testDisconnects(http.Client());
+    // testDisconnects(http.Client());
   });
 
   group('CocoaClient', () {

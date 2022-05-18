@@ -20,7 +20,8 @@
 typedef NS_ENUM(NSInteger, MessageType) {
   ResponseMessage = 0,
   DataMessage = 1,
-  CompletedMessage = 2
+  CompletedMessage = 2,
+  DeniedRedirectMessage = 3
 };
 
 @interface TaskConfiguration : NSObject
@@ -35,6 +36,7 @@ typedef NS_ENUM(NSInteger, MessageType) {
 @interface HttpClientDelegate : NSObject // <NSURLSessionDelegate>
 
 - (void)registerTask:(NSURLSessionTask *) task withConfiguration:(TaskConfiguration *)config;
+- (void)unregisterTask:(NSURLSessionTask *) task;
 - (uint32_t) getNumRedirectsForTask: (NSURLSessionTask *) task;
 
 @end

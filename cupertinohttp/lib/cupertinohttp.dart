@@ -466,6 +466,10 @@ class _HttpClientDelegate extends _Object<ns.HttpClientDelegate> {
     _nsObject.registerTask_withConfiguration_(task._nsUrlSessionTask, config);
   }
 
+  removeTask(URLSessionTask task) {
+    _nsObject.unregisterTask_(task._nsUrlSessionTask);
+  }
+
   int getNumRedirects(URLSessionTask task) {
     return _nsObject.getNumRedirectsForTask_(task._nsUrlSessionTask);
   }
@@ -502,6 +506,7 @@ class CocoaClient extends BaseClient {
     request.headers.forEach(
         (key, value) => urlRequest.setValueForHttpHeaderField(key, value));
 
+    final task = urlSession.dataTask(urlRequest);
     final callbackComplete = Completer(); // ClientException | HTTPURLResponse
     final responseController = StreamController<Uint8List>();
     final responsePort = ReceivePort();
@@ -512,16 +517,32 @@ class CocoaClient extends BaseClient {
 
       switch (messageType) {
         case ns.MessageType.ResponseMessage:
+        case ns.MessageType.DeniedRedirectMessage:
+          // Sometimes, after a denied redirect, NSURLSession does not invoke
+          // the:
+          //     (void)URLSession:(NSURLSession *) session
+          //             dataTask:(NSURLSessionDataTask *)task
+          //   didReceiveResponse:(NSURLResponse *)response
+          //    completionHandler:...
+          // delegate. So, use the response from either that delegate or from
+          // the denied redirect.
           final rp = ffi.Pointer<ns.ObjCObject>.fromAddress(payload);
           final response =
               HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
-          callbackComplete.complete(response);
+          if (!callbackComplete.isCompleted) {
+            callbackComplete.complete(response);
+          }
           break;
         case ns.MessageType.DataMessage:
           responseController.add(payload);
           break;
         case ns.MessageType.CompletedMessage:
-          if (payload != null) {
+          if (payload == null) {
+            if (!callbackComplete.isCompleted) {
+              throw StateError('The request completed without error '
+                  'but no response was received');
+            }
+          } else {
             final ep = ffi.Pointer<ns.ObjCObject>.fromAddress(payload);
             final error = Error._(ns.NSError.castFromPointer(_lib, ep));
             final e = ClientException(error.toString());
@@ -531,13 +552,13 @@ class CocoaClient extends BaseClient {
               callbackComplete.complete(e);
             }
           }
+          _delegate.removeTask(task);
           responseController.close();
           responsePort.close();
           break;
       }
     });
 
-    final task = urlSession.dataTask(urlRequest);
     final maxRedirects = request.followRedirects ? request.maxRedirects : 0;
     _delegate.configureTask(task, responsePort.sendPort, maxRedirects);
     task.resume();
@@ -548,6 +569,7 @@ class CocoaClient extends BaseClient {
     }
     final response = result as HTTPURLResponse;
     final numRedirects = _delegate.getNumRedirects(task);
+
     if (request.followRedirects && numRedirects > maxRedirects) {
       throw ClientException('Redirect limit exceeded', request.url);
     }

@@ -74,8 +74,8 @@ static Dart_CObject foo(MessageType messageType) {
 - (instancetype)init {
   self = [super init];
   if (self != nil) {
-    taskConfigurations = [NSMapTable weakToStrongObjectsMapTable];
-    numRedirectsForTask = [NSMapTable weakToStrongObjectsMapTable];
+    taskConfigurations = [NSMapTable strongToStrongObjectsMapTable];
+    numRedirectsForTask = [NSMapTable strongToStrongObjectsMapTable];
   }
   return self;
 }
@@ -88,6 +88,10 @@ static Dart_CObject foo(MessageType messageType) {
 
 - (void)registerTask:(NSURLSessionTask *) task withConfiguration:(TaskConfiguration *)config {
   [taskConfigurations setObject:config forKey:task];
+}
+
+-(void)unregisterTask:(NSURLSessionTask *) task {
+  [taskConfigurations removeObjectForKey:task];
 }
 
 - (uint32_t) getNumRedirectsForTask: (NSURLSessionTask *) task {
@@ -130,6 +134,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         newRequest:(NSURLRequest *)request
  completionHandler:(void (^)(NSURLRequest *))completionHandler API_AVAILABLE(ios(7.0)) {
   TaskConfiguration *config = [taskConfigurations objectForKey:task];
+
   if (config == nil) {
     completionHandler(request);
   }
@@ -138,6 +143,24 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
   [numRedirectsForTask setObject:@(redirects) forKey:task];
 
   if ((config.maxRedirects < redirects)) {
+    TaskConfiguration *config = [taskConfigurations objectForKey:task];
+    if (config != nil) {
+      [response retain];
+
+      Dart_CObject ctype = foo(DeniedRedirectMessage);
+      Dart_CObject cresponse = from(response);
+      Dart_CObject* message_carray[] = { &ctype, &cresponse};
+
+      Dart_CObject message_cobj;
+      message_cobj.type = Dart_CObject_kArray;
+      message_cobj.value.as_array.length = 2;
+      message_cobj.value.as_array.values = message_carray;
+
+      const bool success = Dart_PostCObject_DL(config.sendPort, &message_cobj);
+      if (!success) {
+        printf("%s\n", "Dart_PostCObject_DL failed.");
+      }
+    }
     completionHandler(nil);
   } else {
     completionHandler(request);
