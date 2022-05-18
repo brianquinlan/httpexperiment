@@ -510,6 +510,7 @@ class CocoaClient extends BaseClient {
     final callbackComplete = Completer(); // ClientException | HTTPURLResponse
     final responseController = StreamController<Uint8List>();
     final responsePort = ReceivePort();
+    late int numRedirects;
 
     responsePort.listen((message) {
       final messageType = message[0];
@@ -530,6 +531,7 @@ class CocoaClient extends BaseClient {
           final response =
               HTTPURLResponse._(ns.NSHTTPURLResponse.castFromPointer(_lib, rp));
           if (!callbackComplete.isCompleted) {
+            numRedirects = _delegate.getNumRedirects(task);
             callbackComplete.complete(response);
           }
           break;
@@ -568,7 +570,6 @@ class CocoaClient extends BaseClient {
       throw result;
     }
     final response = result as HTTPURLResponse;
-    final numRedirects = _delegate.getNumRedirects(task);
 
     if (request.followRedirects && numRedirects > maxRedirects) {
       throw ClientException('Redirect limit exceeded', request.url);

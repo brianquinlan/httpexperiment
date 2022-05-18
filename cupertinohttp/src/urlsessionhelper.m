@@ -92,6 +92,7 @@ static Dart_CObject foo(MessageType messageType) {
 
 -(void)unregisterTask:(NSURLSessionTask *) task {
   [taskConfigurations removeObjectForKey:task];
+  [taskConfigurations numRedirectsForTask:task];
 }
 
 - (uint32_t) getNumRedirectsForTask: (NSURLSessionTask *) task {
