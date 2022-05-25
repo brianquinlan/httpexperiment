@@ -921,8 +921,39 @@ class NativeLibrary {
   late final __objc_getClass = __objc_getClassPtr
       .asFunction<ffi.Pointer<ObjCObject> Function(ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSObject1 = _getClass1("NSObject");
-  late final ffi.Pointer<ObjCSel> _sel_load1 = _registerName1("load");
+  ffi.Pointer<ObjCObject> _objc_retain(
+    ffi.Pointer<ObjCObject> value,
+  ) {
+    return __objc_retain(
+      value,
+    );
+  }
+
+  late final __objc_retainPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('objc_retain');
+  late final __objc_retain = __objc_retainPtr
+      .asFunction<ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  void _objc_release(
+    ffi.Pointer<ObjCObject> value,
+  ) {
+    return __objc_release(
+      value,
+    );
+  }
+
+  late final __objc_releasePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'objc_release');
+  late final __objc_release =
+      __objc_releasePtr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  late final _objc_releaseFinalizer1 =
+      ffi.NativeFinalizer(__objc_releasePtr.cast());
+  late final _class_NSObject1 = _getClass1("NSObject");
+  late final _sel_load1 = _registerName1("load");
   void _objc_msgSend_0(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -940,9 +971,8 @@ class NativeLibrary {
   late final __objc_msgSend_0 = __objc_msgSend_0Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initialize1 =
-      _registerName1("initialize");
-  late final ffi.Pointer<ObjCSel> _sel_init1 = _registerName1("init");
+  late final _sel_initialize1 = _registerName1("initialize");
+  late final _sel_init1 = _registerName1("init");
   instancetype _objc_msgSend_1(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -960,9 +990,8 @@ class NativeLibrary {
   late final __objc_msgSend_1 = __objc_msgSend_1Ptr.asFunction<
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_new1 = _registerName1("new");
-  late final ffi.Pointer<ObjCSel> _sel_allocWithZone_1 =
-      _registerName1("allocWithZone:");
+  late final _sel_new1 = _registerName1("new");
+  late final _sel_allocWithZone_1 = _registerName1("allocWithZone:");
   instancetype _objc_msgSend_2(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -983,17 +1012,15 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_NSZone>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_alloc1 = _registerName1("alloc");
-  late final ffi.Pointer<ObjCSel> _sel_dealloc1 = _registerName1("dealloc");
-  late final ffi.Pointer<ObjCSel> _sel_finalize1 = _registerName1("finalize");
-  late final ffi.Pointer<ObjCSel> _sel_copy1 = _registerName1("copy");
-  late final ffi.Pointer<ObjCSel> _sel_mutableCopy1 =
-      _registerName1("mutableCopy");
-  late final ffi.Pointer<ObjCSel> _sel_copyWithZone_1 =
-      _registerName1("copyWithZone:");
-  late final ffi.Pointer<ObjCSel> _sel_mutableCopyWithZone_1 =
+  late final _sel_alloc1 = _registerName1("alloc");
+  late final _sel_dealloc1 = _registerName1("dealloc");
+  late final _sel_finalize1 = _registerName1("finalize");
+  late final _sel_copy1 = _registerName1("copy");
+  late final _sel_mutableCopy1 = _registerName1("mutableCopy");
+  late final _sel_copyWithZone_1 = _registerName1("copyWithZone:");
+  late final _sel_mutableCopyWithZone_1 =
       _registerName1("mutableCopyWithZone:");
-  late final ffi.Pointer<ObjCSel> _sel_instancesRespondToSelector_1 =
+  late final _sel_instancesRespondToSelector_1 =
       _registerName1("instancesRespondToSelector:");
   bool _objc_msgSend_3(
     ffi.Pointer<ObjCObject> obj,
@@ -1016,8 +1043,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_conformsToProtocol_1 =
-      _registerName1("conformsToProtocol:");
+  late final _sel_conformsToProtocol_1 = _registerName1("conformsToProtocol:");
   bool _objc_msgSend_4(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1039,8 +1065,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_methodForSelector_1 =
-      _registerName1("methodForSelector:");
+  late final _sel_methodForSelector_1 = _registerName1("methodForSelector:");
   IMP _objc_msgSend_5(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1061,9 +1086,9 @@ class NativeLibrary {
       IMP Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_instanceMethodForSelector_1 =
+  late final _sel_instanceMethodForSelector_1 =
       _registerName1("instanceMethodForSelector:");
-  late final ffi.Pointer<ObjCSel> _sel_doesNotRecognizeSelector_1 =
+  late final _sel_doesNotRecognizeSelector_1 =
       _registerName1("doesNotRecognizeSelector:");
   void _objc_msgSend_6(
     ffi.Pointer<ObjCObject> obj,
@@ -1085,7 +1110,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_forwardingTargetForSelector_1 =
+  late final _sel_forwardingTargetForSelector_1 =
       _registerName1("forwardingTargetForSelector:");
   ffi.Pointer<ObjCObject> _objc_msgSend_7(
     ffi.Pointer<ObjCObject> obj,
@@ -1107,8 +1132,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_forwardInvocation_1 =
-      _registerName1("forwardInvocation:");
+  late final _sel_forwardInvocation_1 = _registerName1("forwardInvocation:");
   void _objc_msgSend_8(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1129,9 +1153,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSMethodSignature1 =
-      _getClass1("NSMethodSignature");
-  late final ffi.Pointer<ObjCSel> _sel_methodSignatureForSelector_1 =
+  late final _class_NSMethodSignature1 = _getClass1("NSMethodSignature");
+  late final _sel_methodSignatureForSelector_1 =
       _registerName1("methodSignatureForSelector:");
   ffi.Pointer<ObjCObject> _objc_msgSend_9(
     ffi.Pointer<ObjCObject> obj,
@@ -1153,10 +1176,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_instanceMethodSignatureForSelector_1 =
+  late final _sel_instanceMethodSignatureForSelector_1 =
       _registerName1("instanceMethodSignatureForSelector:");
-  late final ffi.Pointer<ObjCSel> _sel_allowsWeakReference1 =
-      _registerName1("allowsWeakReference");
+  late final _sel_allowsWeakReference1 = _registerName1("allowsWeakReference");
   bool _objc_msgSend_10(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1175,15 +1197,12 @@ class NativeLibrary {
   late final __objc_msgSend_10 = __objc_msgSend_10Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_retainWeakReference1 =
-      _registerName1("retainWeakReference");
-  late final ffi.Pointer<ObjCSel> _sel_isSubclassOfClass_1 =
-      _registerName1("isSubclassOfClass:");
-  late final ffi.Pointer<ObjCSel> _sel_resolveClassMethod_1 =
-      _registerName1("resolveClassMethod:");
-  late final ffi.Pointer<ObjCSel> _sel_resolveInstanceMethod_1 =
+  late final _sel_retainWeakReference1 = _registerName1("retainWeakReference");
+  late final _sel_isSubclassOfClass_1 = _registerName1("isSubclassOfClass:");
+  late final _sel_resolveClassMethod_1 = _registerName1("resolveClassMethod:");
+  late final _sel_resolveInstanceMethod_1 =
       _registerName1("resolveInstanceMethod:");
-  late final ffi.Pointer<ObjCSel> _sel_hash1 = _registerName1("hash");
+  late final _sel_hash1 = _registerName1("hash");
   int _objc_msgSend_11(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1201,13 +1220,11 @@ class NativeLibrary {
   late final __objc_msgSend_11 = __objc_msgSend_11Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_superclass1 =
-      _registerName1("superclass");
-  late final ffi.Pointer<ObjCSel> _sel_class1 = _registerName1("class");
-  late final ffi.Pointer<ObjCObject> _class_NSString1 = _getClass1("NSString");
-  late final ffi.Pointer<ObjCSel> _sel_length1 = _registerName1("length");
-  late final ffi.Pointer<ObjCSel> _sel_characterAtIndex_1 =
-      _registerName1("characterAtIndex:");
+  late final _sel_superclass1 = _registerName1("superclass");
+  late final _sel_class1 = _registerName1("class");
+  late final _class_NSString1 = _getClass1("NSString");
+  late final _sel_length1 = _registerName1("length");
+  late final _sel_characterAtIndex_1 = _registerName1("characterAtIndex:");
   int _objc_msgSend_12(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1227,8 +1244,7 @@ class NativeLibrary {
   late final __objc_msgSend_12 = __objc_msgSend_12Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithCoder_1 =
-      _registerName1("initWithCoder:");
+  late final _sel_initWithCoder_1 = _registerName1("initWithCoder:");
   instancetype _objc_msgSend_13(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1249,8 +1265,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_substringFromIndex_1 =
-      _registerName1("substringFromIndex:");
+  late final _sel_substringFromIndex_1 = _registerName1("substringFromIndex:");
   ffi.Pointer<ObjCObject> _objc_msgSend_14(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1271,10 +1286,8 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_substringToIndex_1 =
-      _registerName1("substringToIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_substringWithRange_1 =
-      _registerName1("substringWithRange:");
+  late final _sel_substringToIndex_1 = _registerName1("substringToIndex:");
+  late final _sel_substringWithRange_1 = _registerName1("substringWithRange:");
   ffi.Pointer<ObjCObject> _objc_msgSend_15(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1295,7 +1308,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getCharacters_range_1 =
+  late final _sel_getCharacters_range_1 =
       _registerName1("getCharacters:range:");
   void _objc_msgSend_16(
     ffi.Pointer<ObjCObject> obj,
@@ -1319,7 +1332,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<unichar>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compare_1 = _registerName1("compare:");
+  late final _sel_compare_1 = _registerName1("compare:");
   int _objc_msgSend_17(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1340,8 +1353,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compare_options_1 =
-      _registerName1("compare:options:");
+  late final _sel_compare_options_1 = _registerName1("compare:options:");
   int _objc_msgSend_18(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1364,7 +1376,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compare_options_range_1 =
+  late final _sel_compare_options_range_1 =
       _registerName1("compare:options:range:");
   int _objc_msgSend_19(
     ffi.Pointer<ObjCObject> obj,
@@ -1390,7 +1402,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compare_options_range_locale_1 =
+  late final _sel_compare_options_range_locale_1 =
       _registerName1("compare:options:range:locale:");
   int _objc_msgSend_20(
     ffi.Pointer<ObjCObject> obj,
@@ -1423,21 +1435,17 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, NSRange, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_caseInsensitiveCompare_1 =
+  late final _sel_caseInsensitiveCompare_1 =
       _registerName1("caseInsensitiveCompare:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedCompare_1 =
-      _registerName1("localizedCompare:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedCaseInsensitiveCompare_1 =
+  late final _sel_localizedCompare_1 = _registerName1("localizedCompare:");
+  late final _sel_localizedCaseInsensitiveCompare_1 =
       _registerName1("localizedCaseInsensitiveCompare:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedStandardCompare_1 =
+  late final _sel_localizedStandardCompare_1 =
       _registerName1("localizedStandardCompare:");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToString_1 =
-      _registerName1("isEqualToString:");
-  late final ffi.Pointer<ObjCSel> _sel_hasPrefix_1 =
-      _registerName1("hasPrefix:");
-  late final ffi.Pointer<ObjCSel> _sel_hasSuffix_1 =
-      _registerName1("hasSuffix:");
-  late final ffi.Pointer<ObjCSel> _sel_commonPrefixWithString_options_1 =
+  late final _sel_isEqualToString_1 = _registerName1("isEqualToString:");
+  late final _sel_hasPrefix_1 = _registerName1("hasPrefix:");
+  late final _sel_hasSuffix_1 = _registerName1("hasSuffix:");
+  late final _sel_commonPrefixWithString_options_1 =
       _registerName1("commonPrefixWithString:options:");
   ffi.Pointer<ObjCObject> _objc_msgSend_21(
     ffi.Pointer<ObjCObject> obj,
@@ -1464,14 +1472,12 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_containsString_1 =
-      _registerName1("containsString:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_localizedCaseInsensitiveContainsString_1 =
+  late final _sel_containsString_1 = _registerName1("containsString:");
+  late final _sel_localizedCaseInsensitiveContainsString_1 =
       _registerName1("localizedCaseInsensitiveContainsString:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedStandardContainsString_1 =
+  late final _sel_localizedStandardContainsString_1 =
       _registerName1("localizedStandardContainsString:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedStandardRangeOfString_1 =
+  late final _sel_localizedStandardRangeOfString_1 =
       _registerName1("localizedStandardRangeOfString:");
   NSRange _objc_msgSend_22(
     ffi.Pointer<ObjCObject> obj,
@@ -1493,9 +1499,8 @@ class NativeLibrary {
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfString_1 =
-      _registerName1("rangeOfString:");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfString_options_1 =
+  late final _sel_rangeOfString_1 = _registerName1("rangeOfString:");
+  late final _sel_rangeOfString_options_1 =
       _registerName1("rangeOfString:options:");
   NSRange _objc_msgSend_23(
     ffi.Pointer<ObjCObject> obj,
@@ -1519,7 +1524,7 @@ class NativeLibrary {
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfString_options_range_1 =
+  late final _sel_rangeOfString_options_range_1 =
       _registerName1("rangeOfString:options:range:");
   NSRange _objc_msgSend_24(
     ffi.Pointer<ObjCObject> obj,
@@ -1545,7 +1550,7 @@ class NativeLibrary {
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfString_options_range_locale_1 =
+  late final _sel_rangeOfString_options_range_locale_1 =
       _registerName1("rangeOfString:options:range:locale:");
   NSRange _objc_msgSend_25(
     ffi.Pointer<ObjCObject> obj,
@@ -1578,14 +1583,13 @@ class NativeLibrary {
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, NSRange, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfCharacterFromSet_1 =
+  late final _sel_rangeOfCharacterFromSet_1 =
       _registerName1("rangeOfCharacterFromSet:");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfCharacterFromSet_options_1 =
+  late final _sel_rangeOfCharacterFromSet_options_1 =
       _registerName1("rangeOfCharacterFromSet:options:");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfCharacterFromSet_options_range_1 =
+  late final _sel_rangeOfCharacterFromSet_options_range_1 =
       _registerName1("rangeOfCharacterFromSet:options:range:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_rangeOfComposedCharacterSequenceAtIndex_1 =
+  late final _sel_rangeOfComposedCharacterSequenceAtIndex_1 =
       _registerName1("rangeOfComposedCharacterSequenceAtIndex:");
   NSRange _objc_msgSend_26(
     ffi.Pointer<ObjCObject> obj,
@@ -1606,8 +1610,7 @@ class NativeLibrary {
   late final __objc_msgSend_26 = __objc_msgSend_26Ptr.asFunction<
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_rangeOfComposedCharacterSequencesForRange_1 =
+  late final _sel_rangeOfComposedCharacterSequencesForRange_1 =
       _registerName1("rangeOfComposedCharacterSequencesForRange:");
   NSRange _objc_msgSend_27(
     ffi.Pointer<ObjCObject> obj,
@@ -1629,7 +1632,7 @@ class NativeLibrary {
       NSRange Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringByAppendingString_1 =
+  late final _sel_stringByAppendingString_1 =
       _registerName1("stringByAppendingString:");
   ffi.Pointer<ObjCObject> _objc_msgSend_28(
     ffi.Pointer<ObjCObject> obj,
@@ -1651,10 +1654,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringByAppendingFormat_1 =
+  late final _sel_stringByAppendingFormat_1 =
       _registerName1("stringByAppendingFormat:");
-  late final ffi.Pointer<ObjCSel> _sel_doubleValue1 =
-      _registerName1("doubleValue");
+  late final _sel_doubleValue1 = _registerName1("doubleValue");
   double _objc_msgSend_29(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1672,8 +1674,7 @@ class NativeLibrary {
   late final __objc_msgSend_29 = __objc_msgSend_29Ptr.asFunction<
       double Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_floatValue1 =
-      _registerName1("floatValue");
+  late final _sel_floatValue1 = _registerName1("floatValue");
   double _objc_msgSend_30(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1691,7 +1692,7 @@ class NativeLibrary {
   late final __objc_msgSend_30 = __objc_msgSend_30Ptr.asFunction<
       double Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_intValue1 = _registerName1("intValue");
+  late final _sel_intValue1 = _registerName1("intValue");
   int _objc_msgSend_31(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1709,8 +1710,7 @@ class NativeLibrary {
   late final __objc_msgSend_31 = __objc_msgSend_31Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_integerValue1 =
-      _registerName1("integerValue");
+  late final _sel_integerValue1 = _registerName1("integerValue");
   int _objc_msgSend_32(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1728,8 +1728,7 @@ class NativeLibrary {
   late final __objc_msgSend_32 = __objc_msgSend_32Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_longLongValue1 =
-      _registerName1("longLongValue");
+  late final _sel_longLongValue1 = _registerName1("longLongValue");
   int _objc_msgSend_33(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1747,26 +1746,23 @@ class NativeLibrary {
   late final __objc_msgSend_33 = __objc_msgSend_33Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_boolValue1 = _registerName1("boolValue");
-  late final ffi.Pointer<ObjCSel> _sel_uppercaseString1 =
-      _registerName1("uppercaseString");
-  late final ffi.Pointer<ObjCSel> _sel_lowercaseString1 =
-      _registerName1("lowercaseString");
-  late final ffi.Pointer<ObjCSel> _sel_capitalizedString1 =
-      _registerName1("capitalizedString");
-  late final ffi.Pointer<ObjCSel> _sel_localizedUppercaseString1 =
+  late final _sel_boolValue1 = _registerName1("boolValue");
+  late final _sel_uppercaseString1 = _registerName1("uppercaseString");
+  late final _sel_lowercaseString1 = _registerName1("lowercaseString");
+  late final _sel_capitalizedString1 = _registerName1("capitalizedString");
+  late final _sel_localizedUppercaseString1 =
       _registerName1("localizedUppercaseString");
-  late final ffi.Pointer<ObjCSel> _sel_localizedLowercaseString1 =
+  late final _sel_localizedLowercaseString1 =
       _registerName1("localizedLowercaseString");
-  late final ffi.Pointer<ObjCSel> _sel_localizedCapitalizedString1 =
+  late final _sel_localizedCapitalizedString1 =
       _registerName1("localizedCapitalizedString");
-  late final ffi.Pointer<ObjCSel> _sel_uppercaseStringWithLocale_1 =
+  late final _sel_uppercaseStringWithLocale_1 =
       _registerName1("uppercaseStringWithLocale:");
-  late final ffi.Pointer<ObjCSel> _sel_lowercaseStringWithLocale_1 =
+  late final _sel_lowercaseStringWithLocale_1 =
       _registerName1("lowercaseStringWithLocale:");
-  late final ffi.Pointer<ObjCSel> _sel_capitalizedStringWithLocale_1 =
+  late final _sel_capitalizedStringWithLocale_1 =
       _registerName1("capitalizedStringWithLocale:");
-  late final ffi.Pointer<ObjCSel> _sel_getLineStart_end_contentsEnd_forRange_1 =
+  late final _sel_getLineStart_end_contentsEnd_forRange_1 =
       _registerName1("getLineStart:end:contentsEnd:forRange:");
   void _objc_msgSend_34(
     ffi.Pointer<ObjCObject> obj,
@@ -1804,12 +1800,10 @@ class NativeLibrary {
           ffi.Pointer<NSUInteger>,
           NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_lineRangeForRange_1 =
-      _registerName1("lineRangeForRange:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_getParagraphStart_end_contentsEnd_forRange_1 =
+  late final _sel_lineRangeForRange_1 = _registerName1("lineRangeForRange:");
+  late final _sel_getParagraphStart_end_contentsEnd_forRange_1 =
       _registerName1("getParagraphStart:end:contentsEnd:forRange:");
-  late final ffi.Pointer<ObjCSel> _sel_paragraphRangeForRange_1 =
+  late final _sel_paragraphRangeForRange_1 =
       _registerName1("paragraphRangeForRange:");
   ffi.Pointer<_ObjCBlockDesc> _newBlockDesc1() {
     final d =
@@ -1818,18 +1812,20 @@ class NativeLibrary {
     return d;
   }
 
-  late final ffi.Pointer<_ObjCBlockDesc> _objc_block_desc1 = _newBlockDesc1();
+  late final _objc_block_desc1 = _newBlockDesc1();
+  late final _objc_concrete_global_block1 =
+      _lookup<ffi.Void>('_NSConcreteGlobalBlock');
   ffi.Pointer<_ObjCBlock> _newBlock1(
       ffi.Pointer<ffi.Void> invoke, ffi.Pointer<ffi.Void> target) {
     final b = pkg_ffi.calloc.allocate<_ObjCBlock>(ffi.sizeOf<_ObjCBlock>());
+    b.ref.isa = _objc_concrete_global_block1;
     b.ref.invoke = invoke;
     b.ref.target = target;
     b.ref.descriptor = _objc_block_desc1;
     return b;
   }
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateSubstringsInRange_options_usingBlock_1 =
+  late final _sel_enumerateSubstringsInRange_options_usingBlock_1 =
       _registerName1("enumerateSubstringsInRange:options:usingBlock:");
   void _objc_msgSend_35(
     ffi.Pointer<ObjCObject> obj,
@@ -1855,7 +1851,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_enumerateLinesUsingBlock_1 =
+  late final _sel_enumerateLinesUsingBlock_1 =
       _registerName1("enumerateLinesUsingBlock:");
   void _objc_msgSend_36(
     ffi.Pointer<ObjCObject> obj,
@@ -1877,8 +1873,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_UTF8String1 =
-      _registerName1("UTF8String");
+  late final _sel_UTF8String1 = _registerName1("UTF8String");
   ffi.Pointer<ffi.Char> _objc_msgSend_37(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1897,12 +1892,10 @@ class NativeLibrary {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_fastestEncoding1 =
-      _registerName1("fastestEncoding");
-  late final ffi.Pointer<ObjCSel> _sel_smallestEncoding1 =
-      _registerName1("smallestEncoding");
-  late final ffi.Pointer<ObjCObject> _class_NSData1 = _getClass1("NSData");
-  late final ffi.Pointer<ObjCSel> _sel_bytes1 = _registerName1("bytes");
+  late final _sel_fastestEncoding1 = _registerName1("fastestEncoding");
+  late final _sel_smallestEncoding1 = _registerName1("smallestEncoding");
+  late final _class_NSData1 = _getClass1("NSData");
+  late final _sel_bytes1 = _registerName1("bytes");
   ffi.Pointer<ffi.Void> _objc_msgSend_38(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1921,10 +1914,8 @@ class NativeLibrary {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_description1 =
-      _registerName1("description");
-  late final ffi.Pointer<ObjCSel> _sel_getBytes_length_1 =
-      _registerName1("getBytes:length:");
+  late final _sel_description1 = _registerName1("description");
+  late final _sel_getBytes_length_1 = _registerName1("getBytes:length:");
   void _objc_msgSend_39(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1947,8 +1938,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getBytes_range_1 =
-      _registerName1("getBytes:range:");
+  late final _sel_getBytes_range_1 = _registerName1("getBytes:range:");
   void _objc_msgSend_40(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1971,10 +1961,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToData_1 =
-      _registerName1("isEqualToData:");
-  late final ffi.Pointer<ObjCSel> _sel_subdataWithRange_1 =
-      _registerName1("subdataWithRange:");
+  late final _sel_isEqualToData_1 = _registerName1("isEqualToData:");
+  late final _sel_subdataWithRange_1 = _registerName1("subdataWithRange:");
   ffi.Pointer<ObjCObject> _objc_msgSend_41(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -1995,7 +1983,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeToFile_atomically_1 =
+  late final _sel_writeToFile_atomically_1 =
       _registerName1("writeToFile:atomically:");
   bool _objc_msgSend_42(
     ffi.Pointer<ObjCObject> obj,
@@ -2020,9 +2008,9 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeToURL_atomically_1 =
+  late final _sel_writeToURL_atomically_1 =
       _registerName1("writeToURL:atomically:");
-  late final ffi.Pointer<ObjCSel> _sel_writeToFile_options_error_1 =
+  late final _sel_writeToFile_options_error_1 =
       _registerName1("writeToFile:options:error:");
   bool _objc_msgSend_43(
     ffi.Pointer<ObjCObject> obj,
@@ -2057,9 +2045,9 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeToURL_options_error_1 =
+  late final _sel_writeToURL_options_error_1 =
       _registerName1("writeToURL:options:error:");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfData_options_range_1 =
+  late final _sel_rangeOfData_options_range_1 =
       _registerName1("rangeOfData:options:range:");
   NSRange _objc_msgSend_44(
     ffi.Pointer<ObjCObject> obj,
@@ -2085,7 +2073,7 @@ class NativeLibrary {
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_enumerateByteRangesUsingBlock_1 =
+  late final _sel_enumerateByteRangesUsingBlock_1 =
       _registerName1("enumerateByteRangesUsingBlock:");
   void _objc_msgSend_45(
     ffi.Pointer<ObjCObject> obj,
@@ -2107,8 +2095,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_data1 = _registerName1("data");
-  late final ffi.Pointer<ObjCSel> _sel_dataWithBytes_length_1 =
+  late final _sel_data1 = _registerName1("data");
+  late final _sel_dataWithBytes_length_1 =
       _registerName1("dataWithBytes:length:");
   instancetype _objc_msgSend_46(
     ffi.Pointer<ObjCObject> obj,
@@ -2132,10 +2120,9 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataWithBytesNoCopy_length_1 =
+  late final _sel_dataWithBytesNoCopy_length_1 =
       _registerName1("dataWithBytesNoCopy:length:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_dataWithBytesNoCopy_length_freeWhenDone_1 =
+  late final _sel_dataWithBytesNoCopy_length_freeWhenDone_1 =
       _registerName1("dataWithBytesNoCopy:length:freeWhenDone:");
   instancetype _objc_msgSend_47(
     ffi.Pointer<ObjCObject> obj,
@@ -2161,7 +2148,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataWithContentsOfFile_options_error_1 =
+  late final _sel_dataWithContentsOfFile_options_error_1 =
       _registerName1("dataWithContentsOfFile:options:error:");
   instancetype _objc_msgSend_48(
     ffi.Pointer<ObjCObject> obj,
@@ -2195,21 +2182,19 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataWithContentsOfURL_options_error_1 =
+  late final _sel_dataWithContentsOfURL_options_error_1 =
       _registerName1("dataWithContentsOfURL:options:error:");
-  late final ffi.Pointer<ObjCSel> _sel_dataWithContentsOfFile_1 =
+  late final _sel_dataWithContentsOfFile_1 =
       _registerName1("dataWithContentsOfFile:");
-  late final ffi.Pointer<ObjCSel> _sel_dataWithContentsOfURL_1 =
+  late final _sel_dataWithContentsOfURL_1 =
       _registerName1("dataWithContentsOfURL:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithBytes_length_1 =
+  late final _sel_initWithBytes_length_1 =
       _registerName1("initWithBytes:length:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithBytesNoCopy_length_1 =
+  late final _sel_initWithBytesNoCopy_length_1 =
       _registerName1("initWithBytesNoCopy:length:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithBytesNoCopy_length_freeWhenDone_1 =
+  late final _sel_initWithBytesNoCopy_length_freeWhenDone_1 =
       _registerName1("initWithBytesNoCopy:length:freeWhenDone:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithBytesNoCopy_length_deallocator_1 =
+  late final _sel_initWithBytesNoCopy_length_deallocator_1 =
       _registerName1("initWithBytesNoCopy:length:deallocator:");
   instancetype _objc_msgSend_49(
     ffi.Pointer<ObjCObject> obj,
@@ -2239,19 +2224,17 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfFile_options_error_1 =
+  late final _sel_initWithContentsOfFile_options_error_1 =
       _registerName1("initWithContentsOfFile:options:error:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfURL_options_error_1 =
+  late final _sel_initWithContentsOfURL_options_error_1 =
       _registerName1("initWithContentsOfURL:options:error:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfFile_1 =
+  late final _sel_initWithContentsOfFile_1 =
       _registerName1("initWithContentsOfFile:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfURL_1 =
+  late final _sel_initWithContentsOfURL_1 =
       _registerName1("initWithContentsOfURL:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithData_1 =
-      _registerName1("initWithData:");
-  late final ffi.Pointer<ObjCSel> _sel_dataWithData_1 =
-      _registerName1("dataWithData:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithBase64EncodedString_options_1 =
+  late final _sel_initWithData_1 = _registerName1("initWithData:");
+  late final _sel_dataWithData_1 = _registerName1("dataWithData:");
+  late final _sel_initWithBase64EncodedString_options_1 =
       _registerName1("initWithBase64EncodedString:options:");
   instancetype _objc_msgSend_50(
     ffi.Pointer<ObjCObject> obj,
@@ -2275,7 +2258,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_base64EncodedStringWithOptions_1 =
+  late final _sel_base64EncodedStringWithOptions_1 =
       _registerName1("base64EncodedStringWithOptions:");
   ffi.Pointer<ObjCObject> _objc_msgSend_51(
     ffi.Pointer<ObjCObject> obj,
@@ -2297,9 +2280,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithBase64EncodedData_options_1 =
+  late final _sel_initWithBase64EncodedData_options_1 =
       _registerName1("initWithBase64EncodedData:options:");
-  late final ffi.Pointer<ObjCSel> _sel_base64EncodedDataWithOptions_1 =
+  late final _sel_base64EncodedDataWithOptions_1 =
       _registerName1("base64EncodedDataWithOptions:");
   ffi.Pointer<ObjCObject> _objc_msgSend_52(
     ffi.Pointer<ObjCObject> obj,
@@ -2321,7 +2304,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_decompressedDataUsingAlgorithm_error_1 =
+  late final _sel_decompressedDataUsingAlgorithm_error_1 =
       _registerName1("decompressedDataUsingAlgorithm:error:");
   instancetype _objc_msgSend_53(
     ffi.Pointer<ObjCObject> obj,
@@ -2348,9 +2331,9 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compressedDataUsingAlgorithm_error_1 =
+  late final _sel_compressedDataUsingAlgorithm_error_1 =
       _registerName1("compressedDataUsingAlgorithm:error:");
-  late final ffi.Pointer<ObjCSel> _sel_getBytes_1 = _registerName1("getBytes:");
+  late final _sel_getBytes_1 = _registerName1("getBytes:");
   void _objc_msgSend_54(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -2371,14 +2354,13 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataWithContentsOfMappedFile_1 =
+  late final _sel_dataWithContentsOfMappedFile_1 =
       _registerName1("dataWithContentsOfMappedFile:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfMappedFile_1 =
+  late final _sel_initWithContentsOfMappedFile_1 =
       _registerName1("initWithContentsOfMappedFile:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithBase64Encoding_1 =
+  late final _sel_initWithBase64Encoding_1 =
       _registerName1("initWithBase64Encoding:");
-  late final ffi.Pointer<ObjCSel> _sel_base64Encoding1 =
-      _registerName1("base64Encoding");
+  late final _sel_base64Encoding1 = _registerName1("base64Encoding");
   ffi.Pointer<ObjCObject> _objc_msgSend_55(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -2397,8 +2379,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_dataUsingEncoding_allowLossyConversion_1 =
+  late final _sel_dataUsingEncoding_allowLossyConversion_1 =
       _registerName1("dataUsingEncoding:allowLossyConversion:");
   ffi.Pointer<ObjCObject> _objc_msgSend_56(
     ffi.Pointer<ObjCObject> obj,
@@ -2425,8 +2406,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataUsingEncoding_1 =
-      _registerName1("dataUsingEncoding:");
+  late final _sel_dataUsingEncoding_1 = _registerName1("dataUsingEncoding:");
   ffi.Pointer<ObjCObject> _objc_msgSend_57(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -2447,7 +2427,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_canBeConvertedToEncoding_1 =
+  late final _sel_canBeConvertedToEncoding_1 =
       _registerName1("canBeConvertedToEncoding:");
   bool _objc_msgSend_58(
     ffi.Pointer<ObjCObject> obj,
@@ -2469,7 +2449,7 @@ class NativeLibrary {
   late final __objc_msgSend_58 = __objc_msgSend_58Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_cStringUsingEncoding_1 =
+  late final _sel_cStringUsingEncoding_1 =
       _registerName1("cStringUsingEncoding:");
   void _objc_msgSend_59(
     ffi.Pointer<ObjCObject> obj,
@@ -2490,7 +2470,7 @@ class NativeLibrary {
   late final __objc_msgSend_59 = __objc_msgSend_59Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getCString_maxLength_encoding_1 =
+  late final _sel_getCString_maxLength_encoding_1 =
       _registerName1("getCString:maxLength:encoding:");
   bool _objc_msgSend_60(
     ffi.Pointer<ObjCObject> obj,
@@ -2521,8 +2501,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_getBytes_maxLength_usedLength_encoding_options_range_remainingRange_1 =
+  late final _sel_getBytes_maxLength_usedLength_encoding_options_range_remainingRange_1 =
       _registerName1(
           "getBytes:maxLength:usedLength:encoding:options:range:remainingRange:");
   bool _objc_msgSend_61(
@@ -2574,7 +2553,7 @@ class NativeLibrary {
           NSRange,
           NSRangePointer)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_maximumLengthOfBytesUsingEncoding_1 =
+  late final _sel_maximumLengthOfBytesUsingEncoding_1 =
       _registerName1("maximumLengthOfBytesUsingEncoding:");
   int _objc_msgSend_62(
     ffi.Pointer<ObjCObject> obj,
@@ -2595,9 +2574,9 @@ class NativeLibrary {
   late final __objc_msgSend_62 = __objc_msgSend_62Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_lengthOfBytesUsingEncoding_1 =
+  late final _sel_lengthOfBytesUsingEncoding_1 =
       _registerName1("lengthOfBytesUsingEncoding:");
-  late final ffi.Pointer<ObjCSel> _sel_availableStringEncodings1 =
+  late final _sel_availableStringEncodings1 =
       _registerName1("availableStringEncodings");
   ffi.Pointer<NSStringEncoding> _objc_msgSend_63(
     ffi.Pointer<ObjCObject> obj,
@@ -2617,24 +2596,21 @@ class NativeLibrary {
       ffi.Pointer<NSStringEncoding> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_localizedNameOfStringEncoding_1 =
+  late final _sel_localizedNameOfStringEncoding_1 =
       _registerName1("localizedNameOfStringEncoding:");
-  late final ffi.Pointer<ObjCSel> _sel_defaultCStringEncoding1 =
+  late final _sel_defaultCStringEncoding1 =
       _registerName1("defaultCStringEncoding");
-  late final ffi.Pointer<ObjCSel> _sel_decomposedStringWithCanonicalMapping1 =
+  late final _sel_decomposedStringWithCanonicalMapping1 =
       _registerName1("decomposedStringWithCanonicalMapping");
-  late final ffi.Pointer<ObjCSel> _sel_precomposedStringWithCanonicalMapping1 =
+  late final _sel_precomposedStringWithCanonicalMapping1 =
       _registerName1("precomposedStringWithCanonicalMapping");
-  late final ffi.Pointer<ObjCSel>
-      _sel_decomposedStringWithCompatibilityMapping1 =
+  late final _sel_decomposedStringWithCompatibilityMapping1 =
       _registerName1("decomposedStringWithCompatibilityMapping");
-  late final ffi.Pointer<ObjCSel>
-      _sel_precomposedStringWithCompatibilityMapping1 =
+  late final _sel_precomposedStringWithCompatibilityMapping1 =
       _registerName1("precomposedStringWithCompatibilityMapping");
-  late final ffi.Pointer<ObjCSel> _sel_stringByTrimmingCharactersInSet_1 =
+  late final _sel_stringByTrimmingCharactersInSet_1 =
       _registerName1("stringByTrimmingCharactersInSet:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByPaddingToLength_withString_startingAtIndex_1 =
+  late final _sel_stringByPaddingToLength_withString_startingAtIndex_1 =
       _registerName1("stringByPaddingToLength:withString:startingAtIndex:");
   ffi.Pointer<ObjCObject> _objc_msgSend_64(
     ffi.Pointer<ObjCObject> obj,
@@ -2664,7 +2640,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, int, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringByFoldingWithOptions_locale_1 =
+  late final _sel_stringByFoldingWithOptions_locale_1 =
       _registerName1("stringByFoldingWithOptions:locale:");
   ffi.Pointer<ObjCObject> _objc_msgSend_65(
     ffi.Pointer<ObjCObject> obj,
@@ -2691,8 +2667,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, int, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByReplacingOccurrencesOfString_withString_options_range_1 =
+  late final _sel_stringByReplacingOccurrencesOfString_withString_options_range_1 =
       _registerName1(
           "stringByReplacingOccurrencesOfString:withString:options:range:");
   ffi.Pointer<ObjCObject> _objc_msgSend_66(
@@ -2731,8 +2706,7 @@ class NativeLibrary {
           int,
           NSRange)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByReplacingOccurrencesOfString_withString_1 =
+  late final _sel_stringByReplacingOccurrencesOfString_withString_1 =
       _registerName1("stringByReplacingOccurrencesOfString:withString:");
   ffi.Pointer<ObjCObject> _objc_msgSend_67(
     ffi.Pointer<ObjCObject> obj,
@@ -2762,8 +2736,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByReplacingCharactersInRange_withString_1 =
+  late final _sel_stringByReplacingCharactersInRange_withString_1 =
       _registerName1("stringByReplacingCharactersInRange:withString:");
   ffi.Pointer<ObjCObject> _objc_msgSend_68(
     ffi.Pointer<ObjCObject> obj,
@@ -2790,7 +2763,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, NSRange, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringByApplyingTransform_reverse_1 =
+  late final _sel_stringByApplyingTransform_reverse_1 =
       _registerName1("stringByApplyingTransform:reverse:");
   ffi.Pointer<ObjCObject> _objc_msgSend_69(
     ffi.Pointer<ObjCObject> obj,
@@ -2817,7 +2790,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, NSStringTransform, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeToURL_atomically_encoding_error_1 =
+  late final _sel_writeToURL_atomically_encoding_error_1 =
       _registerName1("writeToURL:atomically:encoding:error:");
   bool _objc_msgSend_70(
     ffi.Pointer<ObjCObject> obj,
@@ -2856,10 +2829,9 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeToFile_atomically_encoding_error_1 =
+  late final _sel_writeToFile_atomically_encoding_error_1 =
       _registerName1("writeToFile:atomically:encoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithCharactersNoCopy_length_freeWhenDone_1 =
+  late final _sel_initWithCharactersNoCopy_length_freeWhenDone_1 =
       _registerName1("initWithCharactersNoCopy:length:freeWhenDone:");
   instancetype _objc_msgSend_71(
     ffi.Pointer<ObjCObject> obj,
@@ -2885,8 +2857,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<unichar>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithCharactersNoCopy_length_deallocator_1 =
+  late final _sel_initWithCharactersNoCopy_length_deallocator_1 =
       _registerName1("initWithCharactersNoCopy:length:deallocator:");
   instancetype _objc_msgSend_72(
     ffi.Pointer<ObjCObject> obj,
@@ -2916,7 +2887,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<unichar>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithCharacters_length_1 =
+  late final _sel_initWithCharacters_length_1 =
       _registerName1("initWithCharacters:length:");
   instancetype _objc_msgSend_73(
     ffi.Pointer<ObjCObject> obj,
@@ -2940,8 +2911,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<unichar>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUTF8String_1 =
-      _registerName1("initWithUTF8String:");
+  late final _sel_initWithUTF8String_1 = _registerName1("initWithUTF8String:");
   instancetype _objc_msgSend_74(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -2962,11 +2932,9 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithString_1 =
-      _registerName1("initWithString:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithFormat_1 =
-      _registerName1("initWithFormat:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithFormat_arguments_1 =
+  late final _sel_initWithString_1 = _registerName1("initWithString:");
+  late final _sel_initWithFormat_1 = _registerName1("initWithFormat:");
+  late final _sel_initWithFormat_arguments_1 =
       _registerName1("initWithFormat:arguments:");
   instancetype _objc_msgSend_75(
     ffi.Pointer<ObjCObject> obj,
@@ -2990,7 +2958,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, va_list)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithFormat_locale_1 =
+  late final _sel_initWithFormat_locale_1 =
       _registerName1("initWithFormat:locale:");
   instancetype _objc_msgSend_76(
     ffi.Pointer<ObjCObject> obj,
@@ -3017,7 +2985,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithFormat_locale_arguments_1 =
+  late final _sel_initWithFormat_locale_arguments_1 =
       _registerName1("initWithFormat:locale:arguments:");
   instancetype _objc_msgSend_77(
     ffi.Pointer<ObjCObject> obj,
@@ -3047,7 +3015,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>, va_list)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithData_encoding_1 =
+  late final _sel_initWithData_encoding_1 =
       _registerName1("initWithData:encoding:");
   instancetype _objc_msgSend_78(
     ffi.Pointer<ObjCObject> obj,
@@ -3071,7 +3039,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithBytes_length_encoding_1 =
+  late final _sel_initWithBytes_length_encoding_1 =
       _registerName1("initWithBytes:length:encoding:");
   instancetype _objc_msgSend_79(
     ffi.Pointer<ObjCObject> obj,
@@ -3101,8 +3069,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithBytesNoCopy_length_encoding_freeWhenDone_1 =
+  late final _sel_initWithBytesNoCopy_length_encoding_freeWhenDone_1 =
       _registerName1("initWithBytesNoCopy:length:encoding:freeWhenDone:");
   instancetype _objc_msgSend_80(
     ffi.Pointer<ObjCObject> obj,
@@ -3135,8 +3102,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int, int, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithBytesNoCopy_length_encoding_deallocator_1 =
+  late final _sel_initWithBytesNoCopy_length_encoding_deallocator_1 =
       _registerName1("initWithBytesNoCopy:length:encoding:deallocator:");
   instancetype _objc_msgSend_81(
     ffi.Pointer<ObjCObject> obj,
@@ -3169,18 +3135,16 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, int, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_string1 = _registerName1("string");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithString_1 =
-      _registerName1("stringWithString:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithCharacters_length_1 =
+  late final _sel_string1 = _registerName1("string");
+  late final _sel_stringWithString_1 = _registerName1("stringWithString:");
+  late final _sel_stringWithCharacters_length_1 =
       _registerName1("stringWithCharacters:length:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithUTF8String_1 =
+  late final _sel_stringWithUTF8String_1 =
       _registerName1("stringWithUTF8String:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithFormat_1 =
-      _registerName1("stringWithFormat:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedStringWithFormat_1 =
+  late final _sel_stringWithFormat_1 = _registerName1("stringWithFormat:");
+  late final _sel_localizedStringWithFormat_1 =
       _registerName1("localizedStringWithFormat:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithCString_encoding_1 =
+  late final _sel_initWithCString_encoding_1 =
       _registerName1("initWithCString:encoding:");
   instancetype _objc_msgSend_82(
     ffi.Pointer<ObjCObject> obj,
@@ -3204,9 +3168,9 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringWithCString_encoding_1 =
+  late final _sel_stringWithCString_encoding_1 =
       _registerName1("stringWithCString:encoding:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfURL_encoding_error_1 =
+  late final _sel_initWithContentsOfURL_encoding_error_1 =
       _registerName1("initWithContentsOfURL:encoding:error:");
   instancetype _objc_msgSend_83(
     ffi.Pointer<ObjCObject> obj,
@@ -3240,16 +3204,13 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithContentsOfFile_encoding_error_1 =
+  late final _sel_initWithContentsOfFile_encoding_error_1 =
       _registerName1("initWithContentsOfFile:encoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringWithContentsOfURL_encoding_error_1 =
+  late final _sel_stringWithContentsOfURL_encoding_error_1 =
       _registerName1("stringWithContentsOfURL:encoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringWithContentsOfFile_encoding_error_1 =
+  late final _sel_stringWithContentsOfFile_encoding_error_1 =
       _registerName1("stringWithContentsOfFile:encoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithContentsOfURL_usedEncoding_error_1 =
+  late final _sel_initWithContentsOfURL_usedEncoding_error_1 =
       _registerName1("initWithContentsOfURL:usedEncoding:error:");
   instancetype _objc_msgSend_84(
     ffi.Pointer<ObjCObject> obj,
@@ -3283,17 +3244,13 @@ class NativeLibrary {
           ffi.Pointer<NSStringEncoding>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithContentsOfFile_usedEncoding_error_1 =
+  late final _sel_initWithContentsOfFile_usedEncoding_error_1 =
       _registerName1("initWithContentsOfFile:usedEncoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringWithContentsOfURL_usedEncoding_error_1 =
+  late final _sel_stringWithContentsOfURL_usedEncoding_error_1 =
       _registerName1("stringWithContentsOfURL:usedEncoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringWithContentsOfFile_usedEncoding_error_1 =
+  late final _sel_stringWithContentsOfFile_usedEncoding_error_1 =
       _registerName1("stringWithContentsOfFile:usedEncoding:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringEncodingForData_encodingOptions_convertedString_usedLossyConversion_1 =
+  late final _sel_stringEncodingForData_encodingOptions_convertedString_usedLossyConversion_1 =
       _registerName1(
           "stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:");
   int _objc_msgSend_85(
@@ -3332,14 +3289,11 @@ class NativeLibrary {
           ffi.Pointer<ffi.Pointer<ObjCObject>>,
           ffi.Pointer<ffi.Uint8>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_propertyList1 =
-      _registerName1("propertyList");
-  late final ffi.Pointer<ObjCObject> _class_NSDictionary1 =
-      _getClass1("NSDictionary");
-  late final ffi.Pointer<ObjCSel> _sel_count1 = _registerName1("count");
-  late final ffi.Pointer<ObjCSel> _sel_objectForKey_1 =
-      _registerName1("objectForKey:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObjects_forKeys_count_1 =
+  late final _sel_propertyList1 = _registerName1("propertyList");
+  late final _class_NSDictionary1 = _getClass1("NSDictionary");
+  late final _sel_count1 = _registerName1("count");
+  late final _sel_objectForKey_1 = _registerName1("objectForKey:");
+  late final _sel_initWithObjects_forKeys_count_1 =
       _registerName1("initWithObjects:forKeys:count:");
   instancetype _objc_msgSend_86(
     ffi.Pointer<ObjCObject> obj,
@@ -3373,13 +3327,13 @@ class NativeLibrary {
           ffi.Pointer<ffi.Pointer<ObjCObject>>,
           int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_allKeys1 = _registerName1("allKeys");
-  late final ffi.Pointer<ObjCSel> _sel_allValues1 = _registerName1("allValues");
-  late final ffi.Pointer<ObjCSel> _sel_descriptionInStringsFileFormat1 =
+  late final _sel_allKeys1 = _registerName1("allKeys");
+  late final _sel_allValues1 = _registerName1("allValues");
+  late final _sel_descriptionInStringsFileFormat1 =
       _registerName1("descriptionInStringsFileFormat");
-  late final ffi.Pointer<ObjCSel> _sel_descriptionWithLocale_1 =
+  late final _sel_descriptionWithLocale_1 =
       _registerName1("descriptionWithLocale:");
-  late final ffi.Pointer<ObjCSel> _sel_descriptionWithLocale_indent_1 =
+  late final _sel_descriptionWithLocale_indent_1 =
       _registerName1("descriptionWithLocale:indent:");
   ffi.Pointer<ObjCObject> _objc_msgSend_87(
     ffi.Pointer<ObjCObject> obj,
@@ -3406,10 +3360,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToDictionary_1 =
+  late final _sel_isEqualToDictionary_1 =
       _registerName1("isEqualToDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_writeToURL_error_1 =
-      _registerName1("writeToURL:error:");
+  late final _sel_writeToURL_error_1 = _registerName1("writeToURL:error:");
   bool _objc_msgSend_88(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -3436,7 +3389,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getObjects_andKeys_count_1 =
+  late final _sel_getObjects_andKeys_count_1 =
       _registerName1("getObjects:andKeys:count:");
   void _objc_msgSend_89(
     ffi.Pointer<ObjCObject> obj,
@@ -3470,9 +3423,9 @@ class NativeLibrary {
           ffi.Pointer<ffi.Pointer<ObjCObject>>,
           int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_objectForKeyedSubscript_1 =
+  late final _sel_objectForKeyedSubscript_1 =
       _registerName1("objectForKeyedSubscript:");
-  late final ffi.Pointer<ObjCSel> _sel_enumerateKeysAndObjectsUsingBlock_1 =
+  late final _sel_enumerateKeysAndObjectsUsingBlock_1 =
       _registerName1("enumerateKeysAndObjectsUsingBlock:");
   void _objc_msgSend_90(
     ffi.Pointer<ObjCObject> obj,
@@ -3494,8 +3447,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateKeysAndObjectsWithOptions_usingBlock_1 =
+  late final _sel_enumerateKeysAndObjectsWithOptions_usingBlock_1 =
       _registerName1("enumerateKeysAndObjectsWithOptions:usingBlock:");
   void _objc_msgSend_91(
     ffi.Pointer<ObjCObject> obj,
@@ -3519,8 +3471,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getObjects_andKeys_1 =
-      _registerName1("getObjects:andKeys:");
+  late final _sel_getObjects_andKeys_1 = _registerName1("getObjects:andKeys:");
   void _objc_msgSend_92(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -3549,23 +3500,21 @@ class NativeLibrary {
           ffi.Pointer<ffi.Pointer<ObjCObject>>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dictionary1 =
-      _registerName1("dictionary");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithObject_forKey_1 =
+  late final _sel_dictionary1 = _registerName1("dictionary");
+  late final _sel_dictionaryWithObject_forKey_1 =
       _registerName1("dictionaryWithObject:forKey:");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithObjects_forKeys_count_1 =
+  late final _sel_dictionaryWithObjects_forKeys_count_1 =
       _registerName1("dictionaryWithObjects:forKeys:count:");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithObjectsAndKeys_1 =
+  late final _sel_dictionaryWithObjectsAndKeys_1 =
       _registerName1("dictionaryWithObjectsAndKeys:");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithDictionary_1 =
+  late final _sel_dictionaryWithDictionary_1 =
       _registerName1("dictionaryWithDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithObjects_forKeys_1 =
+  late final _sel_dictionaryWithObjects_forKeys_1 =
       _registerName1("dictionaryWithObjects:forKeys:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObjectsAndKeys_1 =
+  late final _sel_initWithObjectsAndKeys_1 =
       _registerName1("initWithObjectsAndKeys:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithDictionary_1 =
-      _registerName1("initWithDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithDictionary_copyItems_1 =
+  late final _sel_initWithDictionary_1 = _registerName1("initWithDictionary:");
+  late final _sel_initWithDictionary_copyItems_1 =
       _registerName1("initWithDictionary:copyItems:");
   instancetype _objc_msgSend_93(
     ffi.Pointer<ObjCObject> obj,
@@ -3589,12 +3538,11 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithObjects_forKeys_1 =
+  late final _sel_initWithObjects_forKeys_1 =
       _registerName1("initWithObjects:forKeys:");
-  late final ffi.Pointer<ObjCSel> _sel_sharedKeySetForKeys_1 =
+  late final _sel_sharedKeySetForKeys_1 =
       _registerName1("sharedKeySetForKeys:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_countByEnumeratingWithState_objects_count_1 =
+  late final _sel_countByEnumeratingWithState_objects_count_1 =
       _registerName1("countByEnumeratingWithState:objects:count:");
   int _objc_msgSend_94(
     ffi.Pointer<ObjCObject> obj,
@@ -3628,7 +3576,7 @@ class NativeLibrary {
           ffi.Pointer<ffi.Pointer<ObjCObject>>,
           int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_propertyListFromStringsFileFormat1 =
+  late final _sel_propertyListFromStringsFileFormat1 =
       _registerName1("propertyListFromStringsFileFormat");
   ffi.Pointer<ObjCObject> _objc_msgSend_95(
     ffi.Pointer<ObjCObject> obj,
@@ -3648,13 +3596,10 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_cString1 = _registerName1("cString");
-  late final ffi.Pointer<ObjCSel> _sel_lossyCString1 =
-      _registerName1("lossyCString");
-  late final ffi.Pointer<ObjCSel> _sel_cStringLength1 =
-      _registerName1("cStringLength");
-  late final ffi.Pointer<ObjCSel> _sel_getCString_1 =
-      _registerName1("getCString:");
+  late final _sel_cString1 = _registerName1("cString");
+  late final _sel_lossyCString1 = _registerName1("lossyCString");
+  late final _sel_cStringLength1 = _registerName1("cStringLength");
+  late final _sel_getCString_1 = _registerName1("getCString:");
   void _objc_msgSend_96(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -3675,7 +3620,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getCString_maxLength_1 =
+  late final _sel_getCString_maxLength_1 =
       _registerName1("getCString:maxLength:");
   void _objc_msgSend_97(
     ffi.Pointer<ObjCObject> obj,
@@ -3699,8 +3644,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_getCString_maxLength_range_remainingRange_1 =
+  late final _sel_getCString_maxLength_range_remainingRange_1 =
       _registerName1("getCString:maxLength:range:remainingRange:");
   void _objc_msgSend_98(
     ffi.Pointer<ObjCObject> obj,
@@ -3733,12 +3677,11 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int, NSRange, NSRangePointer)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringWithContentsOfFile_1 =
+  late final _sel_stringWithContentsOfFile_1 =
       _registerName1("stringWithContentsOfFile:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithContentsOfURL_1 =
+  late final _sel_stringWithContentsOfURL_1 =
       _registerName1("stringWithContentsOfURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithCStringNoCopy_length_freeWhenDone_1 =
+  late final _sel_initWithCStringNoCopy_length_freeWhenDone_1 =
       _registerName1("initWithCStringNoCopy:length:freeWhenDone:");
   ffi.Pointer<ObjCObject> _objc_msgSend_99(
     ffi.Pointer<ObjCObject> obj,
@@ -3768,16 +3711,13 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ffi.Char>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithCString_length_1 =
+  late final _sel_initWithCString_length_1 =
       _registerName1("initWithCString:length:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithCString_1 =
-      _registerName1("initWithCString:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithCString_length_1 =
+  late final _sel_initWithCString_1 = _registerName1("initWithCString:");
+  late final _sel_stringWithCString_length_1 =
       _registerName1("stringWithCString:length:");
-  late final ffi.Pointer<ObjCSel> _sel_stringWithCString_1 =
-      _registerName1("stringWithCString:");
-  late final ffi.Pointer<ObjCSel> _sel_getCharacters_1 =
-      _registerName1("getCharacters:");
+  late final _sel_stringWithCString_1 = _registerName1("stringWithCString:");
+  late final _sel_getCharacters_1 = _registerName1("getCharacters:");
   void _objc_msgSend_100(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -3798,22 +3738,17 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<unichar>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByAddingPercentEncodingWithAllowedCharacters_1 =
+  late final _sel_stringByAddingPercentEncodingWithAllowedCharacters_1 =
       _registerName1("stringByAddingPercentEncodingWithAllowedCharacters:");
-  late final ffi.Pointer<ObjCSel> _sel_stringByRemovingPercentEncoding1 =
+  late final _sel_stringByRemovingPercentEncoding1 =
       _registerName1("stringByRemovingPercentEncoding");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByAddingPercentEscapesUsingEncoding_1 =
+  late final _sel_stringByAddingPercentEscapesUsingEncoding_1 =
       _registerName1("stringByAddingPercentEscapesUsingEncoding:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_stringByReplacingPercentEscapesUsingEncoding_1 =
+  late final _sel_stringByReplacingPercentEscapesUsingEncoding_1 =
       _registerName1("stringByReplacingPercentEscapesUsingEncoding:");
-  late final ffi.Pointer<ObjCSel> _sel_debugDescription1 =
-      _registerName1("debugDescription");
-  late final ffi.Pointer<ObjCSel> _sel_version1 = _registerName1("version");
-  late final ffi.Pointer<ObjCSel> _sel_setVersion_1 =
-      _registerName1("setVersion:");
+  late final _sel_debugDescription1 = _registerName1("debugDescription");
+  late final _sel_version1 = _registerName1("version");
+  late final _sel_setVersion_1 = _registerName1("setVersion:");
   void _objc_msgSend_101(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -3833,17 +3768,15 @@ class NativeLibrary {
   late final __objc_msgSend_101 = __objc_msgSend_101Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_classForCoder1 =
-      _registerName1("classForCoder");
-  late final ffi.Pointer<ObjCSel> _sel_replacementObjectForCoder_1 =
+  late final _sel_classForCoder1 = _registerName1("classForCoder");
+  late final _sel_replacementObjectForCoder_1 =
       _registerName1("replacementObjectForCoder:");
-  late final ffi.Pointer<ObjCSel> _sel_awakeAfterUsingCoder_1 =
+  late final _sel_awakeAfterUsingCoder_1 =
       _registerName1("awakeAfterUsingCoder:");
-  late final ffi.Pointer<ObjCSel> _sel_poseAsClass_1 =
-      _registerName1("poseAsClass:");
-  late final ffi.Pointer<ObjCSel> _sel_autoContentAccessingProxy1 =
+  late final _sel_poseAsClass_1 = _registerName1("poseAsClass:");
+  late final _sel_autoContentAccessingProxy1 =
       _registerName1("autoContentAccessingProxy");
-  late final ffi.Pointer<ObjCSel> _sel_URL_resourceDataDidBecomeAvailable_1 =
+  late final _sel_URL_resourceDataDidBecomeAvailable_1 =
       _registerName1("URL:resourceDataDidBecomeAvailable:");
   void _objc_msgSend_102(
     ffi.Pointer<ObjCObject> obj,
@@ -3870,14 +3803,13 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_URLResourceDidFinishLoading_1 =
+  late final _sel_URLResourceDidFinishLoading_1 =
       _registerName1("URLResourceDidFinishLoading:");
-  late final ffi.Pointer<ObjCSel> _sel_URLResourceDidCancelLoading_1 =
+  late final _sel_URLResourceDidCancelLoading_1 =
       _registerName1("URLResourceDidCancelLoading:");
-  late final ffi.Pointer<ObjCSel> _sel_URL_resourceDidFailLoadingWithReason_1 =
+  late final _sel_URL_resourceDidFailLoadingWithReason_1 =
       _registerName1("URL:resourceDidFailLoadingWithReason:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_attemptRecoveryFromError_optionIndex_delegate_didRecoverSelector_contextInfo_1 =
+  late final _sel_attemptRecoveryFromError_optionIndex_delegate_didRecoverSelector_contextInfo_1 =
       _registerName1(
           "attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:");
   void _objc_msgSend_103(
@@ -3920,7 +3852,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_attemptRecoveryFromError_optionIndex_1 =
+  late final _sel_attemptRecoveryFromError_optionIndex_1 =
       _registerName1("attemptRecoveryFromError:optionIndex:");
   bool _objc_msgSend_104(
     ffi.Pointer<ObjCObject> obj,
@@ -4061,17 +3993,13 @@ class NativeLibrary {
   late final _NSExtraRefCount =
       _NSExtraRefCountPtr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSEnumerator1 =
-      _getClass1("NSEnumerator");
-  late final ffi.Pointer<ObjCSel> _sel_nextObject1 =
-      _registerName1("nextObject");
-  late final ffi.Pointer<ObjCSel> _sel_allObjects1 =
-      _registerName1("allObjects");
-  late final ffi.Pointer<ObjCObject> _class_NSValue1 = _getClass1("NSValue");
-  late final ffi.Pointer<ObjCSel> _sel_getValue_size_1 =
-      _registerName1("getValue:size:");
-  late final ffi.Pointer<ObjCSel> _sel_objCType1 = _registerName1("objCType");
-  late final ffi.Pointer<ObjCSel> _sel_initWithBytes_objCType_1 =
+  late final _class_NSEnumerator1 = _getClass1("NSEnumerator");
+  late final _sel_nextObject1 = _registerName1("nextObject");
+  late final _sel_allObjects1 = _registerName1("allObjects");
+  late final _class_NSValue1 = _getClass1("NSValue");
+  late final _sel_getValue_size_1 = _registerName1("getValue:size:");
+  late final _sel_objCType1 = _registerName1("objCType");
+  late final _sel_initWithBytes_objCType_1 =
       _registerName1("initWithBytes:objCType:");
   instancetype _objc_msgSend_105(
     ffi.Pointer<ObjCObject> obj,
@@ -4095,7 +4023,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_valueWithBytes_objCType_1 =
+  late final _sel_valueWithBytes_objCType_1 =
       _registerName1("valueWithBytes:objCType:");
   ffi.Pointer<ObjCObject> _objc_msgSend_106(
     ffi.Pointer<ObjCObject> obj,
@@ -4125,9 +4053,8 @@ class NativeLibrary {
           ffi.Pointer<ffi.Void>,
           ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_value_withObjCType_1 =
-      _registerName1("value:withObjCType:");
-  late final ffi.Pointer<ObjCSel> _sel_valueWithNonretainedObject_1 =
+  late final _sel_value_withObjCType_1 = _registerName1("value:withObjCType:");
+  late final _sel_valueWithNonretainedObject_1 =
       _registerName1("valueWithNonretainedObject:");
   ffi.Pointer<ObjCObject> _objc_msgSend_107(
     ffi.Pointer<ObjCObject> obj,
@@ -4149,10 +4076,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_nonretainedObjectValue1 =
+  late final _sel_nonretainedObjectValue1 =
       _registerName1("nonretainedObjectValue");
-  late final ffi.Pointer<ObjCSel> _sel_valueWithPointer_1 =
-      _registerName1("valueWithPointer:");
+  late final _sel_valueWithPointer_1 = _registerName1("valueWithPointer:");
   ffi.Pointer<ObjCObject> _objc_msgSend_108(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4173,13 +4099,10 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ffi.Void>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_pointerValue1 =
-      _registerName1("pointerValue");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToValue_1 =
-      _registerName1("isEqualToValue:");
-  late final ffi.Pointer<ObjCSel> _sel_getValue_1 = _registerName1("getValue:");
-  late final ffi.Pointer<ObjCSel> _sel_valueWithRange_1 =
-      _registerName1("valueWithRange:");
+  late final _sel_pointerValue1 = _registerName1("pointerValue");
+  late final _sel_isEqualToValue_1 = _registerName1("isEqualToValue:");
+  late final _sel_getValue_1 = _registerName1("getValue:");
+  late final _sel_valueWithRange_1 = _registerName1("valueWithRange:");
   ffi.Pointer<ObjCObject> _objc_msgSend_109(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4200,8 +4123,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_rangeValue1 =
-      _registerName1("rangeValue");
+  late final _sel_rangeValue1 = _registerName1("rangeValue");
   NSRange _objc_msgSend_110(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4219,9 +4141,8 @@ class NativeLibrary {
   late final __objc_msgSend_110 = __objc_msgSend_110Ptr.asFunction<
       NSRange Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSNumber1 = _getClass1("NSNumber");
-  late final ffi.Pointer<ObjCSel> _sel_initWithChar_1 =
-      _registerName1("initWithChar:");
+  late final _class_NSNumber1 = _getClass1("NSNumber");
+  late final _sel_initWithChar_1 = _registerName1("initWithChar:");
   ffi.Pointer<ObjCObject> _objc_msgSend_111(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4242,7 +4163,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedChar_1 =
+  late final _sel_initWithUnsignedChar_1 =
       _registerName1("initWithUnsignedChar:");
   ffi.Pointer<ObjCObject> _objc_msgSend_112(
     ffi.Pointer<ObjCObject> obj,
@@ -4264,8 +4185,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithShort_1 =
-      _registerName1("initWithShort:");
+  late final _sel_initWithShort_1 = _registerName1("initWithShort:");
   ffi.Pointer<ObjCObject> _objc_msgSend_113(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4286,7 +4206,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedShort_1 =
+  late final _sel_initWithUnsignedShort_1 =
       _registerName1("initWithUnsignedShort:");
   ffi.Pointer<ObjCObject> _objc_msgSend_114(
     ffi.Pointer<ObjCObject> obj,
@@ -4308,8 +4228,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithInt_1 =
-      _registerName1("initWithInt:");
+  late final _sel_initWithInt_1 = _registerName1("initWithInt:");
   ffi.Pointer<ObjCObject> _objc_msgSend_115(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4330,7 +4249,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedInt_1 =
+  late final _sel_initWithUnsignedInt_1 =
       _registerName1("initWithUnsignedInt:");
   ffi.Pointer<ObjCObject> _objc_msgSend_116(
     ffi.Pointer<ObjCObject> obj,
@@ -4352,8 +4271,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithLong_1 =
-      _registerName1("initWithLong:");
+  late final _sel_initWithLong_1 = _registerName1("initWithLong:");
   ffi.Pointer<ObjCObject> _objc_msgSend_117(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4374,7 +4292,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedLong_1 =
+  late final _sel_initWithUnsignedLong_1 =
       _registerName1("initWithUnsignedLong:");
   ffi.Pointer<ObjCObject> _objc_msgSend_118(
     ffi.Pointer<ObjCObject> obj,
@@ -4396,8 +4314,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithLongLong_1 =
-      _registerName1("initWithLongLong:");
+  late final _sel_initWithLongLong_1 = _registerName1("initWithLongLong:");
   ffi.Pointer<ObjCObject> _objc_msgSend_119(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4418,7 +4335,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedLongLong_1 =
+  late final _sel_initWithUnsignedLongLong_1 =
       _registerName1("initWithUnsignedLongLong:");
   ffi.Pointer<ObjCObject> _objc_msgSend_120(
     ffi.Pointer<ObjCObject> obj,
@@ -4440,8 +4357,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithFloat_1 =
-      _registerName1("initWithFloat:");
+  late final _sel_initWithFloat_1 = _registerName1("initWithFloat:");
   ffi.Pointer<ObjCObject> _objc_msgSend_121(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4462,8 +4378,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithDouble_1 =
-      _registerName1("initWithDouble:");
+  late final _sel_initWithDouble_1 = _registerName1("initWithDouble:");
   ffi.Pointer<ObjCObject> _objc_msgSend_122(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4484,8 +4399,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithBool_1 =
-      _registerName1("initWithBool:");
+  late final _sel_initWithBool_1 = _registerName1("initWithBool:");
   ffi.Pointer<ObjCObject> _objc_msgSend_123(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4506,11 +4420,10 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithInteger_1 =
-      _registerName1("initWithInteger:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithUnsignedInteger_1 =
+  late final _sel_initWithInteger_1 = _registerName1("initWithInteger:");
+  late final _sel_initWithUnsignedInteger_1 =
       _registerName1("initWithUnsignedInteger:");
-  late final ffi.Pointer<ObjCSel> _sel_charValue1 = _registerName1("charValue");
+  late final _sel_charValue1 = _registerName1("charValue");
   int _objc_msgSend_124(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4528,8 +4441,7 @@ class NativeLibrary {
   late final __objc_msgSend_124 = __objc_msgSend_124Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_unsignedCharValue1 =
-      _registerName1("unsignedCharValue");
+  late final _sel_unsignedCharValue1 = _registerName1("unsignedCharValue");
   int _objc_msgSend_125(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4547,8 +4459,7 @@ class NativeLibrary {
   late final __objc_msgSend_125 = __objc_msgSend_125Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_shortValue1 =
-      _registerName1("shortValue");
+  late final _sel_shortValue1 = _registerName1("shortValue");
   int _objc_msgSend_126(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4566,8 +4477,7 @@ class NativeLibrary {
   late final __objc_msgSend_126 = __objc_msgSend_126Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_unsignedShortValue1 =
-      _registerName1("unsignedShortValue");
+  late final _sel_unsignedShortValue1 = _registerName1("unsignedShortValue");
   int _objc_msgSend_127(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4585,8 +4495,7 @@ class NativeLibrary {
   late final __objc_msgSend_127 = __objc_msgSend_127Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_unsignedIntValue1 =
-      _registerName1("unsignedIntValue");
+  late final _sel_unsignedIntValue1 = _registerName1("unsignedIntValue");
   int _objc_msgSend_128(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4604,10 +4513,9 @@ class NativeLibrary {
   late final __objc_msgSend_128 = __objc_msgSend_128Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_longValue1 = _registerName1("longValue");
-  late final ffi.Pointer<ObjCSel> _sel_unsignedLongValue1 =
-      _registerName1("unsignedLongValue");
-  late final ffi.Pointer<ObjCSel> _sel_unsignedLongLongValue1 =
+  late final _sel_longValue1 = _registerName1("longValue");
+  late final _sel_unsignedLongValue1 = _registerName1("unsignedLongValue");
+  late final _sel_unsignedLongLongValue1 =
       _registerName1("unsignedLongLongValue");
   int _objc_msgSend_129(
     ffi.Pointer<ObjCObject> obj,
@@ -4626,41 +4534,30 @@ class NativeLibrary {
   late final __objc_msgSend_129 = __objc_msgSend_129Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_unsignedIntegerValue1 =
+  late final _sel_unsignedIntegerValue1 =
       _registerName1("unsignedIntegerValue");
-  late final ffi.Pointer<ObjCSel> _sel_stringValue1 =
-      _registerName1("stringValue");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToNumber_1 =
-      _registerName1("isEqualToNumber:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithChar_1 =
-      _registerName1("numberWithChar:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedChar_1 =
+  late final _sel_stringValue1 = _registerName1("stringValue");
+  late final _sel_isEqualToNumber_1 = _registerName1("isEqualToNumber:");
+  late final _sel_numberWithChar_1 = _registerName1("numberWithChar:");
+  late final _sel_numberWithUnsignedChar_1 =
       _registerName1("numberWithUnsignedChar:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithShort_1 =
-      _registerName1("numberWithShort:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedShort_1 =
+  late final _sel_numberWithShort_1 = _registerName1("numberWithShort:");
+  late final _sel_numberWithUnsignedShort_1 =
       _registerName1("numberWithUnsignedShort:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithInt_1 =
-      _registerName1("numberWithInt:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedInt_1 =
+  late final _sel_numberWithInt_1 = _registerName1("numberWithInt:");
+  late final _sel_numberWithUnsignedInt_1 =
       _registerName1("numberWithUnsignedInt:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithLong_1 =
-      _registerName1("numberWithLong:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedLong_1 =
+  late final _sel_numberWithLong_1 = _registerName1("numberWithLong:");
+  late final _sel_numberWithUnsignedLong_1 =
       _registerName1("numberWithUnsignedLong:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithLongLong_1 =
-      _registerName1("numberWithLongLong:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedLongLong_1 =
+  late final _sel_numberWithLongLong_1 = _registerName1("numberWithLongLong:");
+  late final _sel_numberWithUnsignedLongLong_1 =
       _registerName1("numberWithUnsignedLongLong:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithFloat_1 =
-      _registerName1("numberWithFloat:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithDouble_1 =
-      _registerName1("numberWithDouble:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithBool_1 =
-      _registerName1("numberWithBool:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithInteger_1 =
-      _registerName1("numberWithInteger:");
-  late final ffi.Pointer<ObjCSel> _sel_numberWithUnsignedInteger_1 =
+  late final _sel_numberWithFloat_1 = _registerName1("numberWithFloat:");
+  late final _sel_numberWithDouble_1 = _registerName1("numberWithDouble:");
+  late final _sel_numberWithBool_1 = _registerName1("numberWithBool:");
+  late final _sel_numberWithInteger_1 = _registerName1("numberWithInteger:");
+  late final _sel_numberWithUnsignedInteger_1 =
       _registerName1("numberWithUnsignedInteger:");
   NSRange NSUnionRange(
     NSRange range1,
@@ -4722,11 +4619,10 @@ class NativeLibrary {
   late final _NSRangeFromString = _NSRangeFromStringPtr.asFunction<
       NSRange Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSOrderedCollectionChange1 =
+  late final _class_NSOrderedCollectionChange1 =
       _getClass1("NSOrderedCollectionChange");
-  late final ffi.Pointer<ObjCSel> _sel_object1 = _registerName1("object");
-  late final ffi.Pointer<ObjCSel> _sel_changeType1 =
-      _registerName1("changeType");
+  late final _sel_object1 = _registerName1("object");
+  late final _sel_changeType1 = _registerName1("changeType");
   int _objc_msgSend_130(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4744,10 +4640,9 @@ class NativeLibrary {
   late final __objc_msgSend_130 = __objc_msgSend_130Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_index1 = _registerName1("index");
-  late final ffi.Pointer<ObjCSel> _sel_associatedIndex1 =
-      _registerName1("associatedIndex");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObject_type_index_1 =
+  late final _sel_index1 = _registerName1("index");
+  late final _sel_associatedIndex1 = _registerName1("associatedIndex");
+  late final _sel_initWithObject_type_index_1 =
       _registerName1("initWithObject:type:index:");
   instancetype _objc_msgSend_131(
     ffi.Pointer<ObjCObject> obj,
@@ -4773,8 +4668,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithObject_type_index_associatedIndex_1 =
+  late final _sel_initWithObject_type_index_associatedIndex_1 =
       _registerName1("initWithObject:type:index:associatedIndex:");
   instancetype _objc_msgSend_132(
     ffi.Pointer<ObjCObject> obj,
@@ -4807,11 +4701,9 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, int, int)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSIndexSet1 =
-      _getClass1("NSIndexSet");
-  late final ffi.Pointer<ObjCSel> _sel_indexSet1 = _registerName1("indexSet");
-  late final ffi.Pointer<ObjCSel> _sel_indexSetWithIndex_1 =
-      _registerName1("indexSetWithIndex:");
+  late final _class_NSIndexSet1 = _getClass1("NSIndexSet");
+  late final _sel_indexSet1 = _registerName1("indexSet");
+  late final _sel_indexSetWithIndex_1 = _registerName1("indexSetWithIndex:");
   instancetype _objc_msgSend_133(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -4832,7 +4724,7 @@ class NativeLibrary {
       instancetype Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexSetWithIndexesInRange_1 =
+  late final _sel_indexSetWithIndexesInRange_1 =
       _registerName1("indexSetWithIndexesInRange:");
   instancetype _objc_msgSend_134(
     ffi.Pointer<ObjCObject> obj,
@@ -4854,26 +4746,21 @@ class NativeLibrary {
       instancetype Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithIndexesInRange_1 =
+  late final _sel_initWithIndexesInRange_1 =
       _registerName1("initWithIndexesInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithIndexSet_1 =
-      _registerName1("initWithIndexSet:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithIndex_1 =
-      _registerName1("initWithIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToIndexSet_1 =
-      _registerName1("isEqualToIndexSet:");
-  late final ffi.Pointer<ObjCSel> _sel_firstIndex1 =
-      _registerName1("firstIndex");
-  late final ffi.Pointer<ObjCSel> _sel_lastIndex1 = _registerName1("lastIndex");
-  late final ffi.Pointer<ObjCSel> _sel_indexGreaterThanIndex_1 =
+  late final _sel_initWithIndexSet_1 = _registerName1("initWithIndexSet:");
+  late final _sel_initWithIndex_1 = _registerName1("initWithIndex:");
+  late final _sel_isEqualToIndexSet_1 = _registerName1("isEqualToIndexSet:");
+  late final _sel_firstIndex1 = _registerName1("firstIndex");
+  late final _sel_lastIndex1 = _registerName1("lastIndex");
+  late final _sel_indexGreaterThanIndex_1 =
       _registerName1("indexGreaterThanIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_indexLessThanIndex_1 =
-      _registerName1("indexLessThanIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_indexGreaterThanOrEqualToIndex_1 =
+  late final _sel_indexLessThanIndex_1 = _registerName1("indexLessThanIndex:");
+  late final _sel_indexGreaterThanOrEqualToIndex_1 =
       _registerName1("indexGreaterThanOrEqualToIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_indexLessThanOrEqualToIndex_1 =
+  late final _sel_indexLessThanOrEqualToIndex_1 =
       _registerName1("indexLessThanOrEqualToIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_getIndexes_maxCount_inIndexRange_1 =
+  late final _sel_getIndexes_maxCount_inIndexRange_1 =
       _registerName1("getIndexes:maxCount:inIndexRange:");
   int _objc_msgSend_135(
     ffi.Pointer<ObjCObject> obj,
@@ -4903,7 +4790,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<NSUInteger>, int, NSRangePointer)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_countOfIndexesInRange_1 =
+  late final _sel_countOfIndexesInRange_1 =
       _registerName1("countOfIndexesInRange:");
   int _objc_msgSend_136(
     ffi.Pointer<ObjCObject> obj,
@@ -4924,9 +4811,8 @@ class NativeLibrary {
   late final __objc_msgSend_136 = __objc_msgSend_136Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_containsIndex_1 =
-      _registerName1("containsIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_containsIndexesInRange_1 =
+  late final _sel_containsIndex_1 = _registerName1("containsIndex:");
+  late final _sel_containsIndexesInRange_1 =
       _registerName1("containsIndexesInRange:");
   bool _objc_msgSend_137(
     ffi.Pointer<ObjCObject> obj,
@@ -4948,11 +4834,10 @@ class NativeLibrary {
   late final __objc_msgSend_137 = __objc_msgSend_137Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_containsIndexes_1 =
-      _registerName1("containsIndexes:");
-  late final ffi.Pointer<ObjCSel> _sel_intersectsIndexesInRange_1 =
+  late final _sel_containsIndexes_1 = _registerName1("containsIndexes:");
+  late final _sel_intersectsIndexesInRange_1 =
       _registerName1("intersectsIndexesInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_enumerateIndexesUsingBlock_1 =
+  late final _sel_enumerateIndexesUsingBlock_1 =
       _registerName1("enumerateIndexesUsingBlock:");
   void _objc_msgSend_138(
     ffi.Pointer<ObjCObject> obj,
@@ -4974,8 +4859,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateIndexesWithOptions_usingBlock_1 =
+  late final _sel_enumerateIndexesWithOptions_usingBlock_1 =
       _registerName1("enumerateIndexesWithOptions:usingBlock:");
   void _objc_msgSend_139(
     ffi.Pointer<ObjCObject> obj,
@@ -4999,8 +4883,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateIndexesInRange_options_usingBlock_1 =
+  late final _sel_enumerateIndexesInRange_options_usingBlock_1 =
       _registerName1("enumerateIndexesInRange:options:usingBlock:");
   void _objc_msgSend_140(
     ffi.Pointer<ObjCObject> obj,
@@ -5026,8 +4909,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexPassingTest_1 =
-      _registerName1("indexPassingTest:");
+  late final _sel_indexPassingTest_1 = _registerName1("indexPassingTest:");
   int _objc_msgSend_141(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5048,7 +4930,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexWithOptions_passingTest_1 =
+  late final _sel_indexWithOptions_passingTest_1 =
       _registerName1("indexWithOptions:passingTest:");
   int _objc_msgSend_142(
     ffi.Pointer<ObjCObject> obj,
@@ -5072,7 +4954,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexInRange_options_passingTest_1 =
+  late final _sel_indexInRange_options_passingTest_1 =
       _registerName1("indexInRange:options:passingTest:");
   int _objc_msgSend_143(
     ffi.Pointer<ObjCObject> obj,
@@ -5098,8 +4980,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexesPassingTest_1 =
-      _registerName1("indexesPassingTest:");
+  late final _sel_indexesPassingTest_1 = _registerName1("indexesPassingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_144(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5120,7 +5001,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexesWithOptions_passingTest_1 =
+  late final _sel_indexesWithOptions_passingTest_1 =
       _registerName1("indexesWithOptions:passingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_145(
     ffi.Pointer<ObjCObject> obj,
@@ -5147,7 +5028,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexesInRange_options_passingTest_1 =
+  late final _sel_indexesInRange_options_passingTest_1 =
       _registerName1("indexesInRange:options:passingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_146(
     ffi.Pointer<ObjCObject> obj,
@@ -5177,7 +5058,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, NSRange, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_enumerateRangesUsingBlock_1 =
+  late final _sel_enumerateRangesUsingBlock_1 =
       _registerName1("enumerateRangesUsingBlock:");
   void _objc_msgSend_147(
     ffi.Pointer<ObjCObject> obj,
@@ -5199,7 +5080,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_enumerateRangesWithOptions_usingBlock_1 =
+  late final _sel_enumerateRangesWithOptions_usingBlock_1 =
       _registerName1("enumerateRangesWithOptions:usingBlock:");
   void _objc_msgSend_148(
     ffi.Pointer<ObjCObject> obj,
@@ -5223,8 +5104,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateRangesInRange_options_usingBlock_1 =
+  late final _sel_enumerateRangesInRange_options_usingBlock_1 =
       _registerName1("enumerateRangesInRange:options:usingBlock:");
   void _objc_msgSend_149(
     ffi.Pointer<ObjCObject> obj,
@@ -5250,19 +5130,13 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSMutableIndexSet1 =
-      _getClass1("NSMutableIndexSet");
-  late final ffi.Pointer<ObjCSel> _sel_addIndexes_1 =
-      _registerName1("addIndexes:");
-  late final ffi.Pointer<ObjCSel> _sel_removeIndexes_1 =
-      _registerName1("removeIndexes:");
-  late final ffi.Pointer<ObjCSel> _sel_removeAllIndexes1 =
-      _registerName1("removeAllIndexes");
-  late final ffi.Pointer<ObjCSel> _sel_addIndex_1 = _registerName1("addIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_removeIndex_1 =
-      _registerName1("removeIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_addIndexesInRange_1 =
-      _registerName1("addIndexesInRange:");
+  late final _class_NSMutableIndexSet1 = _getClass1("NSMutableIndexSet");
+  late final _sel_addIndexes_1 = _registerName1("addIndexes:");
+  late final _sel_removeIndexes_1 = _registerName1("removeIndexes:");
+  late final _sel_removeAllIndexes1 = _registerName1("removeAllIndexes");
+  late final _sel_addIndex_1 = _registerName1("addIndex:");
+  late final _sel_removeIndex_1 = _registerName1("removeIndex:");
+  late final _sel_addIndexesInRange_1 = _registerName1("addIndexesInRange:");
   void _objc_msgSend_150(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5282,9 +5156,9 @@ class NativeLibrary {
   late final __objc_msgSend_150 = __objc_msgSend_150Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeIndexesInRange_1 =
+  late final _sel_removeIndexesInRange_1 =
       _registerName1("removeIndexesInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_shiftIndexesStartingAtIndex_by_1 =
+  late final _sel_shiftIndexesStartingAtIndex_by_1 =
       _registerName1("shiftIndexesStartingAtIndex:by:");
   void _objc_msgSend_151(
     ffi.Pointer<ObjCObject> obj,
@@ -5307,12 +5181,10 @@ class NativeLibrary {
   late final __objc_msgSend_151 = __objc_msgSend_151Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSOrderedCollectionDifference1 =
+  late final _class_NSOrderedCollectionDifference1 =
       _getClass1("NSOrderedCollectionDifference");
-  late final ffi.Pointer<ObjCSel> _sel_initWithChanges_1 =
-      _registerName1("initWithChanges:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithInsertIndexes_insertedObjects_removeIndexes_removedObjects_additionalChanges_1 =
+  late final _sel_initWithChanges_1 = _registerName1("initWithChanges:");
+  late final _sel_initWithInsertIndexes_insertedObjects_removeIndexes_removedObjects_additionalChanges_1 =
       _registerName1(
           "initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:additionalChanges:");
   instancetype _objc_msgSend_152(
@@ -5355,8 +5227,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithInsertIndexes_insertedObjects_removeIndexes_removedObjects_1 =
+  late final _sel_initWithInsertIndexes_insertedObjects_removeIndexes_removedObjects_1 =
       _registerName1(
           "initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:");
   instancetype _objc_msgSend_153(
@@ -5395,17 +5266,13 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_insertions1 =
-      _registerName1("insertions");
-  late final ffi.Pointer<ObjCSel> _sel_removals1 = _registerName1("removals");
-  late final ffi.Pointer<ObjCSel> _sel_hasChanges1 =
-      _registerName1("hasChanges");
-  late final ffi.Pointer<ObjCSel> _sel_inverseDifference1 =
-      _registerName1("inverseDifference");
-  late final ffi.Pointer<ObjCObject> _class_NSArray1 = _getClass1("NSArray");
-  late final ffi.Pointer<ObjCSel> _sel_objectAtIndex_1 =
-      _registerName1("objectAtIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObjects_count_1 =
+  late final _sel_insertions1 = _registerName1("insertions");
+  late final _sel_removals1 = _registerName1("removals");
+  late final _sel_hasChanges1 = _registerName1("hasChanges");
+  late final _sel_inverseDifference1 = _registerName1("inverseDifference");
+  late final _class_NSArray1 = _getClass1("NSArray");
+  late final _sel_objectAtIndex_1 = _registerName1("objectAtIndex:");
+  late final _sel_initWithObjects_count_1 =
       _registerName1("initWithObjects:count:");
   instancetype _objc_msgSend_154(
     ffi.Pointer<ObjCObject> obj,
@@ -5432,14 +5299,12 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_componentsJoinedByString_1 =
+  late final _sel_componentsJoinedByString_1 =
       _registerName1("componentsJoinedByString:");
-  late final ffi.Pointer<ObjCSel> _sel_containsObject_1 =
-      _registerName1("containsObject:");
-  late final ffi.Pointer<ObjCSel> _sel_firstObjectCommonWithArray_1 =
+  late final _sel_containsObject_1 = _registerName1("containsObject:");
+  late final _sel_firstObjectCommonWithArray_1 =
       _registerName1("firstObjectCommonWithArray:");
-  late final ffi.Pointer<ObjCSel> _sel_getObjects_range_1 =
-      _registerName1("getObjects:range:");
+  late final _sel_getObjects_range_1 = _registerName1("getObjects:range:");
   void _objc_msgSend_155(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5462,8 +5327,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObject_1 =
-      _registerName1("indexOfObject:");
+  late final _sel_indexOfObject_1 = _registerName1("indexOfObject:");
   int _objc_msgSend_156(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5484,7 +5348,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObject_inRange_1 =
+  late final _sel_indexOfObject_inRange_1 =
       _registerName1("indexOfObject:inRange:");
   int _objc_msgSend_157(
     ffi.Pointer<ObjCObject> obj,
@@ -5508,21 +5372,17 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObjectIdenticalTo_1 =
+  late final _sel_indexOfObjectIdenticalTo_1 =
       _registerName1("indexOfObjectIdenticalTo:");
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObjectIdenticalTo_inRange_1 =
+  late final _sel_indexOfObjectIdenticalTo_inRange_1 =
       _registerName1("indexOfObjectIdenticalTo:inRange:");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToArray_1 =
-      _registerName1("isEqualToArray:");
-  late final ffi.Pointer<ObjCSel> _sel_firstObject1 =
-      _registerName1("firstObject");
-  late final ffi.Pointer<ObjCSel> _sel_lastObject1 =
-      _registerName1("lastObject");
-  late final ffi.Pointer<ObjCSel> _sel_sortedArrayHint1 =
-      _registerName1("sortedArrayHint");
-  late final ffi.Pointer<ObjCSel> _sel_makeObjectsPerformSelector_1 =
+  late final _sel_isEqualToArray_1 = _registerName1("isEqualToArray:");
+  late final _sel_firstObject1 = _registerName1("firstObject");
+  late final _sel_lastObject1 = _registerName1("lastObject");
+  late final _sel_sortedArrayHint1 = _registerName1("sortedArrayHint");
+  late final _sel_makeObjectsPerformSelector_1 =
       _registerName1("makeObjectsPerformSelector:");
-  late final ffi.Pointer<ObjCSel> _sel_makeObjectsPerformSelector_withObject_1 =
+  late final _sel_makeObjectsPerformSelector_withObject_1 =
       _registerName1("makeObjectsPerformSelector:withObject:");
   void _objc_msgSend_158(
     ffi.Pointer<ObjCObject> obj,
@@ -5546,9 +5406,9 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_objectAtIndexedSubscript_1 =
+  late final _sel_objectAtIndexedSubscript_1 =
       _registerName1("objectAtIndexedSubscript:");
-  late final ffi.Pointer<ObjCSel> _sel_enumerateObjectsUsingBlock_1 =
+  late final _sel_enumerateObjectsUsingBlock_1 =
       _registerName1("enumerateObjectsUsingBlock:");
   void _objc_msgSend_159(
     ffi.Pointer<ObjCObject> obj,
@@ -5570,8 +5430,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateObjectsWithOptions_usingBlock_1 =
+  late final _sel_enumerateObjectsWithOptions_usingBlock_1 =
       _registerName1("enumerateObjectsWithOptions:usingBlock:");
   void _objc_msgSend_160(
     ffi.Pointer<ObjCObject> obj,
@@ -5595,8 +5454,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_enumerateObjectsAtIndexes_options_usingBlock_1 =
+  late final _sel_enumerateObjectsAtIndexes_options_usingBlock_1 =
       _registerName1("enumerateObjectsAtIndexes:options:usingBlock:");
   void _objc_msgSend_161(
     ffi.Pointer<ObjCObject> obj,
@@ -5626,7 +5484,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObjectPassingTest_1 =
+  late final _sel_indexOfObjectPassingTest_1 =
       _registerName1("indexOfObjectPassingTest:");
   int _objc_msgSend_162(
     ffi.Pointer<ObjCObject> obj,
@@ -5648,7 +5506,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexOfObjectWithOptions_passingTest_1 =
+  late final _sel_indexOfObjectWithOptions_passingTest_1 =
       _registerName1("indexOfObjectWithOptions:passingTest:");
   int _objc_msgSend_163(
     ffi.Pointer<ObjCObject> obj,
@@ -5672,8 +5530,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_indexOfObjectAtIndexes_options_passingTest_1 =
+  late final _sel_indexOfObjectAtIndexes_options_passingTest_1 =
       _registerName1("indexOfObjectAtIndexes:options:passingTest:");
   int _objc_msgSend_164(
     ffi.Pointer<ObjCObject> obj,
@@ -5703,7 +5560,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_indexesOfObjectsPassingTest_1 =
+  late final _sel_indexesOfObjectsPassingTest_1 =
       _registerName1("indexesOfObjectsPassingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_165(
     ffi.Pointer<ObjCObject> obj,
@@ -5725,8 +5582,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_indexesOfObjectsWithOptions_passingTest_1 =
+  late final _sel_indexesOfObjectsWithOptions_passingTest_1 =
       _registerName1("indexesOfObjectsWithOptions:passingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_166(
     ffi.Pointer<ObjCObject> obj,
@@ -5753,8 +5609,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_indexesOfObjectsAtIndexes_options_passingTest_1 =
+  late final _sel_indexesOfObjectsAtIndexes_options_passingTest_1 =
       _registerName1("indexesOfObjectsAtIndexes:options:passingTest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_167(
     ffi.Pointer<ObjCObject> obj,
@@ -5788,8 +5643,7 @@ class NativeLibrary {
           int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_indexOfObject_inSortedRange_options_usingComparator_1 =
+  late final _sel_indexOfObject_inSortedRange_options_usingComparator_1 =
       _registerName1("indexOfObject:inSortedRange:options:usingComparator:");
   int _objc_msgSend_168(
     ffi.Pointer<ObjCObject> obj,
@@ -5822,23 +5676,17 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, NSRange, int, NSComparator)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_array1 = _registerName1("array");
-  late final ffi.Pointer<ObjCSel> _sel_arrayWithObject_1 =
-      _registerName1("arrayWithObject:");
-  late final ffi.Pointer<ObjCSel> _sel_arrayWithObjects_count_1 =
+  late final _sel_array1 = _registerName1("array");
+  late final _sel_arrayWithObject_1 = _registerName1("arrayWithObject:");
+  late final _sel_arrayWithObjects_count_1 =
       _registerName1("arrayWithObjects:count:");
-  late final ffi.Pointer<ObjCSel> _sel_arrayWithObjects_1 =
-      _registerName1("arrayWithObjects:");
-  late final ffi.Pointer<ObjCSel> _sel_arrayWithArray_1 =
-      _registerName1("arrayWithArray:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObjects_1 =
-      _registerName1("initWithObjects:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithArray_1 =
-      _registerName1("initWithArray:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithArray_copyItems_1 =
+  late final _sel_arrayWithObjects_1 = _registerName1("arrayWithObjects:");
+  late final _sel_arrayWithArray_1 = _registerName1("arrayWithArray:");
+  late final _sel_initWithObjects_1 = _registerName1("initWithObjects:");
+  late final _sel_initWithArray_1 = _registerName1("initWithArray:");
+  late final _sel_initWithArray_copyItems_1 =
       _registerName1("initWithArray:copyItems:");
-  late final ffi.Pointer<ObjCSel> _sel_getObjects_1 =
-      _registerName1("getObjects:");
+  late final _sel_getObjects_1 = _registerName1("getObjects:");
   void _objc_msgSend_169(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -5859,11 +5707,9 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSMutableArray1 =
-      _getClass1("NSMutableArray");
-  late final ffi.Pointer<ObjCSel> _sel_addObject_1 =
-      _registerName1("addObject:");
-  late final ffi.Pointer<ObjCSel> _sel_insertObject_atIndex_1 =
+  late final _class_NSMutableArray1 = _getClass1("NSMutableArray");
+  late final _sel_addObject_1 = _registerName1("addObject:");
+  late final _sel_insertObject_atIndex_1 =
       _registerName1("insertObject:atIndex:");
   void _objc_msgSend_170(
     ffi.Pointer<ObjCObject> obj,
@@ -5887,11 +5733,10 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeLastObject1 =
-      _registerName1("removeLastObject");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectAtIndex_1 =
+  late final _sel_removeLastObject1 = _registerName1("removeLastObject");
+  late final _sel_removeObjectAtIndex_1 =
       _registerName1("removeObjectAtIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_replaceObjectAtIndex_withObject_1 =
+  late final _sel_replaceObjectAtIndex_withObject_1 =
       _registerName1("replaceObjectAtIndex:withObject:");
   void _objc_msgSend_171(
     ffi.Pointer<ObjCObject> obj,
@@ -5915,12 +5760,10 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithCapacity_1 =
-      _registerName1("initWithCapacity:");
-  late final ffi.Pointer<ObjCSel> _sel_addObjectsFromArray_1 =
+  late final _sel_initWithCapacity_1 = _registerName1("initWithCapacity:");
+  late final _sel_addObjectsFromArray_1 =
       _registerName1("addObjectsFromArray:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_exchangeObjectAtIndex_withObjectAtIndex_1 =
+  late final _sel_exchangeObjectAtIndex_withObjectAtIndex_1 =
       _registerName1("exchangeObjectAtIndex:withObjectAtIndex:");
   void _objc_msgSend_172(
     ffi.Pointer<ObjCObject> obj,
@@ -5943,9 +5786,8 @@ class NativeLibrary {
   late final __objc_msgSend_172 = __objc_msgSend_172Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeAllObjects1 =
-      _registerName1("removeAllObjects");
-  late final ffi.Pointer<ObjCSel> _sel_removeObject_inRange_1 =
+  late final _sel_removeAllObjects1 = _registerName1("removeAllObjects");
+  late final _sel_removeObject_inRange_1 =
       _registerName1("removeObject:inRange:");
   void _objc_msgSend_173(
     ffi.Pointer<ObjCObject> obj,
@@ -5969,13 +5811,12 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeObject_1 =
-      _registerName1("removeObject:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectIdenticalTo_inRange_1 =
+  late final _sel_removeObject_1 = _registerName1("removeObject:");
+  late final _sel_removeObjectIdenticalTo_inRange_1 =
       _registerName1("removeObjectIdenticalTo:inRange:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectIdenticalTo_1 =
+  late final _sel_removeObjectIdenticalTo_1 =
       _registerName1("removeObjectIdenticalTo:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectsFromIndices_numIndices_1 =
+  late final _sel_removeObjectsFromIndices_numIndices_1 =
       _registerName1("removeObjectsFromIndices:numIndices:");
   void _objc_msgSend_174(
     ffi.Pointer<ObjCObject> obj,
@@ -5999,12 +5840,11 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<NSUInteger>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectsInArray_1 =
+  late final _sel_removeObjectsInArray_1 =
       _registerName1("removeObjectsInArray:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectsInRange_1 =
+  late final _sel_removeObjectsInRange_1 =
       _registerName1("removeObjectsInRange:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_replaceObjectsInRange_withObjectsFromArray_range_1 =
+  late final _sel_replaceObjectsInRange_withObjectsFromArray_range_1 =
       _registerName1("replaceObjectsInRange:withObjectsFromArray:range:");
   void _objc_msgSend_175(
     ffi.Pointer<ObjCObject> obj,
@@ -6030,8 +5870,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange,
           ffi.Pointer<ObjCObject>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_replaceObjectsInRange_withObjectsFromArray_1 =
+  late final _sel_replaceObjectsInRange_withObjectsFromArray_1 =
       _registerName1("replaceObjectsInRange:withObjectsFromArray:");
   void _objc_msgSend_176(
     ffi.Pointer<ObjCObject> obj,
@@ -6055,8 +5894,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setArray_1 = _registerName1("setArray:");
-  late final ffi.Pointer<ObjCSel> _sel_sortUsingFunction_context_1 =
+  late final _sel_setArray_1 = _registerName1("setArray:");
+  late final _sel_sortUsingFunction_context_1 =
       _registerName1("sortUsingFunction:context:");
   void _objc_msgSend_177(
     ffi.Pointer<ObjCObject> obj,
@@ -6096,17 +5935,16 @@ class NativeLibrary {
                       ffi.Pointer<ObjCObject>, ffi.Pointer<ffi.Void>)>>,
           ffi.Pointer<ffi.Void>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_sortUsingSelector_1 =
-      _registerName1("sortUsingSelector:");
-  late final ffi.Pointer<ObjCSel> _sel_insertObjects_atIndexes_1 =
+  late final _sel_sortUsingSelector_1 = _registerName1("sortUsingSelector:");
+  late final _sel_insertObjects_atIndexes_1 =
       _registerName1("insertObjects:atIndexes:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectsAtIndexes_1 =
+  late final _sel_removeObjectsAtIndexes_1 =
       _registerName1("removeObjectsAtIndexes:");
-  late final ffi.Pointer<ObjCSel> _sel_replaceObjectsAtIndexes_withObjects_1 =
+  late final _sel_replaceObjectsAtIndexes_withObjects_1 =
       _registerName1("replaceObjectsAtIndexes:withObjects:");
-  late final ffi.Pointer<ObjCSel> _sel_setObject_atIndexedSubscript_1 =
+  late final _sel_setObject_atIndexedSubscript_1 =
       _registerName1("setObject:atIndexedSubscript:");
-  late final ffi.Pointer<ObjCSel> _sel_sortUsingComparator_1 =
+  late final _sel_sortUsingComparator_1 =
       _registerName1("sortUsingComparator:");
   void _objc_msgSend_178(
     ffi.Pointer<ObjCObject> obj,
@@ -6128,7 +5966,7 @@ class NativeLibrary {
       void Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSComparator)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_sortWithOptions_usingComparator_1 =
+  late final _sel_sortWithOptions_usingComparator_1 =
       _registerName1("sortWithOptions:usingComparator:");
   void _objc_msgSend_179(
     ffi.Pointer<ObjCObject> obj,
@@ -6152,10 +5990,8 @@ class NativeLibrary {
       void Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, NSComparator)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_arrayWithCapacity_1 =
-      _registerName1("arrayWithCapacity:");
-  late final ffi.Pointer<ObjCSel> _sel_applyDifference_1 =
-      _registerName1("applyDifference:");
+  late final _sel_arrayWithCapacity_1 = _registerName1("arrayWithCapacity:");
+  late final _sel_applyDifference_1 = _registerName1("applyDifference:");
   ffi.Pointer<ObjCObject> NSStringFromSelector1(
     ffi.Pointer<ObjCSel> aSelector,
   ) {
@@ -7099,19 +6935,13 @@ class NativeLibrary {
   late final _NSRangeFromString1 = _NSRangeFromString1Ptr.asFunction<
       NSRange Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSMutableData1 =
-      _getClass1("NSMutableData");
-  late final ffi.Pointer<ObjCSel> _sel_mutableBytes1 =
-      _registerName1("mutableBytes");
-  late final ffi.Pointer<ObjCSel> _sel_setLength_1 =
-      _registerName1("setLength:");
-  late final ffi.Pointer<ObjCSel> _sel_appendBytes_length_1 =
-      _registerName1("appendBytes:length:");
-  late final ffi.Pointer<ObjCSel> _sel_appendData_1 =
-      _registerName1("appendData:");
-  late final ffi.Pointer<ObjCSel> _sel_increaseLengthBy_1 =
-      _registerName1("increaseLengthBy:");
-  late final ffi.Pointer<ObjCSel> _sel_replaceBytesInRange_withBytes_1 =
+  late final _class_NSMutableData1 = _getClass1("NSMutableData");
+  late final _sel_mutableBytes1 = _registerName1("mutableBytes");
+  late final _sel_setLength_1 = _registerName1("setLength:");
+  late final _sel_appendBytes_length_1 = _registerName1("appendBytes:length:");
+  late final _sel_appendData_1 = _registerName1("appendData:");
+  late final _sel_increaseLengthBy_1 = _registerName1("increaseLengthBy:");
+  late final _sel_replaceBytesInRange_withBytes_1 =
       _registerName1("replaceBytesInRange:withBytes:");
   void _objc_msgSend_180(
     ffi.Pointer<ObjCObject> obj,
@@ -7135,10 +6965,9 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange,
           ffi.Pointer<ffi.Void>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_resetBytesInRange_1 =
-      _registerName1("resetBytesInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_setData_1 = _registerName1("setData:");
-  late final ffi.Pointer<ObjCSel> _sel_replaceBytesInRange_withBytes_length_1 =
+  late final _sel_resetBytesInRange_1 = _registerName1("resetBytesInRange:");
+  late final _sel_setData_1 = _registerName1("setData:");
+  late final _sel_replaceBytesInRange_withBytes_length_1 =
       _registerName1("replaceBytesInRange:withBytes:length:");
   void _objc_msgSend_181(
     ffi.Pointer<ObjCObject> obj,
@@ -7164,13 +6993,10 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange,
           ffi.Pointer<ffi.Void>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataWithCapacity_1 =
-      _registerName1("dataWithCapacity:");
-  late final ffi.Pointer<ObjCSel> _sel_dataWithLength_1 =
-      _registerName1("dataWithLength:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithLength_1 =
-      _registerName1("initWithLength:");
-  late final ffi.Pointer<ObjCSel> _sel_decompressUsingAlgorithm_error_1 =
+  late final _sel_dataWithCapacity_1 = _registerName1("dataWithCapacity:");
+  late final _sel_dataWithLength_1 = _registerName1("dataWithLength:");
+  late final _sel_initWithLength_1 = _registerName1("initWithLength:");
+  late final _sel_decompressUsingAlgorithm_error_1 =
       _registerName1("decompressUsingAlgorithm:error:");
   bool _objc_msgSend_182(
     ffi.Pointer<ObjCObject> obj,
@@ -7198,10 +7024,9 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_compressUsingAlgorithm_error_1 =
+  late final _sel_compressUsingAlgorithm_error_1 =
       _registerName1("compressUsingAlgorithm:error:");
-  late final ffi.Pointer<ObjCObject> _class_NSPurgeableData1 =
-      _getClass1("NSPurgeableData");
+  late final _class_NSPurgeableData1 = _getClass1("NSPurgeableData");
   ffi.Pointer<ObjCObject> NSStringFromSelector2(
     ffi.Pointer<ObjCSel> aSelector,
   ) {
@@ -8085,21 +7910,17 @@ class NativeLibrary {
   late final _NSExtraRefCount2 =
       _NSExtraRefCount2Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSMutableDictionary1 =
-      _getClass1("NSMutableDictionary");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectForKey_1 =
-      _registerName1("removeObjectForKey:");
-  late final ffi.Pointer<ObjCSel> _sel_setObject_forKey_1 =
-      _registerName1("setObject:forKey:");
-  late final ffi.Pointer<ObjCSel> _sel_addEntriesFromDictionary_1 =
+  late final _class_NSMutableDictionary1 = _getClass1("NSMutableDictionary");
+  late final _sel_removeObjectForKey_1 = _registerName1("removeObjectForKey:");
+  late final _sel_setObject_forKey_1 = _registerName1("setObject:forKey:");
+  late final _sel_addEntriesFromDictionary_1 =
       _registerName1("addEntriesFromDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObjectsForKeys_1 =
+  late final _sel_removeObjectsForKeys_1 =
       _registerName1("removeObjectsForKeys:");
-  late final ffi.Pointer<ObjCSel> _sel_setDictionary_1 =
-      _registerName1("setDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_setObject_forKeyedSubscript_1 =
+  late final _sel_setDictionary_1 = _registerName1("setDictionary:");
+  late final _sel_setObject_forKeyedSubscript_1 =
       _registerName1("setObject:forKeyedSubscript:");
-  late final ffi.Pointer<ObjCSel> _sel_dictionaryWithCapacity_1 =
+  late final _sel_dictionaryWithCapacity_1 =
       _registerName1("dictionaryWithCapacity:");
   ffi.Pointer<ObjCObject> NSStringFromSelector3(
     ffi.Pointer<ObjCSel> aSelector,
@@ -8984,11 +8805,10 @@ class NativeLibrary {
   late final _NSExtraRefCount3 =
       _NSExtraRefCount3Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSNotification1 =
-      _getClass1("NSNotification");
-  late final ffi.Pointer<ObjCSel> _sel_name1 = _registerName1("name");
-  late final ffi.Pointer<ObjCSel> _sel_userInfo1 = _registerName1("userInfo");
-  late final ffi.Pointer<ObjCSel> _sel_initWithName_object_userInfo_1 =
+  late final _class_NSNotification1 = _getClass1("NSNotification");
+  late final _sel_name1 = _registerName1("name");
+  late final _sel_userInfo1 = _registerName1("userInfo");
+  late final _sel_initWithName_object_userInfo_1 =
       _registerName1("initWithName:object:userInfo:");
   instancetype _objc_msgSend_183(
     ffi.Pointer<ObjCObject> obj,
@@ -9022,15 +8842,13 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_notificationWithName_object_1 =
+  late final _sel_notificationWithName_object_1 =
       _registerName1("notificationWithName:object:");
-  late final ffi.Pointer<ObjCSel> _sel_notificationWithName_object_userInfo_1 =
+  late final _sel_notificationWithName_object_userInfo_1 =
       _registerName1("notificationWithName:object:userInfo:");
-  late final ffi.Pointer<ObjCObject> _class_NSNotificationCenter1 =
-      _getClass1("NSNotificationCenter");
-  late final ffi.Pointer<ObjCSel> _sel_defaultCenter1 =
-      _registerName1("defaultCenter");
-  late final ffi.Pointer<ObjCSel> _sel_addObserver_selector_name_object_1 =
+  late final _class_NSNotificationCenter1 = _getClass1("NSNotificationCenter");
+  late final _sel_defaultCenter1 = _registerName1("defaultCenter");
+  late final _sel_addObserver_selector_name_object_1 =
       _registerName1("addObserver:selector:name:object:");
   void _objc_msgSend_184(
     ffi.Pointer<ObjCObject> obj,
@@ -9068,11 +8886,10 @@ class NativeLibrary {
           NSNotificationName,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_postNotification_1 =
-      _registerName1("postNotification:");
-  late final ffi.Pointer<ObjCSel> _sel_postNotificationName_object_1 =
+  late final _sel_postNotification_1 = _registerName1("postNotification:");
+  late final _sel_postNotificationName_object_1 =
       _registerName1("postNotificationName:object:");
-  late final ffi.Pointer<ObjCSel> _sel_postNotificationName_object_userInfo_1 =
+  late final _sel_postNotificationName_object_userInfo_1 =
       _registerName1("postNotificationName:object:userInfo:");
   void _objc_msgSend_185(
     ffi.Pointer<ObjCObject> obj,
@@ -9106,12 +8923,10 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeObserver_1 =
-      _registerName1("removeObserver:");
-  late final ffi.Pointer<ObjCSel> _sel_removeObserver_name_object_1 =
+  late final _sel_removeObserver_1 = _registerName1("removeObserver:");
+  late final _sel_removeObserver_name_object_1 =
       _registerName1("removeObserver:name:object:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_addObserverForName_object_queue_usingBlock_1 =
+  late final _sel_addObserverForName_object_queue_usingBlock_1 =
       _registerName1("addObserverForName:object:queue:usingBlock:");
   ffi.Pointer<ObjCObject> _objc_msgSend_186(
     ffi.Pointer<ObjCObject> obj,
@@ -9159,11 +8974,10 @@ class NativeLibrary {
   set NSSystemClockDidChangeNotification(NSNotificationName value) =>
       _NSSystemClockDidChangeNotification.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSDate1 = _getClass1("NSDate");
-  late final ffi.Pointer<ObjCSel> _sel_timeIntervalSinceReferenceDate1 =
+  late final _class_NSDate1 = _getClass1("NSDate");
+  late final _sel_timeIntervalSinceReferenceDate1 =
       _registerName1("timeIntervalSinceReferenceDate");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithTimeIntervalSinceReferenceDate_1 =
+  late final _sel_initWithTimeIntervalSinceReferenceDate_1 =
       _registerName1("initWithTimeIntervalSinceReferenceDate:");
   instancetype _objc_msgSend_187(
     ffi.Pointer<ObjCObject> obj,
@@ -9185,7 +8999,7 @@ class NativeLibrary {
       instancetype Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_timeIntervalSinceDate_1 =
+  late final _sel_timeIntervalSinceDate_1 =
       _registerName1("timeIntervalSinceDate:");
   double _objc_msgSend_188(
     ffi.Pointer<ObjCObject> obj,
@@ -9207,16 +9021,14 @@ class NativeLibrary {
       double Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_timeIntervalSinceNow1 =
+  late final _sel_timeIntervalSinceNow1 =
       _registerName1("timeIntervalSinceNow");
-  late final ffi.Pointer<ObjCSel> _sel_timeIntervalSince19701 =
+  late final _sel_timeIntervalSince19701 =
       _registerName1("timeIntervalSince1970");
-  late final ffi.Pointer<ObjCSel> _sel_addTimeInterval_1 =
-      _registerName1("addTimeInterval:");
-  late final ffi.Pointer<ObjCSel> _sel_dateByAddingTimeInterval_1 =
+  late final _sel_addTimeInterval_1 = _registerName1("addTimeInterval:");
+  late final _sel_dateByAddingTimeInterval_1 =
       _registerName1("dateByAddingTimeInterval:");
-  late final ffi.Pointer<ObjCSel> _sel_earlierDate_1 =
-      _registerName1("earlierDate:");
+  late final _sel_earlierDate_1 = _registerName1("earlierDate:");
   ffi.Pointer<ObjCObject> _objc_msgSend_189(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -9237,19 +9049,16 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_laterDate_1 =
-      _registerName1("laterDate:");
-  late final ffi.Pointer<ObjCSel> _sel_isEqualToDate_1 =
-      _registerName1("isEqualToDate:");
-  late final ffi.Pointer<ObjCSel> _sel_date1 = _registerName1("date");
-  late final ffi.Pointer<ObjCSel> _sel_dateWithTimeIntervalSinceNow_1 =
+  late final _sel_laterDate_1 = _registerName1("laterDate:");
+  late final _sel_isEqualToDate_1 = _registerName1("isEqualToDate:");
+  late final _sel_date1 = _registerName1("date");
+  late final _sel_dateWithTimeIntervalSinceNow_1 =
       _registerName1("dateWithTimeIntervalSinceNow:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_dateWithTimeIntervalSinceReferenceDate_1 =
+  late final _sel_dateWithTimeIntervalSinceReferenceDate_1 =
       _registerName1("dateWithTimeIntervalSinceReferenceDate:");
-  late final ffi.Pointer<ObjCSel> _sel_dateWithTimeIntervalSince1970_1 =
+  late final _sel_dateWithTimeIntervalSince1970_1 =
       _registerName1("dateWithTimeIntervalSince1970:");
-  late final ffi.Pointer<ObjCSel> _sel_dateWithTimeInterval_sinceDate_1 =
+  late final _sel_dateWithTimeInterval_sinceDate_1 =
       _registerName1("dateWithTimeInterval:sinceDate:");
   instancetype _objc_msgSend_190(
     ffi.Pointer<ObjCObject> obj,
@@ -9273,25 +9082,20 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           double, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_distantFuture1 =
-      _registerName1("distantFuture");
-  late final ffi.Pointer<ObjCSel> _sel_distantPast1 =
-      _registerName1("distantPast");
-  late final ffi.Pointer<ObjCSel> _sel_now1 = _registerName1("now");
-  late final ffi.Pointer<ObjCSel> _sel_initWithTimeIntervalSinceNow_1 =
+  late final _sel_distantFuture1 = _registerName1("distantFuture");
+  late final _sel_distantPast1 = _registerName1("distantPast");
+  late final _sel_now1 = _registerName1("now");
+  late final _sel_initWithTimeIntervalSinceNow_1 =
       _registerName1("initWithTimeIntervalSinceNow:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithTimeIntervalSince1970_1 =
+  late final _sel_initWithTimeIntervalSince1970_1 =
       _registerName1("initWithTimeIntervalSince1970:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithTimeInterval_sinceDate_1 =
+  late final _sel_initWithTimeInterval_sinceDate_1 =
       _registerName1("initWithTimeInterval:sinceDate:");
-  late final ffi.Pointer<ObjCObject> _class_NSURLRequest1 =
-      _getClass1("NSURLRequest");
-  late final ffi.Pointer<ObjCSel> _sel_requestWithURL_1 =
-      _registerName1("requestWithURL:");
-  late final ffi.Pointer<ObjCSel> _sel_supportsSecureCoding1 =
+  late final _class_NSURLRequest1 = _getClass1("NSURLRequest");
+  late final _sel_requestWithURL_1 = _registerName1("requestWithURL:");
+  late final _sel_supportsSecureCoding1 =
       _registerName1("supportsSecureCoding");
-  late final ffi.Pointer<ObjCSel>
-      _sel_requestWithURL_cachePolicy_timeoutInterval_1 =
+  late final _sel_requestWithURL_cachePolicy_timeoutInterval_1 =
       _registerName1("requestWithURL:cachePolicy:timeoutInterval:");
   instancetype _objc_msgSend_191(
     ffi.Pointer<ObjCObject> obj,
@@ -9321,14 +9125,11 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithURL_1 =
-      _registerName1("initWithURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithURL_cachePolicy_timeoutInterval_1 =
+  late final _sel_initWithURL_1 = _registerName1("initWithURL:");
+  late final _sel_initWithURL_cachePolicy_timeoutInterval_1 =
       _registerName1("initWithURL:cachePolicy:timeoutInterval:");
-  late final ffi.Pointer<ObjCSel> _sel_URL1 = _registerName1("URL");
-  late final ffi.Pointer<ObjCSel> _sel_cachePolicy1 =
-      _registerName1("cachePolicy");
+  late final _sel_URL1 = _registerName1("URL");
+  late final _sel_cachePolicy1 = _registerName1("cachePolicy");
   int _objc_msgSend_192(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -9346,12 +9147,9 @@ class NativeLibrary {
   late final __objc_msgSend_192 = __objc_msgSend_192Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_timeoutInterval1 =
-      _registerName1("timeoutInterval");
-  late final ffi.Pointer<ObjCSel> _sel_mainDocumentURL1 =
-      _registerName1("mainDocumentURL");
-  late final ffi.Pointer<ObjCSel> _sel_networkServiceType1 =
-      _registerName1("networkServiceType");
+  late final _sel_timeoutInterval1 = _registerName1("timeoutInterval");
+  late final _sel_mainDocumentURL1 = _registerName1("mainDocumentURL");
+  late final _sel_networkServiceType1 = _registerName1("networkServiceType");
   int _objc_msgSend_193(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -9369,32 +9167,26 @@ class NativeLibrary {
   late final __objc_msgSend_193 = __objc_msgSend_193Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_allowsCellularAccess1 =
+  late final _sel_allowsCellularAccess1 =
       _registerName1("allowsCellularAccess");
-  late final ffi.Pointer<ObjCSel> _sel_allowsExpensiveNetworkAccess1 =
+  late final _sel_allowsExpensiveNetworkAccess1 =
       _registerName1("allowsExpensiveNetworkAccess");
-  late final ffi.Pointer<ObjCSel> _sel_allowsConstrainedNetworkAccess1 =
+  late final _sel_allowsConstrainedNetworkAccess1 =
       _registerName1("allowsConstrainedNetworkAccess");
-  late final ffi.Pointer<ObjCSel> _sel_assumesHTTP3Capable1 =
-      _registerName1("assumesHTTP3Capable");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPMethod1 =
-      _registerName1("HTTPMethod");
-  late final ffi.Pointer<ObjCSel> _sel_allHTTPHeaderFields1 =
-      _registerName1("allHTTPHeaderFields");
-  late final ffi.Pointer<ObjCSel> _sel_valueForHTTPHeaderField_1 =
+  late final _sel_assumesHTTP3Capable1 = _registerName1("assumesHTTP3Capable");
+  late final _sel_HTTPMethod1 = _registerName1("HTTPMethod");
+  late final _sel_allHTTPHeaderFields1 = _registerName1("allHTTPHeaderFields");
+  late final _sel_valueForHTTPHeaderField_1 =
       _registerName1("valueForHTTPHeaderField:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPBody1 = _registerName1("HTTPBody");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPBodyStream1 =
-      _registerName1("HTTPBodyStream");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPShouldHandleCookies1 =
+  late final _sel_HTTPBody1 = _registerName1("HTTPBody");
+  late final _sel_HTTPBodyStream1 = _registerName1("HTTPBodyStream");
+  late final _sel_HTTPShouldHandleCookies1 =
       _registerName1("HTTPShouldHandleCookies");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPShouldUsePipelining1 =
+  late final _sel_HTTPShouldUsePipelining1 =
       _registerName1("HTTPShouldUsePipelining");
-  late final ffi.Pointer<ObjCObject> _class_NSMutableURLRequest1 =
-      _getClass1("NSMutableURLRequest");
-  late final ffi.Pointer<ObjCSel> _sel_setURL_1 = _registerName1("setURL:");
-  late final ffi.Pointer<ObjCSel> _sel_setCachePolicy_1 =
-      _registerName1("setCachePolicy:");
+  late final _class_NSMutableURLRequest1 = _getClass1("NSMutableURLRequest");
+  late final _sel_setURL_1 = _registerName1("setURL:");
+  late final _sel_setCachePolicy_1 = _registerName1("setCachePolicy:");
   void _objc_msgSend_194(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -9414,8 +9206,7 @@ class NativeLibrary {
   late final __objc_msgSend_194 = __objc_msgSend_194Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setTimeoutInterval_1 =
-      _registerName1("setTimeoutInterval:");
+  late final _sel_setTimeoutInterval_1 = _registerName1("setTimeoutInterval:");
   void _objc_msgSend_195(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -9435,9 +9226,8 @@ class NativeLibrary {
   late final __objc_msgSend_195 = __objc_msgSend_195Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setMainDocumentURL_1 =
-      _registerName1("setMainDocumentURL:");
-  late final ffi.Pointer<ObjCSel> _sel_setNetworkServiceType_1 =
+  late final _sel_setMainDocumentURL_1 = _registerName1("setMainDocumentURL:");
+  late final _sel_setNetworkServiceType_1 =
       _registerName1("setNetworkServiceType:");
   void _objc_msgSend_196(
     ffi.Pointer<ObjCObject> obj,
@@ -9458,7 +9248,7 @@ class NativeLibrary {
   late final __objc_msgSend_196 = __objc_msgSend_196Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setAllowsCellularAccess_1 =
+  late final _sel_setAllowsCellularAccess_1 =
       _registerName1("setAllowsCellularAccess:");
   void _objc_msgSend_197(
     ffi.Pointer<ObjCObject> obj,
@@ -9479,27 +9269,24 @@ class NativeLibrary {
   late final __objc_msgSend_197 = __objc_msgSend_197Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setAllowsExpensiveNetworkAccess_1 =
+  late final _sel_setAllowsExpensiveNetworkAccess_1 =
       _registerName1("setAllowsExpensiveNetworkAccess:");
-  late final ffi.Pointer<ObjCSel> _sel_setAllowsConstrainedNetworkAccess_1 =
+  late final _sel_setAllowsConstrainedNetworkAccess_1 =
       _registerName1("setAllowsConstrainedNetworkAccess:");
-  late final ffi.Pointer<ObjCSel> _sel_setAssumesHTTP3Capable_1 =
+  late final _sel_setAssumesHTTP3Capable_1 =
       _registerName1("setAssumesHTTP3Capable:");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPMethod_1 =
-      _registerName1("setHTTPMethod:");
-  late final ffi.Pointer<ObjCSel> _sel_setAllHTTPHeaderFields_1 =
+  late final _sel_setHTTPMethod_1 = _registerName1("setHTTPMethod:");
+  late final _sel_setAllHTTPHeaderFields_1 =
       _registerName1("setAllHTTPHeaderFields:");
-  late final ffi.Pointer<ObjCSel> _sel_setValue_forHTTPHeaderField_1 =
+  late final _sel_setValue_forHTTPHeaderField_1 =
       _registerName1("setValue:forHTTPHeaderField:");
-  late final ffi.Pointer<ObjCSel> _sel_addValue_forHTTPHeaderField_1 =
+  late final _sel_addValue_forHTTPHeaderField_1 =
       _registerName1("addValue:forHTTPHeaderField:");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPBody_1 =
-      _registerName1("setHTTPBody:");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPBodyStream_1 =
-      _registerName1("setHTTPBodyStream:");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPShouldHandleCookies_1 =
+  late final _sel_setHTTPBody_1 = _registerName1("setHTTPBody:");
+  late final _sel_setHTTPBodyStream_1 = _registerName1("setHTTPBodyStream:");
+  late final _sel_setHTTPShouldHandleCookies_1 =
       _registerName1("setHTTPShouldHandleCookies:");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPShouldUsePipelining_1 =
+  late final _sel_setHTTPShouldUsePipelining_1 =
       _registerName1("setHTTPShouldUsePipelining:");
   ffi.Pointer<ObjCObject> NSStringFromSelector4(
     ffi.Pointer<ObjCSel> aSelector,
@@ -10384,12 +10171,10 @@ class NativeLibrary {
   late final _NSExtraRefCount4 =
       _NSExtraRefCount4Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSHTTPCookieStorage1 =
-      _getClass1("NSHTTPCookieStorage");
-  late final ffi.Pointer<ObjCSel> _sel_sharedHTTPCookieStorage1 =
+  late final _class_NSHTTPCookieStorage1 = _getClass1("NSHTTPCookieStorage");
+  late final _sel_sharedHTTPCookieStorage1 =
       _registerName1("sharedHTTPCookieStorage");
-  late final ffi.Pointer<ObjCSel>
-      _sel_sharedCookieStorageForGroupContainerIdentifier_1 =
+  late final _sel_sharedCookieStorageForGroupContainerIdentifier_1 =
       _registerName1("sharedCookieStorageForGroupContainerIdentifier:");
   ffi.Pointer<ObjCObject> _objc_msgSend_198(
     ffi.Pointer<ObjCObject> obj,
@@ -10411,17 +10196,14 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_cookies1 = _registerName1("cookies");
-  late final ffi.Pointer<ObjCSel> _sel_setCookie_1 =
-      _registerName1("setCookie:");
-  late final ffi.Pointer<ObjCSel> _sel_deleteCookie_1 =
-      _registerName1("deleteCookie:");
-  late final ffi.Pointer<ObjCSel> _sel_removeCookiesSinceDate_1 =
+  late final _sel_cookies1 = _registerName1("cookies");
+  late final _sel_setCookie_1 = _registerName1("setCookie:");
+  late final _sel_deleteCookie_1 = _registerName1("deleteCookie:");
+  late final _sel_removeCookiesSinceDate_1 =
       _registerName1("removeCookiesSinceDate:");
-  late final ffi.Pointer<ObjCSel> _sel_setCookies_forURL_mainDocumentURL_1 =
+  late final _sel_setCookies_forURL_mainDocumentURL_1 =
       _registerName1("setCookies:forURL:mainDocumentURL:");
-  late final ffi.Pointer<ObjCSel> _sel_cookieAcceptPolicy1 =
-      _registerName1("cookieAcceptPolicy");
+  late final _sel_cookieAcceptPolicy1 = _registerName1("cookieAcceptPolicy");
   int _objc_msgSend_199(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -10439,7 +10221,7 @@ class NativeLibrary {
   late final __objc_msgSend_199 = __objc_msgSend_199Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setCookieAcceptPolicy_1 =
+  late final _sel_setCookieAcceptPolicy_1 =
       _registerName1("setCookieAcceptPolicy:");
   void _objc_msgSend_200(
     ffi.Pointer<ObjCObject> obj,
@@ -10460,9 +10242,9 @@ class NativeLibrary {
   late final __objc_msgSend_200 = __objc_msgSend_200Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_storeCookies_forTask_1 =
+  late final _sel_storeCookies_forTask_1 =
       _registerName1("storeCookies:forTask:");
-  late final ffi.Pointer<ObjCSel> _sel_getCookiesForTask_completionHandler_1 =
+  late final _sel_getCookiesForTask_completionHandler_1 =
       _registerName1("getCookiesForTask:completionHandler:");
   void _objc_msgSend_201(
     ffi.Pointer<ObjCObject> obj,
@@ -10512,10 +10294,8 @@ class NativeLibrary {
   set NSHTTPCookieManagerCookiesChangedNotification(NSNotificationName value) =>
       _NSHTTPCookieManagerCookiesChangedNotification.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSProgress1 =
-      _getClass1("NSProgress");
-  late final ffi.Pointer<ObjCSel> _sel_currentProgress1 =
-      _registerName1("currentProgress");
+  late final _class_NSProgress1 = _getClass1("NSProgress");
+  late final _sel_currentProgress1 = _registerName1("currentProgress");
   ffi.Pointer<ObjCObject> _objc_msgSend_202(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -10534,7 +10314,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_progressWithTotalUnitCount_1 =
+  late final _sel_progressWithTotalUnitCount_1 =
       _registerName1("progressWithTotalUnitCount:");
   ffi.Pointer<ObjCObject> _objc_msgSend_203(
     ffi.Pointer<ObjCObject> obj,
@@ -10556,10 +10336,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_discreteProgressWithTotalUnitCount_1 =
+  late final _sel_discreteProgressWithTotalUnitCount_1 =
       _registerName1("discreteProgressWithTotalUnitCount:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_progressWithTotalUnitCount_parent_pendingUnitCount_1 =
+  late final _sel_progressWithTotalUnitCount_parent_pendingUnitCount_1 =
       _registerName1("progressWithTotalUnitCount:parent:pendingUnitCount:");
   ffi.Pointer<ObjCObject> _objc_msgSend_204(
     ffi.Pointer<ObjCObject> obj,
@@ -10589,9 +10368,9 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, int, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithParent_userInfo_1 =
+  late final _sel_initWithParent_userInfo_1 =
       _registerName1("initWithParent:userInfo:");
-  late final ffi.Pointer<ObjCSel> _sel_becomeCurrentWithPendingUnitCount_1 =
+  late final _sel_becomeCurrentWithPendingUnitCount_1 =
       _registerName1("becomeCurrentWithPendingUnitCount:");
   void _objc_msgSend_205(
     ffi.Pointer<ObjCObject> obj,
@@ -10612,8 +10391,7 @@ class NativeLibrary {
   late final __objc_msgSend_205 = __objc_msgSend_205Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_performAsCurrentWithPendingUnitCount_usingBlock_1 =
+  late final _sel_performAsCurrentWithPendingUnitCount_usingBlock_1 =
       _registerName1("performAsCurrentWithPendingUnitCount:usingBlock:");
   void _objc_msgSend_206(
     ffi.Pointer<ObjCObject> obj,
@@ -10637,9 +10415,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_resignCurrent1 =
-      _registerName1("resignCurrent");
-  late final ffi.Pointer<ObjCSel> _sel_addChild_withPendingUnitCount_1 =
+  late final _sel_resignCurrent1 = _registerName1("resignCurrent");
+  late final _sel_addChild_withPendingUnitCount_1 =
       _registerName1("addChild:withPendingUnitCount:");
   void _objc_msgSend_207(
     ffi.Pointer<ObjCObject> obj,
@@ -10663,8 +10440,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_totalUnitCount1 =
-      _registerName1("totalUnitCount");
+  late final _sel_totalUnitCount1 = _registerName1("totalUnitCount");
   int _objc_msgSend_208(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -10682,33 +10458,25 @@ class NativeLibrary {
   late final __objc_msgSend_208 = __objc_msgSend_208Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setTotalUnitCount_1 =
-      _registerName1("setTotalUnitCount:");
-  late final ffi.Pointer<ObjCSel> _sel_completedUnitCount1 =
-      _registerName1("completedUnitCount");
-  late final ffi.Pointer<ObjCSel> _sel_setCompletedUnitCount_1 =
+  late final _sel_setTotalUnitCount_1 = _registerName1("setTotalUnitCount:");
+  late final _sel_completedUnitCount1 = _registerName1("completedUnitCount");
+  late final _sel_setCompletedUnitCount_1 =
       _registerName1("setCompletedUnitCount:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedDescription1 =
+  late final _sel_localizedDescription1 =
       _registerName1("localizedDescription");
-  late final ffi.Pointer<ObjCSel> _sel_setLocalizedDescription_1 =
+  late final _sel_setLocalizedDescription_1 =
       _registerName1("setLocalizedDescription:");
-  late final ffi.Pointer<ObjCSel> _sel_localizedAdditionalDescription1 =
+  late final _sel_localizedAdditionalDescription1 =
       _registerName1("localizedAdditionalDescription");
-  late final ffi.Pointer<ObjCSel> _sel_setLocalizedAdditionalDescription_1 =
+  late final _sel_setLocalizedAdditionalDescription_1 =
       _registerName1("setLocalizedAdditionalDescription:");
-  late final ffi.Pointer<ObjCSel> _sel_isCancellable1 =
-      _registerName1("isCancellable");
-  late final ffi.Pointer<ObjCSel> _sel_setCancellable_1 =
-      _registerName1("setCancellable:");
-  late final ffi.Pointer<ObjCSel> _sel_isPausable1 =
-      _registerName1("isPausable");
-  late final ffi.Pointer<ObjCSel> _sel_setPausable_1 =
-      _registerName1("setPausable:");
-  late final ffi.Pointer<ObjCSel> _sel_isCancelled1 =
-      _registerName1("isCancelled");
-  late final ffi.Pointer<ObjCSel> _sel_isPaused1 = _registerName1("isPaused");
-  late final ffi.Pointer<ObjCSel> _sel_cancellationHandler1 =
-      _registerName1("cancellationHandler");
+  late final _sel_isCancellable1 = _registerName1("isCancellable");
+  late final _sel_setCancellable_1 = _registerName1("setCancellable:");
+  late final _sel_isPausable1 = _registerName1("isPausable");
+  late final _sel_setPausable_1 = _registerName1("setPausable:");
+  late final _sel_isCancelled1 = _registerName1("isCancelled");
+  late final _sel_isPaused1 = _registerName1("isPaused");
+  late final _sel_cancellationHandler1 = _registerName1("cancellationHandler");
   ffi.Pointer<_ObjCBlock> _objc_msgSend_209(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -10727,7 +10495,7 @@ class NativeLibrary {
       ffi.Pointer<_ObjCBlock> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setCancellationHandler_1 =
+  late final _sel_setCancellationHandler_1 =
       _registerName1("setCancellationHandler:");
   void _objc_msgSend_210(
     ffi.Pointer<ObjCObject> obj,
@@ -10749,54 +10517,39 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_pausingHandler1 =
-      _registerName1("pausingHandler");
-  late final ffi.Pointer<ObjCSel> _sel_setPausingHandler_1 =
-      _registerName1("setPausingHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_resumingHandler1 =
-      _registerName1("resumingHandler");
-  late final ffi.Pointer<ObjCSel> _sel_setResumingHandler_1 =
-      _registerName1("setResumingHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_setUserInfoObject_forKey_1 =
+  late final _sel_pausingHandler1 = _registerName1("pausingHandler");
+  late final _sel_setPausingHandler_1 = _registerName1("setPausingHandler:");
+  late final _sel_resumingHandler1 = _registerName1("resumingHandler");
+  late final _sel_setResumingHandler_1 = _registerName1("setResumingHandler:");
+  late final _sel_setUserInfoObject_forKey_1 =
       _registerName1("setUserInfoObject:forKey:");
-  late final ffi.Pointer<ObjCSel> _sel_isIndeterminate1 =
-      _registerName1("isIndeterminate");
-  late final ffi.Pointer<ObjCSel> _sel_fractionCompleted1 =
-      _registerName1("fractionCompleted");
-  late final ffi.Pointer<ObjCSel> _sel_isFinished1 =
-      _registerName1("isFinished");
-  late final ffi.Pointer<ObjCSel> _sel_cancel1 = _registerName1("cancel");
-  late final ffi.Pointer<ObjCSel> _sel_pause1 = _registerName1("pause");
-  late final ffi.Pointer<ObjCSel> _sel_resume1 = _registerName1("resume");
-  late final ffi.Pointer<ObjCSel> _sel_kind1 = _registerName1("kind");
-  late final ffi.Pointer<ObjCSel> _sel_setKind_1 = _registerName1("setKind:");
-  late final ffi.Pointer<ObjCSel> _sel_estimatedTimeRemaining1 =
+  late final _sel_isIndeterminate1 = _registerName1("isIndeterminate");
+  late final _sel_fractionCompleted1 = _registerName1("fractionCompleted");
+  late final _sel_isFinished1 = _registerName1("isFinished");
+  late final _sel_cancel1 = _registerName1("cancel");
+  late final _sel_pause1 = _registerName1("pause");
+  late final _sel_resume1 = _registerName1("resume");
+  late final _sel_kind1 = _registerName1("kind");
+  late final _sel_setKind_1 = _registerName1("setKind:");
+  late final _sel_estimatedTimeRemaining1 =
       _registerName1("estimatedTimeRemaining");
-  late final ffi.Pointer<ObjCSel> _sel_setEstimatedTimeRemaining_1 =
+  late final _sel_setEstimatedTimeRemaining_1 =
       _registerName1("setEstimatedTimeRemaining:");
-  late final ffi.Pointer<ObjCSel> _sel_throughput1 =
-      _registerName1("throughput");
-  late final ffi.Pointer<ObjCSel> _sel_setThroughput_1 =
-      _registerName1("setThroughput:");
-  late final ffi.Pointer<ObjCSel> _sel_fileOperationKind1 =
-      _registerName1("fileOperationKind");
-  late final ffi.Pointer<ObjCSel> _sel_setFileOperationKind_1 =
+  late final _sel_throughput1 = _registerName1("throughput");
+  late final _sel_setThroughput_1 = _registerName1("setThroughput:");
+  late final _sel_fileOperationKind1 = _registerName1("fileOperationKind");
+  late final _sel_setFileOperationKind_1 =
       _registerName1("setFileOperationKind:");
-  late final ffi.Pointer<ObjCSel> _sel_fileURL1 = _registerName1("fileURL");
-  late final ffi.Pointer<ObjCSel> _sel_setFileURL_1 =
-      _registerName1("setFileURL:");
-  late final ffi.Pointer<ObjCSel> _sel_fileTotalCount1 =
-      _registerName1("fileTotalCount");
-  late final ffi.Pointer<ObjCSel> _sel_setFileTotalCount_1 =
-      _registerName1("setFileTotalCount:");
-  late final ffi.Pointer<ObjCSel> _sel_fileCompletedCount1 =
-      _registerName1("fileCompletedCount");
-  late final ffi.Pointer<ObjCSel> _sel_setFileCompletedCount_1 =
+  late final _sel_fileURL1 = _registerName1("fileURL");
+  late final _sel_setFileURL_1 = _registerName1("setFileURL:");
+  late final _sel_fileTotalCount1 = _registerName1("fileTotalCount");
+  late final _sel_setFileTotalCount_1 = _registerName1("setFileTotalCount:");
+  late final _sel_fileCompletedCount1 = _registerName1("fileCompletedCount");
+  late final _sel_setFileCompletedCount_1 =
       _registerName1("setFileCompletedCount:");
-  late final ffi.Pointer<ObjCSel> _sel_publish1 = _registerName1("publish");
-  late final ffi.Pointer<ObjCSel> _sel_unpublish1 = _registerName1("unpublish");
-  late final ffi.Pointer<ObjCSel>
-      _sel_addSubscriberForFileURL_withPublishingHandler_1 =
+  late final _sel_publish1 = _registerName1("publish");
+  late final _sel_unpublish1 = _registerName1("unpublish");
+  late final _sel_addSubscriberForFileURL_withPublishingHandler_1 =
       _registerName1("addSubscriberForFileURL:withPublishingHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_211(
     ffi.Pointer<ObjCObject> obj,
@@ -10826,9 +10579,8 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           NSProgressPublishingHandler)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_removeSubscriber_1 =
-      _registerName1("removeSubscriber:");
-  late final ffi.Pointer<ObjCSel> _sel_isOld1 = _registerName1("isOld");
+  late final _sel_removeSubscriber_1 = _registerName1("removeSubscriber:");
+  late final _sel_isOld1 = _registerName1("isOld");
   late final ffi.Pointer<NSProgressUserInfoKey>
       _NSProgressEstimatedTimeRemainingKey =
       _lookup<NSProgressUserInfoKey>('NSProgressEstimatedTimeRemainingKey');
@@ -32378,11 +32130,9 @@ class NativeLibrary {
   set NSURLSessionTransferSizeUnknown(int value) =>
       _NSURLSessionTransferSizeUnknown.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSession1 =
-      _getClass1("NSURLSession");
-  late final ffi.Pointer<ObjCSel> _sel_sharedSession1 =
-      _registerName1("sharedSession");
-  late final ffi.Pointer<ObjCSel> _sel_sessionWithConfiguration_1 =
+  late final _class_NSURLSession1 = _getClass1("NSURLSession");
+  late final _sel_sharedSession1 = _registerName1("sharedSession");
+  late final _sel_sessionWithConfiguration_1 =
       _registerName1("sessionWithConfiguration:");
   ffi.Pointer<ObjCObject> _objc_msgSend_212(
     ffi.Pointer<ObjCObject> obj,
@@ -32404,8 +32154,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_sessionWithConfiguration_delegate_delegateQueue_1 =
+  late final _sel_sessionWithConfiguration_delegate_delegateQueue_1 =
       _registerName1("sessionWithConfiguration:delegate:delegateQueue:");
   ffi.Pointer<ObjCObject> _objc_msgSend_213(
     ffi.Pointer<ObjCObject> obj,
@@ -32439,24 +32188,20 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_delegateQueue1 =
-      _registerName1("delegateQueue");
-  late final ffi.Pointer<ObjCSel> _sel_delegate1 = _registerName1("delegate");
-  late final ffi.Pointer<ObjCSel> _sel_configuration1 =
-      _registerName1("configuration");
-  late final ffi.Pointer<ObjCSel> _sel_sessionDescription1 =
-      _registerName1("sessionDescription");
-  late final ffi.Pointer<ObjCSel> _sel_setSessionDescription_1 =
+  late final _sel_delegateQueue1 = _registerName1("delegateQueue");
+  late final _sel_delegate1 = _registerName1("delegate");
+  late final _sel_configuration1 = _registerName1("configuration");
+  late final _sel_sessionDescription1 = _registerName1("sessionDescription");
+  late final _sel_setSessionDescription_1 =
       _registerName1("setSessionDescription:");
-  late final ffi.Pointer<ObjCSel> _sel_finishTasksAndInvalidate1 =
+  late final _sel_finishTasksAndInvalidate1 =
       _registerName1("finishTasksAndInvalidate");
-  late final ffi.Pointer<ObjCSel> _sel_invalidateAndCancel1 =
-      _registerName1("invalidateAndCancel");
-  late final ffi.Pointer<ObjCSel> _sel_resetWithCompletionHandler_1 =
+  late final _sel_invalidateAndCancel1 = _registerName1("invalidateAndCancel");
+  late final _sel_resetWithCompletionHandler_1 =
       _registerName1("resetWithCompletionHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_flushWithCompletionHandler_1 =
+  late final _sel_flushWithCompletionHandler_1 =
       _registerName1("flushWithCompletionHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_getTasksWithCompletionHandler_1 =
+  late final _sel_getTasksWithCompletionHandler_1 =
       _registerName1("getTasksWithCompletionHandler:");
   void _objc_msgSend_214(
     ffi.Pointer<ObjCObject> obj,
@@ -32478,7 +32223,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_getAllTasksWithCompletionHandler_1 =
+  late final _sel_getAllTasksWithCompletionHandler_1 =
       _registerName1("getAllTasksWithCompletionHandler:");
   void _objc_msgSend_215(
     ffi.Pointer<ObjCObject> obj,
@@ -32500,43 +32245,34 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionDataTask1 =
-      _getClass1("NSURLSessionDataTask");
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionTask1 =
-      _getClass1("NSURLSessionTask");
-  late final ffi.Pointer<ObjCSel> _sel_taskIdentifier1 =
-      _registerName1("taskIdentifier");
-  late final ffi.Pointer<ObjCSel> _sel_originalRequest1 =
-      _registerName1("originalRequest");
-  late final ffi.Pointer<ObjCSel> _sel_currentRequest1 =
-      _registerName1("currentRequest");
-  late final ffi.Pointer<ObjCSel> _sel_response1 = _registerName1("response");
-  late final ffi.Pointer<ObjCSel> _sel_progress1 = _registerName1("progress");
-  late final ffi.Pointer<ObjCSel> _sel_earliestBeginDate1 =
-      _registerName1("earliestBeginDate");
-  late final ffi.Pointer<ObjCSel> _sel_setEarliestBeginDate_1 =
+  late final _class_NSURLSessionDataTask1 = _getClass1("NSURLSessionDataTask");
+  late final _class_NSURLSessionTask1 = _getClass1("NSURLSessionTask");
+  late final _sel_taskIdentifier1 = _registerName1("taskIdentifier");
+  late final _sel_originalRequest1 = _registerName1("originalRequest");
+  late final _sel_currentRequest1 = _registerName1("currentRequest");
+  late final _sel_response1 = _registerName1("response");
+  late final _sel_progress1 = _registerName1("progress");
+  late final _sel_earliestBeginDate1 = _registerName1("earliestBeginDate");
+  late final _sel_setEarliestBeginDate_1 =
       _registerName1("setEarliestBeginDate:");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesClientExpectsToSend1 =
+  late final _sel_countOfBytesClientExpectsToSend1 =
       _registerName1("countOfBytesClientExpectsToSend");
-  late final ffi.Pointer<ObjCSel> _sel_setCountOfBytesClientExpectsToSend_1 =
+  late final _sel_setCountOfBytesClientExpectsToSend_1 =
       _registerName1("setCountOfBytesClientExpectsToSend:");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesClientExpectsToReceive1 =
+  late final _sel_countOfBytesClientExpectsToReceive1 =
       _registerName1("countOfBytesClientExpectsToReceive");
-  late final ffi.Pointer<ObjCSel> _sel_setCountOfBytesClientExpectsToReceive_1 =
+  late final _sel_setCountOfBytesClientExpectsToReceive_1 =
       _registerName1("setCountOfBytesClientExpectsToReceive:");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesReceived1 =
+  late final _sel_countOfBytesReceived1 =
       _registerName1("countOfBytesReceived");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesSent1 =
-      _registerName1("countOfBytesSent");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesExpectedToSend1 =
+  late final _sel_countOfBytesSent1 = _registerName1("countOfBytesSent");
+  late final _sel_countOfBytesExpectedToSend1 =
       _registerName1("countOfBytesExpectedToSend");
-  late final ffi.Pointer<ObjCSel> _sel_countOfBytesExpectedToReceive1 =
+  late final _sel_countOfBytesExpectedToReceive1 =
       _registerName1("countOfBytesExpectedToReceive");
-  late final ffi.Pointer<ObjCSel> _sel_taskDescription1 =
-      _registerName1("taskDescription");
-  late final ffi.Pointer<ObjCSel> _sel_setTaskDescription_1 =
-      _registerName1("setTaskDescription:");
-  late final ffi.Pointer<ObjCSel> _sel_state1 = _registerName1("state");
+  late final _sel_taskDescription1 = _registerName1("taskDescription");
+  late final _sel_setTaskDescription_1 = _registerName1("setTaskDescription:");
+  late final _sel_state1 = _registerName1("state");
   int _objc_msgSend_216(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -32554,11 +32290,10 @@ class NativeLibrary {
   late final __objc_msgSend_216 = __objc_msgSend_216Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_error1 = _registerName1("error");
-  late final ffi.Pointer<ObjCSel> _sel_suspend1 = _registerName1("suspend");
-  late final ffi.Pointer<ObjCSel> _sel_priority1 = _registerName1("priority");
-  late final ffi.Pointer<ObjCSel> _sel_setPriority_1 =
-      _registerName1("setPriority:");
+  late final _sel_error1 = _registerName1("error");
+  late final _sel_suspend1 = _registerName1("suspend");
+  late final _sel_priority1 = _registerName1("priority");
+  late final _sel_setPriority_1 = _registerName1("setPriority:");
   void _objc_msgSend_217(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -32578,11 +32313,11 @@ class NativeLibrary {
   late final __objc_msgSend_217 = __objc_msgSend_217Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, double)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_prefersIncrementalDelivery1 =
+  late final _sel_prefersIncrementalDelivery1 =
       _registerName1("prefersIncrementalDelivery");
-  late final ffi.Pointer<ObjCSel> _sel_setPrefersIncrementalDelivery_1 =
+  late final _sel_setPrefersIncrementalDelivery_1 =
       _registerName1("setPrefersIncrementalDelivery:");
-  late final ffi.Pointer<ObjCSel> _sel_dataTaskWithRequest_1 =
+  late final _sel_dataTaskWithRequest_1 =
       _registerName1("dataTaskWithRequest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_218(
     ffi.Pointer<ObjCObject> obj,
@@ -32604,11 +32339,10 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataTaskWithURL_1 =
-      _registerName1("dataTaskWithURL:");
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionUploadTask1 =
+  late final _sel_dataTaskWithURL_1 = _registerName1("dataTaskWithURL:");
+  late final _class_NSURLSessionUploadTask1 =
       _getClass1("NSURLSessionUploadTask");
-  late final ffi.Pointer<ObjCSel> _sel_uploadTaskWithRequest_fromFile_1 =
+  late final _sel_uploadTaskWithRequest_fromFile_1 =
       _registerName1("uploadTaskWithRequest:fromFile:");
   ffi.Pointer<ObjCObject> _objc_msgSend_219(
     ffi.Pointer<ObjCObject> obj,
@@ -32638,9 +32372,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_uploadTaskWithRequest_fromData_1 =
+  late final _sel_uploadTaskWithRequest_fromData_1 =
       _registerName1("uploadTaskWithRequest:fromData:");
-  late final ffi.Pointer<ObjCSel> _sel_uploadTaskWithStreamedRequest_1 =
+  late final _sel_uploadTaskWithStreamedRequest_1 =
       _registerName1("uploadTaskWithStreamedRequest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_220(
     ffi.Pointer<ObjCObject> obj,
@@ -32662,11 +32396,11 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionDownloadTask1 =
+  late final _class_NSURLSessionDownloadTask1 =
       _getClass1("NSURLSessionDownloadTask");
-  late final ffi.Pointer<ObjCSel> _sel_cancelByProducingResumeData_1 =
+  late final _sel_cancelByProducingResumeData_1 =
       _registerName1("cancelByProducingResumeData:");
-  late final ffi.Pointer<ObjCSel> _sel_downloadTaskWithRequest_1 =
+  late final _sel_downloadTaskWithRequest_1 =
       _registerName1("downloadTaskWithRequest:");
   ffi.Pointer<ObjCObject> _objc_msgSend_221(
     ffi.Pointer<ObjCObject> obj,
@@ -32688,14 +32422,13 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_downloadTaskWithURL_1 =
+  late final _sel_downloadTaskWithURL_1 =
       _registerName1("downloadTaskWithURL:");
-  late final ffi.Pointer<ObjCSel> _sel_downloadTaskWithResumeData_1 =
+  late final _sel_downloadTaskWithResumeData_1 =
       _registerName1("downloadTaskWithResumeData:");
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionStreamTask1 =
+  late final _class_NSURLSessionStreamTask1 =
       _getClass1("NSURLSessionStreamTask");
-  late final ffi.Pointer<ObjCSel>
-      _sel_readDataOfMinLength_maxLength_timeout_completionHandler_1 =
+  late final _sel_readDataOfMinLength_maxLength_timeout_completionHandler_1 =
       _registerName1(
           "readDataOfMinLength:maxLength:timeout:completionHandler:");
   void _objc_msgSend_222(
@@ -32729,7 +32462,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int,
           double, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeData_timeout_completionHandler_1 =
+  late final _sel_writeData_timeout_completionHandler_1 =
       _registerName1("writeData:timeout:completionHandler:");
   void _objc_msgSend_223(
     ffi.Pointer<ObjCObject> obj,
@@ -32759,16 +32492,14 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, double, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_captureStreams1 =
-      _registerName1("captureStreams");
-  late final ffi.Pointer<ObjCSel> _sel_closeWrite1 =
-      _registerName1("closeWrite");
-  late final ffi.Pointer<ObjCSel> _sel_closeRead1 = _registerName1("closeRead");
-  late final ffi.Pointer<ObjCSel> _sel_startSecureConnection1 =
+  late final _sel_captureStreams1 = _registerName1("captureStreams");
+  late final _sel_closeWrite1 = _registerName1("closeWrite");
+  late final _sel_closeRead1 = _registerName1("closeRead");
+  late final _sel_startSecureConnection1 =
       _registerName1("startSecureConnection");
-  late final ffi.Pointer<ObjCSel> _sel_stopSecureConnection1 =
+  late final _sel_stopSecureConnection1 =
       _registerName1("stopSecureConnection");
-  late final ffi.Pointer<ObjCSel> _sel_streamTaskWithHostName_port_1 =
+  late final _sel_streamTaskWithHostName_port_1 =
       _registerName1("streamTaskWithHostName:port:");
   ffi.Pointer<ObjCObject> _objc_msgSend_224(
     ffi.Pointer<ObjCObject> obj,
@@ -32795,7 +32526,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_streamTaskWithNetService_1 =
+  late final _sel_streamTaskWithNetService_1 =
       _registerName1("streamTaskWithNetService:");
   ffi.Pointer<ObjCObject> _objc_msgSend_225(
     ffi.Pointer<ObjCObject> obj,
@@ -32817,11 +32548,11 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionWebSocketTask1 =
+  late final _class_NSURLSessionWebSocketTask1 =
       _getClass1("NSURLSessionWebSocketTask");
-  late final ffi.Pointer<ObjCSel> _sel_sendMessage_completionHandler_1 =
+  late final _sel_sendMessage_completionHandler_1 =
       _registerName1("sendMessage:completionHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_receiveMessageWithCompletionHandler_1 =
+  late final _sel_receiveMessageWithCompletionHandler_1 =
       _registerName1("receiveMessageWithCompletionHandler:");
   void _objc_msgSend_226(
     ffi.Pointer<ObjCObject> obj,
@@ -32843,9 +32574,9 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_sendPingWithPongReceiveHandler_1 =
+  late final _sel_sendPingWithPongReceiveHandler_1 =
       _registerName1("sendPingWithPongReceiveHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_cancelWithCloseCode_reason_1 =
+  late final _sel_cancelWithCloseCode_reason_1 =
       _registerName1("cancelWithCloseCode:reason:");
   void _objc_msgSend_227(
     ffi.Pointer<ObjCObject> obj,
@@ -32869,11 +32600,10 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_maximumMessageSize1 =
-      _registerName1("maximumMessageSize");
-  late final ffi.Pointer<ObjCSel> _sel_setMaximumMessageSize_1 =
+  late final _sel_maximumMessageSize1 = _registerName1("maximumMessageSize");
+  late final _sel_setMaximumMessageSize_1 =
       _registerName1("setMaximumMessageSize:");
-  late final ffi.Pointer<ObjCSel> _sel_closeCode1 = _registerName1("closeCode");
+  late final _sel_closeCode1 = _registerName1("closeCode");
   int _objc_msgSend_228(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -32891,9 +32621,8 @@ class NativeLibrary {
   late final __objc_msgSend_228 = __objc_msgSend_228Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_closeReason1 =
-      _registerName1("closeReason");
-  late final ffi.Pointer<ObjCSel> _sel_webSocketTaskWithURL_1 =
+  late final _sel_closeReason1 = _registerName1("closeReason");
+  late final _sel_webSocketTaskWithURL_1 =
       _registerName1("webSocketTaskWithURL:");
   ffi.Pointer<ObjCObject> _objc_msgSend_229(
     ffi.Pointer<ObjCObject> obj,
@@ -32915,7 +32644,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_webSocketTaskWithURL_protocols_1 =
+  late final _sel_webSocketTaskWithURL_protocols_1 =
       _registerName1("webSocketTaskWithURL:protocols:");
   ffi.Pointer<ObjCObject> _objc_msgSend_230(
     ffi.Pointer<ObjCObject> obj,
@@ -32945,9 +32674,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_webSocketTaskWithRequest_1 =
+  late final _sel_webSocketTaskWithRequest_1 =
       _registerName1("webSocketTaskWithRequest:");
-  late final ffi.Pointer<ObjCSel> _sel_dataTaskWithRequest_completionHandler_1 =
+  late final _sel_dataTaskWithRequest_completionHandler_1 =
       _registerName1("dataTaskWithRequest:completionHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_231(
     ffi.Pointer<ObjCObject> obj,
@@ -32977,10 +32706,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_dataTaskWithURL_completionHandler_1 =
+  late final _sel_dataTaskWithURL_completionHandler_1 =
       _registerName1("dataTaskWithURL:completionHandler:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_uploadTaskWithRequest_fromFile_completionHandler_1 =
+  late final _sel_uploadTaskWithRequest_fromFile_completionHandler_1 =
       _registerName1("uploadTaskWithRequest:fromFile:completionHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_232(
     ffi.Pointer<ObjCObject> obj,
@@ -33014,11 +32742,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_uploadTaskWithRequest_fromData_completionHandler_1 =
+  late final _sel_uploadTaskWithRequest_fromData_completionHandler_1 =
       _registerName1("uploadTaskWithRequest:fromData:completionHandler:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_downloadTaskWithRequest_completionHandler_1 =
+  late final _sel_downloadTaskWithRequest_completionHandler_1 =
       _registerName1("downloadTaskWithRequest:completionHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_233(
     ffi.Pointer<ObjCObject> obj,
@@ -33048,10 +32774,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_downloadTaskWithURL_completionHandler_1 =
+  late final _sel_downloadTaskWithURL_completionHandler_1 =
       _registerName1("downloadTaskWithURL:completionHandler:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_downloadTaskWithResumeData_completionHandler_1 =
+  late final _sel_downloadTaskWithResumeData_completionHandler_1 =
       _registerName1("downloadTaskWithResumeData:completionHandler:");
   late final ffi.Pointer<ffi.Float> _NSURLSessionTaskPriorityDefault =
       _lookup<ffi.Float>('NSURLSessionTaskPriorityDefault');
@@ -33079,9 +32804,9 @@ class NativeLibrary {
   set NSURLSessionTaskPriorityHigh(double value) =>
       _NSURLSessionTaskPriorityHigh.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionWebSocketMessage1 =
+  late final _class_NSURLSessionWebSocketMessage1 =
       _getClass1("NSURLSessionWebSocketMessage");
-  late final ffi.Pointer<ObjCSel> _sel_type1 = _registerName1("type");
+  late final _sel_type1 = _registerName1("type");
   int _objc_msgSend_234(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -33099,14 +32824,13 @@ class NativeLibrary {
   late final __objc_msgSend_234 = __objc_msgSend_234Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionConfiguration1 =
+  late final _class_NSURLSessionConfiguration1 =
       _getClass1("NSURLSessionConfiguration");
-  late final ffi.Pointer<ObjCSel> _sel_defaultSessionConfiguration1 =
+  late final _sel_defaultSessionConfiguration1 =
       _registerName1("defaultSessionConfiguration");
-  late final ffi.Pointer<ObjCSel> _sel_ephemeralSessionConfiguration1 =
+  late final _sel_ephemeralSessionConfiguration1 =
       _registerName1("ephemeralSessionConfiguration");
-  late final ffi.Pointer<ObjCSel>
-      _sel_backgroundSessionConfigurationWithIdentifier_1 =
+  late final _sel_backgroundSessionConfigurationWithIdentifier_1 =
       _registerName1("backgroundSessionConfigurationWithIdentifier:");
   ffi.Pointer<ObjCObject> _objc_msgSend_235(
     ffi.Pointer<ObjCObject> obj,
@@ -33128,41 +32852,37 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_identifier1 =
-      _registerName1("identifier");
-  late final ffi.Pointer<ObjCSel> _sel_requestCachePolicy1 =
-      _registerName1("requestCachePolicy");
-  late final ffi.Pointer<ObjCSel> _sel_setRequestCachePolicy_1 =
+  late final _sel_identifier1 = _registerName1("identifier");
+  late final _sel_requestCachePolicy1 = _registerName1("requestCachePolicy");
+  late final _sel_setRequestCachePolicy_1 =
       _registerName1("setRequestCachePolicy:");
-  late final ffi.Pointer<ObjCSel> _sel_timeoutIntervalForRequest1 =
+  late final _sel_timeoutIntervalForRequest1 =
       _registerName1("timeoutIntervalForRequest");
-  late final ffi.Pointer<ObjCSel> _sel_setTimeoutIntervalForRequest_1 =
+  late final _sel_setTimeoutIntervalForRequest_1 =
       _registerName1("setTimeoutIntervalForRequest:");
-  late final ffi.Pointer<ObjCSel> _sel_timeoutIntervalForResource1 =
+  late final _sel_timeoutIntervalForResource1 =
       _registerName1("timeoutIntervalForResource");
-  late final ffi.Pointer<ObjCSel> _sel_setTimeoutIntervalForResource_1 =
+  late final _sel_setTimeoutIntervalForResource_1 =
       _registerName1("setTimeoutIntervalForResource:");
-  late final ffi.Pointer<ObjCSel> _sel_waitsForConnectivity1 =
+  late final _sel_waitsForConnectivity1 =
       _registerName1("waitsForConnectivity");
-  late final ffi.Pointer<ObjCSel> _sel_setWaitsForConnectivity_1 =
+  late final _sel_setWaitsForConnectivity_1 =
       _registerName1("setWaitsForConnectivity:");
-  late final ffi.Pointer<ObjCSel> _sel_isDiscretionary1 =
-      _registerName1("isDiscretionary");
-  late final ffi.Pointer<ObjCSel> _sel_setDiscretionary_1 =
-      _registerName1("setDiscretionary:");
-  late final ffi.Pointer<ObjCSel> _sel_sharedContainerIdentifier1 =
+  late final _sel_isDiscretionary1 = _registerName1("isDiscretionary");
+  late final _sel_setDiscretionary_1 = _registerName1("setDiscretionary:");
+  late final _sel_sharedContainerIdentifier1 =
       _registerName1("sharedContainerIdentifier");
-  late final ffi.Pointer<ObjCSel> _sel_setSharedContainerIdentifier_1 =
+  late final _sel_setSharedContainerIdentifier_1 =
       _registerName1("setSharedContainerIdentifier:");
-  late final ffi.Pointer<ObjCSel> _sel_sessionSendsLaunchEvents1 =
+  late final _sel_sessionSendsLaunchEvents1 =
       _registerName1("sessionSendsLaunchEvents");
-  late final ffi.Pointer<ObjCSel> _sel_setSessionSendsLaunchEvents_1 =
+  late final _sel_setSessionSendsLaunchEvents_1 =
       _registerName1("setSessionSendsLaunchEvents:");
-  late final ffi.Pointer<ObjCSel> _sel_connectionProxyDictionary1 =
+  late final _sel_connectionProxyDictionary1 =
       _registerName1("connectionProxyDictionary");
-  late final ffi.Pointer<ObjCSel> _sel_setConnectionProxyDictionary_1 =
+  late final _sel_setConnectionProxyDictionary_1 =
       _registerName1("setConnectionProxyDictionary:");
-  late final ffi.Pointer<ObjCSel> _sel_TLSMinimumSupportedProtocol1 =
+  late final _sel_TLSMinimumSupportedProtocol1 =
       _registerName1("TLSMinimumSupportedProtocol");
   int _objc_msgSend_236(
     ffi.Pointer<ObjCObject> obj,
@@ -33181,7 +32901,7 @@ class NativeLibrary {
   late final __objc_msgSend_236 = __objc_msgSend_236Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setTLSMinimumSupportedProtocol_1 =
+  late final _sel_setTLSMinimumSupportedProtocol_1 =
       _registerName1("setTLSMinimumSupportedProtocol:");
   void _objc_msgSend_237(
     ffi.Pointer<ObjCObject> obj,
@@ -33202,11 +32922,11 @@ class NativeLibrary {
   late final __objc_msgSend_237 = __objc_msgSend_237Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_TLSMaximumSupportedProtocol1 =
+  late final _sel_TLSMaximumSupportedProtocol1 =
       _registerName1("TLSMaximumSupportedProtocol");
-  late final ffi.Pointer<ObjCSel> _sel_setTLSMaximumSupportedProtocol_1 =
+  late final _sel_setTLSMaximumSupportedProtocol_1 =
       _registerName1("setTLSMaximumSupportedProtocol:");
-  late final ffi.Pointer<ObjCSel> _sel_TLSMinimumSupportedProtocolVersion1 =
+  late final _sel_TLSMinimumSupportedProtocolVersion1 =
       _registerName1("TLSMinimumSupportedProtocolVersion");
   int _objc_msgSend_238(
     ffi.Pointer<ObjCObject> obj,
@@ -33225,7 +32945,7 @@ class NativeLibrary {
   late final __objc_msgSend_238 = __objc_msgSend_238Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setTLSMinimumSupportedProtocolVersion_1 =
+  late final _sel_setTLSMinimumSupportedProtocolVersion_1 =
       _registerName1("setTLSMinimumSupportedProtocolVersion:");
   void _objc_msgSend_239(
     ffi.Pointer<ObjCObject> obj,
@@ -33246,47 +32966,42 @@ class NativeLibrary {
   late final __objc_msgSend_239 = __objc_msgSend_239Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_TLSMaximumSupportedProtocolVersion1 =
+  late final _sel_TLSMaximumSupportedProtocolVersion1 =
       _registerName1("TLSMaximumSupportedProtocolVersion");
-  late final ffi.Pointer<ObjCSel> _sel_setTLSMaximumSupportedProtocolVersion_1 =
+  late final _sel_setTLSMaximumSupportedProtocolVersion_1 =
       _registerName1("setTLSMaximumSupportedProtocolVersion:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPShouldSetCookies1 =
+  late final _sel_HTTPShouldSetCookies1 =
       _registerName1("HTTPShouldSetCookies");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPShouldSetCookies_1 =
+  late final _sel_setHTTPShouldSetCookies_1 =
       _registerName1("setHTTPShouldSetCookies:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPCookieAcceptPolicy1 =
+  late final _sel_HTTPCookieAcceptPolicy1 =
       _registerName1("HTTPCookieAcceptPolicy");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPCookieAcceptPolicy_1 =
+  late final _sel_setHTTPCookieAcceptPolicy_1 =
       _registerName1("setHTTPCookieAcceptPolicy:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPAdditionalHeaders1 =
+  late final _sel_HTTPAdditionalHeaders1 =
       _registerName1("HTTPAdditionalHeaders");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPAdditionalHeaders_1 =
+  late final _sel_setHTTPAdditionalHeaders_1 =
       _registerName1("setHTTPAdditionalHeaders:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPMaximumConnectionsPerHost1 =
+  late final _sel_HTTPMaximumConnectionsPerHost1 =
       _registerName1("HTTPMaximumConnectionsPerHost");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPMaximumConnectionsPerHost_1 =
+  late final _sel_setHTTPMaximumConnectionsPerHost_1 =
       _registerName1("setHTTPMaximumConnectionsPerHost:");
-  late final ffi.Pointer<ObjCSel> _sel_HTTPCookieStorage1 =
-      _registerName1("HTTPCookieStorage");
-  late final ffi.Pointer<ObjCSel> _sel_setHTTPCookieStorage_1 =
+  late final _sel_HTTPCookieStorage1 = _registerName1("HTTPCookieStorage");
+  late final _sel_setHTTPCookieStorage_1 =
       _registerName1("setHTTPCookieStorage:");
-  late final ffi.Pointer<ObjCSel> _sel_URLCredentialStorage1 =
+  late final _sel_URLCredentialStorage1 =
       _registerName1("URLCredentialStorage");
-  late final ffi.Pointer<ObjCSel> _sel_setURLCredentialStorage_1 =
+  late final _sel_setURLCredentialStorage_1 =
       _registerName1("setURLCredentialStorage:");
-  late final ffi.Pointer<ObjCSel> _sel_URLCache1 = _registerName1("URLCache");
-  late final ffi.Pointer<ObjCSel> _sel_setURLCache_1 =
-      _registerName1("setURLCache:");
-  late final ffi.Pointer<ObjCSel> _sel_shouldUseExtendedBackgroundIdleMode1 =
+  late final _sel_URLCache1 = _registerName1("URLCache");
+  late final _sel_setURLCache_1 = _registerName1("setURLCache:");
+  late final _sel_shouldUseExtendedBackgroundIdleMode1 =
       _registerName1("shouldUseExtendedBackgroundIdleMode");
-  late final ffi.Pointer<ObjCSel>
-      _sel_setShouldUseExtendedBackgroundIdleMode_1 =
+  late final _sel_setShouldUseExtendedBackgroundIdleMode_1 =
       _registerName1("setShouldUseExtendedBackgroundIdleMode:");
-  late final ffi.Pointer<ObjCSel> _sel_protocolClasses1 =
-      _registerName1("protocolClasses");
-  late final ffi.Pointer<ObjCSel> _sel_setProtocolClasses_1 =
-      _registerName1("setProtocolClasses:");
-  late final ffi.Pointer<ObjCSel> _sel_multipathServiceType1 =
+  late final _sel_protocolClasses1 = _registerName1("protocolClasses");
+  late final _sel_setProtocolClasses_1 = _registerName1("setProtocolClasses:");
+  late final _sel_multipathServiceType1 =
       _registerName1("multipathServiceType");
   int _objc_msgSend_240(
     ffi.Pointer<ObjCObject> obj,
@@ -33305,7 +33020,7 @@ class NativeLibrary {
   late final __objc_msgSend_240 = __objc_msgSend_240Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setMultipathServiceType_1 =
+  late final _sel_setMultipathServiceType_1 =
       _registerName1("setMultipathServiceType:");
   void _objc_msgSend_241(
     ffi.Pointer<ObjCObject> obj,
@@ -33326,7 +33041,7 @@ class NativeLibrary {
   late final __objc_msgSend_241 = __objc_msgSend_241Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_backgroundSessionConfiguration_1 =
+  late final _sel_backgroundSessionConfiguration_1 =
       _registerName1("backgroundSessionConfiguration:");
 
   /// Key in the userInfo dictionary of an NSError received during a failed download.
@@ -33340,40 +33055,27 @@ class NativeLibrary {
   set NSURLSessionDownloadTaskResumeData(ffi.Pointer<ObjCObject> value) =>
       _NSURLSessionDownloadTaskResumeData.value = value;
 
-  late final ffi.Pointer<ObjCObject>
-      _class_NSURLSessionTaskTransactionMetrics1 =
+  late final _class_NSURLSessionTaskTransactionMetrics1 =
       _getClass1("NSURLSessionTaskTransactionMetrics");
-  late final ffi.Pointer<ObjCSel> _sel_request1 = _registerName1("request");
-  late final ffi.Pointer<ObjCSel> _sel_fetchStartDate1 =
-      _registerName1("fetchStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_domainLookupStartDate1 =
+  late final _sel_request1 = _registerName1("request");
+  late final _sel_fetchStartDate1 = _registerName1("fetchStartDate");
+  late final _sel_domainLookupStartDate1 =
       _registerName1("domainLookupStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_domainLookupEndDate1 =
-      _registerName1("domainLookupEndDate");
-  late final ffi.Pointer<ObjCSel> _sel_connectStartDate1 =
-      _registerName1("connectStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_secureConnectionStartDate1 =
+  late final _sel_domainLookupEndDate1 = _registerName1("domainLookupEndDate");
+  late final _sel_connectStartDate1 = _registerName1("connectStartDate");
+  late final _sel_secureConnectionStartDate1 =
       _registerName1("secureConnectionStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_secureConnectionEndDate1 =
+  late final _sel_secureConnectionEndDate1 =
       _registerName1("secureConnectionEndDate");
-  late final ffi.Pointer<ObjCSel> _sel_connectEndDate1 =
-      _registerName1("connectEndDate");
-  late final ffi.Pointer<ObjCSel> _sel_requestStartDate1 =
-      _registerName1("requestStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_requestEndDate1 =
-      _registerName1("requestEndDate");
-  late final ffi.Pointer<ObjCSel> _sel_responseStartDate1 =
-      _registerName1("responseStartDate");
-  late final ffi.Pointer<ObjCSel> _sel_responseEndDate1 =
-      _registerName1("responseEndDate");
-  late final ffi.Pointer<ObjCSel> _sel_networkProtocolName1 =
-      _registerName1("networkProtocolName");
-  late final ffi.Pointer<ObjCSel> _sel_isProxyConnection1 =
-      _registerName1("isProxyConnection");
-  late final ffi.Pointer<ObjCSel> _sel_isReusedConnection1 =
-      _registerName1("isReusedConnection");
-  late final ffi.Pointer<ObjCSel> _sel_resourceFetchType1 =
-      _registerName1("resourceFetchType");
+  late final _sel_connectEndDate1 = _registerName1("connectEndDate");
+  late final _sel_requestStartDate1 = _registerName1("requestStartDate");
+  late final _sel_requestEndDate1 = _registerName1("requestEndDate");
+  late final _sel_responseStartDate1 = _registerName1("responseStartDate");
+  late final _sel_responseEndDate1 = _registerName1("responseEndDate");
+  late final _sel_networkProtocolName1 = _registerName1("networkProtocolName");
+  late final _sel_isProxyConnection1 = _registerName1("isProxyConnection");
+  late final _sel_isReusedConnection1 = _registerName1("isReusedConnection");
+  late final _sel_resourceFetchType1 = _registerName1("resourceFetchType");
   int _objc_msgSend_242(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -33391,38 +33093,31 @@ class NativeLibrary {
   late final __objc_msgSend_242 = __objc_msgSend_242Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_countOfRequestHeaderBytesSent1 =
+  late final _sel_countOfRequestHeaderBytesSent1 =
       _registerName1("countOfRequestHeaderBytesSent");
-  late final ffi.Pointer<ObjCSel> _sel_countOfRequestBodyBytesSent1 =
+  late final _sel_countOfRequestBodyBytesSent1 =
       _registerName1("countOfRequestBodyBytesSent");
-  late final ffi.Pointer<ObjCSel> _sel_countOfRequestBodyBytesBeforeEncoding1 =
+  late final _sel_countOfRequestBodyBytesBeforeEncoding1 =
       _registerName1("countOfRequestBodyBytesBeforeEncoding");
-  late final ffi.Pointer<ObjCSel> _sel_countOfResponseHeaderBytesReceived1 =
+  late final _sel_countOfResponseHeaderBytesReceived1 =
       _registerName1("countOfResponseHeaderBytesReceived");
-  late final ffi.Pointer<ObjCSel> _sel_countOfResponseBodyBytesReceived1 =
+  late final _sel_countOfResponseBodyBytesReceived1 =
       _registerName1("countOfResponseBodyBytesReceived");
-  late final ffi.Pointer<ObjCSel> _sel_countOfResponseBodyBytesAfterDecoding1 =
+  late final _sel_countOfResponseBodyBytesAfterDecoding1 =
       _registerName1("countOfResponseBodyBytesAfterDecoding");
-  late final ffi.Pointer<ObjCSel> _sel_localAddress1 =
-      _registerName1("localAddress");
-  late final ffi.Pointer<ObjCSel> _sel_localPort1 = _registerName1("localPort");
-  late final ffi.Pointer<ObjCSel> _sel_remoteAddress1 =
-      _registerName1("remoteAddress");
-  late final ffi.Pointer<ObjCSel> _sel_remotePort1 =
-      _registerName1("remotePort");
-  late final ffi.Pointer<ObjCSel> _sel_negotiatedTLSProtocolVersion1 =
+  late final _sel_localAddress1 = _registerName1("localAddress");
+  late final _sel_localPort1 = _registerName1("localPort");
+  late final _sel_remoteAddress1 = _registerName1("remoteAddress");
+  late final _sel_remotePort1 = _registerName1("remotePort");
+  late final _sel_negotiatedTLSProtocolVersion1 =
       _registerName1("negotiatedTLSProtocolVersion");
-  late final ffi.Pointer<ObjCSel> _sel_negotiatedTLSCipherSuite1 =
+  late final _sel_negotiatedTLSCipherSuite1 =
       _registerName1("negotiatedTLSCipherSuite");
-  late final ffi.Pointer<ObjCSel> _sel_isCellular1 =
-      _registerName1("isCellular");
-  late final ffi.Pointer<ObjCSel> _sel_isExpensive1 =
-      _registerName1("isExpensive");
-  late final ffi.Pointer<ObjCSel> _sel_isConstrained1 =
-      _registerName1("isConstrained");
-  late final ffi.Pointer<ObjCSel> _sel_isMultipath1 =
-      _registerName1("isMultipath");
-  late final ffi.Pointer<ObjCSel> _sel_domainResolutionProtocol1 =
+  late final _sel_isCellular1 = _registerName1("isCellular");
+  late final _sel_isExpensive1 = _registerName1("isExpensive");
+  late final _sel_isConstrained1 = _registerName1("isConstrained");
+  late final _sel_isMultipath1 = _registerName1("isMultipath");
+  late final _sel_domainResolutionProtocol1 =
       _registerName1("domainResolutionProtocol");
   int _objc_msgSend_243(
     ffi.Pointer<ObjCObject> obj,
@@ -33441,14 +33136,11 @@ class NativeLibrary {
   late final __objc_msgSend_243 = __objc_msgSend_243Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLSessionTaskMetrics1 =
+  late final _class_NSURLSessionTaskMetrics1 =
       _getClass1("NSURLSessionTaskMetrics");
-  late final ffi.Pointer<ObjCSel> _sel_transactionMetrics1 =
-      _registerName1("transactionMetrics");
-  late final ffi.Pointer<ObjCSel> _sel_taskInterval1 =
-      _registerName1("taskInterval");
-  late final ffi.Pointer<ObjCSel> _sel_redirectCount1 =
-      _registerName1("redirectCount");
+  late final _sel_transactionMetrics1 = _registerName1("transactionMetrics");
+  late final _sel_taskInterval1 = _registerName1("taskInterval");
+  late final _sel_redirectCount1 = _registerName1("redirectCount");
   ffi.Pointer<ObjCObject> NSStringFromSelector5(
     ffi.Pointer<ObjCSel> aSelector,
   ) {
@@ -34392,10 +34084,8 @@ class NativeLibrary {
   late final _NSRangeFromString2 = _NSRangeFromString2Ptr.asFunction<
       NSRange Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSItemProvider1 =
-      _getClass1("NSItemProvider");
-  late final ffi.Pointer<ObjCSel>
-      _sel_registerDataRepresentationForTypeIdentifier_visibility_loadHandler_1 =
+  late final _class_NSItemProvider1 = _getClass1("NSItemProvider");
+  late final _sel_registerDataRepresentationForTypeIdentifier_visibility_loadHandler_1 =
       _registerName1(
           "registerDataRepresentationForTypeIdentifier:visibility:loadHandler:");
   void _objc_msgSend_244(
@@ -34426,8 +34116,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_registerFileRepresentationForTypeIdentifier_fileOptions_visibility_loadHandler_1 =
+  late final _sel_registerFileRepresentationForTypeIdentifier_fileOptions_visibility_loadHandler_1 =
       _registerName1(
           "registerFileRepresentationForTypeIdentifier:fileOptions:visibility:loadHandler:");
   void _objc_msgSend_245(
@@ -34461,12 +34150,11 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, int, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_registeredTypeIdentifiers1 =
+  late final _sel_registeredTypeIdentifiers1 =
       _registerName1("registeredTypeIdentifiers");
-  late final ffi.Pointer<ObjCSel> _sel_hasItemConformingToTypeIdentifier_1 =
+  late final _sel_hasItemConformingToTypeIdentifier_1 =
       _registerName1("hasItemConformingToTypeIdentifier:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_hasRepresentationConformingToTypeIdentifier_fileOptions_1 =
+  late final _sel_hasRepresentationConformingToTypeIdentifier_fileOptions_1 =
       _registerName1(
           "hasRepresentationConformingToTypeIdentifier:fileOptions:");
   bool _objc_msgSend_246(
@@ -34492,8 +34180,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadDataRepresentationForTypeIdentifier_completionHandler_1 =
+  late final _sel_loadDataRepresentationForTypeIdentifier_completionHandler_1 =
       _registerName1(
           "loadDataRepresentationForTypeIdentifier:completionHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_247(
@@ -34524,12 +34211,10 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadFileRepresentationForTypeIdentifier_completionHandler_1 =
+  late final _sel_loadFileRepresentationForTypeIdentifier_completionHandler_1 =
       _registerName1(
           "loadFileRepresentationForTypeIdentifier:completionHandler:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadInPlaceFileRepresentationForTypeIdentifier_completionHandler_1 =
+  late final _sel_loadInPlaceFileRepresentationForTypeIdentifier_completionHandler_1 =
       _registerName1(
           "loadInPlaceFileRepresentationForTypeIdentifier:completionHandler:");
   ffi.Pointer<ObjCObject> _objc_msgSend_248(
@@ -34560,13 +34245,10 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_suggestedName1 =
-      _registerName1("suggestedName");
-  late final ffi.Pointer<ObjCSel> _sel_setSuggestedName_1 =
-      _registerName1("setSuggestedName:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithObject_1 =
-      _registerName1("initWithObject:");
-  late final ffi.Pointer<ObjCSel> _sel_registerObject_visibility_1 =
+  late final _sel_suggestedName1 = _registerName1("suggestedName");
+  late final _sel_setSuggestedName_1 = _registerName1("setSuggestedName:");
+  late final _sel_initWithObject_1 = _registerName1("initWithObject:");
+  late final _sel_registerObject_visibility_1 =
       _registerName1("registerObject:visibility:");
   void _objc_msgSend_249(
     ffi.Pointer<ObjCObject> obj,
@@ -34590,17 +34272,15 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_registerObjectOfClass_visibility_loadHandler_1 =
+  late final _sel_registerObjectOfClass_visibility_loadHandler_1 =
       _registerName1("registerObjectOfClass:visibility:loadHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_canLoadObjectOfClass_1 =
+  late final _sel_canLoadObjectOfClass_1 =
       _registerName1("canLoadObjectOfClass:");
-  late final ffi.Pointer<ObjCSel> _sel_loadObjectOfClass_completionHandler_1 =
+  late final _sel_loadObjectOfClass_completionHandler_1 =
       _registerName1("loadObjectOfClass:completionHandler:");
-  late final ffi.Pointer<ObjCSel> _sel_initWithItem_typeIdentifier_1 =
+  late final _sel_initWithItem_typeIdentifier_1 =
       _registerName1("initWithItem:typeIdentifier:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_registerItemForTypeIdentifier_loadHandler_1 =
+  late final _sel_registerItemForTypeIdentifier_loadHandler_1 =
       _registerName1("registerItemForTypeIdentifier:loadHandler:");
   void _objc_msgSend_250(
     ffi.Pointer<ObjCObject> obj,
@@ -34627,8 +34307,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, NSItemProviderLoadHandler)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadItemForTypeIdentifier_options_completionHandler_1 =
+  late final _sel_loadItemForTypeIdentifier_options_completionHandler_1 =
       _registerName1("loadItemForTypeIdentifier:options:completionHandler:");
   void _objc_msgSend_251(
     ffi.Pointer<ObjCObject> obj,
@@ -34662,8 +34341,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           NSItemProviderCompletionHandler)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_previewImageHandler1 =
-      _registerName1("previewImageHandler");
+  late final _sel_previewImageHandler1 = _registerName1("previewImageHandler");
   NSItemProviderLoadHandler _objc_msgSend_252(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -34682,7 +34360,7 @@ class NativeLibrary {
       NSItemProviderLoadHandler Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setPreviewImageHandler_1 =
+  late final _sel_setPreviewImageHandler_1 =
       _registerName1("setPreviewImageHandler:");
   void _objc_msgSend_253(
     ffi.Pointer<ObjCObject> obj,
@@ -34704,8 +34382,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           NSItemProviderLoadHandler)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadPreviewImageWithOptions_completionHandler_1 =
+  late final _sel_loadPreviewImageWithOptions_completionHandler_1 =
       _registerName1("loadPreviewImageWithOptions:completionHandler:");
   void _objc_msgSend_254(
     ffi.Pointer<ObjCObject> obj,
@@ -35012,22 +34689,17 @@ class NativeLibrary {
           NSStringEncodingDetectionOptionsKey value) =>
       _NSStringEncodingDetectionLikelyLanguageKey.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSMutableString1 =
-      _getClass1("NSMutableString");
-  late final ffi.Pointer<ObjCSel> _sel_replaceCharactersInRange_withString_1 =
+  late final _class_NSMutableString1 = _getClass1("NSMutableString");
+  late final _sel_replaceCharactersInRange_withString_1 =
       _registerName1("replaceCharactersInRange:withString:");
-  late final ffi.Pointer<ObjCSel> _sel_insertString_atIndex_1 =
+  late final _sel_insertString_atIndex_1 =
       _registerName1("insertString:atIndex:");
-  late final ffi.Pointer<ObjCSel> _sel_deleteCharactersInRange_1 =
+  late final _sel_deleteCharactersInRange_1 =
       _registerName1("deleteCharactersInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_appendString_1 =
-      _registerName1("appendString:");
-  late final ffi.Pointer<ObjCSel> _sel_appendFormat_1 =
-      _registerName1("appendFormat:");
-  late final ffi.Pointer<ObjCSel> _sel_setString_1 =
-      _registerName1("setString:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_replaceOccurrencesOfString_withString_options_range_1 =
+  late final _sel_appendString_1 = _registerName1("appendString:");
+  late final _sel_appendFormat_1 = _registerName1("appendFormat:");
+  late final _sel_setString_1 = _registerName1("setString:");
+  late final _sel_replaceOccurrencesOfString_withString_options_range_1 =
       _registerName1("replaceOccurrencesOfString:withString:options:range:");
   int _objc_msgSend_255(
     ffi.Pointer<ObjCObject> obj,
@@ -35060,8 +34732,7 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>, int, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_applyTransform_reverse_range_updatedRange_1 =
+  late final _sel_applyTransform_reverse_range_updatedRange_1 =
       _registerName1("applyTransform:reverse:range:updatedRange:");
   bool _objc_msgSend_256(
     ffi.Pointer<ObjCObject> obj,
@@ -35115,8 +34786,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_stringWithCapacity_1 =
-      _registerName1("stringWithCapacity:");
+  late final _sel_stringWithCapacity_1 = _registerName1("stringWithCapacity:");
   late final ffi.Pointer<NSExceptionName> _NSCharacterConversionException =
       _lookup<NSExceptionName>('NSCharacterConversionException');
 
@@ -35134,10 +34804,8 @@ class NativeLibrary {
   set NSParseErrorException(NSExceptionName value) =>
       _NSParseErrorException.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSSimpleCString1 =
-      _getClass1("NSSimpleCString");
-  late final ffi.Pointer<ObjCObject> _class_NSConstantString1 =
-      _getClass1("NSConstantString");
+  late final _class_NSSimpleCString1 = _getClass1("NSSimpleCString");
+  late final _class_NSConstantString1 = _getClass1("NSConstantString");
   int CFDataGetTypeID1() {
     return _CFDataGetTypeID1();
   }
@@ -35766,39 +35434,32 @@ class NativeLibrary {
   late final _CFCharacterSetInvert1 = _CFCharacterSetInvert1Ptr.asFunction<
       void Function(CFMutableCharacterSetRef)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSCharacterSet1 =
-      _getClass1("NSCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_controlCharacterSet1 =
-      _registerName1("controlCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_whitespaceCharacterSet1 =
+  late final _class_NSCharacterSet1 = _getClass1("NSCharacterSet");
+  late final _sel_controlCharacterSet1 = _registerName1("controlCharacterSet");
+  late final _sel_whitespaceCharacterSet1 =
       _registerName1("whitespaceCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_whitespaceAndNewlineCharacterSet1 =
+  late final _sel_whitespaceAndNewlineCharacterSet1 =
       _registerName1("whitespaceAndNewlineCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_decimalDigitCharacterSet1 =
+  late final _sel_decimalDigitCharacterSet1 =
       _registerName1("decimalDigitCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_letterCharacterSet1 =
-      _registerName1("letterCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_lowercaseLetterCharacterSet1 =
+  late final _sel_letterCharacterSet1 = _registerName1("letterCharacterSet");
+  late final _sel_lowercaseLetterCharacterSet1 =
       _registerName1("lowercaseLetterCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_uppercaseLetterCharacterSet1 =
+  late final _sel_uppercaseLetterCharacterSet1 =
       _registerName1("uppercaseLetterCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_nonBaseCharacterSet1 =
-      _registerName1("nonBaseCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_alphanumericCharacterSet1 =
+  late final _sel_nonBaseCharacterSet1 = _registerName1("nonBaseCharacterSet");
+  late final _sel_alphanumericCharacterSet1 =
       _registerName1("alphanumericCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_decomposableCharacterSet1 =
+  late final _sel_decomposableCharacterSet1 =
       _registerName1("decomposableCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_illegalCharacterSet1 =
-      _registerName1("illegalCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_punctuationCharacterSet1 =
+  late final _sel_illegalCharacterSet1 = _registerName1("illegalCharacterSet");
+  late final _sel_punctuationCharacterSet1 =
       _registerName1("punctuationCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_capitalizedLetterCharacterSet1 =
+  late final _sel_capitalizedLetterCharacterSet1 =
       _registerName1("capitalizedLetterCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_symbolCharacterSet1 =
-      _registerName1("symbolCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_newlineCharacterSet1 =
-      _registerName1("newlineCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_characterSetWithRange_1 =
+  late final _sel_symbolCharacterSet1 = _registerName1("symbolCharacterSet");
+  late final _sel_newlineCharacterSet1 = _registerName1("newlineCharacterSet");
+  late final _sel_characterSetWithRange_1 =
       _registerName1("characterSetWithRange:");
   ffi.Pointer<ObjCObject> _objc_msgSend_258(
     ffi.Pointer<ObjCObject> obj,
@@ -35820,7 +35481,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, NSRange)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_characterSetWithCharactersInString_1 =
+  late final _sel_characterSetWithCharactersInString_1 =
       _registerName1("characterSetWithCharactersInString:");
   ffi.Pointer<ObjCObject> _objc_msgSend_259(
     ffi.Pointer<ObjCObject> obj,
@@ -35842,12 +35503,11 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_characterSetWithBitmapRepresentation_1 =
+  late final _sel_characterSetWithBitmapRepresentation_1 =
       _registerName1("characterSetWithBitmapRepresentation:");
-  late final ffi.Pointer<ObjCSel> _sel_characterSetWithContentsOfFile_1 =
+  late final _sel_characterSetWithContentsOfFile_1 =
       _registerName1("characterSetWithContentsOfFile:");
-  late final ffi.Pointer<ObjCSel> _sel_characterIsMember_1 =
-      _registerName1("characterIsMember:");
+  late final _sel_characterIsMember_1 = _registerName1("characterIsMember:");
   bool _objc_msgSend_260(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -35868,11 +35528,10 @@ class NativeLibrary {
   late final __objc_msgSend_260 = __objc_msgSend_260Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_bitmapRepresentation1 =
+  late final _sel_bitmapRepresentation1 =
       _registerName1("bitmapRepresentation");
-  late final ffi.Pointer<ObjCSel> _sel_invertedSet1 =
-      _registerName1("invertedSet");
-  late final ffi.Pointer<ObjCSel> _sel_longCharacterIsMember_1 =
+  late final _sel_invertedSet1 = _registerName1("invertedSet");
+  late final _sel_longCharacterIsMember_1 =
       _registerName1("longCharacterIsMember:");
   bool _objc_msgSend_261(
     ffi.Pointer<ObjCObject> obj,
@@ -35894,10 +35553,8 @@ class NativeLibrary {
   late final __objc_msgSend_261 = __objc_msgSend_261Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_isSupersetOfSet_1 =
-      _registerName1("isSupersetOfSet:");
-  late final ffi.Pointer<ObjCSel> _sel_hasMemberInPlane_1 =
-      _registerName1("hasMemberInPlane:");
+  late final _sel_isSupersetOfSet_1 = _registerName1("isSupersetOfSet:");
+  late final _sel_hasMemberInPlane_1 = _registerName1("hasMemberInPlane:");
   bool _objc_msgSend_262(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -35918,33 +35575,33 @@ class NativeLibrary {
   late final __objc_msgSend_262 = __objc_msgSend_262Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_URLUserAllowedCharacterSet1 =
+  late final _sel_URLUserAllowedCharacterSet1 =
       _registerName1("URLUserAllowedCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_URLPasswordAllowedCharacterSet1 =
+  late final _sel_URLPasswordAllowedCharacterSet1 =
       _registerName1("URLPasswordAllowedCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_URLHostAllowedCharacterSet1 =
+  late final _sel_URLHostAllowedCharacterSet1 =
       _registerName1("URLHostAllowedCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_URLPathAllowedCharacterSet1 =
+  late final _sel_URLPathAllowedCharacterSet1 =
       _registerName1("URLPathAllowedCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_URLQueryAllowedCharacterSet1 =
+  late final _sel_URLQueryAllowedCharacterSet1 =
       _registerName1("URLQueryAllowedCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_URLFragmentAllowedCharacterSet1 =
+  late final _sel_URLFragmentAllowedCharacterSet1 =
       _registerName1("URLFragmentAllowedCharacterSet");
-  late final ffi.Pointer<ObjCObject> _class_NSMutableCharacterSet1 =
+  late final _class_NSMutableCharacterSet1 =
       _getClass1("NSMutableCharacterSet");
-  late final ffi.Pointer<ObjCSel> _sel_addCharactersInRange_1 =
+  late final _sel_addCharactersInRange_1 =
       _registerName1("addCharactersInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_removeCharactersInRange_1 =
+  late final _sel_removeCharactersInRange_1 =
       _registerName1("removeCharactersInRange:");
-  late final ffi.Pointer<ObjCSel> _sel_addCharactersInString_1 =
+  late final _sel_addCharactersInString_1 =
       _registerName1("addCharactersInString:");
-  late final ffi.Pointer<ObjCSel> _sel_removeCharactersInString_1 =
+  late final _sel_removeCharactersInString_1 =
       _registerName1("removeCharactersInString:");
-  late final ffi.Pointer<ObjCSel> _sel_formUnionWithCharacterSet_1 =
+  late final _sel_formUnionWithCharacterSet_1 =
       _registerName1("formUnionWithCharacterSet:");
-  late final ffi.Pointer<ObjCSel> _sel_formIntersectionWithCharacterSet_1 =
+  late final _sel_formIntersectionWithCharacterSet_1 =
       _registerName1("formIntersectionWithCharacterSet:");
-  late final ffi.Pointer<ObjCSel> _sel_invert1 = _registerName1("invert");
+  late final _sel_invert1 = _registerName1("invert");
   ffi.Pointer<ObjCObject> _objc_msgSend_263(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36090,13 +35747,12 @@ class NativeLibrary {
   set NSFTPPropertyFTPProxy(ffi.Pointer<ObjCObject> value) =>
       _NSFTPPropertyFTPProxy.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLHandle1 =
-      _getClass1("NSURLHandle");
-  late final ffi.Pointer<ObjCSel> _sel_registerURLHandleClass_1 =
+  late final _class_NSURLHandle1 = _getClass1("NSURLHandle");
+  late final _sel_registerURLHandleClass_1 =
       _registerName1("registerURLHandleClass:");
-  late final ffi.Pointer<ObjCSel> _sel_URLHandleClassForURL_1 =
+  late final _sel_URLHandleClassForURL_1 =
       _registerName1("URLHandleClassForURL:");
-  late final ffi.Pointer<ObjCSel> _sel_status1 = _registerName1("status");
+  late final _sel_status1 = _registerName1("status");
   int _objc_msgSend_265(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36114,18 +35770,13 @@ class NativeLibrary {
   late final __objc_msgSend_265 = __objc_msgSend_265Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_failureReason1 =
-      _registerName1("failureReason");
-  late final ffi.Pointer<ObjCSel> _sel_addClient_1 =
-      _registerName1("addClient:");
-  late final ffi.Pointer<ObjCSel> _sel_removeClient_1 =
-      _registerName1("removeClient:");
-  late final ffi.Pointer<ObjCSel> _sel_loadInBackground1 =
-      _registerName1("loadInBackground");
-  late final ffi.Pointer<ObjCSel> _sel_cancelLoadInBackground1 =
+  late final _sel_failureReason1 = _registerName1("failureReason");
+  late final _sel_addClient_1 = _registerName1("addClient:");
+  late final _sel_removeClient_1 = _registerName1("removeClient:");
+  late final _sel_loadInBackground1 = _registerName1("loadInBackground");
+  late final _sel_cancelLoadInBackground1 =
       _registerName1("cancelLoadInBackground");
-  late final ffi.Pointer<ObjCSel> _sel_resourceData1 =
-      _registerName1("resourceData");
+  late final _sel_resourceData1 = _registerName1("resourceData");
   ffi.Pointer<ObjCObject> _objc_msgSend_266(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36144,15 +35795,14 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_availableResourceData1 =
+  late final _sel_availableResourceData1 =
       _registerName1("availableResourceData");
-  late final ffi.Pointer<ObjCSel> _sel_expectedResourceDataSize1 =
+  late final _sel_expectedResourceDataSize1 =
       _registerName1("expectedResourceDataSize");
-  late final ffi.Pointer<ObjCSel> _sel_flushCachedData1 =
-      _registerName1("flushCachedData");
-  late final ffi.Pointer<ObjCSel> _sel_backgroundLoadDidFailWithReason_1 =
+  late final _sel_flushCachedData1 = _registerName1("flushCachedData");
+  late final _sel_backgroundLoadDidFailWithReason_1 =
       _registerName1("backgroundLoadDidFailWithReason:");
-  late final ffi.Pointer<ObjCSel> _sel_didLoadBytes_loadComplete_1 =
+  late final _sel_didLoadBytes_loadComplete_1 =
       _registerName1("didLoadBytes:loadComplete:");
   void _objc_msgSend_267(
     ffi.Pointer<ObjCObject> obj,
@@ -36176,10 +35826,8 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_canInitWithURL_1 =
-      _registerName1("canInitWithURL:");
-  late final ffi.Pointer<ObjCSel> _sel_cachedHandleForURL_1 =
-      _registerName1("cachedHandleForURL:");
+  late final _sel_canInitWithURL_1 = _registerName1("canInitWithURL:");
+  late final _sel_cachedHandleForURL_1 = _registerName1("cachedHandleForURL:");
   ffi.Pointer<ObjCObject> _objc_msgSend_268(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36200,13 +35848,11 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithURL_cached_1 =
-      _registerName1("initWithURL:cached:");
-  late final ffi.Pointer<ObjCSel> _sel_propertyForKey_1 =
-      _registerName1("propertyForKey:");
-  late final ffi.Pointer<ObjCSel> _sel_propertyForKeyIfAvailable_1 =
+  late final _sel_initWithURL_cached_1 = _registerName1("initWithURL:cached:");
+  late final _sel_propertyForKey_1 = _registerName1("propertyForKey:");
+  late final _sel_propertyForKeyIfAvailable_1 =
       _registerName1("propertyForKeyIfAvailable:");
-  late final ffi.Pointer<ObjCSel> _sel_writeProperty_forKey_1 =
+  late final _sel_writeProperty_forKey_1 =
       _registerName1("writeProperty:forKey:");
   bool _objc_msgSend_269(
     ffi.Pointer<ObjCObject> obj,
@@ -36234,19 +35880,15 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_writeData_1 =
-      _registerName1("writeData:");
-  late final ffi.Pointer<ObjCSel> _sel_loadInForeground1 =
-      _registerName1("loadInForeground");
-  late final ffi.Pointer<ObjCSel> _sel_beginLoadInBackground1 =
+  late final _sel_writeData_1 = _registerName1("writeData:");
+  late final _sel_loadInForeground1 = _registerName1("loadInForeground");
+  late final _sel_beginLoadInBackground1 =
       _registerName1("beginLoadInBackground");
-  late final ffi.Pointer<ObjCSel> _sel_endLoadInBackground1 =
-      _registerName1("endLoadInBackground");
-  late final ffi.Pointer<ObjCObject> _class_NSURL1 = _getClass1("NSURL");
-  late final ffi.Pointer<ObjCSel> _sel_initWithScheme_host_path_1 =
+  late final _sel_endLoadInBackground1 = _registerName1("endLoadInBackground");
+  late final _class_NSURL1 = _getClass1("NSURL");
+  late final _sel_initWithScheme_host_path_1 =
       _registerName1("initWithScheme:host:path:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initFileURLWithPath_isDirectory_relativeToURL_1 =
+  late final _sel_initFileURLWithPath_isDirectory_relativeToURL_1 =
       _registerName1("initFileURLWithPath:isDirectory:relativeToURL:");
   instancetype _objc_msgSend_270(
     ffi.Pointer<ObjCObject> obj,
@@ -36276,14 +35918,13 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>, int, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initFileURLWithPath_relativeToURL_1 =
+  late final _sel_initFileURLWithPath_relativeToURL_1 =
       _registerName1("initFileURLWithPath:relativeToURL:");
-  late final ffi.Pointer<ObjCSel> _sel_initFileURLWithPath_isDirectory_1 =
+  late final _sel_initFileURLWithPath_isDirectory_1 =
       _registerName1("initFileURLWithPath:isDirectory:");
-  late final ffi.Pointer<ObjCSel> _sel_initFileURLWithPath_1 =
+  late final _sel_initFileURLWithPath_1 =
       _registerName1("initFileURLWithPath:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_fileURLWithPath_isDirectory_relativeToURL_1 =
+  late final _sel_fileURLWithPath_isDirectory_relativeToURL_1 =
       _registerName1("fileURLWithPath:isDirectory:relativeToURL:");
   ffi.Pointer<ObjCObject> _objc_msgSend_271(
     ffi.Pointer<ObjCObject> obj,
@@ -36317,7 +35958,7 @@ class NativeLibrary {
           int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_fileURLWithPath_relativeToURL_1 =
+  late final _sel_fileURLWithPath_relativeToURL_1 =
       _registerName1("fileURLWithPath:relativeToURL:");
   ffi.Pointer<ObjCObject> _objc_msgSend_272(
     ffi.Pointer<ObjCObject> obj,
@@ -36347,7 +35988,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_fileURLWithPath_isDirectory_1 =
+  late final _sel_fileURLWithPath_isDirectory_1 =
       _registerName1("fileURLWithPath:isDirectory:");
   ffi.Pointer<ObjCObject> _objc_msgSend_273(
     ffi.Pointer<ObjCObject> obj,
@@ -36374,8 +36015,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_fileURLWithPath_1 =
-      _registerName1("fileURLWithPath:");
+  late final _sel_fileURLWithPath_1 = _registerName1("fileURLWithPath:");
   ffi.Pointer<ObjCObject> _objc_msgSend_274(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36396,8 +36036,7 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCSel>, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initFileURLWithFileSystemRepresentation_isDirectory_relativeToURL_1 =
+  late final _sel_initFileURLWithFileSystemRepresentation_isDirectory_relativeToURL_1 =
       _registerName1(
           "initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:");
   instancetype _objc_msgSend_275(
@@ -36428,8 +36067,7 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_fileURLWithFileSystemRepresentation_isDirectory_relativeToURL_1 =
+  late final _sel_fileURLWithFileSystemRepresentation_isDirectory_relativeToURL_1 =
       _registerName1(
           "fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:");
   ffi.Pointer<ObjCObject> _objc_msgSend_276(
@@ -36464,50 +36102,37 @@ class NativeLibrary {
           int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithString_relativeToURL_1 =
+  late final _sel_initWithString_relativeToURL_1 =
       _registerName1("initWithString:relativeToURL:");
-  late final ffi.Pointer<ObjCSel> _sel_URLWithString_1 =
-      _registerName1("URLWithString:");
-  late final ffi.Pointer<ObjCSel> _sel_URLWithString_relativeToURL_1 =
+  late final _sel_URLWithString_1 = _registerName1("URLWithString:");
+  late final _sel_URLWithString_relativeToURL_1 =
       _registerName1("URLWithString:relativeToURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithDataRepresentation_relativeToURL_1 =
+  late final _sel_initWithDataRepresentation_relativeToURL_1 =
       _registerName1("initWithDataRepresentation:relativeToURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_URLWithDataRepresentation_relativeToURL_1 =
+  late final _sel_URLWithDataRepresentation_relativeToURL_1 =
       _registerName1("URLWithDataRepresentation:relativeToURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initAbsoluteURLWithDataRepresentation_relativeToURL_1 =
+  late final _sel_initAbsoluteURLWithDataRepresentation_relativeToURL_1 =
       _registerName1("initAbsoluteURLWithDataRepresentation:relativeToURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_absoluteURLWithDataRepresentation_relativeToURL_1 =
+  late final _sel_absoluteURLWithDataRepresentation_relativeToURL_1 =
       _registerName1("absoluteURLWithDataRepresentation:relativeToURL:");
-  late final ffi.Pointer<ObjCSel> _sel_dataRepresentation1 =
-      _registerName1("dataRepresentation");
-  late final ffi.Pointer<ObjCSel> _sel_absoluteString1 =
-      _registerName1("absoluteString");
-  late final ffi.Pointer<ObjCSel> _sel_relativeString1 =
-      _registerName1("relativeString");
-  late final ffi.Pointer<ObjCSel> _sel_baseURL1 = _registerName1("baseURL");
-  late final ffi.Pointer<ObjCSel> _sel_absoluteURL1 =
-      _registerName1("absoluteURL");
-  late final ffi.Pointer<ObjCSel> _sel_scheme1 = _registerName1("scheme");
-  late final ffi.Pointer<ObjCSel> _sel_resourceSpecifier1 =
-      _registerName1("resourceSpecifier");
-  late final ffi.Pointer<ObjCSel> _sel_host1 = _registerName1("host");
-  late final ffi.Pointer<ObjCSel> _sel_port1 = _registerName1("port");
-  late final ffi.Pointer<ObjCSel> _sel_user1 = _registerName1("user");
-  late final ffi.Pointer<ObjCSel> _sel_password1 = _registerName1("password");
-  late final ffi.Pointer<ObjCSel> _sel_path1 = _registerName1("path");
-  late final ffi.Pointer<ObjCSel> _sel_fragment1 = _registerName1("fragment");
-  late final ffi.Pointer<ObjCSel> _sel_parameterString1 =
-      _registerName1("parameterString");
-  late final ffi.Pointer<ObjCSel> _sel_query1 = _registerName1("query");
-  late final ffi.Pointer<ObjCSel> _sel_relativePath1 =
-      _registerName1("relativePath");
-  late final ffi.Pointer<ObjCSel> _sel_hasDirectoryPath1 =
-      _registerName1("hasDirectoryPath");
-  late final ffi.Pointer<ObjCSel> _sel_getFileSystemRepresentation_maxLength_1 =
+  late final _sel_dataRepresentation1 = _registerName1("dataRepresentation");
+  late final _sel_absoluteString1 = _registerName1("absoluteString");
+  late final _sel_relativeString1 = _registerName1("relativeString");
+  late final _sel_baseURL1 = _registerName1("baseURL");
+  late final _sel_absoluteURL1 = _registerName1("absoluteURL");
+  late final _sel_scheme1 = _registerName1("scheme");
+  late final _sel_resourceSpecifier1 = _registerName1("resourceSpecifier");
+  late final _sel_host1 = _registerName1("host");
+  late final _sel_port1 = _registerName1("port");
+  late final _sel_user1 = _registerName1("user");
+  late final _sel_password1 = _registerName1("password");
+  late final _sel_path1 = _registerName1("path");
+  late final _sel_fragment1 = _registerName1("fragment");
+  late final _sel_parameterString1 = _registerName1("parameterString");
+  late final _sel_query1 = _registerName1("query");
+  late final _sel_relativePath1 = _registerName1("relativePath");
+  late final _sel_hasDirectoryPath1 = _registerName1("hasDirectoryPath");
+  late final _sel_getFileSystemRepresentation_maxLength_1 =
       _registerName1("getFileSystemRepresentation:maxLength:");
   bool _objc_msgSend_277(
     ffi.Pointer<ObjCObject> obj,
@@ -36532,13 +36157,11 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Char>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_fileSystemRepresentation1 =
+  late final _sel_fileSystemRepresentation1 =
       _registerName1("fileSystemRepresentation");
-  late final ffi.Pointer<ObjCSel> _sel_isFileURL1 = _registerName1("isFileURL");
-  late final ffi.Pointer<ObjCSel> _sel_standardizedURL1 =
-      _registerName1("standardizedURL");
-  late final ffi.Pointer<ObjCSel>
-      _sel_checkResourceIsReachableAndReturnError_1 =
+  late final _sel_isFileURL1 = _registerName1("isFileURL");
+  late final _sel_standardizedURL1 = _registerName1("standardizedURL");
+  late final _sel_checkResourceIsReachableAndReturnError_1 =
       _registerName1("checkResourceIsReachableAndReturnError:");
   bool _objc_msgSend_278(
     ffi.Pointer<ObjCObject> obj,
@@ -36561,10 +36184,8 @@ class NativeLibrary {
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_isFileReferenceURL1 =
-      _registerName1("isFileReferenceURL");
-  late final ffi.Pointer<ObjCSel> _sel_fileReferenceURL1 =
-      _registerName1("fileReferenceURL");
+  late final _sel_isFileReferenceURL1 = _registerName1("isFileReferenceURL");
+  late final _sel_fileReferenceURL1 = _registerName1("fileReferenceURL");
   ffi.Pointer<ObjCObject> _objc_msgSend_279(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -36583,9 +36204,8 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_filePathURL1 =
-      _registerName1("filePathURL");
-  late final ffi.Pointer<ObjCSel> _sel_getResourceValue_forKey_error_1 =
+  late final _sel_filePathURL1 = _registerName1("filePathURL");
+  late final _sel_getResourceValue_forKey_error_1 =
       _registerName1("getResourceValue:forKey:error:");
   bool _objc_msgSend_280(
     ffi.Pointer<ObjCObject> obj,
@@ -36620,7 +36240,7 @@ class NativeLibrary {
           NSURLResourceKey,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setResourceValue_forKey_error_1 =
+  late final _sel_setResourceValue_forKey_error_1 =
       _registerName1("setResourceValue:forKey:error:");
   bool _objc_msgSend_281(
     ffi.Pointer<ObjCObject> obj,
@@ -36655,16 +36275,15 @@ class NativeLibrary {
           NSURLResourceKey,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setResourceValues_error_1 =
+  late final _sel_setResourceValues_error_1 =
       _registerName1("setResourceValues:error:");
-  late final ffi.Pointer<ObjCSel> _sel_removeCachedResourceValueForKey_1 =
+  late final _sel_removeCachedResourceValueForKey_1 =
       _registerName1("removeCachedResourceValueForKey:");
-  late final ffi.Pointer<ObjCSel> _sel_removeAllCachedResourceValues1 =
+  late final _sel_removeAllCachedResourceValues1 =
       _registerName1("removeAllCachedResourceValues");
-  late final ffi.Pointer<ObjCSel> _sel_setTemporaryResourceValue_forKey_1 =
+  late final _sel_setTemporaryResourceValue_forKey_1 =
       _registerName1("setTemporaryResourceValue:forKey:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_bookmarkDataWithOptions_includingResourceValuesForKeys_relativeToURL_error_1 =
+  late final _sel_bookmarkDataWithOptions_includingResourceValuesForKeys_relativeToURL_error_1 =
       _registerName1(
           "bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:");
   ffi.Pointer<ObjCObject> _objc_msgSend_282(
@@ -36703,8 +36322,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_initByResolvingBookmarkData_options_relativeToURL_bookmarkDataIsStale_error_1 =
+  late final _sel_initByResolvingBookmarkData_options_relativeToURL_bookmarkDataIsStale_error_1 =
       _registerName1(
           "initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:");
   instancetype _objc_msgSend_283(
@@ -36747,11 +36365,10 @@ class NativeLibrary {
           ffi.Pointer<ffi.Uint8>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_URLByResolvingBookmarkData_options_relativeToURL_bookmarkDataIsStale_error_1 =
+  late final _sel_URLByResolvingBookmarkData_options_relativeToURL_bookmarkDataIsStale_error_1 =
       _registerName1(
           "URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:");
-  late final ffi.Pointer<ObjCSel> _sel_writeBookmarkData_toURL_options_error_1 =
+  late final _sel_writeBookmarkData_toURL_options_error_1 =
       _registerName1("writeBookmarkData:toURL:options:error:");
   bool _objc_msgSend_284(
     ffi.Pointer<ObjCObject> obj,
@@ -36790,7 +36407,7 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_bookmarkDataWithContentsOfURL_error_1 =
+  late final _sel_bookmarkDataWithContentsOfURL_error_1 =
       _registerName1("bookmarkDataWithContentsOfURL:error:");
   ffi.Pointer<ObjCObject> _objc_msgSend_285(
     ffi.Pointer<ObjCObject> obj,
@@ -36820,8 +36437,7 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_URLByResolvingAliasFileAtURL_options_error_1 =
+  late final _sel_URLByResolvingAliasFileAtURL_options_error_1 =
       _registerName1("URLByResolvingAliasFileAtURL:options:error:");
   instancetype _objc_msgSend_286(
     ffi.Pointer<ObjCObject> obj,
@@ -36855,40 +36471,34 @@ class NativeLibrary {
           int,
           ffi.Pointer<ffi.Pointer<ObjCObject>>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_startAccessingSecurityScopedResource1 =
+  late final _sel_startAccessingSecurityScopedResource1 =
       _registerName1("startAccessingSecurityScopedResource");
-  late final ffi.Pointer<ObjCSel> _sel_stopAccessingSecurityScopedResource1 =
+  late final _sel_stopAccessingSecurityScopedResource1 =
       _registerName1("stopAccessingSecurityScopedResource");
-  late final ffi.Pointer<ObjCSel>
-      _sel_getPromisedItemResourceValue_forKey_error_1 =
+  late final _sel_getPromisedItemResourceValue_forKey_error_1 =
       _registerName1("getPromisedItemResourceValue:forKey:error:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_checkPromisedItemIsReachableAndReturnError_1 =
+  late final _sel_checkPromisedItemIsReachableAndReturnError_1 =
       _registerName1("checkPromisedItemIsReachableAndReturnError:");
-  late final ffi.Pointer<ObjCSel> _sel_fileURLWithPathComponents_1 =
+  late final _sel_fileURLWithPathComponents_1 =
       _registerName1("fileURLWithPathComponents:");
-  late final ffi.Pointer<ObjCSel> _sel_pathComponents1 =
-      _registerName1("pathComponents");
-  late final ffi.Pointer<ObjCSel> _sel_lastPathComponent1 =
-      _registerName1("lastPathComponent");
-  late final ffi.Pointer<ObjCSel> _sel_pathExtension1 =
-      _registerName1("pathExtension");
-  late final ffi.Pointer<ObjCSel> _sel_URLByAppendingPathComponent_1 =
+  late final _sel_pathComponents1 = _registerName1("pathComponents");
+  late final _sel_lastPathComponent1 = _registerName1("lastPathComponent");
+  late final _sel_pathExtension1 = _registerName1("pathExtension");
+  late final _sel_URLByAppendingPathComponent_1 =
       _registerName1("URLByAppendingPathComponent:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_URLByAppendingPathComponent_isDirectory_1 =
+  late final _sel_URLByAppendingPathComponent_isDirectory_1 =
       _registerName1("URLByAppendingPathComponent:isDirectory:");
-  late final ffi.Pointer<ObjCSel> _sel_URLByDeletingLastPathComponent1 =
+  late final _sel_URLByDeletingLastPathComponent1 =
       _registerName1("URLByDeletingLastPathComponent");
-  late final ffi.Pointer<ObjCSel> _sel_URLByAppendingPathExtension_1 =
+  late final _sel_URLByAppendingPathExtension_1 =
       _registerName1("URLByAppendingPathExtension:");
-  late final ffi.Pointer<ObjCSel> _sel_URLByDeletingPathExtension1 =
+  late final _sel_URLByDeletingPathExtension1 =
       _registerName1("URLByDeletingPathExtension");
-  late final ffi.Pointer<ObjCSel> _sel_URLByStandardizingPath1 =
+  late final _sel_URLByStandardizingPath1 =
       _registerName1("URLByStandardizingPath");
-  late final ffi.Pointer<ObjCSel> _sel_URLByResolvingSymlinksInPath1 =
+  late final _sel_URLByResolvingSymlinksInPath1 =
       _registerName1("URLByResolvingSymlinksInPath");
-  late final ffi.Pointer<ObjCSel> _sel_resourceDataUsingCache_1 =
+  late final _sel_resourceDataUsingCache_1 =
       _registerName1("resourceDataUsingCache:");
   ffi.Pointer<ObjCObject> _objc_msgSend_287(
     ffi.Pointer<ObjCObject> obj,
@@ -36910,14 +36520,11 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_loadResourceDataNotifyingClient_usingCache_1 =
+  late final _sel_loadResourceDataNotifyingClient_usingCache_1 =
       _registerName1("loadResourceDataNotifyingClient:usingCache:");
-  late final ffi.Pointer<ObjCSel> _sel_setResourceData_1 =
-      _registerName1("setResourceData:");
-  late final ffi.Pointer<ObjCSel> _sel_setProperty_forKey_1 =
-      _registerName1("setProperty:forKey:");
-  late final ffi.Pointer<ObjCSel> _sel_URLHandleUsingCache_1 =
+  late final _sel_setResourceData_1 = _registerName1("setResourceData:");
+  late final _sel_setProperty_forKey_1 = _registerName1("setProperty:forKey:");
+  late final _sel_URLHandleUsingCache_1 =
       _registerName1("URLHandleUsingCache:");
   ffi.Pointer<ObjCObject> _objc_msgSend_288(
     ffi.Pointer<ObjCObject> obj,
@@ -38377,85 +37984,62 @@ class NativeLibrary {
           NSURLUbiquitousSharedItemPermissions value) =>
       _NSURLUbiquitousSharedItemPermissionsReadWrite.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLQueryItem1 =
-      _getClass1("NSURLQueryItem");
-  late final ffi.Pointer<ObjCSel> _sel_initWithName_value_1 =
-      _registerName1("initWithName:value:");
-  late final ffi.Pointer<ObjCSel> _sel_queryItemWithName_value_1 =
+  late final _class_NSURLQueryItem1 = _getClass1("NSURLQueryItem");
+  late final _sel_initWithName_value_1 = _registerName1("initWithName:value:");
+  late final _sel_queryItemWithName_value_1 =
       _registerName1("queryItemWithName:value:");
-  late final ffi.Pointer<ObjCSel> _sel_value1 = _registerName1("value");
-  late final ffi.Pointer<ObjCObject> _class_NSURLComponents1 =
-      _getClass1("NSURLComponents");
-  late final ffi.Pointer<ObjCSel> _sel_initWithURL_resolvingAgainstBaseURL_1 =
+  late final _sel_value1 = _registerName1("value");
+  late final _class_NSURLComponents1 = _getClass1("NSURLComponents");
+  late final _sel_initWithURL_resolvingAgainstBaseURL_1 =
       _registerName1("initWithURL:resolvingAgainstBaseURL:");
-  late final ffi.Pointer<ObjCSel>
-      _sel_componentsWithURL_resolvingAgainstBaseURL_1 =
+  late final _sel_componentsWithURL_resolvingAgainstBaseURL_1 =
       _registerName1("componentsWithURL:resolvingAgainstBaseURL:");
-  late final ffi.Pointer<ObjCSel> _sel_componentsWithString_1 =
+  late final _sel_componentsWithString_1 =
       _registerName1("componentsWithString:");
-  late final ffi.Pointer<ObjCSel> _sel_URLRelativeToURL_1 =
-      _registerName1("URLRelativeToURL:");
-  late final ffi.Pointer<ObjCSel> _sel_setScheme_1 =
-      _registerName1("setScheme:");
-  late final ffi.Pointer<ObjCSel> _sel_setUser_1 = _registerName1("setUser:");
-  late final ffi.Pointer<ObjCSel> _sel_setPassword_1 =
-      _registerName1("setPassword:");
-  late final ffi.Pointer<ObjCSel> _sel_setHost_1 = _registerName1("setHost:");
-  late final ffi.Pointer<ObjCSel> _sel_setPort_1 = _registerName1("setPort:");
-  late final ffi.Pointer<ObjCSel> _sel_setPath_1 = _registerName1("setPath:");
-  late final ffi.Pointer<ObjCSel> _sel_setQuery_1 = _registerName1("setQuery:");
-  late final ffi.Pointer<ObjCSel> _sel_setFragment_1 =
-      _registerName1("setFragment:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedUser1 =
-      _registerName1("percentEncodedUser");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedUser_1 =
+  late final _sel_URLRelativeToURL_1 = _registerName1("URLRelativeToURL:");
+  late final _sel_setScheme_1 = _registerName1("setScheme:");
+  late final _sel_setUser_1 = _registerName1("setUser:");
+  late final _sel_setPassword_1 = _registerName1("setPassword:");
+  late final _sel_setHost_1 = _registerName1("setHost:");
+  late final _sel_setPort_1 = _registerName1("setPort:");
+  late final _sel_setPath_1 = _registerName1("setPath:");
+  late final _sel_setQuery_1 = _registerName1("setQuery:");
+  late final _sel_setFragment_1 = _registerName1("setFragment:");
+  late final _sel_percentEncodedUser1 = _registerName1("percentEncodedUser");
+  late final _sel_setPercentEncodedUser_1 =
       _registerName1("setPercentEncodedUser:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedPassword1 =
+  late final _sel_percentEncodedPassword1 =
       _registerName1("percentEncodedPassword");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedPassword_1 =
+  late final _sel_setPercentEncodedPassword_1 =
       _registerName1("setPercentEncodedPassword:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedHost1 =
-      _registerName1("percentEncodedHost");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedHost_1 =
+  late final _sel_percentEncodedHost1 = _registerName1("percentEncodedHost");
+  late final _sel_setPercentEncodedHost_1 =
       _registerName1("setPercentEncodedHost:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedPath1 =
-      _registerName1("percentEncodedPath");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedPath_1 =
+  late final _sel_percentEncodedPath1 = _registerName1("percentEncodedPath");
+  late final _sel_setPercentEncodedPath_1 =
       _registerName1("setPercentEncodedPath:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedQuery1 =
-      _registerName1("percentEncodedQuery");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedQuery_1 =
+  late final _sel_percentEncodedQuery1 = _registerName1("percentEncodedQuery");
+  late final _sel_setPercentEncodedQuery_1 =
       _registerName1("setPercentEncodedQuery:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedFragment1 =
+  late final _sel_percentEncodedFragment1 =
       _registerName1("percentEncodedFragment");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedFragment_1 =
+  late final _sel_setPercentEncodedFragment_1 =
       _registerName1("setPercentEncodedFragment:");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfScheme1 =
-      _registerName1("rangeOfScheme");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfUser1 =
-      _registerName1("rangeOfUser");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfPassword1 =
-      _registerName1("rangeOfPassword");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfHost1 =
-      _registerName1("rangeOfHost");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfPort1 =
-      _registerName1("rangeOfPort");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfPath1 =
-      _registerName1("rangeOfPath");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfQuery1 =
-      _registerName1("rangeOfQuery");
-  late final ffi.Pointer<ObjCSel> _sel_rangeOfFragment1 =
-      _registerName1("rangeOfFragment");
-  late final ffi.Pointer<ObjCSel> _sel_queryItems1 =
-      _registerName1("queryItems");
-  late final ffi.Pointer<ObjCSel> _sel_setQueryItems_1 =
-      _registerName1("setQueryItems:");
-  late final ffi.Pointer<ObjCSel> _sel_percentEncodedQueryItems1 =
+  late final _sel_rangeOfScheme1 = _registerName1("rangeOfScheme");
+  late final _sel_rangeOfUser1 = _registerName1("rangeOfUser");
+  late final _sel_rangeOfPassword1 = _registerName1("rangeOfPassword");
+  late final _sel_rangeOfHost1 = _registerName1("rangeOfHost");
+  late final _sel_rangeOfPort1 = _registerName1("rangeOfPort");
+  late final _sel_rangeOfPath1 = _registerName1("rangeOfPath");
+  late final _sel_rangeOfQuery1 = _registerName1("rangeOfQuery");
+  late final _sel_rangeOfFragment1 = _registerName1("rangeOfFragment");
+  late final _sel_queryItems1 = _registerName1("queryItems");
+  late final _sel_setQueryItems_1 = _registerName1("setQueryItems:");
+  late final _sel_percentEncodedQueryItems1 =
       _registerName1("percentEncodedQueryItems");
-  late final ffi.Pointer<ObjCSel> _sel_setPercentEncodedQueryItems_1 =
+  late final _sel_setPercentEncodedQueryItems_1 =
       _registerName1("setPercentEncodedQueryItems:");
-  late final ffi.Pointer<ObjCObject> _class_NSFileSecurity1 =
-      _getClass1("NSFileSecurity");
+  late final _class_NSFileSecurity1 = _getClass1("NSFileSecurity");
   ffi.Pointer<ObjCObject> NSStringFromSelector6(
     ffi.Pointer<ObjCSel> aSelector,
   ) {
@@ -40222,10 +39806,8 @@ class NativeLibrary {
   late final _NSExtraRefCount7 =
       _NSExtraRefCount7Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSURLResponse1 =
-      _getClass1("NSURLResponse");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithURL_MIMEType_expectedContentLength_textEncodingName_1 =
+  late final _class_NSURLResponse1 = _getClass1("NSURLResponse");
+  late final _sel_initWithURL_MIMEType_expectedContentLength_textEncodingName_1 =
       _registerName1(
           "initWithURL:MIMEType:expectedContentLength:textEncodingName:");
   instancetype _objc_msgSend_289(
@@ -40264,17 +39846,13 @@ class NativeLibrary {
           int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_MIMEType1 = _registerName1("MIMEType");
-  late final ffi.Pointer<ObjCSel> _sel_expectedContentLength1 =
+  late final _sel_MIMEType1 = _registerName1("MIMEType");
+  late final _sel_expectedContentLength1 =
       _registerName1("expectedContentLength");
-  late final ffi.Pointer<ObjCSel> _sel_textEncodingName1 =
-      _registerName1("textEncodingName");
-  late final ffi.Pointer<ObjCSel> _sel_suggestedFilename1 =
-      _registerName1("suggestedFilename");
-  late final ffi.Pointer<ObjCObject> _class_NSHTTPURLResponse1 =
-      _getClass1("NSHTTPURLResponse");
-  late final ffi.Pointer<ObjCSel>
-      _sel_initWithURL_statusCode_HTTPVersion_headerFields_1 =
+  late final _sel_textEncodingName1 = _registerName1("textEncodingName");
+  late final _sel_suggestedFilename1 = _registerName1("suggestedFilename");
+  late final _class_NSHTTPURLResponse1 = _getClass1("NSHTTPURLResponse");
+  late final _sel_initWithURL_statusCode_HTTPVersion_headerFields_1 =
       _registerName1("initWithURL:statusCode:HTTPVersion:headerFields:");
   instancetype _objc_msgSend_290(
     ffi.Pointer<ObjCObject> obj,
@@ -40312,11 +39890,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_statusCode1 =
-      _registerName1("statusCode");
-  late final ffi.Pointer<ObjCSel> _sel_allHeaderFields1 =
-      _registerName1("allHeaderFields");
-  late final ffi.Pointer<ObjCSel> _sel_localizedStringForStatusCode_1 =
+  late final _sel_statusCode1 = _registerName1("statusCode");
+  late final _sel_allHeaderFields1 = _registerName1("allHeaderFields");
+  late final _sel_localizedStringForStatusCode_1 =
       _registerName1("localizedStringForStatusCode:");
   ffi.Pointer<ObjCObject> _objc_msgSend_291(
     ffi.Pointer<ObjCObject> obj,
@@ -42292,9 +41868,8 @@ class NativeLibrary {
   set NSInconsistentArchiveException(NSExceptionName value) =>
       _NSInconsistentArchiveException.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSException1 =
-      _getClass1("NSException");
-  late final ffi.Pointer<ObjCSel> _sel_exceptionWithName_reason_userInfo_1 =
+  late final _class_NSException1 = _getClass1("NSException");
+  late final _sel_exceptionWithName_reason_userInfo_1 =
       _registerName1("exceptionWithName:reason:userInfo:");
   ffi.Pointer<ObjCObject> _objc_msgSend_292(
     ffi.Pointer<ObjCObject> obj,
@@ -42328,17 +41903,15 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithName_reason_userInfo_1 =
+  late final _sel_initWithName_reason_userInfo_1 =
       _registerName1("initWithName:reason:userInfo:");
-  late final ffi.Pointer<ObjCSel> _sel_reason1 = _registerName1("reason");
-  late final ffi.Pointer<ObjCSel> _sel_callStackReturnAddresses1 =
+  late final _sel_reason1 = _registerName1("reason");
+  late final _sel_callStackReturnAddresses1 =
       _registerName1("callStackReturnAddresses");
-  late final ffi.Pointer<ObjCSel> _sel_callStackSymbols1 =
-      _registerName1("callStackSymbols");
-  late final ffi.Pointer<ObjCSel> _sel_raise1 = _registerName1("raise");
-  late final ffi.Pointer<ObjCSel> _sel_raise_format_1 =
-      _registerName1("raise:format:");
-  late final ffi.Pointer<ObjCSel> _sel_raise_format_arguments_1 =
+  late final _sel_callStackSymbols1 = _registerName1("callStackSymbols");
+  late final _sel_raise1 = _registerName1("raise");
+  late final _sel_raise_format_1 = _registerName1("raise:format:");
+  late final _sel_raise_format_arguments_1 =
       _registerName1("raise:format:arguments:");
   void _objc_msgSend_293(
     ffi.Pointer<ObjCObject> obj,
@@ -42403,12 +41976,9 @@ class NativeLibrary {
   set NSAssertionHandlerKey(ffi.Pointer<ObjCObject> value) =>
       _NSAssertionHandlerKey.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSAssertionHandler1 =
-      _getClass1("NSAssertionHandler");
-  late final ffi.Pointer<ObjCSel> _sel_currentHandler1 =
-      _registerName1("currentHandler");
-  late final ffi.Pointer<ObjCSel>
-      _sel_handleFailureInMethod_object_file_lineNumber_description_1 =
+  late final _class_NSAssertionHandler1 = _getClass1("NSAssertionHandler");
+  late final _sel_currentHandler1 = _registerName1("currentHandler");
+  late final _sel_handleFailureInMethod_object_file_lineNumber_description_1 =
       _registerName1(
           "handleFailureInMethod:object:file:lineNumber:description:");
   void _objc_msgSend_294(
@@ -42451,8 +42021,7 @@ class NativeLibrary {
           int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel>
-      _sel_handleFailureInFunction_file_lineNumber_description_1 =
+  late final _sel_handleFailureInFunction_file_lineNumber_description_1 =
       _registerName1("handleFailureInFunction:file:lineNumber:description:");
   void _objc_msgSend_295(
     ffi.Pointer<ObjCObject> obj,
@@ -42490,25 +42059,17 @@ class NativeLibrary {
           int,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_NSOperation1 =
-      _getClass1("NSOperation");
-  late final ffi.Pointer<ObjCSel> _sel_start1 = _registerName1("start");
-  late final ffi.Pointer<ObjCSel> _sel_main1 = _registerName1("main");
-  late final ffi.Pointer<ObjCSel> _sel_isExecuting1 =
-      _registerName1("isExecuting");
-  late final ffi.Pointer<ObjCSel> _sel_isConcurrent1 =
-      _registerName1("isConcurrent");
-  late final ffi.Pointer<ObjCSel> _sel_isAsynchronous1 =
-      _registerName1("isAsynchronous");
-  late final ffi.Pointer<ObjCSel> _sel_isReady1 = _registerName1("isReady");
-  late final ffi.Pointer<ObjCSel> _sel_addDependency_1 =
-      _registerName1("addDependency:");
-  late final ffi.Pointer<ObjCSel> _sel_removeDependency_1 =
-      _registerName1("removeDependency:");
-  late final ffi.Pointer<ObjCSel> _sel_dependencies1 =
-      _registerName1("dependencies");
-  late final ffi.Pointer<ObjCSel> _sel_queuePriority1 =
-      _registerName1("queuePriority");
+  late final _class_NSOperation1 = _getClass1("NSOperation");
+  late final _sel_start1 = _registerName1("start");
+  late final _sel_main1 = _registerName1("main");
+  late final _sel_isExecuting1 = _registerName1("isExecuting");
+  late final _sel_isConcurrent1 = _registerName1("isConcurrent");
+  late final _sel_isAsynchronous1 = _registerName1("isAsynchronous");
+  late final _sel_isReady1 = _registerName1("isReady");
+  late final _sel_addDependency_1 = _registerName1("addDependency:");
+  late final _sel_removeDependency_1 = _registerName1("removeDependency:");
+  late final _sel_dependencies1 = _registerName1("dependencies");
+  late final _sel_queuePriority1 = _registerName1("queuePriority");
   int _objc_msgSend_296(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -42526,8 +42087,7 @@ class NativeLibrary {
   late final __objc_msgSend_296 = __objc_msgSend_296Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setQueuePriority_1 =
-      _registerName1("setQueuePriority:");
+  late final _sel_setQueuePriority_1 = _registerName1("setQueuePriority:");
   void _objc_msgSend_297(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -42547,18 +42107,12 @@ class NativeLibrary {
   late final __objc_msgSend_297 = __objc_msgSend_297Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_completionBlock1 =
-      _registerName1("completionBlock");
-  late final ffi.Pointer<ObjCSel> _sel_setCompletionBlock_1 =
-      _registerName1("setCompletionBlock:");
-  late final ffi.Pointer<ObjCSel> _sel_waitUntilFinished1 =
-      _registerName1("waitUntilFinished");
-  late final ffi.Pointer<ObjCSel> _sel_threadPriority1 =
-      _registerName1("threadPriority");
-  late final ffi.Pointer<ObjCSel> _sel_setThreadPriority_1 =
-      _registerName1("setThreadPriority:");
-  late final ffi.Pointer<ObjCSel> _sel_qualityOfService1 =
-      _registerName1("qualityOfService");
+  late final _sel_completionBlock1 = _registerName1("completionBlock");
+  late final _sel_setCompletionBlock_1 = _registerName1("setCompletionBlock:");
+  late final _sel_waitUntilFinished1 = _registerName1("waitUntilFinished");
+  late final _sel_threadPriority1 = _registerName1("threadPriority");
+  late final _sel_setThreadPriority_1 = _registerName1("setThreadPriority:");
+  late final _sel_qualityOfService1 = _registerName1("qualityOfService");
   int _objc_msgSend_298(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -42576,7 +42130,7 @@ class NativeLibrary {
   late final __objc_msgSend_298 = __objc_msgSend_298Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setQualityOfService_1 =
+  late final _sel_setQualityOfService_1 =
       _registerName1("setQualityOfService:");
   void _objc_msgSend_299(
     ffi.Pointer<ObjCObject> obj,
@@ -42597,10 +42151,9 @@ class NativeLibrary {
   late final __objc_msgSend_299 = __objc_msgSend_299Ptr.asFunction<
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_setName_1 = _registerName1("setName:");
-  late final ffi.Pointer<ObjCObject> _class_NSBlockOperation1 =
-      _getClass1("NSBlockOperation");
-  late final ffi.Pointer<ObjCSel> _sel_blockOperationWithBlock_1 =
+  late final _sel_setName_1 = _registerName1("setName:");
+  late final _class_NSBlockOperation1 = _getClass1("NSBlockOperation");
+  late final _sel_blockOperationWithBlock_1 =
       _registerName1("blockOperationWithBlock:");
   instancetype _objc_msgSend_300(
     ffi.Pointer<ObjCObject> obj,
@@ -42622,13 +42175,11 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_addExecutionBlock_1 =
-      _registerName1("addExecutionBlock:");
-  late final ffi.Pointer<ObjCSel> _sel_executionBlocks1 =
-      _registerName1("executionBlocks");
-  late final ffi.Pointer<ObjCObject> _class_NSInvocationOperation1 =
+  late final _sel_addExecutionBlock_1 = _registerName1("addExecutionBlock:");
+  late final _sel_executionBlocks1 = _registerName1("executionBlocks");
+  late final _class_NSInvocationOperation1 =
       _getClass1("NSInvocationOperation");
-  late final ffi.Pointer<ObjCSel> _sel_initWithTarget_selector_object_1 =
+  late final _sel_initWithTarget_selector_object_1 =
       _registerName1("initWithTarget:selector:object:");
   instancetype _objc_msgSend_301(
     ffi.Pointer<ObjCObject> obj,
@@ -42662,11 +42213,9 @@ class NativeLibrary {
           ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_initWithInvocation_1 =
-      _registerName1("initWithInvocation:");
-  late final ffi.Pointer<ObjCSel> _sel_invocation1 =
-      _registerName1("invocation");
-  late final ffi.Pointer<ObjCSel> _sel_result1 = _registerName1("result");
+  late final _sel_initWithInvocation_1 = _registerName1("initWithInvocation:");
+  late final _sel_invocation1 = _registerName1("invocation");
+  late final _sel_result1 = _registerName1("result");
   late final ffi.Pointer<NSExceptionName>
       _NSInvocationOperationVoidResultException =
       _lookup<NSExceptionName>('NSInvocationOperationVoidResultException');
@@ -42697,39 +42246,28 @@ class NativeLibrary {
   set NSOperationQueueDefaultMaxConcurrentOperationCount(int value) =>
       _NSOperationQueueDefaultMaxConcurrentOperationCount.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSOperationQueue1 =
-      _getClass1("NSOperationQueue");
-  late final ffi.Pointer<ObjCSel> _sel_addOperation_1 =
-      _registerName1("addOperation:");
-  late final ffi.Pointer<ObjCSel> _sel_addOperations_waitUntilFinished_1 =
+  late final _class_NSOperationQueue1 = _getClass1("NSOperationQueue");
+  late final _sel_addOperation_1 = _registerName1("addOperation:");
+  late final _sel_addOperations_waitUntilFinished_1 =
       _registerName1("addOperations:waitUntilFinished:");
-  late final ffi.Pointer<ObjCSel> _sel_addOperationWithBlock_1 =
+  late final _sel_addOperationWithBlock_1 =
       _registerName1("addOperationWithBlock:");
-  late final ffi.Pointer<ObjCSel> _sel_addBarrierBlock_1 =
-      _registerName1("addBarrierBlock:");
-  late final ffi.Pointer<ObjCSel> _sel_maxConcurrentOperationCount1 =
+  late final _sel_addBarrierBlock_1 = _registerName1("addBarrierBlock:");
+  late final _sel_maxConcurrentOperationCount1 =
       _registerName1("maxConcurrentOperationCount");
-  late final ffi.Pointer<ObjCSel> _sel_setMaxConcurrentOperationCount_1 =
+  late final _sel_setMaxConcurrentOperationCount_1 =
       _registerName1("setMaxConcurrentOperationCount:");
-  late final ffi.Pointer<ObjCSel> _sel_isSuspended1 =
-      _registerName1("isSuspended");
-  late final ffi.Pointer<ObjCSel> _sel_setSuspended_1 =
-      _registerName1("setSuspended:");
-  late final ffi.Pointer<ObjCSel> _sel_underlyingQueue1 =
-      _registerName1("underlyingQueue");
-  late final ffi.Pointer<ObjCSel> _sel_setUnderlyingQueue_1 =
-      _registerName1("setUnderlyingQueue:");
-  late final ffi.Pointer<ObjCSel> _sel_cancelAllOperations1 =
-      _registerName1("cancelAllOperations");
-  late final ffi.Pointer<ObjCSel> _sel_waitUntilAllOperationsAreFinished1 =
+  late final _sel_isSuspended1 = _registerName1("isSuspended");
+  late final _sel_setSuspended_1 = _registerName1("setSuspended:");
+  late final _sel_underlyingQueue1 = _registerName1("underlyingQueue");
+  late final _sel_setUnderlyingQueue_1 = _registerName1("setUnderlyingQueue:");
+  late final _sel_cancelAllOperations1 = _registerName1("cancelAllOperations");
+  late final _sel_waitUntilAllOperationsAreFinished1 =
       _registerName1("waitUntilAllOperationsAreFinished");
-  late final ffi.Pointer<ObjCSel> _sel_currentQueue1 =
-      _registerName1("currentQueue");
-  late final ffi.Pointer<ObjCSel> _sel_mainQueue1 = _registerName1("mainQueue");
-  late final ffi.Pointer<ObjCSel> _sel_operations1 =
-      _registerName1("operations");
-  late final ffi.Pointer<ObjCSel> _sel_operationCount1 =
-      _registerName1("operationCount");
+  late final _sel_currentQueue1 = _registerName1("currentQueue");
+  late final _sel_mainQueue1 = _registerName1("mainQueue");
+  late final _sel_operations1 = _registerName1("operations");
+  late final _sel_operationCount1 = _registerName1("operationCount");
   ffi.Pointer<ObjCObject> NSStringFromSelector10(
     ffi.Pointer<ObjCSel> aSelector,
   ) {
@@ -43775,8 +43313,8 @@ class NativeLibrary {
   set NSFilePathErrorKey(NSErrorUserInfoKey value) =>
       _NSFilePathErrorKey.value = value;
 
-  late final ffi.Pointer<ObjCObject> _class_NSError1 = _getClass1("NSError");
-  late final ffi.Pointer<ObjCSel> _sel_initWithDomain_code_userInfo_1 =
+  late final _class_NSError1 = _getClass1("NSError");
+  late final _sel_initWithDomain_code_userInfo_1 =
       _registerName1("initWithDomain:code:userInfo:");
   instancetype _objc_msgSend_302(
     ffi.Pointer<ObjCObject> obj,
@@ -43806,24 +43344,20 @@ class NativeLibrary {
       instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           NSErrorDomain, int, ffi.Pointer<ObjCObject>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_errorWithDomain_code_userInfo_1 =
+  late final _sel_errorWithDomain_code_userInfo_1 =
       _registerName1("errorWithDomain:code:userInfo:");
-  late final ffi.Pointer<ObjCSel> _sel_domain1 = _registerName1("domain");
-  late final ffi.Pointer<ObjCSel> _sel_code1 = _registerName1("code");
-  late final ffi.Pointer<ObjCSel> _sel_localizedFailureReason1 =
+  late final _sel_domain1 = _registerName1("domain");
+  late final _sel_code1 = _registerName1("code");
+  late final _sel_localizedFailureReason1 =
       _registerName1("localizedFailureReason");
-  late final ffi.Pointer<ObjCSel> _sel_localizedRecoverySuggestion1 =
+  late final _sel_localizedRecoverySuggestion1 =
       _registerName1("localizedRecoverySuggestion");
-  late final ffi.Pointer<ObjCSel> _sel_localizedRecoveryOptions1 =
+  late final _sel_localizedRecoveryOptions1 =
       _registerName1("localizedRecoveryOptions");
-  late final ffi.Pointer<ObjCSel> _sel_recoveryAttempter1 =
-      _registerName1("recoveryAttempter");
-  late final ffi.Pointer<ObjCSel> _sel_helpAnchor1 =
-      _registerName1("helpAnchor");
-  late final ffi.Pointer<ObjCSel> _sel_underlyingErrors1 =
-      _registerName1("underlyingErrors");
-  late final ffi.Pointer<ObjCSel>
-      _sel_setUserInfoValueProviderForDomain_provider_1 =
+  late final _sel_recoveryAttempter1 = _registerName1("recoveryAttempter");
+  late final _sel_helpAnchor1 = _registerName1("helpAnchor");
+  late final _sel_underlyingErrors1 = _registerName1("underlyingErrors");
+  late final _sel_setUserInfoValueProviderForDomain_provider_1 =
       _registerName1("setUserInfoValueProviderForDomain:provider:");
   void _objc_msgSend_303(
     ffi.Pointer<ObjCObject> obj,
@@ -43847,7 +43381,7 @@ class NativeLibrary {
       void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           NSErrorDomain, ffi.Pointer<_ObjCBlock>)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_userInfoValueProviderForDomain_1 =
+  late final _sel_userInfoValueProviderForDomain_1 =
       _registerName1("userInfoValueProviderForDomain:");
   ffi.Pointer<ObjCObject> NSStringFromSelector11(
     ffi.Pointer<ObjCSel> aSelector,
@@ -69865,9 +69399,8 @@ class NativeLibrary {
   late final _SSLSetError1 =
       _SSLSetError1Ptr.asFunction<int Function(SSLContextRef, int)>();
 
-  late final ffi.Pointer<ObjCObject> _class_URLSessionHelper1 =
-      _getClass1("URLSessionHelper");
-  late final ffi.Pointer<ObjCSel> _sel_dataTaskForSession_withRequest_toPort_1 =
+  late final _class_URLSessionHelper1 = _getClass1("URLSessionHelper");
+  late final _sel_dataTaskForSession_withRequest_toPort_1 =
       _registerName1("dataTaskForSession:withRequest:toPort:");
   ffi.Pointer<ObjCObject> _objc_msgSend_304(
     ffi.Pointer<ObjCObject> obj,
@@ -69901,9 +69434,8 @@ class NativeLibrary {
           ffi.Pointer<ObjCObject>,
           int)>();
 
-  late final ffi.Pointer<ObjCObject> _class_TaskConfiguration1 =
-      _getClass1("TaskConfiguration");
-  late final ffi.Pointer<ObjCSel> _sel_initWithPort_maxRedirects_1 =
+  late final _class_TaskConfiguration1 = _getClass1("TaskConfiguration");
+  late final _sel_initWithPort_maxRedirects_1 =
       _registerName1("initWithPort:maxRedirects:");
   ffi.Pointer<ObjCObject> _objc_msgSend_305(
     ffi.Pointer<ObjCObject> obj,
@@ -69927,9 +69459,8 @@ class NativeLibrary {
       ffi.Pointer<ObjCObject> Function(
           ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int, int)>();
 
-  late final ffi.Pointer<ObjCSel> _sel_sendPort1 = _registerName1("sendPort");
-  late final ffi.Pointer<ObjCSel> _sel_maxRedirects1 =
-      _registerName1("maxRedirects");
+  late final _sel_sendPort1 = _registerName1("sendPort");
+  late final _sel_maxRedirects1 = _registerName1("maxRedirects");
   int _objc_msgSend_306(
     ffi.Pointer<ObjCObject> obj,
     ffi.Pointer<ObjCSel> sel,
@@ -69947,13 +69478,11 @@ class NativeLibrary {
   late final __objc_msgSend_306 = __objc_msgSend_306Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>)>();
 
-  late final ffi.Pointer<ObjCObject> _class_HttpClientDelegate1 =
-      _getClass1("HttpClientDelegate");
-  late final ffi.Pointer<ObjCSel> _sel_registerTask_withConfiguration_1 =
+  late final _class_HttpClientDelegate1 = _getClass1("HttpClientDelegate");
+  late final _sel_registerTask_withConfiguration_1 =
       _registerName1("registerTask:withConfiguration:");
-  late final ffi.Pointer<ObjCSel> _sel_unregisterTask_1 =
-      _registerName1("unregisterTask:");
-  late final ffi.Pointer<ObjCSel> _sel_getNumRedirectsForTask_1 =
+  late final _sel_unregisterTask_1 = _registerName1("unregisterTask:");
+  late final _sel_getNumRedirectsForTask_1 =
       _registerName1("getNumRedirectsForTask:");
   int _objc_msgSend_307(
     ffi.Pointer<ObjCObject> obj,
@@ -69974,6 +69503,6994 @@ class NativeLibrary {
   late final __objc_msgSend_307 = __objc_msgSend_307Ptr.asFunction<
       int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
           ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromSelector13(
+    ffi.Pointer<ObjCSel> aSelector,
+  ) {
+    return _NSStringFromSelector13(
+      aSelector,
+    );
+  }
+
+  late final _NSStringFromSelector13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCSel>)>>('NSStringFromSelector');
+  late final _NSStringFromSelector13 = _NSStringFromSelector13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCSel>)>();
+
+  ffi.Pointer<ObjCSel> NSSelectorFromString13(
+    ffi.Pointer<ObjCObject> aSelectorName,
+  ) {
+    return _NSSelectorFromString13(
+      aSelectorName,
+    );
+  }
+
+  late final _NSSelectorFromString13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCSel> Function(
+              ffi.Pointer<ObjCObject>)>>('NSSelectorFromString');
+  late final _NSSelectorFromString13 = _NSSelectorFromString13Ptr.asFunction<
+      ffi.Pointer<ObjCSel> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromClass13(
+    ffi.Pointer<ObjCObject> aClass,
+  ) {
+    return _NSStringFromClass13(
+      aClass,
+    );
+  }
+
+  late final _NSStringFromClass13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromClass');
+  late final _NSStringFromClass13 = _NSStringFromClass13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSClassFromString13(
+    ffi.Pointer<ObjCObject> aClassName,
+  ) {
+    return _NSClassFromString13(
+      aClassName,
+    );
+  }
+
+  late final _NSClassFromString13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSClassFromString');
+  late final _NSClassFromString13 = _NSClassFromString13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromProtocol13(
+    ffi.Pointer<ObjCObject> proto,
+  ) {
+    return _NSStringFromProtocol13(
+      proto,
+    );
+  }
+
+  late final _NSStringFromProtocol13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSStringFromProtocol');
+  late final _NSStringFromProtocol13 = _NSStringFromProtocol13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSProtocolFromString13(
+    ffi.Pointer<ObjCObject> namestr,
+  ) {
+    return _NSProtocolFromString13(
+      namestr,
+    );
+  }
+
+  late final _NSProtocolFromString13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(
+              ffi.Pointer<ObjCObject>)>>('NSProtocolFromString');
+  late final _NSProtocolFromString13 = _NSProtocolFromString13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ffi.Char> NSGetSizeAndAlignment13(
+    ffi.Pointer<ffi.Char> typePtr,
+    ffi.Pointer<NSUInteger> sizep,
+    ffi.Pointer<NSUInteger> alignp,
+  ) {
+    return _NSGetSizeAndAlignment13(
+      typePtr,
+      sizep,
+      alignp,
+    );
+  }
+
+  late final _NSGetSizeAndAlignment13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<NSUInteger>,
+              ffi.Pointer<NSUInteger>)>>('NSGetSizeAndAlignment');
+  late final _NSGetSizeAndAlignment13 = _NSGetSizeAndAlignment13Ptr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
+          ffi.Pointer<NSUInteger>, ffi.Pointer<NSUInteger>)>();
+
+  void NSLog13(
+    ffi.Pointer<ObjCObject> format,
+  ) {
+    return _NSLog13(
+      format,
+    );
+  }
+
+  late final _NSLog13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSLog');
+  late final _NSLog13 =
+      _NSLog13Ptr.asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  void NSLogv13(
+    ffi.Pointer<ObjCObject> format,
+    va_list args,
+  ) {
+    return _NSLogv13(
+      format,
+      args,
+    );
+  }
+
+  late final _NSLogv13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, va_list)>>('NSLogv');
+  late final _NSLogv13 = _NSLogv13Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>, va_list)>();
+
+  CFRange __CFRangeMake13(
+    int loc,
+    int len,
+  ) {
+    return ___CFRangeMake13(
+      loc,
+      len,
+    );
+  }
+
+  late final ___CFRangeMake13Ptr =
+      _lookup<ffi.NativeFunction<CFRange Function(CFIndex, CFIndex)>>(
+          '__CFRangeMake');
+  late final ___CFRangeMake13 =
+      ___CFRangeMake13Ptr.asFunction<CFRange Function(int, int)>();
+
+  int CFNullGetTypeID13() {
+    return _CFNullGetTypeID13();
+  }
+
+  late final _CFNullGetTypeID13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFNullGetTypeID');
+  late final _CFNullGetTypeID13 =
+      _CFNullGetTypeID13Ptr.asFunction<int Function()>();
+
+  int CFAllocatorGetTypeID13() {
+    return _CFAllocatorGetTypeID13();
+  }
+
+  late final _CFAllocatorGetTypeID13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function()>>('CFAllocatorGetTypeID');
+  late final _CFAllocatorGetTypeID13 =
+      _CFAllocatorGetTypeID13Ptr.asFunction<int Function()>();
+
+  void CFAllocatorSetDefault13(
+    CFAllocatorRef allocator,
+  ) {
+    return _CFAllocatorSetDefault13(
+      allocator,
+    );
+  }
+
+  late final _CFAllocatorSetDefault13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFAllocatorRef)>>(
+          'CFAllocatorSetDefault');
+  late final _CFAllocatorSetDefault13 =
+      _CFAllocatorSetDefault13Ptr.asFunction<void Function(CFAllocatorRef)>();
+
+  CFAllocatorRef CFAllocatorGetDefault13() {
+    return _CFAllocatorGetDefault13();
+  }
+
+  late final _CFAllocatorGetDefault13Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function()>>(
+          'CFAllocatorGetDefault');
+  late final _CFAllocatorGetDefault13 =
+      _CFAllocatorGetDefault13Ptr.asFunction<CFAllocatorRef Function()>();
+
+  CFAllocatorRef CFAllocatorCreate13(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorCreate13(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorCreate13Ptr = _lookup<
+      ffi.NativeFunction<
+          CFAllocatorRef Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorCreate');
+  late final _CFAllocatorCreate13 = _CFAllocatorCreate13Ptr.asFunction<
+      CFAllocatorRef Function(
+          CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorAllocate13(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorAllocate13(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorAllocate13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              CFAllocatorRef, CFIndex, CFOptionFlags)>>('CFAllocatorAllocate');
+  late final _CFAllocatorAllocate13 = _CFAllocatorAllocate13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(CFAllocatorRef, int, int)>();
+
+  ffi.Pointer<ffi.Void> CFAllocatorReallocate13(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+    int newsize,
+    int hint,
+  ) {
+    return _CFAllocatorReallocate13(
+      allocator,
+      ptr,
+      newsize,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorReallocate13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(CFAllocatorRef, ffi.Pointer<ffi.Void>,
+              CFIndex, CFOptionFlags)>>('CFAllocatorReallocate');
+  late final _CFAllocatorReallocate13 = _CFAllocatorReallocate13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          CFAllocatorRef, ffi.Pointer<ffi.Void>, int, int)>();
+
+  void CFAllocatorDeallocate13(
+    CFAllocatorRef allocator,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _CFAllocatorDeallocate13(
+      allocator,
+      ptr,
+    );
+  }
+
+  late final _CFAllocatorDeallocate13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              CFAllocatorRef, ffi.Pointer<ffi.Void>)>>('CFAllocatorDeallocate');
+  late final _CFAllocatorDeallocate13 = _CFAllocatorDeallocate13Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<ffi.Void>)>();
+
+  int CFAllocatorGetPreferredSizeForSize13(
+    CFAllocatorRef allocator,
+    int size,
+    int hint,
+  ) {
+    return _CFAllocatorGetPreferredSizeForSize13(
+      allocator,
+      size,
+      hint,
+    );
+  }
+
+  late final _CFAllocatorGetPreferredSizeForSize13Ptr = _lookup<
+      ffi.NativeFunction<
+          CFIndex Function(CFAllocatorRef, CFIndex,
+              CFOptionFlags)>>('CFAllocatorGetPreferredSizeForSize');
+  late final _CFAllocatorGetPreferredSizeForSize13 =
+      _CFAllocatorGetPreferredSizeForSize13Ptr.asFunction<
+          int Function(CFAllocatorRef, int, int)>();
+
+  void CFAllocatorGetContext13(
+    CFAllocatorRef allocator,
+    ffi.Pointer<CFAllocatorContext> context,
+  ) {
+    return _CFAllocatorGetContext13(
+      allocator,
+      context,
+    );
+  }
+
+  late final _CFAllocatorGetContext13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(CFAllocatorRef,
+              ffi.Pointer<CFAllocatorContext>)>>('CFAllocatorGetContext');
+  late final _CFAllocatorGetContext13 = _CFAllocatorGetContext13Ptr.asFunction<
+      void Function(CFAllocatorRef, ffi.Pointer<CFAllocatorContext>)>();
+
+  int CFGetTypeID13(
+    CFTypeRef cf,
+  ) {
+    return _CFGetTypeID13(
+      cf,
+    );
+  }
+
+  late final _CFGetTypeID13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeID Function(CFTypeRef)>>('CFGetTypeID');
+  late final _CFGetTypeID13 =
+      _CFGetTypeID13Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyTypeIDDescription13(
+    int type_id,
+  ) {
+    return _CFCopyTypeIDDescription13(
+      type_id,
+    );
+  }
+
+  late final _CFCopyTypeIDDescription13Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeID)>>(
+          'CFCopyTypeIDDescription');
+  late final _CFCopyTypeIDDescription13 =
+      _CFCopyTypeIDDescription13Ptr.asFunction<CFStringRef Function(int)>();
+
+  CFTypeRef CFRetain13(
+    CFTypeRef cf,
+  ) {
+    return _CFRetain13(
+      cf,
+    );
+  }
+
+  late final _CFRetain13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>('CFRetain');
+  late final _CFRetain13 =
+      _CFRetain13Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  void CFRelease13(
+    CFTypeRef cf,
+  ) {
+    return _CFRelease13(
+      cf,
+    );
+  }
+
+  late final _CFRelease13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(CFTypeRef)>>('CFRelease');
+  late final _CFRelease13 =
+      _CFRelease13Ptr.asFunction<void Function(CFTypeRef)>();
+
+  CFTypeRef CFAutorelease13(
+    CFTypeRef arg,
+  ) {
+    return _CFAutorelease13(
+      arg,
+    );
+  }
+
+  late final _CFAutorelease13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFAutorelease');
+  late final _CFAutorelease13 =
+      _CFAutorelease13Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  int CFGetRetainCount13(
+    CFTypeRef cf,
+  ) {
+    return _CFGetRetainCount13(
+      cf,
+    );
+  }
+
+  late final _CFGetRetainCount13Ptr =
+      _lookup<ffi.NativeFunction<CFIndex Function(CFTypeRef)>>(
+          'CFGetRetainCount');
+  late final _CFGetRetainCount13 =
+      _CFGetRetainCount13Ptr.asFunction<int Function(CFTypeRef)>();
+
+  int CFEqual13(
+    CFTypeRef cf1,
+    CFTypeRef cf2,
+  ) {
+    return _CFEqual13(
+      cf1,
+      cf2,
+    );
+  }
+
+  late final _CFEqual13Ptr =
+      _lookup<ffi.NativeFunction<Boolean Function(CFTypeRef, CFTypeRef)>>(
+          'CFEqual');
+  late final _CFEqual13 =
+      _CFEqual13Ptr.asFunction<int Function(CFTypeRef, CFTypeRef)>();
+
+  int CFHash13(
+    CFTypeRef cf,
+  ) {
+    return _CFHash13(
+      cf,
+    );
+  }
+
+  late final _CFHash13Ptr =
+      _lookup<ffi.NativeFunction<CFHashCode Function(CFTypeRef)>>('CFHash');
+  late final _CFHash13 = _CFHash13Ptr.asFunction<int Function(CFTypeRef)>();
+
+  CFStringRef CFCopyDescription13(
+    CFTypeRef cf,
+  ) {
+    return _CFCopyDescription13(
+      cf,
+    );
+  }
+
+  late final _CFCopyDescription13Ptr =
+      _lookup<ffi.NativeFunction<CFStringRef Function(CFTypeRef)>>(
+          'CFCopyDescription');
+  late final _CFCopyDescription13 =
+      _CFCopyDescription13Ptr.asFunction<CFStringRef Function(CFTypeRef)>();
+
+  CFAllocatorRef CFGetAllocator13(
+    CFTypeRef cf,
+  ) {
+    return _CFGetAllocator13(
+      cf,
+    );
+  }
+
+  late final _CFGetAllocator13Ptr =
+      _lookup<ffi.NativeFunction<CFAllocatorRef Function(CFTypeRef)>>(
+          'CFGetAllocator');
+  late final _CFGetAllocator13 =
+      _CFGetAllocator13Ptr.asFunction<CFAllocatorRef Function(CFTypeRef)>();
+
+  CFTypeRef CFMakeCollectable13(
+    CFTypeRef cf,
+  ) {
+    return _CFMakeCollectable13(
+      cf,
+    );
+  }
+
+  late final _CFMakeCollectable13Ptr =
+      _lookup<ffi.NativeFunction<CFTypeRef Function(CFTypeRef)>>(
+          'CFMakeCollectable');
+  late final _CFMakeCollectable13 =
+      _CFMakeCollectable13Ptr.asFunction<CFTypeRef Function(CFTypeRef)>();
+
+  ffi.Pointer<NSZone> NSDefaultMallocZone13() {
+    return _NSDefaultMallocZone13();
+  }
+
+  late final _NSDefaultMallocZone13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<NSZone> Function()>>(
+          'NSDefaultMallocZone');
+  late final _NSDefaultMallocZone13 =
+      _NSDefaultMallocZone13Ptr.asFunction<ffi.Pointer<NSZone> Function()>();
+
+  ffi.Pointer<NSZone> NSCreateZone13(
+    int startSize,
+    int granularity,
+    bool canFree,
+  ) {
+    return _NSCreateZone13(
+      startSize,
+      granularity,
+      canFree ? 1 : 0,
+    );
+  }
+
+  late final _NSCreateZone13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              NSUInteger, NSUInteger, ffi.Uint8)>>('NSCreateZone');
+  late final _NSCreateZone13 = _NSCreateZone13Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(int, int, int)>();
+
+  void NSRecycleZone13(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSRecycleZone13(
+      zone,
+    );
+  }
+
+  late final _NSRecycleZone13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<NSZone>)>>(
+          'NSRecycleZone');
+  late final _NSRecycleZone13 =
+      _NSRecycleZone13Ptr.asFunction<void Function(ffi.Pointer<NSZone>)>();
+
+  void NSSetZoneName13(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ObjCObject> name,
+  ) {
+    return _NSSetZoneName13(
+      zone,
+      name,
+    );
+  }
+
+  late final _NSSetZoneName13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>>('NSSetZoneName');
+  late final _NSSetZoneName13 = _NSSetZoneName13Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSZoneName13(
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSZoneName13(
+      zone,
+    );
+  }
+
+  late final _NSZoneName13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>>('NSZoneName');
+  late final _NSZoneName13 = _NSZoneName13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(ffi.Pointer<NSZone>)>();
+
+  ffi.Pointer<NSZone> NSZoneFromPointer13(
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFromPointer13(
+      ptr,
+    );
+  }
+
+  late final _NSZoneFromPointer13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSZone> Function(
+              ffi.Pointer<ffi.Void>)>>('NSZoneFromPointer');
+  late final _NSZoneFromPointer13 = _NSZoneFromPointer13Ptr.asFunction<
+      ffi.Pointer<NSZone> Function(ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSZoneMalloc13(
+    ffi.Pointer<NSZone> zone,
+    int size,
+  ) {
+    return _NSZoneMalloc13(
+      zone,
+      size,
+    );
+  }
+
+  late final _NSZoneMalloc13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger)>>('NSZoneMalloc');
+  late final _NSZoneMalloc13 = _NSZoneMalloc13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneCalloc13(
+    ffi.Pointer<NSZone> zone,
+    int numElems,
+    int byteSize,
+  ) {
+    return _NSZoneCalloc13(
+      zone,
+      numElems,
+      byteSize,
+    );
+  }
+
+  late final _NSZoneCalloc13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<NSZone>, NSUInteger, NSUInteger)>>('NSZoneCalloc');
+  late final _NSZoneCalloc13 = _NSZoneCalloc13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>, int, int)>();
+
+  ffi.Pointer<ffi.Void> NSZoneRealloc13(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+  ) {
+    return _NSZoneRealloc13(
+      zone,
+      ptr,
+      size,
+    );
+  }
+
+  late final _NSZoneRealloc13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<NSZone>,
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSZoneRealloc');
+  late final _NSZoneRealloc13 = _NSZoneRealloc13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(
+          ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>, int)>();
+
+  void NSZoneFree13(
+    ffi.Pointer<NSZone> zone,
+    ffi.Pointer<ffi.Void> ptr,
+  ) {
+    return _NSZoneFree13(
+      zone,
+      ptr,
+    );
+  }
+
+  late final _NSZoneFree13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>>('NSZoneFree');
+  late final _NSZoneFree13 = _NSZoneFree13Ptr.asFunction<
+      void Function(ffi.Pointer<NSZone>, ffi.Pointer<ffi.Void>)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateCollectable13(
+    int size,
+    int options,
+  ) {
+    return _NSAllocateCollectable13(
+      size,
+      options,
+    );
+  }
+
+  late final _NSAllocateCollectable13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              NSUInteger, NSUInteger)>>('NSAllocateCollectable');
+  late final _NSAllocateCollectable13 = _NSAllocateCollectable13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int, int)>();
+
+  ffi.Pointer<ffi.Void> NSReallocateCollectable13(
+    ffi.Pointer<ffi.Void> ptr,
+    int size,
+    int options,
+  ) {
+    return _NSReallocateCollectable13(
+      ptr,
+      size,
+      options,
+    );
+  }
+
+  late final _NSReallocateCollectable13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, NSUInteger,
+              NSUInteger)>>('NSReallocateCollectable');
+  late final _NSReallocateCollectable13 =
+      _NSReallocateCollectable13Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, int, int)>();
+
+  int NSPageSize13() {
+    return _NSPageSize13();
+  }
+
+  late final _NSPageSize13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSPageSize');
+  late final _NSPageSize13 = _NSPageSize13Ptr.asFunction<int Function()>();
+
+  int NSLogPageSize13() {
+    return _NSLogPageSize13();
+  }
+
+  late final _NSLogPageSize13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>('NSLogPageSize');
+  late final _NSLogPageSize13 =
+      _NSLogPageSize13Ptr.asFunction<int Function()>();
+
+  int NSRoundUpToMultipleOfPageSize13(
+    int bytes,
+  ) {
+    return _NSRoundUpToMultipleOfPageSize13(
+      bytes,
+    );
+  }
+
+  late final _NSRoundUpToMultipleOfPageSize13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundUpToMultipleOfPageSize');
+  late final _NSRoundUpToMultipleOfPageSize13 =
+      _NSRoundUpToMultipleOfPageSize13Ptr.asFunction<int Function(int)>();
+
+  int NSRoundDownToMultipleOfPageSize13(
+    int bytes,
+  ) {
+    return _NSRoundDownToMultipleOfPageSize13(
+      bytes,
+    );
+  }
+
+  late final _NSRoundDownToMultipleOfPageSize13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(NSUInteger)>>(
+          'NSRoundDownToMultipleOfPageSize');
+  late final _NSRoundDownToMultipleOfPageSize13 =
+      _NSRoundDownToMultipleOfPageSize13Ptr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Void> NSAllocateMemoryPages13(
+    int bytes,
+  ) {
+    return _NSAllocateMemoryPages13(
+      bytes,
+    );
+  }
+
+  late final _NSAllocateMemoryPages13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(NSUInteger)>>(
+          'NSAllocateMemoryPages');
+  late final _NSAllocateMemoryPages13 = _NSAllocateMemoryPages13Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(int)>();
+
+  void NSDeallocateMemoryPages13(
+    ffi.Pointer<ffi.Void> ptr,
+    int bytes,
+  ) {
+    return _NSDeallocateMemoryPages13(
+      ptr,
+      bytes,
+    );
+  }
+
+  late final _NSDeallocateMemoryPages13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<ffi.Void>, NSUInteger)>>('NSDeallocateMemoryPages');
+  late final _NSDeallocateMemoryPages13 = _NSDeallocateMemoryPages13Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, int)>();
+
+  void NSCopyMemoryPages13(
+    ffi.Pointer<ffi.Void> source,
+    ffi.Pointer<ffi.Void> dest,
+    int bytes,
+  ) {
+    return _NSCopyMemoryPages13(
+      source,
+      dest,
+      bytes,
+    );
+  }
+
+  late final _NSCopyMemoryPages13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+              NSUInteger)>>('NSCopyMemoryPages');
+  late final _NSCopyMemoryPages13 = _NSCopyMemoryPages13Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
+
+  int NSRealMemoryAvailable13() {
+    return _NSRealMemoryAvailable13();
+  }
+
+  late final _NSRealMemoryAvailable13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function()>>(
+          'NSRealMemoryAvailable');
+  late final _NSRealMemoryAvailable13 =
+      _NSRealMemoryAvailable13Ptr.asFunction<int Function()>();
+
+  ffi.Pointer<ObjCObject> NSAllocateObject13(
+    ffi.Pointer<ObjCObject> aClass,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSAllocateObject13(
+      aClass,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSAllocateObject13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSAllocateObject');
+  late final _NSAllocateObject13 = _NSAllocateObject13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  void NSDeallocateObject13(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDeallocateObject13(
+      object,
+    );
+  }
+
+  late final _NSDeallocateObject13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDeallocateObject');
+  late final _NSDeallocateObject13 = _NSDeallocateObject13Ptr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<ObjCObject> NSCopyObject13(
+    ffi.Pointer<ObjCObject> object,
+    int extraBytes,
+    ffi.Pointer<NSZone> zone,
+  ) {
+    return _NSCopyObject13(
+      object,
+      extraBytes,
+      zone,
+    );
+  }
+
+  late final _NSCopyObject13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ObjCObject> Function(ffi.Pointer<ObjCObject>, NSUInteger,
+              ffi.Pointer<NSZone>)>>('NSCopyObject');
+  late final _NSCopyObject13 = _NSCopyObject13Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(
+          ffi.Pointer<ObjCObject>, int, ffi.Pointer<NSZone>)>();
+
+  bool NSShouldRetainWithZone13(
+    ffi.Pointer<ObjCObject> anObject,
+    ffi.Pointer<NSZone> requestedZone,
+  ) {
+    return _NSShouldRetainWithZone13(
+          anObject,
+          requestedZone,
+        ) !=
+        0;
+  }
+
+  late final _NSShouldRetainWithZone13Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Pointer<ObjCObject>,
+              ffi.Pointer<NSZone>)>>('NSShouldRetainWithZone');
+  late final _NSShouldRetainWithZone13 = _NSShouldRetainWithZone13Ptr
+      .asFunction<int Function(ffi.Pointer<ObjCObject>, ffi.Pointer<NSZone>)>();
+
+  void NSIncrementExtraRefCount13(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSIncrementExtraRefCount13(
+      object,
+    );
+  }
+
+  late final _NSIncrementExtraRefCount13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>>(
+          'NSIncrementExtraRefCount');
+  late final _NSIncrementExtraRefCount13 = _NSIncrementExtraRefCount13Ptr
+      .asFunction<void Function(ffi.Pointer<ObjCObject>)>();
+
+  bool NSDecrementExtraRefCountWasZero13(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSDecrementExtraRefCountWasZero13(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _NSDecrementExtraRefCountWasZero13Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ObjCObject>)>>(
+          'NSDecrementExtraRefCountWasZero');
+  late final _NSDecrementExtraRefCountWasZero13 =
+      _NSDecrementExtraRefCountWasZero13Ptr.asFunction<
+          int Function(ffi.Pointer<ObjCObject>)>();
+
+  int NSExtraRefCount13(
+    ffi.Pointer<ObjCObject> object,
+  ) {
+    return _NSExtraRefCount13(
+      object,
+    );
+  }
+
+  late final _NSExtraRefCount13Ptr =
+      _lookup<ffi.NativeFunction<NSUInteger Function(ffi.Pointer<ObjCObject>)>>(
+          'NSExtraRefCount');
+  late final _NSExtraRefCount13 =
+      _NSExtraRefCount13Ptr.asFunction<int Function(ffi.Pointer<ObjCObject>)>();
+
+  NSRange NSUnionRange4(
+    NSRange range1,
+    NSRange range2,
+  ) {
+    return _NSUnionRange4(
+      range1,
+      range2,
+    );
+  }
+
+  late final _NSUnionRange4Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(NSRange, NSRange)>>(
+          'NSUnionRange');
+  late final _NSUnionRange4 =
+      _NSUnionRange4Ptr.asFunction<NSRange Function(NSRange, NSRange)>();
+
+  NSRange NSIntersectionRange4(
+    NSRange range1,
+    NSRange range2,
+  ) {
+    return _NSIntersectionRange4(
+      range1,
+      range2,
+    );
+  }
+
+  late final _NSIntersectionRange4Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(NSRange, NSRange)>>(
+          'NSIntersectionRange');
+  late final _NSIntersectionRange4 =
+      _NSIntersectionRange4Ptr.asFunction<NSRange Function(NSRange, NSRange)>();
+
+  ffi.Pointer<ObjCObject> NSStringFromRange4(
+    NSRange range,
+  ) {
+    return _NSStringFromRange4(
+      range,
+    );
+  }
+
+  late final _NSStringFromRange4Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ObjCObject> Function(NSRange)>>(
+          'NSStringFromRange');
+  late final _NSStringFromRange4 = _NSStringFromRange4Ptr.asFunction<
+      ffi.Pointer<ObjCObject> Function(NSRange)>();
+
+  NSRange NSRangeFromString4(
+    ffi.Pointer<ObjCObject> aString,
+  ) {
+    return _NSRangeFromString4(
+      aString,
+    );
+  }
+
+  late final _NSRangeFromString4Ptr =
+      _lookup<ffi.NativeFunction<NSRange Function(ffi.Pointer<ObjCObject>)>>(
+          'NSRangeFromString');
+  late final _NSRangeFromString4 = _NSRangeFromString4Ptr.asFunction<
+      NSRange Function(ffi.Pointer<ObjCObject>)>();
+
+  ffi.Pointer<NSUncaughtExceptionHandler> NSGetUncaughtExceptionHandler1() {
+    return _NSGetUncaughtExceptionHandler1();
+  }
+
+  late final _NSGetUncaughtExceptionHandler1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<NSUncaughtExceptionHandler>
+              Function()>>('NSGetUncaughtExceptionHandler');
+  late final _NSGetUncaughtExceptionHandler1 =
+      _NSGetUncaughtExceptionHandler1Ptr.asFunction<
+          ffi.Pointer<NSUncaughtExceptionHandler> Function()>();
+
+  void NSSetUncaughtExceptionHandler1(
+    ffi.Pointer<NSUncaughtExceptionHandler> arg0,
+  ) {
+    return _NSSetUncaughtExceptionHandler1(
+      arg0,
+    );
+  }
+
+  late final _NSSetUncaughtExceptionHandler1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<NSUncaughtExceptionHandler>)>>(
+      'NSSetUncaughtExceptionHandler');
+  late final _NSSetUncaughtExceptionHandler1 =
+      _NSSetUncaughtExceptionHandler1Ptr.asFunction<
+          void Function(ffi.Pointer<NSUncaughtExceptionHandler>)>();
+
+  late final ffi.Pointer<NSInteger>
+      _NSOperationQueueDefaultMaxConcurrentOperationCount1 =
+      _lookup<NSInteger>('NSOperationQueueDefaultMaxConcurrentOperationCount');
+
+  int get NSOperationQueueDefaultMaxConcurrentOperationCount1 =>
+      _NSOperationQueueDefaultMaxConcurrentOperationCount1.value;
+
+  set NSOperationQueueDefaultMaxConcurrentOperationCount1(int value) =>
+      _NSOperationQueueDefaultMaxConcurrentOperationCount1.value = value;
+
+  /// Is this an error handle?
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsError1(
+    Object handle,
+  ) {
+    return _Dart_IsError1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsError');
+  late final _Dart_IsError1 =
+      _Dart_IsError1Ptr.asFunction<int Function(Object)>();
+
+  /// Is this an api error handle?
+  ///
+  /// Api error handles are produced when an api function is misused.
+  /// This happens when a Dart embedding api function is called with
+  /// invalid arguments or in an invalid context.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsApiError1(
+    Object handle,
+  ) {
+    return _Dart_IsApiError1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsApiError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsApiError');
+  late final _Dart_IsApiError1 =
+      _Dart_IsApiError1Ptr.asFunction<int Function(Object)>();
+
+  /// Is this an unhandled exception error handle?
+  ///
+  /// Unhandled exception error handles are produced when, during the
+  /// execution of Dart code, an exception is thrown but not caught.
+  /// This can occur in any function which triggers the execution of Dart
+  /// code.
+  ///
+  /// See Dart_ErrorGetException and Dart_ErrorGetStackTrace.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsUnhandledExceptionError1(
+    Object handle,
+  ) {
+    return _Dart_IsUnhandledExceptionError1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsUnhandledExceptionError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsUnhandledExceptionError');
+  late final _Dart_IsUnhandledExceptionError1 =
+      _Dart_IsUnhandledExceptionError1Ptr.asFunction<int Function(Object)>();
+
+  /// Is this a compilation error handle?
+  ///
+  /// Compilation error handles are produced when, during the execution
+  /// of Dart code, a compile-time error occurs.  This can occur in any
+  /// function which triggers the execution of Dart code.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsCompilationError1(
+    Object handle,
+  ) {
+    return _Dart_IsCompilationError1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsCompilationError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsCompilationError');
+  late final _Dart_IsCompilationError1 =
+      _Dart_IsCompilationError1Ptr.asFunction<int Function(Object)>();
+
+  /// Is this a fatal error handle?
+  ///
+  /// Fatal error handles are produced when the system wants to shut down
+  /// the current isolate.
+  ///
+  /// Requires there to be a current isolate.
+  bool Dart_IsFatalError1(
+    Object handle,
+  ) {
+    return _Dart_IsFatalError1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFatalError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFatalError');
+  late final _Dart_IsFatalError1 =
+      _Dart_IsFatalError1Ptr.asFunction<int Function(Object)>();
+
+  /// Gets the error message from an error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A C string containing an error message if the handle is
+  /// error. An empty C string ("") if the handle is valid. This C
+  /// String is scope allocated and is only valid until the next call
+  /// to Dart_ExitScope.
+  ffi.Pointer<ffi.Char> Dart_GetError1(
+    Object handle,
+  ) {
+    return _Dart_GetError1(
+      handle,
+    );
+  }
+
+  late final _Dart_GetError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Handle)>>(
+          'Dart_GetError');
+  late final _Dart_GetError1 =
+      _Dart_GetError1Ptr.asFunction<ffi.Pointer<ffi.Char> Function(Object)>();
+
+  /// Is this an error handle for an unhandled exception?
+  bool Dart_ErrorHasException1(
+    Object handle,
+  ) {
+    return _Dart_ErrorHasException1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_ErrorHasException1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_ErrorHasException');
+  late final _Dart_ErrorHasException1 =
+      _Dart_ErrorHasException1Ptr.asFunction<int Function(Object)>();
+
+  /// Gets the exception Object from an unhandled exception error handle.
+  Object Dart_ErrorGetException1(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetException1(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetException1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ErrorGetException');
+  late final _Dart_ErrorGetException1 =
+      _Dart_ErrorGetException1Ptr.asFunction<Object Function(Object)>();
+
+  /// Gets the stack trace Object from an unhandled exception error handle.
+  Object Dart_ErrorGetStackTrace1(
+    Object handle,
+  ) {
+    return _Dart_ErrorGetStackTrace1(
+      handle,
+    );
+  }
+
+  late final _Dart_ErrorGetStackTrace1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ErrorGetStackTrace');
+  late final _Dart_ErrorGetStackTrace1 =
+      _Dart_ErrorGetStackTrace1Ptr.asFunction<Object Function(Object)>();
+
+  /// Produces an api error handle with the provided error message.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param error the error message.
+  Object Dart_NewApiError1(
+    ffi.Pointer<ffi.Char> error,
+  ) {
+    return _Dart_NewApiError1(
+      error,
+    );
+  }
+
+  late final _Dart_NewApiError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_NewApiError');
+  late final _Dart_NewApiError1 = _Dart_NewApiError1Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Char>)>();
+
+  Object Dart_NewCompilationError1(
+    ffi.Pointer<ffi.Char> error,
+  ) {
+    return _Dart_NewCompilationError1(
+      error,
+    );
+  }
+
+  late final _Dart_NewCompilationError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_NewCompilationError');
+  late final _Dart_NewCompilationError1 = _Dart_NewCompilationError1Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Produces a new unhandled exception error handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param exception An instance of a Dart object to be thrown or
+  /// an ApiError or CompilationError handle.
+  /// When an ApiError or CompilationError handle is passed in
+  /// a string object of the error message is created and it becomes
+  /// the Dart object to be thrown.
+  Object Dart_NewUnhandledExceptionError1(
+    Object exception,
+  ) {
+    return _Dart_NewUnhandledExceptionError1(
+      exception,
+    );
+  }
+
+  late final _Dart_NewUnhandledExceptionError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewUnhandledExceptionError');
+  late final _Dart_NewUnhandledExceptionError1 =
+      _Dart_NewUnhandledExceptionError1Ptr.asFunction<
+          Object Function(Object)>();
+
+  /// Propagates an error.
+  ///
+  /// If the provided handle is an unhandled exception error, this
+  /// function will cause the unhandled exception to be rethrown.  This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If the error is not an unhandled exception error, we will unwind
+  /// the stack to the next C frame.  Intervening Dart frames will be
+  /// discarded; specifically, 'finally' blocks will not execute.  This
+  /// is the standard way that compilation errors (and the like) are
+  /// handled by the Dart runtime.
+  ///
+  /// In either case, when an error is propagated any current scopes
+  /// created by Dart_EnterScope will be exited.
+  ///
+  /// See the additional discussion under "Propagating Errors" at the
+  /// beginning of this file.
+  ///
+  /// \param An error handle (See Dart_IsError)
+  ///
+  /// \return On success, this function does not return.  On failure, the
+  /// process is terminated.
+  void Dart_PropagateError1(
+    Object handle,
+  ) {
+    return _Dart_PropagateError1(
+      handle,
+    );
+  }
+
+  late final _Dart_PropagateError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_PropagateError');
+  late final _Dart_PropagateError1 =
+      _Dart_PropagateError1Ptr.asFunction<void Function(Object)>();
+
+  /// Converts an object to a string.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return The converted string if no error occurs during
+  /// the conversion. If an error does occur, an error handle is
+  /// returned.
+  Object Dart_ToString1(
+    Object object,
+  ) {
+    return _Dart_ToString1(
+      object,
+    );
+  }
+
+  late final _Dart_ToString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ToString');
+  late final _Dart_ToString1 =
+      _Dart_ToString1Ptr.asFunction<Object Function(Object)>();
+
+  /// Checks to see if two handles refer to identically equal objects.
+  ///
+  /// If both handles refer to instances, this is equivalent to using the top-level
+  /// function identical() from dart:core. Otherwise, returns whether the two
+  /// argument handles refer to the same object.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  ///
+  /// \return True if the objects are identically equal.  False otherwise.
+  bool Dart_IdentityEquals1(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_IdentityEquals1(
+          obj1,
+          obj2,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IdentityEquals1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_IdentityEquals');
+  late final _Dart_IdentityEquals1 =
+      _Dart_IdentityEquals1Ptr.asFunction<int Function(Object, Object)>();
+
+  /// Allocates a handle in the current scope from a persistent handle.
+  Object Dart_HandleFromPersistent1(
+    Object object,
+  ) {
+    return _Dart_HandleFromPersistent1(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromPersistent1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_HandleFromPersistent');
+  late final _Dart_HandleFromPersistent1 =
+      _Dart_HandleFromPersistent1Ptr.asFunction<Object Function(Object)>();
+
+  /// Allocates a handle in the current scope from a weak persistent handle.
+  ///
+  /// This will be a handle to Dart_Null if the object has been garbage collected.
+  Object Dart_HandleFromWeakPersistent1(
+    Dart_WeakPersistentHandle object,
+  ) {
+    return _Dart_HandleFromWeakPersistent1(
+      object,
+    );
+  }
+
+  late final _Dart_HandleFromWeakPersistent1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_WeakPersistentHandle)>>(
+      'Dart_HandleFromWeakPersistent');
+  late final _Dart_HandleFromWeakPersistent1 =
+      _Dart_HandleFromWeakPersistent1Ptr.asFunction<
+          Object Function(Dart_WeakPersistentHandle)>();
+
+  /// Allocates a persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate unless it is
+  /// explicitly deallocated by calling Dart_DeletePersistentHandle.
+  ///
+  /// Requires there to be a current isolate.
+  Object Dart_NewPersistentHandle1(
+    Object object,
+  ) {
+    return _Dart_NewPersistentHandle1(
+      object,
+    );
+  }
+
+  late final _Dart_NewPersistentHandle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewPersistentHandle');
+  late final _Dart_NewPersistentHandle1 =
+      _Dart_NewPersistentHandle1Ptr.asFunction<Object Function(Object)>();
+
+  /// Assign value of local handle to a persistent handle.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param obj1 A persistent handle whose value needs to be set.
+  /// \param obj2 An object whose value needs to be set to the persistent handle.
+  ///
+  /// \return Success if the persistent handle was set
+  /// Otherwise, returns an error.
+  void Dart_SetPersistentHandle1(
+    Object obj1,
+    Object obj2,
+  ) {
+    return _Dart_SetPersistentHandle1(
+      obj1,
+      obj2,
+    );
+  }
+
+  late final _Dart_SetPersistentHandle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_SetPersistentHandle');
+  late final _Dart_SetPersistentHandle1 =
+      _Dart_SetPersistentHandle1Ptr.asFunction<void Function(Object, Object)>();
+
+  /// Deallocates a persistent handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeletePersistentHandle1(
+    Object object,
+  ) {
+    return _Dart_DeletePersistentHandle1(
+      object,
+    );
+  }
+
+  late final _Dart_DeletePersistentHandle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_DeletePersistentHandle');
+  late final _Dart_DeletePersistentHandle1 =
+      _Dart_DeletePersistentHandle1Ptr.asFunction<void Function(Object)>();
+
+  /// Allocates a weak persistent handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate. The handle can also be
+  /// explicitly deallocated by calling Dart_DeleteWeakPersistentHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the peer as
+  /// argument. The callback can be executed on any thread, will have a current
+  /// isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle. This
+  /// gives the embedder the ability to cleanup data associated with the object.
+  /// The handle will point to the Dart_Null object after the finalizer has been
+  /// run. It is illegal to call into the VM with any other Dart_* functions from
+  /// the callback. If the handle is deleted before the object becomes
+  /// unreachable, the callback is never invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The weak persistent handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  Dart_WeakPersistentHandle Dart_NewWeakPersistentHandle1(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewWeakPersistentHandle1(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewWeakPersistentHandle1Ptr = _lookup<
+      ffi.NativeFunction<
+          Dart_WeakPersistentHandle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewWeakPersistentHandle');
+  late final _Dart_NewWeakPersistentHandle1 =
+      _Dart_NewWeakPersistentHandle1Ptr.asFunction<
+          Dart_WeakPersistentHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Deletes the given weak persistent [object] handle.
+  ///
+  /// Requires there to be a current isolate group.
+  void Dart_DeleteWeakPersistentHandle1(
+    Dart_WeakPersistentHandle object,
+  ) {
+    return _Dart_DeleteWeakPersistentHandle1(
+      object,
+    );
+  }
+
+  late final _Dart_DeleteWeakPersistentHandle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_WeakPersistentHandle)>>(
+          'Dart_DeleteWeakPersistentHandle');
+  late final _Dart_DeleteWeakPersistentHandle1 =
+      _Dart_DeleteWeakPersistentHandle1Ptr.asFunction<
+          void Function(Dart_WeakPersistentHandle)>();
+
+  /// Updates the external memory size for the given weak persistent handle.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateExternalSize1(
+    Dart_WeakPersistentHandle object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateExternalSize1(
+      object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateExternalSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_WeakPersistentHandle,
+              ffi.IntPtr)>>('Dart_UpdateExternalSize');
+  late final _Dart_UpdateExternalSize1 = _Dart_UpdateExternalSize1Ptr
+      .asFunction<void Function(Dart_WeakPersistentHandle, int)>();
+
+  /// Allocates a finalizable handle for an object.
+  ///
+  /// This handle has the lifetime of the current isolate group unless the object
+  /// pointed to by the handle is garbage collected, in this case the VM
+  /// automatically deletes the handle after invoking the callback associated
+  /// with the handle. The handle can also be explicitly deallocated by
+  /// calling Dart_DeleteFinalizableHandle.
+  ///
+  /// If the object becomes unreachable the callback is invoked with the
+  /// the peer as argument. The callback can be executed on any thread, will have
+  /// an isolate group, but will not have a current isolate. The callback can only
+  /// call Dart_DeletePersistentHandle or Dart_DeleteWeakPersistentHandle.
+  /// This gives the embedder the ability to cleanup data associated with the
+  /// object and clear out any cached references to the handle. All references to
+  /// this handle after the callback will be invalid. It is illegal to call into
+  /// the VM with any other Dart_* functions from the callback. If the handle is
+  /// deleted before the object becomes unreachable, the callback is never
+  /// invoked.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param object An object with identity.
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The finalizable handle or NULL. NULL is returned in case of bad
+  /// parameters.
+  Dart_FinalizableHandle Dart_NewFinalizableHandle1(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewFinalizableHandle1(
+      object,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewFinalizableHandle1Ptr = _lookup<
+      ffi.NativeFunction<
+          Dart_FinalizableHandle Function(ffi.Handle, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr, Dart_HandleFinalizer)>>('Dart_NewFinalizableHandle');
+  late final _Dart_NewFinalizableHandle1 =
+      _Dart_NewFinalizableHandle1Ptr.asFunction<
+          Dart_FinalizableHandle Function(
+              Object, ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Deletes the given finalizable [object] handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_DeleteFinalizableHandle1(
+    Dart_FinalizableHandle object,
+    Object strong_ref_to_object,
+  ) {
+    return _Dart_DeleteFinalizableHandle1(
+      object,
+      strong_ref_to_object,
+    );
+  }
+
+  late final _Dart_DeleteFinalizableHandle1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle,
+              ffi.Handle)>>('Dart_DeleteFinalizableHandle');
+  late final _Dart_DeleteFinalizableHandle1 = _Dart_DeleteFinalizableHandle1Ptr
+      .asFunction<void Function(Dart_FinalizableHandle, Object)>();
+
+  /// Updates the external memory size for the given finalizable handle.
+  ///
+  /// The caller has to provide the actual Dart object the handle was created from
+  /// to prove the object (and therefore the finalizable handle) is still alive.
+  ///
+  /// May trigger garbage collection.
+  void Dart_UpdateFinalizableExternalSize1(
+    Dart_FinalizableHandle object,
+    Object strong_ref_to_object,
+    int external_allocation_size,
+  ) {
+    return _Dart_UpdateFinalizableExternalSize1(
+      object,
+      strong_ref_to_object,
+      external_allocation_size,
+    );
+  }
+
+  late final _Dart_UpdateFinalizableExternalSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_FinalizableHandle, ffi.Handle,
+              ffi.IntPtr)>>('Dart_UpdateFinalizableExternalSize');
+  late final _Dart_UpdateFinalizableExternalSize1 =
+      _Dart_UpdateFinalizableExternalSize1Ptr.asFunction<
+          void Function(Dart_FinalizableHandle, Object, int)>();
+
+  /// Gets the version string for the Dart VM.
+  ///
+  /// The version of the Dart VM can be accessed without initializing the VM.
+  ///
+  /// \return The version string for the embedded Dart VM.
+  ffi.Pointer<ffi.Char> Dart_VersionString1() {
+    return _Dart_VersionString1();
+  }
+
+  late final _Dart_VersionString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'Dart_VersionString');
+  late final _Dart_VersionString1 =
+      _Dart_VersionString1Ptr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+
+  /// Initialize Dart_IsolateFlags with correct version and default values.
+  void Dart_IsolateFlagsInitialize1(
+    ffi.Pointer<Dart_IsolateFlags> flags,
+  ) {
+    return _Dart_IsolateFlagsInitialize1(
+      flags,
+    );
+  }
+
+  late final _Dart_IsolateFlagsInitialize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<Dart_IsolateFlags>)>>('Dart_IsolateFlagsInitialize');
+  late final _Dart_IsolateFlagsInitialize1 = _Dart_IsolateFlagsInitialize1Ptr
+      .asFunction<void Function(ffi.Pointer<Dart_IsolateFlags>)>();
+
+  /// Initializes the VM.
+  ///
+  /// \param params A struct containing initialization information. The version
+  /// field of the struct must be DART_INITIALIZE_PARAMS_CURRENT_VERSION.
+  ///
+  /// \return NULL if initialization is successful. Returns an error message
+  /// otherwise. The caller is responsible for freeing the error message.
+  ffi.Pointer<ffi.Char> Dart_Initialize1(
+    ffi.Pointer<Dart_InitializeParams> params,
+  ) {
+    return _Dart_Initialize1(
+      params,
+    );
+  }
+
+  late final _Dart_Initialize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<Dart_InitializeParams>)>>('Dart_Initialize');
+  late final _Dart_Initialize1 = _Dart_Initialize1Ptr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<Dart_InitializeParams>)>();
+
+  /// Cleanup state in the VM before process termination.
+  ///
+  /// \return NULL if cleanup is successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This function must not be called on a thread that was created by the VM
+  /// itself.
+  ffi.Pointer<ffi.Char> Dart_Cleanup1() {
+    return _Dart_Cleanup1();
+  }
+
+  late final _Dart_Cleanup1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function()>>(
+          'Dart_Cleanup');
+  late final _Dart_Cleanup1 =
+      _Dart_Cleanup1Ptr.asFunction<ffi.Pointer<ffi.Char> Function()>();
+
+  /// Sets command line flags. Should be called before Dart_Initialize.
+  ///
+  /// \param argc The length of the arguments array.
+  /// \param argv An array of arguments.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise.
+  /// The caller is responsible for freeing the error message.
+  ///
+  /// NOTE: This call does not store references to the passed in c-strings.
+  ffi.Pointer<ffi.Char> Dart_SetVMFlags1(
+    int argc,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> argv,
+  ) {
+    return _Dart_SetVMFlags1(
+      argc,
+      argv,
+    );
+  }
+
+  late final _Dart_SetVMFlags1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_SetVMFlags');
+  late final _Dart_SetVMFlags1 = _Dart_SetVMFlags1Ptr.asFunction<
+      ffi.Pointer<ffi.Char> Function(
+          int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Returns true if the named VM flag is of boolean type, specified, and set to
+  /// true.
+  ///
+  /// \param flag_name The name of the flag without leading punctuation
+  /// (example: "enable_asserts").
+  bool Dart_IsVMFlagSet1(
+    ffi.Pointer<ffi.Char> flag_name,
+  ) {
+    return _Dart_IsVMFlagSet1(
+          flag_name,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVMFlagSet1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_IsVMFlagSet');
+  late final _Dart_IsVMFlagSet1 =
+      _Dart_IsVMFlagSet1Ptr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Creates a new isolate. The new isolate becomes the current isolate.
+  ///
+  /// A snapshot can be used to restore the VM quickly to a saved state
+  /// and is useful for fast startup. If snapshot data is provided, the
+  /// isolate will be started using that snapshot data. Requires a core snapshot or
+  /// an app snapshot created by Dart_CreateSnapshot or
+  /// Dart_CreatePrecompiledSnapshot* from a VM with the same version.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param isolate_snapshot_data
+  /// \param isolate_snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  Dart_Isolate Dart_CreateIsolateGroup1(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> name,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_data,
+    ffi.Pointer<ffi.Uint8> isolate_snapshot_instructions,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateGroup1(
+      script_uri,
+      name,
+      isolate_snapshot_data,
+      isolate_snapshot_instructions,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroup1Ptr = _lookup<
+      ffi.NativeFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_CreateIsolateGroup');
+  late final _Dart_CreateIsolateGroup1 =
+      _Dart_CreateIsolateGroup1Ptr.asFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Creates a new isolate inside the isolate group of [group_member].
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param group_member An isolate from the same group into which the newly created
+  /// isolate should be born into. Other threads may not have entered / enter this
+  /// member isolate.
+  /// \param name A short name for the isolate for debugging purposes.
+  /// \param shutdown_callback A callback to be called when the isolate is being
+  /// shutdown (may be NULL).
+  /// \param cleanup_callback A callback to be called when the isolate is being
+  /// cleaned up (may be NULL).
+  /// \param isolate_data The embedder-specific data associated with this isolate.
+  /// \param error Set to NULL if creation is successful, set to an error
+  /// message otherwise. The caller is responsible for calling free() on the
+  /// error message.
+  ///
+  /// \return The newly created isolate on success, or NULL if isolate creation
+  /// failed.
+  ///
+  /// If successful, the newly created isolate will become the current isolate.
+  Dart_Isolate Dart_CreateIsolateInGroup1(
+    Dart_Isolate group_member,
+    ffi.Pointer<ffi.Char> name,
+    Dart_IsolateShutdownCallback shutdown_callback,
+    Dart_IsolateCleanupCallback cleanup_callback,
+    ffi.Pointer<ffi.Void> child_isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateInGroup1(
+      group_member,
+      name,
+      shutdown_callback,
+      cleanup_callback,
+      child_isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateInGroup1Ptr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  Dart_Isolate,
+                  ffi.Pointer<ffi.Char>,
+                  Dart_IsolateShutdownCallback,
+                  Dart_IsolateCleanupCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_CreateIsolateInGroup');
+  late final _Dart_CreateIsolateInGroup1 =
+      _Dart_CreateIsolateInGroup1Ptr.asFunction<
+          Dart_Isolate Function(
+              Dart_Isolate,
+              ffi.Pointer<ffi.Char>,
+              Dart_IsolateShutdownCallback,
+              Dart_IsolateCleanupCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Creates a new isolate from a Dart Kernel file. The new isolate
+  /// becomes the current isolate.
+  ///
+  /// Requires there to be no current isolate.
+  ///
+  /// \param script_uri The main source file or snapshot this isolate will load.
+  /// The VM will provide this URI to the Dart_IsolateGroupCreateCallback when a child
+  /// isolate is created by Isolate.spawn. The embedder should use a URI that
+  /// allows it to load the same program into such a child isolate.
+  /// \param name A short name for the isolate to improve debugging messages.
+  /// Typically of the format 'foo.dart:main()'.
+  /// \param kernel_buffer
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  /// \param flags Pointer to VM specific flags or NULL for default flags.
+  /// \param isolate_group_data Embedder group data. This data can be obtained
+  /// by calling Dart_IsolateGroupData and will be passed to the
+  /// Dart_IsolateShutdownCallback, Dart_IsolateCleanupCallback, and
+  /// Dart_IsolateGroupCleanupCallback.
+  /// \param isolate_data Embedder data.  This data will be passed to
+  /// the Dart_IsolateGroupCreateCallback when new isolates are spawned from
+  /// this parent isolate.
+  /// \param error Returns NULL if creation is successful, an error message
+  /// otherwise. The caller is responsible for calling free() on the error
+  /// message.
+  ///
+  /// \return The new isolate on success, or NULL if isolate creation failed.
+  Dart_Isolate Dart_CreateIsolateGroupFromKernel1(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> name,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+    ffi.Pointer<Dart_IsolateFlags> flags,
+    ffi.Pointer<ffi.Void> isolate_group_data,
+    ffi.Pointer<ffi.Void> isolate_data,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
+  ) {
+    return _Dart_CreateIsolateGroupFromKernel1(
+      script_uri,
+      name,
+      kernel_buffer,
+      kernel_buffer_size,
+      flags,
+      isolate_group_data,
+      isolate_data,
+      error,
+    );
+  }
+
+  late final _Dart_CreateIsolateGroupFromKernel1Ptr = _lookup<
+          ffi.NativeFunction<
+              Dart_Isolate Function(
+                  ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<ffi.Char>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.IntPtr,
+                  ffi.Pointer<Dart_IsolateFlags>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_CreateIsolateGroupFromKernel');
+  late final _Dart_CreateIsolateGroupFromKernel1 =
+      _Dart_CreateIsolateGroupFromKernel1Ptr.asFunction<
+          Dart_Isolate Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              int,
+              ffi.Pointer<Dart_IsolateFlags>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Void>,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Shuts down the current isolate. After this call, the current isolate is NULL.
+  /// Any current scopes created by Dart_EnterScope will be exited. Invokes the
+  /// shutdown callback and any callbacks of remaining weak persistent handles.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ShutdownIsolate1() {
+    return _Dart_ShutdownIsolate1();
+  }
+
+  late final _Dart_ShutdownIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ShutdownIsolate');
+  late final _Dart_ShutdownIsolate1 =
+      _Dart_ShutdownIsolate1Ptr.asFunction<void Function()>();
+
+  /// Returns the current isolate. Will return NULL if there is no
+  /// current isolate.
+  Dart_Isolate Dart_CurrentIsolate1() {
+    return _Dart_CurrentIsolate1();
+  }
+
+  late final _Dart_CurrentIsolate1Ptr =
+      _lookup<ffi.NativeFunction<Dart_Isolate Function()>>(
+          'Dart_CurrentIsolate');
+  late final _Dart_CurrentIsolate1 =
+      _Dart_CurrentIsolate1Ptr.asFunction<Dart_Isolate Function()>();
+
+  /// Returns the callback data associated with the current isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateData1() {
+    return _Dart_CurrentIsolateData1();
+  }
+
+  late final _Dart_CurrentIsolateData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+          'Dart_CurrentIsolateData');
+  late final _Dart_CurrentIsolateData1 = _Dart_CurrentIsolateData1Ptr
+      .asFunction<ffi.Pointer<ffi.Void> Function()>();
+
+  /// Returns the callback data associated with the given isolate. This
+  /// data was set when the isolate got created or initialized.
+  ffi.Pointer<ffi.Void> Dart_IsolateData1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateData1(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
+          'Dart_IsolateData');
+  late final _Dart_IsolateData1 = _Dart_IsolateData1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
+
+  /// Returns the current isolate group. Will return NULL if there is no
+  /// current isolate group.
+  Dart_IsolateGroup Dart_CurrentIsolateGroup1() {
+    return _Dart_CurrentIsolateGroup1();
+  }
+
+  late final _Dart_CurrentIsolateGroup1Ptr =
+      _lookup<ffi.NativeFunction<Dart_IsolateGroup Function()>>(
+          'Dart_CurrentIsolateGroup');
+  late final _Dart_CurrentIsolateGroup1 =
+      _Dart_CurrentIsolateGroup1Ptr.asFunction<Dart_IsolateGroup Function()>();
+
+  /// Returns the callback data associated with the current isolate group. This
+  /// data was passed to the isolate group when it was created.
+  ffi.Pointer<ffi.Void> Dart_CurrentIsolateGroupData1() {
+    return _Dart_CurrentIsolateGroupData1();
+  }
+
+  late final _Dart_CurrentIsolateGroupData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+          'Dart_CurrentIsolateGroupData');
+  late final _Dart_CurrentIsolateGroupData1 = _Dart_CurrentIsolateGroupData1Ptr
+      .asFunction<ffi.Pointer<ffi.Void> Function()>();
+
+  /// Returns the callback data associated with the specified isolate group. This
+  /// data was passed to the isolate when it was created.
+  /// The embedder is responsible for ensuring the consistency of this data
+  /// with respect to the lifecycle of an isolate group.
+  ffi.Pointer<ffi.Void> Dart_IsolateGroupData1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateGroupData1(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateGroupData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(Dart_Isolate)>>(
+          'Dart_IsolateGroupData');
+  late final _Dart_IsolateGroupData1 = _Dart_IsolateGroupData1Ptr.asFunction<
+      ffi.Pointer<ffi.Void> Function(Dart_Isolate)>();
+
+  /// Returns the debugging name for the current isolate.
+  ///
+  /// This name is unique to each isolate and should only be used to make
+  /// debugging messages more comprehensible.
+  Object Dart_DebugName1() {
+    return _Dart_DebugName1();
+  }
+
+  late final _Dart_DebugName1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_DebugName');
+  late final _Dart_DebugName1 =
+      _Dart_DebugName1Ptr.asFunction<Object Function()>();
+
+  /// Returns the ID for an isolate which is used to query the service protocol.
+  ///
+  /// It is the responsibility of the caller to free the returned ID.
+  ffi.Pointer<ffi.Char> Dart_IsolateServiceId1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateServiceId1(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateServiceId1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>>(
+          'Dart_IsolateServiceId');
+  late final _Dart_IsolateServiceId1 = _Dart_IsolateServiceId1Ptr.asFunction<
+      ffi.Pointer<ffi.Char> Function(Dart_Isolate)>();
+
+  /// Enters an isolate. After calling this function,
+  /// the current isolate will be set to the provided isolate.
+  ///
+  /// Requires there to be no current isolate. Multiple threads may not be in
+  /// the same isolate at once.
+  void Dart_EnterIsolate1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_EnterIsolate1(
+      isolate,
+    );
+  }
+
+  late final _Dart_EnterIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_EnterIsolate');
+  late final _Dart_EnterIsolate1 =
+      _Dart_EnterIsolate1Ptr.asFunction<void Function(Dart_Isolate)>();
+
+  /// Kills the given isolate.
+  ///
+  /// This function has the same effect as dart:isolate's
+  /// Isolate.kill(priority:immediate).
+  /// It can interrupt ordinary Dart code but not native code. If the isolate is
+  /// in the middle of a long running native function, the isolate will not be
+  /// killed until control returns to Dart.
+  ///
+  /// Does not require a current isolate. It is safe to kill the current isolate if
+  /// there is one.
+  void Dart_KillIsolate1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_KillIsolate1(
+      isolate,
+    );
+  }
+
+  late final _Dart_KillIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(Dart_Isolate)>>(
+          'Dart_KillIsolate');
+  late final _Dart_KillIsolate1 =
+      _Dart_KillIsolate1Ptr.asFunction<void Function(Dart_Isolate)>();
+
+  /// Notifies the VM that the embedder expects |size| bytes of memory have become
+  /// unreachable. The VM may use this hint to adjust the garbage collector's
+  /// growth policy.
+  ///
+  /// Multiple calls are interpreted as increasing, not replacing, the estimate of
+  /// unreachable memory.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_HintFreed1(
+    int size,
+  ) {
+    return _Dart_HintFreed1(
+      size,
+    );
+  }
+
+  late final _Dart_HintFreed1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.IntPtr)>>(
+          'Dart_HintFreed');
+  late final _Dart_HintFreed1 =
+      _Dart_HintFreed1Ptr.asFunction<void Function(int)>();
+
+  /// Notifies the VM that the embedder expects to be idle until |deadline|. The VM
+  /// may use this time to perform garbage collection or other tasks to avoid
+  /// delays during execution of Dart code in the future.
+  ///
+  /// |deadline| is measured in microseconds against the system's monotonic time.
+  /// This clock can be accessed via Dart_TimelineGetMicros().
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_NotifyIdle1(
+    int deadline,
+  ) {
+    return _Dart_NotifyIdle1(
+      deadline,
+    );
+  }
+
+  late final _Dart_NotifyIdle1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int64)>>(
+          'Dart_NotifyIdle');
+  late final _Dart_NotifyIdle1 =
+      _Dart_NotifyIdle1Ptr.asFunction<void Function(int)>();
+
+  /// Notifies the VM that the system is running low on memory.
+  ///
+  /// Does not require a current isolate. Only valid after calling Dart_Initialize.
+  void Dart_NotifyLowMemory1() {
+    return _Dart_NotifyLowMemory1();
+  }
+
+  late final _Dart_NotifyLowMemory1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_NotifyLowMemory');
+  late final _Dart_NotifyLowMemory1 =
+      _Dart_NotifyLowMemory1Ptr.asFunction<void Function()>();
+
+  /// Starts the CPU sampling profiler.
+  void Dart_StartProfiling1() {
+    return _Dart_StartProfiling1();
+  }
+
+  late final _Dart_StartProfiling1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StartProfiling');
+  late final _Dart_StartProfiling1 =
+      _Dart_StartProfiling1Ptr.asFunction<void Function()>();
+
+  /// Stops the CPU sampling profiler.
+  ///
+  /// Note that some profile samples might still be taken after this fucntion
+  /// returns due to the asynchronous nature of the implementation on some
+  /// platforms.
+  void Dart_StopProfiling1() {
+    return _Dart_StopProfiling1();
+  }
+
+  late final _Dart_StopProfiling1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_StopProfiling');
+  late final _Dart_StopProfiling1 =
+      _Dart_StopProfiling1Ptr.asFunction<void Function()>();
+
+  /// Notifies the VM that the current thread should not be profiled until a
+  /// matching call to Dart_ThreadEnableProfiling is made.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  /// This function should be used when an embedder knows a thread is about
+  /// to make a blocking call and wants to avoid unnecessary interrupts by
+  /// the profiler.
+  void Dart_ThreadDisableProfiling1() {
+    return _Dart_ThreadDisableProfiling1();
+  }
+
+  late final _Dart_ThreadDisableProfiling1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
+          'Dart_ThreadDisableProfiling');
+  late final _Dart_ThreadDisableProfiling1 =
+      _Dart_ThreadDisableProfiling1Ptr.asFunction<void Function()>();
+
+  /// Notifies the VM that the current thread should be profiled.
+  ///
+  /// NOTE: It is only legal to call this function *after* calling
+  /// Dart_ThreadDisableProfiling.
+  ///
+  /// NOTE: By default, if a thread has entered an isolate it will be profiled.
+  void Dart_ThreadEnableProfiling1() {
+    return _Dart_ThreadEnableProfiling1();
+  }
+
+  late final _Dart_ThreadEnableProfiling1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>(
+          'Dart_ThreadEnableProfiling');
+  late final _Dart_ThreadEnableProfiling1 =
+      _Dart_ThreadEnableProfiling1Ptr.asFunction<void Function()>();
+
+  /// Register symbol information for the Dart VM's profiler and crash dumps.
+  ///
+  /// This consumes the output of //topaz/runtime/dart/profiler_symbols, which
+  /// should be treated as opaque.
+  void Dart_AddSymbols1(
+    ffi.Pointer<ffi.Char> dso_name,
+    ffi.Pointer<ffi.Void> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_AddSymbols1(
+      dso_name,
+      buffer,
+      buffer_size,
+    );
+  }
+
+  late final _Dart_AddSymbols1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_AddSymbols');
+  late final _Dart_AddSymbols1 = _Dart_AddSymbols1Ptr.asFunction<
+      void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>, int)>();
+
+  /// Exits an isolate. After this call, Dart_CurrentIsolate will
+  /// return NULL.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitIsolate1() {
+    return _Dart_ExitIsolate1();
+  }
+
+  late final _Dart_ExitIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitIsolate');
+  late final _Dart_ExitIsolate1 =
+      _Dart_ExitIsolate1Ptr.asFunction<void Function()>();
+
+  /// Creates a full snapshot of the current isolate heap.
+  ///
+  /// A full snapshot is a compact representation of the dart vm isolate heap
+  /// and dart isolate heap states. These snapshots are used to initialize
+  /// the vm isolate on startup and fast initialization of an isolate.
+  /// A Snapshot of the heap is created before any dart code has executed.
+  ///
+  /// Requires there to be a current isolate. Not available in the precompiled
+  /// runtime (check Dart_IsPrecompiledRuntime).
+  ///
+  /// \param buffer Returns a pointer to a buffer containing the
+  /// snapshot. This buffer is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param size Returns the size of the buffer.
+  /// \param is_core Create a snapshot containing core libraries.
+  /// Such snapshot should be agnostic to null safety mode.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateSnapshot1(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    bool is_core,
+  ) {
+    return _Dart_CreateSnapshot1(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      is_core ? 1 : 0,
+    );
+  }
+
+  late final _Dart_CreateSnapshot1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Uint8)>>('Dart_CreateSnapshot');
+  late final _Dart_CreateSnapshot1 = _Dart_CreateSnapshot1Ptr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>,
+          int)>();
+
+  /// Returns whether the buffer contains a kernel file.
+  ///
+  /// \param buffer Pointer to a buffer that might contain a kernel binary.
+  /// \param buffer_size Size of the buffer.
+  ///
+  /// \return Whether the buffer contains a kernel binary (full or partial).
+  bool Dart_IsKernel1(
+    ffi.Pointer<ffi.Uint8> buffer,
+    int buffer_size,
+  ) {
+    return _Dart_IsKernel1(
+          buffer,
+          buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernel1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_IsKernel');
+  late final _Dart_IsKernel1 = _Dart_IsKernel1Ptr.asFunction<
+      int Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Make isolate runnable.
+  ///
+  /// When isolates are spawned, this function is used to indicate that
+  /// the creation and initialization (including script loading) of the
+  /// isolate is complete and the isolate can start.
+  /// This function expects there to be no current isolate.
+  ///
+  /// \param isolate The isolate to be made runnable.
+  ///
+  /// \return NULL if successful. Returns an error message otherwise. The caller
+  /// is responsible for freeing the error message.
+  ffi.Pointer<ffi.Char> Dart_IsolateMakeRunnable1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsolateMakeRunnable1(
+      isolate,
+    );
+  }
+
+  late final _Dart_IsolateMakeRunnable1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>>(
+          'Dart_IsolateMakeRunnable');
+  late final _Dart_IsolateMakeRunnable1 = _Dart_IsolateMakeRunnable1Ptr
+      .asFunction<ffi.Pointer<ffi.Char> Function(Dart_Isolate)>();
+
+  /// Allows embedders to provide an alternative wakeup mechanism for the
+  /// delivery of inter-isolate messages. This setting only applies to
+  /// the current isolate.
+  ///
+  /// Most embedders will only call this function once, before isolate
+  /// execution begins. If this function is called after isolate
+  /// execution begins, the embedder is responsible for threading issues.
+  void Dart_SetMessageNotifyCallback1(
+    Dart_MessageNotifyCallback message_notify_callback,
+  ) {
+    return _Dart_SetMessageNotifyCallback1(
+      message_notify_callback,
+    );
+  }
+
+  late final _Dart_SetMessageNotifyCallback1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(Dart_MessageNotifyCallback)>>(
+      'Dart_SetMessageNotifyCallback');
+  late final _Dart_SetMessageNotifyCallback1 =
+      _Dart_SetMessageNotifyCallback1Ptr.asFunction<
+          void Function(Dart_MessageNotifyCallback)>();
+
+  /// Query the current message notify callback for the isolate.
+  ///
+  /// \return The current message notify callback for the isolate.
+  Dart_MessageNotifyCallback Dart_GetMessageNotifyCallback1() {
+    return _Dart_GetMessageNotifyCallback1();
+  }
+
+  late final _Dart_GetMessageNotifyCallback1Ptr =
+      _lookup<ffi.NativeFunction<Dart_MessageNotifyCallback Function()>>(
+          'Dart_GetMessageNotifyCallback');
+  late final _Dart_GetMessageNotifyCallback1 =
+      _Dart_GetMessageNotifyCallback1Ptr.asFunction<
+          Dart_MessageNotifyCallback Function()>();
+
+  /// If the VM flag `--pause-isolates-on-start` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on start was requested.
+  bool Dart_ShouldPauseOnStart1() {
+    return _Dart_ShouldPauseOnStart1() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnStart1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_ShouldPauseOnStart');
+  late final _Dart_ShouldPauseOnStart1 =
+      _Dart_ShouldPauseOnStart1Ptr.asFunction<int Function()>();
+
+  /// Override the VM flag `--pause-isolates-on-start` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on start?
+  ///
+  /// NOTE: This must be called before Dart_IsolateMakeRunnable.
+  void Dart_SetShouldPauseOnStart1(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnStart1(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnStart1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetShouldPauseOnStart');
+  late final _Dart_SetShouldPauseOnStart1 =
+      _Dart_SetShouldPauseOnStart1Ptr.asFunction<void Function(int)>();
+
+  /// Is the current isolate paused on start?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on start.
+  bool Dart_IsPausedOnStart1() {
+    return _Dart_IsPausedOnStart1() != 0;
+  }
+
+  late final _Dart_IsPausedOnStart1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_IsPausedOnStart');
+  late final _Dart_IsPausedOnStart1 =
+      _Dart_IsPausedOnStart1Ptr.asFunction<int Function()>();
+
+  /// Called when the embedder has paused the current isolate on start and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on start?
+  void Dart_SetPausedOnStart1(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnStart1(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnStart1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetPausedOnStart');
+  late final _Dart_SetPausedOnStart1 =
+      _Dart_SetPausedOnStart1Ptr.asFunction<void Function(int)>();
+
+  /// If the VM flag `--pause-isolates-on-exit` was passed this will be true.
+  ///
+  /// \return A boolean value indicating if pause on exit was requested.
+  bool Dart_ShouldPauseOnExit1() {
+    return _Dart_ShouldPauseOnExit1() != 0;
+  }
+
+  late final _Dart_ShouldPauseOnExit1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_ShouldPauseOnExit');
+  late final _Dart_ShouldPauseOnExit1 =
+      _Dart_ShouldPauseOnExit1Ptr.asFunction<int Function()>();
+
+  /// Override the VM flag `--pause-isolates-on-exit` for the current isolate.
+  ///
+  /// \param should_pause Should the isolate be paused on exit?
+  void Dart_SetShouldPauseOnExit1(
+    bool should_pause,
+  ) {
+    return _Dart_SetShouldPauseOnExit1(
+      should_pause ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetShouldPauseOnExit1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetShouldPauseOnExit');
+  late final _Dart_SetShouldPauseOnExit1 =
+      _Dart_SetShouldPauseOnExit1Ptr.asFunction<void Function(int)>();
+
+  /// Is the current isolate paused on exit?
+  ///
+  /// \return A boolean value indicating if the isolate is paused on exit.
+  bool Dart_IsPausedOnExit1() {
+    return _Dart_IsPausedOnExit1() != 0;
+  }
+
+  late final _Dart_IsPausedOnExit1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_IsPausedOnExit');
+  late final _Dart_IsPausedOnExit1 =
+      _Dart_IsPausedOnExit1Ptr.asFunction<int Function()>();
+
+  /// Called when the embedder has paused the current isolate on exit and when
+  /// the embedder has resumed the isolate.
+  ///
+  /// \param paused Is the isolate paused on exit?
+  void Dart_SetPausedOnExit1(
+    bool paused,
+  ) {
+    return _Dart_SetPausedOnExit1(
+      paused ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetPausedOnExit1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Uint8)>>(
+          'Dart_SetPausedOnExit');
+  late final _Dart_SetPausedOnExit1 =
+      _Dart_SetPausedOnExit1Ptr.asFunction<void Function(int)>();
+
+  /// Called when the embedder has caught a top level unhandled exception error
+  /// in the current isolate.
+  ///
+  /// NOTE: It is illegal to call this twice on the same isolate without first
+  /// clearing the sticky error to null.
+  ///
+  /// \param error The unhandled exception error.
+  void Dart_SetStickyError1(
+    Object error,
+  ) {
+    return _Dart_SetStickyError1(
+      error,
+    );
+  }
+
+  late final _Dart_SetStickyError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Handle)>>(
+          'Dart_SetStickyError');
+  late final _Dart_SetStickyError1 =
+      _Dart_SetStickyError1Ptr.asFunction<void Function(Object)>();
+
+  /// Does the current isolate have a sticky error?
+  bool Dart_HasStickyError1() {
+    return _Dart_HasStickyError1() != 0;
+  }
+
+  late final _Dart_HasStickyError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_HasStickyError');
+  late final _Dart_HasStickyError1 =
+      _Dart_HasStickyError1Ptr.asFunction<int Function()>();
+
+  /// Gets the sticky error for the current isolate.
+  ///
+  /// \return A handle to the sticky error object or null.
+  Object Dart_GetStickyError1() {
+    return _Dart_GetStickyError1();
+  }
+
+  late final _Dart_GetStickyError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_GetStickyError');
+  late final _Dart_GetStickyError1 =
+      _Dart_GetStickyError1Ptr.asFunction<Object Function()>();
+
+  /// Handles the next pending message for the current isolate.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_HandleMessage1() {
+    return _Dart_HandleMessage1();
+  }
+
+  late final _Dart_HandleMessage1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_HandleMessage');
+  late final _Dart_HandleMessage1 =
+      _Dart_HandleMessage1Ptr.asFunction<Object Function()>();
+
+  /// Drains the microtask queue, then blocks the calling thread until the current
+  /// isolate recieves a message, then handles all messages.
+  ///
+  /// \param timeout_millis When non-zero, the call returns after the indicated
+  /// number of milliseconds even if no message was received.
+  /// \return A valid handle if no error occurs, otherwise an error handle.
+  Object Dart_WaitForEvent1(
+    int timeout_millis,
+  ) {
+    return _Dart_WaitForEvent1(
+      timeout_millis,
+    );
+  }
+
+  late final _Dart_WaitForEvent1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_WaitForEvent');
+  late final _Dart_WaitForEvent1 =
+      _Dart_WaitForEvent1Ptr.asFunction<Object Function(int)>();
+
+  /// Handles any pending messages for the vm service for the current
+  /// isolate.
+  ///
+  /// This function may be used by an embedder at a breakpoint to avoid
+  /// pausing the vm service.
+  ///
+  /// This function can indirectly cause the message notify callback to
+  /// be called.
+  ///
+  /// \return true if the vm service requests the program resume
+  /// execution, false otherwise
+  bool Dart_HandleServiceMessages1() {
+    return _Dart_HandleServiceMessages1() != 0;
+  }
+
+  late final _Dart_HandleServiceMessages1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_HandleServiceMessages');
+  late final _Dart_HandleServiceMessages1 =
+      _Dart_HandleServiceMessages1Ptr.asFunction<int Function()>();
+
+  /// Does the current isolate have pending service messages?
+  ///
+  /// \return true if the isolate has pending service messages, false otherwise.
+  bool Dart_HasServiceMessages1() {
+    return _Dart_HasServiceMessages1() != 0;
+  }
+
+  late final _Dart_HasServiceMessages1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_HasServiceMessages');
+  late final _Dart_HasServiceMessages1 =
+      _Dart_HasServiceMessages1Ptr.asFunction<int Function()>();
+
+  /// Processes any incoming messages for the current isolate.
+  ///
+  /// This function may only be used when the embedder has not provided
+  /// an alternate message delivery mechanism with
+  /// Dart_SetMessageCallbacks. It is provided for convenience.
+  ///
+  /// This function waits for incoming messages for the current
+  /// isolate. As new messages arrive, they are handled using
+  /// Dart_HandleMessage. The routine exits when all ports to the
+  /// current isolate are closed.
+  ///
+  /// \return A valid handle if the run loop exited successfully.  If an
+  /// exception or other error occurs while processing messages, an
+  /// error handle is returned.
+  Object Dart_RunLoop1() {
+    return _Dart_RunLoop1();
+  }
+
+  late final _Dart_RunLoop1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RunLoop');
+  late final _Dart_RunLoop1 = _Dart_RunLoop1Ptr.asFunction<Object Function()>();
+
+  /// Lets the VM run message processing for the isolate.
+  ///
+  /// This function expects there to a current isolate and the current isolate
+  /// must not have an active api scope. The VM will take care of making the
+  /// isolate runnable (if not already), handles its message loop and will take
+  /// care of shutting the isolate down once it's done.
+  ///
+  /// \param errors_are_fatal Whether uncaught errors should be fatal.
+  /// \param on_error_port A port to notify on uncaught errors (or ILLEGAL_PORT).
+  /// \param on_exit_port A port to notify on exit (or ILLEGAL_PORT).
+  /// \param error A non-NULL pointer which will hold an error message if the call
+  /// fails. The error has to be free()ed by the caller.
+  ///
+  /// \return If successfull the VM takes owernship of the isolate and takes care
+  /// of its message loop. If not successful the caller retains owernship of the
+  /// isolate.
+  bool Dart_RunLoopAsync1(
+    bool errors_are_fatal,
+    int on_error_port,
+    int on_exit_port,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
+  ) {
+    return _Dart_RunLoopAsync1(
+          errors_are_fatal ? 1 : 0,
+          on_error_port,
+          on_exit_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_RunLoopAsync1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(ffi.Uint8, Dart_Port, Dart_Port,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_RunLoopAsync');
+  late final _Dart_RunLoopAsync1 = _Dart_RunLoopAsync1Ptr.asFunction<
+      int Function(int, int, int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Gets the main port id for the current isolate.
+  int Dart_GetMainPortId1() {
+    return _Dart_GetMainPortId1();
+  }
+
+  late final _Dart_GetMainPortId1Ptr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_GetMainPortId');
+  late final _Dart_GetMainPortId1 =
+      _Dart_GetMainPortId1Ptr.asFunction<int Function()>();
+
+  /// Does the current isolate have live ReceivePorts?
+  ///
+  /// A ReceivePort is live when it has not been closed.
+  bool Dart_HasLivePorts1() {
+    return _Dart_HasLivePorts1() != 0;
+  }
+
+  late final _Dart_HasLivePorts1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>('Dart_HasLivePorts');
+  late final _Dart_HasLivePorts1 =
+      _Dart_HasLivePorts1Ptr.asFunction<int Function()>();
+
+  /// Posts a message for some isolate. The message is a serialized
+  /// object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param port The destination port.
+  /// \param object An object from the current isolate.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_Post1(
+    int port_id,
+    Object object,
+  ) {
+    return _Dart_Post1(
+          port_id,
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_Post1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port, ffi.Handle)>>(
+          'Dart_Post');
+  late final _Dart_Post1 =
+      _Dart_Post1Ptr.asFunction<int Function(int, Object)>();
+
+  /// Returns a new SendPort with the provided port id.
+  ///
+  /// \param port_id The destination port.
+  ///
+  /// \return A new SendPort if no errors occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewSendPort1(
+    int port_id,
+  ) {
+    return _Dart_NewSendPort1(
+      port_id,
+    );
+  }
+
+  late final _Dart_NewSendPort1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_Port)>>(
+          'Dart_NewSendPort');
+  late final _Dart_NewSendPort1 =
+      _Dart_NewSendPort1Ptr.asFunction<Object Function(int)>();
+
+  /// Gets the SendPort id for the provided SendPort.
+  /// \param port A SendPort object whose id is desired.
+  /// \param port_id Returns the id of the SendPort.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_SendPortGetId1(
+    Object port,
+    ffi.Pointer<Dart_Port> port_id,
+  ) {
+    return _Dart_SendPortGetId1(
+      port,
+      port_id,
+    );
+  }
+
+  late final _Dart_SendPortGetId1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<Dart_Port>)>>('Dart_SendPortGetId');
+  late final _Dart_SendPortGetId1 = _Dart_SendPortGetId1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_Port>)>();
+
+  /// Enters a new scope.
+  ///
+  /// All new local handles will be created in this scope. Additionally,
+  /// some functions may return "scope allocated" memory which is only
+  /// valid within this scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_EnterScope1() {
+    return _Dart_EnterScope1();
+  }
+
+  late final _Dart_EnterScope1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_EnterScope');
+  late final _Dart_EnterScope1 =
+      _Dart_EnterScope1Ptr.asFunction<void Function()>();
+
+  /// Exits a scope.
+  ///
+  /// The previous scope (if any) becomes the current scope.
+  ///
+  /// Requires there to be a current isolate.
+  void Dart_ExitScope1() {
+    return _Dart_ExitScope1();
+  }
+
+  late final _Dart_ExitScope1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_ExitScope');
+  late final _Dart_ExitScope1 =
+      _Dart_ExitScope1Ptr.asFunction<void Function()>();
+
+  /// The Dart VM uses "zone allocation" for temporary structures. Zones
+  /// support very fast allocation of small chunks of memory. The chunks
+  /// cannot be deallocated individually, but instead zones support
+  /// deallocating all chunks in one fast operation.
+  ///
+  /// This function makes it possible for the embedder to allocate
+  /// temporary data in the VMs zone allocator.
+  ///
+  /// Zone allocation is possible:
+  /// 1. when inside a scope where local handles can be allocated
+  /// 2. when processing a message from a native port in a native port
+  /// handler
+  ///
+  /// All the memory allocated this way will be reclaimed either on the
+  /// next call to Dart_ExitScope or when the native port handler exits.
+  ///
+  /// \param size Size of the memory to allocate.
+  ///
+  /// \return A pointer to the allocated memory. NULL if allocation
+  /// failed. Failure might due to is no current VM zone.
+  ffi.Pointer<ffi.Uint8> Dart_ScopeAllocate1(
+    int size,
+  ) {
+    return _Dart_ScopeAllocate1(
+      size,
+    );
+  }
+
+  late final _Dart_ScopeAllocate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Uint8> Function(ffi.IntPtr)>>(
+          'Dart_ScopeAllocate');
+  late final _Dart_ScopeAllocate1 = _Dart_ScopeAllocate1Ptr.asFunction<
+      ffi.Pointer<ffi.Uint8> Function(int)>();
+
+  /// Returns the null object.
+  ///
+  /// \return A handle to the null object.
+  Object Dart_Null1() {
+    return _Dart_Null1();
+  }
+
+  late final _Dart_Null1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Null');
+  late final _Dart_Null1 = _Dart_Null1Ptr.asFunction<Object Function()>();
+
+  /// Is this object null?
+  bool Dart_IsNull1(
+    Object object,
+  ) {
+    return _Dart_IsNull1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNull1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsNull');
+  late final _Dart_IsNull1 =
+      _Dart_IsNull1Ptr.asFunction<int Function(Object)>();
+
+  /// Returns the empty string object.
+  ///
+  /// \return A handle to the empty string object.
+  Object Dart_EmptyString1() {
+    return _Dart_EmptyString1();
+  }
+
+  late final _Dart_EmptyString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_EmptyString');
+  late final _Dart_EmptyString1 =
+      _Dart_EmptyString1Ptr.asFunction<Object Function()>();
+
+  /// Returns types that are not classes, and which therefore cannot be looked up
+  /// as library members by Dart_GetType.
+  ///
+  /// \return A handle to the dynamic, void or Never type.
+  Object Dart_TypeDynamic1() {
+    return _Dart_TypeDynamic1();
+  }
+
+  late final _Dart_TypeDynamic1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeDynamic');
+  late final _Dart_TypeDynamic1 =
+      _Dart_TypeDynamic1Ptr.asFunction<Object Function()>();
+
+  Object Dart_TypeVoid1() {
+    return _Dart_TypeVoid1();
+  }
+
+  late final _Dart_TypeVoid1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeVoid');
+  late final _Dart_TypeVoid1 =
+      _Dart_TypeVoid1Ptr.asFunction<Object Function()>();
+
+  Object Dart_TypeNever1() {
+    return _Dart_TypeNever1();
+  }
+
+  late final _Dart_TypeNever1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_TypeNever');
+  late final _Dart_TypeNever1 =
+      _Dart_TypeNever1Ptr.asFunction<Object Function()>();
+
+  /// Checks if the two objects are equal.
+  ///
+  /// The result of the comparison is returned through the 'equal'
+  /// parameter. The return value itself is used to indicate success or
+  /// failure, not equality.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param obj1 An object to be compared.
+  /// \param obj2 An object to be compared.
+  /// \param equal Returns the result of the equality comparison.
+  ///
+  /// \return A valid handle if no error occurs during the comparison.
+  Object Dart_ObjectEquals1(
+    Object obj1,
+    Object obj2,
+    ffi.Pointer<ffi.Uint8> equal,
+  ) {
+    return _Dart_ObjectEquals1(
+      obj1,
+      obj2,
+      equal,
+    );
+  }
+
+  late final _Dart_ObjectEquals1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_ObjectEquals');
+  late final _Dart_ObjectEquals1 = _Dart_ObjectEquals1Ptr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Is this object an instance of some type?
+  ///
+  /// The result of the test is returned through the 'instanceof' parameter.
+  /// The return value itself is used to indicate success or failure.
+  ///
+  /// \param object An object.
+  /// \param type A type.
+  /// \param instanceof Return true if 'object' is an instance of type 'type'.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ObjectIsType1(
+    Object object,
+    Object type,
+    ffi.Pointer<ffi.Uint8> instanceof,
+  ) {
+    return _Dart_ObjectIsType1(
+      object,
+      type,
+      instanceof,
+    );
+  }
+
+  late final _Dart_ObjectIsType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_ObjectIsType');
+  late final _Dart_ObjectIsType1 = _Dart_ObjectIsType1Ptr.asFunction<
+      Object Function(Object, Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Query object type.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is of the specified type.
+  bool Dart_IsInstance1(
+    Object object,
+  ) {
+    return _Dart_IsInstance1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsInstance1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsInstance');
+  late final _Dart_IsInstance1 =
+      _Dart_IsInstance1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsNumber1(
+    Object object,
+  ) {
+    return _Dart_IsNumber1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsNumber1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsNumber');
+  late final _Dart_IsNumber1 =
+      _Dart_IsNumber1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsInteger1(
+    Object object,
+  ) {
+    return _Dart_IsInteger1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsInteger1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsInteger');
+  late final _Dart_IsInteger1 =
+      _Dart_IsInteger1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsDouble1(
+    Object object,
+  ) {
+    return _Dart_IsDouble1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsDouble1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsDouble');
+  late final _Dart_IsDouble1 =
+      _Dart_IsDouble1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsBoolean1(
+    Object object,
+  ) {
+    return _Dart_IsBoolean1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsBoolean1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsBoolean');
+  late final _Dart_IsBoolean1 =
+      _Dart_IsBoolean1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsString1(
+    Object object,
+  ) {
+    return _Dart_IsString1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsString');
+  late final _Dart_IsString1 =
+      _Dart_IsString1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsStringLatin11(
+    Object object,
+  ) {
+    return _Dart_IsStringLatin11(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsStringLatin11Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsStringLatin1');
+  late final _Dart_IsStringLatin11 =
+      _Dart_IsStringLatin11Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsExternalString1(
+    Object object,
+  ) {
+    return _Dart_IsExternalString1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsExternalString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsExternalString');
+  late final _Dart_IsExternalString1 =
+      _Dart_IsExternalString1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsList1(
+    Object object,
+  ) {
+    return _Dart_IsList1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsList1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsList');
+  late final _Dart_IsList1 =
+      _Dart_IsList1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsMap1(
+    Object object,
+  ) {
+    return _Dart_IsMap1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsMap1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>('Dart_IsMap');
+  late final _Dart_IsMap1 = _Dart_IsMap1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsLibrary1(
+    Object object,
+  ) {
+    return _Dart_IsLibrary1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsLibrary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsLibrary');
+  late final _Dart_IsLibrary1 =
+      _Dart_IsLibrary1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsType1(
+    Object handle,
+  ) {
+    return _Dart_IsType1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsType');
+  late final _Dart_IsType1 =
+      _Dart_IsType1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsFunction1(
+    Object handle,
+  ) {
+    return _Dart_IsFunction1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFunction1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFunction');
+  late final _Dart_IsFunction1 =
+      _Dart_IsFunction1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsVariable1(
+    Object handle,
+  ) {
+    return _Dart_IsVariable1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsVariable1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsVariable');
+  late final _Dart_IsVariable1 =
+      _Dart_IsVariable1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsTypeVariable1(
+    Object handle,
+  ) {
+    return _Dart_IsTypeVariable1(
+          handle,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypeVariable1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTypeVariable');
+  late final _Dart_IsTypeVariable1 =
+      _Dart_IsTypeVariable1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsClosure1(
+    Object object,
+  ) {
+    return _Dart_IsClosure1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsClosure1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsClosure');
+  late final _Dart_IsClosure1 =
+      _Dart_IsClosure1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsTypedData1(
+    Object object,
+  ) {
+    return _Dart_IsTypedData1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTypedData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTypedData');
+  late final _Dart_IsTypedData1 =
+      _Dart_IsTypedData1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsByteBuffer1(
+    Object object,
+  ) {
+    return _Dart_IsByteBuffer1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsByteBuffer1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsByteBuffer');
+  late final _Dart_IsByteBuffer1 =
+      _Dart_IsByteBuffer1Ptr.asFunction<int Function(Object)>();
+
+  bool Dart_IsFuture1(
+    Object object,
+  ) {
+    return _Dart_IsFuture1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsFuture1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsFuture');
+  late final _Dart_IsFuture1 =
+      _Dart_IsFuture1Ptr.asFunction<int Function(Object)>();
+
+  /// Gets the type of a Dart language object.
+  ///
+  /// \param instance Some Dart object.
+  ///
+  /// \return If no error occurs, the type is returned. Otherwise an
+  /// error handle is returned.
+  Object Dart_InstanceGetType1(
+    Object instance,
+  ) {
+    return _Dart_InstanceGetType1(
+      instance,
+    );
+  }
+
+  late final _Dart_InstanceGetType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_InstanceGetType');
+  late final _Dart_InstanceGetType1 =
+      _Dart_InstanceGetType1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns the name for the provided class type.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_ClassName1(
+    Object cls_type,
+  ) {
+    return _Dart_ClassName1(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassName1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassName');
+  late final _Dart_ClassName1 =
+      _Dart_ClassName1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns the name for the provided function or method.
+  ///
+  /// \return A valid string handle if no error occurs during the
+  /// operation.
+  Object Dart_FunctionName1(
+    Object function,
+  ) {
+    return _Dart_FunctionName1(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionName1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionName');
+  late final _Dart_FunctionName1 =
+      _Dart_FunctionName1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns a handle to the owner of a function.
+  ///
+  /// The owner of an instance method or a static method is its defining
+  /// class. The owner of a top-level function is its defining
+  /// library. The owner of the function of a non-implicit closure is the
+  /// function of the method or closure that defines the non-implicit
+  /// closure.
+  ///
+  /// \return A valid handle to the owner of the function, or an error
+  /// handle if the argument is not a valid handle to a function.
+  Object Dart_FunctionOwner1(
+    Object function,
+  ) {
+    return _Dart_FunctionOwner1(
+      function,
+    );
+  }
+
+  late final _Dart_FunctionOwner1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_FunctionOwner');
+  late final _Dart_FunctionOwner1 =
+      _Dart_FunctionOwner1Ptr.asFunction<Object Function(Object)>();
+
+  /// Determines whether a function handle referes to a static function
+  /// of method.
+  ///
+  /// For the purposes of the embedding API, a top-level function is
+  /// implicitly declared static.
+  ///
+  /// \param function A handle to a function or method declaration.
+  /// \param is_static Returns whether the function or method is declared static.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_FunctionIsStatic1(
+    Object function,
+    ffi.Pointer<ffi.Uint8> is_static,
+  ) {
+    return _Dart_FunctionIsStatic1(
+      function,
+      is_static,
+    );
+  }
+
+  late final _Dart_FunctionIsStatic1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_FunctionIsStatic');
+  late final _Dart_FunctionIsStatic1 = _Dart_FunctionIsStatic1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Is this object a closure resulting from a tear-off (closurized method)?
+  ///
+  /// Returns true for closures produced when an ordinary method is accessed
+  /// through a getter call. Returns false otherwise, in particular for closures
+  /// produced from local function declarations.
+  ///
+  /// \param object Some Object.
+  ///
+  /// \return true if Object is a tear-off.
+  bool Dart_IsTearOff1(
+    Object object,
+  ) {
+    return _Dart_IsTearOff1(
+          object,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsTearOff1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Handle)>>(
+          'Dart_IsTearOff');
+  late final _Dart_IsTearOff1 =
+      _Dart_IsTearOff1Ptr.asFunction<int Function(Object)>();
+
+  /// Retrieves the function of a closure.
+  ///
+  /// \return A handle to the function of the closure, or an error handle if the
+  /// argument is not a closure.
+  Object Dart_ClosureFunction1(
+    Object closure,
+  ) {
+    return _Dart_ClosureFunction1(
+      closure,
+    );
+  }
+
+  late final _Dart_ClosureFunction1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClosureFunction');
+  late final _Dart_ClosureFunction1 =
+      _Dart_ClosureFunction1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns a handle to the library which contains class.
+  ///
+  /// \return A valid handle to the library with owns class, null if the class
+  /// has no library or an error handle if the argument is not a valid handle
+  /// to a class type.
+  Object Dart_ClassLibrary1(
+    Object cls_type,
+  ) {
+    return _Dart_ClassLibrary1(
+      cls_type,
+    );
+  }
+
+  late final _Dart_ClassLibrary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ClassLibrary');
+  late final _Dart_ClassLibrary1 =
+      _Dart_ClassLibrary1Ptr.asFunction<Object Function(Object)>();
+
+  /// Does this Integer fit into a 64-bit signed integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit signed integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoInt641(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoInt641(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoInt641Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_IntegerFitsIntoInt64');
+  late final _Dart_IntegerFitsIntoInt641 = _Dart_IntegerFitsIntoInt641Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Does this Integer fit into a 64-bit unsigned integer?
+  ///
+  /// \param integer An integer.
+  /// \param fits Returns true if the integer fits into a 64-bit unsigned integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerFitsIntoUint641(
+    Object integer,
+    ffi.Pointer<ffi.Uint8> fits,
+  ) {
+    return _Dart_IntegerFitsIntoUint641(
+      integer,
+      fits,
+    );
+  }
+
+  late final _Dart_IntegerFitsIntoUint641Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_IntegerFitsIntoUint64');
+  late final _Dart_IntegerFitsIntoUint641 = _Dart_IntegerFitsIntoUint641Ptr
+      .asFunction<Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewInteger1(
+    int value,
+  ) {
+    return _Dart_NewInteger1(
+      value,
+    );
+  }
+
+  late final _Dart_NewInteger1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int64)>>(
+          'Dart_NewInteger');
+  late final _Dart_NewInteger1 =
+      _Dart_NewInteger1Ptr.asFunction<Object Function(int)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The unsigned value of the integer.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromUint641(
+    int value,
+  ) {
+    return _Dart_NewIntegerFromUint641(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromUint641Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint64)>>(
+          'Dart_NewIntegerFromUint64');
+  late final _Dart_NewIntegerFromUint641 =
+      _Dart_NewIntegerFromUint641Ptr.asFunction<Object Function(int)>();
+
+  /// Returns an Integer with the provided value.
+  ///
+  /// \param value The value of the integer represented as a C string
+  /// containing a hexadecimal number.
+  ///
+  /// \return The Integer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewIntegerFromHexCString1(
+    ffi.Pointer<ffi.Char> value,
+  ) {
+    return _Dart_NewIntegerFromHexCString1(
+      value,
+    );
+  }
+
+  late final _Dart_NewIntegerFromHexCString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_NewIntegerFromHexCString');
+  late final _Dart_NewIntegerFromHexCString1 =
+      _Dart_NewIntegerFromHexCString1Ptr.asFunction<
+          Object Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit signed integer, otherwise an error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToInt641(
+    Object integer,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_IntegerToInt641(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToInt641Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Int64>)>>('Dart_IntegerToInt64');
+  late final _Dart_IntegerToInt641 = _Dart_IntegerToInt641Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Int64>)>();
+
+  /// Gets the value of an Integer.
+  ///
+  /// The integer must fit into a 64-bit unsigned integer, otherwise an
+  /// error occurs.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToUint641(
+    Object integer,
+    ffi.Pointer<ffi.Uint64> value,
+  ) {
+    return _Dart_IntegerToUint641(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToUint641Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint64>)>>('Dart_IntegerToUint64');
+  late final _Dart_IntegerToUint641 = _Dart_IntegerToUint641Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint64>)>();
+
+  /// Gets the value of an integer as a hexadecimal C string.
+  ///
+  /// \param integer An Integer.
+  /// \param value Returns the value of the Integer as a hexadecimal C
+  /// string. This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_IntegerToHexCString1(
+    Object integer,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> value,
+  ) {
+    return _Dart_IntegerToHexCString1(
+      integer,
+      value,
+    );
+  }
+
+  late final _Dart_IntegerToHexCString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_IntegerToHexCString');
+  late final _Dart_IntegerToHexCString1 =
+      _Dart_IntegerToHexCString1Ptr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Returns a Double with the provided value.
+  ///
+  /// \param value A double.
+  ///
+  /// \return The Double object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewDouble1(
+    double value,
+  ) {
+    return _Dart_NewDouble1(
+      value,
+    );
+  }
+
+  late final _Dart_NewDouble1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Double)>>(
+          'Dart_NewDouble');
+  late final _Dart_NewDouble1 =
+      _Dart_NewDouble1Ptr.asFunction<Object Function(double)>();
+
+  /// Gets the value of a Double
+  ///
+  /// \param double_obj A Double
+  /// \param value Returns the value of the Double.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_DoubleValue1(
+    Object double_obj,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_DoubleValue1(
+      double_obj,
+      value,
+    );
+  }
+
+  late final _Dart_DoubleValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Double>)>>('Dart_DoubleValue');
+  late final _Dart_DoubleValue1 = _Dart_DoubleValue1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Double>)>();
+
+  /// Returns a closure of static function 'function_name' in the class 'class_name'
+  /// in the exported namespace of specified 'library'.
+  ///
+  /// \param library Library object
+  /// \param cls_type Type object representing a Class
+  /// \param function_name Name of the static function in the class
+  ///
+  /// \return A valid Dart instance if no error occurs during the operation.
+  Object Dart_GetStaticMethodClosure1(
+    Object library1,
+    Object cls_type,
+    Object function_name,
+  ) {
+    return _Dart_GetStaticMethodClosure1(
+      library1,
+      cls_type,
+      function_name,
+    );
+  }
+
+  late final _Dart_GetStaticMethodClosure1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle,
+              ffi.Handle)>>('Dart_GetStaticMethodClosure');
+  late final _Dart_GetStaticMethodClosure1 = _Dart_GetStaticMethodClosure1Ptr
+      .asFunction<Object Function(Object, Object, Object)>();
+
+  /// Returns the True object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the True object.
+  Object Dart_True1() {
+    return _Dart_True1();
+  }
+
+  late final _Dart_True1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_True');
+  late final _Dart_True1 = _Dart_True1Ptr.asFunction<Object Function()>();
+
+  /// Returns the False object.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \return A handle to the False object.
+  Object Dart_False1() {
+    return _Dart_False1();
+  }
+
+  late final _Dart_False1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_False');
+  late final _Dart_False1 = _Dart_False1Ptr.asFunction<Object Function()>();
+
+  /// Returns a Boolean with the provided value.
+  ///
+  /// \param value true or false.
+  ///
+  /// \return The Boolean object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewBoolean1(
+    bool value,
+  ) {
+    return _Dart_NewBoolean1(
+      value ? 1 : 0,
+    );
+  }
+
+  late final _Dart_NewBoolean1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint8)>>(
+          'Dart_NewBoolean');
+  late final _Dart_NewBoolean1 =
+      _Dart_NewBoolean1Ptr.asFunction<Object Function(int)>();
+
+  /// Gets the value of a Boolean
+  ///
+  /// \param boolean_obj A Boolean
+  /// \param value Returns the value of the Boolean.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_BooleanValue1(
+    Object boolean_obj,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_BooleanValue1(
+      boolean_obj,
+      value,
+    );
+  }
+
+  late final _Dart_BooleanValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_BooleanValue');
+  late final _Dart_BooleanValue1 = _Dart_BooleanValue1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Gets the length of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the length of the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringLength1(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringLength1(
+      str,
+      length,
+    );
+  }
+
+  late final _Dart_StringLength1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringLength');
+  late final _Dart_StringLength1 = _Dart_StringLength1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Returns a String built from the provided C string
+  /// (There is an implicit assumption that the C string passed in contains
+  /// UTF-8 encoded characters and '\0' is considered as a termination
+  /// character).
+  ///
+  /// \param value A C String
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromCString1(
+    ffi.Pointer<ffi.Char> str,
+  ) {
+    return _Dart_NewStringFromCString1(
+      str,
+    );
+  }
+
+  late final _Dart_NewStringFromCString1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Pointer<ffi.Char>)>>(
+          'Dart_NewStringFromCString');
+  late final _Dart_NewStringFromCString1 = _Dart_NewStringFromCString1Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Returns a String built from an array of UTF-8 encoded characters.
+  ///
+  /// \param utf8_array An array of UTF-8 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF81(
+    ffi.Pointer<ffi.Uint8> utf8_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF81(
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF81Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>, ffi.IntPtr)>>('Dart_NewStringFromUTF8');
+  late final _Dart_NewStringFromUTF81 = _Dart_NewStringFromUTF81Ptr.asFunction<
+      Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Returns a String built from an array of UTF-16 encoded characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF161(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF161(
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF161Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>, ffi.IntPtr)>>('Dart_NewStringFromUTF16');
+  late final _Dart_NewStringFromUTF161 = _Dart_NewStringFromUTF161Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint16>, int)>();
+
+  /// Returns a String built from an array of UTF-32 encoded characters.
+  ///
+  /// \param utf32_array An array of UTF-32 encoded characters.
+  /// \param length The length of the codepoints array.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewStringFromUTF321(
+    ffi.Pointer<ffi.Int32> utf32_array,
+    int length,
+  ) {
+    return _Dart_NewStringFromUTF321(
+      utf32_array,
+      length,
+    );
+  }
+
+  late final _Dart_NewStringFromUTF321Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Int32>, ffi.IntPtr)>>('Dart_NewStringFromUTF32');
+  late final _Dart_NewStringFromUTF321 = _Dart_NewStringFromUTF321Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Int32>, int)>();
+
+  /// Returns a String which references an external array of
+  /// Latin-1 (ISO-8859-1) encoded characters.
+  ///
+  /// \param latin1_array Array of Latin-1 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalLatin1String1(
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalLatin1String1(
+      latin1_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalLatin1String1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalLatin1String');
+  late final _Dart_NewExternalLatin1String1 =
+      _Dart_NewExternalLatin1String1Ptr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint8>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
+
+  /// Returns a String which references an external array of UTF-16 encoded
+  /// characters.
+  ///
+  /// \param utf16_array An array of UTF-16 encoded characters. This must not move.
+  /// \param length The length of the characters array.
+  /// \param peer An external pointer to associate with this string.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A callback to be called when this string is finalized.
+  ///
+  /// \return The String object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalUTF16String1(
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalUTF16String1(
+      utf16_array,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalUTF16String1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Uint16>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalUTF16String');
+  late final _Dart_NewExternalUTF16String1 =
+      _Dart_NewExternalUTF16String1Ptr.asFunction<
+          Object Function(ffi.Pointer<ffi.Uint16>, int, ffi.Pointer<ffi.Void>,
+              int, Dart_HandleFinalizer)>();
+
+  /// Gets the C string representation of a String.
+  /// (It is a sequence of UTF-8 encoded values with a '\0' termination.)
+  ///
+  /// \param str A string.
+  /// \param cstr Returns the String represented as a C string.
+  /// This C string is scope allocated and is only valid until
+  /// the next call to Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToCString1(
+    Object str,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> cstr,
+  ) {
+    return _Dart_StringToCString1(
+      str,
+      cstr,
+    );
+  }
+
+  late final _Dart_StringToCString1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('Dart_StringToCString');
+  late final _Dart_StringToCString1 = _Dart_StringToCString1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Gets a UTF-8 encoded representation of a String.
+  ///
+  /// Any unpaired surrogate code points in the string will be converted as
+  /// replacement characters (U+FFFD, 0xEF 0xBF 0xBD in UTF-8). If you need
+  /// to preserve unpaired surrogates, use the Dart_StringToUTF16 function.
+  ///
+  /// \param str A string.
+  /// \param utf8_array Returns the String represented as UTF-8 code
+  /// units.  This UTF-8 array is scope allocated and is only valid
+  /// until the next call to Dart_ExitScope.
+  /// \param length Used to return the length of the array which was
+  /// actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF81(
+    Object str,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> utf8_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF81(
+      str,
+      utf8_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF81Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF8');
+  late final _Dart_StringToUTF81 = _Dart_StringToUTF81Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+          ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the data corresponding to the string object. This function returns
+  /// the data only for Latin-1 (ISO-8859-1) string objects. For all other
+  /// string objects it returns an error.
+  ///
+  /// \param str A string.
+  /// \param latin1_array An array allocated by the caller, used to return
+  /// the string data.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToLatin11(
+    Object str,
+    ffi.Pointer<ffi.Uint8> latin1_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToLatin11(
+      str,
+      latin1_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToLatin11Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToLatin1');
+  late final _Dart_StringToLatin11 = _Dart_StringToLatin11Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the UTF-16 encoded representation of a string.
+  ///
+  /// \param str A string.
+  /// \param utf16_array An array allocated by the caller, used to return
+  /// the array of UTF-16 encoded characters.
+  /// \param length Used to pass in the length of the provided array.
+  /// Used to return the length of the array which was actually used.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringToUTF161(
+    Object str,
+    ffi.Pointer<ffi.Uint16> utf16_array,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_StringToUTF161(
+      str,
+      utf16_array,
+      length,
+    );
+  }
+
+  late final _Dart_StringToUTF161Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Pointer<ffi.Uint16>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_StringToUTF16');
+  late final _Dart_StringToUTF161 = _Dart_StringToUTF161Ptr.asFunction<
+      Object Function(
+          Object, ffi.Pointer<ffi.Uint16>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the storage size in bytes of a String.
+  ///
+  /// \param str A String.
+  /// \param length Returns the storage size in bytes of the String.
+  /// This is the size in bytes needed to store the String.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_StringStorageSize1(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> size,
+  ) {
+    return _Dart_StringStorageSize1(
+      str,
+      size,
+    );
+  }
+
+  late final _Dart_StringStorageSize1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_StringStorageSize');
+  late final _Dart_StringStorageSize1 = _Dart_StringStorageSize1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Retrieves some properties associated with a String.
+  /// Properties retrieved are:
+  /// - character size of the string (one or two byte)
+  /// - length of the string
+  /// - peer pointer of string if it is an external string.
+  /// \param str A String.
+  /// \param char_size Returns the character size of the String.
+  /// \param str_len Returns the length of the String.
+  /// \param peer Returns the peer pointer associated with the String or 0 if
+  /// there is no peer pointer for it.
+  /// \return Success if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_StringGetProperties1(
+    Object str,
+    ffi.Pointer<ffi.IntPtr> char_size,
+    ffi.Pointer<ffi.IntPtr> str_len,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_StringGetProperties1(
+      str,
+      char_size,
+      str_len,
+      peer,
+    );
+  }
+
+  late final _Dart_StringGetProperties1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_StringGetProperties');
+  late final _Dart_StringGetProperties1 =
+      _Dart_StringGetProperties1Ptr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.IntPtr>, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Returns a List<dynamic> of the desired length.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewList1(
+    int length,
+  ) {
+    return _Dart_NewList1(
+      length,
+    );
+  }
+
+  late final _Dart_NewList1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
+          'Dart_NewList');
+  late final _Dart_NewList1 =
+      _Dart_NewList1Ptr.asFunction<Object Function(int)>();
+
+  /// TODO(bkonyi): convert this to use nullable types once NNBD is enabled.
+  /// /**
+  ///  * Returns a List of the desired length with the desired legacy element type.
+  ///  *
+  ///  * \param element_type_id The type of elements of the list.
+  ///  * \param length The length of the list.
+  ///  *
+  ///  * \return The List object if no error occurs. Otherwise returns an error
+  ///  * handle.
+  ///  */
+  Object Dart_NewListOf1(
+    int element_type_id,
+    int length,
+  ) {
+    return _Dart_NewListOf1(
+      element_type_id,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOf1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewListOf');
+  late final _Dart_NewListOf1 =
+      _Dart_NewListOf1Ptr.asFunction<Object Function(int, int)>();
+
+  /// Returns a List of the desired length with the desired element type.
+  ///
+  /// \param element_type Handle to a nullable type object. E.g., from
+  /// Dart_GetType or Dart_GetNullableType.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfType1(
+    Object element_type,
+    int length,
+  ) {
+    return _Dart_NewListOfType1(
+      element_type,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_NewListOfType');
+  late final _Dart_NewListOfType1 =
+      _Dart_NewListOfType1Ptr.asFunction<Object Function(Object, int)>();
+
+  /// Returns a List of the desired length with the desired element type, filled
+  /// with the provided object.
+  ///
+  /// \param element_type Handle to a type object. E.g., from Dart_GetType.
+  ///
+  /// \param fill_object Handle to an object of type 'element_type' that will be
+  /// used to populate the list. This parameter can only be Dart_Null() if the
+  /// length of the list is 0 or 'element_type' is a nullable type.
+  ///
+  /// \param length The length of the list.
+  ///
+  /// \return The List object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewListOfTypeFilled1(
+    Object element_type,
+    Object fill_object,
+    int length,
+  ) {
+    return _Dart_NewListOfTypeFilled1(
+      element_type,
+      fill_object,
+      length,
+    );
+  }
+
+  late final _Dart_NewListOfTypeFilled1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.IntPtr)>>('Dart_NewListOfTypeFilled');
+  late final _Dart_NewListOfTypeFilled1 = _Dart_NewListOfTypeFilled1Ptr
+      .asFunction<Object Function(Object, Object, int)>();
+
+  /// Gets the length of a List.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param length Returns the length of the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListLength1(
+    Object list,
+    ffi.Pointer<ffi.IntPtr> length,
+  ) {
+    return _Dart_ListLength1(
+      list,
+      length,
+    );
+  }
+
+  late final _Dart_ListLength1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.IntPtr>)>>('Dart_ListLength');
+  late final _Dart_ListLength1 = _Dart_ListLength1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param index A valid index into the List.
+  ///
+  /// \return The Object in the List at the specified index if no error
+  /// occurs. Otherwise returns an error handle.
+  Object Dart_ListGetAt1(
+    Object list,
+    int index,
+  ) {
+    return _Dart_ListGetAt1(
+      list,
+      index,
+    );
+  }
+
+  late final _Dart_ListGetAt1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.IntPtr)>>(
+          'Dart_ListGetAt');
+  late final _Dart_ListGetAt1 =
+      _Dart_ListGetAt1Ptr.asFunction<Object Function(Object, int)>();
+
+  /// Gets a range of Objects from a List.
+  ///
+  /// If any of the requested index values are out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param list A List.
+  /// \param offset The offset of the first item to get.
+  /// \param length The number of items to get.
+  /// \param result A pointer to fill with the objects.
+  ///
+  /// \return Success if no error occurs during the operation.
+  Object Dart_ListGetRange1(
+    Object list,
+    int offset,
+    int length,
+    ffi.Pointer<ffi.Handle> result,
+  ) {
+    return _Dart_ListGetRange1(
+      list,
+      offset,
+      length,
+      result,
+    );
+  }
+
+  late final _Dart_ListGetRange1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_ListGetRange');
+  late final _Dart_ListGetRange1 = _Dart_ListGetRange1Ptr.asFunction<
+      Object Function(Object, int, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Sets the Object at some index of a List.
+  ///
+  /// If the index is out of bounds, an error occurs.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param array A List.
+  /// \param index A valid index into the List.
+  /// \param value The Object to put in the List.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_ListSetAt1(
+    Object list,
+    int index,
+    Object value,
+  ) {
+    return _Dart_ListSetAt1(
+      list,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_ListSetAt1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.IntPtr, ffi.Handle)>>('Dart_ListSetAt');
+  late final _Dart_ListSetAt1 =
+      _Dart_ListSetAt1Ptr.asFunction<Object Function(Object, int, Object)>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListGetAsBytes1(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListGetAsBytes1(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListGetAsBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListGetAsBytes');
+  late final _Dart_ListGetAsBytes1 = _Dart_ListGetAsBytes1Ptr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// May generate an unhandled exception error.
+  Object Dart_ListSetAsBytes1(
+    Object list,
+    int offset,
+    ffi.Pointer<ffi.Uint8> native_array,
+    int length,
+  ) {
+    return _Dart_ListSetAsBytes1(
+      list,
+      offset,
+      native_array,
+      length,
+    );
+  }
+
+  late final _Dart_ListSetAsBytes1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_ListSetAsBytes');
+  late final _Dart_ListSetAsBytes1 = _Dart_ListSetAsBytes1Ptr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Gets the Object at some key of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  /// \param key An Object.
+  ///
+  /// \return The value in the map at the specified key, null if the map does not
+  /// contain the key, or an error handle.
+  Object Dart_MapGetAt1(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapGetAt1(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapGetAt1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_MapGetAt');
+  late final _Dart_MapGetAt1 =
+      _Dart_MapGetAt1Ptr.asFunction<Object Function(Object, Object)>();
+
+  /// Returns whether the Map contains a given key.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return A handle on a boolean indicating whether map contains the key.
+  /// Otherwise returns an error handle.
+  Object Dart_MapContainsKey1(
+    Object map,
+    Object key,
+  ) {
+    return _Dart_MapContainsKey1(
+      map,
+      key,
+    );
+  }
+
+  late final _Dart_MapContainsKey1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_MapContainsKey');
+  late final _Dart_MapContainsKey1 =
+      _Dart_MapContainsKey1Ptr.asFunction<Object Function(Object, Object)>();
+
+  /// Gets the list of keys of a Map.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param map A Map.
+  ///
+  /// \return The list of key Objects if no error occurs. Otherwise returns an
+  /// error handle.
+  Object Dart_MapKeys1(
+    Object map,
+  ) {
+    return _Dart_MapKeys1(
+      map,
+    );
+  }
+
+  late final _Dart_MapKeys1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_MapKeys');
+  late final _Dart_MapKeys1 =
+      _Dart_MapKeys1Ptr.asFunction<Object Function(Object)>();
+
+  /// Return type if this object is a TypedData object.
+  ///
+  /// \return kInvalid if the object is not a TypedData object or the appropriate
+  /// Dart_TypedData_Type.
+  int Dart_GetTypeOfTypedData1(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfTypedData1(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfTypedData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
+          'Dart_GetTypeOfTypedData');
+  late final _Dart_GetTypeOfTypedData1 =
+      _Dart_GetTypeOfTypedData1Ptr.asFunction<int Function(Object)>();
+
+  /// Return type if this object is an external TypedData object.
+  ///
+  /// \return kInvalid if the object is not an external TypedData object or
+  /// the appropriate Dart_TypedData_Type.
+  int Dart_GetTypeOfExternalTypedData1(
+    Object object,
+  ) {
+    return _Dart_GetTypeOfExternalTypedData1(
+      object,
+    );
+  }
+
+  late final _Dart_GetTypeOfExternalTypedData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Handle)>>(
+          'Dart_GetTypeOfExternalTypedData');
+  late final _Dart_GetTypeOfExternalTypedData1 =
+      _Dart_GetTypeOfExternalTypedData1Ptr.asFunction<int Function(Object)>();
+
+  /// Returns a TypedData object of the desired length and type.
+  ///
+  /// \param type The type of the TypedData object.
+  /// \param length The length of the TypedData object (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewTypedData1(
+    int type,
+    int length,
+  ) {
+    return _Dart_NewTypedData1(
+      type,
+      length,
+    );
+  }
+
+  late final _Dart_NewTypedData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Int32, ffi.IntPtr)>>(
+          'Dart_NewTypedData');
+  late final _Dart_NewTypedData1 =
+      _Dart_NewTypedData1Ptr.asFunction<Object Function(int, int)>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedData1(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+  ) {
+    return _Dart_NewExternalTypedData1(
+      type,
+      data,
+      length,
+    );
+  }
+
+  late final _Dart_NewExternalTypedData1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Int32, ffi.Pointer<ffi.Void>,
+              ffi.IntPtr)>>('Dart_NewExternalTypedData');
+  late final _Dart_NewExternalTypedData1 = _Dart_NewExternalTypedData1Ptr
+      .asFunction<Object Function(int, ffi.Pointer<ffi.Void>, int)>();
+
+  /// Returns a TypedData object which references an external data array.
+  ///
+  /// \param type The type of the data array.
+  /// \param data A data array. This array must not move.
+  /// \param length The length of the data array (length in type units).
+  /// \param peer A pointer to a native object or NULL.  This value is
+  /// provided to callback when it is invoked.
+  /// \param external_allocation_size The number of externally allocated
+  /// bytes for peer. Used to inform the garbage collector.
+  /// \param callback A function pointer that will be invoked sometime
+  /// after the object is garbage collected, unless the handle has been deleted.
+  /// A valid callback needs to be specified it cannot be NULL.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewExternalTypedDataWithFinalizer1(
+    int type,
+    ffi.Pointer<ffi.Void> data,
+    int length,
+    ffi.Pointer<ffi.Void> peer,
+    int external_allocation_size,
+    Dart_HandleFinalizer callback,
+  ) {
+    return _Dart_NewExternalTypedDataWithFinalizer1(
+      type,
+      data,
+      length,
+      peer,
+      external_allocation_size,
+      callback,
+    );
+  }
+
+  late final _Dart_NewExternalTypedDataWithFinalizer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Int32,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              ffi.Pointer<ffi.Void>,
+              ffi.IntPtr,
+              Dart_HandleFinalizer)>>('Dart_NewExternalTypedDataWithFinalizer');
+  late final _Dart_NewExternalTypedDataWithFinalizer1 =
+      _Dart_NewExternalTypedDataWithFinalizer1Ptr.asFunction<
+          Object Function(int, ffi.Pointer<ffi.Void>, int,
+              ffi.Pointer<ffi.Void>, int, Dart_HandleFinalizer)>();
+
+  /// Returns a ByteBuffer object for the typed data.
+  ///
+  /// \param type_data The TypedData object.
+  ///
+  /// \return The ByteBuffer object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_NewByteBuffer1(
+    Object typed_data,
+  ) {
+    return _Dart_NewByteBuffer1(
+      typed_data,
+    );
+  }
+
+  late final _Dart_NewByteBuffer1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_NewByteBuffer');
+  late final _Dart_NewByteBuffer1 =
+      _Dart_NewByteBuffer1Ptr.asFunction<Object Function(Object)>();
+
+  /// Acquires access to the internal data address of a TypedData object.
+  ///
+  /// \param object The typed data object whose internal data address is to
+  /// be accessed.
+  /// \param type The type of the object is returned here.
+  /// \param data The internal data address is returned here.
+  /// \param len Size of the typed array is returned here.
+  ///
+  /// Notes:
+  /// When the internal address of the object is acquired any calls to a
+  /// Dart API function that could potentially allocate an object or run
+  /// any Dart code will return an error.
+  ///
+  /// Any Dart API functions for accessing the data should not be called
+  /// before the corresponding release. In particular, the object should
+  /// not be acquired again before its release. This leads to undefined
+  /// behavior.
+  ///
+  /// \return Success if the internal data address is acquired successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataAcquireData1(
+    Object object,
+    ffi.Pointer<ffi.Int32> type,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> data,
+    ffi.Pointer<ffi.IntPtr> len,
+  ) {
+    return _Dart_TypedDataAcquireData1(
+      object,
+      type,
+      data,
+      len,
+    );
+  }
+
+  late final _Dart_TypedDataAcquireData1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle,
+              ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_TypedDataAcquireData');
+  late final _Dart_TypedDataAcquireData1 =
+      _Dart_TypedDataAcquireData1Ptr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Int32>,
+              ffi.Pointer<ffi.Pointer<ffi.Void>>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Releases access to the internal data address that was acquired earlier using
+  /// Dart_TypedDataAcquireData.
+  ///
+  /// \param object The typed data object whose internal data address is to be
+  /// released.
+  ///
+  /// \return Success if the internal data address is released successfully.
+  /// Otherwise, returns an error handle.
+  Object Dart_TypedDataReleaseData1(
+    Object object,
+  ) {
+    return _Dart_TypedDataReleaseData1(
+      object,
+    );
+  }
+
+  late final _Dart_TypedDataReleaseData1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypedDataReleaseData');
+  late final _Dart_TypedDataReleaseData1 =
+      _Dart_TypedDataReleaseData1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns the TypedData object associated with the ByteBuffer object.
+  ///
+  /// \param byte_buffer The ByteBuffer object.
+  ///
+  /// \return The TypedData object if no error occurs. Otherwise returns
+  /// an error handle.
+  Object Dart_GetDataFromByteBuffer1(
+    Object byte_buffer,
+  ) {
+    return _Dart_GetDataFromByteBuffer1(
+      byte_buffer,
+    );
+  }
+
+  late final _Dart_GetDataFromByteBuffer1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_GetDataFromByteBuffer');
+  late final _Dart_GetDataFromByteBuffer1 =
+      _Dart_GetDataFromByteBuffer1Ptr.asFunction<Object Function(Object)>();
+
+  /// Invokes a constructor, creating a new object.
+  ///
+  /// This function allows hidden constructors (constructors with leading
+  /// underscores) to be called.
+  ///
+  /// \param type Type of object to be constructed.
+  /// \param constructor_name The name of the constructor to invoke.  Use
+  /// Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// This name should not include the name of the class.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the constructor.
+  ///
+  /// \return If the constructor is called and completes successfully,
+  /// then the new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_New1(
+    Object type,
+    Object constructor_name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_New1(
+      type,
+      constructor_name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_New1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_New');
+  late final _Dart_New1 = _Dart_New1Ptr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Allocate a new object without invoking a constructor.
+  ///
+  /// \param type The type of an object to be allocated.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_Allocate1(
+    Object type,
+  ) {
+    return _Dart_Allocate1(
+      type,
+    );
+  }
+
+  late final _Dart_Allocate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_Allocate');
+  late final _Dart_Allocate1 =
+      _Dart_Allocate1Ptr.asFunction<Object Function(Object)>();
+
+  /// Allocate a new object without invoking a constructor, and sets specified
+  /// native fields.
+  ///
+  /// \param type The type of an object to be allocated.
+  /// \param num_native_fields The number of native fields to set.
+  /// \param native_fields An array containing the value of native fields.
+  ///
+  /// \return The new object. If an error occurs during execution, then an
+  /// error handle is returned.
+  Object Dart_AllocateWithNativeFields1(
+    Object type,
+    int num_native_fields,
+    ffi.Pointer<ffi.IntPtr> native_fields,
+  ) {
+    return _Dart_AllocateWithNativeFields1(
+      type,
+      num_native_fields,
+      native_fields,
+    );
+  }
+
+  late final _Dart_AllocateWithNativeFields1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_AllocateWithNativeFields');
+  late final _Dart_AllocateWithNativeFields1 =
+      _Dart_AllocateWithNativeFields1Ptr.asFunction<
+          Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Invokes a method or function.
+  ///
+  /// The 'target' parameter may be an object, type, or library.  If
+  /// 'target' is an object, then this function will invoke an instance
+  /// method.  If 'target' is a type, then this function will invoke a
+  /// static method.  If 'target' is a library, then this function will
+  /// invoke a top-level function from that library.
+  /// NOTE: This API call cannot be used to invoke methods of a type object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object, type, or library.
+  /// \param name The name of the function or method to invoke.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the function or method is called and completes
+  /// successfully, then the return value is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_Invoke1(
+    Object target,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_Invoke1(
+      target,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_Invoke1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_Invoke');
+  late final _Dart_Invoke1 = _Dart_Invoke1Ptr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Invokes a Closure with the given arguments.
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \return If no error occurs during execution, then the result of
+  /// invoking the closure is returned. If an error occurs during
+  /// execution, then an error handle is returned.
+  Object Dart_InvokeClosure1(
+    Object closure,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeClosure1(
+      closure,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeClosure1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeClosure');
+  late final _Dart_InvokeClosure1 = _Dart_InvokeClosure1Ptr.asFunction<
+      Object Function(Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Invokes a Generative Constructor on an object that was previously
+  /// allocated using Dart_Allocate/Dart_AllocateWithNativeFields.
+  ///
+  /// The 'target' parameter must be an object.
+  ///
+  /// This function ignores visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param target An object.
+  /// \param name The name of the constructor to invoke.
+  /// Use Dart_Null() or Dart_EmptyString() to invoke the unnamed constructor.
+  /// \param number_of_arguments Size of the arguments array.
+  /// \param arguments An array of arguments to the function.
+  ///
+  /// \return If the constructor is called and completes
+  /// successfully, then the object is returned. If an error
+  /// occurs during execution, then an error handle is returned.
+  Object Dart_InvokeConstructor1(
+    Object object,
+    Object name,
+    int number_of_arguments,
+    ffi.Pointer<ffi.Handle> arguments,
+  ) {
+    return _Dart_InvokeConstructor1(
+      object,
+      name,
+      number_of_arguments,
+      arguments,
+    );
+  }
+
+  late final _Dart_InvokeConstructor1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.Handle>)>>('Dart_InvokeConstructor');
+  late final _Dart_InvokeConstructor1 = _Dart_InvokeConstructor1Ptr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Gets the value of a field.
+  ///
+  /// The 'container' parameter may be an object, type, or library.  If
+  /// 'container' is an object, then this function will access an
+  /// instance field.  If 'container' is a type, then this function will
+  /// access a static field.  If 'container' is a library, then this
+  /// function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  ///
+  /// \return If no error occurs, then the value of the field is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetField1(
+    Object container,
+    Object name,
+  ) {
+    return _Dart_GetField1(
+      container,
+      name,
+    );
+  }
+
+  late final _Dart_GetField1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetField');
+  late final _Dart_GetField1 =
+      _Dart_GetField1Ptr.asFunction<Object Function(Object, Object)>();
+
+  /// Sets the value of a field.
+  ///
+  /// The 'container' parameter may actually be an object, type, or
+  /// library.  If 'container' is an object, then this function will
+  /// access an instance field.  If 'container' is a type, then this
+  /// function will access a static field.  If 'container' is a library,
+  /// then this function will access a top-level variable.
+  /// NOTE: This API call cannot be used to access fields of a type object.
+  ///
+  /// This function ignores field visibility (leading underscores in names).
+  ///
+  /// May generate an unhandled exception error.
+  ///
+  /// \param container An object, type, or library.
+  /// \param name A field name.
+  /// \param value The new field value.
+  ///
+  /// \return A valid handle if no error occurs.
+  Object Dart_SetField1(
+    Object container,
+    Object name,
+    Object value,
+  ) {
+    return _Dart_SetField1(
+      container,
+      name,
+      value,
+    );
+  }
+
+  late final _Dart_SetField1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Handle, ffi.Handle)>>('Dart_SetField');
+  late final _Dart_SetField1 =
+      _Dart_SetField1Ptr.asFunction<Object Function(Object, Object, Object)>();
+
+  /// Throws an exception.
+  ///
+  /// This function causes a Dart language exception to be thrown. This
+  /// will proceed in the standard way, walking up Dart frames until an
+  /// appropriate 'catch' block is found, executing 'finally' blocks,
+  /// etc.
+  ///
+  /// If an error handle is passed into this function, the error is
+  /// propagated immediately.  See Dart_PropagateError for a discussion
+  /// of error propagation.
+  ///
+  /// If successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ThrowException1(
+    Object exception,
+  ) {
+    return _Dart_ThrowException1(
+      exception,
+    );
+  }
+
+  late final _Dart_ThrowException1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_ThrowException');
+  late final _Dart_ThrowException1 =
+      _Dart_ThrowException1Ptr.asFunction<Object Function(Object)>();
+
+  /// Rethrows an exception.
+  ///
+  /// Rethrows an exception, unwinding all dart frames on the stack. If
+  /// successful, this function does not return. Note that this means
+  /// that the destructors of any stack-allocated C++ objects will not be
+  /// called. If there are no Dart frames on the stack, an error occurs.
+  ///
+  /// \return An error handle if the exception was not thrown.
+  /// Otherwise the function does not return.
+  Object Dart_ReThrowException1(
+    Object exception,
+    Object stacktrace,
+  ) {
+    return _Dart_ReThrowException1(
+      exception,
+      stacktrace,
+    );
+  }
+
+  late final _Dart_ReThrowException1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_ReThrowException');
+  late final _Dart_ReThrowException1 =
+      _Dart_ReThrowException1Ptr.asFunction<Object Function(Object, Object)>();
+
+  /// Gets the number of native instance fields in an object.
+  Object Dart_GetNativeInstanceFieldCount1(
+    Object obj,
+    ffi.Pointer<ffi.Int> count,
+  ) {
+    return _Dart_GetNativeInstanceFieldCount1(
+      obj,
+      count,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceFieldCount1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<ffi.Int>)>>('Dart_GetNativeInstanceFieldCount');
+  late final _Dart_GetNativeInstanceFieldCount1 =
+      _Dart_GetNativeInstanceFieldCount1Ptr.asFunction<
+          Object Function(Object, ffi.Pointer<ffi.Int>)>();
+
+  /// Gets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_GetNativeInstanceField1(
+    Object obj,
+    int index,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeInstanceField1(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeInstanceField1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeInstanceField');
+  late final _Dart_GetNativeInstanceField1 = _Dart_GetNativeInstanceField1Ptr
+      .asFunction<Object Function(Object, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Sets the value of a native field.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetNativeInstanceField1(
+    Object obj,
+    int index,
+    int value,
+  ) {
+    return _Dart_SetNativeInstanceField1(
+      obj,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_SetNativeInstanceField1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Int, ffi.IntPtr)>>('Dart_SetNativeInstanceField');
+  late final _Dart_SetNativeInstanceField1 = _Dart_SetNativeInstanceField1Ptr
+      .asFunction<Object Function(Object, int, int)>();
+
+  /// Extracts current isolate group data from the native arguments structure.
+  ffi.Pointer<ffi.Void> Dart_GetNativeIsolateGroupData1(
+    Dart_NativeArguments args,
+  ) {
+    return _Dart_GetNativeIsolateGroupData1(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeIsolateGroupData1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(
+              Dart_NativeArguments)>>('Dart_GetNativeIsolateGroupData');
+  late final _Dart_GetNativeIsolateGroupData1 =
+      _Dart_GetNativeIsolateGroupData1Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(Dart_NativeArguments)>();
+
+  /// Gets the native arguments based on the types passed in and populates
+  /// the passed arguments buffer with appropriate native values.
+  ///
+  /// \param args the Native arguments block passed into the native call.
+  /// \param num_arguments length of argument descriptor array and argument
+  /// values array passed in.
+  /// \param arg_descriptors an array that describes the arguments that
+  /// need to be retrieved. For each argument to be retrieved the descriptor
+  /// contains the argument number (0, 1 etc.) and the argument type
+  /// described using Dart_NativeArgument_Type, e.g:
+  /// DART_NATIVE_ARG_DESCRIPTOR(Dart_NativeArgument_kBool, 1) indicates
+  /// that the first argument is to be retrieved and it should be a boolean.
+  /// \param arg_values array into which the native arguments need to be
+  /// extracted into, the array is allocated by the caller (it could be
+  /// stack allocated to avoid the malloc/free performance overhead).
+  ///
+  /// \return Success if all the arguments could be extracted correctly,
+  /// returns an error handle if there were any errors while extracting the
+  /// arguments (mismatched number of arguments, incorrect types, etc.).
+  Object Dart_GetNativeArguments1(
+    Dart_NativeArguments args,
+    int num_arguments,
+    ffi.Pointer<Dart_NativeArgument_Descriptor> arg_descriptors,
+    ffi.Pointer<Dart_NativeArgument_Value> arg_values,
+  ) {
+    return _Dart_GetNativeArguments1(
+      args,
+      num_arguments,
+      arg_descriptors,
+      arg_values,
+    );
+  }
+
+  late final _Dart_GetNativeArguments1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_NativeArguments,
+                  ffi.Int,
+                  ffi.Pointer<Dart_NativeArgument_Descriptor>,
+                  ffi.Pointer<Dart_NativeArgument_Value>)>>(
+      'Dart_GetNativeArguments');
+  late final _Dart_GetNativeArguments1 =
+      _Dart_GetNativeArguments1Ptr.asFunction<
+          Object Function(
+              Dart_NativeArguments,
+              int,
+              ffi.Pointer<Dart_NativeArgument_Descriptor>,
+              ffi.Pointer<Dart_NativeArgument_Value>)>();
+
+  /// Gets the native argument at some index.
+  Object Dart_GetNativeArgument1(
+    Dart_NativeArguments args,
+    int index,
+  ) {
+    return _Dart_GetNativeArgument1(
+      args,
+      index,
+    );
+  }
+
+  late final _Dart_GetNativeArgument1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_NativeArguments, ffi.Int)>>('Dart_GetNativeArgument');
+  late final _Dart_GetNativeArgument1 = _Dart_GetNativeArgument1Ptr.asFunction<
+      Object Function(Dart_NativeArguments, int)>();
+
+  /// Gets the number of native arguments.
+  int Dart_GetNativeArgumentCount1(
+    Dart_NativeArguments args,
+  ) {
+    return _Dart_GetNativeArgumentCount1(
+      args,
+    );
+  }
+
+  late final _Dart_GetNativeArgumentCount1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(Dart_NativeArguments)>>(
+          'Dart_GetNativeArgumentCount');
+  late final _Dart_GetNativeArgumentCount1 = _Dart_GetNativeArgumentCount1Ptr
+      .asFunction<int Function(Dart_NativeArguments)>();
+
+  /// Gets all the native fields of the native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param num_fields size of the intptr_t array 'field_values' passed in.
+  /// \param field_values intptr_t array in which native field values are returned.
+  /// \return Success if the native fields where copied in successfully. Otherwise
+  /// returns an error handle. On success the native field values are copied
+  /// into the 'field_values' array, if the argument at 'arg_index' is a
+  /// null object then 0 is copied as the native field values into the
+  /// 'field_values' array.
+  Object Dart_GetNativeFieldsOfArgument1(
+    Dart_NativeArguments args,
+    int arg_index,
+    int num_fields,
+    ffi.Pointer<ffi.IntPtr> field_values,
+  ) {
+    return _Dart_GetNativeFieldsOfArgument1(
+      args,
+      arg_index,
+      num_fields,
+      field_values,
+    );
+  }
+
+  late final _Dart_GetNativeFieldsOfArgument1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int, ffi.Int,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeFieldsOfArgument');
+  late final _Dart_GetNativeFieldsOfArgument1 =
+      _Dart_GetNativeFieldsOfArgument1Ptr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, int, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets the native field of the receiver.
+  Object Dart_GetNativeReceiver1(
+    Dart_NativeArguments args,
+    ffi.Pointer<ffi.IntPtr> value,
+  ) {
+    return _Dart_GetNativeReceiver1(
+      args,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeReceiver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetNativeReceiver');
+  late final _Dart_GetNativeReceiver1 = _Dart_GetNativeReceiver1Ptr.asFunction<
+      Object Function(Dart_NativeArguments, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Gets a string native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param peer Returns the peer pointer if the string argument has one.
+  /// \return Success if the string argument has a peer, if it does not
+  /// have a peer then the String object is returned. Otherwise returns
+  /// an error handle (argument is not a String object).
+  Object Dart_GetNativeStringArgument1(
+    Dart_NativeArguments args,
+    int arg_index,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetNativeStringArgument1(
+      args,
+      arg_index,
+      peer,
+    );
+  }
+
+  late final _Dart_GetNativeStringArgument1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+                  ffi.Pointer<ffi.Pointer<ffi.Void>>)>>(
+      'Dart_GetNativeStringArgument');
+  late final _Dart_GetNativeStringArgument1 =
+      _Dart_GetNativeStringArgument1Ptr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Gets an integer native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the integer value if the argument is an Integer.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeIntegerArgument1(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Int64> value,
+  ) {
+    return _Dart_GetNativeIntegerArgument1(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeIntegerArgument1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Int64>)>>('Dart_GetNativeIntegerArgument');
+  late final _Dart_GetNativeIntegerArgument1 =
+      _Dart_GetNativeIntegerArgument1Ptr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Int64>)>();
+
+  /// Gets a boolean native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the boolean value if the argument is a Boolean.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeBooleanArgument1(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Uint8> value,
+  ) {
+    return _Dart_GetNativeBooleanArgument1(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeBooleanArgument1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_GetNativeBooleanArgument');
+  late final _Dart_GetNativeBooleanArgument1 =
+      _Dart_GetNativeBooleanArgument1Ptr.asFunction<
+          Object Function(Dart_NativeArguments, int, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Gets a double native argument at some index.
+  /// \param args Native arguments structure.
+  /// \param arg_index Index of the desired argument in the structure above.
+  /// \param value Returns the double value if the argument is a double.
+  /// \return Success if no error occurs. Otherwise returns an error handle.
+  Object Dart_GetNativeDoubleArgument1(
+    Dart_NativeArguments args,
+    int index,
+    ffi.Pointer<ffi.Double> value,
+  ) {
+    return _Dart_GetNativeDoubleArgument1(
+      args,
+      index,
+      value,
+    );
+  }
+
+  late final _Dart_GetNativeDoubleArgument1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_NativeArguments, ffi.Int,
+              ffi.Pointer<ffi.Double>)>>('Dart_GetNativeDoubleArgument');
+  late final _Dart_GetNativeDoubleArgument1 =
+      _Dart_GetNativeDoubleArgument1Ptr.asFunction<
+          Object Function(
+              Dart_NativeArguments, int, ffi.Pointer<ffi.Double>)>();
+
+  /// Sets the return value for a native function.
+  ///
+  /// If retval is an Error handle, then error will be propagated once
+  /// the native functions exits. See Dart_PropagateError for a
+  /// discussion of how different types of errors are propagated.
+  void Dart_SetReturnValue1(
+    Dart_NativeArguments args,
+    Object retval,
+  ) {
+    return _Dart_SetReturnValue1(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetReturnValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Handle)>>('Dart_SetReturnValue');
+  late final _Dart_SetReturnValue1 = _Dart_SetReturnValue1Ptr.asFunction<
+      void Function(Dart_NativeArguments, Object)>();
+
+  void Dart_SetWeakHandleReturnValue1(
+    Dart_NativeArguments args,
+    Dart_WeakPersistentHandle rval,
+  ) {
+    return _Dart_SetWeakHandleReturnValue1(
+      args,
+      rval,
+    );
+  }
+
+  late final _Dart_SetWeakHandleReturnValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(Dart_NativeArguments,
+              Dart_WeakPersistentHandle)>>('Dart_SetWeakHandleReturnValue');
+  late final _Dart_SetWeakHandleReturnValue1 =
+      _Dart_SetWeakHandleReturnValue1Ptr.asFunction<
+          void Function(Dart_NativeArguments, Dart_WeakPersistentHandle)>();
+
+  void Dart_SetBooleanReturnValue1(
+    Dart_NativeArguments args,
+    bool retval,
+  ) {
+    return _Dart_SetBooleanReturnValue1(
+      args,
+      retval ? 1 : 0,
+    );
+  }
+
+  late final _Dart_SetBooleanReturnValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Uint8)>>('Dart_SetBooleanReturnValue');
+  late final _Dart_SetBooleanReturnValue1 = _Dart_SetBooleanReturnValue1Ptr
+      .asFunction<void Function(Dart_NativeArguments, int)>();
+
+  void Dart_SetIntegerReturnValue1(
+    Dart_NativeArguments args,
+    int retval,
+  ) {
+    return _Dart_SetIntegerReturnValue1(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetIntegerReturnValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Int64)>>('Dart_SetIntegerReturnValue');
+  late final _Dart_SetIntegerReturnValue1 = _Dart_SetIntegerReturnValue1Ptr
+      .asFunction<void Function(Dart_NativeArguments, int)>();
+
+  void Dart_SetDoubleReturnValue1(
+    Dart_NativeArguments args,
+    double retval,
+  ) {
+    return _Dart_SetDoubleReturnValue1(
+      args,
+      retval,
+    );
+  }
+
+  late final _Dart_SetDoubleReturnValue1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              Dart_NativeArguments, ffi.Double)>>('Dart_SetDoubleReturnValue');
+  late final _Dart_SetDoubleReturnValue1 = _Dart_SetDoubleReturnValue1Ptr
+      .asFunction<void Function(Dart_NativeArguments, double)>();
+
+  /// Sets the environment callback for the current isolate. This
+  /// callback is used to lookup environment values by name in the
+  /// current environment. This enables the embedder to supply values for
+  /// the const constructors bool.fromEnvironment, int.fromEnvironment
+  /// and String.fromEnvironment.
+  Object Dart_SetEnvironmentCallback1(
+    Dart_EnvironmentCallback callback,
+  ) {
+    return _Dart_SetEnvironmentCallback1(
+      callback,
+    );
+  }
+
+  late final _Dart_SetEnvironmentCallback1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_EnvironmentCallback)>>(
+      'Dart_SetEnvironmentCallback');
+  late final _Dart_SetEnvironmentCallback1 = _Dart_SetEnvironmentCallback1Ptr
+      .asFunction<Object Function(Dart_EnvironmentCallback)>();
+
+  /// Sets the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver A native entry resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetNativeResolver1(
+    Object library1,
+    Dart_NativeEntryResolver resolver,
+    Dart_NativeEntrySymbol symbol,
+  ) {
+    return _Dart_SetNativeResolver1(
+      library1,
+      resolver,
+      symbol,
+    );
+  }
+
+  late final _Dart_SetNativeResolver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, Dart_NativeEntryResolver,
+              Dart_NativeEntrySymbol)>>('Dart_SetNativeResolver');
+  late final _Dart_SetNativeResolver1 = _Dart_SetNativeResolver1Ptr.asFunction<
+      Object Function(
+          Object, Dart_NativeEntryResolver, Dart_NativeEntrySymbol)>();
+
+  /// Returns the callback used to resolve native functions for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntryResolver
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeResolver1(
+    Object library1,
+    ffi.Pointer<Dart_NativeEntryResolver> resolver,
+  ) {
+    return _Dart_GetNativeResolver1(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeResolver1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  ffi.Handle, ffi.Pointer<Dart_NativeEntryResolver>)>>(
+      'Dart_GetNativeResolver');
+  late final _Dart_GetNativeResolver1 = _Dart_GetNativeResolver1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntryResolver>)>();
+
+  /// Returns the callback used to resolve native function symbols for a library.
+  ///
+  /// \param library A library.
+  /// \param resolver a pointer to a Dart_NativeEntrySymbol.
+  ///
+  /// \return A valid handle if the library was found.
+  Object Dart_GetNativeSymbol1(
+    Object library1,
+    ffi.Pointer<Dart_NativeEntrySymbol> resolver,
+  ) {
+    return _Dart_GetNativeSymbol1(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_GetNativeSymbol1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              ffi.Pointer<Dart_NativeEntrySymbol>)>>('Dart_GetNativeSymbol');
+  late final _Dart_GetNativeSymbol1 = _Dart_GetNativeSymbol1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<Dart_NativeEntrySymbol>)>();
+
+  /// Sets the callback used to resolve FFI native functions for a library.
+  /// The resolved functions are expected to be a C function pointer of the
+  /// correct signature (as specified in the `@FfiNative<NFT>()` function
+  /// annotation in Dart code).
+  ///
+  /// NOTE: This is an experimental feature and might change in the future.
+  ///
+  /// \param library A library.
+  /// \param resolver A native function resolver.
+  ///
+  /// \return A valid handle if the native resolver was set successfully.
+  Object Dart_SetFfiNativeResolver1(
+    Object library1,
+    Dart_FfiNativeResolver resolver,
+  ) {
+    return _Dart_SetFfiNativeResolver1(
+      library1,
+      resolver,
+    );
+  }
+
+  late final _Dart_SetFfiNativeResolver1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle,
+              Dart_FfiNativeResolver)>>('Dart_SetFfiNativeResolver');
+  late final _Dart_SetFfiNativeResolver1 = _Dart_SetFfiNativeResolver1Ptr
+      .asFunction<Object Function(Object, Dart_FfiNativeResolver)>();
+
+  /// Sets library tag handler for the current isolate. This handler is
+  /// used to handle the various tags encountered while loading libraries
+  /// or scripts in the isolate.
+  ///
+  /// \param handler Handler code to be used for handling the various tags
+  /// encountered while loading libraries or scripts in the isolate.
+  ///
+  /// \return If no error occurs, the handler is set for the isolate.
+  /// Otherwise an error handle is returned.
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_SetLibraryTagHandler1(
+    Dart_LibraryTagHandler handler,
+  ) {
+    return _Dart_SetLibraryTagHandler1(
+      handler,
+    );
+  }
+
+  late final _Dart_SetLibraryTagHandler1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(Dart_LibraryTagHandler)>>(
+          'Dart_SetLibraryTagHandler');
+  late final _Dart_SetLibraryTagHandler1 = _Dart_SetLibraryTagHandler1Ptr
+      .asFunction<Object Function(Dart_LibraryTagHandler)>();
+
+  /// Sets the deferred load handler for the current isolate. This handler is
+  /// used to handle loading deferred imports in an AppJIT or AppAOT program.
+  Object Dart_SetDeferredLoadHandler1(
+    Dart_DeferredLoadHandler handler,
+  ) {
+    return _Dart_SetDeferredLoadHandler1(
+      handler,
+    );
+  }
+
+  late final _Dart_SetDeferredLoadHandler1Ptr = _lookup<
+          ffi.NativeFunction<ffi.Handle Function(Dart_DeferredLoadHandler)>>(
+      'Dart_SetDeferredLoadHandler');
+  late final _Dart_SetDeferredLoadHandler1 = _Dart_SetDeferredLoadHandler1Ptr
+      .asFunction<Object Function(Dart_DeferredLoadHandler)>();
+
+  /// Notifies the VM that a deferred load completed successfully. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadComplete1(
+    int loading_unit_id,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+  ) {
+    return _Dart_DeferredLoadComplete1(
+      loading_unit_id,
+      snapshot_data,
+      snapshot_instructions,
+    );
+  }
+
+  late final _Dart_DeferredLoadComplete1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>)>>('Dart_DeferredLoadComplete');
+  late final _Dart_DeferredLoadComplete1 =
+      _Dart_DeferredLoadComplete1Ptr.asFunction<
+          Object Function(
+              int, ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Notifies the VM that a deferred load failed. This function
+  /// will eventually cause the corresponding `prefix.loadLibrary()` futures to
+  /// complete with an error.
+  ///
+  /// If `transient` is true, future invocations of `prefix.loadLibrary()` will
+  /// trigger new load requests. If false, futures invocation will complete with
+  /// the same error.
+  ///
+  /// Requires the current isolate to be the same current isolate during the
+  /// invocation of the Dart_DeferredLoadHandler.
+  Object Dart_DeferredLoadCompleteError1(
+    int loading_unit_id,
+    ffi.Pointer<ffi.Char> error_message,
+    bool transient,
+  ) {
+    return _Dart_DeferredLoadCompleteError1(
+      loading_unit_id,
+      error_message,
+      transient ? 1 : 0,
+    );
+  }
+
+  late final _Dart_DeferredLoadCompleteError1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.IntPtr, ffi.Pointer<ffi.Char>,
+              ffi.Uint8)>>('Dart_DeferredLoadCompleteError');
+  late final _Dart_DeferredLoadCompleteError1 =
+      _Dart_DeferredLoadCompleteError1Ptr.asFunction<
+          Object Function(int, ffi.Pointer<ffi.Char>, int)>();
+
+  /// Canonicalizes a url with respect to some library.
+  ///
+  /// The url is resolved with respect to the library's url and some url
+  /// normalizations are performed.
+  ///
+  /// This canonicalization function should be sufficient for most
+  /// embedders to implement the Dart_kCanonicalizeUrl tag.
+  ///
+  /// \param base_url The base url relative to which the url is
+  /// being resolved.
+  /// \param url The url being resolved and canonicalized.  This
+  /// parameter is a string handle.
+  ///
+  /// \return If no error occurs, a String object is returned.  Otherwise
+  /// an error handle is returned.
+  Object Dart_DefaultCanonicalizeUrl1(
+    Object base_url,
+    Object url,
+  ) {
+    return _Dart_DefaultCanonicalizeUrl1(
+      base_url,
+      url,
+    );
+  }
+
+  late final _Dart_DefaultCanonicalizeUrl1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_DefaultCanonicalizeUrl');
+  late final _Dart_DefaultCanonicalizeUrl1 = _Dart_DefaultCanonicalizeUrl1Ptr
+      .asFunction<Object Function(Object, Object)>();
+
+  /// Loads the root library for the current isolate.
+  ///
+  /// Requires there to be no current root library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate group shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the root library, or an error.
+  Object Dart_LoadScriptFromKernel1(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_size,
+  ) {
+    return _Dart_LoadScriptFromKernel1(
+      kernel_buffer,
+      kernel_size,
+    );
+  }
+
+  late final _Dart_LoadScriptFromKernel1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadScriptFromKernel');
+  late final _Dart_LoadScriptFromKernel1 = _Dart_LoadScriptFromKernel1Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Gets the library for the root script for the current isolate.
+  ///
+  /// If the root script has not yet been set for the current isolate,
+  /// this function returns Dart_Null().  This function never returns an
+  /// error handle.
+  ///
+  /// \return Returns the root Library for the current isolate or Dart_Null().
+  Object Dart_RootLibrary1() {
+    return _Dart_RootLibrary1();
+  }
+
+  late final _Dart_RootLibrary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_RootLibrary');
+  late final _Dart_RootLibrary1 =
+      _Dart_RootLibrary1Ptr.asFunction<Object Function()>();
+
+  /// Sets the root library for the current isolate.
+  ///
+  /// \return Returns an error handle if `library` is not a library handle.
+  Object Dart_SetRootLibrary1(
+    Object library1,
+  ) {
+    return _Dart_SetRootLibrary1(
+      library1,
+    );
+  }
+
+  late final _Dart_SetRootLibrary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_SetRootLibrary');
+  late final _Dart_SetRootLibrary1 =
+      _Dart_SetRootLibrary1Ptr.asFunction<Object Function(Object)>();
+
+  /// Lookup or instantiate a legacy type by name and type arguments from a
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetType1(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetType1(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetType');
+  late final _Dart_GetType1 = _Dart_GetType1Ptr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Lookup or instantiate a nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNullableType1(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNullableType1(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNullableType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNullableType');
+  late final _Dart_GetNullableType1 = _Dart_GetNullableType1Ptr.asFunction<
+      Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Lookup or instantiate a non-nullable type by name and type arguments from
+  /// Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The class name for the type.
+  /// \param number_of_type_arguments Number of type arguments.
+  /// For non parametric types the number of type arguments would be 0.
+  /// \param type_arguments Pointer to an array of type arguments.
+  /// For non parameteric types a NULL would be passed in for this argument.
+  ///
+  /// \return If no error occurs, the type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_GetNonNullableType1(
+    Object library1,
+    Object class_name,
+    int number_of_type_arguments,
+    ffi.Pointer<ffi.Handle> type_arguments,
+  ) {
+    return _Dart_GetNonNullableType1(
+      library1,
+      class_name,
+      number_of_type_arguments,
+      type_arguments,
+    );
+  }
+
+  late final _Dart_GetNonNullableType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Handle, ffi.Handle, ffi.IntPtr,
+              ffi.Pointer<ffi.Handle>)>>('Dart_GetNonNullableType');
+  late final _Dart_GetNonNullableType1 =
+      _Dart_GetNonNullableType1Ptr.asFunction<
+          Object Function(Object, Object, int, ffi.Pointer<ffi.Handle>)>();
+
+  /// Creates a nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a nullable type.
+  ///
+  /// \return If no error occurs, a nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNullableType1(
+    Object type,
+  ) {
+    return _Dart_TypeToNullableType1(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNullableType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypeToNullableType');
+  late final _Dart_TypeToNullableType1 =
+      _Dart_TypeToNullableType1Ptr.asFunction<Object Function(Object)>();
+
+  /// Creates a non-nullable version of the provided type.
+  ///
+  /// \param type The type to be converted to a non-nullable type.
+  ///
+  /// \return If no error occurs, a non-nullable type is returned.
+  /// Otherwise an error handle is returned.
+  Object Dart_TypeToNonNullableType1(
+    Object type,
+  ) {
+    return _Dart_TypeToNonNullableType1(
+      type,
+    );
+  }
+
+  late final _Dart_TypeToNonNullableType1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_TypeToNonNullableType');
+  late final _Dart_TypeToNonNullableType1 =
+      _Dart_TypeToNonNullableType1Ptr.asFunction<Object Function(Object)>();
+
+  /// A type's nullability.
+  ///
+  /// \param type A Dart type.
+  /// \param result An out parameter containing the result of the check. True if
+  /// the type is of the specified nullability, false otherwise.
+  ///
+  /// \return Returns an error handle if type is not of type Type.
+  Object Dart_IsNullableType1(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNullableType1(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNullableType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsNullableType');
+  late final _Dart_IsNullableType1 = _Dart_IsNullableType1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  Object Dart_IsNonNullableType1(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsNonNullableType1(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsNonNullableType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsNonNullableType');
+  late final _Dart_IsNonNullableType1 = _Dart_IsNonNullableType1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  Object Dart_IsLegacyType1(
+    Object type,
+    ffi.Pointer<ffi.Uint8> result,
+  ) {
+    return _Dart_IsLegacyType1(
+      type,
+      result,
+    );
+  }
+
+  late final _Dart_IsLegacyType1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Uint8>)>>('Dart_IsLegacyType');
+  late final _Dart_IsLegacyType1 = _Dart_IsLegacyType1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Uint8>)>();
+
+  /// Lookup a class or interface by name from a Library.
+  ///
+  /// \param library The library containing the class or interface.
+  /// \param class_name The name of the class or interface.
+  ///
+  /// \return If no error occurs, the class or interface is
+  /// returned. Otherwise an error handle is returned.
+  Object Dart_GetClass1(
+    Object library1,
+    Object class_name,
+  ) {
+    return _Dart_GetClass1(
+      library1,
+      class_name,
+    );
+  }
+
+  late final _Dart_GetClass1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_GetClass');
+  late final _Dart_GetClass1 =
+      _Dart_GetClass1Ptr.asFunction<Object Function(Object, Object)>();
+
+  /// Returns an import path to a Library, such as "file:///test.dart" or
+  /// "dart:core".
+  Object Dart_LibraryUrl1(
+    Object library1,
+  ) {
+    return _Dart_LibraryUrl1(
+      library1,
+    );
+  }
+
+  late final _Dart_LibraryUrl1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LibraryUrl');
+  late final _Dart_LibraryUrl1 =
+      _Dart_LibraryUrl1Ptr.asFunction<Object Function(Object)>();
+
+  /// Returns a URL from which a Library was loaded.
+  Object Dart_LibraryResolvedUrl1(
+    Object library1,
+  ) {
+    return _Dart_LibraryResolvedUrl1(
+      library1,
+    );
+  }
+
+  late final _Dart_LibraryResolvedUrl1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LibraryResolvedUrl');
+  late final _Dart_LibraryResolvedUrl1 =
+      _Dart_LibraryResolvedUrl1Ptr.asFunction<Object Function(Object)>();
+
+  /// \return An array of libraries.
+  Object Dart_GetLoadedLibraries1() {
+    return _Dart_GetLoadedLibraries1();
+  }
+
+  late final _Dart_GetLoadedLibraries1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>(
+          'Dart_GetLoadedLibraries');
+  late final _Dart_GetLoadedLibraries1 =
+      _Dart_GetLoadedLibraries1Ptr.asFunction<Object Function()>();
+
+  Object Dart_LookupLibrary1(
+    Object url,
+  ) {
+    return _Dart_LookupLibrary1(
+      url,
+    );
+  }
+
+  late final _Dart_LookupLibrary1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle)>>(
+          'Dart_LookupLibrary');
+  late final _Dart_LookupLibrary1 =
+      _Dart_LookupLibrary1Ptr.asFunction<Object Function(Object)>();
+
+  /// Report an loading error for the library.
+  ///
+  /// \param library The library that failed to load.
+  /// \param error The Dart error instance containing the load error.
+  ///
+  /// \return If the VM handles the error, the return value is
+  /// a null handle. If it doesn't handle the error, the error
+  /// object is returned.
+  Object Dart_LibraryHandleError1(
+    Object library1,
+    Object error,
+  ) {
+    return _Dart_LibraryHandleError1(
+      library1,
+      error,
+    );
+  }
+
+  late final _Dart_LibraryHandleError1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Handle, ffi.Handle)>>(
+          'Dart_LibraryHandleError');
+  late final _Dart_LibraryHandleError1 = _Dart_LibraryHandleError1Ptr
+      .asFunction<Object Function(Object, Object)>();
+
+  /// Called by the embedder to load a partial program. Does not set the root
+  /// library.
+  ///
+  /// \param buffer A buffer which contains a kernel binary (see
+  /// pkg/kernel/binary.md). Must remain valid until isolate shutdown.
+  /// \param buffer_size Length of the passed in buffer.
+  ///
+  /// \return A handle to the main library of the compilation unit, or an error.
+  Object Dart_LoadLibraryFromKernel1(
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_LoadLibraryFromKernel1(
+      kernel_buffer,
+      kernel_buffer_size,
+    );
+  }
+
+  late final _Dart_LoadLibraryFromKernel1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_LoadLibraryFromKernel');
+  late final _Dart_LoadLibraryFromKernel1 = _Dart_LoadLibraryFromKernel1Ptr
+      .asFunction<Object Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Indicates that all outstanding load requests have been satisfied.
+  /// This finalizes all the new classes loaded and optionally completes
+  /// deferred library futures.
+  ///
+  /// Requires there to be a current isolate.
+  ///
+  /// \param complete_futures Specify true if all deferred library
+  /// futures should be completed, false otherwise.
+  ///
+  /// \return Success if all classes have been finalized and deferred library
+  /// futures are completed. Otherwise, returns an error.
+  Object Dart_FinalizeLoading1(
+    bool complete_futures,
+  ) {
+    return _Dart_FinalizeLoading1(
+      complete_futures ? 1 : 0,
+    );
+  }
+
+  late final _Dart_FinalizeLoading1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.Uint8)>>(
+          'Dart_FinalizeLoading');
+  late final _Dart_FinalizeLoading1 =
+      _Dart_FinalizeLoading1Ptr.asFunction<Object Function(int)>();
+
+  /// Returns the value of peer field of 'object' in 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer An out parameter that returns the value of the peer
+  /// field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_GetPeer1(
+    Object object,
+    ffi.Pointer<ffi.Pointer<ffi.Void>> peer,
+  ) {
+    return _Dart_GetPeer1(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_GetPeer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Pointer<ffi.Void>>)>>('Dart_GetPeer');
+  late final _Dart_GetPeer1 = _Dart_GetPeer1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Pointer<ffi.Void>>)>();
+
+  /// Sets the value of the peer field of 'object' to the value of
+  /// 'peer'.
+  ///
+  /// \param object An object.
+  /// \param peer A value to store in the peer field.
+  ///
+  /// \return Returns an error if 'object' is a subtype of Null, num, or
+  /// bool.
+  Object Dart_SetPeer1(
+    Object object,
+    ffi.Pointer<ffi.Void> peer,
+  ) {
+    return _Dart_SetPeer1(
+      object,
+      peer,
+    );
+  }
+
+  late final _Dart_SetPeer1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Handle, ffi.Pointer<ffi.Void>)>>('Dart_SetPeer');
+  late final _Dart_SetPeer1 = _Dart_SetPeer1Ptr.asFunction<
+      Object Function(Object, ffi.Pointer<ffi.Void>)>();
+
+  bool Dart_IsKernelIsolate1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsKernelIsolate1(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsKernelIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Isolate)>>(
+          'Dart_IsKernelIsolate');
+  late final _Dart_IsKernelIsolate1 =
+      _Dart_IsKernelIsolate1Ptr.asFunction<int Function(Dart_Isolate)>();
+
+  bool Dart_KernelIsolateIsRunning1() {
+    return _Dart_KernelIsolateIsRunning1() != 0;
+  }
+
+  late final _Dart_KernelIsolateIsRunning1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_KernelIsolateIsRunning');
+  late final _Dart_KernelIsolateIsRunning1 =
+      _Dart_KernelIsolateIsRunning1Ptr.asFunction<int Function()>();
+
+  int Dart_KernelPort1() {
+    return _Dart_KernelPort1();
+  }
+
+  late final _Dart_KernelPort1Ptr =
+      _lookup<ffi.NativeFunction<Dart_Port Function()>>('Dart_KernelPort');
+  late final _Dart_KernelPort1 =
+      _Dart_KernelPort1Ptr.asFunction<int Function()>();
+
+  /// Compiles the given `script_uri` to a kernel file.
+  ///
+  /// \param platform_kernel A buffer containing the kernel of the platform (e.g.
+  /// `vm_platform_strong.dill`). The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  ///
+  /// \param snapshot_compile Set to `true` when the compilation is for a snapshot.
+  /// This is used by the frontend to determine if compilation related information
+  /// should be printed to console (e.g., null safety mode).
+  ///
+  /// \param verbosity Specifies the logging behavior of the kernel compilation
+  /// service.
+  ///
+  /// \return Returns the result of the compilation.
+  ///
+  /// On a successful compilation the returned [Dart_KernelCompilationResult] has
+  /// a status of [Dart_KernelCompilationStatus_Ok] and the `kernel`/`kernel_size`
+  /// fields are set. The caller takes ownership of the malloc()ed buffer.
+  ///
+  /// On a failed compilation the `error` might be set describing the reason for
+  /// the failed compilation. The caller takes ownership of the malloc()ed
+  /// error.
+  ///
+  /// Requires there to be a current isolate.
+  Dart_KernelCompilationResult Dart_CompileToKernel1(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+    bool incremental_compile,
+    bool snapshot_compile,
+    ffi.Pointer<ffi.Char> package_config,
+    int verbosity,
+  ) {
+    return _Dart_CompileToKernel1(
+      script_uri,
+      platform_kernel,
+      platform_kernel_size,
+      incremental_compile ? 1 : 0,
+      snapshot_compile ? 1 : 0,
+      package_config,
+      verbosity,
+    );
+  }
+
+  late final _Dart_CompileToKernel1Ptr = _lookup<
+      ffi.NativeFunction<
+          Dart_KernelCompilationResult Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr,
+              ffi.Uint8,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('Dart_CompileToKernel');
+  late final _Dart_CompileToKernel1 = _Dart_CompileToKernel1Ptr.asFunction<
+      Dart_KernelCompilationResult Function(ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Uint8>, int, int, int, ffi.Pointer<ffi.Char>, int)>();
+
+  Dart_KernelCompilationResult Dart_KernelListDependencies1() {
+    return _Dart_KernelListDependencies1();
+  }
+
+  late final _Dart_KernelListDependencies1Ptr =
+      _lookup<ffi.NativeFunction<Dart_KernelCompilationResult Function()>>(
+          'Dart_KernelListDependencies');
+  late final _Dart_KernelListDependencies1 = _Dart_KernelListDependencies1Ptr
+      .asFunction<Dart_KernelCompilationResult Function()>();
+
+  /// Sets the kernel buffer which will be used to load Dart SDK sources
+  /// dynamically at runtime.
+  ///
+  /// \param platform_kernel A buffer containing kernel which has sources for the
+  /// Dart SDK populated. Note: The VM does not take ownership of this memory.
+  ///
+  /// \param platform_kernel_size The length of the platform_kernel buffer.
+  void Dart_SetDartLibrarySourcesKernel1(
+    ffi.Pointer<ffi.Uint8> platform_kernel,
+    int platform_kernel_size,
+  ) {
+    return _Dart_SetDartLibrarySourcesKernel1(
+      platform_kernel,
+      platform_kernel_size,
+    );
+  }
+
+  late final _Dart_SetDartLibrarySourcesKernel1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_SetDartLibrarySourcesKernel');
+  late final _Dart_SetDartLibrarySourcesKernel1 =
+      _Dart_SetDartLibrarySourcesKernel1Ptr.asFunction<
+          void Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Detect the null safety opt-in status.
+  ///
+  /// When running from source, it is based on the opt-in status of `script_uri`.
+  /// When running from a kernel buffer, it is based on the mode used when
+  /// generating `kernel_buffer`.
+  /// When running from an appJIT or AOT snapshot, it is based on the mode used
+  /// when generating `snapshot_data`.
+  ///
+  /// \param script_uri Uri of the script that contains the source code
+  ///
+  /// \param package_config Uri of the package configuration file (either in format
+  /// of .packages or .dart_tool/package_config.json) for the null safety
+  /// detection to resolve package imports against. If this parameter is not
+  /// passed the package resolution of the parent isolate should be used.
+  ///
+  /// \param original_working_directory current working directory when the VM
+  /// process was launched, this is used to correctly resolve the path specified
+  /// for package_config.
+  ///
+  /// \param snapshot_data
+  ///
+  /// \param snapshot_instructions Buffers containing a snapshot of the
+  /// isolate or NULL if no snapshot is provided. If provided, the buffers must
+  /// remain valid until the isolate shuts down.
+  ///
+  /// \param kernel_buffer
+  ///
+  /// \param kernel_buffer_size A buffer which contains a kernel/DIL program. Must
+  /// remain valid until isolate shutdown.
+  ///
+  /// \return Returns true if the null safety is opted in by the input being
+  /// run `script_uri`, `snapshot_data` or `kernel_buffer`.
+  bool Dart_DetectNullSafety1(
+    ffi.Pointer<ffi.Char> script_uri,
+    ffi.Pointer<ffi.Char> package_config,
+    ffi.Pointer<ffi.Char> original_working_directory,
+    ffi.Pointer<ffi.Uint8> snapshot_data,
+    ffi.Pointer<ffi.Uint8> snapshot_instructions,
+    ffi.Pointer<ffi.Uint8> kernel_buffer,
+    int kernel_buffer_size,
+  ) {
+    return _Dart_DetectNullSafety1(
+          script_uri,
+          package_config,
+          original_working_directory,
+          snapshot_data,
+          snapshot_instructions,
+          kernel_buffer,
+          kernel_buffer_size,
+        ) !=
+        0;
+  }
+
+  late final _Dart_DetectNullSafety1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.IntPtr)>>('Dart_DetectNullSafety');
+  late final _Dart_DetectNullSafety1 = _Dart_DetectNullSafety1Ptr.asFunction<
+      int Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          ffi.Pointer<ffi.Uint8>,
+          int)>();
+
+  /// Returns true if isolate is the service isolate.
+  ///
+  /// \param isolate An isolate
+  ///
+  /// \return Returns true if 'isolate' is the service isolate.
+  bool Dart_IsServiceIsolate1(
+    Dart_Isolate isolate,
+  ) {
+    return _Dart_IsServiceIsolate1(
+          isolate,
+        ) !=
+        0;
+  }
+
+  late final _Dart_IsServiceIsolate1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Isolate)>>(
+          'Dart_IsServiceIsolate');
+  late final _Dart_IsServiceIsolate1 =
+      _Dart_IsServiceIsolate1Ptr.asFunction<int Function(Dart_Isolate)>();
+
+  /// Writes the CPU profile to the timeline as a series of 'instant' events.
+  ///
+  /// Note that this is an expensive operation.
+  ///
+  /// \param main_port The main port of the Isolate whose profile samples to write.
+  /// \param error An optional error, must be free()ed by caller.
+  ///
+  /// \return Returns true if the profile is successfully written and false
+  /// otherwise.
+  bool Dart_WriteProfileToTimeline1(
+    int main_port,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> error,
+  ) {
+    return _Dart_WriteProfileToTimeline1(
+          main_port,
+          error,
+        ) !=
+        0;
+  }
+
+  late final _Dart_WriteProfileToTimeline1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint8 Function(
+                  Dart_Port, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'Dart_WriteProfileToTimeline');
+  late final _Dart_WriteProfileToTimeline1 = _Dart_WriteProfileToTimeline1Ptr
+      .asFunction<int Function(int, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  /// Compiles all functions reachable from entry points and marks
+  /// the isolate to disallow future compilation.
+  ///
+  /// Entry points should be specified using `@pragma("vm:entry-point")`
+  /// annotation.
+  ///
+  /// \return An error handle if a compilation error or runtime error running const
+  /// constructors was encountered.
+  Object Dart_Precompile1() {
+    return _Dart_Precompile1();
+  }
+
+  late final _Dart_Precompile1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_Precompile');
+  late final _Dart_Precompile1 =
+      _Dart_Precompile1Ptr.asFunction<Object Function()>();
+
+  Object Dart_LoadingUnitLibraryUris1(
+    int loading_unit_id,
+  ) {
+    return _Dart_LoadingUnitLibraryUris1(
+      loading_unit_id,
+    );
+  }
+
+  late final _Dart_LoadingUnitLibraryUris1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function(ffi.IntPtr)>>(
+          'Dart_LoadingUnitLibraryUris');
+  late final _Dart_LoadingUnitLibraryUris1 =
+      _Dart_LoadingUnitLibraryUris1Ptr.asFunction<Object Function(int)>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an assembly file defining the symbols listed in the definitions
+  /// above.
+  ///
+  /// The assembly should be compiled as a static or shared library and linked or
+  /// loaded by the embedder. Running this snapshot requires a VM compiled with
+  /// DART_PRECOMPILED_SNAPSHOT. The kDartVmSnapshotData and
+  /// kDartVmSnapshotInstructions should be passed to Dart_Initialize. The
+  /// kDartIsolateSnapshotData and kDartIsolateSnapshotInstructions should be
+  /// passed to Dart_CreateIsolateGroup.
+  ///
+  /// The callback will be invoked one or more times to provide the assembly code.
+  ///
+  /// If stripped is true, then the assembly code will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsAssembly1(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssembly1(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssembly1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsAssembly');
+  late final _Dart_CreateAppAOTSnapshotAsAssembly1 =
+      _Dart_CreateAppAOTSnapshotAsAssembly1Ptr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              int, ffi.Pointer<ffi.Void>)>();
+
+  Object Dart_CreateAppAOTSnapshotAsAssemblies1(
+    Dart_CreateLoadingUnitCallback next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsAssemblies1(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsAssemblies1Ptr = _lookup<
+          ffi.NativeFunction<
+              ffi.Handle Function(
+                  Dart_CreateLoadingUnitCallback,
+                  ffi.Pointer<ffi.Void>,
+                  ffi.Uint8,
+                  Dart_StreamingWriteCallback,
+                  Dart_StreamingCloseCallback)>>(
+      'Dart_CreateAppAOTSnapshotAsAssemblies');
+  late final _Dart_CreateAppAOTSnapshotAsAssemblies1 =
+      _Dart_CreateAppAOTSnapshotAsAssemblies1Ptr.asFunction<
+          Object Function(Dart_CreateLoadingUnitCallback, ffi.Pointer<ffi.Void>,
+              int, Dart_StreamingWriteCallback, Dart_StreamingCloseCallback)>();
+
+  /// Creates a precompiled snapshot.
+  /// - A root library must have been loaded.
+  /// - Dart_Precompile must have been called.
+  ///
+  /// Outputs an ELF shared library defining the symbols
+  /// - _kDartVmSnapshotData
+  /// - _kDartVmSnapshotInstructions
+  /// - _kDartIsolateSnapshotData
+  /// - _kDartIsolateSnapshotInstructions
+  ///
+  /// The shared library should be dynamically loaded by the embedder.
+  /// Running this snapshot requires a VM compiled with DART_PRECOMPILED_SNAPSHOT.
+  /// The kDartVmSnapshotData and kDartVmSnapshotInstructions should be passed to
+  /// Dart_Initialize. The kDartIsolateSnapshotData and
+  /// kDartIsolateSnapshotInstructions should be passed to Dart_CreateIsolate.
+  ///
+  /// The callback will be invoked one or more times to provide the binary output.
+  ///
+  /// If stripped is true, then the binary output will not include DWARF
+  /// debugging sections.
+  ///
+  /// If debug_callback_data is provided, debug_callback_data will be used with
+  /// the callback to provide separate debugging information.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppAOTSnapshotAsElf1(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+    bool stripped,
+    ffi.Pointer<ffi.Void> debug_callback_data,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElf1(
+      callback,
+      callback_data,
+      stripped ? 1 : 0,
+      debug_callback_data,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElf1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateAppAOTSnapshotAsElf');
+  late final _Dart_CreateAppAOTSnapshotAsElf1 =
+      _Dart_CreateAppAOTSnapshotAsElf1Ptr.asFunction<
+          Object Function(Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>,
+              int, ffi.Pointer<ffi.Void>)>();
+
+  Object Dart_CreateAppAOTSnapshotAsElfs1(
+    Dart_CreateLoadingUnitCallback next_callback,
+    ffi.Pointer<ffi.Void> next_callback_data,
+    bool stripped,
+    Dart_StreamingWriteCallback write_callback,
+    Dart_StreamingCloseCallback close_callback,
+  ) {
+    return _Dart_CreateAppAOTSnapshotAsElfs1(
+      next_callback,
+      next_callback_data,
+      stripped ? 1 : 0,
+      write_callback,
+      close_callback,
+    );
+  }
+
+  late final _Dart_CreateAppAOTSnapshotAsElfs1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              Dart_CreateLoadingUnitCallback,
+              ffi.Pointer<ffi.Void>,
+              ffi.Uint8,
+              Dart_StreamingWriteCallback,
+              Dart_StreamingCloseCallback)>>('Dart_CreateAppAOTSnapshotAsElfs');
+  late final _Dart_CreateAppAOTSnapshotAsElfs1 =
+      _Dart_CreateAppAOTSnapshotAsElfs1Ptr.asFunction<
+          Object Function(Dart_CreateLoadingUnitCallback, ffi.Pointer<ffi.Void>,
+              int, Dart_StreamingWriteCallback, Dart_StreamingCloseCallback)>();
+
+  /// Like Dart_CreateAppAOTSnapshotAsAssembly, but only includes
+  /// kDartVmSnapshotData and kDartVmSnapshotInstructions. It also does
+  /// not strip DWARF information from the generated assembly or allow for
+  /// separate debug information.
+  Object Dart_CreateVMAOTSnapshotAsAssembly1(
+    Dart_StreamingWriteCallback callback,
+    ffi.Pointer<ffi.Void> callback_data,
+  ) {
+    return _Dart_CreateVMAOTSnapshotAsAssembly1(
+      callback,
+      callback_data,
+    );
+  }
+
+  late final _Dart_CreateVMAOTSnapshotAsAssembly1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(Dart_StreamingWriteCallback,
+              ffi.Pointer<ffi.Void>)>>('Dart_CreateVMAOTSnapshotAsAssembly');
+  late final _Dart_CreateVMAOTSnapshotAsAssembly1 =
+      _Dart_CreateVMAOTSnapshotAsAssembly1Ptr.asFunction<
+          Object Function(
+              Dart_StreamingWriteCallback, ffi.Pointer<ffi.Void>)>();
+
+  /// Sorts the class-ids in depth first traversal order of the inheritance
+  /// tree. This is a costly operation, but it can make method dispatch
+  /// more efficient and is done before writing snapshots.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_SortClasses1() {
+    return _Dart_SortClasses1();
+  }
+
+  late final _Dart_SortClasses1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_SortClasses');
+  late final _Dart_SortClasses1 =
+      _Dart_SortClasses1Ptr.asFunction<Object Function()>();
+
+  /// Creates a snapshot that caches compiled code and type feedback for faster
+  /// startup and quicker warmup in a subsequent process.
+  ///
+  /// Outputs a snapshot in two pieces. The pieces should be passed to
+  /// Dart_CreateIsolateGroup in a VM using the same VM snapshot pieces used in the
+  /// current VM. The instructions piece must be loaded with read and execute
+  /// permissions; the data piece may be loaded as read-only.
+  ///
+  /// - Requires the VM to have not been started with --precompilation.
+  /// - Not supported when targeting IA32.
+  /// - The VM writing the snapshot and the VM reading the snapshot must be the
+  /// same version, must be built in the same DEBUG/RELEASE/PRODUCT mode, must
+  /// be targeting the same architecture, and must both be in checked mode or
+  /// both in unchecked mode.
+  ///
+  /// The buffers are scope allocated and are only valid until the next call to
+  /// Dart_ExitScope.
+  ///
+  /// \return A valid handle if no error occurs during the operation.
+  Object Dart_CreateAppJITSnapshotAsBlobs1(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateAppJITSnapshotAsBlobs1(
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateAppJITSnapshotAsBlobs1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateAppJITSnapshotAsBlobs');
+  late final _Dart_CreateAppJITSnapshotAsBlobs1 =
+      _Dart_CreateAppJITSnapshotAsBlobs1Ptr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Like Dart_CreateAppJITSnapshotAsBlobs, but also creates a new VM snapshot.
+  Object Dart_CreateCoreJITSnapshotAsBlobs1(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> vm_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> vm_snapshot_instructions_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_data_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_data_size,
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> isolate_snapshot_instructions_buffer,
+    ffi.Pointer<ffi.IntPtr> isolate_snapshot_instructions_size,
+  ) {
+    return _Dart_CreateCoreJITSnapshotAsBlobs1(
+      vm_snapshot_data_buffer,
+      vm_snapshot_data_size,
+      vm_snapshot_instructions_buffer,
+      vm_snapshot_instructions_size,
+      isolate_snapshot_data_buffer,
+      isolate_snapshot_data_size,
+      isolate_snapshot_instructions_buffer,
+      isolate_snapshot_instructions_size,
+    );
+  }
+
+  late final _Dart_CreateCoreJITSnapshotAsBlobs1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_CreateCoreJITSnapshotAsBlobs');
+  late final _Dart_CreateCoreJITSnapshotAsBlobs1 =
+      _Dart_CreateCoreJITSnapshotAsBlobs1Ptr.asFunction<
+          Object Function(
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>,
+              ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Get obfuscation map for precompiled code.
+  ///
+  /// Obfuscation map is encoded as a JSON array of pairs (original name,
+  /// obfuscated name).
+  ///
+  /// \return Returns an error handler if the VM was built in a mode that does not
+  /// support obfuscation.
+  Object Dart_GetObfuscationMap1(
+    ffi.Pointer<ffi.Pointer<ffi.Uint8>> buffer,
+    ffi.Pointer<ffi.IntPtr> buffer_length,
+  ) {
+    return _Dart_GetObfuscationMap1(
+      buffer,
+      buffer_length,
+    );
+  }
+
+  late final _Dart_GetObfuscationMap1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Handle Function(ffi.Pointer<ffi.Pointer<ffi.Uint8>>,
+              ffi.Pointer<ffi.IntPtr>)>>('Dart_GetObfuscationMap');
+  late final _Dart_GetObfuscationMap1 = _Dart_GetObfuscationMap1Ptr.asFunction<
+      Object Function(
+          ffi.Pointer<ffi.Pointer<ffi.Uint8>>, ffi.Pointer<ffi.IntPtr>)>();
+
+  /// Returns whether the VM only supports running from precompiled snapshots and
+  /// not from any other kind of snapshot or from source (that is, the VM was
+  /// compiled with DART_PRECOMPILED_RUNTIME).
+  bool Dart_IsPrecompiledRuntime1() {
+    return _Dart_IsPrecompiledRuntime1() != 0;
+  }
+
+  late final _Dart_IsPrecompiledRuntime1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function()>>(
+          'Dart_IsPrecompiledRuntime');
+  late final _Dart_IsPrecompiledRuntime1 =
+      _Dart_IsPrecompiledRuntime1Ptr.asFunction<int Function()>();
+
+  /// Print a native stack trace. Used for crash handling.
+  ///
+  /// If context is NULL, prints the current stack trace. Otherwise, context
+  /// should be a CONTEXT* (Windows) or ucontext_t* (POSIX) from a signal handler
+  /// running on the current thread.
+  void Dart_DumpNativeStackTrace1(
+    ffi.Pointer<ffi.Void> context,
+  ) {
+    return _Dart_DumpNativeStackTrace1(
+      context,
+    );
+  }
+
+  late final _Dart_DumpNativeStackTrace1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+          'Dart_DumpNativeStackTrace');
+  late final _Dart_DumpNativeStackTrace1 = _Dart_DumpNativeStackTrace1Ptr
+      .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
+
+  /// Indicate that the process is about to abort, and the Dart VM should not
+  /// attempt to cleanup resources.
+  void Dart_PrepareToAbort1() {
+    return _Dart_PrepareToAbort1();
+  }
+
+  late final _Dart_PrepareToAbort1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('Dart_PrepareToAbort');
+  late final _Dart_PrepareToAbort1 =
+      _Dart_PrepareToAbort1Ptr.asFunction<void Function()>();
+
+  /// Posts a message on some port. The message will contain the Dart_CObject
+  /// object graph rooted in 'message'.
+  ///
+  /// While the message is being sent the state of the graph of Dart_CObject
+  /// structures rooted in 'message' should not be accessed, as the message
+  /// generation will make temporary modifications to the data. When the message
+  /// has been sent the graph will be fully restored.
+  ///
+  /// If true is returned, the message was enqueued, and finalizers for external
+  /// typed data will eventually run, even if the receiving isolate shuts down
+  /// before processing the message. If false is returned, the message was not
+  /// enqueued and ownership of external typed data in the message remains with the
+  /// caller.
+  ///
+  /// This function may be called on any thread when the VM is running (that is,
+  /// after Dart_Initialize has returned and before Dart_Cleanup has been called).
+  ///
+  /// \param port_id The destination port.
+  /// \param message The message to send.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_PostCObject1(
+    int port_id,
+    ffi.Pointer<Dart_CObject> message,
+  ) {
+    return _Dart_PostCObject1(
+          port_id,
+          message,
+        ) !=
+        0;
+  }
+
+  late final _Dart_PostCObject1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint8 Function(
+              Dart_Port, ffi.Pointer<Dart_CObject>)>>('Dart_PostCObject');
+  late final _Dart_PostCObject1 = _Dart_PostCObject1Ptr.asFunction<
+      int Function(int, ffi.Pointer<Dart_CObject>)>();
+
+  /// Posts a message on some port. The message will contain the integer 'message'.
+  ///
+  /// \param port_id The destination port.
+  /// \param message The message to send.
+  ///
+  /// \return True if the message was posted.
+  bool Dart_PostInteger1(
+    int port_id,
+    int message,
+  ) {
+    return _Dart_PostInteger1(
+          port_id,
+          message,
+        ) !=
+        0;
+  }
+
+  late final _Dart_PostInteger1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port, ffi.Int64)>>(
+          'Dart_PostInteger');
+  late final _Dart_PostInteger1 =
+      _Dart_PostInteger1Ptr.asFunction<int Function(int, int)>();
+
+  /// Creates a new native port.  When messages are received on this
+  /// native port, then they will be dispatched to the provided native
+  /// message handler.
+  ///
+  /// \param name The name of this port in debugging messages.
+  /// \param handler The C handler to run when messages arrive on the port.
+  /// \param handle_concurrently Is it okay to process requests on this
+  /// native port concurrently?
+  ///
+  /// \return If successful, returns the port id for the native port.  In
+  /// case of error, returns ILLEGAL_PORT.
+  int Dart_NewNativePort1(
+    ffi.Pointer<ffi.Char> name,
+    Dart_NativeMessageHandler handler,
+    bool handle_concurrently,
+  ) {
+    return _Dart_NewNativePort1(
+      name,
+      handler,
+      handle_concurrently ? 1 : 0,
+    );
+  }
+
+  late final _Dart_NewNativePort1Ptr = _lookup<
+      ffi.NativeFunction<
+          Dart_Port Function(ffi.Pointer<ffi.Char>, Dart_NativeMessageHandler,
+              ffi.Uint8)>>('Dart_NewNativePort');
+  late final _Dart_NewNativePort1 = _Dart_NewNativePort1Ptr.asFunction<
+      int Function(ffi.Pointer<ffi.Char>, Dart_NativeMessageHandler, int)>();
+
+  /// Closes the native port with the given id.
+  ///
+  /// The port must have been allocated by a call to Dart_NewNativePort.
+  ///
+  /// \param native_port_id The id of the native port to close.
+  ///
+  /// \return Returns true if the port was closed successfully.
+  bool Dart_CloseNativePort1(
+    int native_port_id,
+  ) {
+    return _Dart_CloseNativePort1(
+          native_port_id,
+        ) !=
+        0;
+  }
+
+  late final _Dart_CloseNativePort1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(Dart_Port)>>(
+          'Dart_CloseNativePort');
+  late final _Dart_CloseNativePort1 =
+      _Dart_CloseNativePort1Ptr.asFunction<int Function(int)>();
+
+  /// Forces all loaded classes and functions to be compiled eagerly in
+  /// the current isolate..
+  ///
+  /// TODO(turnidge): Document.
+  Object Dart_CompileAll1() {
+    return _Dart_CompileAll1();
+  }
+
+  late final _Dart_CompileAll1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>('Dart_CompileAll');
+  late final _Dart_CompileAll1 =
+      _Dart_CompileAll1Ptr.asFunction<Object Function()>();
+
+  /// Finalizes all classes.
+  Object Dart_FinalizeAllClasses1() {
+    return _Dart_FinalizeAllClasses1();
+  }
+
+  late final _Dart_FinalizeAllClasses1Ptr =
+      _lookup<ffi.NativeFunction<ffi.Handle Function()>>(
+          'Dart_FinalizeAllClasses');
+  late final _Dart_FinalizeAllClasses1 =
+      _Dart_FinalizeAllClasses1Ptr.asFunction<Object Function()>();
+
+  /// This function is intentionally undocumented.
+  ///
+  /// It should not be used outside internal tests.
+  ffi.Pointer<ffi.Void> Dart_ExecuteInternalCommand1(
+    ffi.Pointer<ffi.Char> command,
+    ffi.Pointer<ffi.Void> arg,
+  ) {
+    return _Dart_ExecuteInternalCommand1(
+      command,
+      arg,
+    );
+  }
+
+  late final _Dart_ExecuteInternalCommand1Ptr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Void>)>>('Dart_ExecuteInternalCommand');
+  late final _Dart_ExecuteInternalCommand1 =
+      _Dart_ExecuteInternalCommand1Ptr.asFunction<
+          ffi.Pointer<ffi.Void> Function(
+              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Void>)>();
+
+  /// \mainpage Dynamically Linked Dart API
+  ///
+  /// This exposes a subset of symbols from dart_api.h and dart_native_api.h
+  /// available in every Dart embedder through dynamic linking.
+  ///
+  /// All symbols are postfixed with _DL to indicate that they are dynamically
+  /// linked and to prevent conflicts with the original symbol.
+  ///
+  /// Link `dart_api_dl.c` file into your library and invoke
+  /// `Dart_InitializeApiDL` with `NativeApi.initializeApiDLData`.
+  int Dart_InitializeApiDL1(
+    ffi.Pointer<ffi.Void> data,
+  ) {
+    return _Dart_InitializeApiDL1(
+      data,
+    );
+  }
+
+  late final _Dart_InitializeApiDL1Ptr =
+      _lookup<ffi.NativeFunction<ffi.IntPtr Function(ffi.Pointer<ffi.Void>)>>(
+          'Dart_InitializeApiDL');
+  late final _Dart_InitializeApiDL1 = _Dart_InitializeApiDL1Ptr.asFunction<
+      int Function(ffi.Pointer<ffi.Void>)>();
+
+  void Callback(
+    ffi.Pointer<ObjCObject> obj1,
+    ffi.Pointer<ObjCObject> obj2,
+    ffi.Pointer<ObjCObject> obj3,
+  ) {
+    return _Callback(
+      obj1,
+      obj2,
+      obj3,
+    );
+  }
+
+  late final _CallbackPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>,
+              ffi.Pointer<ObjCObject>)>>('Callback');
+  late final _Callback = _CallbackPtr.asFunction<
+      void Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCObject>,
+          ffi.Pointer<ObjCObject>)>();
+
+  late final _class_SendPortOperationQueue1 =
+      _getClass1("SendPortOperationQueue");
+  late final _sel_initWithPort_1 = _registerName1("initWithPort:");
+  instancetype _objc_msgSend_308(
+    ffi.Pointer<ObjCObject> obj,
+    ffi.Pointer<ObjCSel> sel,
+    int sendPort,
+  ) {
+    return __objc_msgSend_308(
+      obj,
+      sel,
+      sendPort,
+    );
+  }
+
+  late final __objc_msgSend_308Ptr = _lookup<
+      ffi.NativeFunction<
+          instancetype Function(ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>,
+              Dart_Port)>>('objc_msgSend');
+  late final __objc_msgSend_308 = __objc_msgSend_308Ptr.asFunction<
+      instancetype Function(
+          ffi.Pointer<ObjCObject>, ffi.Pointer<ObjCSel>, int)>();
 }
 
 class ObjCObject extends ffi.Opaque {}
@@ -70087,11 +76604,34 @@ typedef NSZone = _NSZone;
 
 class _NSZone extends ffi.Opaque {}
 
-class _ObjCWrapper {
+class _ObjCWrapper implements ffi.Finalizable {
   final ffi.Pointer<ObjCObject> _id;
   final NativeLibrary _lib;
+  bool _pendingRelease;
 
-  _ObjCWrapper._(this._id, this._lib);
+  _ObjCWrapper._(this._id, this._lib,
+      {bool retain = false, bool release = false})
+      : _pendingRelease = release {
+    if (retain) {
+      _lib._objc_retain(_id);
+    }
+    if (release) {
+      _lib._objc_releaseFinalizer1.attach(this, _id.cast(), detach: this);
+    }
+  }
+
+  /// Releases the reference to the underlying ObjC object held by this wrapper.
+  /// Throws a StateError if this wrapper doesn't currently hold a reference.
+  void release() {
+    if (_pendingRelease) {
+      _pendingRelease = false;
+      _lib._objc_release(_id);
+      _lib._objc_releaseFinalizer1.detach(this);
+    } else {
+      throw StateError(
+          'Released an ObjC object that was unowned or already released.');
+    }
+  }
 
   @override
   bool operator ==(Object other) {
@@ -70103,15 +76643,17 @@ class _ObjCWrapper {
 }
 
 class NSObject extends _ObjCWrapper {
-  NSObject._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSObject._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSObject castFrom<T extends _ObjCWrapper>(T other) {
-    return NSObject._(other._id, other._lib);
+    return NSObject._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSObject castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSObject._(other, lib);
+    return NSObject._(other, lib, retain: true, release: true);
   }
 
   static void load(NativeLibrary _lib) {
@@ -70124,24 +76666,24 @@ class NSObject extends _ObjCWrapper {
 
   NSObject init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_new1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: false, release: true);
   }
 
   static NSObject allocWithZone_(
       NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_allocWithZone_1, zone);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_alloc1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: false, release: true);
   }
 
   void dealloc() {
@@ -70154,25 +76696,25 @@ class NSObject extends _ObjCWrapper {
 
   NSObject copy() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_copy1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject mutableCopy() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_mutableCopy1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject copyWithZone_(NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_copyWithZone_1, zone);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject mutableCopyWithZone_(
       NativeLibrary _lib, ffi.Pointer<_NSZone> zone) {
     final _ret = _lib._objc_msgSend_2(
         _lib._class_NSObject1, _lib._sel_mutableCopyWithZone_1, zone);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static bool instancesRespondToSelector_(
@@ -70203,7 +76745,7 @@ class NSObject extends _ObjCWrapper {
   NSObject forwardingTargetForSelector_(ffi.Pointer<ObjCSel> aSelector) {
     final _ret = _lib._objc_msgSend_7(
         _id, _lib._sel_forwardingTargetForSelector_1, aSelector);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void forwardInvocation_(NSObject? anInvocation) {
@@ -70215,14 +76757,14 @@ class NSObject extends _ObjCWrapper {
       ffi.Pointer<ObjCSel> aSelector) {
     final _ret = _lib._objc_msgSend_9(
         _id, _lib._sel_methodSignatureForSelector_1, aSelector);
-    return NSMethodSignature._(_ret, _lib);
+    return NSMethodSignature._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMethodSignature instanceMethodSignatureForSelector_(
       NativeLibrary _lib, ffi.Pointer<ObjCSel> aSelector) {
     final _ret = _lib._objc_msgSend_9(_lib._class_NSObject1,
         _lib._sel_instanceMethodSignatureForSelector_1, aSelector);
-    return NSMethodSignature._(_ret, _lib);
+    return NSMethodSignature._(_ret, _lib, retain: true, release: true);
   }
 
   bool allowsWeakReference() {
@@ -70257,24 +76799,24 @@ class NSObject extends _ObjCWrapper {
   static NSObject superclass(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_superclass1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject class1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSObject1, _lib._sel_class1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString description(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_55(_lib._class_NSObject1, _lib._sel_description1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString debugDescription(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_55(
         _lib._class_NSObject1, _lib._sel_debugDescription1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int version(NativeLibrary _lib) {
@@ -70288,19 +76830,19 @@ class NSObject extends _ObjCWrapper {
 
   NSObject get classForCoder {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_classForCoder1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject replacementObjectForCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_replacementObjectForCoder_1, coder?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject awakeAfterUsingCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_awakeAfterUsingCoder_1, coder?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static void poseAsClass_(NativeLibrary _lib, NSObject aClass) {
@@ -70311,7 +76853,7 @@ class NSObject extends _ObjCWrapper {
   NSObject get autoContentAccessingProxy {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_autoContentAccessingProxy1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void URL_resourceDataDidBecomeAvailable_(
@@ -70376,29 +76918,33 @@ typedef instancetype = ffi.Pointer<ObjCObject>;
 typedef IMP = ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>>;
 
 class NSMethodSignature extends _ObjCWrapper {
-  NSMethodSignature._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMethodSignature._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMethodSignature castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMethodSignature._(other._id, other._lib);
+    return NSMethodSignature._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMethodSignature castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMethodSignature._(other, lib);
+    return NSMethodSignature._(other, lib, retain: true, release: true);
   }
 }
 
 class NSString extends NSObject {
-  NSString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSString castFrom<T extends _ObjCWrapper>(T other) {
-    return NSString._(other._id, other._lib);
+    return NSString._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSString castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSString._(other, lib);
+    return NSString._(other, lib, retain: true, release: true);
   }
 
   factory NSString(NativeLibrary _lib, String str) {
@@ -70422,30 +76968,30 @@ class NSString extends NSObject {
   @override
   NSString init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString substringFromIndex_(int from) {
     final _ret =
         _lib._objc_msgSend_14(_id, _lib._sel_substringFromIndex_1, from);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString substringToIndex_(int to) {
     final _ret = _lib._objc_msgSend_14(_id, _lib._sel_substringToIndex_1, to);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString substringWithRange_(NSRange range) {
     final _ret =
         _lib._objc_msgSend_15(_id, _lib._sel_substringWithRange_1, range);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   void getCharacters_range_(ffi.Pointer<unichar> buffer, NSRange range) {
@@ -70517,7 +77063,7 @@ class NSString extends NSObject {
         _lib._sel_commonPrefixWithString_options_1,
         str?._id ?? ffi.nullptr,
         mask);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   bool containsString_(NSObject? str) {
@@ -70605,13 +77151,13 @@ class NSString extends NSObject {
   NSString stringByAppendingString_(NSObject? aString) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_stringByAppendingString_1, aString?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByAppendingFormat_(NSObject? format) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_stringByAppendingFormat_1, format?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   double get doubleValue {
@@ -70640,51 +77186,63 @@ class NSString extends NSObject {
 
   NSObject? get uppercaseString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_uppercaseString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get lowercaseString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_lowercaseString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get capitalizedString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_capitalizedString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get localizedUppercaseString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedUppercaseString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get localizedLowercaseString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedLowercaseString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get localizedCapitalizedString {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_localizedCapitalizedString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString uppercaseStringWithLocale_(NSObject? locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_uppercaseStringWithLocale_1, locale?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString lowercaseStringWithLocale_(NSObject? locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_lowercaseStringWithLocale_1, locale?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString capitalizedStringWithLocale_(NSObject? locale) {
     final _ret = _lib._objc_msgSend_28(_id,
         _lib._sel_capitalizedStringWithLocale_1, locale?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   void getLineStart_end_contentsEnd_forRange_(
@@ -70754,13 +77312,13 @@ class NSString extends NSObject {
   NSData dataUsingEncoding_allowLossyConversion_(int encoding, bool lossy) {
     final _ret = _lib._objc_msgSend_56(_id,
         _lib._sel_dataUsingEncoding_allowLossyConversion_1, encoding, lossy);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData dataUsingEncoding_(int encoding) {
     final _ret =
         _lib._objc_msgSend_57(_id, _lib._sel_dataUsingEncoding_1, encoding);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   bool canBeConvertedToEncoding_(int encoding) {
@@ -70818,7 +77376,7 @@ class NSString extends NSObject {
       NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_14(_lib._class_NSString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int getDefaultCStringEncoding(NativeLibrary _lib) {
@@ -70829,31 +77387,39 @@ class NSString extends NSObject {
   NSObject? get decomposedStringWithCanonicalMapping {
     final _ret = _lib._objc_msgSend_1(
         _id, _lib._sel_decomposedStringWithCanonicalMapping1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get precomposedStringWithCanonicalMapping {
     final _ret = _lib._objc_msgSend_1(
         _id, _lib._sel_precomposedStringWithCanonicalMapping1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get decomposedStringWithCompatibilityMapping {
     final _ret = _lib._objc_msgSend_1(
         _id, _lib._sel_decomposedStringWithCompatibilityMapping1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get precomposedStringWithCompatibilityMapping {
     final _ret = _lib._objc_msgSend_1(
         _id, _lib._sel_precomposedStringWithCompatibilityMapping1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByTrimmingCharactersInSet_(NSObject? set) {
     final _ret = _lib._objc_msgSend_28(_id,
         _lib._sel_stringByTrimmingCharactersInSet_1, set?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByPaddingToLength_withString_startingAtIndex_(
@@ -70864,7 +77430,7 @@ class NSString extends NSObject {
         newLength,
         padString?._id ?? ffi.nullptr,
         padIndex);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByFoldingWithOptions_locale_(int options, NSObject? locale) {
@@ -70873,7 +77439,7 @@ class NSString extends NSObject {
         _lib._sel_stringByFoldingWithOptions_locale_1,
         options,
         locale?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByReplacingOccurrencesOfString_withString_options_range_(
@@ -70888,7 +77454,7 @@ class NSString extends NSObject {
         replacement?._id ?? ffi.nullptr,
         options,
         searchRange);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByReplacingOccurrencesOfString_withString_(
@@ -70898,7 +77464,7 @@ class NSString extends NSObject {
         _lib._sel_stringByReplacingOccurrencesOfString_withString_1,
         target?._id ?? ffi.nullptr,
         replacement?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByReplacingCharactersInRange_withString_(
@@ -70908,14 +77474,14 @@ class NSString extends NSObject {
         _lib._sel_stringByReplacingCharactersInRange_withString_1,
         range,
         replacement?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByApplyingTransform_reverse_(
       NSStringTransform transform, bool reverse) {
     final _ret = _lib._objc_msgSend_69(
         _id, _lib._sel_stringByApplyingTransform_reverse_1, transform, reverse);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   bool writeToURL_atomically_encoding_error_(
@@ -70948,7 +77514,9 @@ class NSString extends NSObject {
 
   NSObject? get description {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_description1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int get hash {
@@ -70963,7 +77531,7 @@ class NSString extends NSObject {
         characters,
         length,
         freeBuffer);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithCharactersNoCopy_length_deallocator_(
@@ -70974,32 +77542,32 @@ class NSString extends NSObject {
         chars,
         len,
         deallocator._impl);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithCharacters_length_(
       ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_73(
         _id, _lib._sel_initWithCharacters_length_1, characters, length);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithUTF8String_(ffi.Pointer<ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_74(
         _id, _lib._sel_initWithUTF8String_1, nullTerminatedCString);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithString_(NSObject? aString) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithString_1, aString?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithFormat_(NSObject? format) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithFormat_arguments_(NSObject? format, va_list argList) {
@@ -71008,13 +77576,13 @@ class NSString extends NSObject {
         _lib._sel_initWithFormat_arguments_1,
         format?._id ?? ffi.nullptr,
         argList);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithFormat_locale_(NSObject? format, NSObject locale) {
     final _ret = _lib._objc_msgSend_76(_id, _lib._sel_initWithFormat_locale_1,
         format?._id ?? ffi.nullptr, locale._id);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithFormat_locale_arguments_(
@@ -71025,20 +77593,20 @@ class NSString extends NSObject {
         format?._id ?? ffi.nullptr,
         locale._id,
         argList);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithData_encoding_(NSObject? data, int encoding) {
     final _ret = _lib._objc_msgSend_78(_id, _lib._sel_initWithData_encoding_1,
         data?._id ?? ffi.nullptr, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithBytes_length_encoding_(
       ffi.Pointer<ffi.Void> bytes, int len, int encoding) {
     final _ret = _lib._objc_msgSend_79(
         _id, _lib._sel_initWithBytes_length_encoding_1, bytes, len, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithBytesNoCopy_length_encoding_freeWhenDone_(
@@ -71050,7 +77618,7 @@ class NSString extends NSObject {
         len,
         encoding,
         freeBuffer);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithBytesNoCopy_length_encoding_deallocator_(
@@ -71065,59 +77633,59 @@ class NSString extends NSObject {
         len,
         encoding,
         deallocator._impl);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString string(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSString1, _lib._sel_string1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithString_(NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithCharacters_length_(
       NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithUTF8String_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_74(_lib._class_NSString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithFormat_(NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString localizedStringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithCString_encoding_(
       ffi.Pointer<ffi.Char> nullTerminatedCString, int encoding) {
     final _ret = _lib._objc_msgSend_82(_id,
         _lib._sel_initWithCString_encoding_1, nullTerminatedCString, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithCString_encoding_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithContentsOfURL_encoding_error_(
@@ -71128,7 +77696,7 @@ class NSString extends NSObject {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithContentsOfFile_encoding_error_(
@@ -71139,7 +77707,7 @@ class NSString extends NSObject {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithContentsOfURL_encoding_error_(NativeLibrary _lib,
@@ -71150,7 +77718,7 @@ class NSString extends NSObject {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithContentsOfFile_encoding_error_(NativeLibrary _lib,
@@ -71161,7 +77729,7 @@ class NSString extends NSObject {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithContentsOfURL_usedEncoding_error_(
@@ -71174,7 +77742,7 @@ class NSString extends NSObject {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString initWithContentsOfFile_usedEncoding_error_(
@@ -71187,7 +77755,7 @@ class NSString extends NSObject {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithContentsOfURL_usedEncoding_error_(
@@ -71201,7 +77769,7 @@ class NSString extends NSObject {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString stringWithContentsOfFile_usedEncoding_error_(
@@ -71215,7 +77783,7 @@ class NSString extends NSObject {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int
@@ -71236,13 +77804,13 @@ class NSString extends NSObject {
 
   NSObject propertyList() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_propertyList1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary propertyListFromStringsFileFormat() {
     final _ret = _lib._objc_msgSend_95(
         _id, _lib._sel_propertyListFromStringsFileFormat1);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   void cString() {
@@ -71290,26 +77858,26 @@ class NSString extends NSObject {
   NSObject initWithContentsOfFile_(NSObject? path) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject initWithContentsOfURL_(NSObject? url) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithContentsOfFile_(
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithContentsOfURL_(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject initWithCStringNoCopy_length_freeWhenDone_(
@@ -71320,32 +77888,32 @@ class NSString extends NSObject {
         bytes,
         length,
         freeBuffer);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject initWithCString_length_(ffi.Pointer<ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_82(
         _id, _lib._sel_initWithCString_length_1, bytes, length);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject initWithCString_(ffi.Pointer<ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_74(_id, _lib._sel_initWithCString_1, bytes);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_74(
         _lib._class_NSString1, _lib._sel_stringWithCString_1, bytes);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void getCharacters_(ffi.Pointer<unichar> buffer) {
@@ -71359,36 +77927,38 @@ class NSString extends NSObject {
         _id,
         _lib._sel_stringByAddingPercentEncodingWithAllowedCharacters_1,
         allowedCharacters?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a new string made from the receiver by replacing all percent encoded sequences with the matching UTF-8 characters.
   NSObject? get stringByRemovingPercentEncoding {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_stringByRemovingPercentEncoding1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByAddingPercentEscapesUsingEncoding_(int enc) {
     final _ret = _lib._objc_msgSend_14(
         _id, _lib._sel_stringByAddingPercentEscapesUsingEncoding_1, enc);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString stringByReplacingPercentEscapesUsingEncoding_(int enc) {
     final _ret = _lib._objc_msgSend_14(
         _id, _lib._sel_stringByReplacingPercentEscapesUsingEncoding_1, enc);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSString new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSString1, _lib._sel_new1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: false, release: true);
   }
 
   static NSString alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSString1, _lib._sel_alloc1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -71548,15 +78118,17 @@ typedef NSStringEncoding = NSUInteger;
 
 /// Immutable Data
 class NSData extends NSObject {
-  NSData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSData castFrom<T extends _ObjCWrapper>(T other) {
-    return NSData._(other._id, other._lib);
+    return NSData._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSData castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSData._(other, lib);
+    return NSData._(other, lib, retain: true, release: true);
   }
 
   int get length {
@@ -71572,7 +78144,9 @@ class NSData extends NSObject {
 
   NSObject? get description {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_description1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void getBytes_length_(ffi.Pointer<ffi.Void> buffer, int length) {
@@ -71591,7 +78165,7 @@ class NSData extends NSObject {
   NSData subdataWithRange_(NSRange range) {
     final _ret =
         _lib._objc_msgSend_41(_id, _lib._sel_subdataWithRange_1, range);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   bool writeToFile_atomically_(NSObject? path, bool useAuxiliaryFile) {
@@ -71631,28 +78205,28 @@ class NSData extends NSObject {
 
   static NSData data(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_data1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithBytes_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(
         _lib._class_NSData1, _lib._sel_dataWithBytes_length_1, bytes, length);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithBytesNoCopy_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(_lib._class_NSData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithBytesNoCopy_length_freeWhenDone_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithContentsOfFile_options_error_(
@@ -71666,7 +78240,7 @@ class NSData extends NSObject {
         path?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithContentsOfURL_options_error_(
@@ -71680,38 +78254,38 @@ class NSData extends NSObject {
         url?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithContentsOfFile_(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithContentsOfURL_(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithBytes_length_(ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(
         _id, _lib._sel_initWithBytes_length_1, bytes, length);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithBytesNoCopy_length_(ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(
         _id, _lib._sel_initWithBytesNoCopy_length_1, bytes, length);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithBytesNoCopy_length_freeWhenDone_(
       ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_47(_id,
         _lib._sel_initWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithBytesNoCopy_length_deallocator_(
@@ -71722,7 +78296,7 @@ class NSData extends NSObject {
         bytes,
         length,
         deallocator._impl);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithContentsOfFile_options_error_(NSObject? path,
@@ -71733,7 +78307,7 @@ class NSData extends NSObject {
         path?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithContentsOfURL_options_error_(NSObject? url,
@@ -71744,31 +78318,31 @@ class NSData extends NSObject {
         url?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithContentsOfFile_(NSObject? path) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithContentsOfURL_(NSObject? url) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData initWithData_(NSObject? data) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithData_1, data?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData dataWithData_(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Create an NSData from a Base-64 encoded NSString using the given options. By default, returns nil when the input is not recognized as valid Base-64.
@@ -71779,14 +78353,14 @@ class NSData extends NSObject {
         _lib._sel_initWithBase64EncodedString_options_1,
         base64String?._id ?? ffi.nullptr,
         options);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Create a Base-64 encoded NSString from the receiver's contents using the given options.
   NSString base64EncodedStringWithOptions_(int options) {
     final _ret = _lib._objc_msgSend_51(
         _id, _lib._sel_base64EncodedStringWithOptions_1, options);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   /// Create an NSData from a Base-64, UTF-8 encoded NSData. By default, returns nil when the input is not recognized as valid Base-64.
@@ -71796,14 +78370,14 @@ class NSData extends NSObject {
         _lib._sel_initWithBase64EncodedData_options_1,
         base64Data?._id ?? ffi.nullptr,
         options);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Create a Base-64, UTF-8 encoded NSData from the receiver's contents using the given options.
   NSData base64EncodedDataWithOptions_(int options) {
     final _ret = _lib._objc_msgSend_52(
         _id, _lib._sel_base64EncodedDataWithOptions_1, options);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// These methods return a compressed or decompressed version of the receiver using the specified algorithm.
@@ -71811,14 +78385,14 @@ class NSData extends NSObject {
       int algorithm, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_53(_id,
         _lib._sel_decompressedDataUsingAlgorithm_error_1, algorithm, error);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData compressedDataUsingAlgorithm_error_(
       int algorithm, ffi.Pointer<ffi.Pointer<ObjCObject>> error) {
     final _ret = _lib._objc_msgSend_53(
         _id, _lib._sel_compressedDataUsingAlgorithm_error_1, algorithm, error);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   void getBytes_(ffi.Pointer<ffi.Void> buffer) {
@@ -71829,35 +78403,35 @@ class NSData extends NSObject {
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject initWithContentsOfMappedFile_(NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_id,
         _lib._sel_initWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// These methods first appeared in NSData.h on OS X 10.9 and iOS 7.0. They are deprecated in the same releases in favor of the methods in the NSDataBase64Encoding category. However, these methods have existed for several releases, so they may be used for applications targeting releases prior to OS X 10.9 and iOS 7.0.
   NSObject initWithBase64Encoding_(NSObject? base64String) {
     final _ret = _lib._objc_msgSend_13(_id, _lib._sel_initWithBase64Encoding_1,
         base64String?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString base64Encoding() {
     final _ret = _lib._objc_msgSend_55(_id, _lib._sel_base64Encoding1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSData new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_new1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: false, release: true);
   }
 
   static NSData alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSData1, _lib._sel_alloc1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -72054,16 +78628,17 @@ class ObjCBlock4 {
 
 /// Immutable Dictionary
 class NSDictionary extends NSObject {
-  NSDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSDictionary castFrom<T extends _ObjCWrapper>(T other) {
-    return NSDictionary._(other._id, other._lib);
+    return NSDictionary._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSDictionary castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSDictionary._(other, lib);
+    return NSDictionary._(other, lib, retain: true, release: true);
   }
 
   int get count {
@@ -72072,13 +78647,13 @@ class NSDictionary extends NSObject {
 
   NSObject objectForKey_(NSObject aKey) {
     final _ret = _lib._objc_msgSend_13(_id, _lib._sel_objectForKey_1, aKey._id);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSDictionary init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithObjects_forKeys_count_(
@@ -72087,46 +78662,54 @@ class NSDictionary extends NSObject {
       int cnt) {
     final _ret = _lib._objc_msgSend_86(
         _id, _lib._sel_initWithObjects_forKeys_count_1, objects, keys, cnt);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get allKeys {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allKeys1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get allValues {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allValues1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get description {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_description1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get descriptionInStringsFileFormat {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_descriptionInStringsFileFormat1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString descriptionWithLocale_(NSObject locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_descriptionWithLocale_1, locale._id);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString descriptionWithLocale_indent_(NSObject locale, int level) {
     final _ret = _lib._objc_msgSend_87(
         _id, _lib._sel_descriptionWithLocale_indent_1, locale._id, level);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   bool isEqualToDictionary_(NSObject? otherDictionary) {
@@ -72151,7 +78734,7 @@ class NSDictionary extends NSObject {
   NSObject objectForKeyedSubscript_(NSObject key) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_objectForKeyedSubscript_1, key._id);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void enumerateKeysAndObjectsUsingBlock_(ObjCBlock5 block) {
@@ -72188,14 +78771,14 @@ class NSDictionary extends NSObject {
   static NSDictionary dictionary(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_dictionary1);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDictionary dictionaryWithObject_forKey_(
       NativeLibrary _lib, NSObject object, NSObject key) {
     final _ret = _lib._objc_msgSend_76(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObject_forKey_1, object._id, key._id);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDictionary dictionaryWithObjects_forKeys_count_(
@@ -72205,21 +78788,21 @@ class NSDictionary extends NSObject {
       int cnt) {
     final _ret = _lib._objc_msgSend_86(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObjects_forKeys_count_1, objects, keys, cnt);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDictionary dictionaryWithObjectsAndKeys_(
       NativeLibrary _lib, NSObject firstObject) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithObjectsAndKeys_1, firstObject._id);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDictionary dictionaryWithDictionary_(
       NativeLibrary _lib, NSObject? dict) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSDictionary1,
         _lib._sel_dictionaryWithDictionary_1, dict?._id ?? ffi.nullptr);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDictionary dictionaryWithObjects_forKeys_(
@@ -72229,19 +78812,19 @@ class NSDictionary extends NSObject {
         _lib._sel_dictionaryWithObjects_forKeys_1,
         objects?._id ?? ffi.nullptr,
         keys?._id ?? ffi.nullptr);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithObjectsAndKeys_(NSObject firstObject) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithObjectsAndKeys_1, firstObject._id);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithDictionary_(NSObject? otherDictionary) {
     final _ret = _lib._objc_msgSend_13(_id, _lib._sel_initWithDictionary_1,
         otherDictionary?._id ?? ffi.nullptr);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithDictionary_copyItems_(
@@ -72251,13 +78834,13 @@ class NSDictionary extends NSObject {
         _lib._sel_initWithDictionary_copyItems_1,
         otherDictionary?._id ?? ffi.nullptr,
         flag);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSDictionary initWithObjects_forKeys_(NSObject? objects, NSObject? keys) {
     final _ret = _lib._objc_msgSend_76(_id, _lib._sel_initWithObjects_forKeys_1,
         objects?._id ?? ffi.nullptr, keys?._id ?? ffi.nullptr);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   /// Use this method to create a key set to pass to +dictionaryWithSharedKeySet:.
@@ -72270,7 +78853,7 @@ class NSDictionary extends NSObject {
   static NSObject sharedKeySetForKeys_(NativeLibrary _lib, NSObject? keys) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSDictionary1,
         _lib._sel_sharedKeySetForKeys_1, keys?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int countByEnumeratingWithState_objects_count_(
@@ -72288,13 +78871,13 @@ class NSDictionary extends NSObject {
   static NSDictionary new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_new1);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: false, release: true);
   }
 
   static NSDictionary alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDictionary1, _lib._sel_alloc1);
-    return NSDictionary._(_ret, _lib);
+    return NSDictionary._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -72355,51 +78938,56 @@ class NSFastEnumerationState extends ffi.Struct {
 }
 
 class NSEnumerator extends NSObject {
-  NSEnumerator._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSEnumerator._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSEnumerator castFrom<T extends _ObjCWrapper>(T other) {
-    return NSEnumerator._(other._id, other._lib);
+    return NSEnumerator._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSEnumerator castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSEnumerator._(other, lib);
+    return NSEnumerator._(other, lib, retain: true, release: true);
   }
 
   NSObject nextObject() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_nextObject1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get allObjects {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allObjects1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSEnumerator new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSEnumerator1, _lib._sel_new1);
-    return NSEnumerator._(_ret, _lib);
+    return NSEnumerator._(_ret, _lib, retain: false, release: true);
   }
 
   static NSEnumerator alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSEnumerator1, _lib._sel_alloc1);
-    return NSEnumerator._(_ret, _lib);
+    return NSEnumerator._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSValue extends NSObject {
-  NSValue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSValue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSValue castFrom<T extends _ObjCWrapper>(T other) {
-    return NSValue._(other._id, other._lib);
+    return NSValue._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSValue castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSValue._(other, lib);
+    return NSValue._(other, lib, retain: true, release: true);
   }
 
   void getValue_size_(ffi.Pointer<ffi.Void> value, int size) {
@@ -72414,46 +79002,46 @@ class NSValue extends NSObject {
       ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Char> type) {
     final _ret = _lib._objc_msgSend_105(
         _id, _lib._sel_initWithBytes_objCType_1, value, type);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   NSValue initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithBytes_objCType_(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Char> type) {
     final _ret = _lib._objc_msgSend_106(
         _lib._class_NSValue1, _lib._sel_valueWithBytes_objCType_1, value, type);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue value_withObjCType_(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Char> type) {
     final _ret = _lib._objc_msgSend_106(
         _lib._class_NSValue1, _lib._sel_value_withObjCType_1, value, type);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithNonretainedObject_(
       NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_107(_lib._class_NSValue1,
         _lib._sel_valueWithNonretainedObject_1, anObject._id);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject get nonretainedObjectValue {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_nonretainedObjectValue1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithPointer_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> pointer) {
     final _ret = _lib._objc_msgSend_108(
         _lib._class_NSValue1, _lib._sel_valueWithPointer_1, pointer);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   ffi.Pointer<ffi.Void> get pointerValue {
@@ -72472,7 +79060,7 @@ class NSValue extends NSObject {
   static NSValue valueWithRange_(NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_109(
         _lib._class_NSValue1, _lib._sel_valueWithRange_1, range);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   NSRange get rangeValue {
@@ -72481,115 +79069,117 @@ class NSValue extends NSObject {
 
   static NSValue new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSValue1, _lib._sel_new1);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: false, release: true);
   }
 
   static NSValue alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSValue1, _lib._sel_alloc1);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSNumber extends NSValue {
-  NSNumber._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSNumber._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSNumber castFrom<T extends _ObjCWrapper>(T other) {
-    return NSNumber._(other._id, other._lib);
+    return NSNumber._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSNumber castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSNumber._(other, lib);
+    return NSNumber._(other, lib, retain: true, release: true);
   }
 
   @override
   NSNumber initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithChar_(int value) {
     final _ret = _lib._objc_msgSend_111(_id, _lib._sel_initWithChar_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedChar_(int value) {
     final _ret =
         _lib._objc_msgSend_112(_id, _lib._sel_initWithUnsignedChar_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithShort_(int value) {
     final _ret = _lib._objc_msgSend_113(_id, _lib._sel_initWithShort_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedShort_(int value) {
     final _ret =
         _lib._objc_msgSend_114(_id, _lib._sel_initWithUnsignedShort_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithInt_(int value) {
     final _ret = _lib._objc_msgSend_115(_id, _lib._sel_initWithInt_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedInt_(int value) {
     final _ret =
         _lib._objc_msgSend_116(_id, _lib._sel_initWithUnsignedInt_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithLong_(int value) {
     final _ret = _lib._objc_msgSend_117(_id, _lib._sel_initWithLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedLong_(int value) {
     final _ret =
         _lib._objc_msgSend_118(_id, _lib._sel_initWithUnsignedLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithLongLong_(int value) {
     final _ret =
         _lib._objc_msgSend_119(_id, _lib._sel_initWithLongLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedLongLong_(int value) {
     final _ret = _lib._objc_msgSend_120(
         _id, _lib._sel_initWithUnsignedLongLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithFloat_(double value) {
     final _ret = _lib._objc_msgSend_121(_id, _lib._sel_initWithFloat_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithDouble_(double value) {
     final _ret = _lib._objc_msgSend_122(_id, _lib._sel_initWithDouble_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithBool_(bool value) {
     final _ret = _lib._objc_msgSend_123(_id, _lib._sel_initWithBool_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithInteger_(int value) {
     final _ret =
         _lib._objc_msgSend_117(_id, _lib._sel_initWithInteger_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   NSNumber initWithUnsignedInteger_(int value) {
     final _ret =
         _lib._objc_msgSend_118(_id, _lib._sel_initWithUnsignedInteger_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   int get charValue {
@@ -72654,7 +79244,9 @@ class NSNumber extends NSValue {
 
   NSObject? get stringValue {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_stringValue1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int compare_(NSObject? otherNumber) {
@@ -72670,141 +79262,141 @@ class NSNumber extends NSValue {
   NSString descriptionWithLocale_(NSObject locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_descriptionWithLocale_1, locale._id);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithChar_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_111(
         _lib._class_NSNumber1, _lib._sel_numberWithChar_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedChar_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_112(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedChar_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithShort_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_113(
         _lib._class_NSNumber1, _lib._sel_numberWithShort_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedShort_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_114(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedShort_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithInt_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_115(
         _lib._class_NSNumber1, _lib._sel_numberWithInt_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedInt_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_116(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedInt_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithLong_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_117(
         _lib._class_NSNumber1, _lib._sel_numberWithLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedLong_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_118(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithLongLong_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_119(
         _lib._class_NSNumber1, _lib._sel_numberWithLongLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedLongLong_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_120(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedLongLong_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithFloat_(NativeLibrary _lib, double value) {
     final _ret = _lib._objc_msgSend_121(
         _lib._class_NSNumber1, _lib._sel_numberWithFloat_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithDouble_(NativeLibrary _lib, double value) {
     final _ret = _lib._objc_msgSend_122(
         _lib._class_NSNumber1, _lib._sel_numberWithDouble_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithBool_(NativeLibrary _lib, bool value) {
     final _ret = _lib._objc_msgSend_123(
         _lib._class_NSNumber1, _lib._sel_numberWithBool_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithInteger_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_117(
         _lib._class_NSNumber1, _lib._sel_numberWithInteger_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber numberWithUnsignedInteger_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_118(
         _lib._class_NSNumber1, _lib._sel_numberWithUnsignedInteger_1, value);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithBytes_objCType_(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Char> type) {
     final _ret = _lib._objc_msgSend_106(_lib._class_NSNumber1,
         _lib._sel_valueWithBytes_objCType_1, value, type);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue value_withObjCType_(NativeLibrary _lib,
       ffi.Pointer<ffi.Void> value, ffi.Pointer<ffi.Char> type) {
     final _ret = _lib._objc_msgSend_106(
         _lib._class_NSNumber1, _lib._sel_value_withObjCType_1, value, type);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithNonretainedObject_(
       NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_107(_lib._class_NSNumber1,
         _lib._sel_valueWithNonretainedObject_1, anObject._id);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithPointer_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> pointer) {
     final _ret = _lib._objc_msgSend_108(
         _lib._class_NSNumber1, _lib._sel_valueWithPointer_1, pointer);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSValue valueWithRange_(NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_109(
         _lib._class_NSNumber1, _lib._sel_valueWithRange_1, range);
-    return NSValue._(_ret, _lib);
+    return NSValue._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNumber new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSNumber1, _lib._sel_new1);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: false, release: true);
   }
 
   static NSNumber alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSNumber1, _lib._sel_alloc1);
-    return NSNumber._(_ret, _lib);
+    return NSNumber._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -72814,21 +79406,23 @@ abstract class NSCollectionChangeType {
 }
 
 class NSOrderedCollectionChange extends NSObject {
-  NSOrderedCollectionChange._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSOrderedCollectionChange._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSOrderedCollectionChange castFrom<T extends _ObjCWrapper>(T other) {
-    return NSOrderedCollectionChange._(other._id, other._lib);
+    return NSOrderedCollectionChange._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSOrderedCollectionChange castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSOrderedCollectionChange._(other, lib);
+    return NSOrderedCollectionChange._(other, lib, retain: true, release: true);
   }
 
   NSObject get object {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_object1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int get changeType {
@@ -72846,14 +79440,14 @@ class NSOrderedCollectionChange extends NSObject {
   @override
   NSObject init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSOrderedCollectionChange initWithObject_type_index_(
       NSObject anObject, int type, int index) {
     final _ret = _lib._objc_msgSend_131(
         _id, _lib._sel_initWithObject_type_index_1, anObject._id, type, index);
-    return NSOrderedCollectionChange._(_ret, _lib);
+    return NSOrderedCollectionChange._(_ret, _lib, retain: true, release: true);
   }
 
   NSOrderedCollectionChange initWithObject_type_index_associatedIndex_(
@@ -72865,69 +79459,72 @@ class NSOrderedCollectionChange extends NSObject {
         type,
         index,
         associatedIndex);
-    return NSOrderedCollectionChange._(_ret, _lib);
+    return NSOrderedCollectionChange._(_ret, _lib, retain: true, release: true);
   }
 
   static NSOrderedCollectionChange new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionChange1, _lib._sel_new1);
-    return NSOrderedCollectionChange._(_ret, _lib);
+    return NSOrderedCollectionChange._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSOrderedCollectionChange alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionChange1, _lib._sel_alloc1);
-    return NSOrderedCollectionChange._(_ret, _lib);
+    return NSOrderedCollectionChange._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
 class NSIndexSet extends NSObject {
-  NSIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSIndexSet castFrom<T extends _ObjCWrapper>(T other) {
-    return NSIndexSet._(other._id, other._lib);
+    return NSIndexSet._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSIndexSet castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSIndexSet._(other, lib);
+    return NSIndexSet._(other, lib, retain: true, release: true);
   }
 
   static NSIndexSet indexSet(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_indexSet1);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSIndexSet indexSetWithIndex_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSIndexSet1, _lib._sel_indexSetWithIndex_1, value);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSIndexSet indexSetWithIndexesInRange_(
       NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_134(
         _lib._class_NSIndexSet1, _lib._sel_indexSetWithIndexesInRange_1, range);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet initWithIndexesInRange_(NSRange range) {
     final _ret =
         _lib._objc_msgSend_134(_id, _lib._sel_initWithIndexesInRange_1, range);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet initWithIndexSet_(NSObject? indexSet) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithIndexSet_1, indexSet?._id ?? ffi.nullptr);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet initWithIndex_(int value) {
     final _ret = _lib._objc_msgSend_133(_id, _lib._sel_initWithIndex_1, value);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   bool isEqualToIndexSet_(NSObject? indexSet) {
@@ -73042,13 +79639,13 @@ class NSIndexSet extends NSObject {
   NSIndexSet indexesPassingTest_(ObjCBlock7 predicate) {
     final _ret = _lib._objc_msgSend_144(
         _id, _lib._sel_indexesPassingTest_1, predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet indexesWithOptions_passingTest_(int opts, ObjCBlock7 predicate) {
     final _ret = _lib._objc_msgSend_145(
         _id, _lib._sel_indexesWithOptions_passingTest_1, opts, predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet indexesInRange_options_passingTest_(
@@ -73059,7 +79656,7 @@ class NSIndexSet extends NSObject {
         range,
         opts,
         predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   void enumerateRangesUsingBlock_(ObjCBlock8 block) {
@@ -73084,13 +79681,13 @@ class NSIndexSet extends NSObject {
 
   static NSIndexSet new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_new1);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: false, release: true);
   }
 
   static NSIndexSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSIndexSet1, _lib._sel_alloc1);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -73193,16 +79790,18 @@ class ObjCBlock8 {
 }
 
 class NSMutableIndexSet extends NSIndexSet {
-  NSMutableIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableIndexSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableIndexSet castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableIndexSet._(other._id, other._lib);
+    return NSMutableIndexSet._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMutableIndexSet castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableIndexSet._(other, lib);
+    return NSMutableIndexSet._(other, lib, retain: true, release: true);
   }
 
   void addIndexes_(NSObject? indexSet) {
@@ -73243,32 +79842,32 @@ class NSMutableIndexSet extends NSIndexSet {
   static NSMutableIndexSet indexSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableIndexSet1, _lib._sel_indexSet1);
-    return NSMutableIndexSet._(_ret, _lib);
+    return NSMutableIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableIndexSet indexSetWithIndex_(NativeLibrary _lib, int value) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSMutableIndexSet1, _lib._sel_indexSetWithIndex_1, value);
-    return NSMutableIndexSet._(_ret, _lib);
+    return NSMutableIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableIndexSet indexSetWithIndexesInRange_(
       NativeLibrary _lib, NSRange range) {
     final _ret = _lib._objc_msgSend_134(_lib._class_NSMutableIndexSet1,
         _lib._sel_indexSetWithIndexesInRange_1, range);
-    return NSMutableIndexSet._(_ret, _lib);
+    return NSMutableIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableIndexSet new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableIndexSet1, _lib._sel_new1);
-    return NSMutableIndexSet._(_ret, _lib);
+    return NSMutableIndexSet._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableIndexSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableIndexSet1, _lib._sel_alloc1);
-    return NSMutableIndexSet._(_ret, _lib);
+    return NSMutableIndexSet._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -73281,23 +79880,27 @@ abstract class NSOrderedCollectionDifferenceCalculationOptions {
 }
 
 class NSOrderedCollectionDifference extends NSObject {
-  NSOrderedCollectionDifference._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSOrderedCollectionDifference._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSOrderedCollectionDifference castFrom<T extends _ObjCWrapper>(
       T other) {
-    return NSOrderedCollectionDifference._(other._id, other._lib);
+    return NSOrderedCollectionDifference._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSOrderedCollectionDifference castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSOrderedCollectionDifference._(other, lib);
+    return NSOrderedCollectionDifference._(other, lib,
+        retain: true, release: true);
   }
 
   NSOrderedCollectionDifference initWithChanges_(NSObject? changes) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithChanges_1, changes?._id ?? ffi.nullptr);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: true, release: true);
   }
 
   NSOrderedCollectionDifference
@@ -73315,7 +79918,8 @@ class NSOrderedCollectionDifference extends NSObject {
         removes?._id ?? ffi.nullptr,
         removedObjects?._id ?? ffi.nullptr,
         changes?._id ?? ffi.nullptr);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: true, release: true);
   }
 
   NSOrderedCollectionDifference
@@ -73331,17 +79935,22 @@ class NSOrderedCollectionDifference extends NSObject {
         insertedObjects?._id ?? ffi.nullptr,
         removes?._id ?? ffi.nullptr,
         removedObjects?._id ?? ffi.nullptr);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: true, release: true);
   }
 
   NSObject? get insertions {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_insertions1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get removals {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_removals1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   bool get hasChanges {
@@ -73350,33 +79959,38 @@ class NSOrderedCollectionDifference extends NSObject {
 
   NSOrderedCollectionDifference inverseDifference() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_inverseDifference1);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: true, release: true);
   }
 
   static NSOrderedCollectionDifference new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionDifference1, _lib._sel_new1);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSOrderedCollectionDifference alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOrderedCollectionDifference1, _lib._sel_alloc1);
-    return NSOrderedCollectionDifference._(_ret, _lib);
+    return NSOrderedCollectionDifference._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
 /// Immutable Array
 class NSArray extends NSObject {
-  NSArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSArray castFrom<T extends _ObjCWrapper>(T other) {
-    return NSArray._(other._id, other._lib);
+    return NSArray._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSArray castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSArray._(other, lib);
+    return NSArray._(other, lib, retain: true, release: true);
   }
 
   int get count {
@@ -73385,32 +79999,32 @@ class NSArray extends NSObject {
 
   NSObject objectAtIndex_(int index) {
     final _ret = _lib._objc_msgSend_133(_id, _lib._sel_objectAtIndex_1, index);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSArray init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSArray initWithObjects_count_(
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects, int cnt) {
     final _ret = _lib._objc_msgSend_154(
         _id, _lib._sel_initWithObjects_count_1, objects, cnt);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSArray initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSString componentsJoinedByString_(NSObject? separator) {
     final _ret = _lib._objc_msgSend_28(_id,
         _lib._sel_componentsJoinedByString_1, separator?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   bool containsObject_(NSObject anObject) {
@@ -73419,25 +80033,27 @@ class NSArray extends NSObject {
 
   NSObject? get description {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_description1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString descriptionWithLocale_(NSObject locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_descriptionWithLocale_1, locale._id);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSString descriptionWithLocale_indent_(NSObject locale, int level) {
     final _ret = _lib._objc_msgSend_87(
         _id, _lib._sel_descriptionWithLocale_indent_1, locale._id, level);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject firstObjectCommonWithArray_(NSObject? otherArray) {
     final _ret = _lib._objc_msgSend_13(_id,
         _lib._sel_firstObjectCommonWithArray_1, otherArray?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void getObjects_range_(
@@ -73471,17 +80087,19 @@ class NSArray extends NSObject {
 
   NSObject get firstObject {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_firstObject1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject get lastObject {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_lastObject1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get sortedArrayHint {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_sortedArrayHint1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
@@ -73508,7 +80126,7 @@ class NSArray extends NSObject {
   NSObject objectAtIndexedSubscript_(int idx) {
     final _ret =
         _lib._objc_msgSend_133(_id, _lib._sel_objectAtIndexedSubscript_1, idx);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void enumerateObjectsUsingBlock_(ObjCBlock9 block) {
@@ -73557,7 +80175,7 @@ class NSArray extends NSObject {
   NSIndexSet indexesOfObjectsPassingTest_(ObjCBlock10 predicate) {
     final _ret = _lib._objc_msgSend_165(
         _id, _lib._sel_indexesOfObjectsPassingTest_1, predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet indexesOfObjectsWithOptions_passingTest_(
@@ -73567,7 +80185,7 @@ class NSArray extends NSObject {
         _lib._sel_indexesOfObjectsWithOptions_passingTest_1,
         opts,
         predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSIndexSet indexesOfObjectsAtIndexes_options_passingTest_(
@@ -73578,7 +80196,7 @@ class NSArray extends NSObject {
         s?._id ?? ffi.nullptr,
         opts,
         predicate._impl);
-    return NSIndexSet._(_ret, _lib);
+    return NSIndexSet._(_ret, _lib, retain: true, release: true);
   }
 
   /// binary search
@@ -73595,50 +80213,50 @@ class NSArray extends NSObject {
 
   static NSArray array(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_array1);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSArray arrayWithObject_(NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_13(
         _lib._class_NSArray1, _lib._sel_arrayWithObject_1, anObject._id);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSArray arrayWithObjects_count_(NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects, int cnt) {
     final _ret = _lib._objc_msgSend_154(
         _lib._class_NSArray1, _lib._sel_arrayWithObjects_count_1, objects, cnt);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSArray arrayWithObjects_(NativeLibrary _lib, NSObject firstObj) {
     final _ret = _lib._objc_msgSend_13(
         _lib._class_NSArray1, _lib._sel_arrayWithObjects_1, firstObj._id);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSArray arrayWithArray_(NativeLibrary _lib, NSObject? array) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSArray1,
         _lib._sel_arrayWithArray_1, array?._id ?? ffi.nullptr);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSArray initWithObjects_(NSObject firstObj) {
     final _ret =
         _lib._objc_msgSend_13(_id, _lib._sel_initWithObjects_1, firstObj._id);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSArray initWithArray_(NSObject? array) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithArray_1, array?._id ?? ffi.nullptr);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSArray initWithArray_copyItems_(NSObject? array, bool flag) {
     final _ret = _lib._objc_msgSend_93(_id, _lib._sel_initWithArray_copyItems_1,
         array?._id ?? ffi.nullptr, flag);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: true, release: true);
   }
 
   /// This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range: instead.
@@ -73658,12 +80276,12 @@ class NSArray extends NSObject {
 
   static NSArray new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_new1);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: false, release: true);
   }
 
   static NSArray alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSArray1, _lib._sel_alloc1);
-    return NSArray._(_ret, _lib);
+    return NSArray._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -73787,16 +80405,17 @@ class ObjCBlock11 {
 
 /// Mutable Array
 class NSMutableArray extends NSArray {
-  NSMutableArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableArray._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableArray castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableArray._(other._id, other._lib);
+    return NSMutableArray._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSMutableArray castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableArray._(other, lib);
+    return NSMutableArray._(other, lib, retain: true, release: true);
   }
 
   void addObject_(NSObject anObject) {
@@ -73824,20 +80443,20 @@ class NSMutableArray extends NSArray {
   @override
   NSMutableArray init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   NSMutableArray initWithCapacity_(int numItems) {
     final _ret =
         _lib._objc_msgSend_133(_id, _lib._sel_initWithCapacity_1, numItems);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSMutableArray initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   void addObjectsFromArray_(NSObject? otherArray) {
@@ -73960,7 +80579,7 @@ class NSMutableArray extends NSArray {
   static NSMutableArray arrayWithCapacity_(NativeLibrary _lib, int numItems) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSMutableArray1, _lib._sel_arrayWithCapacity_1, numItems);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   void applyDifference_(NSObject? difference) {
@@ -73971,61 +80590,62 @@ class NSMutableArray extends NSArray {
   static NSMutableArray array(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_array1);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableArray arrayWithObject_(
       NativeLibrary _lib, NSObject anObject) {
     final _ret = _lib._objc_msgSend_13(
         _lib._class_NSMutableArray1, _lib._sel_arrayWithObject_1, anObject._id);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableArray arrayWithObjects_count_(NativeLibrary _lib,
       ffi.Pointer<ffi.Pointer<ObjCObject>> objects, int cnt) {
     final _ret = _lib._objc_msgSend_154(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithObjects_count_1, objects, cnt);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableArray arrayWithObjects_(
       NativeLibrary _lib, NSObject firstObj) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithObjects_1, firstObj._id);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableArray arrayWithArray_(NativeLibrary _lib, NSObject? array) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableArray1,
         _lib._sel_arrayWithArray_1, array?._id ?? ffi.nullptr);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableArray new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_new1);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableArray alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableArray1, _lib._sel_alloc1);
-    return NSMutableArray._(_ret, _lib);
+    return NSMutableArray._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// Mutable Data
 class NSMutableData extends NSData {
-  NSMutableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableData castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableData._(other._id, other._lib);
+    return NSMutableData._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSMutableData castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableData._(other, lib);
+    return NSMutableData._(other, lib, retain: true, release: true);
   }
 
   ffi.Pointer<ffi.Void> get mutableBytes {
@@ -74081,25 +80701,25 @@ class NSMutableData extends NSData {
   static NSMutableData dataWithCapacity_(NativeLibrary _lib, int aNumItems) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSMutableData1, _lib._sel_dataWithCapacity_1, aNumItems);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithLength_(NativeLibrary _lib, int length) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSMutableData1, _lib._sel_dataWithLength_1, length);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   NSMutableData initWithCapacity_(int capacity) {
     final _ret =
         _lib._objc_msgSend_133(_id, _lib._sel_initWithCapacity_1, capacity);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   NSMutableData initWithLength_(int length) {
     final _ret =
         _lib._objc_msgSend_133(_id, _lib._sel_initWithLength_1, length);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   /// These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the operation is not successful, these methods leave the receiver unchanged..
@@ -74118,28 +80738,28 @@ class NSMutableData extends NSData {
   static NSMutableData data(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_data1);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithBytes_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytes_length_1, bytes, length);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithBytesNoCopy_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithBytesNoCopy_length_freeWhenDone_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSMutableData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithContentsOfFile_options_error_(
@@ -74153,7 +80773,7 @@ class NSMutableData extends NSData {
         path?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithContentsOfURL_options_error_(
@@ -74167,100 +80787,102 @@ class NSMutableData extends NSData {
         url?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithContentsOfFile_(
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithContentsOfURL_(
       NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData dataWithData_(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject dataWithContentsOfMappedFile_(
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableData new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_new1);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableData alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableData1, _lib._sel_alloc1);
-    return NSMutableData._(_ret, _lib);
+    return NSMutableData._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// Purgeable Data
 class NSPurgeableData extends NSMutableData {
-  NSPurgeableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSPurgeableData._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSPurgeableData castFrom<T extends _ObjCWrapper>(T other) {
-    return NSPurgeableData._(other._id, other._lib);
+    return NSPurgeableData._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSPurgeableData castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSPurgeableData._(other, lib);
+    return NSPurgeableData._(other, lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithCapacity_(NativeLibrary _lib, int aNumItems) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSPurgeableData1, _lib._sel_dataWithCapacity_1, aNumItems);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithLength_(NativeLibrary _lib, int length) {
     final _ret = _lib._objc_msgSend_133(
         _lib._class_NSPurgeableData1, _lib._sel_dataWithLength_1, length);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData data(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_data1);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithBytes_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytes_length_1, bytes, length);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithBytesNoCopy_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length) {
     final _ret = _lib._objc_msgSend_46(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytesNoCopy_length_1, bytes, length);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithBytesNoCopy_length_freeWhenDone_(
       NativeLibrary _lib, ffi.Pointer<ffi.Void> bytes, int length, bool b) {
     final _ret = _lib._objc_msgSend_47(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithBytesNoCopy_length_freeWhenDone_1, bytes, length, b);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithContentsOfFile_options_error_(
@@ -74274,7 +80896,7 @@ class NSPurgeableData extends NSMutableData {
         path?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithContentsOfURL_options_error_(
@@ -74288,61 +80910,63 @@ class NSPurgeableData extends NSMutableData {
         url?._id ?? ffi.nullptr,
         readOptionsMask,
         errorPtr);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithContentsOfFile_(
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithContentsOfURL_(
       NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData dataWithData_(NativeLibrary _lib, NSObject? data) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithData_1, data?._id ?? ffi.nullptr);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject dataWithContentsOfMappedFile_(
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSPurgeableData1,
         _lib._sel_dataWithContentsOfMappedFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSPurgeableData new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_new1);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: false, release: true);
   }
 
   static NSPurgeableData alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSPurgeableData1, _lib._sel_alloc1);
-    return NSPurgeableData._(_ret, _lib);
+    return NSPurgeableData._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// Mutable Dictionary
 class NSMutableDictionary extends NSDictionary {
-  NSMutableDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableDictionary._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableDictionary castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableDictionary._(other._id, other._lib);
+    return NSMutableDictionary._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMutableDictionary castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableDictionary._(other, lib);
+    return NSMutableDictionary._(other, lib, retain: true, release: true);
   }
 
   void removeObjectForKey_(NSObject aKey) {
@@ -74357,20 +80981,20 @@ class NSMutableDictionary extends NSDictionary {
   @override
   NSMutableDictionary init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   NSMutableDictionary initWithCapacity_(int numItems) {
     final _ret =
         _lib._objc_msgSend_133(_id, _lib._sel_initWithCapacity_1, numItems);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSMutableDictionary initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   void addEntriesFromDictionary_(NSObject? otherDictionary) {
@@ -74401,20 +81025,20 @@ class NSMutableDictionary extends NSDictionary {
       NativeLibrary _lib, int numItems) {
     final _ret = _lib._objc_msgSend_133(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithCapacity_1, numItems);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionary(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableDictionary1, _lib._sel_dictionary1);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionaryWithObject_forKey_(
       NativeLibrary _lib, NSObject object, NSObject key) {
     final _ret = _lib._objc_msgSend_76(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObject_forKey_1, object._id, key._id);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionaryWithObjects_forKeys_count_(
@@ -74424,21 +81048,21 @@ class NSMutableDictionary extends NSDictionary {
       int cnt) {
     final _ret = _lib._objc_msgSend_86(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObjects_forKeys_count_1, objects, keys, cnt);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionaryWithObjectsAndKeys_(
       NativeLibrary _lib, NSObject firstObject) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithObjectsAndKeys_1, firstObject._id);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionaryWithDictionary_(
       NativeLibrary _lib, NSObject? dict) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableDictionary1,
         _lib._sel_dictionaryWithDictionary_1, dict?._id ?? ffi.nullptr);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary dictionaryWithObjects_forKeys_(
@@ -74448,7 +81072,7 @@ class NSMutableDictionary extends NSDictionary {
         _lib._sel_dictionaryWithObjects_forKeys_1,
         objects?._id ?? ffi.nullptr,
         keys?._id ?? ffi.nullptr);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: true, release: true);
   }
 
   /// Use this method to create a key set to pass to +dictionaryWithSharedKeySet:.
@@ -74461,33 +81085,34 @@ class NSMutableDictionary extends NSDictionary {
   static NSObject sharedKeySetForKeys_(NativeLibrary _lib, NSObject? keys) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableDictionary1,
         _lib._sel_sharedKeySetForKeys_1, keys?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableDictionary new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableDictionary1, _lib._sel_new1);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableDictionary alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableDictionary1, _lib._sel_alloc1);
-    return NSMutableDictionary._(_ret, _lib);
+    return NSMutableDictionary._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSNotification extends NSObject {
-  NSNotification._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSNotification._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSNotification castFrom<T extends _ObjCWrapper>(T other) {
-    return NSNotification._(other._id, other._lib);
+    return NSNotification._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSNotification castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSNotification._(other, lib);
+    return NSNotification._(other, lib, retain: true, release: true);
   }
 
   NSNotificationName get name {
@@ -74496,12 +81121,14 @@ class NSNotification extends NSObject {
 
   NSObject get object {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_object1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get userInfo {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_userInfo1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSNotification initWithName_object_userInfo_(
@@ -74512,20 +81139,20 @@ class NSNotification extends NSObject {
         name,
         object._id,
         userInfo?._id ?? ffi.nullptr);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: true, release: true);
   }
 
   NSNotification initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNotification notificationWithName_object_(
       NativeLibrary _lib, NSNotificationName aName, NSObject anObject) {
     final _ret = _lib._objc_msgSend_76(_lib._class_NSNotification1,
         _lib._sel_notificationWithName_object_1, aName, anObject._id);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNotification notificationWithName_object_userInfo_(
@@ -74539,47 +81166,51 @@ class NSNotification extends NSObject {
         aName,
         anObject._id,
         aUserInfo?._id ?? ffi.nullptr);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSNotification init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNotification new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotification1, _lib._sel_new1);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: false, release: true);
   }
 
   static NSNotification alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotification1, _lib._sel_alloc1);
-    return NSNotification._(_ret, _lib);
+    return NSNotification._(_ret, _lib, retain: false, release: true);
   }
 }
 
 typedef NSNotificationName = ffi.Pointer<ObjCObject>;
 
 class NSNotificationCenter extends NSObject {
-  NSNotificationCenter._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSNotificationCenter._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSNotificationCenter castFrom<T extends _ObjCWrapper>(T other) {
-    return NSNotificationCenter._(other._id, other._lib);
+    return NSNotificationCenter._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSNotificationCenter castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSNotificationCenter._(other, lib);
+    return NSNotificationCenter._(other, lib, retain: true, release: true);
   }
 
   static NSObject? getDefaultCenter(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSNotificationCenter1, _lib._sel_defaultCenter1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void addObserver_selector_name_object_(
@@ -74631,19 +81262,19 @@ class NSNotificationCenter extends NSObject {
         obj._id,
         queue?._id ?? ffi.nullptr,
         block._impl);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSNotificationCenter new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSNotificationCenter1, _lib._sel_new1);
-    return NSNotificationCenter._(_ret, _lib);
+    return NSNotificationCenter._(_ret, _lib, retain: false, release: true);
   }
 
   static NSNotificationCenter alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSNotificationCenter1, _lib._sel_alloc1);
-    return NSNotificationCenter._(_ret, _lib);
+    return NSNotificationCenter._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -74677,15 +81308,17 @@ class ObjCBlock12 {
 }
 
 class NSDate extends NSObject {
-  NSDate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSDate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSDate castFrom<T extends _ObjCWrapper>(T other) {
-    return NSDate._(other._id, other._lib);
+    return NSDate._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSDate castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSDate._(other, lib);
+    return NSDate._(other, lib, retain: true, release: true);
   }
 
   double get timeIntervalSinceReferenceDate {
@@ -74696,19 +81329,19 @@ class NSDate extends NSObject {
   @override
   NSDate init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate initWithTimeIntervalSinceReferenceDate_(double ti) {
     final _ret = _lib._objc_msgSend_187(
         _id, _lib._sel_initWithTimeIntervalSinceReferenceDate_1, ti);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   double timeIntervalSinceDate_(NSObject? anotherDate) {
@@ -74727,25 +81360,25 @@ class NSDate extends NSObject {
   NSObject addTimeInterval_(double seconds) {
     final _ret =
         _lib._objc_msgSend_187(_id, _lib._sel_addTimeInterval_1, seconds);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate dateByAddingTimeInterval_(double ti) {
     final _ret =
         _lib._objc_msgSend_187(_id, _lib._sel_dateByAddingTimeInterval_1, ti);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate earlierDate_(NSObject? anotherDate) {
     final _ret = _lib._objc_msgSend_189(
         _id, _lib._sel_earlierDate_1, anotherDate?._id ?? ffi.nullptr);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate laterDate_(NSObject? anotherDate) {
     final _ret = _lib._objc_msgSend_189(
         _id, _lib._sel_laterDate_1, anotherDate?._id ?? ffi.nullptr);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   int compare_(NSObject? other) {
@@ -74760,38 +81393,40 @@ class NSDate extends NSObject {
 
   NSObject? get description {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_description1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSString descriptionWithLocale_(NSObject locale) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_descriptionWithLocale_1, locale._id);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate date(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_date1);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate dateWithTimeIntervalSinceNow_(NativeLibrary _lib, double secs) {
     final _ret = _lib._objc_msgSend_187(
         _lib._class_NSDate1, _lib._sel_dateWithTimeIntervalSinceNow_1, secs);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate dateWithTimeIntervalSinceReferenceDate_(
       NativeLibrary _lib, double ti) {
     final _ret = _lib._objc_msgSend_187(_lib._class_NSDate1,
         _lib._sel_dateWithTimeIntervalSinceReferenceDate_1, ti);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate dateWithTimeIntervalSince1970_(
       NativeLibrary _lib, double secs) {
     final _ret = _lib._objc_msgSend_187(
         _lib._class_NSDate1, _lib._sel_dateWithTimeIntervalSince1970_1, secs);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate dateWithTimeInterval_sinceDate_(
@@ -74801,36 +81436,42 @@ class NSDate extends NSObject {
         _lib._sel_dateWithTimeInterval_sinceDate_1,
         secsToBeAdded,
         date?._id ?? ffi.nullptr);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDistantFuture(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_distantFuture1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDistantPast(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_distantPast1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getNow(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_now1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate initWithTimeIntervalSinceNow_(double secs) {
     final _ret = _lib._objc_msgSend_187(
         _id, _lib._sel_initWithTimeIntervalSinceNow_1, secs);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate initWithTimeIntervalSince1970_(double secs) {
     final _ret = _lib._objc_msgSend_187(
         _id, _lib._sel_initWithTimeIntervalSince1970_1, secs);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   NSDate initWithTimeInterval_sinceDate_(double secsToBeAdded, NSObject? date) {
@@ -74839,17 +81480,17 @@ class NSDate extends NSObject {
         _lib._sel_initWithTimeInterval_sinceDate_1,
         secsToBeAdded,
         date?._id ?? ffi.nullptr);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: true, release: true);
   }
 
   static NSDate new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_new1);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: false, release: true);
   }
 
   static NSDate alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSDate1, _lib._sel_alloc1);
-    return NSDate._(_ret, _lib);
+    return NSDate._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -75000,16 +81641,17 @@ abstract class NSURLRequestNetworkServiceType {
 /// which can are used to perform the load of a URL, or as input to the
 /// NSURLConnection class method which performs synchronous loads.
 class NSURLRequest extends NSObject {
-  NSURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLRequest castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLRequest._(other._id, other._lib);
+    return NSURLRequest._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURLRequest castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLRequest._(other, lib);
+    return NSURLRequest._(other, lib, retain: true, release: true);
   }
 
   /// !
@@ -75024,7 +81666,7 @@ class NSURLRequest extends NSObject {
   static NSURLRequest requestWithURL_(NativeLibrary _lib, NSObject? URL) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSURLRequest1,
         _lib._sel_requestWithURL_1, URL?._id ?? ffi.nullptr);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75057,7 +81699,7 @@ class NSURLRequest extends NSObject {
         URL?._id ?? ffi.nullptr,
         cachePolicy,
         timeoutInterval);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75071,7 +81713,7 @@ class NSURLRequest extends NSObject {
   NSURLRequest initWithURL_(NSObject? URL) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithURL_1, URL?._id ?? ffi.nullptr);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75094,7 +81736,7 @@ class NSURLRequest extends NSObject {
         URL?._id ?? ffi.nullptr,
         cachePolicy,
         timeoutInterval);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75102,7 +81744,9 @@ class NSURLRequest extends NSObject {
   /// @result The URL of the receiver.
   NSObject? get URL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75140,7 +81784,9 @@ class NSURLRequest extends NSObject {
   /// @result The main document URL.
   NSObject? get mainDocumentURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_mainDocumentURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75194,7 +81840,9 @@ class NSURLRequest extends NSObject {
   /// @result the HTTP request method of the receiver.
   NSObject? get HTTPMethod {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPMethod1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75204,7 +81852,9 @@ class NSURLRequest extends NSObject {
   /// receiver.
   NSObject? get allHTTPHeaderFields {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allHTTPHeaderFields1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75219,7 +81869,7 @@ class NSURLRequest extends NSObject {
   NSString valueForHTTPHeaderField_(NSObject? field) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_valueForHTTPHeaderField_1, field?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75229,7 +81879,9 @@ class NSURLRequest extends NSObject {
   /// @result The request body data of the receiver.
   NSObject? get HTTPBody {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPBody1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75244,7 +81896,9 @@ class NSURLRequest extends NSObject {
   /// @result The request body stream of the receiver.
   NSObject? get HTTPBodyStream {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPBodyStream1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75270,13 +81924,13 @@ class NSURLRequest extends NSObject {
   static NSURLRequest new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLRequest1, _lib._sel_new1);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLRequest alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLRequest1, _lib._sel_alloc1);
-    return NSURLRequest._(_ret, _lib);
+    return NSURLRequest._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -75309,16 +81963,18 @@ class NSURLRequest extends NSObject {
 /// example.
 /// </ul>
 class NSMutableURLRequest extends NSURLRequest {
-  NSMutableURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableURLRequest._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableURLRequest castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableURLRequest._(other._id, other._lib);
+    return NSMutableURLRequest._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMutableURLRequest castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableURLRequest._(other, lib);
+    return NSMutableURLRequest._(other, lib, retain: true, release: true);
   }
 
   /// !
@@ -75326,7 +81982,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get URL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75395,7 +82053,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get mainDocumentURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_mainDocumentURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75515,7 +82175,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get HTTPMethod {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPMethod1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75538,7 +82200,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get allHTTPHeaderFields {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allHTTPHeaderFields1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75595,7 +82259,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get HTTPBody {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPBody1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75617,7 +82283,9 @@ class NSMutableURLRequest extends NSURLRequest {
   @override
   NSObject? get HTTPBodyStream {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPBodyStream1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75707,7 +82375,7 @@ class NSMutableURLRequest extends NSURLRequest {
       NativeLibrary _lib, NSObject? URL) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableURLRequest1,
         _lib._sel_requestWithURL_1, URL?._id ?? ffi.nullptr);
-    return NSMutableURLRequest._(_ret, _lib);
+    return NSMutableURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -75740,19 +82408,19 @@ class NSMutableURLRequest extends NSURLRequest {
         URL?._id ?? ffi.nullptr,
         cachePolicy,
         timeoutInterval);
-    return NSMutableURLRequest._(_ret, _lib);
+    return NSMutableURLRequest._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableURLRequest new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableURLRequest1, _lib._sel_new1);
-    return NSMutableURLRequest._(_ret, _lib);
+    return NSMutableURLRequest._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableURLRequest alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableURLRequest1, _lib._sel_alloc1);
-    return NSMutableURLRequest._(_ret, _lib);
+    return NSMutableURLRequest._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -75768,22 +82436,26 @@ abstract class NSHTTPCookieAcceptPolicy {
 }
 
 class NSHTTPCookieStorage extends NSObject {
-  NSHTTPCookieStorage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSHTTPCookieStorage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSHTTPCookieStorage castFrom<T extends _ObjCWrapper>(T other) {
-    return NSHTTPCookieStorage._(other._id, other._lib);
+    return NSHTTPCookieStorage._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSHTTPCookieStorage castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSHTTPCookieStorage._(other, lib);
+    return NSHTTPCookieStorage._(other, lib, retain: true, release: true);
   }
 
   static NSObject? getSharedHTTPCookieStorage(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSHTTPCookieStorage1, _lib._sel_sharedHTTPCookieStorage1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier_(
@@ -75792,12 +82464,14 @@ class NSHTTPCookieStorage extends NSObject {
         _lib._class_NSHTTPCookieStorage1,
         _lib._sel_sharedCookieStorageForGroupContainerIdentifier_1,
         identifier?._id ?? ffi.nullptr);
-    return NSHTTPCookieStorage._(_ret, _lib);
+    return NSHTTPCookieStorage._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get cookies {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_cookies1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void setCookie_(NSObject? cookie) {
@@ -75847,47 +82521,48 @@ class NSHTTPCookieStorage extends NSObject {
   static NSHTTPCookieStorage new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPCookieStorage1, _lib._sel_new1);
-    return NSHTTPCookieStorage._(_ret, _lib);
+    return NSHTTPCookieStorage._(_ret, _lib, retain: false, release: true);
   }
 
   static NSHTTPCookieStorage alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSHTTPCookieStorage1, _lib._sel_alloc1);
-    return NSHTTPCookieStorage._(_ret, _lib);
+    return NSHTTPCookieStorage._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSProgress extends NSObject {
-  NSProgress._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSProgress._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSProgress castFrom<T extends _ObjCWrapper>(T other) {
-    return NSProgress._(other._id, other._lib);
+    return NSProgress._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSProgress castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSProgress._(other, lib);
+    return NSProgress._(other, lib, retain: true, release: true);
   }
 
   static NSProgress currentProgress(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_202(
         _lib._class_NSProgress1, _lib._sel_currentProgress1);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   static NSProgress progressWithTotalUnitCount_(
       NativeLibrary _lib, int unitCount) {
     final _ret = _lib._objc_msgSend_203(_lib._class_NSProgress1,
         _lib._sel_progressWithTotalUnitCount_1, unitCount);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   static NSProgress discreteProgressWithTotalUnitCount_(
       NativeLibrary _lib, int unitCount) {
     final _ret = _lib._objc_msgSend_203(_lib._class_NSProgress1,
         _lib._sel_discreteProgressWithTotalUnitCount_1, unitCount);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   static NSProgress progressWithTotalUnitCount_parent_pendingUnitCount_(
@@ -75901,7 +82576,7 @@ class NSProgress extends NSObject {
         unitCount,
         parent?._id ?? ffi.nullptr,
         portionOfParentTotalUnitCount);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   NSProgress initWithParent_userInfo_(
@@ -75911,7 +82586,7 @@ class NSProgress extends NSObject {
         _lib._sel_initWithParent_userInfo_1,
         parentProgressOrNil?._id ?? ffi.nullptr,
         userInfoOrNil?._id ?? ffi.nullptr);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   void becomeCurrentWithPendingUnitCount_(int unitCount) {
@@ -75955,7 +82630,9 @@ class NSProgress extends NSObject {
 
   NSObject? get localizedDescription {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedDescription1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set localizedDescription(NSObject? value) {
@@ -75966,7 +82643,9 @@ class NSProgress extends NSObject {
   NSObject? get localizedAdditionalDescription {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_localizedAdditionalDescription1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set localizedAdditionalDescription(NSObject? value) {
@@ -76058,7 +82737,9 @@ class NSProgress extends NSObject {
 
   NSObject? get userInfo {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_userInfo1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSProgressKind get kind {
@@ -76071,7 +82752,9 @@ class NSProgress extends NSObject {
 
   NSObject? get estimatedTimeRemaining {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_estimatedTimeRemaining1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set estimatedTimeRemaining(NSObject? value) {
@@ -76081,7 +82764,9 @@ class NSProgress extends NSObject {
 
   NSObject? get throughput {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_throughput1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set throughput(NSObject? value) {
@@ -76099,7 +82784,9 @@ class NSProgress extends NSObject {
 
   NSObject? get fileURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fileURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set fileURL(NSObject? value) {
@@ -76109,7 +82796,9 @@ class NSProgress extends NSObject {
 
   NSObject? get fileTotalCount {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fileTotalCount1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set fileTotalCount(NSObject? value) {
@@ -76119,7 +82808,9 @@ class NSProgress extends NSObject {
 
   NSObject? get fileCompletedCount {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fileCompletedCount1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set fileCompletedCount(NSObject? value) {
@@ -76144,7 +82835,7 @@ class NSProgress extends NSObject {
         _lib._sel_addSubscriberForFileURL_withPublishingHandler_1,
         url?._id ?? ffi.nullptr,
         publishingHandler);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static void removeSubscriber_(NativeLibrary _lib, NSObject subscriber) {
@@ -76158,13 +82849,13 @@ class NSProgress extends NSObject {
 
   static NSProgress new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSProgress1, _lib._sel_new1);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: false, release: true);
   }
 
   static NSProgress alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSProgress1, _lib._sel_alloc1);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -80480,16 +87171,17 @@ abstract class SSLAuthenticate {
 /// and once the WebSocket handshake is successful, the client can read and write
 /// messages that will be framed using the WebSocket protocol by the framework.
 class NSURLSession extends NSObject {
-  NSURLSession._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSession._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSession castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSession._(other._id, other._lib);
+    return NSURLSession._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURLSession castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSession._(other, lib);
+    return NSURLSession._(other, lib, retain: true, release: true);
   }
 
   /// The shared session uses the currently set global NSURLCache,
@@ -80497,7 +87189,9 @@ class NSURLSession extends NSObject {
   static NSObject? getSharedSession(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSession1, _lib._sel_sharedSession1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Customization of NSURLSession occurs during creation of a new session.
@@ -80511,7 +87205,7 @@ class NSURLSession extends NSObject {
         _lib._class_NSURLSession1,
         _lib._sel_sessionWithConfiguration_1,
         configuration?._id ?? ffi.nullptr);
-    return NSURLSession._(_ret, _lib);
+    return NSURLSession._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSession sessionWithConfiguration_delegate_delegateQueue_(
@@ -80525,29 +87219,37 @@ class NSURLSession extends NSObject {
         configuration?._id ?? ffi.nullptr,
         delegate?._id ?? ffi.nullptr,
         queue?._id ?? ffi.nullptr);
-    return NSURLSession._(_ret, _lib);
+    return NSURLSession._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get delegateQueue {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_delegateQueue1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get delegate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_delegate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get configuration {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_configuration1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The sessionDescription property is available for the developer to
   /// provide a descriptive label for the session.
   NSObject? get sessionDescription {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_sessionDescription1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The sessionDescription property is available for the developer to
@@ -80608,14 +87310,14 @@ class NSURLSession extends NSObject {
   NSURLSessionDataTask dataTaskWithRequest_(NSObject? request) {
     final _ret = _lib._objc_msgSend_218(
         _id, _lib._sel_dataTaskWithRequest_1, request?._id ?? ffi.nullptr);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a data task to retrieve the contents of the given URL.
   NSURLSessionDataTask dataTaskWithURL_(NSObject? url) {
     final _ret = _lib._objc_msgSend_218(
         _id, _lib._sel_dataTaskWithURL_1, url?._id ?? ffi.nullptr);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates an upload task with the given request.  The body of the request will be created from the file referenced by fileURL
@@ -80626,7 +87328,7 @@ class NSURLSession extends NSObject {
         _lib._sel_uploadTaskWithRequest_fromFile_1,
         request?._id ?? ffi.nullptr,
         fileURL?._id ?? ffi.nullptr);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates an upload task with the given request.  The body of the request is provided from the bodyData.
@@ -80637,35 +87339,35 @@ class NSURLSession extends NSObject {
         _lib._sel_uploadTaskWithRequest_fromData_1,
         request?._id ?? ffi.nullptr,
         bodyData?._id ?? ffi.nullptr);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates an upload task with the given request.  The previously set body stream of the request (if any) is ignored and the URLSession:task:needNewBodyStream: delegate will be called when the body payload is required.
   NSURLSessionUploadTask uploadTaskWithStreamedRequest_(NSObject? request) {
     final _ret = _lib._objc_msgSend_220(_id,
         _lib._sel_uploadTaskWithStreamedRequest_1, request?._id ?? ffi.nullptr);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a download task with the given request.
   NSURLSessionDownloadTask downloadTaskWithRequest_(NSObject? request) {
     final _ret = _lib._objc_msgSend_221(
         _id, _lib._sel_downloadTaskWithRequest_1, request?._id ?? ffi.nullptr);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a download task to download the contents of the given URL.
   NSURLSessionDownloadTask downloadTaskWithURL_(NSObject? url) {
     final _ret = _lib._objc_msgSend_221(
         _id, _lib._sel_downloadTaskWithURL_1, url?._id ?? ffi.nullptr);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a download task with the resume data.  If the download cannot be successfully resumed, URLSession:task:didCompleteWithError: will be called.
   NSURLSessionDownloadTask downloadTaskWithResumeData_(NSObject? resumeData) {
     final _ret = _lib._objc_msgSend_221(_id,
         _lib._sel_downloadTaskWithResumeData_1, resumeData?._id ?? ffi.nullptr);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a bidirectional stream task to a given host and port.
@@ -80676,7 +87378,7 @@ class NSURLSession extends NSObject {
         _lib._sel_streamTaskWithHostName_port_1,
         hostname?._id ?? ffi.nullptr,
         port);
-    return NSURLSessionStreamTask._(_ret, _lib);
+    return NSURLSessionStreamTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a bidirectional stream task with an NSNetService to identify the endpoint.
@@ -80684,14 +87386,14 @@ class NSURLSession extends NSObject {
   NSURLSessionStreamTask streamTaskWithNetService_(NSObject? service) {
     final _ret = _lib._objc_msgSend_225(
         _id, _lib._sel_streamTaskWithNetService_1, service?._id ?? ffi.nullptr);
-    return NSURLSessionStreamTask._(_ret, _lib);
+    return NSURLSessionStreamTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a WebSocket task given the url. The given url must have a ws or wss scheme.
   NSURLSessionWebSocketTask webSocketTaskWithURL_(NSObject? url) {
     final _ret = _lib._objc_msgSend_229(
         _id, _lib._sel_webSocketTaskWithURL_1, url?._id ?? ffi.nullptr);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a WebSocket task given the url and an array of protocols. The protocols will be used in the WebSocket handshake to
@@ -80704,7 +87406,7 @@ class NSURLSession extends NSObject {
         _lib._sel_webSocketTaskWithURL_protocols_1,
         url?._id ?? ffi.nullptr,
         protocols?._id ?? ffi.nullptr);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates a WebSocket task given the request. The request properties can be modified and will be used by the task during the HTTP handshake phase.
@@ -80713,19 +87415,19 @@ class NSURLSession extends NSObject {
   NSURLSessionWebSocketTask webSocketTaskWithRequest_(NSObject? request) {
     final _ret = _lib._objc_msgSend_229(
         _id, _lib._sel_webSocketTaskWithRequest_1, request?._id ?? ffi.nullptr);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSURLSession init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSession._(_ret, _lib);
+    return NSURLSession._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSession new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSession1, _lib._sel_new1);
-    return NSURLSession._(_ret, _lib);
+    return NSURLSession._(_ret, _lib, retain: false, release: true);
   }
 
   /// data task convenience methods.  These methods create tasks that
@@ -80741,7 +87443,7 @@ class NSURLSession extends NSObject {
         _lib._sel_dataTaskWithRequest_completionHandler_1,
         request?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   NSURLSessionDataTask dataTaskWithURL_completionHandler_(
@@ -80751,7 +87453,7 @@ class NSURLSession extends NSObject {
         _lib._sel_dataTaskWithURL_completionHandler_1,
         url?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// upload convenience method.
@@ -80763,7 +87465,7 @@ class NSURLSession extends NSObject {
         request?._id ?? ffi.nullptr,
         fileURL?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   NSURLSessionUploadTask uploadTaskWithRequest_fromData_completionHandler_(
@@ -80774,7 +87476,7 @@ class NSURLSession extends NSObject {
         request?._id ?? ffi.nullptr,
         bodyData?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   /// download task convenience methods.  When a download successfully
@@ -80788,7 +87490,7 @@ class NSURLSession extends NSObject {
         _lib._sel_downloadTaskWithRequest_completionHandler_1,
         request?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   NSURLSessionDownloadTask downloadTaskWithURL_completionHandler_(
@@ -80798,7 +87500,7 @@ class NSURLSession extends NSObject {
         _lib._sel_downloadTaskWithURL_completionHandler_1,
         url?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   NSURLSessionDownloadTask downloadTaskWithResumeData_completionHandler_(
@@ -80808,13 +87510,13 @@ class NSURLSession extends NSObject {
         _lib._sel_downloadTaskWithResumeData_completionHandler_1,
         resumeData?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSession alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSession1, _lib._sel_alloc1);
-    return NSURLSession._(_ret, _lib);
+    return NSURLSession._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -80868,50 +87570,54 @@ class ObjCBlock26 {
 /// functionality over an NSURLSessionTask and its presence is merely
 /// to provide lexical differentiation from download and upload tasks.
 class NSURLSessionDataTask extends NSURLSessionTask {
-  NSURLSessionDataTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionDataTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionDataTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionDataTask._(other._id, other._lib);
+    return NSURLSessionDataTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionDataTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionDataTask._(other, lib);
+    return NSURLSessionDataTask._(other, lib, retain: true, release: true);
   }
 
   @override
   NSURLSessionDataTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionDataTask new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionDataTask1, _lib._sel_new1);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionDataTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDataTask1, _lib._sel_alloc1);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// NSURLSessionTask - a cancelable object that refers to the lifetime
 /// of processing a given request.
 class NSURLSessionTask extends NSObject {
-  NSURLSessionTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionTask._(other._id, other._lib);
+    return NSURLSessionTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionTask._(other, lib);
+    return NSURLSessionTask._(other, lib, retain: true, release: true);
   }
 
   /// an identifier for this task, assigned by and unique to the owning session
@@ -80922,26 +87628,34 @@ class NSURLSessionTask extends NSObject {
   /// may be nil if this is a stream task
   NSObject? get originalRequest {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_originalRequest1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// may differ from originalRequest due to http server redirection
   NSObject? get currentRequest {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_currentRequest1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// may be nil if no response has been received
   NSObject? get response {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_response1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// NSProgress object which represents the task progress.
   /// It can be used for task progress tracking.
   NSObject? get progress {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_progress1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Start the network load for this task no earlier than the specified date. If
@@ -80951,7 +87665,9 @@ class NSURLSessionTask extends NSObject {
   /// effect for tasks created from other session types.
   NSObject? get earliestBeginDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_earliestBeginDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Start the network load for this task no earlier than the specified date. If
@@ -81015,7 +87731,9 @@ class NSURLSessionTask extends NSObject {
   /// provide a descriptive label for the task.
   NSObject? get taskDescription {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_taskDescription1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The taskDescription property is available for the developer to
@@ -81043,7 +87761,9 @@ class NSURLSessionTask extends NSObject {
   /// This property will be nil in the event that no error occured.
   NSObject? get error {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_error1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Suspending a task will prevent the NSURLSession from continuing to
@@ -81123,19 +87843,19 @@ class NSURLSessionTask extends NSObject {
   @override
   NSURLSessionTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionTask._(_ret, _lib);
+    return NSURLSessionTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionTask new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionTask1, _lib._sel_new1);
-    return NSURLSessionTask._(_ret, _lib);
+    return NSURLSessionTask._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionTask alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLSessionTask1, _lib._sel_alloc1);
-    return NSURLSessionTask._(_ret, _lib);
+    return NSURLSessionTask._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -81156,50 +87876,54 @@ abstract class NSURLSessionTaskState {
 /// that may be sent referencing an NSURLSessionDataTask equally apply
 /// to NSURLSessionUploadTasks.
 class NSURLSessionUploadTask extends NSURLSessionDataTask {
-  NSURLSessionUploadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionUploadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionUploadTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionUploadTask._(other._id, other._lib);
+    return NSURLSessionUploadTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionUploadTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionUploadTask._(other, lib);
+    return NSURLSessionUploadTask._(other, lib, retain: true, release: true);
   }
 
   @override
   NSURLSessionUploadTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionUploadTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionUploadTask1, _lib._sel_new1);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionUploadTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionUploadTask1, _lib._sel_alloc1);
-    return NSURLSessionUploadTask._(_ret, _lib);
+    return NSURLSessionUploadTask._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// NSURLSessionDownloadTask is a task that represents a download to
 /// local storage.
 class NSURLSessionDownloadTask extends NSURLSessionTask {
-  NSURLSessionDownloadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionDownloadTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionDownloadTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionDownloadTask._(other._id, other._lib);
+    return NSURLSessionDownloadTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionDownloadTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionDownloadTask._(other, lib);
+    return NSURLSessionDownloadTask._(other, lib, retain: true, release: true);
   }
 
   /// Cancel the download (and calls the superclass -cancel).  If
@@ -81216,19 +87940,19 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
   @override
   NSURLSessionDownloadTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionDownloadTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDownloadTask1, _lib._sel_new1);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionDownloadTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionDownloadTask1, _lib._sel_alloc1);
-    return NSURLSessionDownloadTask._(_ret, _lib);
+    return NSURLSessionDownloadTask._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -81253,16 +87977,18 @@ class NSURLSessionDownloadTask extends NSURLSessionTask {
 /// and will receive no more messsages.  These streams are
 /// disassociated from the underlying session.
 class NSURLSessionStreamTask extends NSURLSessionTask {
-  NSURLSessionStreamTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionStreamTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionStreamTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionStreamTask._(other._id, other._lib);
+    return NSURLSessionStreamTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionStreamTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionStreamTask._(other, lib);
+    return NSURLSessionStreamTask._(other, lib, retain: true, release: true);
   }
 
   /// Read minBytes, or at most maxBytes bytes and invoke the completion
@@ -81335,19 +88061,19 @@ class NSURLSessionStreamTask extends NSURLSessionTask {
   @override
   NSURLSessionStreamTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionStreamTask._(_ret, _lib);
+    return NSURLSessionStreamTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionStreamTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionStreamTask1, _lib._sel_new1);
-    return NSURLSessionStreamTask._(_ret, _lib);
+    return NSURLSessionStreamTask._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionStreamTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionStreamTask1, _lib._sel_alloc1);
-    return NSURLSessionStreamTask._(_ret, _lib);
+    return NSURLSessionStreamTask._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -81397,16 +88123,18 @@ class ObjCBlock27 {
 /// support for cookies and will store cookies to the cookie storage on the session and will attach cookies to
 /// outgoing HTTP handshake requests.
 class NSURLSessionWebSocketTask extends NSURLSessionTask {
-  NSURLSessionWebSocketTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionWebSocketTask._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionWebSocketTask castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionWebSocketTask._(other._id, other._lib);
+    return NSURLSessionWebSocketTask._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionWebSocketTask castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionWebSocketTask._(other, lib);
+    return NSURLSessionWebSocketTask._(other, lib, retain: true, release: true);
   }
 
   /// Sends a WebSocket message. If an error occurs, any outstanding work will also fail.
@@ -81461,25 +88189,29 @@ class NSURLSessionWebSocketTask extends NSURLSessionTask {
   /// A task can be queried for it's close reason at any point. A nil value indicates no closeReason or that the task is still running
   NSObject? get closeReason {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_closeReason1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSURLSessionWebSocketTask init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionWebSocketTask new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketTask1, _lib._sel_new1);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSURLSessionWebSocketTask alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketTask1, _lib._sel_alloc1);
-    return NSURLSessionWebSocketTask._(_ret, _lib);
+    return NSURLSessionWebSocketTask._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
@@ -81510,31 +88242,36 @@ abstract class NSURLSessionWebSocketMessageType {
 /// and will be delivered from the receive calls. The message can be initialized with data or string.
 /// If initialized with data, the string property will be nil and vice versa.
 class NSURLSessionWebSocketMessage extends NSObject {
-  NSURLSessionWebSocketMessage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionWebSocketMessage._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionWebSocketMessage castFrom<T extends _ObjCWrapper>(
       T other) {
-    return NSURLSessionWebSocketMessage._(other._id, other._lib);
+    return NSURLSessionWebSocketMessage._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionWebSocketMessage castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionWebSocketMessage._(other, lib);
+    return NSURLSessionWebSocketMessage._(other, lib,
+        retain: true, release: true);
   }
 
   /// Create a message with data type
   NSURLSessionWebSocketMessage initWithData_(NSObject? data) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithData_1, data?._id ?? ffi.nullptr);
-    return NSURLSessionWebSocketMessage._(_ret, _lib);
+    return NSURLSessionWebSocketMessage._(_ret, _lib,
+        retain: true, release: true);
   }
 
   /// Create a message with string type
   NSURLSessionWebSocketMessage initWithString_(NSObject? string) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithString_1, string?._id ?? ffi.nullptr);
-    return NSURLSessionWebSocketMessage._(_ret, _lib);
+    return NSURLSessionWebSocketMessage._(_ret, _lib,
+        retain: true, release: true);
   }
 
   int get type {
@@ -81543,30 +88280,37 @@ class NSURLSessionWebSocketMessage extends NSObject {
 
   NSObject? get data {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_data1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get string {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_string1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   @override
   NSURLSessionWebSocketMessage init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionWebSocketMessage._(_ret, _lib);
+    return NSURLSessionWebSocketMessage._(_ret, _lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionWebSocketMessage new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketMessage1, _lib._sel_new1);
-    return NSURLSessionWebSocketMessage._(_ret, _lib);
+    return NSURLSessionWebSocketMessage._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSURLSessionWebSocketMessage alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionWebSocketMessage1, _lib._sel_alloc1);
-    return NSURLSessionWebSocketMessage._(_ret, _lib);
+    return NSURLSessionWebSocketMessage._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
@@ -81619,28 +88363,34 @@ abstract class NSURLSessionMultipathServiceType {
 /// A background session can be used to perform networking operations
 /// on behalf of a suspended application, within certain constraints.
 class NSURLSessionConfiguration extends NSObject {
-  NSURLSessionConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionConfiguration castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionConfiguration._(other._id, other._lib);
+    return NSURLSessionConfiguration._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionConfiguration castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionConfiguration._(other, lib);
+    return NSURLSessionConfiguration._(other, lib, retain: true, release: true);
   }
 
   static NSObject? getDefaultSessionConfiguration(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLSessionConfiguration1,
         _lib._sel_defaultSessionConfiguration1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getEphemeralSessionConfiguration(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLSessionConfiguration1,
         _lib._sel_ephemeralSessionConfiguration1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionConfiguration
@@ -81650,13 +88400,15 @@ class NSURLSessionConfiguration extends NSObject {
         _lib._class_NSURLSessionConfiguration1,
         _lib._sel_backgroundSessionConfigurationWithIdentifier_1,
         identifier?._id ?? ffi.nullptr);
-    return NSURLSessionConfiguration._(_ret, _lib);
+    return NSURLSessionConfiguration._(_ret, _lib, retain: true, release: true);
   }
 
   /// identifier for the background session configuration
   NSObject? get identifier {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_identifier1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// default cache policy for requests
@@ -81782,7 +88534,9 @@ class NSURLSessionConfiguration extends NSObject {
   NSObject? get sharedContainerIdentifier {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_sharedContainerIdentifier1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The identifier of the shared data container into which files in background sessions should be downloaded.
@@ -81815,7 +88569,9 @@ class NSURLSessionConfiguration extends NSObject {
   NSObject? get connectionProxyDictionary {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_connectionProxyDictionary1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The proxy dictionary, as described by <CFNetwork/CFHTTPStream.h>
@@ -81904,7 +88660,9 @@ class NSURLSessionConfiguration extends NSObject {
   /// Note that these headers are added to the request only if not already present.
   NSObject? get HTTPAdditionalHeaders {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPAdditionalHeaders1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Specifies additional headers which will be set on outgoing requests.
@@ -81928,7 +88686,9 @@ class NSURLSessionConfiguration extends NSObject {
   /// The cookie storage object to use, or nil to indicate that no cookies should be handled
   NSObject? get HTTPCookieStorage {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_HTTPCookieStorage1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The cookie storage object to use, or nil to indicate that no cookies should be handled
@@ -81940,7 +88700,9 @@ class NSURLSessionConfiguration extends NSObject {
   /// The credential storage object, or nil to indicate that no credential storage is to be used
   NSObject? get URLCredentialStorage {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URLCredentialStorage1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The credential storage object, or nil to indicate that no credential storage is to be used
@@ -81952,7 +88714,9 @@ class NSURLSessionConfiguration extends NSObject {
   /// The URL resource cache, or nil to indicate that no caching is to be performed
   NSObject? get URLCache {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URLCache1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The URL resource cache, or nil to indicate that no caching is to be performed
@@ -81985,7 +88749,9 @@ class NSURLSessionConfiguration extends NSObject {
   /// sessions.
   NSObject? get protocolClasses {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_protocolClasses1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// An optional array of Class objects which subclass NSURLProtocol.
@@ -82014,13 +88780,14 @@ class NSURLSessionConfiguration extends NSObject {
   @override
   NSURLSessionConfiguration init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionConfiguration._(_ret, _lib);
+    return NSURLSessionConfiguration._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionConfiguration new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionConfiguration1, _lib._sel_new1);
-    return NSURLSessionConfiguration._(_ret, _lib);
+    return NSURLSessionConfiguration._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSURLSessionConfiguration backgroundSessionConfiguration_(
@@ -82029,13 +88796,14 @@ class NSURLSessionConfiguration extends NSObject {
         _lib._class_NSURLSessionConfiguration1,
         _lib._sel_backgroundSessionConfiguration_1,
         identifier?._id ?? ffi.nullptr);
-    return NSURLSessionConfiguration._(_ret, _lib);
+    return NSURLSessionConfiguration._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionConfiguration alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionConfiguration1, _lib._sel_alloc1);
-    return NSURLSessionConfiguration._(_ret, _lib);
+    return NSURLSessionConfiguration._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
@@ -82113,29 +88881,36 @@ abstract class NSURLSessionTaskMetricsDomainResolutionProtocol {
 /// This class defines the performance metrics collected for a request/response transaction during the task execution.
 class NSURLSessionTaskTransactionMetrics extends NSObject {
   NSURLSessionTaskTransactionMetrics._(
-      ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+      ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionTaskTransactionMetrics castFrom<T extends _ObjCWrapper>(
       T other) {
-    return NSURLSessionTaskTransactionMetrics._(other._id, other._lib);
+    return NSURLSessionTaskTransactionMetrics._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionTaskTransactionMetrics castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionTaskTransactionMetrics._(other, lib);
+    return NSURLSessionTaskTransactionMetrics._(other, lib,
+        retain: true, release: true);
   }
 
   /// Represents the transaction request.
   NSObject? get request {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_request1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Represents the transaction response. Can be nil if error occurred and no response was generated.
   NSObject? get response {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_response1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// fetchStartDate returns the time when the user agent started fetching the resource, whether or not the resource was retrieved from the server or local resources.
@@ -82150,19 +88925,25 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// secureConnectionEndDate
   NSObject? get fetchStartDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fetchStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// domainLookupStartDate returns the time immediately before the user agent started the name lookup for the resource.
   NSObject? get domainLookupStartDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_domainLookupStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// domainLookupEndDate returns the time after the name lookup was completed.
   NSObject? get domainLookupEndDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_domainLookupEndDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// connectStartDate is the time immediately before the user agent started establishing the connection to the server.
@@ -82170,7 +88951,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// For example, this would correspond to the time immediately before the user agent started trying to establish the TCP connection.
   NSObject? get connectStartDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_connectStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// If an encrypted connection was used, secureConnectionStartDate is the time immediately before the user agent started the security handshake to secure the current connection.
@@ -82181,7 +88964,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   NSObject? get secureConnectionStartDate {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_secureConnectionStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// If an encrypted connection was used, secureConnectionEndDate is the time immediately after the security handshake completed.
@@ -82189,13 +88974,17 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If an encrypted connection was not used, this attribute is set to nil.
   NSObject? get secureConnectionEndDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_secureConnectionEndDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// connectEndDate is the time immediately after the user agent finished establishing the connection to the server, including completion of security-related and other handshakes.
   NSObject? get connectEndDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_connectEndDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// requestStartDate is the time immediately before the user agent started requesting the source, regardless of whether the resource was retrieved from the server or local resources.
@@ -82203,7 +88992,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
   NSObject? get requestStartDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_requestStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// requestEndDate is the time immediately after the user agent finished requesting the source, regardless of whether the resource was retrieved from the server or local resources.
@@ -82211,7 +89002,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// For example, this would correspond to the time immediately after the user agent finished sending the last byte of the request.
   NSObject? get requestEndDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_requestEndDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// responseStartDate is the time immediately after the user agent received the first byte of the response from the server or from local resources.
@@ -82219,13 +89012,17 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// For example, this would correspond to the time immediately after the user agent received the first byte of an HTTP response.
   NSObject? get responseStartDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_responseStartDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// responseEndDate is the time immediately after the user agent received the last byte of the resource.
   NSObject? get responseEndDate {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_responseEndDate1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The network protocol used to fetch the resource, as identified by the ALPN Protocol ID Identification Sequence [RFC7301].
@@ -82239,7 +89036,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If HTTP/1.1 were used to the proxy, and there were no tunnel, then http/1.1 would be returned.
   NSObject? get networkProtocolName {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_networkProtocolName1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// This property is set to YES if a proxy connection was used to fetch the resource.
@@ -82301,7 +89100,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If a connection was not used, this attribute is set to nil.
   NSObject? get localAddress {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localAddress1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// localPort is the port number of the local interface for the connection.
@@ -82311,7 +89112,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If a connection was not used, this attribute is set to nil.
   NSObject? get localPort {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localPort1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// remoteAddress is the IP address string of the remote interface for the connection.
@@ -82321,7 +89124,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If a connection was not used, this attribute is set to nil.
   NSObject? get remoteAddress {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_remoteAddress1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// remotePort is the port number of the remote interface for the connection.
@@ -82331,7 +89136,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If a connection was not used, this attribute is set to nil.
   NSObject? get remotePort {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_remotePort1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// negotiatedTLSProtocolVersion is the TLS protocol version negotiated for the connection.
@@ -82343,7 +89150,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   NSObject? get negotiatedTLSProtocolVersion {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_negotiatedTLSProtocolVersion1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// negotiatedTLSCipherSuite is the TLS cipher suite negotiated for the connection.
@@ -82354,7 +89163,9 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   /// If an encrypted connection was not used, this attribute is set to nil.
   NSObject? get negotiatedTLSCipherSuite {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_negotiatedTLSCipherSuite1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Whether the connection is established over a cellular interface.
@@ -82385,39 +89196,46 @@ class NSURLSessionTaskTransactionMetrics extends NSObject {
   @override
   NSURLSessionTaskTransactionMetrics init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
+    return NSURLSessionTaskTransactionMetrics._(_ret, _lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionTaskTransactionMetrics new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskTransactionMetrics1, _lib._sel_new1);
-    return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
+    return NSURLSessionTaskTransactionMetrics._(_ret, _lib,
+        retain: false, release: true);
   }
 
   static NSURLSessionTaskTransactionMetrics alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskTransactionMetrics1, _lib._sel_alloc1);
-    return NSURLSessionTaskTransactionMetrics._(_ret, _lib);
+    return NSURLSessionTaskTransactionMetrics._(_ret, _lib,
+        retain: false, release: true);
   }
 }
 
 class NSURLSessionTaskMetrics extends NSObject {
-  NSURLSessionTaskMetrics._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLSessionTaskMetrics._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLSessionTaskMetrics castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLSessionTaskMetrics._(other._id, other._lib);
+    return NSURLSessionTaskMetrics._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLSessionTaskMetrics castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLSessionTaskMetrics._(other, lib);
+    return NSURLSessionTaskMetrics._(other, lib, retain: true, release: true);
   }
 
   /// transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
   NSObject? get transactionMetrics {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_transactionMetrics1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Interval from the task creation time to the task completion time.
@@ -82425,7 +89243,9 @@ class NSURLSessionTaskMetrics extends NSObject {
   /// Task completion time is the time when the task is about to change its internal state to completed.
   NSObject? get taskInterval {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_taskInterval1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// redirectCount is the number of redirects that were recorded.
@@ -82436,19 +89256,19 @@ class NSURLSessionTaskMetrics extends NSObject {
   @override
   NSURLSessionTaskMetrics init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLSessionTaskMetrics._(_ret, _lib);
+    return NSURLSessionTaskMetrics._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLSessionTaskMetrics new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskMetrics1, _lib._sel_new1);
-    return NSURLSessionTaskMetrics._(_ret, _lib);
+    return NSURLSessionTaskMetrics._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLSessionTaskMetrics alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSURLSessionTaskMetrics1, _lib._sel_alloc1);
-    return NSURLSessionTaskMetrics._(_ret, _lib);
+    return NSURLSessionTaskMetrics._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -82464,22 +89284,23 @@ abstract class NSItemProviderFileOptions {
 }
 
 class NSItemProvider extends NSObject {
-  NSItemProvider._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSItemProvider._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSItemProvider castFrom<T extends _ObjCWrapper>(T other) {
-    return NSItemProvider._(other._id, other._lib);
+    return NSItemProvider._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSItemProvider castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSItemProvider._(other, lib);
+    return NSItemProvider._(other, lib, retain: true, release: true);
   }
 
   @override
   NSItemProvider init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: true, release: true);
   }
 
   void registerDataRepresentationForTypeIdentifier_visibility_loadHandler_(
@@ -82510,7 +89331,9 @@ class NSItemProvider extends NSObject {
   NSObject? get registeredTypeIdentifiers {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_registeredTypeIdentifiers1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   bool hasItemConformingToTypeIdentifier_(NSObject? typeIdentifier) {
@@ -82536,7 +89359,7 @@ class NSItemProvider extends NSObject {
         _lib._sel_loadDataRepresentationForTypeIdentifier_completionHandler_1,
         typeIdentifier?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   NSProgress loadFileRepresentationForTypeIdentifier_completionHandler_(
@@ -82546,7 +89369,7 @@ class NSItemProvider extends NSObject {
         _lib._sel_loadFileRepresentationForTypeIdentifier_completionHandler_1,
         typeIdentifier?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   NSProgress loadInPlaceFileRepresentationForTypeIdentifier_completionHandler_(
@@ -82556,12 +89379,14 @@ class NSItemProvider extends NSObject {
         _lib._sel_loadInPlaceFileRepresentationForTypeIdentifier_completionHandler_1,
         typeIdentifier?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get suggestedName {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_suggestedName1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set suggestedName(NSObject? value) {
@@ -82572,7 +89397,7 @@ class NSItemProvider extends NSObject {
   NSItemProvider initWithObject_(NSObject? object) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithObject_1, object?._id ?? ffi.nullptr);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: true, release: true);
   }
 
   void registerObject_visibility_(NSObject? object, int visibility) {
@@ -82602,7 +89427,7 @@ class NSItemProvider extends NSObject {
         _lib._sel_loadObjectOfClass_completionHandler_1,
         aClass?._id ?? ffi.nullptr,
         completionHandler._impl);
-    return NSProgress._(_ret, _lib);
+    return NSProgress._(_ret, _lib, retain: true, release: true);
   }
 
   NSItemProvider initWithItem_typeIdentifier_(
@@ -82612,13 +89437,13 @@ class NSItemProvider extends NSObject {
         _lib._sel_initWithItem_typeIdentifier_1,
         item?._id ?? ffi.nullptr,
         typeIdentifier?._id ?? ffi.nullptr);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: true, release: true);
   }
 
   NSItemProvider initWithContentsOfURL_(NSObject? fileURL) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithContentsOfURL_1, fileURL?._id ?? ffi.nullptr);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: true, release: true);
   }
 
   void registerItemForTypeIdentifier_loadHandler_(
@@ -82662,13 +89487,13 @@ class NSItemProvider extends NSObject {
   static NSItemProvider new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSItemProvider1, _lib._sel_new1);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: false, release: true);
   }
 
   static NSItemProvider alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSItemProvider1, _lib._sel_alloc1);
-    return NSItemProvider._(_ret, _lib);
+    return NSItemProvider._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -82799,16 +89624,18 @@ abstract class NSItemProviderErrorCode {
 typedef NSStringEncodingDetectionOptionsKey = ffi.Pointer<ObjCObject>;
 
 class NSMutableString extends NSString {
-  NSMutableString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableString castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableString._(other._id, other._lib);
+    return NSMutableString._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMutableString castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableString._(other, lib);
+    return NSMutableString._(other, lib, retain: true, release: true);
   }
 
   void replaceCharactersInRange_withString_(NSRange range, NSObject? aString) {
@@ -82865,13 +89692,13 @@ class NSMutableString extends NSString {
   NSMutableString initWithCapacity_(int capacity) {
     final _ret =
         _lib._objc_msgSend_257(_id, _lib._sel_initWithCapacity_1, capacity);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithCapacity_(NativeLibrary _lib, int capacity) {
     final _ret = _lib._objc_msgSend_257(
         _lib._class_NSMutableString1, _lib._sel_stringWithCapacity_1, capacity);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
@@ -82884,7 +89711,7 @@ class NSMutableString extends NSString {
       NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_14(_lib._class_NSMutableString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int getDefaultCStringEncoding(NativeLibrary _lib) {
@@ -82895,49 +89722,49 @@ class NSMutableString extends NSString {
   static NSMutableString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableString1, _lib._sel_string1);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithString_(
       NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithCharacters_length_(
       NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSMutableString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithUTF8String_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_74(_lib._class_NSMutableString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString localizedStringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithCString_encoding_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSMutableString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithContentsOfURL_encoding_error_(
@@ -82951,7 +89778,7 @@ class NSMutableString extends NSString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithContentsOfFile_encoding_error_(
@@ -82965,7 +89792,7 @@ class NSMutableString extends NSString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithContentsOfURL_usedEncoding_error_(
@@ -82979,7 +89806,7 @@ class NSMutableString extends NSString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString stringWithContentsOfFile_usedEncoding_error_(
@@ -82993,7 +89820,7 @@ class NSMutableString extends NSString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: true, release: true);
   }
 
   static int
@@ -83016,55 +89843,57 @@ class NSMutableString extends NSString {
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithContentsOfURL_(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSMutableString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSMutableString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_74(
         _lib._class_NSMutableString1, _lib._sel_stringWithCString_1, bytes);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableString new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableString1, _lib._sel_new1);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableString alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSMutableString1, _lib._sel_alloc1);
-    return NSMutableString._(_ret, _lib);
+    return NSMutableString._(_ret, _lib, retain: false, release: true);
   }
 }
 
 typedef NSExceptionName = ffi.Pointer<ObjCObject>;
 
 class NSSimpleCString extends NSString {
-  NSSimpleCString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSSimpleCString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSSimpleCString castFrom<T extends _ObjCWrapper>(T other) {
-    return NSSimpleCString._(other._id, other._lib);
+    return NSSimpleCString._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSSimpleCString castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSSimpleCString._(other, lib);
+    return NSSimpleCString._(other, lib, retain: true, release: true);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
@@ -83077,7 +89906,7 @@ class NSSimpleCString extends NSString {
       NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_14(_lib._class_NSSimpleCString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int getDefaultCStringEncoding(NativeLibrary _lib) {
@@ -83088,49 +89917,49 @@ class NSSimpleCString extends NSString {
   static NSSimpleCString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSSimpleCString1, _lib._sel_string1);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithString_(
       NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithCharacters_length_(
       NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithUTF8String_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_74(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString localizedStringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSSimpleCString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithCString_encoding_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithContentsOfURL_encoding_error_(
@@ -83144,7 +89973,7 @@ class NSSimpleCString extends NSString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithContentsOfFile_encoding_error_(
@@ -83158,7 +89987,7 @@ class NSSimpleCString extends NSString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithContentsOfURL_usedEncoding_error_(
@@ -83172,7 +90001,7 @@ class NSSimpleCString extends NSString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString stringWithContentsOfFile_usedEncoding_error_(
@@ -83186,7 +90015,7 @@ class NSSimpleCString extends NSString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: true, release: true);
   }
 
   static int
@@ -83209,53 +90038,55 @@ class NSSimpleCString extends NSString {
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithContentsOfURL_(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSSimpleCString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_74(
         _lib._class_NSSimpleCString1, _lib._sel_stringWithCString_1, bytes);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSSimpleCString new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSSimpleCString1, _lib._sel_new1);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: false, release: true);
   }
 
   static NSSimpleCString alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSSimpleCString1, _lib._sel_alloc1);
-    return NSSimpleCString._(_ret, _lib);
+    return NSSimpleCString._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSConstantString extends NSSimpleCString {
-  NSConstantString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSConstantString._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSConstantString castFrom<T extends _ObjCWrapper>(T other) {
-    return NSConstantString._(other._id, other._lib);
+    return NSConstantString._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSConstantString castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSConstantString._(other, lib);
+    return NSConstantString._(other, lib, retain: true, release: true);
   }
 
   static ffi.Pointer<NSStringEncoding> getAvailableStringEncodings(
@@ -83268,7 +90099,7 @@ class NSConstantString extends NSSimpleCString {
       NativeLibrary _lib, int encoding) {
     final _ret = _lib._objc_msgSend_14(_lib._class_NSConstantString1,
         _lib._sel_localizedNameOfStringEncoding_1, encoding);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static int getDefaultCStringEncoding(NativeLibrary _lib) {
@@ -83279,49 +90110,49 @@ class NSConstantString extends NSSimpleCString {
   static NSConstantString string(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSConstantString1, _lib._sel_string1);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithString_(
       NativeLibrary _lib, NSObject? string) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSConstantString1,
         _lib._sel_stringWithString_1, string?._id ?? ffi.nullptr);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithCharacters_length_(
       NativeLibrary _lib, ffi.Pointer<unichar> characters, int length) {
     final _ret = _lib._objc_msgSend_73(_lib._class_NSConstantString1,
         _lib._sel_stringWithCharacters_length_1, characters, length);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithUTF8String_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> nullTerminatedCString) {
     final _ret = _lib._objc_msgSend_74(_lib._class_NSConstantString1,
         _lib._sel_stringWithUTF8String_1, nullTerminatedCString);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSConstantString1,
         _lib._sel_stringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString localizedStringWithFormat_(
       NativeLibrary _lib, NSObject? format) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSConstantString1,
         _lib._sel_localizedStringWithFormat_1, format?._id ?? ffi.nullptr);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithCString_encoding_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> cString, int enc) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSConstantString1,
         _lib._sel_stringWithCString_encoding_1, cString, enc);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithContentsOfURL_encoding_error_(
@@ -83335,7 +90166,7 @@ class NSConstantString extends NSSimpleCString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithContentsOfFile_encoding_error_(
@@ -83349,7 +90180,7 @@ class NSConstantString extends NSSimpleCString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithContentsOfURL_usedEncoding_error_(
@@ -83363,7 +90194,7 @@ class NSConstantString extends NSSimpleCString {
         url?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString stringWithContentsOfFile_usedEncoding_error_(
@@ -83377,7 +90208,7 @@ class NSConstantString extends NSSimpleCString {
         path?._id ?? ffi.nullptr,
         enc,
         error);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: true, release: true);
   }
 
   static int
@@ -83400,150 +90231,181 @@ class NSConstantString extends NSSimpleCString {
       NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSConstantString1,
         _lib._sel_stringWithContentsOfFile_1, path?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithContentsOfURL_(NativeLibrary _lib, NSObject? url) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSConstantString1,
         _lib._sel_stringWithContentsOfURL_1, url?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_length_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes, int length) {
     final _ret = _lib._objc_msgSend_82(_lib._class_NSConstantString1,
         _lib._sel_stringWithCString_length_1, bytes, length);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject stringWithCString_(
       NativeLibrary _lib, ffi.Pointer<ffi.Char> bytes) {
     final _ret = _lib._objc_msgSend_74(
         _lib._class_NSConstantString1, _lib._sel_stringWithCString_1, bytes);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSConstantString new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSConstantString1, _lib._sel_new1);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: false, release: true);
   }
 
   static NSConstantString alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSConstantString1, _lib._sel_alloc1);
-    return NSConstantString._(_ret, _lib);
+    return NSConstantString._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSCharacterSet extends NSObject {
-  NSCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
-    return NSCharacterSet._(other._id, other._lib);
+    return NSCharacterSet._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSCharacterSet castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSCharacterSet._(other, lib);
+    return NSCharacterSet._(other, lib, retain: true, release: true);
   }
 
   static NSObject? getControlCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_controlCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getWhitespaceCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_whitespaceCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getWhitespaceAndNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSCharacterSet1,
         _lib._sel_whitespaceAndNewlineCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDecimalDigitCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_decimalDigitCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_letterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getLowercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_lowercaseLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getUppercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_uppercaseLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getNonBaseCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_nonBaseCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getAlphanumericCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_alphanumericCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDecomposableCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_decomposableCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getIllegalCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_illegalCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getPunctuationCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_punctuationCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getCapitalizedLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_capitalizedLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getSymbolCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_symbolCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_newlineCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSCharacterSet characterSetWithRange_(
       NativeLibrary _lib, NSRange aRange) {
     final _ret = _lib._objc_msgSend_258(
         _lib._class_NSCharacterSet1, _lib._sel_characterSetWithRange_1, aRange);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSCharacterSet characterSetWithCharactersInString_(
@@ -83552,7 +90414,7 @@ class NSCharacterSet extends NSObject {
         _lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithCharactersInString_1,
         aString?._id ?? ffi.nullptr);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSCharacterSet characterSetWithBitmapRepresentation_(
@@ -83561,20 +90423,20 @@ class NSCharacterSet extends NSObject {
         _lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithBitmapRepresentation_1,
         data?._id ?? ffi.nullptr);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSCharacterSet characterSetWithContentsOfFile_(
       NativeLibrary _lib, NSObject? fName) {
     final _ret = _lib._objc_msgSend_259(_lib._class_NSCharacterSet1,
         _lib._sel_characterSetWithContentsOfFile_1, fName?._id ?? ffi.nullptr);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   NSCharacterSet initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   bool characterIsMember_(int aCharacter) {
@@ -83584,12 +90446,16 @@ class NSCharacterSet extends NSObject {
 
   NSObject? get bitmapRepresentation {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_bitmapRepresentation1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get invertedSet {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_invertedSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   bool longCharacterIsMember_(int theLongChar) {
@@ -83610,68 +90476,82 @@ class NSCharacterSet extends NSObject {
   static NSObject? getURLUserAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLUserAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's password subcomponent.
   static NSObject? getURLPasswordAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLPasswordAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's host subcomponent.
   static NSObject? getURLHostAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLHostAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
   static NSObject? getURLPathAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLPathAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's query component.
   static NSObject? getURLQueryAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLQueryAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's fragment component.
   static NSObject? getURLFragmentAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSCharacterSet1, _lib._sel_URLFragmentAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSCharacterSet new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSCharacterSet1, _lib._sel_new1);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: false, release: true);
   }
 
   static NSCharacterSet alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSCharacterSet1, _lib._sel_alloc1);
-    return NSCharacterSet._(_ret, _lib);
+    return NSCharacterSet._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSMutableCharacterSet extends NSCharacterSet {
-  NSMutableCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSMutableCharacterSet._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSMutableCharacterSet castFrom<T extends _ObjCWrapper>(T other) {
-    return NSMutableCharacterSet._(other._id, other._lib);
+    return NSMutableCharacterSet._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSMutableCharacterSet castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSMutableCharacterSet._(other, lib);
+    return NSMutableCharacterSet._(other, lib, retain: true, release: true);
   }
 
   void addCharactersInRange_(NSRange aRange) {
@@ -83709,98 +90589,128 @@ class NSMutableCharacterSet extends NSCharacterSet {
   static NSObject? getControlCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_controlCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getWhitespaceCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_whitespaceCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getWhitespaceAndNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_whitespaceAndNewlineCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDecimalDigitCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_decimalDigitCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_letterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getLowercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_lowercaseLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getUppercaseLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_uppercaseLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getNonBaseCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_nonBaseCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getAlphanumericCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_alphanumericCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getDecomposableCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_decomposableCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getIllegalCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_illegalCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getPunctuationCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_punctuationCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getCapitalizedLetterCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_capitalizedLetterCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getSymbolCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_symbolCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getNewlineCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_newlineCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableCharacterSet characterSetWithRange_(
       NativeLibrary _lib, NSRange aRange) {
     final _ret = _lib._objc_msgSend_263(_lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithRange_1, aRange);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableCharacterSet characterSetWithCharactersInString_(
@@ -83809,7 +90719,7 @@ class NSMutableCharacterSet extends NSCharacterSet {
         _lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithCharactersInString_1,
         aString?._id ?? ffi.nullptr);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableCharacterSet characterSetWithBitmapRepresentation_(
@@ -83818,68 +90728,80 @@ class NSMutableCharacterSet extends NSCharacterSet {
         _lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithBitmapRepresentation_1,
         data?._id ?? ffi.nullptr);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableCharacterSet characterSetWithContentsOfFile_(
       NativeLibrary _lib, NSObject? fName) {
     final _ret = _lib._objc_msgSend_264(_lib._class_NSMutableCharacterSet1,
         _lib._sel_characterSetWithContentsOfFile_1, fName?._id ?? ffi.nullptr);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's user subcomponent.
   static NSObject? getURLUserAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLUserAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's password subcomponent.
   static NSObject? getURLPasswordAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLPasswordAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's host subcomponent.
   static NSObject? getURLHostAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLHostAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
   static NSObject? getURLPathAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLPathAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's query component.
   static NSObject? getURLQueryAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLQueryAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a character set containing the characters allowed in an URL's fragment component.
   static NSObject? getURLFragmentAllowedCharacterSet(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSMutableCharacterSet1,
         _lib._sel_URLFragmentAllowedCharacterSet1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSMutableCharacterSet new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_new1);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: false, release: true);
   }
 
   static NSMutableCharacterSet alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSMutableCharacterSet1, _lib._sel_alloc1);
-    return NSMutableCharacterSet._(_ret, _lib);
+    return NSMutableCharacterSet._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -83891,16 +90813,17 @@ abstract class NSURLHandleStatus {
 }
 
 class NSURLHandle extends NSObject {
-  NSURLHandle._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLHandle._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLHandle castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLHandle._(other._id, other._lib);
+    return NSURLHandle._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURLHandle castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLHandle._(other, lib);
+    return NSURLHandle._(other, lib, retain: true, release: true);
   }
 
   static void registerURLHandleClass_(
@@ -83912,7 +90835,7 @@ class NSURLHandle extends NSObject {
   static NSObject URLHandleClassForURL_(NativeLibrary _lib, NSObject? anURL) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSURLHandle1,
         _lib._sel_URLHandleClassForURL_1, anURL?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int status() {
@@ -83921,7 +90844,7 @@ class NSURLHandle extends NSObject {
 
   NSString failureReason() {
     final _ret = _lib._objc_msgSend_55(_id, _lib._sel_failureReason1);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   void addClient_(NSObject? client) {
@@ -83944,12 +90867,12 @@ class NSURLHandle extends NSObject {
 
   NSData resourceData() {
     final _ret = _lib._objc_msgSend_266(_id, _lib._sel_resourceData1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   NSData availableResourceData() {
     final _ret = _lib._objc_msgSend_266(_id, _lib._sel_availableResourceData1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   void expectedResourceDataSize() {
@@ -83978,7 +90901,7 @@ class NSURLHandle extends NSObject {
   static NSURLHandle cachedHandleForURL_(NativeLibrary _lib, NSObject? anURL) {
     final _ret = _lib._objc_msgSend_268(_lib._class_NSURLHandle1,
         _lib._sel_cachedHandleForURL_1, anURL?._id ?? ffi.nullptr);
-    return NSURLHandle._(_ret, _lib);
+    return NSURLHandle._(_ret, _lib, retain: true, release: true);
   }
 
   void initWithURL_cached_(NSObject? anURL, bool willCache) {
@@ -83989,13 +90912,13 @@ class NSURLHandle extends NSObject {
   NSObject propertyForKey_(NSObject? propertyKey) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_propertyForKey_1, propertyKey?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject propertyForKeyIfAvailable_(NSObject? propertyKey) {
     final _ret = _lib._objc_msgSend_13(_id,
         _lib._sel_propertyForKeyIfAvailable_1, propertyKey?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   bool writeProperty_forKey_(NSObject propertyValue, NSObject? propertyKey) {
@@ -84010,7 +90933,7 @@ class NSURLHandle extends NSObject {
 
   NSData loadInForeground() {
     final _ret = _lib._objc_msgSend_266(_id, _lib._sel_loadInForeground1);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   void beginLoadInBackground() {
@@ -84023,26 +90946,28 @@ class NSURLHandle extends NSObject {
 
   static NSURLHandle new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURLHandle1, _lib._sel_new1);
-    return NSURLHandle._(_ret, _lib);
+    return NSURLHandle._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLHandle alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLHandle1, _lib._sel_alloc1);
-    return NSURLHandle._(_ret, _lib);
+    return NSURLHandle._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSURL extends NSObject {
-  NSURL._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSURL._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURL castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURL._(other._id, other._lib);
+    return NSURL._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURL castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURL._(other, lib);
+    return NSURL._(other, lib, retain: true, release: true);
   }
 
   /// this call percent-encodes both the host and path, so this cannot be used to set a username/password or port in the hostname part or with a IPv6 '[...]' type address. NSURLComponents handles IPv6 addresses correctly.
@@ -84054,7 +90979,7 @@ class NSURL extends NSObject {
         scheme?._id ?? ffi.nullptr,
         host?._id ?? ffi.nullptr,
         path?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes a newly created file NSURL referencing the local file or directory at path, relative to a base URL.
@@ -84066,7 +90991,7 @@ class NSURL extends NSObject {
         path?._id ?? ffi.nullptr,
         isDir,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Better to use initFileURLWithPath:isDirectory:relativeToURL: if you know if the path is a directory vs non-directory, as it saves an I/O.
@@ -84076,7 +91001,7 @@ class NSURL extends NSObject {
         _lib._sel_initFileURLWithPath_relativeToURL_1,
         path?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSURL initFileURLWithPath_isDirectory_(NSObject? path, bool isDir) {
@@ -84085,14 +91010,14 @@ class NSURL extends NSObject {
         _lib._sel_initFileURLWithPath_isDirectory_1,
         path?._id ?? ffi.nullptr,
         isDir);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Better to use initFileURLWithPath:isDirectory: if you know if the path is a directory vs non-directory, as it saves an i/o.
   NSURL initFileURLWithPath_(NSObject? path) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initFileURLWithPath_1, path?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created file NSURL referencing the local file or directory at path, relative to a base URL.
@@ -84104,7 +91029,7 @@ class NSURL extends NSObject {
         path?._id ?? ffi.nullptr,
         isDir,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Better to use fileURLWithPath:isDirectory:relativeToURL: if you know if the path is a directory vs non-directory, as it saves an I/O.
@@ -84115,7 +91040,7 @@ class NSURL extends NSObject {
         _lib._sel_fileURLWithPath_relativeToURL_1,
         path?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURL fileURLWithPath_isDirectory_(
@@ -84125,14 +91050,14 @@ class NSURL extends NSObject {
         _lib._sel_fileURLWithPath_isDirectory_1,
         path?._id ?? ffi.nullptr,
         isDir);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Better to use fileURLWithPath:isDirectory: if you know if the path is a directory vs non-directory, as it saves an i/o.
   static NSURL fileURLWithPath_(NativeLibrary _lib, NSObject? path) {
     final _ret = _lib._objc_msgSend_274(_lib._class_NSURL1,
         _lib._sel_fileURLWithPath_1, path?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes a newly created URL referencing the local file or directory at the file system representation of the path. File system representation is a null-terminated C string with canonical UTF-8 encoding.
@@ -84144,7 +91069,7 @@ class NSURL extends NSObject {
         path,
         isDir,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created URL referencing the local file or directory at the file system representation of the path. File system representation is a null-terminated C string with canonical UTF-8 encoding.
@@ -84159,14 +91084,14 @@ class NSURL extends NSObject {
         path,
         isDir,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// These methods expect their string arguments to contain any percent escape codes that are necessary. It is an error for URLString to be nil.
   NSURL initWithString_(NSObject? URLString) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithString_1, URLString?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSURL initWithString_relativeToURL_(NSObject? URLString, NSObject? baseURL) {
@@ -84175,13 +91100,13 @@ class NSURL extends NSObject {
         _lib._sel_initWithString_relativeToURL_1,
         URLString?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURL URLWithString_(NativeLibrary _lib, NSObject? URLString) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSURL1,
         _lib._sel_URLWithString_1, URLString?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURL URLWithString_relativeToURL_(
@@ -84191,7 +91116,7 @@ class NSURL extends NSObject {
         _lib._sel_URLWithString_relativeToURL_1,
         URLString?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes a newly created NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
@@ -84202,7 +91127,7 @@ class NSURL extends NSObject {
         _lib._sel_initWithDataRepresentation_relativeToURL_1,
         data?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
@@ -84213,7 +91138,7 @@ class NSURL extends NSObject {
         _lib._sel_URLWithDataRepresentation_relativeToURL_1,
         data?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes a newly created absolute NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
@@ -84224,7 +91149,7 @@ class NSURL extends NSObject {
         _lib._sel_initAbsoluteURLWithDataRepresentation_relativeToURL_1,
         data?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created absolute NSURL using the contents of the given data, relative to a base URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
@@ -84235,94 +91160,126 @@ class NSURL extends NSObject {
         _lib._sel_absoluteURLWithDataRepresentation_relativeToURL_1,
         data?._id ?? ffi.nullptr,
         baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns the data representation of the URL's relativeString. If the URL was initialized with -initWithData:relativeToURL:, the data representation returned are the same bytes as those used at initialization; otherwise, the data representation returned are the bytes of the relativeString encoded with NSUTF8StringEncoding.
   NSObject? get dataRepresentation {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_dataRepresentation1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get absoluteString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_absoluteString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The relative portion of a URL.  If baseURL is nil, or if the receiver is itself absolute, this is the same as absoluteString
   NSObject? get relativeString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_relativeString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// may be nil.
   NSObject? get baseURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_baseURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// if the receiver is itself absolute, this will return self.
   NSObject? get absoluteURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_absoluteURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Any URL is composed of these two basic pieces.  The full URL would be the concatenation of [myURL scheme], ':', [myURL resourceSpecifier]
   NSObject? get scheme {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_scheme1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get resourceSpecifier {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_resourceSpecifier1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// If the URL conforms to rfc 1808 (the most common form of URL), the following accessors will return the various components; otherwise they return nil.  The litmus test for conformance is as recommended in RFC 1808 - whether the first two characters of resourceSpecifier is @"//".  In all cases, they return the component's value after resolving the receiver against its base URL.
   NSObject? get host {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_host1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get port {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_port1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get user {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_user1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get password {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_password1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get path {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_path1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get fragment {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fragment1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get parameterString {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_parameterString1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get query {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_query1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The same as path if baseURL is nil
   NSObject? get relativePath {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_relativePath1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Determines if a given URL string's path represents a directory (i.e. the path component in the URL string ends with a '/' character). This does not check the resource the URL refers to.
@@ -84352,7 +91309,9 @@ class NSURL extends NSObject {
 
   NSObject? get standardizedURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_standardizedURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns whether the URL's resource exists and is reachable. This method synchronously checks if the resource's backing store is reachable. Checking reachability is appropriate when making decisions that do not require other immediate operations on the resource, e.g. periodic maintenance of UI state that depends on the existence of a specific document. When performing operations such as opening a file or copying resource properties, it is more efficient to simply try the operation and handle failures. If this method returns NO, the optional error is populated. This method is currently applicable only to URLs for file system resources. For other URL types, NO is returned. Symbol is present in iOS 4, but performs no operation.
@@ -84370,13 +91329,15 @@ class NSURL extends NSObject {
   /// Returns a file reference URL that refers to the same resource as a specified file URL. File reference URLs use a URL path syntax that identifies a file system object by reference, not by path. This form of file URL remains valid when the file system path of the URL’s underlying resource changes. An error will occur if the url parameter is not a file URL. File reference URLs cannot be created to file system objects which do not exist or are not reachable. In some areas of the file system hierarchy, file reference URLs cannot be generated to the leaf node of the URL path. A file reference URL's path should never be persistently stored because is not valid across system restarts, and across remounts of volumes -- if you want to create a persistent reference to a file system object, use a bookmark (see -bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:). Symbol is present in iOS 4, but performs no operation.
   NSURL fileReferenceURL() {
     final _ret = _lib._objc_msgSend_279(_id, _lib._sel_fileReferenceURL1);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a file path URL that refers to the same resource as a specified URL. File path URLs use a file system style path. An error will occur if the url parameter is not a file URL. A file reference URL's resource must exist and be reachable to be converted to a file path URL. Symbol is present in iOS 4, but performs no operation.
   NSObject? get filePathURL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_filePathURL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns the resource value identified by a given resource key. This method first checks if the URL object already caches the resource value. If so, it returns the cached resource value to the caller. If not, then this method synchronously obtains the resource value from the backing store, adds the resource value to the URL object's cache, and returns the resource value to the caller. The type of the resource value varies by resource property (see resource key definitions). If this method returns YES and value is populated with nil, it means the resource property is not available for the specified resource and no errors occurred when determining the resource property was not available. If this method returns NO, the optional error is populated. This method is currently applicable only to URLs for file system resources. Symbol is present in iOS 4, but performs no operation.
@@ -84432,7 +91393,7 @@ class NSURL extends NSObject {
         keys?._id ?? ffi.nullptr,
         relativeURL?._id ?? ffi.nullptr,
         error);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes a newly created NSURL that refers to a location specified by resolving bookmark data. If this method returns nil, the optional error is populated.
@@ -84451,7 +91412,7 @@ class NSURL extends NSObject {
         relativeURL?._id ?? ffi.nullptr,
         isStale,
         error);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates and Initializes an NSURL that refers to a location specified by resolving bookmark data. If this method returns nil, the optional error is populated.
@@ -84471,7 +91432,7 @@ class NSURL extends NSObject {
         relativeURL?._id ?? ffi.nullptr,
         isStale,
         error);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates an alias file on disk at a specified location with specified bookmark data. bookmarkData must have been created with the NSURLBookmarkCreationSuitableForBookmarkFile option. bookmarkFileURL must either refer to an existing file (which will be overwritten), or to location in an existing directory. If this method returns NO, the optional error is populated.
@@ -84498,7 +91459,7 @@ class NSURL extends NSObject {
         _lib._sel_bookmarkDataWithContentsOfURL_error_1,
         bookmarkFileURL?._id ?? ffi.nullptr,
         error);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Creates and initializes a NSURL that refers to the location specified by resolving the alias file at url. If the url argument does not refer to an alias file as defined by the NSURLIsAliasFileKey property, the NSURL returned is the same as url argument. This method fails and returns nil if the url argument is unreachable, or if the original file or directory could not be located or is not reachable, or if the original file or directory is on a volume that could not be located or mounted. If this method fails, the optional error is populated. The NSURLBookmarkResolutionWithSecurityScope option is not supported by this method.
@@ -84510,7 +91471,7 @@ class NSURL extends NSObject {
         url?._id ?? ffi.nullptr,
         options,
         error);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Given a NSURL created by resolving a bookmark data created with security scope, make the resource referenced by the url accessible to the process. When access to this resource is no longer needed the client must call stopAccessingSecurityScopedResource. Each call to startAccessingSecurityScopedResource must be balanced with a call to stopAccessingSecurityScopedResource (Note: this is not reference counted).
@@ -84557,22 +91518,28 @@ class NSURL extends NSObject {
       NativeLibrary _lib, NSObject? components) {
     final _ret = _lib._objc_msgSend_274(_lib._class_NSURL1,
         _lib._sel_fileURLWithPathComponents_1, components?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get pathComponents {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_pathComponents1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get lastPathComponent {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_lastPathComponent1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get pathExtension {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_pathExtension1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSURL URLByAppendingPathComponent_(NSObject? pathComponent) {
@@ -84580,7 +91547,7 @@ class NSURL extends NSObject {
         _id,
         _lib._sel_URLByAppendingPathComponent_1,
         pathComponent?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSURL URLByAppendingPathComponent_isDirectory_(
@@ -84590,13 +91557,15 @@ class NSURL extends NSObject {
         _lib._sel_URLByAppendingPathComponent_isDirectory_1,
         pathComponent?._id ?? ffi.nullptr,
         isDirectory);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get URLByDeletingLastPathComponent {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_URLByDeletingLastPathComponent1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSURL URLByAppendingPathExtension_(NSObject? pathExtension) {
@@ -84604,32 +91573,38 @@ class NSURL extends NSObject {
         _id,
         _lib._sel_URLByAppendingPathExtension_1,
         pathExtension?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get URLByDeletingPathExtension {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_URLByDeletingPathExtension1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The following methods work only on `file:` scheme URLs; for non-`file:` scheme URLs, these methods return the URL unchanged.
   NSObject? get URLByStandardizingPath {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URLByStandardizingPath1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get URLByResolvingSymlinksInPath {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_URLByResolvingSymlinksInPath1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Blocks to load the data if necessary.  If shouldUseCache is YES, then if an equivalent URL has already been loaded and cached, its resource data will be returned immediately.  If shouldUseCache is NO, a new load will be started
   NSData resourceDataUsingCache_(bool shouldUseCache) {
     final _ret = _lib._objc_msgSend_287(
         _id, _lib._sel_resourceDataUsingCache_1, shouldUseCache);
-    return NSData._(_ret, _lib);
+    return NSData._(_ret, _lib, retain: true, release: true);
   }
 
   /// Starts an asynchronous load of the data, registering delegate to receive notification.  Only one such background load can proceed at a time.
@@ -84645,7 +91620,7 @@ class NSURL extends NSObject {
   NSObject propertyForKey_(NSObject? propertyKey) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_propertyForKey_1, propertyKey?._id ?? ffi.nullptr);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// These attempt to write the given arguments for the resource specified by the URL; they return success or failure
@@ -84663,17 +91638,17 @@ class NSURL extends NSObject {
   NSURLHandle URLHandleUsingCache_(bool shouldUseCache) {
     final _ret = _lib._objc_msgSend_288(
         _id, _lib._sel_URLHandleUsingCache_1, shouldUseCache);
-    return NSURLHandle._(_ret, _lib);
+    return NSURLHandle._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURL new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURL1, _lib._sel_new1);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURL alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSURL1, _lib._sel_alloc1);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -84718,22 +91693,23 @@ typedef NSURLUbiquitousSharedItemPermissions = ffi.Pointer<ObjCObject>;
 
 /// NSURLQueryItem encapsulates a single query name-value pair. The name and value strings of a query name-value pair are not percent encoded. For use with the NSURLComponents queryItems property.
 class NSURLQueryItem extends NSObject {
-  NSURLQueryItem._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLQueryItem._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLQueryItem castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLQueryItem._(other._id, other._lib);
+    return NSURLQueryItem._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURLQueryItem castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLQueryItem._(other, lib);
+    return NSURLQueryItem._(other, lib, retain: true, release: true);
   }
 
   NSURLQueryItem initWithName_value_(NSObject? name, NSObject? value) {
     final _ret = _lib._objc_msgSend_76(_id, _lib._sel_initWithName_value_1,
         name?._id ?? ffi.nullptr, value?._id ?? ffi.nullptr);
-    return NSURLQueryItem._(_ret, _lib);
+    return NSURLQueryItem._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLQueryItem queryItemWithName_value_(
@@ -84743,50 +91719,56 @@ class NSURLQueryItem extends NSObject {
         _lib._sel_queryItemWithName_value_1,
         name?._id ?? ffi.nullptr,
         value?._id ?? ffi.nullptr);
-    return NSURLQueryItem._(_ret, _lib);
+    return NSURLQueryItem._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get name {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_name1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get value {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_value1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLQueryItem new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLQueryItem1, _lib._sel_new1);
-    return NSURLQueryItem._(_ret, _lib);
+    return NSURLQueryItem._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLQueryItem alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLQueryItem1, _lib._sel_alloc1);
-    return NSURLQueryItem._(_ret, _lib);
+    return NSURLQueryItem._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSURLComponents extends NSObject {
-  NSURLComponents._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLComponents._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLComponents castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLComponents._(other._id, other._lib);
+    return NSURLComponents._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSURLComponents castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLComponents._(other, lib);
+    return NSURLComponents._(other, lib, retain: true, release: true);
   }
 
   /// Initialize a NSURLComponents with all components undefined. Designated initializer.
   @override
   NSURLComponents init() {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_init1);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initialize a NSURLComponents with the components of a URL. If resolvingAgainstBaseURL is YES and url is a relative URL, the components of [url absoluteURL] are used. If the url string from the NSURL is malformed, nil is returned.
@@ -84797,7 +91779,7 @@ class NSURLComponents extends NSObject {
         _lib._sel_initWithURL_resolvingAgainstBaseURL_1,
         url?._id ?? ffi.nullptr,
         resolve);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created NSURLComponents with the components of a URL. If resolvingAgainstBaseURL is YES and url is a relative URL, the components of [url absoluteURL] are used. If the url string from the NSURL is malformed, nil is returned.
@@ -84808,14 +91790,14 @@ class NSURLComponents extends NSObject {
         _lib._sel_componentsWithURL_resolvingAgainstBaseURL_1,
         url?._id ?? ffi.nullptr,
         resolve);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initialize a NSURLComponents with a URL string. If the URLString is malformed, nil is returned.
   NSURLComponents initWithString_(NSObject? URLString) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithString_1, URLString?._id ?? ffi.nullptr);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: true, release: true);
   }
 
   /// Initializes and returns a newly created NSURLComponents with a URL string. If the URLString is malformed, nil is returned.
@@ -84823,32 +91805,38 @@ class NSURLComponents extends NSObject {
       NativeLibrary _lib, NSObject? URLString) {
     final _ret = _lib._objc_msgSend_13(_lib._class_NSURLComponents1,
         _lib._sel_componentsWithString_1, URLString?._id ?? ffi.nullptr);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a URL created from the NSURLComponents. If the NSURLComponents has an authority component (user, password, host or port) and a path component, then the path must either begin with "/" or be an empty string. If the NSURLComponents does not have an authority component (user, password, host or port) and has a path component, the path component must not start with "//". If those requirements are not met, nil is returned.
   NSObject? get URL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a URL created from the NSURLComponents relative to a base URL. If the NSURLComponents has an authority component (user, password, host or port) and a path component, then the path must either begin with "/" or be an empty string. If the NSURLComponents does not have an authority component (user, password, host or port) and has a path component, the path component must not start with "//". If those requirements are not met, nil is returned.
   NSURL URLRelativeToURL_(NSObject? baseURL) {
     final _ret = _lib._objc_msgSend_274(
         _id, _lib._sel_URLRelativeToURL_1, baseURL?._id ?? ffi.nullptr);
-    return NSURL._(_ret, _lib);
+    return NSURL._(_ret, _lib, retain: true, release: true);
   }
 
   /// Returns a URL string created from the NSURLComponents. If the NSURLComponents has an authority component (user, password, host or port) and a path component, then the path must either begin with "/" or be an empty string. If the NSURLComponents does not have an authority component (user, password, host or port) and has a path component, the path component must not start with "//". If those requirements are not met, nil is returned.
   NSObject? get string {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_string1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Attempting to set the scheme with an invalid scheme string will cause an exception.
   NSObject? get scheme {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_scheme1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Attempting to set the scheme with an invalid scheme string will cause an exception.
@@ -84858,7 +91846,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get user {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_user1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set user(NSObject? value) {
@@ -84867,7 +91857,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get password {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_password1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set password(NSObject? value) {
@@ -84877,7 +91869,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get host {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_host1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set host(NSObject? value) {
@@ -84887,7 +91881,9 @@ class NSURLComponents extends NSObject {
   /// Attempting to set a negative port number will cause an exception.
   NSObject? get port {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_port1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Attempting to set a negative port number will cause an exception.
@@ -84897,7 +91893,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get path {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_path1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set path(NSObject? value) {
@@ -84906,7 +91904,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get query {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_query1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set query(NSObject? value) {
@@ -84915,7 +91915,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get fragment {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_fragment1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set fragment(NSObject? value) {
@@ -84926,7 +91928,9 @@ class NSURLComponents extends NSObject {
   /// Getting these properties retains any percent encoding these components may have. Setting these properties assumes the component string is already correctly percent encoded. Attempting to set an incorrectly percent encoded string will cause an exception. Although ';' is a legal path character, it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
   NSObject? get percentEncodedUser {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedUser1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Getting these properties retains any percent encoding these components may have. Setting these properties assumes the component string is already correctly percent encoded. Attempting to set an incorrectly percent encoded string will cause an exception. Although ';' is a legal path character, it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
@@ -84937,7 +91941,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get percentEncodedPassword {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedPassword1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set percentEncodedPassword(NSObject? value) {
@@ -84947,7 +91953,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get percentEncodedHost {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedHost1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set percentEncodedHost(NSObject? value) {
@@ -84957,7 +91965,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get percentEncodedPath {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedPath1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set percentEncodedPath(NSObject? value) {
@@ -84967,7 +91977,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get percentEncodedQuery {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedQuery1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set percentEncodedQuery(NSObject? value) {
@@ -84977,7 +91989,9 @@ class NSURLComponents extends NSObject {
 
   NSObject? get percentEncodedFragment {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedFragment1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set percentEncodedFragment(NSObject? value) {
@@ -85031,7 +92045,9 @@ class NSURLComponents extends NSObject {
   /// - note: If a NSURLQueryItem name-value pair is empty (i.e. the query string starts with '&', ends with '&', or has "&&" within it), you get a NSURLQueryItem with a zero-length name and a nil value. If a NSURLQueryItem name-value pair has nothing before the equals sign, you get a zero-length name. If a NSURLQueryItem name-value pair has nothing after the equals sign, you get a zero-length value. If a NSURLQueryItem name-value pair has no equals sign, the NSURLQueryItem name-value pair string is the name and you get a nil value.
   NSObject? get queryItems {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_queryItems1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The query component as an array of NSURLQueryItems for this NSURLComponents.
@@ -85055,7 +92071,9 @@ class NSURLComponents extends NSObject {
   /// The percentEncodedQueryItems setter combines an array containing any number of NSURLQueryItems, each of which represents a single key-value pair, into a query string and sets the NSURLComponents query property. This property assumes the NSURLQueryItem names and values are already correctly percent-encoded, and that the NSURLQueryItem names do not contain the query item delimiter characters '&' and '='. Attempting to set an incorrectly percent-encoded NSURLQueryItem or a NSURLQueryItem name with the query item delimiter characters '&' and '=' will cause an exception.
   NSObject? get percentEncodedQueryItems {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_percentEncodedQueryItems1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The percentEncodedQueryItems getter returns an array of NSURLQueryItems in the order in which they appear in the original query string. Any percent-encoding in a NSURLQueryItem name or value is retained.
@@ -85069,46 +92087,47 @@ class NSURLComponents extends NSObject {
   static NSURLComponents new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLComponents1, _lib._sel_new1);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLComponents alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLComponents1, _lib._sel_alloc1);
-    return NSURLComponents._(_ret, _lib);
+    return NSURLComponents._(_ret, _lib, retain: false, release: true);
   }
 }
 
 /// NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by NSFileSecurity.
 class NSFileSecurity extends NSObject {
-  NSFileSecurity._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSFileSecurity._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSFileSecurity castFrom<T extends _ObjCWrapper>(T other) {
-    return NSFileSecurity._(other._id, other._lib);
+    return NSFileSecurity._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSFileSecurity castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSFileSecurity._(other, lib);
+    return NSFileSecurity._(other, lib, retain: true, release: true);
   }
 
   NSFileSecurity initWithCoder_(NSObject? coder) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithCoder_1, coder?._id ?? ffi.nullptr);
-    return NSFileSecurity._(_ret, _lib);
+    return NSFileSecurity._(_ret, _lib, retain: true, release: true);
   }
 
   static NSFileSecurity new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSFileSecurity1, _lib._sel_new1);
-    return NSFileSecurity._(_ret, _lib);
+    return NSFileSecurity._(_ret, _lib, retain: false, release: true);
   }
 
   static NSFileSecurity alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSFileSecurity1, _lib._sel_alloc1);
-    return NSFileSecurity._(_ret, _lib);
+    return NSFileSecurity._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -85124,16 +92143,17 @@ class NSFileSecurity extends NSObject {
 /// NSURLConnection and NSURLConnectionDelegate for more information
 /// about receiving the content data for a URL load.
 class NSURLResponse extends NSObject {
-  NSURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSURLResponse castFrom<T extends _ObjCWrapper>(T other) {
-    return NSURLResponse._(other._id, other._lib);
+    return NSURLResponse._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSURLResponse castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSURLResponse._(other, lib);
+    return NSURLResponse._(other, lib, retain: true, release: true);
   }
 
   /// !
@@ -85154,7 +92174,7 @@ class NSURLResponse extends NSObject {
         MIMEType?._id ?? ffi.nullptr,
         length,
         name?._id ?? ffi.nullptr);
-    return NSURLResponse._(_ret, _lib);
+    return NSURLResponse._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85162,7 +92182,9 @@ class NSURLResponse extends NSObject {
   /// @result The URL of the receiver.
   NSObject? get URL {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_URL1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85176,7 +92198,9 @@ class NSURLResponse extends NSObject {
   /// @result The MIME type of the receiver.
   NSObject? get MIMEType {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_MIMEType1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85205,7 +92229,9 @@ class NSURLResponse extends NSObject {
   /// text encoding was specified.
   NSObject? get textEncodingName {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_textEncodingName1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85220,19 +92246,21 @@ class NSURLResponse extends NSObject {
   /// @result A suggested filename to use if saving the resource to disk.
   NSObject? get suggestedFilename {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_suggestedFilename1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSURLResponse new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLResponse1, _lib._sel_new1);
-    return NSURLResponse._(_ret, _lib);
+    return NSURLResponse._(_ret, _lib, retain: false, release: true);
   }
 
   static NSURLResponse alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSURLResponse1, _lib._sel_alloc1);
-    return NSURLResponse._(_ret, _lib);
+    return NSURLResponse._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -85244,16 +92272,18 @@ class NSURLResponse extends NSObject {
 /// provides conveniences for accessing information specific to HTTP
 /// protocol responses.
 class NSHTTPURLResponse extends NSURLResponse {
-  NSHTTPURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSHTTPURLResponse._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSHTTPURLResponse castFrom<T extends _ObjCWrapper>(T other) {
-    return NSHTTPURLResponse._(other._id, other._lib);
+    return NSHTTPURLResponse._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSHTTPURLResponse castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSHTTPURLResponse._(other, lib);
+    return NSHTTPURLResponse._(other, lib, retain: true, release: true);
   }
 
   /// !
@@ -85277,7 +92307,7 @@ class NSHTTPURLResponse extends NSURLResponse {
         statusCode,
         HTTPVersion?._id ?? ffi.nullptr,
         headerFields?._id ?? ffi.nullptr);
-    return NSHTTPURLResponse._(_ret, _lib);
+    return NSHTTPURLResponse._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85298,7 +92328,9 @@ class NSHTTPURLResponse extends NSURLResponse {
   /// receiver.
   NSObject? get allHeaderFields {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_allHeaderFields1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85313,7 +92345,7 @@ class NSHTTPURLResponse extends NSURLResponse {
   NSString valueForHTTPHeaderField_(NSObject? field) {
     final _ret = _lib._objc_msgSend_28(
         _id, _lib._sel_valueForHTTPHeaderField_1, field?._id ?? ffi.nullptr);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   /// !
@@ -85326,33 +92358,34 @@ class NSHTTPURLResponse extends NSURLResponse {
       NativeLibrary _lib, int statusCode) {
     final _ret = _lib._objc_msgSend_291(_lib._class_NSHTTPURLResponse1,
         _lib._sel_localizedStringForStatusCode_1, statusCode);
-    return NSString._(_ret, _lib);
+    return NSString._(_ret, _lib, retain: true, release: true);
   }
 
   static NSHTTPURLResponse new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPURLResponse1, _lib._sel_new1);
-    return NSHTTPURLResponse._(_ret, _lib);
+    return NSHTTPURLResponse._(_ret, _lib, retain: false, release: true);
   }
 
   static NSHTTPURLResponse alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSHTTPURLResponse1, _lib._sel_alloc1);
-    return NSHTTPURLResponse._(_ret, _lib);
+    return NSHTTPURLResponse._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSException extends NSObject {
-  NSException._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSException._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSException castFrom<T extends _ObjCWrapper>(T other) {
-    return NSException._(other._id, other._lib);
+    return NSException._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSException castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSException._(other, lib);
+    return NSException._(other, lib, retain: true, release: true);
   }
 
   static NSException exceptionWithName_reason_userInfo_(NativeLibrary _lib,
@@ -85363,7 +92396,7 @@ class NSException extends NSObject {
         name,
         reason?._id ?? ffi.nullptr,
         userInfo?._id ?? ffi.nullptr);
-    return NSException._(_ret, _lib);
+    return NSException._(_ret, _lib, retain: true, release: true);
   }
 
   NSException initWithName_reason_userInfo_(
@@ -85374,7 +92407,7 @@ class NSException extends NSObject {
         aName,
         aReason?._id ?? ffi.nullptr,
         aUserInfo?._id ?? ffi.nullptr);
-    return NSException._(_ret, _lib);
+    return NSException._(_ret, _lib, retain: true, release: true);
   }
 
   NSExceptionName get name {
@@ -85383,22 +92416,30 @@ class NSException extends NSObject {
 
   NSObject? get reason {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_reason1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get userInfo {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_userInfo1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get callStackReturnAddresses {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_callStackReturnAddresses1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get callStackSymbols {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_callStackSymbols1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void raise() {
@@ -85423,13 +92464,13 @@ class NSException extends NSObject {
 
   static NSException new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSException1, _lib._sel_new1);
-    return NSException._(_ret, _lib);
+    return NSException._(_ret, _lib, retain: false, release: true);
   }
 
   static NSException alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSException1, _lib._sel_alloc1);
-    return NSException._(_ret, _lib);
+    return NSException._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -85437,22 +92478,26 @@ typedef NSUncaughtExceptionHandler
     = ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ObjCObject>)>;
 
 class NSAssertionHandler extends NSObject {
-  NSAssertionHandler._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSAssertionHandler._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSAssertionHandler castFrom<T extends _ObjCWrapper>(T other) {
-    return NSAssertionHandler._(other._id, other._lib);
+    return NSAssertionHandler._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSAssertionHandler castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSAssertionHandler._(other, lib);
+    return NSAssertionHandler._(other, lib, retain: true, release: true);
   }
 
   static NSObject? getCurrentHandler(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSAssertionHandler1, _lib._sel_currentHandler1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void handleFailureInMethod_object_file_lineNumber_description_(
@@ -85485,27 +92530,28 @@ class NSAssertionHandler extends NSObject {
   static NSAssertionHandler new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSAssertionHandler1, _lib._sel_new1);
-    return NSAssertionHandler._(_ret, _lib);
+    return NSAssertionHandler._(_ret, _lib, retain: false, release: true);
   }
 
   static NSAssertionHandler alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSAssertionHandler1, _lib._sel_alloc1);
-    return NSAssertionHandler._(_ret, _lib);
+    return NSAssertionHandler._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSOperation extends NSObject {
-  NSOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSOperation castFrom<T extends _ObjCWrapper>(T other) {
-    return NSOperation._(other._id, other._lib);
+    return NSOperation._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSOperation castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSOperation._(other, lib);
+    return NSOperation._(other, lib, retain: true, release: true);
   }
 
   void start() {
@@ -85557,7 +92603,9 @@ class NSOperation extends NSObject {
 
   NSObject? get dependencies {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_dependencies1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int get queuePriority {
@@ -85599,7 +92647,9 @@ class NSOperation extends NSObject {
 
   NSObject? get name {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_name1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set name(NSObject? value) {
@@ -85608,13 +92658,13 @@ class NSOperation extends NSObject {
 
   static NSOperation new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSOperation1, _lib._sel_new1);
-    return NSOperation._(_ret, _lib);
+    return NSOperation._(_ret, _lib, retain: false, release: true);
   }
 
   static NSOperation alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperation1, _lib._sel_alloc1);
-    return NSOperation._(_ret, _lib);
+    return NSOperation._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -85627,23 +92677,25 @@ abstract class NSOperationQueuePriority {
 }
 
 class NSBlockOperation extends NSOperation {
-  NSBlockOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSBlockOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSBlockOperation castFrom<T extends _ObjCWrapper>(T other) {
-    return NSBlockOperation._(other._id, other._lib);
+    return NSBlockOperation._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSBlockOperation castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSBlockOperation._(other, lib);
+    return NSBlockOperation._(other, lib, retain: true, release: true);
   }
 
   static NSBlockOperation blockOperationWithBlock_(
       NativeLibrary _lib, ObjCBlock13 block) {
     final _ret = _lib._objc_msgSend_300(_lib._class_NSBlockOperation1,
         _lib._sel_blockOperationWithBlock_1, block._impl);
-    return NSBlockOperation._(_ret, _lib);
+    return NSBlockOperation._(_ret, _lib, retain: true, release: true);
   }
 
   void addExecutionBlock_(ObjCBlock13 block) {
@@ -85652,82 +92704,90 @@ class NSBlockOperation extends NSOperation {
 
   NSObject? get executionBlocks {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_executionBlocks1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSBlockOperation new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSBlockOperation1, _lib._sel_new1);
-    return NSBlockOperation._(_ret, _lib);
+    return NSBlockOperation._(_ret, _lib, retain: false, release: true);
   }
 
   static NSBlockOperation alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSBlockOperation1, _lib._sel_alloc1);
-    return NSBlockOperation._(_ret, _lib);
+    return NSBlockOperation._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSInvocationOperation extends NSOperation {
-  NSInvocationOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSInvocationOperation._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSInvocationOperation castFrom<T extends _ObjCWrapper>(T other) {
-    return NSInvocationOperation._(other._id, other._lib);
+    return NSInvocationOperation._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSInvocationOperation castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSInvocationOperation._(other, lib);
+    return NSInvocationOperation._(other, lib, retain: true, release: true);
   }
 
   NSInvocationOperation initWithTarget_selector_object_(
       NSObject target, ffi.Pointer<ObjCSel> sel, NSObject arg) {
     final _ret = _lib._objc_msgSend_301(_id,
         _lib._sel_initWithTarget_selector_object_1, target._id, sel, arg._id);
-    return NSInvocationOperation._(_ret, _lib);
+    return NSInvocationOperation._(_ret, _lib, retain: true, release: true);
   }
 
   NSInvocationOperation initWithInvocation_(NSObject? inv) {
     final _ret = _lib._objc_msgSend_13(
         _id, _lib._sel_initWithInvocation_1, inv?._id ?? ffi.nullptr);
-    return NSInvocationOperation._(_ret, _lib);
+    return NSInvocationOperation._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject? get invocation {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_invocation1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   NSObject get result {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_result1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSInvocationOperation new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSInvocationOperation1, _lib._sel_new1);
-    return NSInvocationOperation._(_ret, _lib);
+    return NSInvocationOperation._(_ret, _lib, retain: false, release: true);
   }
 
   static NSInvocationOperation alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSInvocationOperation1, _lib._sel_alloc1);
-    return NSInvocationOperation._(_ret, _lib);
+    return NSInvocationOperation._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class NSOperationQueue extends NSObject {
-  NSOperationQueue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  NSOperationQueue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSOperationQueue castFrom<T extends _ObjCWrapper>(T other) {
-    return NSOperationQueue._(other._id, other._lib);
+    return NSOperationQueue._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static NSOperationQueue castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSOperationQueue._(other, lib);
+    return NSOperationQueue._(other, lib, retain: true, release: true);
   }
 
   /// @property progress
@@ -85748,7 +92808,9 @@ class NSOperationQueue extends NSObject {
   /// queue.progress.totalUnitCount = 10;
   NSObject? get progress {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_progress1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   void addOperation_(NSObject? op) {
@@ -85792,7 +92854,9 @@ class NSOperationQueue extends NSObject {
 
   NSObject? get name {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_name1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   set name(NSObject? value) {
@@ -85828,19 +92892,25 @@ class NSOperationQueue extends NSObject {
   static NSObject? getCurrentQueue(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOperationQueue1, _lib._sel_currentQueue1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSObject? getMainQueue(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(
         _lib._class_NSOperationQueue1, _lib._sel_mainQueue1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// These two functions are inherently a race condition and should be avoided if possible
   NSObject? get operations {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_operations1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int get operationCount {
@@ -85850,13 +92920,13 @@ class NSOperationQueue extends NSObject {
   static NSOperationQueue new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperationQueue1, _lib._sel_new1);
-    return NSOperationQueue._(_ret, _lib);
+    return NSOperationQueue._(_ret, _lib, retain: false, release: true);
   }
 
   static NSOperationQueue alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_NSOperationQueue1, _lib._sel_alloc1);
-    return NSOperationQueue._(_ret, _lib);
+    return NSOperationQueue._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -85865,15 +92935,17 @@ typedef NSErrorDomain = ffi.Pointer<ObjCObject>;
 typedef NSErrorUserInfoKey = ffi.Pointer<ObjCObject>;
 
 class NSError extends NSObject {
-  NSError._(ffi.Pointer<ObjCObject> id, NativeLibrary lib) : super._(id, lib);
+  NSError._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static NSError castFrom<T extends _ObjCWrapper>(T other) {
-    return NSError._(other._id, other._lib);
+    return NSError._(other._id, other._lib, retain: true, release: true);
   }
 
   static NSError castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return NSError._(other, lib);
+    return NSError._(other, lib, retain: true, release: true);
   }
 
   /// Domain cannot be nil; dict may be nil if no userInfo desired.
@@ -85885,7 +92957,7 @@ class NSError extends NSObject {
         domain,
         code,
         dict?._id ?? ffi.nullptr);
-    return NSError._(_ret, _lib);
+    return NSError._(_ret, _lib, retain: true, release: true);
   }
 
   static NSError errorWithDomain_code_userInfo_(
@@ -85896,7 +92968,7 @@ class NSError extends NSObject {
         domain,
         code,
         dict?._id ?? ffi.nullptr);
-    return NSError._(_ret, _lib);
+    return NSError._(_ret, _lib, retain: true, release: true);
   }
 
   /// These define the error. Domains are described by names that are arbitrary strings used to differentiate groups of codes; for custom domain using reverse-DNS naming will help avoid conflicts. Codes are domain-specific.
@@ -85911,7 +92983,9 @@ class NSError extends NSObject {
   /// Additional info which may be used to describe the error further. Examples of keys that might be included in here are "Line Number", "Failed URL", etc. Embedding other errors in here can also be used as a way to communicate underlying reasons for failures; for instance "File System Error" embedded in the userInfo of an NSError returned from a higher level document object. If the embedded error information is itself NSError, the standard key NSUnderlyingErrorKey can be used.
   NSObject? get userInfo {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_userInfo1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// The primary user-presentable message for the error, for instance for NSFileReadNoPermissionError: "The file "File Name" couldn't be opened because you don't have permission to view it.". This message should ideally indicate what failed and why it failed. This value either comes from NSLocalizedDescriptionKey, or NSLocalizedFailureErrorKey+NSLocalizedFailureReasonErrorKey, or NSLocalizedFailureErrorKey. The steps this takes to construct the description include:
@@ -85923,44 +92997,56 @@ class NSError extends NSObject {
   /// 6. Last resort localized but barely-presentable string manufactured from domain and code. The result is never nil.
   NSObject? get localizedDescription {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedDescription1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return a complete sentence which describes why the operation failed. For instance, for NSFileReadNoPermissionError: "You don't have permission.". In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).  Default implementation of this picks up the value of NSLocalizedFailureReasonErrorKey from the userInfo dictionary. If not present, it consults the userInfoValueProvider for the domain, and if that returns nil, this also returns nil.
   NSObject? get localizedFailureReason {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedFailureReason1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. For instance, for NSFileReadNoPermissionError: "To view or change permissions, select the item in the Finder and choose File > Get Info.". Default implementation of this picks up the value of NSLocalizedRecoverySuggestionErrorKey from the userInfo dictionary. If not present, it consults the userInfoValueProvider for the domain, and if that returns nil, this also returns nil.
   NSObject? get localizedRecoverySuggestion {
     final _ret =
         _lib._objc_msgSend_1(_id, _lib._sel_localizedRecoverySuggestion1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return titles of buttons that are appropriate for displaying in an alert. These should match the string provided as a part of localizedRecoverySuggestion.  The first string would be the title of the right-most and default button, the second one next to it, and so on. If used in an alert the corresponding default return values are NSAlertFirstButtonReturn + n. Default implementation of this picks up the value of NSLocalizedRecoveryOptionsErrorKey from the userInfo dictionary. If not present, it consults the userInfoValueProvider for the domain, and if that returns nil, this also returns nil. nil return usually implies no special suggestion, which would imply a single "OK" button.
   NSObject? get localizedRecoveryOptions {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_localizedRecoveryOptions1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return an object that conforms to the NSErrorRecoveryAttempting informal protocol. The recovery attempter must be an object that can correctly interpret an index into the array returned by localizedRecoveryOptions. The default implementation of this picks up the value of NSRecoveryAttempterErrorKey from the userInfo dictionary. If not present, it consults the userInfoValueProvider for the domain. If that returns nil, this also returns nil.
   NSObject get recoveryAttempter {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_recoveryAttempter1);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return the help anchor that can be used to create a help button to accompany the error when it's displayed to the user.  This is done automatically by +[NSAlert alertWithError:], which the presentError: variants in NSApplication go through. The default implementation of this picks up the value of the NSHelpAnchorErrorKey from the userInfo dictionary. If not present, it consults the userInfoValueProvider for the domain.  If that returns nil, this also returns nil.
   NSObject? get helpAnchor {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_helpAnchor1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Return a list of underlying errors, if any. It includes the values of both NSUnderlyingErrorKey and NSMultipleUnderlyingErrorsKey. If there are no underlying errors, returns an empty array.
   NSObject? get underlyingErrors {
     final _ret = _lib._objc_msgSend_1(_id, _lib._sel_underlyingErrors1);
-    return _ret.address == 0 ? null : NSObject._(_ret, _lib);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   /// Specify a block which will be called from the implementations of localizedDescription, localizedFailureReason, localizedRecoverySuggestion, localizedRecoveryOptions, recoveryAttempter, helpAnchor, and debugDescription when the underlying value for these is not present in the userInfo dictionary of NSError instances with the specified domain.  The provider will be called with the userInfo key corresponding to the queried property: For instance, NSLocalizedDescriptionKey for localizedDescription.  The provider should return nil for any keys it is not able to provide and, very importantly, any keys it does not recognize (since we may extend the list of keys in future releases).
@@ -85992,17 +93078,17 @@ class NSError extends NSObject {
         err?._id ?? ffi.nullptr,
         userInfoKey,
         errorDomain);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   static NSError new1(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_new1);
-    return NSError._(_ret, _lib);
+    return NSError._(_ret, _lib, retain: false, release: true);
   }
 
   static NSError alloc(NativeLibrary _lib) {
     final _ret = _lib._objc_msgSend_1(_lib._class_NSError1, _lib._sel_alloc1);
-    return NSError._(_ret, _lib);
+    return NSError._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -86871,16 +93957,18 @@ typedef __darwin_mode_t1 = __uint16_t1;
 typedef __uint16_t1 = ffi.UnsignedShort;
 
 class URLSessionHelper extends NSObject {
-  URLSessionHelper._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  URLSessionHelper._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static URLSessionHelper castFrom<T extends _ObjCWrapper>(T other) {
-    return URLSessionHelper._(other._id, other._lib);
+    return URLSessionHelper._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static URLSessionHelper castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return URLSessionHelper._(other, lib);
+    return URLSessionHelper._(other, lib, retain: true, release: true);
   }
 
   static NSURLSessionDataTask dataTaskForSession_withRequest_toPort_(
@@ -86891,19 +93979,19 @@ class URLSessionHelper extends NSObject {
         session?._id ?? ffi.nullptr,
         request?._id ?? ffi.nullptr,
         dart_port);
-    return NSURLSessionDataTask._(_ret, _lib);
+    return NSURLSessionDataTask._(_ret, _lib, retain: true, release: true);
   }
 
   static URLSessionHelper new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_new1);
-    return URLSessionHelper._(_ret, _lib);
+    return URLSessionHelper._(_ret, _lib, retain: false, release: true);
   }
 
   static URLSessionHelper alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_URLSessionHelper1, _lib._sel_alloc1);
-    return URLSessionHelper._(_ret, _lib);
+    return URLSessionHelper._(_ret, _lib, retain: false, release: true);
   }
 }
 
@@ -86915,22 +94003,24 @@ abstract class MessageType {
 }
 
 class TaskConfiguration extends NSObject {
-  TaskConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  TaskConfiguration._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static TaskConfiguration castFrom<T extends _ObjCWrapper>(T other) {
-    return TaskConfiguration._(other._id, other._lib);
+    return TaskConfiguration._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static TaskConfiguration castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return TaskConfiguration._(other, lib);
+    return TaskConfiguration._(other, lib, retain: true, release: true);
   }
 
   NSObject initWithPort_maxRedirects_(int sendPort, int redirects) {
     final _ret = _lib._objc_msgSend_305(
         _id, _lib._sel_initWithPort_maxRedirects_1, sendPort, redirects);
-    return NSObject._(_ret, _lib);
+    return NSObject._(_ret, _lib, retain: true, release: true);
   }
 
   int get sendPort {
@@ -86944,27 +94034,29 @@ class TaskConfiguration extends NSObject {
   static TaskConfiguration new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_TaskConfiguration1, _lib._sel_new1);
-    return TaskConfiguration._(_ret, _lib);
+    return TaskConfiguration._(_ret, _lib, retain: false, release: true);
   }
 
   static TaskConfiguration alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_TaskConfiguration1, _lib._sel_alloc1);
-    return TaskConfiguration._(_ret, _lib);
+    return TaskConfiguration._(_ret, _lib, retain: false, release: true);
   }
 }
 
 class HttpClientDelegate extends NSObject {
-  HttpClientDelegate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib)
-      : super._(id, lib);
+  HttpClientDelegate._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
 
   static HttpClientDelegate castFrom<T extends _ObjCWrapper>(T other) {
-    return HttpClientDelegate._(other._id, other._lib);
+    return HttpClientDelegate._(other._id, other._lib,
+        retain: true, release: true);
   }
 
   static HttpClientDelegate castFromPointer(
       NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
-    return HttpClientDelegate._(other, lib);
+    return HttpClientDelegate._(other, lib, retain: true, release: true);
   }
 
   void registerTask_withConfiguration_(NSObject? task, NSObject? config) {
@@ -86985,13 +94077,63 @@ class HttpClientDelegate extends NSObject {
   static HttpClientDelegate new1(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_HttpClientDelegate1, _lib._sel_new1);
-    return HttpClientDelegate._(_ret, _lib);
+    return HttpClientDelegate._(_ret, _lib, retain: false, release: true);
   }
 
   static HttpClientDelegate alloc(NativeLibrary _lib) {
     final _ret =
         _lib._objc_msgSend_1(_lib._class_HttpClientDelegate1, _lib._sel_alloc1);
-    return HttpClientDelegate._(_ret, _lib);
+    return HttpClientDelegate._(_ret, _lib, retain: false, release: true);
+  }
+}
+
+class SendPortOperationQueue extends NSOperationQueue {
+  SendPortOperationQueue._(ffi.Pointer<ObjCObject> id, NativeLibrary lib,
+      {bool retain = false, bool release = false})
+      : super._(id, lib, retain: retain, release: release);
+
+  static SendPortOperationQueue castFrom<T extends _ObjCWrapper>(T other) {
+    return SendPortOperationQueue._(other._id, other._lib,
+        retain: true, release: true);
+  }
+
+  static SendPortOperationQueue castFromPointer(
+      NativeLibrary lib, ffi.Pointer<ObjCObject> other) {
+    return SendPortOperationQueue._(other, lib, retain: true, release: true);
+  }
+
+  SendPortOperationQueue initWithPort_(int sendPort) {
+    final _ret =
+        _lib._objc_msgSend_308(_id, _lib._sel_initWithPort_1, sendPort);
+    return SendPortOperationQueue._(_ret, _lib, retain: true, release: true);
+  }
+
+  static NSObject? getCurrentQueue(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(
+        _lib._class_SendPortOperationQueue1, _lib._sel_currentQueue1);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
+  }
+
+  static NSObject? getMainQueue(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(
+        _lib._class_SendPortOperationQueue1, _lib._sel_mainQueue1);
+    return _ret.address == 0
+        ? null
+        : NSObject._(_ret, _lib, retain: true, release: true);
+  }
+
+  static SendPortOperationQueue new1(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(
+        _lib._class_SendPortOperationQueue1, _lib._sel_new1);
+    return SendPortOperationQueue._(_ret, _lib, retain: false, release: true);
+  }
+
+  static SendPortOperationQueue alloc(NativeLibrary _lib) {
+    final _ret = _lib._objc_msgSend_1(
+        _lib._class_SendPortOperationQueue1, _lib._sel_alloc1);
+    return SendPortOperationQueue._(_ret, _lib, retain: false, release: true);
   }
 }
 

@@ -7,6 +7,7 @@ project(cupertinohttp_library VERSION 0.0.1 LANGUAGES C)
 
 add_library(cupertinohttp SHARED
   "urlsessionhelper.m"
+  "SendPortOperationQueue.m"
   "${CMAKE_CURRENT_LIST_DIR}/dart-sdk/include/dart_api_dl.c"
 )
 

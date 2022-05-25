@@ -21,6 +21,7 @@ headers:
     - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSError.h'
     - '/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSDictionary.h'
     - 'src/urlsessionhelper.h'
+    - 'src/SendPortOperationQueue.h'
 compiler-opts:
   - '-I/Users/bquinlan/dart/flutter/bin/cache/dart-sdk/include/'
 
