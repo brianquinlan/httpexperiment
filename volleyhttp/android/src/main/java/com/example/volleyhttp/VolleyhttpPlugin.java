@@ -110,7 +110,7 @@ channel.setMethodCallHandler(this);
         s.acquire();
       } catch (InterruptedException e) {
       }
-      result.success(t.toString());
+      result.success({'body': t.toString(), 'status': 200});
 
     } else {
       result.notImplemented();
